@@ -106,7 +106,7 @@ export class ExampleDemo extends Demo {
 		// Camera.
 
 		const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 20);
-		camera.position.set(0, 1.15, 0);
+		camera.position.set(0, Math.max(1.15, 1.5 - camera.aspect * 0.1), 0);
 		camera.lookAt(scene.position);
 		camera.rotation.z = Math.PI / 2;
 		this.camera = camera;
