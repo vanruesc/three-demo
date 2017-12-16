@@ -1042,7 +1042,7 @@
     "__docId__": 75,
     "kind": "file",
     "name": "src/DemoManager.js",
-    "content": "import { EffectComposer } from \"postprocessing\";\r\nimport { EventTarget } from \"synthetic-event\";\r\nimport { Clock, WebGLRenderer } from \"three\";\r\nimport dat from \"dat.gui\";\r\nimport Stats from \"stats.js\";\r\n\r\nimport * as events from \"./demo-manager-events.js\";\r\n\r\n/**\r\n * A demo manager.\r\n */\r\n\r\nexport class DemoManager extends EventTarget {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager.\r\n\t *\r\n\t * @param {HTMLElement} viewport - The primary DOM container.\r\n\t * @param {Object} [options] - Additional options.\r\n\t * @param {HTMLElement} [options.aside] - A secondary DOM container.\r\n\t * @param {EffectComposer} [options.composer] - A custom effect composer.\r\n\t */\r\n\r\n\tconstructor(viewport, options = {}) {\r\n\r\n\t\tconst aside = (options.aside !== undefined) ? options.aside : viewport;\r\n\r\n\t\tsuper();\r\n\r\n\t\t/**\r\n\t\t * A composer.\r\n\t\t *\r\n\t\t * @type {EffectComposer}\r\n\t\t */\r\n\r\n\t\tthis.composer = (options.composer !== undefined) ? options.composer : (() => {\r\n\r\n\t\t\tconst renderer = new WebGLRenderer();\r\n\t\t\trenderer.setSize(window.innerWidth, window.innerHeight);\r\n\t\t\trenderer.setPixelRatio(window.devicePixelRatio);\r\n\t\t\trenderer.setClearColor(0x000000);\r\n\r\n\t\t\treturn new EffectComposer(renderer, {\r\n\t\t\t\tstencilBuffer: true,\r\n\t\t\t\tdepthTexture: true\r\n\t\t\t});\r\n\r\n\t\t})();\r\n\r\n\t\t/**\r\n\t\t * The main renderer.\r\n\t\t *\r\n\t\t * @type {WebGLRenderer}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.renderer = this.composer.renderer;\r\n\r\n\t\tviewport.appendChild(this.renderer.domElement);\r\n\r\n\t\t/**\r\n\t\t * A clock.\r\n\t\t *\r\n\t\t * @type {Clock}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.clock = new Clock();\r\n\r\n\t\t/**\r\n\t\t * A menu for custom demo options.\r\n\t\t *\r\n\t\t * @type {GUI}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\taside.appendChild(this.menu.domElement);\r\n\r\n\t\t/**\r\n\t\t * Performance statistics.\r\n\t\t *\r\n\t\t * @type {Stats}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.statistics = new Stats();\r\n\t\tthis.statistics.dom.id = \"statistics\";\r\n\r\n\t\taside.appendChild(this.statistics.domElement);\r\n\r\n\t\t/**\r\n\t\t * A collection of demos.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demos = new Map();\r\n\r\n\t\t/**\r\n\t\t * The id of the current demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demo = window.location.hash.slice(1);\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.currentDemo = null;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Updates the demo options menu.\r\n\t *\r\n\t * @private\r\n\t * @todo Use a menu library that is not as clunky as dat.GUI.\r\n\t */\r\n\r\n\tresetMenu() {\r\n\r\n\t\tconst node = this.menu.domElement.parentNode;\r\n\t\tconst menu = new dat.GUI({ autoPlace: false });\r\n\t\tconst selection = menu.add(this, \"demo\", Array.from(this.demos.keys()));\r\n\t\tselection.onChange(() => this.loadDemo());\r\n\r\n\t\tnode.removeChild(this.menu.domElement);\r\n\t\tnode.appendChild(menu.domElement);\r\n\r\n\t\tthis.menu.destroy();\r\n\t\tthis.menu = menu;\r\n\r\n\t\treturn menu;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Activates the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tstartDemo() {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst menu = this.resetMenu();\r\n\r\n\t\tdemo.initialize();\r\n\t\tdemo.registerOptions(menu);\r\n\t\tdemo.ready = true;\r\n\r\n\t\tthis.dispatchEvent(events.load);\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tloadDemo() {\r\n\r\n\t\tconst id = this.demo;\r\n\t\tconst menu = this.menu;\r\n\t\tconst demos = this.demos;\r\n\t\tconst composer = this.composer;\r\n\t\tconst renderer = this.renderer;\r\n\r\n\t\tlet demo, size;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\t// Update the URL.\r\n\t\t\twindow.location.hash = id;\r\n\r\n\t\t\t// Remove all passes and clear the screen.\r\n\t\t\tcomposer.reset();\r\n\t\t\trenderer.clear();\r\n\r\n\t\t\tdemo = this.currentDemo;\r\n\r\n\t\t\tif(demo !== null) {\r\n\r\n\t\t\t\tdemo.reset();\r\n\r\n\t\t\t\t// Update and use the main renderer.\r\n\t\t\t\tsize = composer.renderer.getSize();\r\n\t\t\t\trenderer.setSize(size.width, size.height);\r\n\t\t\t\tcomposer.replaceRenderer(renderer);\r\n\r\n\t\t\t}\r\n\r\n\t\t\tif(menu !== null) {\r\n\r\n\t\t\t\tmenu.domElement.style.display = \"none\";\r\n\r\n\t\t\t}\r\n\r\n\t\t\tdemo = demos.get(id);\r\n\t\t\tthis.currentDemo = demo;\r\n\t\t\tcomposer.addPass(demo.renderPass);\r\n\r\n\t\t\tthis.dispatchEvent(events.change);\r\n\r\n\t\t\tdemo.load().then(() => this.startDemo()).catch((e) => {\r\n\r\n\t\t\t\tconsole.error(\"An unexpected error occured during the loading process\", e);\r\n\r\n\t\t\t});\r\n\r\n\t\t} else {\r\n\r\n\t\t\tconsole.error(\"Invalid demo id\", id);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Adds a demo.\r\n\t *\r\n\t * @param {Demo} demo - The demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\taddDemo(demo) {\r\n\r\n\t\tconst id = this.demo;\r\n\r\n\t\tthis.demos.set(demo.id, demo.setComposer(this.composer));\r\n\r\n\t\tif(id.length === 0) {\r\n\r\n\t\t\tthis.demo = demo.id;\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t} else if(id === demo.id) {\r\n\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Removes a demo.\r\n\t *\r\n\t * @param {String} id - The id of the demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\tremoveDemo(id) {\r\n\r\n\t\tconst demos = this.demos;\r\n\r\n\t\tlet entry;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\tdemos.delete(id);\r\n\r\n\t\t\tif(this.demo === id) {\r\n\r\n\t\t\t\tentry = demos.entries().next().value;\r\n\t\t\t\tthis.demo = entry[0];\r\n\t\t\t\tthis.currentDemo = entry[1];\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the render size.\r\n\t *\r\n\t * @param {Number} width - The width.\r\n\t * @param {Number} height - The height.\r\n\t */\r\n\r\n\tsetSize(width, height) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\r\n\t\tthis.composer.setSize(width, height);\r\n\r\n\t\tif(demo !== null && demo.camera !== null) {\r\n\r\n\t\t\tdemo.camera.aspect = width / height;\r\n\t\t\tdemo.camera.updateProjectionMatrix();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The main render loop.\r\n\t *\r\n\t * @param {DOMHighResTimeStamp} now - The current time.\r\n\t */\r\n\r\n\trender(now) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst delta = this.clock.getDelta();\r\n\r\n\t\tif(demo !== null && demo.ready) {\r\n\r\n\t\t\tthis.statistics.begin();\r\n\r\n\t\t\tdemo.update(delta);\r\n\t\t\tthis.composer.render(delta);\r\n\r\n\t\t\tthis.statistics.end();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n}\r\n",
+    "content": "import { EffectComposer } from \"postprocessing\";\r\nimport { EventTarget } from \"synthetic-event\";\r\nimport { Clock, WebGLRenderer } from \"three\";\r\nimport dat from \"dat.gui\";\r\nimport Stats from \"stats.js\";\r\n\r\nimport * as events from \"./demo-manager-events.js\";\r\n\r\n/**\r\n * A demo manager.\r\n */\r\n\r\nexport class DemoManager extends EventTarget {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager.\r\n\t *\r\n\t * @param {HTMLElement} viewport - The primary DOM container.\r\n\t * @param {Object} [options] - Additional options.\r\n\t * @param {HTMLElement} [options.aside] - A secondary DOM container.\r\n\t * @param {EffectComposer} [options.composer] - A custom effect composer.\r\n\t */\r\n\r\n\tconstructor(viewport, options = {}) {\r\n\r\n\t\tconst aside = (options.aside !== undefined) ? options.aside : viewport;\r\n\r\n\t\tsuper();\r\n\r\n\t\t/**\r\n\t\t * A composer.\r\n\t\t *\r\n\t\t * @type {EffectComposer}\r\n\t\t */\r\n\r\n\t\tthis.composer = (options.composer !== undefined) ? options.composer : (() => {\r\n\r\n\t\t\tconst renderer = new WebGLRenderer();\r\n\t\t\trenderer.setSize(window.innerWidth, window.innerHeight);\r\n\t\t\trenderer.setPixelRatio(window.devicePixelRatio);\r\n\t\t\trenderer.setClearColor(0x000000);\r\n\r\n\t\t\treturn new EffectComposer(renderer, {\r\n\t\t\t\tstencilBuffer: true,\r\n\t\t\t\tdepthTexture: true\r\n\t\t\t});\r\n\r\n\t\t})();\r\n\r\n\t\t/**\r\n\t\t * The main renderer.\r\n\t\t *\r\n\t\t * @type {WebGLRenderer}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.renderer = this.composer.renderer;\r\n\r\n\t\tviewport.appendChild(this.renderer.domElement);\r\n\r\n\t\t/**\r\n\t\t * A clock.\r\n\t\t *\r\n\t\t * @type {Clock}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.clock = new Clock();\r\n\r\n\t\t/**\r\n\t\t * A menu for custom demo options.\r\n\t\t *\r\n\t\t * @type {GUI}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\taside.appendChild(this.menu.domElement);\r\n\r\n\t\t/**\r\n\t\t * Performance statistics.\r\n\t\t *\r\n\t\t * @type {Stats}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.statistics = new Stats();\r\n\t\tthis.statistics.dom.id = \"statistics\";\r\n\r\n\t\taside.appendChild(this.statistics.domElement);\r\n\r\n\t\t/**\r\n\t\t * A collection of demos.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demos = new Map();\r\n\r\n\t\t/**\r\n\t\t * The id of the current demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demo = window.location.hash.slice(1);\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.currentDemo = null;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Updates the demo options menu.\r\n\t *\r\n\t * @private\r\n\t * @todo Use a menu library that is not as clunky as dat.GUI.\r\n\t * @return {GUI} The cleaned menu.\r\n\t */\r\n\r\n\tresetMenu() {\r\n\r\n\t\tconst node = this.menu.domElement.parentNode;\r\n\t\tconst menu = new dat.GUI({ autoPlace: false });\r\n\t\tconst selection = menu.add(this, \"demo\", Array.from(this.demos.keys()));\r\n\t\tselection.onChange(() => this.loadDemo());\r\n\r\n\t\tnode.removeChild(this.menu.domElement);\r\n\t\tnode.appendChild(menu.domElement);\r\n\r\n\t\tthis.menu.destroy();\r\n\t\tthis.menu = menu;\r\n\r\n\t\treturn menu;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Activates the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tstartDemo() {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst menu = this.resetMenu();\r\n\r\n\t\tdemo.initialize();\r\n\t\tdemo.registerOptions(menu);\r\n\t\tdemo.ready = true;\r\n\r\n\t\tthis.dispatchEvent(events.load);\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tloadDemo() {\r\n\r\n\t\tconst id = this.demo;\r\n\t\tconst menu = this.menu;\r\n\t\tconst demos = this.demos;\r\n\t\tconst composer = this.composer;\r\n\t\tconst renderer = this.renderer;\r\n\r\n\t\tlet demo, size;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\t// Update the URL.\r\n\t\t\twindow.location.hash = id;\r\n\r\n\t\t\t// Remove all passes and clear the screen.\r\n\t\t\tcomposer.reset();\r\n\t\t\trenderer.clear();\r\n\r\n\t\t\tdemo = this.currentDemo;\r\n\r\n\t\t\tif(demo !== null) {\r\n\r\n\t\t\t\tdemo.reset();\r\n\r\n\t\t\t\t// Update and use the main renderer.\r\n\t\t\t\tsize = composer.renderer.getSize();\r\n\t\t\t\trenderer.setSize(size.width, size.height);\r\n\t\t\t\tcomposer.replaceRenderer(renderer);\r\n\r\n\t\t\t}\r\n\r\n\t\t\tif(menu !== null) {\r\n\r\n\t\t\t\tmenu.domElement.style.display = \"none\";\r\n\r\n\t\t\t}\r\n\r\n\t\t\tdemo = demos.get(id);\r\n\t\t\tthis.currentDemo = demo;\r\n\t\t\tcomposer.addPass(demo.renderPass);\r\n\r\n\t\t\tthis.dispatchEvent(events.change);\r\n\r\n\t\t\tdemo.load().then(() => this.startDemo()).catch((e) => {\r\n\r\n\t\t\t\tconsole.error(\"An unexpected error occured during the loading process\", e);\r\n\r\n\t\t\t});\r\n\r\n\t\t} else {\r\n\r\n\t\t\tconsole.error(\"Invalid demo id\", id);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Adds a demo.\r\n\t *\r\n\t * @param {Demo} demo - The demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\taddDemo(demo) {\r\n\r\n\t\tconst id = this.demo;\r\n\r\n\t\tthis.demos.set(demo.id, demo.setComposer(this.composer));\r\n\r\n\t\tif(id.length === 0) {\r\n\r\n\t\t\tthis.demo = demo.id;\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t} else if(id === demo.id) {\r\n\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Removes a demo.\r\n\t *\r\n\t * @param {String} id - The id of the demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\tremoveDemo(id) {\r\n\r\n\t\tconst demos = this.demos;\r\n\r\n\t\tlet entry;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\tdemos.delete(id);\r\n\r\n\t\t\tif(this.demo === id) {\r\n\r\n\t\t\t\tentry = demos.entries().next().value;\r\n\t\t\t\tthis.demo = entry[0];\r\n\t\t\t\tthis.currentDemo = entry[1];\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the render size.\r\n\t *\r\n\t * @param {Number} width - The width.\r\n\t * @param {Number} height - The height.\r\n\t */\r\n\r\n\tsetSize(width, height) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\r\n\t\tthis.composer.setSize(width, height);\r\n\r\n\t\tif(demo !== null && demo.camera !== null) {\r\n\r\n\t\t\tdemo.camera.aspect = width / height;\r\n\t\t\tdemo.camera.updateProjectionMatrix();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The main render loop.\r\n\t *\r\n\t * @param {DOMHighResTimeStamp} now - The current time.\r\n\t */\r\n\r\n\trender(now) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst delta = this.clock.getDelta();\r\n\r\n\t\tif(demo !== null && demo.ready) {\r\n\r\n\t\t\tthis.statistics.begin();\r\n\r\n\t\t\tdemo.update(delta);\r\n\t\t\tthis.composer.render(delta);\r\n\r\n\t\t\tthis.statistics.end();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n}\r\n",
     "static": true,
     "longname": "C:/Users/Raoul/Sourcecode/JavaScript/three-demo/src/DemoManager.js",
     "access": "public",
@@ -1285,16 +1285,19 @@
     "longname": "src/DemoManager.js~DemoManager#resetMenu",
     "access": "private",
     "description": "Updates the demo options menu.",
-    "lineNumber": 129,
+    "lineNumber": 130,
     "todo": [
       "Use a menu library that is not as clunky as dat.GUI."
     ],
-    "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
-    }
+        "GUI"
+      ],
+      "spread": false,
+      "description": "The cleaned menu."
+    },
+    "params": []
   },
   {
     "__docId__": 88,
@@ -1307,7 +1310,7 @@
     "longname": "src/DemoManager.js~DemoManager#startDemo",
     "access": "private",
     "description": "Activates the currently selected demo.",
-    "lineNumber": 152,
+    "lineNumber": 153,
     "params": [],
     "return": null
   },
@@ -1322,7 +1325,7 @@
     "longname": "src/DemoManager.js~DemoManager#loadDemo",
     "access": "private",
     "description": "Loads the currently selected demo.",
-    "lineNumber": 171,
+    "lineNumber": 172,
     "params": [],
     "return": null
   },
@@ -1337,7 +1340,7 @@
     "longname": "src/DemoManager.js~DemoManager#addDemo",
     "access": "public",
     "description": "Adds a demo.",
-    "lineNumber": 236,
+    "lineNumber": 237,
     "params": [
       {
         "nullable": null,
@@ -1370,7 +1373,7 @@
     "longname": "src/DemoManager.js~DemoManager#removeDemo",
     "access": "public",
     "description": "Removes a demo.",
-    "lineNumber": 264,
+    "lineNumber": 265,
     "params": [
       {
         "nullable": null,
@@ -1403,7 +1406,7 @@
     "longname": "src/DemoManager.js~DemoManager#setSize",
     "access": "public",
     "description": "Sets the render size.",
-    "lineNumber": 295,
+    "lineNumber": 296,
     "params": [
       {
         "nullable": null,
@@ -1439,7 +1442,7 @@
     "longname": "src/DemoManager.js~DemoManager#render",
     "access": "public",
     "description": "The main render loop.",
-    "lineNumber": 316,
+    "lineNumber": 317,
     "params": [
       {
         "nullable": null,

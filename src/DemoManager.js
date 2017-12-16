@@ -124,6 +124,7 @@ export class DemoManager extends EventTarget {
 	 *
 	 * @private
 	 * @todo Use a menu library that is not as clunky as dat.GUI.
+	 * @return {GUI} The cleaned menu.
 	 */
 
 	resetMenu() {
