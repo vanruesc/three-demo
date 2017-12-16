@@ -38,21 +38,8 @@ manager.addDemo(new MyDemo());
 
 ## Custom Demos
 
-```javascript
-// Initialise the demo manager.
-manager = new DemoManager(document.getElementById("viewport"));
-
-// Register your custom demos.
-manager.addDemo(new MyDemo());
-
-// Start rendering.
-(function render(now) {
-
-	requestAnimationFrame(render);
-	manager.render(now);
-
-}());
-```
+You can create custom demos by extending the `Demo` class. For details, take a look at the
+[ExampleDemo](https://github.com/vanruesc/three-demo/blob/master/demo/src/demos/ExampleDemo.js).
 
 
 ## Contributing
