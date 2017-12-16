@@ -1,0 +1,334 @@
+import { EffectComposer } from "postprocessing";
+import { EventTarget } from "synthetic-event";
+import { Clock, WebGLRenderer } from "three";
+import dat from "dat.gui";
+import Stats from "stats.js";
+
+import * as events from "./demo-manager-events.js";
+
+/**
+ * A demo manager.
+ */
+
+export class DemoManager extends EventTarget {
+
+	/**
+	 * Constructs a new demo manager.
+	 *
+	 * @param {HTMLElement} viewport - The primary DOM container.
+	 * @param {Object} [options] - Additional options.
+	 * @param {HTMLElement} [options.aside] - A secondary DOM container.
+	 * @param {EffectComposer} [options.composer] - A custom effect composer.
+	 */
+
+	constructor(viewport, options = {}) {
+
+		const aside = (options.aside !== undefined) ? options.aside : viewport;
+
+		super();
+
+		/**
+		 * A composer.
+		 *
+		 * @type {EffectComposer}
+		 */
+
+		this.composer = (options.composer !== undefined) ? options.composer : (() => {
+
+			const renderer = new WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setClearColor(0x000000);
+
+			return new EffectComposer(renderer, {
+				stencilBuffer: true,
+				depthTexture: true
+			});
+
+		})();
+
+		/**
+		 * The main renderer.
+		 *
+		 * @type {WebGLRenderer}
+		 * @private
+		 */
+
+		this.renderer = this.composer.renderer;
+
+		viewport.appendChild(this.renderer.domElement);
+
+		/**
+		 * A clock.
+		 *
+		 * @type {Clock}
+		 * @private
+		 */
+
+		this.clock = new Clock();
+
+		/**
+		 * A menu for custom demo options.
+		 *
+		 * @type {GUI}
+		 * @private
+		 */
+
+		this.menu = new dat.GUI({ autoPlace: false });
+
+		aside.appendChild(this.menu.domElement);
+
+		/**
+		 * Performance statistics.
+		 *
+		 * @type {Stats}
+		 * @private
+		 */
+
+		this.statistics = new Stats();
+		this.statistics.dom.id = "statistics";
+
+		aside.appendChild(this.statistics.domElement);
+
+		/**
+		 * A collection of demos.
+		 *
+		 * @type {Map}
+		 * @private
+		 */
+
+		this.demos = new Map();
+
+		/**
+		 * The id of the current demo.
+		 *
+		 * @type {String}
+		 * @private
+		 */
+
+		this.demo = window.location.hash.slice(1);
+
+		/**
+		 * The current demo.
+		 *
+		 * @type {Demo}
+		 * @private
+		 */
+
+		this.currentDemo = null;
+
+	}
+
+	/**
+	 * Updates the demo options menu.
+	 *
+	 * @private
+	 * @todo Use a menu library that is not as clunky as dat.GUI.
+	 */
+
+	resetMenu() {
+
+		const node = this.menu.domElement.parentNode;
+		const menu = new dat.GUI({ autoPlace: false });
+		const selection = menu.add(this, "demo", Array.from(this.demos.keys()));
+		selection.onChange(() => this.loadDemo());
+
+		node.removeChild(this.menu.domElement);
+		node.appendChild(menu.domElement);
+
+		this.menu.destroy();
+		this.menu = menu;
+
+		return menu;
+
+	}
+
+	/**
+	 * Activates the currently selected demo.
+	 *
+	 * @private
+	 */
+
+	startDemo() {
+
+		const demo = this.currentDemo;
+		const menu = this.resetMenu();
+
+		demo.initialize();
+		demo.registerOptions(menu);
+		demo.ready = true;
+
+		this.dispatchEvent(events.load);
+
+	}
+
+	/**
+	 * Loads the currently selected demo.
+	 *
+	 * @private
+	 */
+
+	loadDemo() {
+
+		const id = this.demo;
+		const menu = this.menu;
+		const demos = this.demos;
+		const composer = this.composer;
+		const renderer = this.renderer;
+
+		let demo, size;
+
+		if(demos.has(id)) {
+
+			// Update the URL.
+			window.location.hash = id;
+
+			// Remove all passes and clear the screen.
+			composer.reset();
+			renderer.clear();
+
+			demo = this.currentDemo;
+
+			if(demo !== null) {
+
+				demo.reset();
+
+				// Update and use the main renderer.
+				size = composer.renderer.getSize();
+				renderer.setSize(size.width, size.height);
+				composer.replaceRenderer(renderer);
+
+			}
+
+			if(menu !== null) {
+
+				menu.domElement.style.display = "none";
+
+			}
+
+			demo = demos.get(id);
+			this.currentDemo = demo;
+			composer.addPass(demo.renderPass);
+
+			this.dispatchEvent(events.change);
+
+			demo.load().then(() => this.startDemo()).catch((e) => {
+
+				console.error("An unexpected error occured during the loading process", e);
+
+			});
+
+		} else {
+
+			console.error("Invalid demo id", id);
+
+		}
+
+	}
+
+	/**
+	 * Adds a demo.
+	 *
+	 * @param {Demo} demo - The demo.
+	 * @return {DemoManager} This manager.
+	 */
+
+	addDemo(demo) {
+
+		const id = this.demo;
+
+		this.demos.set(demo.id, demo.setComposer(this.composer));
+
+		if(id.length === 0) {
+
+			this.demo = demo.id;
+			this.loadDemo();
+
+		} else if(id === demo.id) {
+
+			this.loadDemo();
+
+		}
+
+		return this;
+
+	}
+
+	/**
+	 * Removes a demo.
+	 *
+	 * @param {String} id - The id of the demo.
+	 * @return {DemoManager} This manager.
+	 */
+
+	removeDemo(id) {
+
+		const demos = this.demos;
+
+		let entry;
+
+		if(demos.has(id)) {
+
+			demos.delete(id);
+
+			if(this.demo === id) {
+
+				entry = demos.entries().next().value;
+				this.demo = entry[0];
+				this.currentDemo = entry[1];
+
+			}
+
+		}
+
+		return this;
+
+	}
+
+	/**
+	 * Sets the render size.
+	 *
+	 * @param {Number} width - The width.
+	 * @param {Number} height - The height.
+	 */
+
+	setSize(width, height) {
+
+		const demo = this.currentDemo;
+
+		this.composer.setSize(width, height);
+
+		if(demo !== null && demo.camera !== null) {
+
+			demo.camera.aspect = width / height;
+			demo.camera.updateProjectionMatrix();
+
+		}
+
+	}
+
+	/**
+	 * The main render loop.
+	 *
+	 * @param {DOMHighResTimeStamp} now - The current time.
+	 */
+
+	render(now) {
+
+		const demo = this.currentDemo;
+		const delta = this.clock.getDelta();
+
+		if(demo !== null && demo.ready) {
+
+			this.statistics.begin();
+
+			demo.update(delta);
+			this.composer.render(delta);
+
+			this.statistics.end();
+
+		}
+
+	}
+
+}

@@ -1,0 +1,1484 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/demo-manager-events.js",
+    "content": "import { Event } from \"synthetic-event\";\r\n\r\n/**\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n */\r\n\r\nexport const change = new Event(\"change\");\r\n\r\n/**\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n */\r\n\r\nexport const load = new Event(\"load\");\r\n",
+    "static": true,
+    "longname": "C:/Users/Raoul/Sourcecode/JavaScript/three-demo/src/demo-manager-events.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "change",
+    "memberof": "src/demo-manager-events.js",
+    "static": true,
+    "longname": "src/demo-manager-events.js~change",
+    "access": "public",
+    "export": true,
+    "importPath": "three-demo/src/demo-manager-events.js",
+    "importStyle": "{change}",
+    "description": "A demo change event.\n\nThis event is dispatched by {@link DemoManager}.",
+    "examples": [
+      "demoManager.addEventListener(\"change\", myListener);"
+    ],
+    "lineNumber": 12,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Event"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "load",
+    "memberof": "src/demo-manager-events.js",
+    "static": true,
+    "longname": "src/demo-manager-events.js~load",
+    "access": "public",
+    "export": true,
+    "importPath": "three-demo/src/demo-manager-events.js",
+    "importStyle": "{load}",
+    "description": "A demo load event.\n\nThis event is dispatched by {@link DemoManager}.",
+    "examples": [
+      "demoManager.addEventListener(\"load\", myListener);"
+    ],
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Event"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/Demo.js",
+    "content": "import { RenderPass } from \"postprocessing\";\r\nimport { LoadingManager, Scene } from \"three\";\r\n\r\n/**\r\n * A demo base class.\r\n */\r\n\r\nexport class Demo {\r\n\r\n\t/**\r\n\t * Constructs a new demo.\r\n\t *\r\n\t * @param {String} [id=\"demo\"] - A unique identifier.\r\n\t */\r\n\r\n\tconstructor(id = \"demo\") {\r\n\r\n\t\t/**\r\n\t\t * The id of this demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t */\r\n\r\n\t\tthis.id = id;\r\n\r\n\t\t/**\r\n\t\t * An effect composer.\r\n\t\t *\r\n\t\t * @type {EffectComposer}\r\n\t\t * @protected\r\n\t\t */\r\n\r\n\t\tthis.composer = null;\r\n\r\n\t\t/**\r\n\t\t * A loading manager.\r\n\t\t *\r\n\t\t * @type {LoadingManager}\r\n\t\t * @protected\r\n\t\t */\r\n\r\n\t\tthis.loadingManager = new LoadingManager();\r\n\r\n\t\t/**\r\n\t\t * A collection of loaded assets.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @protected\r\n\t\t */\r\n\r\n\t\tthis.assets = new Map();\r\n\r\n\t\t/**\r\n\t\t * A render pass that renders to screen.\r\n\t\t *\r\n\t\t * @type {RenderPass}\r\n\t\t * @protected\r\n\t\t */\r\n\r\n\t\tthis.renderPass = new RenderPass(new Scene(), null);\r\n\t\tthis.renderPass.renderToScreen = true;\r\n\r\n\t\t/**\r\n\t\t * Camera controls.\r\n\t\t *\r\n\t\t * @type {Disposable}\r\n\t\t * @protected\r\n\t\t */\r\n\r\n\t\tthis.controls = null;\r\n\r\n\t\t/**\r\n\t\t * Indicates whether this demo is ready for rendering.\r\n\t\t *\r\n\t\t * The {@link DemoManager} updates this flag automatically.\r\n\t\t *\r\n\t\t * @type {Boolean}\r\n\t\t */\r\n\r\n\t\tthis.ready = false;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The scene.\r\n\t *\r\n\t * @type {Scene}\r\n\t */\r\n\r\n\tget scene() {\r\n\r\n\t\treturn this.renderPass.scene;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * @type {Scene}\r\n\t */\r\n\r\n\tset scene(scene) {\r\n\r\n\t\tthis.renderPass.scene = scene;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The camera.\r\n\t *\r\n\t * @type {Camera}\r\n\t */\r\n\r\n\tget camera() {\r\n\r\n\t\treturn this.renderPass.camera;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * @type {camera}\r\n\t */\r\n\r\n\tset camera(camera) {\r\n\r\n\t\tthis.renderPass.camera = camera;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the effect composer.\r\n\t *\r\n\t * @param {EffectComposer} composer - A composer.\r\n\t * @return {Demo} This demo.\r\n\t */\r\n\r\n\tsetComposer(composer) {\r\n\r\n\t\tthis.composer = composer;\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads this demo.\r\n\t *\r\n\t * Override this method to load assets.\r\n\t *\r\n\t * @return {Promise} A promise that will be fulfilled as soon as all assets have been loaded.\r\n\t */\r\n\r\n\tload() {\r\n\r\n\t\treturn Promise.resolve();\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Initialises this demo.\r\n\t *\r\n\t * This method will be called after reset.\r\n\t */\r\n\r\n\tinitialize() {}\r\n\r\n\t/**\r\n\t * Updates this demo.\r\n\t *\r\n\t * @param {Number} delta - The time since the last frame in seconds.\r\n\t */\r\n\r\n\tupdate(delta) {}\r\n\r\n\t/**\r\n\t * Registers configuration options.\r\n\t *\r\n\t * This method will be called after initialize.\r\n\t *\r\n\t * @param {GUI} menu - A menu.\r\n\t */\r\n\r\n\tregisterOptions(menu) {}\r\n\r\n\t/**\r\n\t * Resets this demo.\r\n\t *\r\n\t * @return {Demo} This demo.\r\n\t */\r\n\r\n\treset() {\r\n\r\n\t\tconst fog = this.scene.fog;\r\n\t\tconst renderPass = new RenderPass(new Scene(), null);\r\n\t\trenderPass.enabled = this.renderPass.enabled;\r\n\t\trenderPass.renderToScreen = true;\r\n\t\tthis.renderPass = renderPass;\r\n\t\tthis.scene.fog = fog;\r\n\r\n\t\tif(this.controls !== null) {\r\n\r\n\t\t\tthis.controls.dispose();\r\n\t\t\tthis.controls = null;\r\n\r\n\t\t}\r\n\r\n\t\tthis.ready = false;\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n}\r\n",
+    "static": true,
+    "longname": "C:/Users/Raoul/Sourcecode/JavaScript/three-demo/src/Demo.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "class",
+    "name": "Demo",
+    "memberof": "src/Demo.js",
+    "static": true,
+    "longname": "src/Demo.js~Demo",
+    "access": "public",
+    "export": true,
+    "importPath": "three-demo/src/Demo.js",
+    "importStyle": "{Demo}",
+    "description": "A demo base class.",
+    "lineNumber": 8,
+    "interface": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#constructor",
+    "access": "public",
+    "description": "Constructs a new demo.",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "\"demo\"",
+        "defaultRaw": "demo",
+        "name": "id",
+        "description": "A unique identifier."
+      }
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "id",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#id",
+    "access": "public",
+    "description": "The id of this demo.",
+    "lineNumber": 24,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "composer",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#composer",
+    "access": "protected",
+    "description": "An effect composer.",
+    "lineNumber": 33,
+    "type": {
+      "nullable": null,
+      "types": [
+        "EffectComposer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "loadingManager",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#loadingManager",
+    "access": "protected",
+    "description": "A loading manager.",
+    "lineNumber": 42,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LoadingManager"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "assets",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#assets",
+    "access": "protected",
+    "description": "A collection of loaded assets.",
+    "lineNumber": 51,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "renderPass",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#renderPass",
+    "access": "protected",
+    "description": "A render pass that renders to screen.",
+    "lineNumber": 60,
+    "type": {
+      "nullable": null,
+      "types": [
+        "RenderPass"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "controls",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#controls",
+    "access": "protected",
+    "description": "Camera controls.",
+    "lineNumber": 70,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Disposable"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "ready",
+    "memberof": "src/Demo.js~Demo",
+    "static": false,
+    "longname": "src/Demo.js~Demo#ready",
+    "access": "public",
+    "description": "Indicates whether this demo is ready for rendering.\n\nThe {@link DemoManager} updates this flag automatically.",
+    "lineNumber": 80,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "get",
+    "name": "scene",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#scene",
+    "access": "public",
+    "description": "The scene.",
+    "lineNumber": 90,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Scene"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "set",
+    "name": "scene",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#scene",
+    "access": "public",
+    "description": "",
+    "lineNumber": 100,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Scene"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "get",
+    "name": "camera",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#camera",
+    "access": "public",
+    "description": "The camera.",
+    "lineNumber": 112,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Camera"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "set",
+    "name": "camera",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#camera",
+    "access": "public",
+    "description": "",
+    "lineNumber": 122,
+    "type": {
+      "nullable": null,
+      "types": [
+        "camera"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "setComposer",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#setComposer",
+    "access": "public",
+    "description": "Sets the effect composer.",
+    "lineNumber": 135,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "EffectComposer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "composer",
+        "description": "A composer."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Demo"
+      ],
+      "spread": false,
+      "description": "This demo."
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "load",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#load",
+    "access": "public",
+    "description": "Loads this demo.\n\nOverride this method to load assets.",
+    "lineNumber": 151,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "A promise that will be fulfilled as soon as all assets have been loaded."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "initialize",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#initialize",
+    "access": "public",
+    "description": "Initialises this demo.\n\nThis method will be called after reset.",
+    "lineNumber": 163,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "update",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#update",
+    "access": "public",
+    "description": "Updates this demo.",
+    "lineNumber": 171,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "delta",
+        "description": "The time since the last frame in seconds."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "registerOptions",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#registerOptions",
+    "access": "public",
+    "description": "Registers configuration options.\n\nThis method will be called after initialize.",
+    "lineNumber": 181,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "GUI"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "menu",
+        "description": "A menu."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "reset",
+    "memberof": "src/Demo.js~Demo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Demo.js~Demo#reset",
+    "access": "public",
+    "description": "Resets this demo.",
+    "lineNumber": 189,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Demo"
+      ],
+      "spread": false,
+      "description": "This demo."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "name": "src/DemoManager.js",
+    "content": "import { EffectComposer } from \"postprocessing\";\r\nimport { EventTarget } from \"synthetic-event\";\r\nimport { Clock, WebGLRenderer } from \"three\";\r\nimport dat from \"dat.gui\";\r\nimport Stats from \"stats.js\";\r\n\r\nimport * as events from \"./demo-manager-events.js\";\r\n\r\n/**\r\n * A demo manager.\r\n */\r\n\r\nexport class DemoManager extends EventTarget {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager.\r\n\t *\r\n\t * @param {HTMLElement} viewport - The primary DOM container.\r\n\t * @param {Object} [options] - Additional options.\r\n\t * @param {HTMLElement} [options.aside] - A secondary DOM container.\r\n\t * @param {EffectComposer} [options.composer] - A custom effect composer.\r\n\t */\r\n\r\n\tconstructor(viewport, options = {}) {\r\n\r\n\t\tconst aside = (options.aside !== undefined) ? options.aside : viewport;\r\n\r\n\t\tsuper();\r\n\r\n\t\t/**\r\n\t\t * A composer.\r\n\t\t *\r\n\t\t * @type {EffectComposer}\r\n\t\t */\r\n\r\n\t\tthis.composer = (options.composer !== undefined) ? options.composer : (() => {\r\n\r\n\t\t\tconst renderer = new WebGLRenderer();\r\n\t\t\trenderer.setSize(window.innerWidth, window.innerHeight);\r\n\t\t\trenderer.setPixelRatio(window.devicePixelRatio);\r\n\t\t\trenderer.setClearColor(0x000000);\r\n\r\n\t\t\treturn new EffectComposer(renderer, {\r\n\t\t\t\tstencilBuffer: true,\r\n\t\t\t\tdepthTexture: true\r\n\t\t\t});\r\n\r\n\t\t})();\r\n\r\n\t\t/**\r\n\t\t * The main renderer.\r\n\t\t *\r\n\t\t * @type {WebGLRenderer}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.renderer = this.composer.renderer;\r\n\r\n\t\tviewport.appendChild(this.renderer.domElement);\r\n\r\n\t\t/**\r\n\t\t * A clock.\r\n\t\t *\r\n\t\t * @type {Clock}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.clock = new Clock();\r\n\r\n\t\t/**\r\n\t\t * A menu for custom demo options.\r\n\t\t *\r\n\t\t * @type {GUI}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\taside.appendChild(this.menu.domElement);\r\n\r\n\t\t/**\r\n\t\t * Performance statistics.\r\n\t\t *\r\n\t\t * @type {Stats}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.statistics = new Stats();\r\n\t\tthis.statistics.dom.id = \"statistics\";\r\n\r\n\t\taside.appendChild(this.statistics.domElement);\r\n\r\n\t\t/**\r\n\t\t * A collection of demos.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demos = new Map();\r\n\r\n\t\t/**\r\n\t\t * The id of the current demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demo = window.location.hash.slice(1);\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.currentDemo = null;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Updates the demo options menu.\r\n\t *\r\n\t * @private\r\n\t * @todo Use a menu library that is not as clunky as dat.GUI.\r\n\t */\r\n\r\n\tresetMenu() {\r\n\r\n\t\tconst node = this.menu.domElement.parentNode;\r\n\t\tconst menu = new dat.GUI({ autoPlace: false });\r\n\t\tconst selection = menu.add(this, \"demo\", Array.from(this.demos.keys()));\r\n\t\tselection.onChange(() => this.loadDemo());\r\n\r\n\t\tnode.removeChild(this.menu.domElement);\r\n\t\tnode.appendChild(menu.domElement);\r\n\r\n\t\tthis.menu.destroy();\r\n\t\tthis.menu = menu;\r\n\r\n\t\treturn menu;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Activates the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tstartDemo() {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst menu = this.resetMenu();\r\n\r\n\t\tdemo.initialize();\r\n\t\tdemo.registerOptions(menu);\r\n\t\tdemo.ready = true;\r\n\r\n\t\tthis.dispatchEvent(events.load);\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tloadDemo() {\r\n\r\n\t\tconst id = this.demo;\r\n\t\tconst menu = this.menu;\r\n\t\tconst demos = this.demos;\r\n\t\tconst composer = this.composer;\r\n\t\tconst renderer = this.renderer;\r\n\r\n\t\tlet demo, size;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\t// Update the URL.\r\n\t\t\twindow.location.hash = id;\r\n\r\n\t\t\t// Remove all passes and clear the screen.\r\n\t\t\tcomposer.reset();\r\n\t\t\trenderer.clear();\r\n\r\n\t\t\tdemo = this.currentDemo;\r\n\r\n\t\t\tif(demo !== null) {\r\n\r\n\t\t\t\tdemo.reset();\r\n\r\n\t\t\t\t// Update and use the main renderer.\r\n\t\t\t\tsize = composer.renderer.getSize();\r\n\t\t\t\trenderer.setSize(size.width, size.height);\r\n\t\t\t\tcomposer.replaceRenderer(renderer);\r\n\r\n\t\t\t}\r\n\r\n\t\t\tif(menu !== null) {\r\n\r\n\t\t\t\tmenu.domElement.style.display = \"none\";\r\n\r\n\t\t\t}\r\n\r\n\t\t\tdemo = demos.get(id);\r\n\t\t\tthis.currentDemo = demo;\r\n\t\t\tcomposer.addPass(demo.renderPass);\r\n\r\n\t\t\tthis.dispatchEvent(events.change);\r\n\r\n\t\t\tdemo.load().then(() => this.startDemo()).catch((e) => {\r\n\r\n\t\t\t\tconsole.error(\"An unexpected error occured during the loading process\", e);\r\n\r\n\t\t\t});\r\n\r\n\t\t} else {\r\n\r\n\t\t\tconsole.error(\"Invalid demo id\", id);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Adds a demo.\r\n\t *\r\n\t * @param {Demo} demo - The demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\taddDemo(demo) {\r\n\r\n\t\tconst id = this.demo;\r\n\r\n\t\tthis.demos.set(demo.id, demo.setComposer(this.composer));\r\n\r\n\t\tif(id.length === 0) {\r\n\r\n\t\t\tthis.demo = demo.id;\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t} else if(id === demo.id) {\r\n\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Removes a demo.\r\n\t *\r\n\t * @param {String} id - The id of the demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\tremoveDemo(id) {\r\n\r\n\t\tconst demos = this.demos;\r\n\r\n\t\tlet entry;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\tdemos.delete(id);\r\n\r\n\t\t\tif(this.demo === id) {\r\n\r\n\t\t\t\tentry = demos.entries().next().value;\r\n\t\t\t\tthis.demo = entry[0];\r\n\t\t\t\tthis.currentDemo = entry[1];\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the render size.\r\n\t *\r\n\t * @param {Number} width - The width.\r\n\t * @param {Number} height - The height.\r\n\t */\r\n\r\n\tsetSize(width, height) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\r\n\t\tthis.composer.setSize(width, height);\r\n\r\n\t\tif(demo !== null && demo.camera !== null) {\r\n\r\n\t\t\tdemo.camera.aspect = width / height;\r\n\t\t\tdemo.camera.updateProjectionMatrix();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The main render loop.\r\n\t *\r\n\t * @param {DOMHighResTimeStamp} now - The current time.\r\n\t */\r\n\r\n\trender(now) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst delta = this.clock.getDelta();\r\n\r\n\t\tif(demo !== null && demo.ready) {\r\n\r\n\t\t\tthis.statistics.begin();\r\n\r\n\t\t\tdemo.update(delta);\r\n\t\t\tthis.composer.render(delta);\r\n\r\n\t\t\tthis.statistics.end();\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n}\r\n",
+    "static": true,
+    "longname": "C:/Users/Raoul/Sourcecode/JavaScript/three-demo/src/DemoManager.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 76,
+    "kind": "class",
+    "name": "DemoManager",
+    "memberof": "src/DemoManager.js",
+    "static": true,
+    "longname": "src/DemoManager.js~DemoManager",
+    "access": "public",
+    "export": true,
+    "importPath": "three-demo/src/DemoManager.js",
+    "importStyle": "{DemoManager}",
+    "description": "A demo manager.",
+    "lineNumber": 13,
+    "interface": false,
+    "extends": [
+      "synthetic-event~EventTarget"
+    ]
+  },
+  {
+    "__docId__": 77,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#constructor",
+    "access": "public",
+    "description": "Constructs a new demo manager.",
+    "lineNumber": 24,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "HTMLElement"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "viewport",
+        "description": "The primary DOM container."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "Additional options."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "HTMLElement"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.aside",
+        "description": "A secondary DOM container."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "EffectComposer"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.composer",
+        "description": "A custom effect composer."
+      }
+    ]
+  },
+  {
+    "__docId__": 78,
+    "kind": "member",
+    "name": "composer",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#composer",
+    "access": "public",
+    "description": "A composer.",
+    "lineNumber": 36,
+    "type": {
+      "nullable": null,
+      "types": [
+        "EffectComposer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "member",
+    "name": "renderer",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#renderer",
+    "access": "private",
+    "description": "The main renderer.",
+    "lineNumber": 57,
+    "type": {
+      "nullable": null,
+      "types": [
+        "WebGLRenderer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "member",
+    "name": "clock",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#clock",
+    "access": "private",
+    "description": "A clock.",
+    "lineNumber": 68,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Clock"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "menu",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#menu",
+    "access": "private",
+    "description": "A menu for custom demo options.",
+    "lineNumber": 77,
+    "type": {
+      "nullable": null,
+      "types": [
+        "GUI"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "member",
+    "name": "statistics",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#statistics",
+    "access": "private",
+    "description": "Performance statistics.",
+    "lineNumber": 88,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Stats"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "member",
+    "name": "demos",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#demos",
+    "access": "private",
+    "description": "A collection of demos.",
+    "lineNumber": 100,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "member",
+    "name": "demo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#demo",
+    "access": "private",
+    "description": "The id of the current demo.",
+    "lineNumber": 109,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "member",
+    "name": "currentDemo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#currentDemo",
+    "access": "private",
+    "description": "The current demo.",
+    "lineNumber": 118,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Demo"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "method",
+    "name": "resetMenu",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#resetMenu",
+    "access": "private",
+    "description": "Updates the demo options menu.",
+    "lineNumber": 129,
+    "todo": [
+      "Use a menu library that is not as clunky as dat.GUI."
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "method",
+    "name": "startDemo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#startDemo",
+    "access": "private",
+    "description": "Activates the currently selected demo.",
+    "lineNumber": 152,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "loadDemo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#loadDemo",
+    "access": "private",
+    "description": "Loads the currently selected demo.",
+    "lineNumber": 171,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "name": "addDemo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#addDemo",
+    "access": "public",
+    "description": "Adds a demo.",
+    "lineNumber": 236,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Demo"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "demo",
+        "description": "The demo."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "DemoManager"
+      ],
+      "spread": false,
+      "description": "This manager."
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "removeDemo",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#removeDemo",
+    "access": "public",
+    "description": "Removes a demo.",
+    "lineNumber": 264,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The id of the demo."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "DemoManager"
+      ],
+      "spread": false,
+      "description": "This manager."
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "setSize",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#setSize",
+    "access": "public",
+    "description": "Sets the render size.",
+    "lineNumber": 295,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/DemoManager.js~DemoManager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/DemoManager.js~DemoManager#render",
+    "access": "public",
+    "description": "The main render loop.",
+    "lineNumber": 316,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "DOMHighResTimeStamp"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "now",
+        "description": "The current time."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 98,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/**\r\n * Core components.\r\n *\r\n * @module three-demo\r\n */\r\n\r\nexport { Demo } from \"./Demo.js\";\r\nexport { DemoManager } from \"./DemoManager.js\";\r\n",
+    "static": true,
+    "longname": "C:/Users/Raoul/Sourcecode/JavaScript/three-demo/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# Three Demo\r\n\r\n[![Build status](https://travis-ci.org/vanruesc/three-demo.svg?branch=master)](https://travis-ci.org/vanruesc/three-demo) \r\n[![npm version](https://badge.fury.io/js/three-demo.svg)](http://badge.fury.io/js/three-demo) \r\n[![Dependencies](https://david-dm.org/vanruesc/three-demo.svg?branch=master)](https://david-dm.org/vanruesc/three-demo)\r\n\r\nA compact demo framework for [three.js](https://threejs.org/). Supports [postprocessing](https://github.com/vanruesc/postprocessing).\r\n\r\n*[Demo](https://vanruesc.github.io/three-demo/public/demo) &there4;\r\n[API Reference](https://vanruesc.github.io/three-demo/public/docs)*\r\n\r\n\r\n## Installation\r\n\r\n```sh\r\nnpm install three-demo\r\n``` \r\n\r\n\r\n## Usage\r\n\r\n```javascript\r\n// Initialise the demo manager.\r\nmanager = new DemoManager(document.getElementById(\"viewport\"));\r\n\r\n// Register your custom demos.\r\nmanager.addDemo(new MyDemo());\r\n\r\n// Start rendering.\r\n(function render(now) {\r\n\r\n\trequestAnimationFrame(render);\r\n\tmanager.render(now);\r\n\r\n}());\r\n```\r\n\r\n\r\n## Custom Demos\r\n\r\n```javascript\r\n// Initialise the demo manager.\r\nmanager = new DemoManager(document.getElementById(\"viewport\"));\r\n\r\n// Register your custom demos.\r\nmanager.addDemo(new MyDemo());\r\n\r\n// Start rendering.\r\n(function render(now) {\r\n\r\n\trequestAnimationFrame(render);\r\n\tmanager.render(now);\r\n\r\n}());\r\n```\r\n\r\n\r\n## Contributing\r\n\r\nPlease refer to the [contribution guidelines](https://github.com/vanruesc/three-demo/blob/master/CONTRIBUTING.md) for details.\r\n",
+    "longname": "C:\\Users\\Raoul\\Sourcecode\\JavaScript\\three-demo\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\r\n\t\"name\": \"three-demo\",\r\n\t\"version\": \"0.0.0\",\r\n\t\"description\": \"A demo scaffold for three.js.\",\r\n\t\"homepage\": \"https://github.com/vanruesc/three-demo\",\r\n\t\"main\": \"build/three-demo.js\",\r\n\t\"module\": \"src/index.js\",\r\n\t\"license\": \"Zlib\",\r\n\r\n\t\"keywords\": [\r\n\t\t\"demo\",\r\n\t\t\"scaffold\",\r\n\t\t\"three\",\r\n\t\t\"postprocessing\",\r\n\t\t\"3d\"\r\n\t],\r\n\r\n\t\"author\": {\r\n\t\t\"name\": \"Raoul van Rüschen\",\r\n\t\t\"email\": \"vanruesc@outlook.de\"\r\n\t},\r\n\r\n\t\"repository\": {\r\n\t\t\"type\": \"git\",\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo.git\"\r\n\t},\r\n\r\n\t\"bugs\": {\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo/issues\"\r\n\t},\r\n\r\n\t\"files\": [\r\n\t\t\"src\",\r\n\t\t\"build\"\r\n\t],\r\n\r\n\t\"scripts\": {\r\n\t\t\"test\": \"grunt --production\"\r\n\t},\r\n\r\n\t\"engines\": {\r\n\t\t\"node\": \">=4.0.0\"\r\n\t},\r\n\r\n\t\"eslintConfig\": {\r\n\t\t\"extends\": \"delta\"\r\n\t},\r\n\r\n\t\"dependencies\": {\r\n\t\t\"postprocessing\": \"4.x.x\",\r\n\t\t\"synthetic-event\": \"0.x.x\",\r\n\t\t\"three\": \"0.88.x\"\r\n\t},\r\n\r\n\t\"devDependencies\": {\r\n\t\t\"@vanruesc/grunt-esdoc\": \"0.x.x\",\r\n\t\t\"babel-core\": \"6.x.x\",\r\n\t\t\"babel-plugin-external-helpers\": \"6.x.x\",\r\n\t\t\"babel-preset-env\": \"1.x.x\",\r\n\t\t\"esdoc-standard-plugin\": \"1.x.x\",\r\n\t\t\"eslint-config-delta\": \"0.x.x\",\r\n\t\t\"grunt\": \"1.x.x\",\r\n\t\t\"grunt-cli\": \"1.x.x\",\r\n\t\t\"grunt-contrib-nodeunit\": \"1.x.x\",\r\n\t\t\"grunt-contrib-uglify\": \"3.x.x\",\r\n\t\t\"grunt-contrib-copy\": \"1.x.x\",\r\n\t\t\"grunt-eslint\": \"20.x.x\",\r\n\t\t\"grunt-rollup\": \"8.x.x\",\r\n\t\t\"jit-grunt\": \"0.x.x\",\r\n\t\t\"load-grunt-config\": \"0.x.x\",\r\n\t\t\"rollup-plugin-babel\": \"3.x.x\",\r\n\t\t\"rollup-plugin-node-resolve\": \"3.x.x\",\r\n\t\t\"time-grunt\": \"1.x.x\"\r\n\t}\r\n}\r\n",
+    "longname": "C:\\Users\\Raoul\\Sourcecode\\JavaScript\\three-demo\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

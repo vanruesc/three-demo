@@ -1,0 +1,75 @@
+{
+	"name": "three-demo",
+	"version": "0.0.0",
+	"description": "A demo scaffold for three.js.",
+	"homepage": "https://github.com/vanruesc/three-demo",
+	"main": "build/three-demo.js",
+	"module": "src/index.js",
+	"license": "Zlib",
+
+	"keywords": [
+		"demo",
+		"scaffold",
+		"three",
+		"postprocessing",
+		"3d"
+	],
+
+	"author": {
+		"name": "Raoul van Rüschen",
+		"email": "vanruesc@outlook.de"
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vanruesc/three-demo.git"
+	},
+
+	"bugs": {
+		"url": "https://github.com/vanruesc/three-demo/issues"
+	},
+
+	"files": [
+		"src",
+		"build"
+	],
+
+	"scripts": {
+		"test": "grunt --production"
+	},
+
+	"engines": {
+		"node": ">=4.0.0"
+	},
+
+	"eslintConfig": {
+		"extends": "delta"
+	},
+
+	"dependencies": {
+		"postprocessing": "4.x.x",
+		"synthetic-event": "0.x.x",
+		"three": "0.88.x"
+	},
+
+	"devDependencies": {
+		"@vanruesc/grunt-esdoc": "0.x.x",
+		"babel-core": "6.x.x",
+		"babel-plugin-external-helpers": "6.x.x",
+		"babel-preset-env": "1.x.x",
+		"esdoc-standard-plugin": "1.x.x",
+		"eslint-config-delta": "0.x.x",
+		"grunt": "1.x.x",
+		"grunt-cli": "1.x.x",
+		"grunt-contrib-nodeunit": "1.x.x",
+		"grunt-contrib-uglify": "3.x.x",
+		"grunt-contrib-copy": "1.x.x",
+		"grunt-eslint": "20.x.x",
+		"grunt-rollup": "8.x.x",
+		"jit-grunt": "0.x.x",
+		"load-grunt-config": "0.x.x",
+		"rollup-plugin-babel": "3.x.x",
+		"rollup-plugin-node-resolve": "3.x.x",
+		"time-grunt": "1.x.x"
+	}
+}
