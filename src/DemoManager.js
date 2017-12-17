@@ -150,21 +150,25 @@ export class DemoManager extends EventTarget {
 	}
 
 	/**
-	 * Activates the currently selected demo.
+	 * Activates the given demo if it's still selected.
+	 *
+	 * While the demo was loading, another demo may have been selected already.
 	 *
 	 * @private
+	 * @param {Demo} demo - A demo that just finished loading.
 	 */
 
-	startDemo() {
+	startDemo(demo) {
 
-		const demo = this.currentDemo;
-		const menu = this.resetMenu();
+		if(demo.id === this.demo) {
 
-		demo.initialize();
-		demo.registerOptions(menu);
-		demo.ready = true;
+			demo.initialize();
+			demo.registerOptions(this.resetMenu());
+			demo.ready = true;
 
-		this.dispatchEvent(events.load);
+			this.dispatchEvent(events.load);
+
+		}
 
 	}
 
@@ -178,58 +182,40 @@ export class DemoManager extends EventTarget {
 
 		const id = this.demo;
 		const demos = this.demos;
+		const demo = demos.get(id);
 		const previousDemo = this.currentDemo;
 
 		const composer = this.composer;
 		const renderer = this.renderer;
 
-		let demo, size;
+		let size;
 
-		if(demos.has(id)) {
+		// Update the URL.
+		window.location.hash = id;
 
-			// Update the URL.
-			window.location.hash = id;
-			demo = demos.get(id);
+		if(previousDemo !== null) {
 
-			if(previousDemo !== null && previousDemo.ready) {
+			previousDemo.reset();
 
-				previousDemo.reset();
-
-				// Update and use the main renderer.
-				size = composer.renderer.getSize();
-				renderer.setSize(size.width, size.height);
-				composer.replaceRenderer(renderer);
-
-			}
-
-			if(this.menu !== null) {
-
-				this.menu.domElement.style.display = "none";
-
-			}
-
-			// Remove all passes and clear the screen.
-			composer.reset();
-			renderer.clear();
-
-			composer.addPass(demo.renderPass);
-
-			this.currentDemo = demo;
-			this.dispatchEvent(events.change);
-
-			demo.load().then(() => this.startDemo()).catch((e) => {
-
-				events.error.error = e;
-				this.dispatchEvent(events.error);
-
-			});
-
-		} else {
-
-			events.error.error = new Error("Could not find the specified demo" + id);
-			this.dispatchEvent(events.error);
+			// Update and use the main renderer.
+			size = composer.renderer.getSize();
+			renderer.setSize(size.width, size.height);
+			composer.replaceRenderer(renderer);
 
 		}
+
+		this.menu.domElement.style.display = "none";
+
+		// Clear the screen and remove all passes.
+		renderer.clear();
+		composer.reset();
+		composer.addPass(demo.renderPass);
+
+		this.currentDemo = demo;
+		this.dispatchEvent(events.change);
+
+		demo.load().then(() => this.startDemo(demo))
+			.catch((e) => console.error(e));
 
 	}
 
@@ -274,14 +260,18 @@ export class DemoManager extends EventTarget {
 
 			if(this.demo === id && demos.size > 0) {
 
+				// Load the first of the remaining demos.
 				firstEntry = demos.entries().next().value;
 				this.demo = firstEntry[0];
 				this.currentDemo = firstEntry[1];
+				this.loadDemo();
 
 			} else {
 
 				this.demo = null;
 				this.currentDemo = null;
+				this.renderer.clear();
+				this.composer.reset();
 
 			}
 
