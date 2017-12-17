@@ -51,20 +51,6 @@ function onLoad(event) {
 }
 
 /**
- * Handles demo error events.
- *
- * @private
- * @param {ErrorEvent} event - An event.
- */
-
-function onError(event) {
-
-	document.getElementById("viewport").children[0].style.display = "none";
-	console.error(event.error);
-
-}
-
-/**
  * Starts the program.
  *
  * @private
@@ -84,7 +70,6 @@ window.addEventListener("load", function main(event) {
 	// Setup demo loading event handlers.
 	manager.addEventListener("change", onChange);
 	manager.addEventListener("load", onLoad);
-	manager.addEventListener("error", onError);
 
 	// Register demos.
 	const emptyDemo = new Demo("empty");

@@ -1,5 +1,5 @@
 /**
- * three-demo v0.0.1 build Dec 17 2017
+ * three-demo v0.0.2 build Dec 17 2017
  * https://github.com/vanruesc/three-demo
  * Copyright 2017 Raoul van Rüschen, Zlib
  */
@@ -4207,28 +4207,9 @@
   		return EventTarget;
   }();
 
-  var ErrorEvent = function (_Event) {
-  	inherits(ErrorEvent, _Event);
-
-  	function ErrorEvent() {
-  		var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  		classCallCheck(this, ErrorEvent);
-
-  		var _this = possibleConstructorReturn(this, (ErrorEvent.__proto__ || Object.getPrototypeOf(ErrorEvent)).call(this, "error"));
-
-  		_this.error = error;
-
-  		return _this;
-  	}
-
-  	return ErrorEvent;
-  }(Event);
-
   var change = new Event("change");
 
   var load = new Event("load");
-
-  var error = new ErrorEvent();
 
   var initialHash = window.location.hash.slice(1);
 
@@ -4299,16 +4280,16 @@
   				}
   		}, {
   				key: "startDemo",
-  				value: function startDemo() {
+  				value: function startDemo(demo) {
 
-  						var demo = this.currentDemo;
-  						var menu = this.resetMenu();
+  						if (demo.id === this.demo) {
 
-  						demo.initialize();
-  						demo.registerOptions(menu);
-  						demo.ready = true;
+  								demo.initialize();
+  								demo.registerOptions(this.resetMenu());
+  								demo.ready = true;
 
-  						this.dispatchEvent(load);
+  								this.dispatchEvent(load);
+  						}
   				}
   		}, {
   				key: "loadDemo",
@@ -4317,52 +4298,39 @@
 
   						var id = this.demo;
   						var demos = this.demos;
+  						var demo = demos.get(id);
   						var previousDemo = this.currentDemo;
 
   						var composer = this.composer;
   						var renderer = this.renderer;
 
-  						var demo = void 0,
-  						    size = void 0;
+  						var size = void 0;
 
-  						if (demos.has(id)) {
-  								window.location.hash = id;
-  								demo = demos.get(id);
+  						window.location.hash = id;
 
-  								if (previousDemo !== null && previousDemo.ready) {
+  						if (previousDemo !== null) {
 
-  										previousDemo.reset();
+  								previousDemo.reset();
 
-  										size = composer.renderer.getSize();
-  										renderer.setSize(size.width, size.height);
-  										composer.replaceRenderer(renderer);
-  								}
-
-  								if (this.menu !== null) {
-
-  										this.menu.domElement.style.display = "none";
-  								}
-
-  								composer.reset();
-  								renderer.clear();
-
-  								composer.addPass(demo.renderPass);
-
-  								this.currentDemo = demo;
-  								this.dispatchEvent(change);
-
-  								demo.load().then(function () {
-  										return _this3.startDemo();
-  								}).catch(function (e) {
-
-  										error.error = e;
-  										_this3.dispatchEvent(error);
-  								});
-  						} else {
-
-  								error.error = new Error("Could not find the specified demo" + id);
-  								this.dispatchEvent(error);
+  								size = composer.renderer.getSize();
+  								renderer.setSize(size.width, size.height);
+  								composer.replaceRenderer(renderer);
   						}
+
+  						this.menu.domElement.style.display = "none";
+
+  						renderer.clear();
+  						composer.reset();
+  						composer.addPass(demo.renderPass);
+
+  						this.currentDemo = demo;
+  						this.dispatchEvent(change);
+
+  						demo.load().then(function () {
+  								return _this3.startDemo(demo);
+  						}).catch(function (e) {
+  								return console.error(e);
+  						});
   				}
   		}, {
   				key: "addDemo",
@@ -4391,14 +4359,16 @@
   								demos.delete(id);
 
   								if (this.demo === id && demos.size > 0) {
-
   										firstEntry = demos.entries().next().value;
   										this.demo = firstEntry[0];
   										this.currentDemo = firstEntry[1];
+  										this.loadDemo();
   								} else {
 
   										this.demo = null;
   										this.currentDemo = null;
+  										this.renderer.clear();
+  										this.composer.reset();
   								}
   						}
 
@@ -4441,7 +4411,6 @@
 
   exports.Demo = Demo;
   exports.DemoManager = DemoManager;
-  exports.ErrorEvent = ErrorEvent;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

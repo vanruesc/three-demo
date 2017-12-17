@@ -4198,28 +4198,9 @@
   		return EventTarget;
   }();
 
-  var ErrorEvent = function (_Event) {
-  	inherits(ErrorEvent, _Event);
-
-  	function ErrorEvent() {
-  		var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  		classCallCheck(this, ErrorEvent);
-
-  		var _this = possibleConstructorReturn(this, (ErrorEvent.__proto__ || Object.getPrototypeOf(ErrorEvent)).call(this, "error"));
-
-  		_this.error = error;
-
-  		return _this;
-  	}
-
-  	return ErrorEvent;
-  }(Event);
-
   var change = new Event("change");
 
   var load = new Event("load");
-
-  var error = new ErrorEvent();
 
   var initialHash = window.location.hash.slice(1);
 
@@ -4290,16 +4271,16 @@
   				}
   		}, {
   				key: "startDemo",
-  				value: function startDemo() {
+  				value: function startDemo(demo) {
 
-  						var demo = this.currentDemo;
-  						var menu = this.resetMenu();
+  						if (demo.id === this.demo) {
 
-  						demo.initialize();
-  						demo.registerOptions(menu);
-  						demo.ready = true;
+  								demo.initialize();
+  								demo.registerOptions(this.resetMenu());
+  								demo.ready = true;
 
-  						this.dispatchEvent(load);
+  								this.dispatchEvent(load);
+  						}
   				}
   		}, {
   				key: "loadDemo",
@@ -4308,52 +4289,39 @@
 
   						var id = this.demo;
   						var demos = this.demos;
+  						var demo = demos.get(id);
   						var previousDemo = this.currentDemo;
 
   						var composer = this.composer;
   						var renderer = this.renderer;
 
-  						var demo = void 0,
-  						    size = void 0;
+  						var size = void 0;
 
-  						if (demos.has(id)) {
-  								window.location.hash = id;
-  								demo = demos.get(id);
+  						window.location.hash = id;
 
-  								if (previousDemo !== null && previousDemo.ready) {
+  						if (previousDemo !== null) {
 
-  										previousDemo.reset();
+  								previousDemo.reset();
 
-  										size = composer.renderer.getSize();
-  										renderer.setSize(size.width, size.height);
-  										composer.replaceRenderer(renderer);
-  								}
-
-  								if (this.menu !== null) {
-
-  										this.menu.domElement.style.display = "none";
-  								}
-
-  								composer.reset();
-  								renderer.clear();
-
-  								composer.addPass(demo.renderPass);
-
-  								this.currentDemo = demo;
-  								this.dispatchEvent(change);
-
-  								demo.load().then(function () {
-  										return _this3.startDemo();
-  								}).catch(function (e) {
-
-  										error.error = e;
-  										_this3.dispatchEvent(error);
-  								});
-  						} else {
-
-  								error.error = new Error("Could not find the specified demo" + id);
-  								this.dispatchEvent(error);
+  								size = composer.renderer.getSize();
+  								renderer.setSize(size.width, size.height);
+  								composer.replaceRenderer(renderer);
   						}
+
+  						this.menu.domElement.style.display = "none";
+
+  						renderer.clear();
+  						composer.reset();
+  						composer.addPass(demo.renderPass);
+
+  						this.currentDemo = demo;
+  						this.dispatchEvent(change);
+
+  						demo.load().then(function () {
+  								return _this3.startDemo(demo);
+  						}).catch(function (e) {
+  								return console.error(e);
+  						});
   				}
   		}, {
   				key: "addDemo",
@@ -4382,14 +4350,16 @@
   								demos.delete(id);
 
   								if (this.demo === id && demos.size > 0) {
-
   										firstEntry = demos.entries().next().value;
   										this.demo = firstEntry[0];
   										this.currentDemo = firstEntry[1];
+  										this.loadDemo();
   								} else {
 
   										this.demo = null;
   										this.currentDemo = null;
+  										this.renderer.clear();
+  										this.composer.reset();
   								}
   						}
 
@@ -4539,77 +4509,70 @@
 
   function render(now) {
 
-    requestAnimationFrame(render);
-    manager.render(now);
+  	requestAnimationFrame(render);
+  	manager.render(now);
   }
 
   function onChange(event) {
 
-    document.getElementById("viewport").children[0].style.display = "initial";
+  	document.getElementById("viewport").children[0].style.display = "initial";
   }
 
   function onLoad(event) {
 
-    document.getElementById("viewport").children[0].style.display = "none";
-  }
-
-  function onError(event) {
-
-    document.getElementById("viewport").children[0].style.display = "none";
-    console.error(event.error);
+  	document.getElementById("viewport").children[0].style.display = "none";
   }
 
   window.addEventListener("load", function main(event) {
-    this.removeEventListener("load", main);
+  	this.removeEventListener("load", main);
 
-    manager = new DemoManager(document.getElementById("viewport"), {
-      aside: document.getElementById("aside")
-    });
+  	manager = new DemoManager(document.getElementById("viewport"), {
+  		aside: document.getElementById("aside")
+  	});
 
-    manager.addEventListener("change", onChange);
-    manager.addEventListener("load", onLoad);
-    manager.addEventListener("error", onError);
+  	manager.addEventListener("change", onChange);
+  	manager.addEventListener("load", onLoad);
 
-    var emptyDemo = new Demo("empty");
-    emptyDemo.renderPass.enabled = false;
-    manager.addDemo(new ExampleDemo());
-    manager.addDemo(emptyDemo);
+  	var emptyDemo = new Demo("empty");
+  	emptyDemo.renderPass.enabled = false;
+  	manager.addDemo(new ExampleDemo());
+  	manager.addDemo(emptyDemo);
 
-    render();
+  	render();
   });
 
   window.addEventListener("resize", function () {
 
-    var timeoutId = 0;
+  	var timeoutId = 0;
 
-    function handleResize(event) {
+  	function handleResize(event) {
 
-      var width = event.target.innerWidth;
-      var height = event.target.innerHeight;
+  		var width = event.target.innerWidth;
+  		var height = event.target.innerHeight;
 
-      manager.setSize(width, height);
+  		manager.setSize(width, height);
 
-      timeoutId = 0;
-    }
+  		timeoutId = 0;
+  	}
 
-    return function onResize(event) {
+  	return function onResize(event) {
 
-      if (timeoutId === 0) {
+  		if (timeoutId === 0) {
 
-        timeoutId = setTimeout(handleResize, 66, event);
-      }
-    };
+  			timeoutId = setTimeout(handleResize, 66, event);
+  		}
+  	};
   }());
 
   document.addEventListener("keydown", function onKeyDown(event) {
 
-    var aside = this.getElementById("aside");
+  	var aside = this.getElementById("aside");
 
-    if (event.altKey && aside !== null) {
+  	if (event.altKey && aside !== null) {
 
-      event.preventDefault();
-      aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
-    }
+  		event.preventDefault();
+  		aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
+  	}
   });
 
 }(THREE,dat,Stats));

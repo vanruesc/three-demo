@@ -31,9 +31,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ErrorEvent.js~ErrorEvent.html">ErrorEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
 </div>
@@ -41,7 +39,6 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/demo-manager-events.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Event } from &quot;synthetic-event&quot;;
-import { ErrorEvent } from &quot;./ErrorEvent.js&quot;;
 
 /**
  * A demo change event.
@@ -64,17 +61,6 @@ export const change = new Event(&quot;change&quot;);
  */
 
 export const load = new Event(&quot;load&quot;);
-
-/**
- * A demo error event.
- *
- * This event is dispatched by {@link DemoManager}.
- *
- * @type {ErrorEvent}
- * @example demoManager.addEventListener(&quot;error&quot;, myListener);
- */
-
-export const error = new ErrorEvent();
 </code></pre>
 
 </div>

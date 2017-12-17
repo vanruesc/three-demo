@@ -31,9 +31,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ErrorEvent.js~ErrorEvent.html">ErrorEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
 </div>
@@ -560,13 +558,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html#instance-method-startDemo">startDemo</a></span></span><span class="code" data-ice="signature">()</span>
+          <span class="code" data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html#instance-method-startDemo">startDemo</a></span></span><span class="code" data-ice="signature">(demo: <span><a href="class/src/Demo.js~Demo.html">Demo</a></span>)</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Activates the currently selected demo.</p>
+        <div data-ice="description"><p>Activates the given demo if it&apos;s still selected.</p>
+<p>While the demo was loading, another demo may have been selected already.</p>
 </div>
       </div>
     </td>
@@ -1039,7 +1038,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber243">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber229">source</a></span></span>
     </span>
   </h3>
 
@@ -1113,7 +1112,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber265">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber251">source</a></span></span>
     </span>
   </h3>
 
@@ -1187,7 +1186,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber322">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber312">source</a></span></span>
     </span>
   </h3>
 
@@ -1248,7 +1247,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber301">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber291">source</a></span></span>
     </span>
   </h3>
 
@@ -1318,7 +1317,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber177">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber181">source</a></span></span>
     </span>
   </h3>
 
@@ -1415,23 +1414,41 @@
     
     
     
-    <span class="code" data-ice="name">startDemo</span><span class="code" data-ice="signature">()</span>
+    <span class="code" data-ice="name">startDemo</span><span class="code" data-ice="signature">(demo: <span><a href="class/src/Demo.js~Demo.html">Demo</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber158">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/DemoManager.js.html#lineNumber161">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Activates the currently selected demo.</p>
+  <div data-ice="description"><p>Activates the given demo if it&apos;s still selected.</p>
+<p>While the demo was loading, another demo may have been selected already.</p>
 </div>
 
   
 
-  <div data-ice="properties">
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">demo</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>A demo that just finished loading.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
 </div>
 
   
