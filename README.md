@@ -24,7 +24,7 @@ import { DemoManager } from "three-demo";
 import { MyDemo } from "./MyDemo.js";
 
 // Initialise the demo manager.
-manager = new DemoManager(document.getElementById("viewport"), {
+const manager = new DemoManager(document.getElementById("viewport"), {
 	aside: document.getElementById("aside"),
 	composer: myCustomComposer
 });
