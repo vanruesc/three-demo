@@ -54,7 +54,6 @@ export class Demo {
 		 * A render pass that renders to screen.
 		 *
 		 * @type {RenderPass}
-		 * @protected
 		 */
 
 		this.renderPass = new RenderPass(new Scene(), null);
