@@ -7,6 +7,15 @@ import Stats from "stats.js";
 import * as events from "./demo-manager-events.js";
 
 /**
+ * The initial URL hash value.
+ *
+ * @type {String}
+ * @private
+ */
+
+const initialHash = window.location.hash.slice(1);
+
+/**
  * A demo manager.
  */
 
@@ -102,7 +111,7 @@ export class DemoManager extends EventTarget {
 		 * @private
 		 */
 
-		this.demo = window.location.hash.slice(1);
+		this.demo = null;
 
 		/**
 		 * The current demo.
@@ -168,8 +177,9 @@ export class DemoManager extends EventTarget {
 	loadDemo() {
 
 		const id = this.demo;
-		const menu = this.menu;
 		const demos = this.demos;
+		const previousDemo = this.currentDemo;
+
 		const composer = this.composer;
 		const renderer = this.renderer;
 
@@ -179,16 +189,11 @@ export class DemoManager extends EventTarget {
 
 			// Update the URL.
 			window.location.hash = id;
+			demo = demos.get(id);
 
-			// Remove all passes and clear the screen.
-			composer.reset();
-			renderer.clear();
+			if(previousDemo !== null && previousDemo.ready) {
 
-			demo = this.currentDemo;
-
-			if(demo !== null) {
-
-				demo.reset();
+				previousDemo.reset();
 
 				// Update and use the main renderer.
 				size = composer.renderer.getSize();
@@ -197,16 +202,19 @@ export class DemoManager extends EventTarget {
 
 			}
 
-			if(menu !== null) {
+			if(this.menu !== null) {
 
-				menu.domElement.style.display = "none";
+				this.menu.domElement.style.display = "none";
 
 			}
 
-			demo = demos.get(id);
-			this.currentDemo = demo;
+			// Remove all passes and clear the screen.
+			composer.reset();
+			renderer.clear();
+
 			composer.addPass(demo.renderPass);
 
+			this.currentDemo = demo;
 			this.dispatchEvent(events.change);
 
 			demo.load().then(() => this.startDemo()).catch((e) => {
@@ -232,17 +240,11 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
-		const id = this.demo;
-
 		this.demos.set(demo.id, demo.setComposer(this.composer));
 
-		if(id.length === 0) {
+		if(this.demo === null || demo.id === initialHash) {
 
 			this.demo = demo.id;
-			this.loadDemo();
-
-		} else if(id === demo.id) {
-
 			this.loadDemo();
 
 		}
@@ -262,17 +264,22 @@ export class DemoManager extends EventTarget {
 
 		const demos = this.demos;
 
-		let entry;
+		let firstEntry;
 
 		if(demos.has(id)) {
 
 			demos.delete(id);
 
-			if(this.demo === id) {
+			if(this.demo === id && demos.size > 0) {
 
-				entry = demos.entries().next().value;
-				this.demo = entry[0];
-				this.currentDemo = entry[1];
+				firstEntry = demos.entries().next().value;
+				this.demo = firstEntry[0];
+				this.currentDemo = firstEntry[1];
+
+			} else {
+
+				this.demo = null;
+				this.currentDemo = null;
 
 			}
 
