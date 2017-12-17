@@ -4198,9 +4198,30 @@
   		return EventTarget;
   }();
 
+  var ErrorEvent = function (_Event) {
+  	inherits(ErrorEvent, _Event);
+
+  	function ErrorEvent() {
+  		var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  		classCallCheck(this, ErrorEvent);
+
+  		var _this = possibleConstructorReturn(this, (ErrorEvent.__proto__ || Object.getPrototypeOf(ErrorEvent)).call(this, "error"));
+
+  		_this.error = error;
+
+  		return _this;
+  	}
+
+  	return ErrorEvent;
+  }(Event);
+
   var change = new Event("change");
 
   var load = new Event("load");
+
+  var error = new ErrorEvent();
+
+  var initialHash = window.location.hash.slice(1);
 
   var DemoManager = function (_EventTarget) {
   		inherits(DemoManager, _EventTarget);
@@ -4217,14 +4238,10 @@
   				_this.composer = options.composer !== undefined ? options.composer : function () {
 
   						var renderer = new three.WebGLRenderer();
-  						renderer.setSize(window.innerWidth, window.innerHeight);
+  						renderer.setSize(viewport.clientWidth, viewport.clientHeight);
   						renderer.setPixelRatio(window.devicePixelRatio);
-  						renderer.setClearColor(0x000000);
 
-  						return new EffectComposer(renderer, {
-  								stencilBuffer: true,
-  								depthTexture: true
-  						});
+  						return new EffectComposer(renderer);
   				}();
 
   				_this.renderer = _this.composer.renderer;
@@ -4244,7 +4261,7 @@
 
   				_this.demos = new Map();
 
-  				_this.demo = window.location.hash.slice(1);
+  				_this.demo = null;
 
   				_this.currentDemo = null;
 
@@ -4290,8 +4307,9 @@
   						var _this3 = this;
 
   						var id = this.demo;
-  						var menu = this.menu;
   						var demos = this.demos;
+  						var previousDemo = this.currentDemo;
+
   						var composer = this.composer;
   						var renderer = this.renderer;
 
@@ -4300,57 +4318,52 @@
 
   						if (demos.has(id)) {
   								window.location.hash = id;
+  								demo = demos.get(id);
 
-  								composer.reset();
-  								renderer.clear();
+  								if (previousDemo !== null && previousDemo.ready) {
 
-  								demo = this.currentDemo;
-
-  								if (demo !== null) {
-
-  										demo.reset();
+  										previousDemo.reset();
 
   										size = composer.renderer.getSize();
   										renderer.setSize(size.width, size.height);
   										composer.replaceRenderer(renderer);
   								}
 
-  								if (menu !== null) {
+  								if (this.menu !== null) {
 
-  										menu.domElement.style.display = "none";
+  										this.menu.domElement.style.display = "none";
   								}
 
-  								demo = demos.get(id);
-  								this.currentDemo = demo;
+  								composer.reset();
+  								renderer.clear();
+
   								composer.addPass(demo.renderPass);
 
+  								this.currentDemo = demo;
   								this.dispatchEvent(change);
 
   								demo.load().then(function () {
   										return _this3.startDemo();
   								}).catch(function (e) {
 
-  										console.error("An unexpected error occured during the loading process", e);
+  										error.error = e;
+  										_this3.dispatchEvent(error);
   								});
   						} else {
 
-  								console.error("Invalid demo id", id);
+  								error.error = new Error("Could not find the specified demo" + id);
+  								this.dispatchEvent(error);
   						}
   				}
   		}, {
   				key: "addDemo",
   				value: function addDemo(demo) {
 
-  						var id = this.demo;
-
   						this.demos.set(demo.id, demo.setComposer(this.composer));
 
-  						if (id.length === 0) {
+  						if (this.demo === null || demo.id === initialHash) {
 
   								this.demo = demo.id;
-  								this.loadDemo();
-  						} else if (id === demo.id) {
-
   								this.loadDemo();
   						}
 
@@ -4362,17 +4375,21 @@
 
   						var demos = this.demos;
 
-  						var entry = void 0;
+  						var firstEntry = void 0;
 
   						if (demos.has(id)) {
 
   								demos.delete(id);
 
-  								if (this.demo === id) {
+  								if (this.demo === id && demos.size > 0) {
 
-  										entry = demos.entries().next().value;
-  										this.demo = entry[0];
-  										this.currentDemo = entry[1];
+  										firstEntry = demos.entries().next().value;
+  										this.demo = firstEntry[0];
+  										this.currentDemo = firstEntry[1];
+  								} else {
+
+  										this.demo = null;
+  										this.currentDemo = null;
   								}
   						}
 
@@ -4522,72 +4539,77 @@
 
   function render(now) {
 
-  	requestAnimationFrame(render);
-  	manager.render(now);
+    requestAnimationFrame(render);
+    manager.render(now);
   }
 
   function onChange(event) {
 
-  	manager.composer.renderer.domElement.style.display = "none";
-  	document.getElementById("viewport").children[0].style.display = "initial";
+    document.getElementById("viewport").children[0].style.display = "initial";
   }
 
   function onLoad(event) {
 
-  	document.getElementById("viewport").children[0].style.display = "none";
-  	manager.composer.renderer.domElement.style.display = "initial";
+    document.getElementById("viewport").children[0].style.display = "none";
+  }
+
+  function onError(event) {
+
+    document.getElementById("viewport").children[0].style.display = "none";
+    console.error(event.error);
   }
 
   window.addEventListener("load", function main(event) {
-  	this.removeEventListener("load", main);
+    this.removeEventListener("load", main);
 
-  	manager = new DemoManager(document.getElementById("viewport"), {
-  		aside: document.getElementById("aside")
-  	});
+    manager = new DemoManager(document.getElementById("viewport"), {
+      aside: document.getElementById("aside")
+    });
 
-  	var emptyDemo = new Demo("empty");
-  	emptyDemo.renderPass.enabled = false;
-  	manager.addDemo(new ExampleDemo());
-  	manager.addDemo(emptyDemo);
+    manager.addEventListener("change", onChange);
+    manager.addEventListener("load", onLoad);
+    manager.addEventListener("error", onError);
 
-  	manager.addEventListener("change", onChange);
-  	manager.addEventListener("load", onLoad);
+    var emptyDemo = new Demo("empty");
+    emptyDemo.renderPass.enabled = false;
+    manager.addDemo(new ExampleDemo());
+    manager.addDemo(emptyDemo);
 
-  	render();
+    render();
   });
 
   window.addEventListener("resize", function () {
 
-  	var timeoutId = 0;
+    var timeoutId = 0;
 
-  	function handleResize(event) {
+    function handleResize(event) {
 
-  		var width = event.target.innerWidth;
-  		var height = event.target.innerHeight;
+      var width = event.target.innerWidth;
+      var height = event.target.innerHeight;
 
-  		manager.setSize(width, height);
+      manager.setSize(width, height);
 
-  		timeoutId = 0;
-  	}
+      timeoutId = 0;
+    }
 
-  	return function onResize(event) {
+    return function onResize(event) {
 
-  		if (timeoutId === 0) {
+      if (timeoutId === 0) {
 
-  			timeoutId = setTimeout(handleResize, 66, event);
-  		}
-  	};
+        timeoutId = setTimeout(handleResize, 66, event);
+      }
+    };
   }());
 
   document.addEventListener("keydown", function onKeyDown(event) {
 
-  	var aside = this.getElementById("aside");
+    var aside = this.getElementById("aside");
 
-  	if (event.altKey && aside !== null) {
+    if (event.altKey && aside !== null) {
 
-  		event.preventDefault();
-  		aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
-  	}
+      event.preventDefault();
+      aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
+    }
   });
 
 }(THREE,dat,Stats));
