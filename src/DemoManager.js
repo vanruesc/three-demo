@@ -219,13 +219,15 @@ export class DemoManager extends EventTarget {
 
 			demo.load().then(() => this.startDemo()).catch((e) => {
 
-				console.error("An unexpected error occured during the loading process", e);
+				events.error.error = e;
+				this.dispatchEvent(events.error);
 
 			});
 
 		} else {
 
-			console.error("Invalid demo id", id);
+			events.error.error = new Error("Could not find the specified demo" + id);
+			this.dispatchEvent(events.error);
 
 		}
 
