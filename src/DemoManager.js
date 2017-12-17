@@ -36,14 +36,10 @@ export class DemoManager extends EventTarget {
 		this.composer = (options.composer !== undefined) ? options.composer : (() => {
 
 			const renderer = new WebGLRenderer();
-			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
 			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setClearColor(0x000000);
 
-			return new EffectComposer(renderer, {
-				stencilBuffer: true,
-				depthTexture: true
-			});
+			return new EffectComposer(renderer);
 
 		})();
 
