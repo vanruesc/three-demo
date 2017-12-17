@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 488,
+  "end": 761,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 24,
+      "line": 36,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 488,
+    "end": 761,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 24,
+        "line": 36,
         "column": 0
       }
     },
@@ -112,20 +112,106 @@
             "raw": "\"synthetic-event\""
           },
           "value": "synthetic-event"
+        }
+      },
+      {
+        "type": "ImportDeclaration",
+        "start": 42,
+        "end": 87,
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 45
+          }
+        },
+        "specifiers": [
+          {
+            "type": "ImportSpecifier",
+            "start": 51,
+            "end": 61,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 9
+              },
+              "end": {
+                "line": 2,
+                "column": 19
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 51,
+              "end": 61,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 9
+                },
+                "end": {
+                  "line": 2,
+                  "column": 19
+                },
+                "identifierName": "ErrorEvent"
+              },
+              "name": "ErrorEvent"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 51,
+              "end": 61,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 9
+                },
+                "end": {
+                  "line": 2,
+                  "column": 19
+                },
+                "identifierName": "ErrorEvent"
+              },
+              "name": "ErrorEvent"
+            }
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 69,
+          "end": 86,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 27
+            },
+            "end": {
+              "line": 2,
+              "column": 44
+            }
+          },
+          "extra": {
+            "rawValue": "./ErrorEvent.js",
+            "raw": "\"./ErrorEvent.js\""
+          },
+          "value": "./ErrorEvent.js"
         },
         "trailingComments": [
           {
             "type": "CommentBlock",
             "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
-            "start": 44,
-            "end": 221,
+            "start": 91,
+            "end": 268,
             "loc": {
               "start": {
-                "line": 3,
+                "line": 4,
                 "column": 0
               },
               "end": {
-                "line": 10,
+                "line": 11,
                 "column": 3
               }
             }
@@ -134,15 +220,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 225,
-        "end": 267,
+        "start": 272,
+        "end": 314,
         "loc": {
           "start": {
-            "line": 12,
+            "line": 13,
             "column": 0
           },
           "end": {
-            "line": 12,
+            "line": 13,
             "column": 42
           }
         },
@@ -150,44 +236,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 232,
-          "end": 267,
+          "start": 279,
+          "end": 314,
           "loc": {
             "start": {
-              "line": 12,
+              "line": 13,
               "column": 7
             },
             "end": {
-              "line": 12,
+              "line": 13,
               "column": 42
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 238,
-              "end": 266,
+              "start": 285,
+              "end": 313,
               "loc": {
                 "start": {
-                  "line": 12,
+                  "line": 13,
                   "column": 13
                 },
                 "end": {
-                  "line": 12,
+                  "line": 13,
                   "column": 41
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 238,
-                "end": 244,
+                "start": 285,
+                "end": 291,
                 "loc": {
                   "start": {
-                    "line": 12,
+                    "line": 13,
                     "column": 13
                   },
                   "end": {
-                    "line": 12,
+                    "line": 13,
                     "column": 19
                   },
                   "identifierName": "change"
@@ -197,29 +283,29 @@
               },
               "init": {
                 "type": "NewExpression",
-                "start": 247,
-                "end": 266,
+                "start": 294,
+                "end": 313,
                 "loc": {
                   "start": {
-                    "line": 12,
+                    "line": 13,
                     "column": 22
                   },
                   "end": {
-                    "line": 12,
+                    "line": 13,
                     "column": 41
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 251,
-                  "end": 256,
+                  "start": 298,
+                  "end": 303,
                   "loc": {
                     "start": {
-                      "line": 12,
+                      "line": 13,
                       "column": 26
                     },
                     "end": {
-                      "line": 12,
+                      "line": 13,
                       "column": 31
                     },
                     "identifierName": "Event"
@@ -229,15 +315,15 @@
                 "arguments": [
                   {
                     "type": "StringLiteral",
-                    "start": 257,
-                    "end": 265,
+                    "start": 304,
+                    "end": 312,
                     "loc": {
                       "start": {
-                        "line": 12,
+                        "line": 13,
                         "column": 32
                       },
                       "end": {
-                        "line": 12,
+                        "line": 13,
                         "column": 40
                       }
                     },
@@ -257,15 +343,15 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
-              "start": 44,
-              "end": 221,
+              "start": 91,
+              "end": 268,
               "loc": {
                 "start": {
-                  "line": 3,
+                  "line": 4,
                   "column": 0
                 },
                 "end": {
-                  "line": 10,
+                  "line": 11,
                   "column": 3
                 }
               }
@@ -275,15 +361,15 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-              "start": 271,
-              "end": 444,
+              "start": 318,
+              "end": 491,
               "loc": {
                 "start": {
-                  "line": 14,
+                  "line": 15,
                   "column": 0
                 },
                 "end": {
-                  "line": 21,
+                  "line": 22,
                   "column": 3
                 }
               }
@@ -294,15 +380,15 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
-            "start": 44,
-            "end": 221,
+            "start": 91,
+            "end": 268,
             "loc": {
               "start": {
-                "line": 3,
+                "line": 4,
                 "column": 0
               },
               "end": {
-                "line": 10,
+                "line": 11,
                 "column": 3
               }
             }
@@ -312,15 +398,15 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-            "start": 271,
-            "end": 444,
+            "start": 318,
+            "end": 491,
             "loc": {
               "start": {
-                "line": 14,
+                "line": 15,
                 "column": 0
               },
               "end": {
-                "line": 21,
+                "line": 22,
                 "column": 3
               }
             }
@@ -329,15 +415,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 448,
-        "end": 486,
+        "start": 495,
+        "end": 533,
         "loc": {
           "start": {
-            "line": 23,
+            "line": 24,
             "column": 0
           },
           "end": {
-            "line": 23,
+            "line": 24,
             "column": 38
           }
         },
@@ -345,44 +431,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 455,
-          "end": 486,
+          "start": 502,
+          "end": 533,
           "loc": {
             "start": {
-              "line": 23,
+              "line": 24,
               "column": 7
             },
             "end": {
-              "line": 23,
+              "line": 24,
               "column": 38
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 461,
-              "end": 485,
+              "start": 508,
+              "end": 532,
               "loc": {
                 "start": {
-                  "line": 23,
+                  "line": 24,
                   "column": 13
                 },
                 "end": {
-                  "line": 23,
+                  "line": 24,
                   "column": 37
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 461,
-                "end": 465,
+                "start": 508,
+                "end": 512,
                 "loc": {
                   "start": {
-                    "line": 23,
+                    "line": 24,
                     "column": 13
                   },
                   "end": {
-                    "line": 23,
+                    "line": 24,
                     "column": 17
                   },
                   "identifierName": "load"
@@ -392,29 +478,29 @@
               },
               "init": {
                 "type": "NewExpression",
-                "start": 468,
-                "end": 485,
+                "start": 515,
+                "end": 532,
                 "loc": {
                   "start": {
-                    "line": 23,
+                    "line": 24,
                     "column": 20
                   },
                   "end": {
-                    "line": 23,
+                    "line": 24,
                     "column": 37
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 472,
-                  "end": 477,
+                  "start": 519,
+                  "end": 524,
                   "loc": {
                     "start": {
-                      "line": 23,
+                      "line": 24,
                       "column": 24
                     },
                     "end": {
-                      "line": 23,
+                      "line": 24,
                       "column": 29
                     },
                     "identifierName": "Event"
@@ -424,15 +510,15 @@
                 "arguments": [
                   {
                     "type": "StringLiteral",
-                    "start": 478,
-                    "end": 484,
+                    "start": 525,
+                    "end": 531,
                     "loc": {
                       "start": {
-                        "line": 23,
+                        "line": 24,
                         "column": 30
                       },
                       "end": {
-                        "line": 23,
+                        "line": 24,
                         "column": 36
                       }
                     },
@@ -452,15 +538,189 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-              "start": 271,
-              "end": 444,
+              "start": 318,
+              "end": 491,
               "loc": {
                 "start": {
-                  "line": 14,
+                  "line": 15,
                   "column": 0
                 },
                 "end": {
-                  "line": 21,
+                  "line": 22,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+              "start": 537,
+              "end": 717,
+              "loc": {
+                "start": {
+                  "line": 26,
+                  "column": 0
+                },
+                "end": {
+                  "line": 33,
+                  "column": 3
+                }
+              }
+            }
+          ]
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+            "start": 318,
+            "end": 491,
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 0
+              },
+              "end": {
+                "line": 22,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+            "start": 537,
+            "end": 717,
+            "loc": {
+              "start": {
+                "line": 26,
+                "column": 0
+              },
+              "end": {
+                "line": 33,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 721,
+        "end": 759,
+        "loc": {
+          "start": {
+            "line": 35,
+            "column": 0
+          },
+          "end": {
+            "line": 35,
+            "column": 38
+          }
+        },
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 728,
+          "end": 759,
+          "loc": {
+            "start": {
+              "line": 35,
+              "column": 7
+            },
+            "end": {
+              "line": 35,
+              "column": 38
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 734,
+              "end": 758,
+              "loc": {
+                "start": {
+                  "line": 35,
+                  "column": 13
+                },
+                "end": {
+                  "line": 35,
+                  "column": 37
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 734,
+                "end": 739,
+                "loc": {
+                  "start": {
+                    "line": 35,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 35,
+                    "column": 18
+                  },
+                  "identifierName": "error"
+                },
+                "name": "error",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "NewExpression",
+                "start": 742,
+                "end": 758,
+                "loc": {
+                  "start": {
+                    "line": 35,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 35,
+                    "column": 37
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "start": 746,
+                  "end": 756,
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 25
+                    },
+                    "end": {
+                      "line": 35,
+                      "column": 35
+                    },
+                    "identifierName": "ErrorEvent"
+                  },
+                  "name": "ErrorEvent"
+                },
+                "arguments": []
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+              "start": 537,
+              "end": 717,
+              "loc": {
+                "start": {
+                  "line": 26,
+                  "column": 0
+                },
+                "end": {
+                  "line": 33,
                   "column": 3
                 }
               }
@@ -471,16 +731,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-            "start": 271,
-            "end": 444,
+            "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+            "start": 537,
+            "end": 717,
             "loc": {
               "start": {
-                "line": 14,
+                "line": 26,
                 "column": 0
               },
               "end": {
-                "line": 21,
+                "line": 33,
                 "column": 3
               }
             }
@@ -494,15 +754,15 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
-      "start": 44,
-      "end": 221,
+      "start": 91,
+      "end": 268,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 3
         }
       }
@@ -510,15 +770,31 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-      "start": 271,
-      "end": 444,
+      "start": 318,
+      "end": 491,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 15,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 22,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+      "start": 537,
+      "end": 717,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
           "column": 3
         }
       }
@@ -709,17 +985,200 @@
       }
     },
     {
-      "type": "CommentBlock",
-      "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
-      "start": 44,
-      "end": 221,
+      "type": {
+        "label": "import",
+        "keyword": "import",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "import",
+      "start": 42,
+      "end": 48,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 2,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 2,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 49,
+      "end": 50,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 7
+        },
+        "end": {
+          "line": 2,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "ErrorEvent",
+      "start": 51,
+      "end": 61,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 9
+        },
+        "end": {
+          "line": 2,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 62,
+      "end": 63,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 20
+        },
+        "end": {
+          "line": 2,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 64,
+      "end": 68,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 22
+        },
+        "end": {
+          "line": 2,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./ErrorEvent.js",
+      "start": 69,
+      "end": 86,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 27
+        },
+        "end": {
+          "line": 2,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 86,
+      "end": 87,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 44
+        },
+        "end": {
+          "line": 2,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * A demo change event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+      "start": 91,
+      "end": 268,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
           "column": 3
         }
       }
@@ -739,15 +1198,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 225,
-      "end": 231,
+      "start": 272,
+      "end": 278,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 6
         }
       }
@@ -767,15 +1226,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 232,
-      "end": 237,
+      "start": 279,
+      "end": 284,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 7
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 12
         }
       }
@@ -793,15 +1252,15 @@
         "binop": null
       },
       "value": "change",
-      "start": 238,
-      "end": 244,
+      "start": 285,
+      "end": 291,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 13
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 19
         }
       }
@@ -820,15 +1279,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 245,
-      "end": 246,
+      "start": 292,
+      "end": 293,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 20
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 21
         }
       }
@@ -848,15 +1307,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 247,
-      "end": 250,
+      "start": 294,
+      "end": 297,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 22
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 25
         }
       }
@@ -874,15 +1333,15 @@
         "binop": null
       },
       "value": "Event",
-      "start": 251,
-      "end": 256,
+      "start": 298,
+      "end": 303,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 26
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 31
         }
       }
@@ -899,15 +1358,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 256,
-      "end": 257,
+      "start": 303,
+      "end": 304,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 31
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 32
         }
       }
@@ -926,15 +1385,15 @@
         "updateContext": null
       },
       "value": "change",
-      "start": 257,
-      "end": 265,
+      "start": 304,
+      "end": 312,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 32
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 40
         }
       }
@@ -951,15 +1410,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 265,
-      "end": 266,
+      "start": 312,
+      "end": 313,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 40
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 41
         }
       }
@@ -977,15 +1436,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 266,
-      "end": 267,
+      "start": 313,
+      "end": 314,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 41
         },
         "end": {
-          "line": 12,
+          "line": 13,
           "column": 42
         }
       }
@@ -993,15 +1452,15 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * A demo load event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {Event}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-      "start": 271,
-      "end": 444,
+      "start": 318,
+      "end": 491,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 15,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 22,
           "column": 3
         }
       }
@@ -1021,15 +1480,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 448,
-      "end": 454,
+      "start": 495,
+      "end": 501,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 6
         }
       }
@@ -1049,15 +1508,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 455,
-      "end": 460,
+      "start": 502,
+      "end": 507,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 7
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 12
         }
       }
@@ -1075,15 +1534,15 @@
         "binop": null
       },
       "value": "load",
-      "start": 461,
-      "end": 465,
+      "start": 508,
+      "end": 512,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 13
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 17
         }
       }
@@ -1102,15 +1561,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 466,
-      "end": 467,
+      "start": 513,
+      "end": 514,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 18
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 19
         }
       }
@@ -1130,15 +1589,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 468,
-      "end": 471,
+      "start": 515,
+      "end": 518,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 20
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 23
         }
       }
@@ -1156,15 +1615,15 @@
         "binop": null
       },
       "value": "Event",
-      "start": 472,
-      "end": 477,
+      "start": 519,
+      "end": 524,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 24
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 29
         }
       }
@@ -1181,15 +1640,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 477,
-      "end": 478,
+      "start": 524,
+      "end": 525,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 29
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 30
         }
       }
@@ -1208,15 +1667,15 @@
         "updateContext": null
       },
       "value": "load",
-      "start": 478,
-      "end": 484,
+      "start": 525,
+      "end": 531,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 30
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 36
         }
       }
@@ -1233,15 +1692,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 484,
-      "end": 485,
+      "start": 531,
+      "end": 532,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 36
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 37
         }
       }
@@ -1259,15 +1718,270 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 485,
-      "end": 486,
+      "start": 532,
+      "end": 533,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 37
         },
         "end": {
-          "line": 23,
+          "line": 24,
+          "column": 38
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * A demo error event.\r\n *\r\n * This event is dispatched by {@link DemoManager}.\r\n *\r\n * @type {ErrorEvent}\r\n * @example demoManager.addEventListener(\"error\", myListener);\r\n ",
+      "start": 537,
+      "end": 717,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 721,
+      "end": 727,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 728,
+      "end": 733,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 7
+        },
+        "end": {
+          "line": 35,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "error",
+      "start": 734,
+      "end": 739,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 13
+        },
+        "end": {
+          "line": 35,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 740,
+      "end": 741,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 19
+        },
+        "end": {
+          "line": 35,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "new",
+        "keyword": "new",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "new",
+      "start": 742,
+      "end": 745,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 21
+        },
+        "end": {
+          "line": 35,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "ErrorEvent",
+      "start": 746,
+      "end": 756,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 25
+        },
+        "end": {
+          "line": 35,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 756,
+      "end": 757,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 35
+        },
+        "end": {
+          "line": 35,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 757,
+      "end": 758,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 36
+        },
+        "end": {
+          "line": 35,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 758,
+      "end": 759,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 37
+        },
+        "end": {
+          "line": 35,
           "column": 38
         }
       }
@@ -1285,15 +1999,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 488,
-      "end": 488,
+      "start": 761,
+      "end": 761,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 36,
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 36,
           "column": 0
         }
       }

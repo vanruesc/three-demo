@@ -1,11 +1,11 @@
 {
   "coverage": "100%",
-  "expectCount": 38,
-  "actualCount": 38,
+  "expectCount": 43,
+  "actualCount": 43,
   "files": {
     "src/demo-manager-events.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "src/Demo.js": {
@@ -14,8 +14,13 @@
       "undocumentLines": []
     },
     "src/DemoManager.js": {
-      "expectCount": 17,
-      "actualCount": 17,
+      "expectCount": 18,
+      "actualCount": 18,
+      "undocumentLines": []
+    },
+    "src/ErrorEvent.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     }
   }

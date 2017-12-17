@@ -31,7 +31,9 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ErrorEvent.js~ErrorEvent.html">ErrorEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
 </div>
@@ -59,20 +61,8 @@ manager.addDemo(new MyDemo());
 
 }());</code>
 </code></pre>
-<h2 id="custom-demos">Custom Demos</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">// Initialise the demo manager.
-manager = new DemoManager(document.getElementById(&quot;viewport&quot;));
-
-// Register your custom demos.
-manager.addDemo(new MyDemo());
-
-// Start rendering.
-(function render(now) {
-
-    requestAnimationFrame(render);
-    manager.render(now);
-
-}());</code>
-</code></pre>
+<h2 id="custom-demos">Custom Demos</h2><p>You can create custom demos by extending the <code>Demo</code> class. For details, take a look at the
+<a href="https://github.com/vanruesc/three-demo/blob/master/demo/src/demos/ExampleDemo.js">ExampleDemo</a>.</p>
 <h2 id="contributing">Contributing</h2><p>Please refer to the <a href="https://github.com/vanruesc/three-demo/blob/master/CONTRIBUTING.md">contribution guidelines</a> for details.</p>
 </div>
 </div>

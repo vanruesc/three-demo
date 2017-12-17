@@ -12,9 +12,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "three-demo/src/errorevent.js~errorevent",
+    "class/src/ErrorEvent.js~ErrorEvent.html",
+    "<span>ErrorEvent</span> <span class=\"search-result-import-path\">three-demo/src/ErrorEvent.js</span>",
+    "class"
+  ],
+  [
     "three-demo/src/demo-manager-events.js~change",
     "variable/index.html#static-variable-change",
     "<span>change</span> <span class=\"search-result-import-path\">three-demo/src/demo-manager-events.js</span>",
+    "variable"
+  ],
+  [
+    "three-demo/src/demo-manager-events.js~error",
+    "variable/index.html#static-variable-error",
+    "<span>error</span> <span class=\"search-result-import-path\">three-demo/src/demo-manager-events.js</span>",
     "variable"
   ],
   [
@@ -519,6 +531,24 @@ window.esdocSearchIndex = [
     "src/demomanager.js~demomanager#statistics",
     "class/src/DemoManager.js~DemoManager.html#instance-member-statistics",
     "src/DemoManager.js~DemoManager#statistics",
+    "member"
+  ],
+  [
+    "src/errorevent.js",
+    "file/src/ErrorEvent.js.html",
+    "src/ErrorEvent.js",
+    "file"
+  ],
+  [
+    "src/errorevent.js~errorevent#constructor",
+    "class/src/ErrorEvent.js~ErrorEvent.html#instance-constructor-constructor",
+    "src/ErrorEvent.js~ErrorEvent#constructor",
+    "method"
+  ],
+  [
+    "src/errorevent.js~errorevent#error",
+    "class/src/ErrorEvent.js~ErrorEvent.html#instance-member-error",
+    "src/ErrorEvent.js~ErrorEvent#error",
     "member"
   ],
   [

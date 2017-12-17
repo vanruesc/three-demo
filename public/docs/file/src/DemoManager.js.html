@@ -31,7 +31,9 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ErrorEvent.js~ErrorEvent.html">ErrorEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
 </div>
@@ -45,6 +47,15 @@ import dat from &quot;dat.gui&quot;;
 import Stats from &quot;stats.js&quot;;
 
 import * as events from &quot;./demo-manager-events.js&quot;;
+
+/**
+ * The initial URL hash value.
+ *
+ * @type {String}
+ * @private
+ */
+
+const initialHash = window.location.hash.slice(1);
 
 /**
  * A demo manager.
@@ -76,14 +87,10 @@ export class DemoManager extends EventTarget {
 		this.composer = (options.composer !== undefined) ? options.composer : (() =&gt; {
 
 			const renderer = new WebGLRenderer();
-			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
 			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setClearColor(0x000000);
 
-			return new EffectComposer(renderer, {
-				stencilBuffer: true,
-				depthTexture: true
-			});
+			return new EffectComposer(renderer);
 
 		})();
 
@@ -146,7 +153,7 @@ export class DemoManager extends EventTarget {
 		 * @private
 		 */
 
-		this.demo = window.location.hash.slice(1);
+		this.demo = null;
 
 		/**
 		 * The current demo.
@@ -212,8 +219,9 @@ export class DemoManager extends EventTarget {
 	loadDemo() {
 
 		const id = this.demo;
-		const menu = this.menu;
 		const demos = this.demos;
+		const previousDemo = this.currentDemo;
+
 		const composer = this.composer;
 		const renderer = this.renderer;
 
@@ -223,16 +231,11 @@ export class DemoManager extends EventTarget {
 
 			// Update the URL.
 			window.location.hash = id;
+			demo = demos.get(id);
 
-			// Remove all passes and clear the screen.
-			composer.reset();
-			renderer.clear();
+			if(previousDemo !== null &amp;&amp; previousDemo.ready) {
 
-			demo = this.currentDemo;
-
-			if(demo !== null) {
-
-				demo.reset();
+				previousDemo.reset();
 
 				// Update and use the main renderer.
 				size = composer.renderer.getSize();
@@ -241,27 +244,32 @@ export class DemoManager extends EventTarget {
 
 			}
 
-			if(menu !== null) {
+			if(this.menu !== null) {
 
-				menu.domElement.style.display = &quot;none&quot;;
+				this.menu.domElement.style.display = &quot;none&quot;;
 
 			}
 
-			demo = demos.get(id);
-			this.currentDemo = demo;
+			// Remove all passes and clear the screen.
+			composer.reset();
+			renderer.clear();
+
 			composer.addPass(demo.renderPass);
 
+			this.currentDemo = demo;
 			this.dispatchEvent(events.change);
 
 			demo.load().then(() =&gt; this.startDemo()).catch((e) =&gt; {
 
-				console.error(&quot;An unexpected error occured during the loading process&quot;, e);
+				events.error.error = e;
+				this.dispatchEvent(events.error);
 
 			});
 
 		} else {
 
-			console.error(&quot;Invalid demo id&quot;, id);
+			events.error.error = new Error(&quot;Could not find the specified demo&quot; + id);
+			this.dispatchEvent(events.error);
 
 		}
 
@@ -276,17 +284,11 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
-		const id = this.demo;
-
 		this.demos.set(demo.id, demo.setComposer(this.composer));
 
-		if(id.length === 0) {
+		if(this.demo === null || demo.id === initialHash) {
 
 			this.demo = demo.id;
-			this.loadDemo();
-
-		} else if(id === demo.id) {
-
 			this.loadDemo();
 
 		}
@@ -306,17 +308,22 @@ export class DemoManager extends EventTarget {
 
 		const demos = this.demos;
 
-		let entry;
+		let firstEntry;
 
 		if(demos.has(id)) {
 
 			demos.delete(id);
 
-			if(this.demo === id) {
+			if(this.demo === id &amp;&amp; demos.size &gt; 0) {
 
-				entry = demos.entries().next().value;
-				this.demo = entry[0];
-				this.currentDemo = entry[1];
+				firstEntry = demos.entries().next().value;
+				this.demo = firstEntry[0];
+				this.currentDemo = firstEntry[1];
+
+			} else {
+
+				this.demo = null;
+				this.currentDemo = null;
 
 			}
 
