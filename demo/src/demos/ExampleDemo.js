@@ -160,8 +160,6 @@ export class ExampleDemo extends Demo {
 	/**
 	 * Registers configuration options.
 	 *
-	 * This method will be called after initialize.
-	 *
 	 * @param {GUI} menu - A menu.
 	 */
 

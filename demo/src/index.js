@@ -33,7 +33,6 @@ function render(now) {
 
 function onChange(event) {
 
-	manager.composer.renderer.domElement.style.display = "none";
 	document.getElementById("viewport").children[0].style.display = "initial";
 
 }
@@ -48,7 +47,20 @@ function onChange(event) {
 function onLoad(event) {
 
 	document.getElementById("viewport").children[0].style.display = "none";
-	manager.composer.renderer.domElement.style.display = "initial";
+
+}
+
+/**
+ * Handles demo error events.
+ *
+ * @private
+ * @param {ErrorEvent} event - An event.
+ */
+
+function onError(event) {
+
+	document.getElementById("viewport").children[0].style.display = "none";
+	console.error(event.error);
 
 }
 
@@ -69,15 +81,16 @@ window.addEventListener("load", function main(event) {
 		aside: document.getElementById("aside")
 	});
 
+	// Setup demo loading event handlers.
+	manager.addEventListener("change", onChange);
+	manager.addEventListener("load", onLoad);
+	manager.addEventListener("error", onError);
+
 	// Register demos.
 	const emptyDemo = new Demo("empty");
 	emptyDemo.renderPass.enabled = false;
 	manager.addDemo(new ExampleDemo());
 	manager.addDemo(emptyDemo);
-
-	// Setup demo loading event handlers.
-	manager.addEventListener("change", onChange);
-	manager.addEventListener("load", onLoad);
 
 	// Start rendering.
 	render();
