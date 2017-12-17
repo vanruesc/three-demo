@@ -20,8 +20,18 @@ npm install three-demo
 ## Usage
 
 ```javascript
+import { DemoManager } from "three-demo";
+import { MyDemo } from "./MyDemo.js";
+
 // Initialise the demo manager.
-manager = new DemoManager(document.getElementById("viewport"));
+manager = new DemoManager(document.getElementById("viewport"), {
+	aside: document.getElementById("aside"),
+	composer: myCustomComposer
+});
+
+// Define your event listeners before adding any demos.
+manager.addEventListener("change", onDemoChange);
+manager.addEventListener("load", onDemoLoad);
 
 // Register your custom demos.
 manager.addDemo(new MyDemo());
