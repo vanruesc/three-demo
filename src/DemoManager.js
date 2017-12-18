@@ -234,12 +234,24 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
+		const currentDemo = this.currentDemo;
+
 		this.demos.set(demo.id, demo.setComposer(this.composer));
 
 		if(this.demo === null || demo.id === initialHash) {
 
 			this.demo = demo.id;
 			this.loadDemo();
+
+		}
+
+		// Update the demo selection.
+		this.resetMenu();
+
+		if(currentDemo !== null && currentDemo.ready) {
+
+			// Add the demo options again.
+			currentDemo.registerOptions(this.menu);
 
 		}
 
