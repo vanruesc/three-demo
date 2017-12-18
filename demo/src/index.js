@@ -72,10 +72,16 @@ window.addEventListener("load", function main(event) {
 	manager.addEventListener("load", onLoad);
 
 	// Register demos.
-	const emptyDemo = new Demo("empty");
-	emptyDemo.renderPass.enabled = false;
 	manager.addDemo(new ExampleDemo());
-	manager.addDemo(emptyDemo);
+
+	// Add the second demo a little later (for testing purposes).
+	setTimeout(() => {
+
+		const emptyDemo = new Demo("empty");
+		emptyDemo.renderPass.enabled = false;
+		manager.addDemo(emptyDemo);
+
+	}, 1000);
 
 	// Start rendering.
 	render();
