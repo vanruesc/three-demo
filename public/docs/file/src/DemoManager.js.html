@@ -176,8 +176,14 @@ export class DemoManager extends EventTarget {
 
 		const node = this.menu.domElement.parentNode;
 		const menu = new dat.GUI({ autoPlace: false });
-		const selection = menu.add(this, &quot;demo&quot;, Array.from(this.demos.keys()));
-		selection.onChange(() =&gt; this.loadDemo());
+
+		// Don&apos;t create a demo selection if there&apos;s only one demo.
+		if(this.demos.size &gt; 1) {
+
+			const selection = menu.add(this, &quot;demo&quot;, Array.from(this.demos.keys()));
+			selection.onChange(() =&gt; this.loadDemo());
+
+		}
 
 		node.removeChild(this.menu.domElement);
 		node.appendChild(menu.domElement);
@@ -268,12 +274,24 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
+		const currentDemo = this.currentDemo;
+
 		this.demos.set(demo.id, demo.setComposer(this.composer));
 
 		if(this.demo === null || demo.id === initialHash) {
 
 			this.demo = demo.id;
 			this.loadDemo();
+
+		}
+
+		// Update the demo selection.
+		this.resetMenu();
+
+		if(currentDemo !== null &amp;&amp; currentDemo.ready) {
+
+			// Add the demo options again.
+			currentDemo.registerOptions(this.menu);
 
 		}
 

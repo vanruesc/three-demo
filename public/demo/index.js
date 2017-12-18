@@ -4256,10 +4256,14 @@
 
   						var node = this.menu.domElement.parentNode;
   						var menu = new dat.GUI({ autoPlace: false });
-  						var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
-  						selection.onChange(function () {
-  								return _this2.loadDemo();
-  						});
+
+  						if (this.demos.size > 1) {
+
+  								var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
+  								selection.onChange(function () {
+  										return _this2.loadDemo();
+  								});
+  						}
 
   						node.removeChild(this.menu.domElement);
   						node.appendChild(menu.domElement);
@@ -4327,12 +4331,20 @@
   				key: "addDemo",
   				value: function addDemo(demo) {
 
+  						var currentDemo = this.currentDemo;
+
   						this.demos.set(demo.id, demo.setComposer(this.composer));
 
   						if (this.demo === null || demo.id === initialHash) {
 
   								this.demo = demo.id;
   								this.loadDemo();
+  						}
+
+  						this.resetMenu();
+
+  						if (currentDemo !== null && currentDemo.ready) {
+  								currentDemo.registerOptions(this.menu);
   						}
 
   						return this;
@@ -4480,6 +4492,8 @@
   						var mesh = new three.Mesh(geometry, material);
   						this.mesh = mesh;
   						scene.add(mesh);
+
+  						this.speed = 0.01;
   				}
   		}, {
   				key: "update",
@@ -4533,10 +4547,14 @@
   	manager.addEventListener("change", onChange);
   	manager.addEventListener("load", onLoad);
 
-  	var emptyDemo = new Demo("empty");
-  	emptyDemo.renderPass.enabled = false;
   	manager.addDemo(new ExampleDemo());
-  	manager.addDemo(emptyDemo);
+
+  	setTimeout(function () {
+
+  		var emptyDemo = new Demo("empty");
+  		emptyDemo.renderPass.enabled = false;
+  		manager.addDemo(emptyDemo);
+  	}, 1000);
 
   	render();
   });

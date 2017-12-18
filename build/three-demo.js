@@ -1,5 +1,5 @@
 /**
- * three-demo v0.0.2 build Dec 17 2017
+ * three-demo v0.0.3 build Dec 18 2017
  * https://github.com/vanruesc/three-demo
  * Copyright 2017 Raoul van Rüschen, Zlib
  */
@@ -4265,10 +4265,14 @@
 
   						var node = this.menu.domElement.parentNode;
   						var menu = new dat.GUI({ autoPlace: false });
-  						var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
-  						selection.onChange(function () {
-  								return _this2.loadDemo();
-  						});
+
+  						if (this.demos.size > 1) {
+
+  								var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
+  								selection.onChange(function () {
+  										return _this2.loadDemo();
+  								});
+  						}
 
   						node.removeChild(this.menu.domElement);
   						node.appendChild(menu.domElement);
@@ -4336,12 +4340,20 @@
   				key: "addDemo",
   				value: function addDemo(demo) {
 
+  						var currentDemo = this.currentDemo;
+
   						this.demos.set(demo.id, demo.setComposer(this.composer));
 
   						if (this.demo === null || demo.id === initialHash) {
 
   								this.demo = demo.id;
   								this.loadDemo();
+  						}
+
+  						this.resetMenu();
+
+  						if (currentDemo !== null && currentDemo.ready) {
+  								currentDemo.registerOptions(this.menu);
   						}
 
   						return this;
