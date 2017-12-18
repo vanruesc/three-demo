@@ -134,6 +134,10 @@ export class ExampleDemo extends Demo {
 		this.mesh = mesh;
 		scene.add(mesh);
 
+		// Reset speed.
+
+		this.speed = 0.01;
+
 	}
 
 	/**
