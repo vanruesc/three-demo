@@ -136,8 +136,14 @@ export class DemoManager extends EventTarget {
 
 		const node = this.menu.domElement.parentNode;
 		const menu = new dat.GUI({ autoPlace: false });
-		const selection = menu.add(this, "demo", Array.from(this.demos.keys()));
-		selection.onChange(() => this.loadDemo());
+
+		// Don't create a demo selection if there's only one demo.
+		if(this.demos.size > 1) {
+
+			const selection = menu.add(this, "demo", Array.from(this.demos.keys()));
+			selection.onChange(() => this.loadDemo());
+
+		}
 
 		node.removeChild(this.menu.domElement);
 		node.appendChild(menu.domElement);
