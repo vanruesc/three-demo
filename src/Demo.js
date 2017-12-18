@@ -172,7 +172,8 @@ export class Demo {
 	/**
 	 * Registers configuration options.
 	 *
-	 * This method will be called after initialize.
+	 * This method will be called once after initialize and then every time a new
+	 * demo is added.
 	 *
 	 * @param {GUI} menu - A menu.
 	 */
