@@ -77,7 +77,7 @@ export class ExampleDemo extends Demo {
 
 				};
 
-				cubeTextureLoader.load(urls, function(textureCube) {
+				cubeTextureLoader.load(urls, (textureCube) => {
 
 					assets.set("sky", textureCube);
 
