@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/Demo.js | three-demo</title>
+  <title data-ice="title">src/DemoManagerEvent.js | three-demo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,183 +38,40 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Demo.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { LoadingManager, Scene } from &quot;three&quot;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/DemoManagerEvent.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Event } from &quot;synthetic-event&quot;;
 
 /**
- * A demo base class.
+ * A demo manager event.
  */
 
-export class Demo {
+export class DemoManagerEvent extends Event {
 
 	/**
-	 * Constructs a new demo.
+	 * Constructs a new demo manager event.
 	 *
-	 * @param {String} [id=&quot;demo&quot;] - A unique identifier.
+	 * @param {String} type - The name of the event.
 	 */
 
-	constructor(id = &quot;demo&quot;) {
+	constructor(type) {
+
+		super(type);
 
 		/**
-		 * The id of this demo.
+		 * The previous demo, if available.
 		 *
-		 * @type {String}
+		 * @type {Demo}
 		 */
 
-		this.id = id;
+		this.previousDemo = null;
 
 		/**
-		 * A renderer.
+		 * The current demo.
 		 *
-		 * @type {WebGLRenderer}
-		 * @protected
+		 * @type {Demo}
 		 */
 
-		this.renderer = null;
-
-		/**
-		 * A loading manager.
-		 *
-		 * @type {LoadingManager}
-		 * @protected
-		 */
-
-		this.loadingManager = new LoadingManager();
-
-		/**
-		 * A collection of loaded assets.
-		 *
-		 * @type {Map}
-		 * @protected
-		 */
-
-		this.assets = new Map();
-
-		/**
-		 * The scene.
-		 *
-		 * @type {Scene}
-		 * @protected
-		 */
-
-		this.scene = new Scene();
-
-		/**
-		 * The camera.
-		 *
-		 * @type {Camera}
-		 * @protected
-		 */
-
-		this.camera = null;
-
-		/**
-		 * Camera controls.
-		 *
-		 * @type {Disposable}
-		 * @protected
-		 */
-
-		this.controls = null;
-
-		/**
-		 * Indicates whether this demo is ready for rendering.
-		 *
-		 * The {@link DemoManager} updates this flag automatically.
-		 *
-		 * @type {Boolean}
-		 */
-
-		this.ready = false;
-
-	}
-
-	/**
-	 * Sets the renderer.
-	 *
-	 * @param {WebGLRenderer} renderer - A renderer.
-	 * @return {Demo} This demo.
-	 */
-
-	setRenderer(renderer) {
-
-		this.renderer = renderer;
-
-		return this;
-
-	}
-
-	/**
-	 * Loads this demo.
-	 *
-	 * Override this method to load assets.
-	 *
-	 * @return {Promise} A promise that will be fulfilled as soon as all assets have been loaded.
-	 */
-
-	load() {
-
-		return Promise.resolve();
-
-	}
-
-	/**
-	 * Initialises this demo.
-	 *
-	 * This method will be called after reset.
-	 */
-
-	initialize() {}
-
-	/**
-	 * Renders this demo.
-	 *
-	 * Override this method to update and render the demo manually.
-	 *
-	 * @param {Number} delta - The time since the last frame in seconds.
-	 */
-
-	render(delta) {
-
-		this.renderer.render(this.scene, this.camera);
-
-	}
-
-	/**
-	 * Registers configuration options.
-	 *
-	 * This method will be called once after initialize and then every time a new
-	 * demo is added.
-	 *
-	 * @param {GUI} menu - A menu.
-	 */
-
-	registerOptions(menu) {}
-
-	/**
-	 * Resets this demo.
-	 *
-	 * @return {Demo} This demo.
-	 */
-
-	reset() {
-
-		const fog = this.scene.fog;
-
-		this.scene = new Scene();
-		this.scene.fog = fog;
-		this.camera = null;
-
-		if(this.controls !== null) {
-
-			this.controls.dispose();
-			this.controls = null;
-
-		}
-
-		this.ready = false;
-
-		return this;
+		this.demo = null;
 
 	}
 

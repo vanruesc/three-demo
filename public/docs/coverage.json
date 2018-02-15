@@ -9,13 +9,18 @@
       "undocumentLines": []
     },
     "src/Demo.js": {
-      "expectCount": 19,
-      "actualCount": 19,
+      "expectCount": 16,
+      "actualCount": 16,
       "undocumentLines": []
     },
     "src/DemoManager.js": {
-      "expectCount": 18,
-      "actualCount": 18,
+      "expectCount": 17,
+      "actualCount": 17,
+      "undocumentLines": []
+    },
+    "src/DemoManagerEvent.js": {
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     }
   }

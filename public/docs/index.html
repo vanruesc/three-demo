@@ -31,6 +31,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManagerEvent.js~DemoManagerEvent.html">DemoManagerEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
@@ -39,8 +40,8 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="three-demo">Three Demo</h1><p><a href="https://travis-ci.org/vanruesc/three-demo"><img src="https://travis-ci.org/vanruesc/three-demo.svg?branch=master" alt="Build status"></a> 
 <a href="http://badge.fury.io/js/three-demo"><img src="https://badge.fury.io/js/three-demo.svg" alt="npm version"></a> 
-<a href="https://david-dm.org/vanruesc/three-demo"><img src="https://david-dm.org/vanruesc/three-demo.svg?branch=master" alt="Dependencies"></a></p>
-<p>A compact demo framework for <a href="https://threejs.org/">three.js</a>. Supports <a href="https://github.com/vanruesc/postprocessing">postprocessing</a>.</p>
+<a href="https://david-dm.org/vanruesc/three-demo?type=peer"><img src="https://img.shields.io/david/peer/vanruesc/three-demo.svg" alt="Peer dependencies"></a></p>
+<p>A compact demo framework for <a href="https://threejs.org/">three.js</a>.</p>
 <p><em><a href="https://vanruesc.github.io/three-demo/public/demo">Demo</a> &#x2234;
 <a href="https://vanruesc.github.io/three-demo/public/docs">API Reference</a></em></p>
 <h2 id="installation">Installation</h2><pre><code class="lang-sh"><code class="source-code prettyprint">npm install three-demo</code>
@@ -51,7 +52,7 @@ import { MyDemo } from &quot;./MyDemo.js&quot;;
 // Initialise the demo manager.
 const manager = new DemoManager(document.getElementById(&quot;viewport&quot;), {
     aside: document.getElementById(&quot;aside&quot;),
-    composer: myCustomComposer
+    renderer: myWebGLRenderer
 });
 
 // Define your event listeners before adding any demos.

@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "three-demo/src/demomanagerevent.js~demomanagerevent",
+    "class/src/DemoManagerEvent.js~DemoManagerEvent.html",
+    "<span>DemoManagerEvent</span> <span class=\"search-result-import-path\">three-demo/src/DemoManagerEvent.js</span>",
+    "class"
+  ],
+  [
     "three-demo/src/demo-manager-events.js~change",
     "variable/index.html#static-variable-change",
     "<span>change</span> <span class=\"search-result-import-path\">three-demo/src/demo-manager-events.js</span>",
@@ -319,20 +325,8 @@ window.esdocSearchIndex = [
   ],
   [
     "src/demo.js~demo#camera",
-    "class/src/Demo.js~Demo.html#instance-set-camera",
+    "class/src/Demo.js~Demo.html#instance-member-camera",
     "src/Demo.js~Demo#camera",
-    "member"
-  ],
-  [
-    "src/demo.js~demo#camera",
-    "class/src/Demo.js~Demo.html#instance-get-camera",
-    "src/Demo.js~Demo#camera",
-    "member"
-  ],
-  [
-    "src/demo.js~demo#composer",
-    "class/src/Demo.js~Demo.html#instance-member-composer",
-    "src/Demo.js~Demo#composer",
     "member"
   ],
   [
@@ -384,9 +378,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/demo.js~demo#renderpass",
-    "class/src/Demo.js~Demo.html#instance-member-renderPass",
-    "src/Demo.js~Demo#renderPass",
+    "src/demo.js~demo#render",
+    "class/src/Demo.js~Demo.html#instance-method-render",
+    "src/Demo.js~Demo#render",
+    "method"
+  ],
+  [
+    "src/demo.js~demo#renderer",
+    "class/src/Demo.js~Demo.html#instance-member-renderer",
+    "src/Demo.js~Demo#renderer",
     "member"
   ],
   [
@@ -397,26 +397,14 @@ window.esdocSearchIndex = [
   ],
   [
     "src/demo.js~demo#scene",
-    "class/src/Demo.js~Demo.html#instance-get-scene",
+    "class/src/Demo.js~Demo.html#instance-member-scene",
     "src/Demo.js~Demo#scene",
     "member"
   ],
   [
-    "src/demo.js~demo#scene",
-    "class/src/Demo.js~Demo.html#instance-set-scene",
-    "src/Demo.js~Demo#scene",
-    "member"
-  ],
-  [
-    "src/demo.js~demo#setcomposer",
-    "class/src/Demo.js~Demo.html#instance-method-setComposer",
-    "src/Demo.js~Demo#setComposer",
-    "method"
-  ],
-  [
-    "src/demo.js~demo#update",
-    "class/src/Demo.js~Demo.html#instance-method-update",
-    "src/Demo.js~Demo#update",
+    "src/demo.js~demo#setrenderer",
+    "class/src/Demo.js~Demo.html#instance-method-setRenderer",
+    "src/Demo.js~Demo#setRenderer",
     "method"
   ],
   [
@@ -435,12 +423,6 @@ window.esdocSearchIndex = [
     "src/demomanager.js~demomanager#clock",
     "class/src/DemoManager.js~DemoManager.html#instance-member-clock",
     "src/DemoManager.js~DemoManager#clock",
-    "member"
-  ],
-  [
-    "src/demomanager.js~demomanager#composer",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-composer",
-    "src/DemoManager.js~DemoManager#composer",
     "member"
   ],
   [
@@ -519,6 +501,30 @@ window.esdocSearchIndex = [
     "src/demomanager.js~demomanager#statistics",
     "class/src/DemoManager.js~DemoManager.html#instance-member-statistics",
     "src/DemoManager.js~DemoManager#statistics",
+    "member"
+  ],
+  [
+    "src/demomanagerevent.js",
+    "file/src/DemoManagerEvent.js.html",
+    "src/DemoManagerEvent.js",
+    "file"
+  ],
+  [
+    "src/demomanagerevent.js~demomanagerevent#constructor",
+    "class/src/DemoManagerEvent.js~DemoManagerEvent.html#instance-constructor-constructor",
+    "src/DemoManagerEvent.js~DemoManagerEvent#constructor",
+    "method"
+  ],
+  [
+    "src/demomanagerevent.js~demomanagerevent#demo",
+    "class/src/DemoManagerEvent.js~DemoManagerEvent.html#instance-member-demo",
+    "src/DemoManagerEvent.js~DemoManagerEvent#demo",
+    "member"
+  ],
+  [
+    "src/demomanagerevent.js~demomanagerevent#previousdemo",
+    "class/src/DemoManagerEvent.js~DemoManagerEvent.html#instance-member-previousDemo",
+    "src/DemoManagerEvent.js~DemoManagerEvent#previousDemo",
     "member"
   ],
   [
