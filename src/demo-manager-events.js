@@ -1,23 +1,23 @@
-import { Event } from "synthetic-event";
+import { DemoManagerEvent } from "./DemoManagerEvent.js";
 
 /**
- * A demo change event.
+ * A demo manager change event.
  *
  * This event is dispatched by {@link DemoManager}.
  *
- * @type {Event}
+ * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("change", myListener);
  */
 
-export const change = new Event("change");
+export const change = new DemoManagerEvent("change");
 
 /**
- * A demo load event.
+ * A demo manager load event.
  *
  * This event is dispatched by {@link DemoManager}.
  *
- * @type {Event}
+ * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("load", myListener);
  */
 
-export const load = new Event("load");
+export const load = new DemoManagerEvent("load");
