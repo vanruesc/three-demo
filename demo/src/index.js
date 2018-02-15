@@ -78,7 +78,7 @@ window.addEventListener("load", function main(event) {
 	setTimeout(() => {
 
 		const emptyDemo = new Demo("empty");
-		emptyDemo.renderPass.enabled = false;
+		emptyDemo.render = () => {};
 		manager.addDemo(emptyDemo);
 
 	}, 1000);

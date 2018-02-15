@@ -1,4 +1,3 @@
-import { RenderPass } from "postprocessing";
 import { LoadingManager, Scene } from "three";
 
 /**
@@ -24,13 +23,13 @@ export class Demo {
 		this.id = id;
 
 		/**
-		 * An effect composer.
+		 * A renderer.
 		 *
-		 * @type {EffectComposer}
+		 * @type {WebGLRenderer}
 		 * @protected
 		 */
 
-		this.composer = null;
+		this.renderer = null;
 
 		/**
 		 * A loading manager.
@@ -51,13 +50,22 @@ export class Demo {
 		this.assets = new Map();
 
 		/**
-		 * A render pass that renders to screen.
+		 * The scene.
 		 *
-		 * @type {RenderPass}
+		 * @type {Scene}
+		 * @protected
 		 */
 
-		this.renderPass = new RenderPass(new Scene(), null);
-		this.renderPass.renderToScreen = true;
+		this.scene = new Scene();
+
+		/**
+		 * The camera.
+		 *
+		 * @type {Camera}
+		 * @protected
+		 */
+
+		this.camera = null;
 
 		/**
 		 * Camera controls.
@@ -81,59 +89,15 @@ export class Demo {
 	}
 
 	/**
-	 * The scene.
+	 * Sets the renderer.
 	 *
-	 * @type {Scene}
-	 */
-
-	get scene() {
-
-		return this.renderPass.scene;
-
-	}
-
-	/**
-	 * @type {Scene}
-	 */
-
-	set scene(scene) {
-
-		this.renderPass.scene = scene;
-
-	}
-
-	/**
-	 * The camera.
-	 *
-	 * @type {Camera}
-	 */
-
-	get camera() {
-
-		return this.renderPass.camera;
-
-	}
-
-	/**
-	 * @type {camera}
-	 */
-
-	set camera(camera) {
-
-		this.renderPass.camera = camera;
-
-	}
-
-	/**
-	 * Sets the effect composer.
-	 *
-	 * @param {EffectComposer} composer - A composer.
+	 * @param {WebGLRenderer} renderer - A renderer.
 	 * @return {Demo} This demo.
 	 */
 
-	setComposer(composer) {
+	setRenderer(renderer) {
 
-		this.composer = composer;
+		this.renderer = renderer;
 
 		return this;
 
@@ -162,12 +126,18 @@ export class Demo {
 	initialize() {}
 
 	/**
-	 * Updates this demo.
+	 * Renders this demo.
+	 *
+	 * Override this method to update and render the demo manually.
 	 *
 	 * @param {Number} delta - The time since the last frame in seconds.
 	 */
 
-	update(delta) {}
+	render(delta) {
+
+		this.renderer.render(this.scene, this.camera);
+
+	}
 
 	/**
 	 * Registers configuration options.
@@ -189,11 +159,10 @@ export class Demo {
 	reset() {
 
 		const fog = this.scene.fog;
-		const renderPass = new RenderPass(new Scene(), null);
-		renderPass.enabled = this.renderPass.enabled;
-		renderPass.renderToScreen = true;
-		this.renderPass = renderPass;
+
+		this.scene = new Scene();
 		this.scene.fog = fog;
+		this.camera = null;
 
 		if(this.controls !== null) {
 

@@ -101,11 +101,11 @@ export class ExampleDemo extends Demo {
 
 		const scene = this.scene;
 		const assets = this.assets;
-		const renderer = this.composer.renderer;
+		const renderer = this.renderer;
 
 		// Camera.
 
-		const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 20);
+		const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1);
 		camera.position.set(0, Math.max(1.15, 1.5 - camera.aspect * 0.1), 0);
 		camera.lookAt(scene.position);
 		camera.rotation.z = Math.PI / 2;
@@ -141,12 +141,12 @@ export class ExampleDemo extends Demo {
 	}
 
 	/**
-	 * Updates this demo.
+	 * Renders this demo.
 	 *
 	 * @param {Number} delta - The time since the last frame in seconds.
 	 */
 
-	update(delta) {
+	render(delta) {
 
 		const TWO_PI = Math.PI * 2;
 		const rotation = this.camera.rotation;
@@ -158,6 +158,8 @@ export class ExampleDemo extends Demo {
 			rotation.z -= Math.sign(rotation.z) * TWO_PI;
 
 		}
+
+		super.render(delta);
 
 	}
 

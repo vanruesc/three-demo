@@ -1,4 +1,3 @@
-import { EffectComposer } from "postprocessing";
 import { EventTarget } from "synthetic-event";
 import { Clock, WebGLRenderer } from "three";
 import dat from "dat.gui";
@@ -27,7 +26,7 @@ export class DemoManager extends EventTarget {
 	 * @param {HTMLElement} viewport - The primary DOM container.
 	 * @param {Object} [options] - Additional options.
 	 * @param {HTMLElement} [options.aside] - A secondary DOM container.
-	 * @param {EffectComposer} [options.composer] - A custom effect composer.
+	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
 	 */
 
 	constructor(viewport, options = {}) {
@@ -37,29 +36,21 @@ export class DemoManager extends EventTarget {
 		super();
 
 		/**
-		 * A composer.
-		 *
-		 * @type {EffectComposer}
-		 */
-
-		this.composer = (options.composer !== undefined) ? options.composer : (() => {
-
-			const renderer = new WebGLRenderer();
-			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
-			renderer.setPixelRatio(window.devicePixelRatio);
-
-			return new EffectComposer(renderer);
-
-		})();
-
-		/**
 		 * The main renderer.
 		 *
 		 * @type {WebGLRenderer}
 		 * @private
 		 */
 
-		this.renderer = this.composer.renderer;
+		this.renderer = (options.renderer !== undefined) ? options.renderer : (() => {
+
+			const renderer = new WebGLRenderer();
+			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
+			renderer.setPixelRatio(window.devicePixelRatio);
+
+			return renderer;
+
+		})();
 
 		viewport.appendChild(this.renderer.domElement);
 
@@ -172,6 +163,7 @@ export class DemoManager extends EventTarget {
 			demo.registerOptions(this.resetMenu());
 			demo.ready = true;
 
+			events.load.demo = demo;
 			this.dispatchEvent(events.load);
 
 		}
@@ -190,11 +182,7 @@ export class DemoManager extends EventTarget {
 		const demos = this.demos;
 		const demo = demos.get(id);
 		const previousDemo = this.currentDemo;
-
-		const composer = this.composer;
 		const renderer = this.renderer;
-
-		let size;
 
 		// Update the URL.
 		window.location.hash = id;
@@ -203,20 +191,17 @@ export class DemoManager extends EventTarget {
 
 			previousDemo.reset();
 
-			// Update and use the main renderer.
-			size = composer.renderer.getSize();
-			renderer.setSize(size.width, size.height);
-			composer.replaceRenderer(renderer);
-
 		}
 
+		// Hide the menu.
 		this.menu.domElement.style.display = "none";
 
 		// Clear the screen and remove all passes.
 		renderer.clear();
-		composer.reset();
-		composer.addPass(demo.renderPass);
 
+		// Update and dispatch the event.
+		events.change.previousDemo = previousDemo;
+		events.change.demo = demo;
 		this.currentDemo = demo;
 		this.dispatchEvent(events.change);
 
@@ -236,7 +221,7 @@ export class DemoManager extends EventTarget {
 
 		const currentDemo = this.currentDemo;
 
-		this.demos.set(demo.id, demo.setComposer(this.composer));
+		this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
 		if(this.demo === null || demo.id === initialHash) {
 
@@ -289,7 +274,6 @@ export class DemoManager extends EventTarget {
 				this.demo = null;
 				this.currentDemo = null;
 				this.renderer.clear();
-				this.composer.reset();
 
 			}
 
@@ -304,13 +288,14 @@ export class DemoManager extends EventTarget {
 	 *
 	 * @param {Number} width - The width.
 	 * @param {Number} height - The height.
+	 * @todo Support OrthographicCamera.
 	 */
 
 	setSize(width, height) {
 
 		const demo = this.currentDemo;
 
-		this.composer.setSize(width, height);
+		this.renderer.setSize(width, height);
 
 		if(demo !== null && demo.camera !== null) {
 
@@ -335,10 +320,7 @@ export class DemoManager extends EventTarget {
 		if(demo !== null && demo.ready) {
 
 			this.statistics.begin();
-
-			demo.update(delta);
-			this.composer.render(delta);
-
+			demo.render(delta);
 			this.statistics.end();
 
 		}

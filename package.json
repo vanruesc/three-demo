@@ -11,7 +11,6 @@
 		"demo",
 		"scaffold",
 		"three",
-		"postprocessing",
 		"3d"
 	],
 
@@ -47,7 +46,6 @@
 	},
 
 	"dependencies": {
-		"postprocessing": "4.x.x",
 		"synthetic-event": "0.x.x"
 	},
 
