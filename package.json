@@ -47,9 +47,11 @@
 	},
 
 	"dependencies": {
-		"postprocessing": "4.x.x",
-		"synthetic-event": "0.x.x",
-		"three": "0.89.x"
+		"synthetic-event": "0.x.x"
+	},
+
+	"peerDependencies": {
+		"three": ">= 0.89.0 < 0.91.0"
 	},
 
 	"devDependencies": {
@@ -68,8 +70,10 @@
 		"grunt-rollup": "9.x.x",
 		"jit-grunt": "0.x.x",
 		"load-grunt-config": "0.x.x",
+		"postprocessing": "4.x.x",
 		"rollup-plugin-babel": "3.x.x",
 		"rollup-plugin-node-resolve": "3.x.x",
+		"three": "0.90.x",
 		"time-grunt": "1.x.x"
 	}
 }
