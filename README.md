@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/three-demo.svg)](http://badge.fury.io/js/three-demo) 
 [![Peer dependencies](https://img.shields.io/david/peer/vanruesc/three-demo.svg)](https://david-dm.org/vanruesc/three-demo?type=peer)
 
-A compact demo framework for [three.js](https://threejs.org/). Supports [postprocessing](https://github.com/vanruesc/postprocessing).
+A compact demo framework for [three.js](https://threejs.org/).
 
 *[Demo](https://vanruesc.github.io/three-demo/public/demo) &there4;
 [API Reference](https://vanruesc.github.io/three-demo/public/docs)*
@@ -26,7 +26,7 @@ import { MyDemo } from "./MyDemo.js";
 // Initialise the demo manager.
 const manager = new DemoManager(document.getElementById("viewport"), {
 	aside: document.getElementById("aside"),
-	composer: myCustomComposer
+	renderer: myWebGLRenderer
 });
 
 // Define your event listeners before adding any demos.
