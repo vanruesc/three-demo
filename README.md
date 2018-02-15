@@ -2,7 +2,7 @@
 
 [![Build status](https://travis-ci.org/vanruesc/three-demo.svg?branch=master)](https://travis-ci.org/vanruesc/three-demo) 
 [![npm version](https://badge.fury.io/js/three-demo.svg)](http://badge.fury.io/js/three-demo) 
-[![Dependencies](https://david-dm.org/vanruesc/three-demo.svg?branch=master)](https://david-dm.org/vanruesc/three-demo)
+[![Peer dependencies](https://img.shields.io/david/peer/vanruesc/three-demo.svg)](https://david-dm.org/vanruesc/three-demo)
 
 A compact demo framework for [three.js](https://threejs.org/). Supports [postprocessing](https://github.com/vanruesc/postprocessing).
 
