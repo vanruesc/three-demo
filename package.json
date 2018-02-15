@@ -51,6 +51,7 @@
 	},
 
 	"peerDependencies": {
+		"postprocessing": ">= 4.0.0 < 5.0.0",
 		"three": ">= 0.89.0 < 0.91.0"
 	},
 
