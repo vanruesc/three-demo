@@ -50,7 +50,7 @@
 	},
 
 	"peerDependencies": {
-		"three": ">= 0.89.0 < 0.92.0"
+		"three": ">= 0.89.0 <= 0.92.0"
 	},
 
 	"devDependencies": {
@@ -71,7 +71,7 @@
 		"load-grunt-config": "0.x.x",
 		"rollup-plugin-babel": "3.x.x",
 		"rollup-plugin-node-resolve": "3.x.x",
-		"three": "0.91.x",
+		"three": "0.92.x",
 		"time-grunt": "1.x.x"
 	}
 }
