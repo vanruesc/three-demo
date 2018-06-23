@@ -5,6 +5,7 @@
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
 	"module": "src/index.js",
+	"sideEffects": false,
 	"license": "Zlib",
 
 	"keywords": [
@@ -65,7 +66,7 @@
 		"grunt-contrib-nodeunit": "2.x.x",
 		"grunt-contrib-uglify": "3.x.x",
 		"grunt-contrib-copy": "1.x.x",
-		"grunt-eslint": "20.x.x",
+		"grunt-eslint": "21.x.x",
 		"grunt-rollup": "9.x.x",
 		"jit-grunt": "0.x.x",
 		"load-grunt-config": "0.x.x",
