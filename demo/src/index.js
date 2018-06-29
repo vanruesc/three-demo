@@ -81,6 +81,8 @@ window.addEventListener("load", function main(event) {
 		emptyDemo.render = () => {};
 		manager.addDemo(emptyDemo);
 
+		console.log("Added the empty demo 1 second after initialization");
+
 	}, 1000);
 
 	// Start rendering.
