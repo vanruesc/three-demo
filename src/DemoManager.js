@@ -1,7 +1,6 @@
 import { EventTarget } from "synthetic-event";
 import { Clock, WebGLRenderer } from "three";
-import dat from "dat.gui";
-import Stats from "stats.js";
+import * as dat from "dat.gui";
 
 import * as events from "./demo-manager-events.js";
 
@@ -73,18 +72,6 @@ export class DemoManager extends EventTarget {
 		this.menu = new dat.GUI({ autoPlace: false });
 
 		aside.appendChild(this.menu.domElement);
-
-		/**
-		 * Performance statistics.
-		 *
-		 * @type {Stats}
-		 * @private
-		 */
-
-		this.statistics = new Stats();
-		this.statistics.dom.id = "statistics";
-
-		aside.appendChild(this.statistics.domElement);
 
 		/**
 		 * A collection of demos.
@@ -319,9 +306,7 @@ export class DemoManager extends EventTarget {
 
 		if(demo !== null && demo.ready) {
 
-			this.statistics.begin();
 			demo.render(delta);
-			this.statistics.end();
 
 		}
 

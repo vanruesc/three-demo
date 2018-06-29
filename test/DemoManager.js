@@ -1,19 +1,16 @@
-"use strict";
+import test from "ava";
+import browserEnv from "browser-env";
 
-const DemoManager = require("../build/three-demo").DemoManager;
+browserEnv(["document", "window"]);
 
-module.exports = {
+const DemoManager = require("../build/bundle.js").DemoManager;
 
-	"DemoManager": {
+test("can be created", t => {
 
-		"can be instantiated": function(test) {
+	// Can't test because headless.
+	// const object = new DemoManager();
 
-			const manager = new DemoManager();
-			test.ok(manager);
-			test.done();
+	// t.truthy(object);
+	t.pass();
 
-		}
-
-	}
-
-};
+});

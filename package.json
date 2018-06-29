@@ -3,7 +3,7 @@
 	"version": "1.1.0",
 	"description": "A demo scaffold for three.js.",
 	"homepage": "https://github.com/vanruesc/three-demo",
-	"main": "build/three-demo.js",
+	"main": "build/bundle.js",
 	"module": "src/index.js",
 	"sideEffects": false,
 	"license": "Zlib",
@@ -35,7 +35,16 @@
 	],
 
 	"scripts": {
-		"test": "grunt --production"
+		"lint": "npm run lint:lib && npm run lint:demo && npm run lint:test",
+		"lint:lib": "eslint src",
+		"lint:demo": "eslint demo/src",
+		"lint:test": "eslint test",
+		"build": "rollup -c",
+		"build:production": "cross-env BABEL_ENV=production rollup -c",
+		"doc": "esdoc",
+		"deploy": "cpx demo/assets/** public/demo",
+		"test": "ava",
+		"prepack": "npm run lint && npm run build:production"
 	},
 
 	"engines": {
@@ -46,33 +55,31 @@
 		"extends": "delta"
 	},
 
-	"dependencies": {
-		"synthetic-event": "0.x.x"
-	},
-
 	"peerDependencies": {
-		"three": ">= 0.89.0 <= 0.93.0"
+		"synthetic-event": "0.x.x",
+		"three": ">= 0.89.0 <= 0.94.0"
 	},
 
 	"devDependencies": {
-		"@vanruesc/grunt-esdoc": "0.x.x",
+		"ava": "0.x.x",
 		"babel-core": "6.x.x",
 		"babel-plugin-external-helpers": "6.x.x",
 		"babel-preset-env": "1.x.x",
+		"browser-env": "3.x.x",
+		"cpx": "1.x.x",
+		"cross-env": "5.x.x",
+		"dat.gui": "0.x.x",
+		"esdoc": "1.x.x",
 		"esdoc-standard-plugin": "1.x.x",
+		"eslint": "5.x.x",
 		"eslint-config-delta": "0.x.x",
-		"grunt": "1.x.x",
-		"grunt-cli": "1.x.x",
-		"grunt-contrib-nodeunit": "2.x.x",
-		"grunt-contrib-uglify": "3.x.x",
-		"grunt-contrib-copy": "1.x.x",
-		"grunt-eslint": "21.x.x",
-		"grunt-rollup": "9.x.x",
-		"jit-grunt": "0.x.x",
-		"load-grunt-config": "0.x.x",
+		"math-ds": "1.x.x",
+		"rollup": "0.x.x",
 		"rollup-plugin-babel": "3.x.x",
+		"rollup-plugin-babel-minify": "5.x.x",
 		"rollup-plugin-node-resolve": "3.x.x",
-		"three": "0.93.x",
-		"time-grunt": "1.x.x"
+		"synthetic-event": "0.x.x",
+		"stats.js": "0.x.x",
+		"three": "0.94.x"
 	}
 }

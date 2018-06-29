@@ -12,9 +12,11 @@ A compact demo framework for [three.js](https://threejs.org/).
 
 ## Installation
 
+This library requires the peer dependency [three](https://github.com/mrdoob/three.js/).
+
 ```sh
-npm install three-demo
-``` 
+npm install three three-demo
+```
 
 
 ## Usage
@@ -54,4 +56,4 @@ You can create custom demos by extending the `Demo` class. For details, take a l
 
 ## Contributing
 
-Please refer to the [contribution guidelines](https://github.com/vanruesc/three-demo/blob/master/CONTRIBUTING.md) for details.
+Please refer to the [contribution guidelines](https://github.com/vanruesc/three-demo/blob/master/.github/CONTRIBUTING.md) for details.

@@ -1,19 +1,14 @@
-"use strict";
+import test from "ava";
+import browserEnv from "browser-env";
 
-const Demo = require("../build/three-demo").Demo;
+browserEnv(["document", "window"]);
 
-module.exports = {
+const Demo = require("../build/bundle.js").Demo;
 
-	"Demo": {
+test("can be created", t => {
 
-		"can be instantiated": function(test) {
+	const object = new Demo();
 
-			const demo = new Demo();
-			test.ok(demo);
-			test.done();
+	t.truthy(object);
 
-		}
-
-	}
-
-};
+});
