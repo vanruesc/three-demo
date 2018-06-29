@@ -12,7 +12,7 @@ A compact demo framework for [three.js](https://threejs.org/).
 
 ## Installation
 
-This library requires the peer dependency [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
+This library requires the peer dependencies [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
 
 ```sh
 npm install synthetic-event three three-demo
