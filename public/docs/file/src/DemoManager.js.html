@@ -41,8 +41,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/DemoManager.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { EventTarget } from &quot;synthetic-event&quot;;
 import { Clock, WebGLRenderer } from &quot;three&quot;;
-import dat from &quot;dat.gui&quot;;
-import Stats from &quot;stats.js&quot;;
+import * as dat from &quot;dat.gui&quot;;
 
 import * as events from &quot;./demo-manager-events.js&quot;;
 
@@ -114,18 +113,6 @@ export class DemoManager extends EventTarget {
 		this.menu = new dat.GUI({ autoPlace: false });
 
 		aside.appendChild(this.menu.domElement);
-
-		/**
-		 * Performance statistics.
-		 *
-		 * @type {Stats}
-		 * @private
-		 */
-
-		this.statistics = new Stats();
-		this.statistics.dom.id = &quot;statistics&quot;;
-
-		aside.appendChild(this.statistics.domElement);
 
 		/**
 		 * A collection of demos.
@@ -360,9 +347,7 @@ export class DemoManager extends EventTarget {
 
 		if(demo !== null &amp;&amp; demo.ready) {
 
-			this.statistics.begin();
 			demo.render(delta);
-			this.statistics.end();
 
 		}
 

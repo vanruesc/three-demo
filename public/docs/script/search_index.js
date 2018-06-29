@@ -498,12 +498,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/demomanager.js~demomanager#statistics",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-statistics",
-    "src/DemoManager.js~DemoManager#statistics",
-    "member"
-  ],
-  [
     "src/demomanagerevent.js",
     "file/src/DemoManagerEvent.js.html",
     "src/DemoManagerEvent.js",
