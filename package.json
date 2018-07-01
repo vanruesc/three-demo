@@ -1,6 +1,6 @@
 {
 	"name": "three-demo",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "A demo scaffold for three.js.",
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
