@@ -1,5 +1,13 @@
-(function (three) {
-  'use strict';
+/**
+ * three-demo v2.0.3 build Sun Jul 01 2018
+ * https://github.com/vanruesc/three-demo
+ * Copyright 2018 Raoul van Rüschen, Zlib
+ */
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('three')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'three'], factory) :
+  (factory((global.THREEDEMO = {}),global.THREE));
+}(this, (function (exports,three) { 'use strict';
 
   var classCallCheck = function (instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -24,31 +32,6 @@
       return Constructor;
     };
   }();
-
-  var get = function get(object, property, receiver) {
-    if (object === null) object = Function.prototype;
-    var desc = Object.getOwnPropertyDescriptor(object, property);
-
-    if (desc === undefined) {
-      var parent = Object.getPrototypeOf(object);
-
-      if (parent === null) {
-        return undefined;
-      } else {
-        return get(parent, property, receiver);
-      }
-    } else if ("value" in desc) {
-      return desc.value;
-    } else {
-      var getter = desc.get;
-
-      if (getter === undefined) {
-        return undefined;
-      }
-
-      return getter.call(receiver);
-    }
-  };
 
   var inherits = function (subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
@@ -1831,10 +1814,10 @@
     return null;
   };
 
-  function requestAnimationFrame$1(callback) {
+  function requestAnimationFrame(callback) {
     setTimeout(callback, 1000 / 60);
   }
-  var requestAnimationFrame$1$1 = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || requestAnimationFrame$1;
+  var requestAnimationFrame$1 = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || requestAnimationFrame;
 
   var CenteredDiv = function () {
     function CenteredDiv() {
@@ -2717,7 +2700,7 @@
   }
   function updateDisplays(controllerArray) {
     if (controllerArray.length !== 0) {
-      requestAnimationFrame$1$1.call(window, function () {
+      requestAnimationFrame$1.call(window, function () {
         updateDisplays(controllerArray);
       });
     }
@@ -2939,189 +2922,10 @@
   		return DemoManager;
   }(EventTarget);
 
-  var ExampleDemo = function (_Demo) {
-  		inherits(ExampleDemo, _Demo);
+  exports.Demo = Demo;
+  exports.DemoManager = DemoManager;
+  exports.DemoManagerEvent = DemoManagerEvent;
 
-  		function ExampleDemo() {
-  				classCallCheck(this, ExampleDemo);
+  Object.defineProperty(exports, '__esModule', { value: true });
 
-  				var _this = possibleConstructorReturn(this, (ExampleDemo.__proto__ || Object.getPrototypeOf(ExampleDemo)).call(this, "example"));
-
-  				_this.mesh = null;
-
-  				_this.speed = 0.01;
-
-  				return _this;
-  		}
-
-  		createClass(ExampleDemo, [{
-  				key: "load",
-  				value: function load() {
-
-  						var assets = this.assets;
-  						var loadingManager = this.loadingManager;
-  						var cubeTextureLoader = new three.CubeTextureLoader(loadingManager);
-
-  						var path = "textures/skies/grimm-night/";
-  						var format = ".jpg";
-  						var urls = [path + "px" + format, path + "nx" + format, path + "py" + format, path + "ny" + format, path + "pz" + format, path + "nz" + format];
-
-  						return new Promise(function (resolve, reject) {
-
-  								if (assets.size === 0) {
-
-  										loadingManager.onError = reject;
-  										loadingManager.onProgress = function (item, loaded, total) {
-
-  												if (loaded === total) {
-
-  														resolve();
-  												}
-  										};
-
-  										cubeTextureLoader.load(urls, function (textureCube) {
-
-  												assets.set("sky", textureCube);
-  										});
-  								} else {
-
-  										resolve();
-  								}
-  						});
-  				}
-  		}, {
-  				key: "initialize",
-  				value: function initialize() {
-
-  						var scene = this.scene;
-  						var assets = this.assets;
-  						var renderer = this.renderer;
-
-  						var camera = new three.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1);
-  						camera.position.set(0, Math.max(1.15, 1.5 - camera.aspect * 0.1), 0);
-  						camera.lookAt(scene.position);
-  						camera.rotation.z = Math.PI / 2;
-  						this.camera = camera;
-
-  						scene.fog = new three.FogExp2(0x000000, 0.2);
-  						renderer.setClearColor(scene.fog.color);
-
-  						var ambientLight = new three.AmbientLight(0xffffff);
-  						scene.add(ambientLight);
-
-  						var geometry = new three.SphereBufferGeometry(1, 64, 64);
-  						var material = new three.MeshPhongMaterial({
-  								envMap: assets.get("sky"),
-  								color: 0xffffff,
-  								dithering: true
-  						});
-
-  						var mesh = new three.Mesh(geometry, material);
-  						this.mesh = mesh;
-  						scene.add(mesh);
-
-  						this.speed = 0.01;
-  				}
-  		}, {
-  				key: "render",
-  				value: function render(delta) {
-
-  						var TWO_PI = Math.PI * 2;
-  						var rotation = this.camera.rotation;
-
-  						rotation.z += delta * this.speed;
-
-  						if (Math.abs(rotation.z) >= TWO_PI) {
-
-  								rotation.z -= Math.sign(rotation.z) * TWO_PI;
-  						}
-
-  						get(ExampleDemo.prototype.__proto__ || Object.getPrototypeOf(ExampleDemo.prototype), "render", this).call(this, delta);
-  				}
-  		}, {
-  				key: "registerOptions",
-  				value: function registerOptions(menu) {
-
-  						menu.add(this, "speed").min(-0.5).max(0.5).step(0.01);
-  				}
-  		}]);
-  		return ExampleDemo;
-  }(Demo);
-
-  var manager = void 0;
-
-  function render(now) {
-
-  	requestAnimationFrame(render);
-  	manager.render(now);
-  }
-
-  function onChange(event) {
-
-  	document.getElementById("viewport").children[0].style.display = "initial";
-  }
-
-  function onLoad(event) {
-
-  	document.getElementById("viewport").children[0].style.display = "none";
-  }
-
-  window.addEventListener("load", function main(event) {
-  	this.removeEventListener("load", main);
-
-  	manager = new DemoManager(document.getElementById("viewport"), {
-  		aside: document.getElementById("aside")
-  	});
-
-  	manager.addEventListener("change", onChange);
-  	manager.addEventListener("load", onLoad);
-
-  	manager.addDemo(new ExampleDemo());
-
-  	setTimeout(function () {
-
-  		var emptyDemo = new Demo("empty");
-  		emptyDemo.render = function () {};
-  		manager.addDemo(emptyDemo);
-
-  		console.log("Added the empty demo 1 second after initialization");
-  	}, 1000);
-
-  	render();
-  });
-
-  window.addEventListener("resize", function () {
-
-  	var timeoutId = 0;
-
-  	function handleResize(event) {
-
-  		var width = event.target.innerWidth;
-  		var height = event.target.innerHeight;
-
-  		manager.setSize(width, height);
-
-  		timeoutId = 0;
-  	}
-
-  	return function onResize(event) {
-
-  		if (timeoutId === 0) {
-
-  			timeoutId = setTimeout(handleResize, 66, event);
-  		}
-  	};
-  }());
-
-  document.addEventListener("keydown", function onKeyDown(event) {
-
-  	var aside = this.getElementById("aside");
-
-  	if (event.altKey && aside !== null) {
-
-  		event.preventDefault();
-  		aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
-  	}
-  });
-
-}(THREE));
+})));
