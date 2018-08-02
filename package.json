@@ -48,11 +48,6 @@
 		"prepack": "npm run lint && npm run build:production"
 	},
 
-	"engines": {
-		"node": ">=4.0.0",
-		"npm": ">=4.0.0"
-	},
-
 	"ava": {
 		"failFast": true,
 		"files": ["test/**/*.js"]
