@@ -12,10 +12,10 @@ A compact demo framework for [three.js](https://threejs.org/).
 
 ## Installation
 
-This library requires the peer dependencies [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
+This library requires the peer dependencies [dat.gui](https://github.com/dataarts/dat.gui), [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
 
 ```sh
-npm install synthetic-event three three-demo
+npm install dat.gui synthetic-event three three-demo
 ```
 
 
