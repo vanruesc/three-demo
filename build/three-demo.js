@@ -1,5 +1,5 @@
 /**
- * three-demo v3.2.0 build Wed Sep 26 2018
+ * three-demo v3.2.1 build Wed Oct 31 2018
  * https://github.com/vanruesc/three-demo
  * Copyright 2018 Raoul van Rüschen, Zlib
  */
@@ -2204,6 +2204,7 @@
 
     var useLocalStorage = SUPPORTS_LOCAL_STORAGE && localStorage.getItem(getLocalStorageHash(this, 'isLocal')) === 'true';
     var saveToLocalStorage = void 0;
+    var titleRow = void 0;
     Object.defineProperties(this, {
       parent: {
         get: function get$$1() {
@@ -2261,8 +2262,8 @@
         set: function set$$1(v) {
           params.name = v;
 
-          if (titleRowName) {
-            titleRowName.innerHTML = params.name;
+          if (titleRow) {
+            titleRow.innerHTML = params.name;
           }
         }
       },
@@ -2347,10 +2348,9 @@
         params.closed = true;
       }
 
-      var _titleRowName = document.createTextNode(params.name);
-
-      dom.addClass(_titleRowName, 'controller-name');
-      var titleRow = addRow(_this, _titleRowName);
+      var titleRowName = document.createTextNode(params.name);
+      dom.addClass(titleRowName, 'controller-name');
+      titleRow = addRow(_this, titleRowName);
 
       var onClickTitle = function onClickTitle(e) {
         e.preventDefault();
