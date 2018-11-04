@@ -45,22 +45,24 @@
 <p><em><a href="https://vanruesc.github.io/three-demo/public/demo">Demo</a> &#x2234;
 <a href="https://vanruesc.github.io/three-demo/public/docs">API Reference</a></em></p>
 <h2 id="installation">Installation</h2><p>This library requires the peer dependencies <a href="https://github.com/dataarts/dat.gui">dat.gui</a>, <a href="https://github.com/vanruesc/synthetic-event">synthetic-event</a> and <a href="https://github.com/mrdoob/three.js/">three</a>.</p>
-<pre><code class="lang-sh"><code class="source-code prettyprint">npm install dat.gui synthetic-event three three-demo</code>
+<pre><code class="lang-sh"><code class="source-code prettyprint">npm install dat.gui synthetic-event three</code>
+</code></pre>
+<pre><code class="lang-sh"><code class="source-code prettyprint">npm install three-demo</code>
 </code></pre>
 <h2 id="usage">Usage</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">import { DemoManager } from &quot;three-demo&quot;;
 import { MyDemo } from &quot;./MyDemo.js&quot;;
 
-// Initialise the demo manager.
+// Initialize the demo manager.
 const manager = new DemoManager(document.getElementById(&quot;viewport&quot;), {
     aside: document.getElementById(&quot;aside&quot;),
     renderer: myWebGLRenderer
 });
 
-// Define your event listeners before adding any demos.
-manager.addEventListener(&quot;change&quot;, onDemoChange);
-manager.addEventListener(&quot;load&quot;, onDemoLoad);
+// React to events.
+manager.addEventListener(&quot;change&quot;, console.log);
+manager.addEventListener(&quot;load&quot;, console.log);
 
-// Register your custom demos.
+// Register demos.
 manager.addDemo(new MyDemo());
 
 // Start rendering.

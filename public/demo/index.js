@@ -3218,28 +3218,24 @@
       value: function loadDemo() {
         var _this3 = this;
 
-        var id = this.demo;
-        var demos = this.demos;
-        var demo = demos.get(id);
-        var previousDemo = this.currentDemo;
+        var nextDemo = this.demos.get(this.demo);
+        var currentDemo = this.currentDemo;
         var renderer = this.renderer;
-        window.location.hash = id;
+        window.location.hash = nextDemo.id;
 
-        if (previousDemo !== null) {
-          previousDemo.reset();
+        if (currentDemo !== null) {
+          currentDemo.reset();
         }
 
         this.menu.domElement.style.display = "none";
-        renderer.clear();
-        change.previousDemo = previousDemo;
-        change.demo = demo;
-        this.currentDemo = demo;
+        change.previousDemo = currentDemo;
+        change.demo = nextDemo;
+        this.currentDemo = nextDemo;
         this.dispatchEvent(change);
-        demo.load().then(function () {
-          return _this3.startDemo(demo);
-        }).catch(function (e) {
-          return console.error(e);
-        });
+        renderer.clear();
+        nextDemo.load().then(function () {
+          return _this3.startDemo(nextDemo);
+        }).catch(console.error);
       }
     }, {
       key: "addDemo",
@@ -3247,7 +3243,7 @@
         var currentDemo = this.currentDemo;
         this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
-        if (this.demo === null || demo.id === initialHash) {
+        if (this.demo === null && initialHash.length === 0 || demo.id === initialHash) {
           this.demo = demo.id;
           this.loadDemo();
         }
@@ -3287,11 +3283,20 @@
       key: "setSize",
       value: function setSize(width, height) {
         var demo = this.currentDemo;
+        var camera = demo.camera;
         this.renderer.setSize(width, height);
 
-        if (demo !== null && demo.camera !== null) {
-          demo.camera.aspect = width / height;
-          demo.camera.updateProjectionMatrix();
+        if (demo !== null && camera !== null) {
+          if (camera instanceof three.OrthographicCamera) {
+            camera.left = width / -2.0;
+            camera.right = width / 2.0;
+            camera.top = height / 2.0;
+            camera.bottom = height / -2.0;
+            camera.updateProjectionMatrix();
+          } else if (!(camera instanceof three.CubeCamera)) {
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+          }
         }
       }
     }, {

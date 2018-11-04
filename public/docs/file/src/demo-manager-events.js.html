@@ -44,7 +44,8 @@
 /**
  * A demo manager change event.
  *
- * This event is dispatched by {@link DemoManager}.
+ * This event is dispatched by {@link DemoManager} when the user switches to
+ * another demo.
  *
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener(&quot;change&quot;, myListener);
@@ -55,7 +56,8 @@ export const change = new DemoManagerEvent(&quot;change&quot;);
 /**
  * A demo manager load event.
  *
- * This event is dispatched by {@link DemoManager}.
+ * This event is dispatched by {@link DemoManager} when a demo has finished
+ * loading and is about to start rendering.
  *
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener(&quot;load&quot;, myListener);
