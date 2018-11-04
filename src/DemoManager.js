@@ -206,7 +206,8 @@ export class DemoManager extends EventTarget {
 
 		this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
-		if(this.demo === null || demo.id === initialHash) {
+		// If there is a hash value, wait for the corresponding demo to be added.
+		if((this.demo === null && initialHash.length === 0) || demo.id === initialHash) {
 
 			this.demo = demo.id;
 			this.loadDemo();
