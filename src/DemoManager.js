@@ -106,8 +106,7 @@ export class DemoManager extends EventTarget {
 	 * Updates the demo options menu.
 	 *
 	 * @private
-	 * @todo Use a menu library that is not as clunky as dat.GUI.
-	 * @return {GUI} The cleaned menu.
+	 * @return {GUI} A clean menu.
 	 */
 
 	resetMenu() {
@@ -136,10 +135,10 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Activates the given demo if it's still selected.
 	 *
-	 * While the demo was loading, another demo may have been selected already.
+	 * While the demo was loading, another demo may have been selected.
 	 *
 	 * @private
-	 * @param {Demo} demo - A demo that just finished loading.
+	 * @param {Demo} demo - A demo.
 	 */
 
 	startDemo(demo) {
@@ -165,35 +164,32 @@ export class DemoManager extends EventTarget {
 
 	loadDemo() {
 
-		const id = this.demo;
-		const demos = this.demos;
-		const demo = demos.get(id);
-		const previousDemo = this.currentDemo;
+		const nextDemo = this.demos.get(this.demo);
+		const currentDemo = this.currentDemo;
 		const renderer = this.renderer;
 
 		// Update the URL.
-		window.location.hash = id;
+		window.location.hash = nextDemo.id;
 
-		if(previousDemo !== null) {
+		if(currentDemo !== null) {
 
-			previousDemo.reset();
+			currentDemo.reset();
 
 		}
 
 		// Hide the menu.
 		this.menu.domElement.style.display = "none";
 
-		// Clear the screen and remove all passes.
-		renderer.clear();
-
 		// Update and dispatch the event.
-		events.change.previousDemo = previousDemo;
-		events.change.demo = demo;
-		this.currentDemo = demo;
+		events.change.previousDemo = currentDemo;
+		events.change.demo = nextDemo;
+		this.currentDemo = nextDemo;
 		this.dispatchEvent(events.change);
 
-		demo.load().then(() => this.startDemo(demo))
-			.catch((e) => console.error(e));
+		// Clear the screen.
+		renderer.clear();
+
+		nextDemo.load().then(() => this.startDemo(nextDemo)).catch(console.error);
 
 	}
 
