@@ -277,11 +277,12 @@ export class DemoManager extends EventTarget {
 	setSize(width, height) {
 
 		const demo = this.currentDemo;
-		const camera = demo.camera;
 
 		this.renderer.setSize(width, height);
 
-		if(demo !== null && camera !== null) {
+		if(demo !== null && demo.camera !== null) {
+
+			const camera = demo.camera;
 
 			if(camera instanceof OrthographicCamera) {
 
