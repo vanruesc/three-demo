@@ -1,5 +1,5 @@
 import { EventTarget } from "synthetic-event";
-import { Clock, WebGLRenderer } from "three";
+import { Clock, CubeCamera, OrthographicCamera, WebGLRenderer } from "three";
 import * as dat from "dat.gui";
 
 import * as events from "./demo-manager-events.js";
@@ -275,19 +275,32 @@ export class DemoManager extends EventTarget {
 	 *
 	 * @param {Number} width - The width.
 	 * @param {Number} height - The height.
-	 * @todo Support OrthographicCamera.
 	 */
 
 	setSize(width, height) {
 
 		const demo = this.currentDemo;
+		const camera = demo.camera;
 
 		this.renderer.setSize(width, height);
 
-		if(demo !== null && demo.camera !== null) {
+		if(demo !== null && camera !== null) {
 
-			demo.camera.aspect = width / height;
-			demo.camera.updateProjectionMatrix();
+			if(camera instanceof OrthographicCamera) {
+
+				camera.left = width / -2.0;
+				camera.right = width / 2.0;
+				camera.top = height / 2.0;
+				camera.bottom = height / -2.0;
+				camera.updateProjectionMatrix();
+
+			} else if(!(camera instanceof CubeCamera)) {
+
+				// Perspective, Array or Stereo camera.
+				camera.aspect = width / height;
+				camera.updateProjectionMatrix();
+
+			}
 
 		}
 
