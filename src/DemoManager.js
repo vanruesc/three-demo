@@ -5,15 +5,6 @@ import * as dat from "dat.gui";
 import * as events from "./demo-manager-events.js";
 
 /**
- * The initial URL hash value.
- *
- * @type {String}
- * @private
- */
-
-const initialHash = window.location.hash.slice(1);
-
-/**
  * A demo manager.
  */
 
@@ -202,12 +193,13 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
+		const hash = window.location.hash.slice(1);
 		const currentDemo = this.currentDemo;
 
 		this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
 		// If there is a hash value, wait for the corresponding demo to be added.
-		if((this.demo === null && initialHash.length === 0) || demo.id === initialHash) {
+		if((this.demo === null && hash.length === 0) || demo.id === hash) {
 
 			this.demo = demo.id;
 			this.loadDemo();
