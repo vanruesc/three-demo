@@ -1,5 +1,5 @@
 /**
- * three-demo v3.2.2 build Sun Nov 04 2018
+ * three-demo v3.2.3 build Sun Nov 04 2018
  * https://github.com/vanruesc/three-demo
  * Copyright 2018 Raoul van Rüschen, Zlib
  */
@@ -3126,7 +3126,6 @@
   var change = new DemoManagerEvent("change");
   var load = new DemoManagerEvent("load");
 
-  var initialHash = window.location.hash.slice(1);
   var DemoManager = function (_EventTarget) {
     _inherits(DemoManager, _EventTarget);
 
@@ -3218,10 +3217,11 @@
     }, {
       key: "addDemo",
       value: function addDemo(demo) {
+        var hash = window.location.hash.slice(1);
         var currentDemo = this.currentDemo;
         this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
-        if (this.demo === null && initialHash.length === 0 || demo.id === initialHash) {
+        if (this.demo === null && hash.length === 0 || demo.id === hash) {
           this.demo = demo.id;
           this.loadDemo();
         }
@@ -3261,10 +3261,11 @@
       key: "setSize",
       value: function setSize(width, height) {
         var demo = this.currentDemo;
-        var camera = demo.camera;
         this.renderer.setSize(width, height);
 
-        if (demo !== null && camera !== null) {
+        if (demo !== null && demo.camera !== null) {
+          var camera = demo.camera;
+
           if (camera instanceof three.OrthographicCamera) {
             camera.left = width / -2.0;
             camera.right = width / 2.0;

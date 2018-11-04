@@ -977,7 +977,7 @@
     "__docId__": 73,
     "kind": "file",
     "name": "src/DemoManager.js",
-    "content": "import { EventTarget } from \"synthetic-event\";\r\nimport { Clock, CubeCamera, OrthographicCamera, WebGLRenderer } from \"three\";\r\nimport * as dat from \"dat.gui\";\r\n\r\nimport * as events from \"./demo-manager-events.js\";\r\n\r\n/**\r\n * The initial URL hash value.\r\n *\r\n * @type {String}\r\n * @private\r\n */\r\n\r\nconst initialHash = window.location.hash.slice(1);\r\n\r\n/**\r\n * A demo manager.\r\n */\r\n\r\nexport class DemoManager extends EventTarget {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager.\r\n\t *\r\n\t * @param {HTMLElement} viewport - The primary DOM container.\r\n\t * @param {Object} [options] - Additional options.\r\n\t * @param {HTMLElement} [options.aside] - A secondary DOM container.\r\n\t * @param {WebGLRenderer} [options.renderer] - A custom renderer.\r\n\t */\r\n\r\n\tconstructor(viewport, options = {}) {\r\n\r\n\t\tconst aside = (options.aside !== undefined) ? options.aside : viewport;\r\n\r\n\t\tsuper();\r\n\r\n\t\t/**\r\n\t\t * The main renderer.\r\n\t\t *\r\n\t\t * @type {WebGLRenderer}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.renderer = (options.renderer !== undefined) ? options.renderer : (() => {\r\n\r\n\t\t\tconst renderer = new WebGLRenderer();\r\n\t\t\trenderer.setSize(viewport.clientWidth, viewport.clientHeight);\r\n\t\t\trenderer.setPixelRatio(window.devicePixelRatio);\r\n\r\n\t\t\treturn renderer;\r\n\r\n\t\t})();\r\n\r\n\t\tviewport.appendChild(this.renderer.domElement);\r\n\r\n\t\t/**\r\n\t\t * A clock.\r\n\t\t *\r\n\t\t * @type {Clock}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.clock = new Clock();\r\n\r\n\t\t/**\r\n\t\t * A menu for custom demo options.\r\n\t\t *\r\n\t\t * @type {GUI}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\taside.appendChild(this.menu.domElement);\r\n\r\n\t\t/**\r\n\t\t * A collection of demos.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demos = new Map();\r\n\r\n\t\t/**\r\n\t\t * The id of the current demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demo = null;\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.currentDemo = null;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Updates the demo options menu.\r\n\t *\r\n\t * @private\r\n\t * @return {GUI} A clean menu.\r\n\t */\r\n\r\n\tresetMenu() {\r\n\r\n\t\tconst node = this.menu.domElement.parentNode;\r\n\t\tconst menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\t// Don't create a demo selection if there's only one demo.\r\n\t\tif(this.demos.size > 1) {\r\n\r\n\t\t\tconst selection = menu.add(this, \"demo\", Array.from(this.demos.keys()));\r\n\t\t\tselection.onChange(() => this.loadDemo());\r\n\r\n\t\t}\r\n\r\n\t\tnode.removeChild(this.menu.domElement);\r\n\t\tnode.appendChild(menu.domElement);\r\n\r\n\t\tthis.menu.destroy();\r\n\t\tthis.menu = menu;\r\n\r\n\t\treturn menu;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Activates the given demo if it's still selected.\r\n\t *\r\n\t * While the demo was loading, another demo may have been selected.\r\n\t *\r\n\t * @private\r\n\t * @param {Demo} demo - A demo.\r\n\t */\r\n\r\n\tstartDemo(demo) {\r\n\r\n\t\tif(demo.id === this.demo) {\r\n\r\n\t\t\tdemo.initialize();\r\n\t\t\tdemo.registerOptions(this.resetMenu());\r\n\t\t\tdemo.ready = true;\r\n\r\n\t\t\tevents.load.demo = demo;\r\n\t\t\tthis.dispatchEvent(events.load);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tloadDemo() {\r\n\r\n\t\tconst nextDemo = this.demos.get(this.demo);\r\n\t\tconst currentDemo = this.currentDemo;\r\n\t\tconst renderer = this.renderer;\r\n\r\n\t\t// Update the URL.\r\n\t\twindow.location.hash = nextDemo.id;\r\n\r\n\t\tif(currentDemo !== null) {\r\n\r\n\t\t\tcurrentDemo.reset();\r\n\r\n\t\t}\r\n\r\n\t\t// Hide the menu.\r\n\t\tthis.menu.domElement.style.display = \"none\";\r\n\r\n\t\t// Update and dispatch the event.\r\n\t\tevents.change.previousDemo = currentDemo;\r\n\t\tevents.change.demo = nextDemo;\r\n\t\tthis.currentDemo = nextDemo;\r\n\t\tthis.dispatchEvent(events.change);\r\n\r\n\t\t// Clear the screen.\r\n\t\trenderer.clear();\r\n\r\n\t\tnextDemo.load().then(() => this.startDemo(nextDemo)).catch(console.error);\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Adds a demo.\r\n\t *\r\n\t * @param {Demo} demo - The demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\taddDemo(demo) {\r\n\r\n\t\tconst currentDemo = this.currentDemo;\r\n\r\n\t\tthis.demos.set(demo.id, demo.setRenderer(this.renderer));\r\n\r\n\t\t// If there is a hash value, wait for the corresponding demo to be added.\r\n\t\tif((this.demo === null && initialHash.length === 0) || demo.id === initialHash) {\r\n\r\n\t\t\tthis.demo = demo.id;\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t}\r\n\r\n\t\t// Update the demo selection.\r\n\t\tthis.resetMenu();\r\n\r\n\t\tif(currentDemo !== null && currentDemo.ready) {\r\n\r\n\t\t\t// Add the demo options again.\r\n\t\t\tcurrentDemo.registerOptions(this.menu);\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Removes a demo.\r\n\t *\r\n\t * @param {String} id - The id of the demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\tremoveDemo(id) {\r\n\r\n\t\tconst demos = this.demos;\r\n\r\n\t\tlet firstEntry;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\tdemos.delete(id);\r\n\r\n\t\t\tif(this.demo === id && demos.size > 0) {\r\n\r\n\t\t\t\t// Load the first of the remaining demos.\r\n\t\t\t\tfirstEntry = demos.entries().next().value;\r\n\t\t\t\tthis.demo = firstEntry[0];\r\n\t\t\t\tthis.currentDemo = firstEntry[1];\r\n\t\t\t\tthis.loadDemo();\r\n\r\n\t\t\t} else {\r\n\r\n\t\t\t\tthis.demo = null;\r\n\t\t\t\tthis.currentDemo = null;\r\n\t\t\t\tthis.renderer.clear();\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the render size.\r\n\t *\r\n\t * @param {Number} width - The width.\r\n\t * @param {Number} height - The height.\r\n\t */\r\n\r\n\tsetSize(width, height) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst camera = demo.camera;\r\n\r\n\t\tthis.renderer.setSize(width, height);\r\n\r\n\t\tif(demo !== null && camera !== null) {\r\n\r\n\t\t\tif(camera instanceof OrthographicCamera) {\r\n\r\n\t\t\t\tcamera.left = width / -2.0;\r\n\t\t\t\tcamera.right = width / 2.0;\r\n\t\t\t\tcamera.top = height / 2.0;\r\n\t\t\t\tcamera.bottom = height / -2.0;\r\n\t\t\t\tcamera.updateProjectionMatrix();\r\n\r\n\t\t\t} else if(!(camera instanceof CubeCamera)) {\r\n\r\n\t\t\t\t// Perspective, Array or Stereo camera.\r\n\t\t\t\tcamera.aspect = width / height;\r\n\t\t\t\tcamera.updateProjectionMatrix();\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The main render loop.\r\n\t *\r\n\t * @param {DOMHighResTimeStamp} now - The current time.\r\n\t */\r\n\r\n\trender(now) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst delta = this.clock.getDelta();\r\n\r\n\t\tif(demo !== null && demo.ready) {\r\n\r\n\t\t\tdemo.render(delta);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n}\r\n",
+    "content": "import { EventTarget } from \"synthetic-event\";\r\nimport { Clock, CubeCamera, OrthographicCamera, WebGLRenderer } from \"three\";\r\nimport * as dat from \"dat.gui\";\r\n\r\nimport * as events from \"./demo-manager-events.js\";\r\n\r\n/**\r\n * A demo manager.\r\n */\r\n\r\nexport class DemoManager extends EventTarget {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager.\r\n\t *\r\n\t * @param {HTMLElement} viewport - The primary DOM container.\r\n\t * @param {Object} [options] - Additional options.\r\n\t * @param {HTMLElement} [options.aside] - A secondary DOM container.\r\n\t * @param {WebGLRenderer} [options.renderer] - A custom renderer.\r\n\t */\r\n\r\n\tconstructor(viewport, options = {}) {\r\n\r\n\t\tconst aside = (options.aside !== undefined) ? options.aside : viewport;\r\n\r\n\t\tsuper();\r\n\r\n\t\t/**\r\n\t\t * The main renderer.\r\n\t\t *\r\n\t\t * @type {WebGLRenderer}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.renderer = (options.renderer !== undefined) ? options.renderer : (() => {\r\n\r\n\t\t\tconst renderer = new WebGLRenderer();\r\n\t\t\trenderer.setSize(viewport.clientWidth, viewport.clientHeight);\r\n\t\t\trenderer.setPixelRatio(window.devicePixelRatio);\r\n\r\n\t\t\treturn renderer;\r\n\r\n\t\t})();\r\n\r\n\t\tviewport.appendChild(this.renderer.domElement);\r\n\r\n\t\t/**\r\n\t\t * A clock.\r\n\t\t *\r\n\t\t * @type {Clock}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.clock = new Clock();\r\n\r\n\t\t/**\r\n\t\t * A menu for custom demo options.\r\n\t\t *\r\n\t\t * @type {GUI}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\taside.appendChild(this.menu.domElement);\r\n\r\n\t\t/**\r\n\t\t * A collection of demos.\r\n\t\t *\r\n\t\t * @type {Map}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demos = new Map();\r\n\r\n\t\t/**\r\n\t\t * The id of the current demo.\r\n\t\t *\r\n\t\t * @type {String}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.demo = null;\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t * @private\r\n\t\t */\r\n\r\n\t\tthis.currentDemo = null;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Updates the demo options menu.\r\n\t *\r\n\t * @private\r\n\t * @return {GUI} A clean menu.\r\n\t */\r\n\r\n\tresetMenu() {\r\n\r\n\t\tconst node = this.menu.domElement.parentNode;\r\n\t\tconst menu = new dat.GUI({ autoPlace: false });\r\n\r\n\t\t// Don't create a demo selection if there's only one demo.\r\n\t\tif(this.demos.size > 1) {\r\n\r\n\t\t\tconst selection = menu.add(this, \"demo\", Array.from(this.demos.keys()));\r\n\t\t\tselection.onChange(() => this.loadDemo());\r\n\r\n\t\t}\r\n\r\n\t\tnode.removeChild(this.menu.domElement);\r\n\t\tnode.appendChild(menu.domElement);\r\n\r\n\t\tthis.menu.destroy();\r\n\t\tthis.menu = menu;\r\n\r\n\t\treturn menu;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Activates the given demo if it's still selected.\r\n\t *\r\n\t * While the demo was loading, another demo may have been selected.\r\n\t *\r\n\t * @private\r\n\t * @param {Demo} demo - A demo.\r\n\t */\r\n\r\n\tstartDemo(demo) {\r\n\r\n\t\tif(demo.id === this.demo) {\r\n\r\n\t\t\tdemo.initialize();\r\n\t\t\tdemo.registerOptions(this.resetMenu());\r\n\t\t\tdemo.ready = true;\r\n\r\n\t\t\tevents.load.demo = demo;\r\n\t\t\tthis.dispatchEvent(events.load);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Loads the currently selected demo.\r\n\t *\r\n\t * @private\r\n\t */\r\n\r\n\tloadDemo() {\r\n\r\n\t\tconst nextDemo = this.demos.get(this.demo);\r\n\t\tconst currentDemo = this.currentDemo;\r\n\t\tconst renderer = this.renderer;\r\n\r\n\t\t// Update the URL.\r\n\t\twindow.location.hash = nextDemo.id;\r\n\r\n\t\tif(currentDemo !== null) {\r\n\r\n\t\t\tcurrentDemo.reset();\r\n\r\n\t\t}\r\n\r\n\t\t// Hide the menu.\r\n\t\tthis.menu.domElement.style.display = \"none\";\r\n\r\n\t\t// Update and dispatch the event.\r\n\t\tevents.change.previousDemo = currentDemo;\r\n\t\tevents.change.demo = nextDemo;\r\n\t\tthis.currentDemo = nextDemo;\r\n\t\tthis.dispatchEvent(events.change);\r\n\r\n\t\t// Clear the screen.\r\n\t\trenderer.clear();\r\n\r\n\t\tnextDemo.load().then(() => this.startDemo(nextDemo)).catch(console.error);\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Adds a demo.\r\n\t *\r\n\t * @param {Demo} demo - The demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\taddDemo(demo) {\r\n\r\n\t\tconst hash = window.location.hash.slice(1);\r\n\t\tconst currentDemo = this.currentDemo;\r\n\r\n\t\tthis.demos.set(demo.id, demo.setRenderer(this.renderer));\r\n\r\n\t\t// If there is a hash value, wait for the corresponding demo to be added.\r\n\t\tif((this.demo === null && hash.length === 0) || demo.id === hash) {\r\n\r\n\t\t\tthis.demo = demo.id;\r\n\t\t\tthis.loadDemo();\r\n\r\n\t\t}\r\n\r\n\t\t// Update the demo selection.\r\n\t\tthis.resetMenu();\r\n\r\n\t\tif(currentDemo !== null && currentDemo.ready) {\r\n\r\n\t\t\t// Add the demo options again.\r\n\t\t\tcurrentDemo.registerOptions(this.menu);\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Removes a demo.\r\n\t *\r\n\t * @param {String} id - The id of the demo.\r\n\t * @return {DemoManager} This manager.\r\n\t */\r\n\r\n\tremoveDemo(id) {\r\n\r\n\t\tconst demos = this.demos;\r\n\r\n\t\tlet firstEntry;\r\n\r\n\t\tif(demos.has(id)) {\r\n\r\n\t\t\tdemos.delete(id);\r\n\r\n\t\t\tif(this.demo === id && demos.size > 0) {\r\n\r\n\t\t\t\t// Load the first of the remaining demos.\r\n\t\t\t\tfirstEntry = demos.entries().next().value;\r\n\t\t\t\tthis.demo = firstEntry[0];\r\n\t\t\t\tthis.currentDemo = firstEntry[1];\r\n\t\t\t\tthis.loadDemo();\r\n\r\n\t\t\t} else {\r\n\r\n\t\t\t\tthis.demo = null;\r\n\t\t\t\tthis.currentDemo = null;\r\n\t\t\t\tthis.renderer.clear();\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\treturn this;\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * Sets the render size.\r\n\t *\r\n\t * @param {Number} width - The width.\r\n\t * @param {Number} height - The height.\r\n\t */\r\n\r\n\tsetSize(width, height) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\r\n\t\tthis.renderer.setSize(width, height);\r\n\r\n\t\tif(demo !== null && demo.camera !== null) {\r\n\r\n\t\t\tconst camera = demo.camera;\r\n\r\n\t\t\tif(camera instanceof OrthographicCamera) {\r\n\r\n\t\t\t\tcamera.left = width / -2.0;\r\n\t\t\t\tcamera.right = width / 2.0;\r\n\t\t\t\tcamera.top = height / 2.0;\r\n\t\t\t\tcamera.bottom = height / -2.0;\r\n\t\t\t\tcamera.updateProjectionMatrix();\r\n\r\n\t\t\t} else if(!(camera instanceof CubeCamera)) {\r\n\r\n\t\t\t\t// Perspective, Array or Stereo camera.\r\n\t\t\t\tcamera.aspect = width / height;\r\n\t\t\t\tcamera.updateProjectionMatrix();\r\n\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\t/**\r\n\t * The main render loop.\r\n\t *\r\n\t * @param {DOMHighResTimeStamp} now - The current time.\r\n\t */\r\n\r\n\trender(now) {\r\n\r\n\t\tconst demo = this.currentDemo;\r\n\t\tconst delta = this.clock.getDelta();\r\n\r\n\t\tif(demo !== null && demo.ready) {\r\n\r\n\t\t\tdemo.render(delta);\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n}\r\n",
     "static": true,
     "longname": "D:/Sourcecode/JavaScript/three-demo/src/DemoManager.js",
     "access": "public",
@@ -986,29 +986,6 @@
   },
   {
     "__docId__": 74,
-    "kind": "variable",
-    "name": "initialHash",
-    "memberof": "src/DemoManager.js",
-    "static": true,
-    "longname": "src/DemoManager.js~initialHash",
-    "access": "private",
-    "export": false,
-    "importPath": "three-demo/src/DemoManager.js",
-    "importStyle": null,
-    "description": "The initial URL hash value.",
-    "lineNumber": 14,
-    "type": {
-      "nullable": null,
-      "types": [
-        "String"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 75,
     "kind": "class",
     "name": "DemoManager",
     "memberof": "src/DemoManager.js",
@@ -1019,14 +996,14 @@
     "importPath": "three-demo/src/DemoManager.js",
     "importStyle": "{DemoManager}",
     "description": "A demo manager.",
-    "lineNumber": 20,
+    "lineNumber": 11,
     "interface": false,
     "extends": [
       "synthetic-event~EventTarget"
     ]
   },
   {
-    "__docId__": 76,
+    "__docId__": 75,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1036,7 +1013,7 @@
     "longname": "src/DemoManager.js~DemoManager#constructor",
     "access": "public",
     "description": "Constructs a new demo manager.",
-    "lineNumber": 31,
+    "lineNumber": 22,
     "params": [
       {
         "nullable": null,
@@ -1081,7 +1058,7 @@
     ]
   },
   {
-    "__docId__": 77,
+    "__docId__": 76,
     "kind": "member",
     "name": "renderer",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1089,7 +1066,7 @@
     "longname": "src/DemoManager.js~DemoManager#renderer",
     "access": "private",
     "description": "The main renderer.",
-    "lineNumber": 44,
+    "lineNumber": 35,
     "type": {
       "nullable": null,
       "types": [
@@ -1100,7 +1077,7 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 77,
     "kind": "member",
     "name": "clock",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1108,7 +1085,7 @@
     "longname": "src/DemoManager.js~DemoManager#clock",
     "access": "private",
     "description": "A clock.",
-    "lineNumber": 63,
+    "lineNumber": 54,
     "type": {
       "nullable": null,
       "types": [
@@ -1119,7 +1096,7 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 78,
     "kind": "member",
     "name": "menu",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1127,7 +1104,7 @@
     "longname": "src/DemoManager.js~DemoManager#menu",
     "access": "private",
     "description": "A menu for custom demo options.",
-    "lineNumber": 72,
+    "lineNumber": 63,
     "type": {
       "nullable": null,
       "types": [
@@ -1138,7 +1115,7 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 79,
     "kind": "member",
     "name": "demos",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1146,7 +1123,7 @@
     "longname": "src/DemoManager.js~DemoManager#demos",
     "access": "private",
     "description": "A collection of demos.",
-    "lineNumber": 83,
+    "lineNumber": 74,
     "type": {
       "nullable": null,
       "types": [
@@ -1157,7 +1134,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 80,
     "kind": "member",
     "name": "demo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1165,7 +1142,7 @@
     "longname": "src/DemoManager.js~DemoManager#demo",
     "access": "private",
     "description": "The id of the current demo.",
-    "lineNumber": 92,
+    "lineNumber": 83,
     "type": {
       "nullable": null,
       "types": [
@@ -1176,7 +1153,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 81,
     "kind": "member",
     "name": "currentDemo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1184,7 +1161,7 @@
     "longname": "src/DemoManager.js~DemoManager#currentDemo",
     "access": "private",
     "description": "The current demo.",
-    "lineNumber": 101,
+    "lineNumber": 92,
     "type": {
       "nullable": null,
       "types": [
@@ -1195,7 +1172,7 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 82,
     "kind": "method",
     "name": "resetMenu",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1205,7 +1182,7 @@
     "longname": "src/DemoManager.js~DemoManager#resetMenu",
     "access": "private",
     "description": "Updates the demo options menu.",
-    "lineNumber": 112,
+    "lineNumber": 103,
     "return": {
       "nullable": null,
       "types": [
@@ -1217,7 +1194,7 @@
     "params": []
   },
   {
-    "__docId__": 85,
+    "__docId__": 84,
     "kind": "method",
     "name": "startDemo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1227,7 +1204,7 @@
     "longname": "src/DemoManager.js~DemoManager#startDemo",
     "access": "private",
     "description": "Activates the given demo if it's still selected.\n\nWhile the demo was loading, another demo may have been selected.",
-    "lineNumber": 144,
+    "lineNumber": 135,
     "params": [
       {
         "nullable": null,
@@ -1243,7 +1220,7 @@
     "return": null
   },
   {
-    "__docId__": 86,
+    "__docId__": 85,
     "kind": "method",
     "name": "loadDemo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1253,12 +1230,12 @@
     "longname": "src/DemoManager.js~DemoManager#loadDemo",
     "access": "private",
     "description": "Loads the currently selected demo.",
-    "lineNumber": 165,
+    "lineNumber": 156,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 88,
+    "__docId__": 87,
     "kind": "method",
     "name": "addDemo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1268,7 +1245,7 @@
     "longname": "src/DemoManager.js~DemoManager#addDemo",
     "access": "public",
     "description": "Adds a demo.",
-    "lineNumber": 203,
+    "lineNumber": 194,
     "params": [
       {
         "nullable": null,
@@ -1291,7 +1268,7 @@
     }
   },
   {
-    "__docId__": 90,
+    "__docId__": 89,
     "kind": "method",
     "name": "removeDemo",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1301,7 +1278,7 @@
     "longname": "src/DemoManager.js~DemoManager#removeDemo",
     "access": "public",
     "description": "Removes a demo.",
-    "lineNumber": 238,
+    "lineNumber": 230,
     "params": [
       {
         "nullable": null,
@@ -1324,7 +1301,7 @@
     }
   },
   {
-    "__docId__": 95,
+    "__docId__": 94,
     "kind": "method",
     "name": "setSize",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1334,7 +1311,7 @@
     "longname": "src/DemoManager.js~DemoManager#setSize",
     "access": "public",
     "description": "Sets the render size.",
-    "lineNumber": 277,
+    "lineNumber": 269,
     "params": [
       {
         "nullable": null,
@@ -1360,7 +1337,7 @@
     "return": null
   },
   {
-    "__docId__": 96,
+    "__docId__": 95,
     "kind": "method",
     "name": "render",
     "memberof": "src/DemoManager.js~DemoManager",
@@ -1370,7 +1347,7 @@
     "longname": "src/DemoManager.js~DemoManager#render",
     "access": "public",
     "description": "The main render loop.",
-    "lineNumber": 312,
+    "lineNumber": 305,
     "params": [
       {
         "nullable": null,
@@ -1386,7 +1363,7 @@
     "return": null
   },
   {
-    "__docId__": 97,
+    "__docId__": 96,
     "kind": "file",
     "name": "src/DemoManagerEvent.js",
     "content": "import { Event } from \"synthetic-event\";\r\n\r\n/**\r\n * A demo manager event.\r\n */\r\n\r\nexport class DemoManagerEvent extends Event {\r\n\r\n\t/**\r\n\t * Constructs a new demo manager event.\r\n\t *\r\n\t * @param {String} type - The name of the event.\r\n\t */\r\n\r\n\tconstructor(type) {\r\n\r\n\t\tsuper(type);\r\n\r\n\t\t/**\r\n\t\t * The previous demo, if available.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t */\r\n\r\n\t\tthis.previousDemo = null;\r\n\r\n\t\t/**\r\n\t\t * The current demo.\r\n\t\t *\r\n\t\t * @type {Demo}\r\n\t\t */\r\n\r\n\t\tthis.demo = null;\r\n\r\n\t}\r\n\r\n}\r\n",
@@ -1397,7 +1374,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 98,
+    "__docId__": 97,
     "kind": "class",
     "name": "DemoManagerEvent",
     "memberof": "src/DemoManagerEvent.js",
@@ -1415,7 +1392,7 @@
     ]
   },
   {
-    "__docId__": 99,
+    "__docId__": 98,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/DemoManagerEvent.js~DemoManagerEvent",
@@ -1440,7 +1417,7 @@
     ]
   },
   {
-    "__docId__": 100,
+    "__docId__": 99,
     "kind": "member",
     "name": "previousDemo",
     "memberof": "src/DemoManagerEvent.js~DemoManagerEvent",
@@ -1459,7 +1436,7 @@
     }
   },
   {
-    "__docId__": 101,
+    "__docId__": 100,
     "kind": "member",
     "name": "demo",
     "memberof": "src/DemoManagerEvent.js~DemoManagerEvent",
@@ -1478,7 +1455,7 @@
     }
   },
   {
-    "__docId__": 102,
+    "__docId__": 101,
     "kind": "file",
     "name": "src/index.js",
     "content": "/**\r\n * Core components.\r\n *\r\n * @module three-demo\r\n */\r\n\r\nexport { Demo } from \"./Demo.js\";\r\nexport { DemoManager } from \"./DemoManager.js\";\r\nexport { DemoManagerEvent } from \"./DemoManagerEvent.js\";\r\n",
@@ -1498,7 +1475,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\r\n\t\"name\": \"three-demo\",\r\n\t\"version\": \"3.2.2\",\r\n\t\"description\": \"A demo scaffold for three.js.\",\r\n\t\"homepage\": \"https://github.com/vanruesc/three-demo\",\r\n\t\"main\": \"build/three-demo.js\",\r\n\t\"module\": \"src/index.js\",\r\n\t\"sideEffects\": false,\r\n\t\"license\": \"Zlib\",\r\n\r\n\t\"keywords\": [\r\n\t\t\"demo\",\r\n\t\t\"scaffold\",\r\n\t\t\"three\",\r\n\t\t\"3d\"\r\n\t],\r\n\r\n\t\"author\": {\r\n\t\t\"name\": \"Raoul van Rüschen\",\r\n\t\t\"email\": \"vanruesc@outlook.de\"\r\n\t},\r\n\r\n\t\"repository\": {\r\n\t\t\"type\": \"git\",\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo.git\"\r\n\t},\r\n\r\n\t\"bugs\": {\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo/issues\"\r\n\t},\r\n\r\n\t\"files\": [\r\n\t\t\"src\",\r\n\t\t\"build\"\r\n\t],\r\n\r\n\t\"scripts\": {\r\n\t\t\"ava\": \"ava\",\r\n\t\t\"lint\": \"npm run lint:lib && npm run lint:demo && npm run lint:test\",\r\n\t\t\"lint:config\": \"eslint *.js\",\r\n\t\t\"lint:lib\": \"eslint src\",\r\n\t\t\"lint:demo\": \"eslint demo/src\",\r\n\t\t\"lint:test\": \"eslint test\",\r\n\t\t\"build\": \"rollup -c\",\r\n\t\t\"build:production\": \"cross-env NODE_ENV=production rollup -c\",\r\n\t\t\"doc\": \"esdoc\",\r\n\t\t\"deploy\": \"cpx demo/assets/** public/demo\",\r\n\t\t\"pretest\": \"npm run lint && npm run build:production\",\r\n\t\t\"test\": \"npm run ava\",\r\n\t\t\"prepack\": \"npm test\"\r\n\t},\r\n\r\n\t\"ava\": {\r\n\t\t\"failFast\": true,\r\n\t\t\"files\": [\"test/**/*.js\"]\r\n\t},\r\n\r\n\t\"eslintConfig\": {\r\n\t\t\"extends\": \"delta\"\r\n\t},\r\n\r\n\t\"peerDependencies\": {\r\n\t\t\"dat.gui\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"synthetic-event\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"three\": \">= 0.89.0 <= 0.98.0\"\r\n\t},\r\n\r\n\t\"devDependencies\": {\r\n\t\t\"@babel/core\": \"7.x.x\",\r\n\t\t\"@babel/preset-env\": \"7.x.x\",\r\n\t\t\"ava\": \"0.x.x\",\r\n\t\t\"browser-env\": \"3.x.x\",\r\n\t\t\"cpx\": \"1.x.x\",\r\n\t\t\"cross-env\": \"5.x.x\",\r\n\t\t\"dat.gui\": \"0.x.x\",\r\n\t\t\"esdoc\": \"1.x.x\",\r\n\t\t\"esdoc-standard-plugin\": \"1.x.x\",\r\n\t\t\"eslint\": \"5.x.x\",\r\n\t\t\"eslint-config-delta\": \"0.x.x\",\r\n\t\t\"math-ds\": \"1.x.x\",\r\n\t\t\"rollup\": \"0.x.x\",\r\n\t\t\"rollup-plugin-babel\": \"4.x.x\",\r\n\t\t\"rollup-plugin-babel-minify\": \"6.x.x\",\r\n\t\t\"rollup-plugin-node-resolve\": \"3.x.x\",\r\n\t\t\"synthetic-event\": \"0.x.x\",\r\n\t\t\"stats.js\": \"0.x.x\",\r\n\t\t\"three\": \"0.98.x\"\r\n\t}\r\n}\r\n",
+    "content": "{\r\n\t\"name\": \"three-demo\",\r\n\t\"version\": \"3.2.3\",\r\n\t\"description\": \"A demo scaffold for three.js.\",\r\n\t\"homepage\": \"https://github.com/vanruesc/three-demo\",\r\n\t\"main\": \"build/three-demo.js\",\r\n\t\"module\": \"src/index.js\",\r\n\t\"sideEffects\": false,\r\n\t\"license\": \"Zlib\",\r\n\r\n\t\"keywords\": [\r\n\t\t\"demo\",\r\n\t\t\"scaffold\",\r\n\t\t\"three\",\r\n\t\t\"3d\"\r\n\t],\r\n\r\n\t\"author\": {\r\n\t\t\"name\": \"Raoul van Rüschen\",\r\n\t\t\"email\": \"vanruesc@outlook.de\"\r\n\t},\r\n\r\n\t\"repository\": {\r\n\t\t\"type\": \"git\",\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo.git\"\r\n\t},\r\n\r\n\t\"bugs\": {\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo/issues\"\r\n\t},\r\n\r\n\t\"files\": [\r\n\t\t\"src\",\r\n\t\t\"build\"\r\n\t],\r\n\r\n\t\"scripts\": {\r\n\t\t\"ava\": \"ava\",\r\n\t\t\"lint\": \"npm run lint:lib && npm run lint:demo && npm run lint:test\",\r\n\t\t\"lint:config\": \"eslint *.js\",\r\n\t\t\"lint:lib\": \"eslint src\",\r\n\t\t\"lint:demo\": \"eslint demo/src\",\r\n\t\t\"lint:test\": \"eslint test\",\r\n\t\t\"build\": \"rollup -c\",\r\n\t\t\"build:production\": \"cross-env NODE_ENV=production rollup -c\",\r\n\t\t\"doc\": \"esdoc\",\r\n\t\t\"deploy\": \"cpx demo/assets/** public/demo\",\r\n\t\t\"pretest\": \"npm run lint && npm run build:production\",\r\n\t\t\"test\": \"npm run ava\",\r\n\t\t\"prepack\": \"npm test\"\r\n\t},\r\n\r\n\t\"ava\": {\r\n\t\t\"failFast\": true,\r\n\t\t\"files\": [\"test/**/*.js\"]\r\n\t},\r\n\r\n\t\"eslintConfig\": {\r\n\t\t\"extends\": \"delta\"\r\n\t},\r\n\r\n\t\"peerDependencies\": {\r\n\t\t\"dat.gui\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"synthetic-event\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"three\": \">= 0.89.0 <= 0.98.0\"\r\n\t},\r\n\r\n\t\"devDependencies\": {\r\n\t\t\"@babel/core\": \"7.x.x\",\r\n\t\t\"@babel/preset-env\": \"7.x.x\",\r\n\t\t\"ava\": \"0.x.x\",\r\n\t\t\"browser-env\": \"3.x.x\",\r\n\t\t\"cpx\": \"1.x.x\",\r\n\t\t\"cross-env\": \"5.x.x\",\r\n\t\t\"dat.gui\": \"0.x.x\",\r\n\t\t\"esdoc\": \"1.x.x\",\r\n\t\t\"esdoc-standard-plugin\": \"1.x.x\",\r\n\t\t\"eslint\": \"5.x.x\",\r\n\t\t\"eslint-config-delta\": \"0.x.x\",\r\n\t\t\"math-ds\": \"1.x.x\",\r\n\t\t\"rollup\": \"0.x.x\",\r\n\t\t\"rollup-plugin-babel\": \"4.x.x\",\r\n\t\t\"rollup-plugin-babel-minify\": \"6.x.x\",\r\n\t\t\"rollup-plugin-node-resolve\": \"3.x.x\",\r\n\t\t\"synthetic-event\": \"0.x.x\",\r\n\t\t\"stats.js\": \"0.x.x\",\r\n\t\t\"three\": \"0.98.x\"\r\n\t}\r\n}\r\n",
     "longname": "D:\\Sourcecode\\JavaScript\\three-demo\\package.json",
     "name": "package.json",
     "static": true,

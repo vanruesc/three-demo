@@ -46,15 +46,6 @@ import * as dat from &quot;dat.gui&quot;;
 import * as events from &quot;./demo-manager-events.js&quot;;
 
 /**
- * The initial URL hash value.
- *
- * @type {String}
- * @private
- */
-
-const initialHash = window.location.hash.slice(1);
-
-/**
  * A demo manager.
  */
 
@@ -243,12 +234,13 @@ export class DemoManager extends EventTarget {
 
 	addDemo(demo) {
 
+		const hash = window.location.hash.slice(1);
 		const currentDemo = this.currentDemo;
 
 		this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
 		// If there is a hash value, wait for the corresponding demo to be added.
-		if((this.demo === null &amp;&amp; initialHash.length === 0) || demo.id === initialHash) {
+		if((this.demo === null &amp;&amp; hash.length === 0) || demo.id === hash) {
 
 			this.demo = demo.id;
 			this.loadDemo();
@@ -318,11 +310,12 @@ export class DemoManager extends EventTarget {
 	setSize(width, height) {
 
 		const demo = this.currentDemo;
-		const camera = demo.camera;
 
 		this.renderer.setSize(width, height);
 
-		if(demo !== null &amp;&amp; camera !== null) {
+		if(demo !== null &amp;&amp; demo.camera !== null) {
+
+			const camera = demo.camera;
 
 			if(camera instanceof OrthographicCamera) {
 
