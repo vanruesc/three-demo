@@ -15,7 +15,11 @@ A compact demo framework for [three.js](https://threejs.org/).
 This library requires the peer dependencies [dat.gui](https://github.com/dataarts/dat.gui), [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
 
 ```sh
-npm install dat.gui synthetic-event three three-demo
+npm install dat.gui synthetic-event three
+```
+
+```sh
+npm install three-demo
 ```
 
 
@@ -25,17 +29,17 @@ npm install dat.gui synthetic-event three three-demo
 import { DemoManager } from "three-demo";
 import { MyDemo } from "./MyDemo.js";
 
-// Initialise the demo manager.
+// Initialize the demo manager.
 const manager = new DemoManager(document.getElementById("viewport"), {
 	aside: document.getElementById("aside"),
 	renderer: myWebGLRenderer
 });
 
-// Define your event listeners before adding any demos.
-manager.addEventListener("change", onDemoChange);
-manager.addEventListener("load", onDemoLoad);
+// React to events.
+manager.addEventListener("change", console.log);
+manager.addEventListener("load", console.log);
 
-// Register your custom demos.
+// Register demos.
 manager.addDemo(new MyDemo());
 
 // Start rendering.
