@@ -1,5 +1,5 @@
 /**
- * three-demo v3.2.3 build Sun Nov 04 2018
+ * three-demo v3.3.0 build Sat Dec 01 2018
  * https://github.com/vanruesc/three-demo
  * Copyright 2018 Raoul van Rüschen, Zlib
  */
