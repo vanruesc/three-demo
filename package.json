@@ -62,7 +62,7 @@
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
 		"synthetic-event": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.89.0 <= 0.99.0"
+		"three": ">= 0.89.0 < 0.100.0"
 	},
 
 	"devDependencies": {
