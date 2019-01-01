@@ -1,13 +1,13 @@
 /**
- * three-demo v3.3.1 build Sat Dec 01 2018
+ * three-demo v3.4.0 build Tue Jan 01 2019
  * https://github.com/vanruesc/three-demo
- * Copyright 2018 Raoul van Rüschen, Zlib
+ * Copyright 2019 Raoul van Rüschen, Zlib
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('three')) :
   typeof define === 'function' && define.amd ? define(['exports', 'three'], factory) :
-  (factory((global.THREEDEMO = {}),global.THREE));
-}(this, (function (exports,three) { 'use strict';
+  (global = global || self, factory(global.THREEDEMO = {}, global.THREE));
+}(this, function (exports, three) { 'use strict';
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -3299,4 +3299,4 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
