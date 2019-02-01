@@ -2335,7 +2335,7 @@
     });
 
     if (Common.isUndefined(params.parent)) {
-      params.closed = false;
+      this.closed = params.closed || false;
       dom.addClass(this.domElement, GUI.CLASS_MAIN);
       dom.makeSelectable(this.domElement, false);
 
@@ -2787,7 +2787,7 @@
         max: controller.__max,
         step: controller.__step
       });
-      Common.each(['updateDisplay', 'onChange', 'onFinishChange', 'step'], function (method) {
+      Common.each(['updateDisplay', 'onChange', 'onFinishChange', 'step', 'min', 'max'], function (method) {
         var pc = controller[method];
         var pb = box[method];
 
