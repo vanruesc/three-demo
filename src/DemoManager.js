@@ -19,9 +19,7 @@ export class DemoManager extends EventTarget {
 	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
 	 */
 
-	constructor(viewport, options = {}) {
-
-		const aside = (options.aside !== undefined) ? options.aside : viewport;
+	constructor(viewport, { aside = viewport, renderer } = {}) {
 
 		super();
 
@@ -32,7 +30,7 @@ export class DemoManager extends EventTarget {
 		 * @private
 		 */
 
-		this.renderer = (options.renderer !== undefined) ? options.renderer : (() => {
+		this.renderer = (renderer !== undefined) ? renderer : (() => {
 
 			const renderer = new WebGLRenderer();
 			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
