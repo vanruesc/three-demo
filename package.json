@@ -62,7 +62,7 @@
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
 		"synthetic-event": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.89.0 < 0.103.0"
+		"three": ">= 0.89.0 < 0.104.0"
 	},
 
 	"devDependencies": {
@@ -84,6 +84,6 @@
 		"rollup-plugin-node-resolve": "4.x.x",
 		"synthetic-event": "0.x.x",
 		"stats.js": "0.x.x",
-		"three": "0.102.x"
+		"three": "0.103.x"
 	}
 }
