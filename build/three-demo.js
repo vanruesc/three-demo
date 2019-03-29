@@ -1,5 +1,5 @@
 /**
- * three-demo v3.6.0 build Thu Feb 28 2019
+ * three-demo v3.7.0 build Sat Mar 30 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -3132,13 +3132,15 @@
     function DemoManager(viewport) {
       var _this;
 
-      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref$aside = _ref.aside,
+          aside = _ref$aside === void 0 ? viewport : _ref$aside,
+          renderer = _ref.renderer;
 
       _classCallCheck(this, DemoManager);
 
-      var aside = options.aside !== undefined ? options.aside : viewport;
       _this = _possibleConstructorReturn(this, _getPrototypeOf(DemoManager).call(this));
-      _this.renderer = options.renderer !== undefined ? options.renderer : function () {
+      _this.renderer = renderer !== undefined ? renderer : function () {
         var renderer = new three.WebGLRenderer();
         renderer.setSize(viewport.clientWidth, viewport.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);

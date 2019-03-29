@@ -3154,13 +3154,15 @@
     function DemoManager(viewport) {
       var _this;
 
-      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref$aside = _ref.aside,
+          aside = _ref$aside === void 0 ? viewport : _ref$aside,
+          renderer = _ref.renderer;
 
       _classCallCheck(this, DemoManager);
 
-      var aside = options.aside !== undefined ? options.aside : viewport;
       _this = _possibleConstructorReturn(this, _getPrototypeOf(DemoManager).call(this));
-      _this.renderer = options.renderer !== undefined ? options.renderer : function () {
+      _this.renderer = renderer !== undefined ? renderer : function () {
         var renderer = new three.WebGLRenderer();
         renderer.setSize(viewport.clientWidth, viewport.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
