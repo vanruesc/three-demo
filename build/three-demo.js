@@ -1,5 +1,5 @@
 /**
- * three-demo v3.7.0 build Sat Mar 30 2019
+ * three-demo v3.8.0 build Thu Apr 25 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -185,10 +185,10 @@
 
         if (m.has(type)) {
           listeners = m.get(type);
-          listeners.delete(listener);
+          listeners["delete"](listener);
 
           if (listeners.size === 0) {
-            m.delete(type);
+            m["delete"](type);
           }
         }
       }
@@ -218,8 +218,8 @@
             _iteratorError = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion && _iterator.return != null) {
-                _iterator.return();
+              if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                _iterator["return"]();
               }
             } finally {
               if (_didIteratorError) {
@@ -245,8 +245,8 @@
             _iteratorError2 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-                _iterator2.return();
+              if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                _iterator2["return"]();
               }
             } finally {
               if (_didIteratorError2) {
@@ -2537,6 +2537,12 @@
     close: function close() {
       this.closed = true;
     },
+    hide: function hide() {
+      this.domElement.style.display = 'none';
+    },
+    show: function show() {
+      this.domElement.style.display = '';
+    },
     onResize: function onResize() {
       var root = this.getRoot();
 
@@ -3214,7 +3220,7 @@
         renderer.clear();
         nextDemo.load().then(function () {
           return _this3.startDemo(nextDemo);
-        }).catch(console.error);
+        })["catch"](console.error);
       }
     }, {
       key: "addDemo",
@@ -3243,7 +3249,7 @@
         var firstEntry;
 
         if (demos.has(id)) {
-          demos.delete(id);
+          demos["delete"](id);
 
           if (this.demo === id && demos.size > 0) {
             firstEntry = demos.entries().next().value;
