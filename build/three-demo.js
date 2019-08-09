@@ -1,5 +1,5 @@
 /**
- * three-demo v3.10.0 build Wed Jun 26 2019
+ * three-demo v3.11.0 build Fri Aug 09 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -181,10 +181,9 @@
       key: "removeEventListener",
       value: function removeEventListener(type, listener) {
         var m = typeof listener === "function" ? this.listenerFunctions : this.listenerObjects;
-        var listeners;
 
         if (m.has(type)) {
-          listeners = m.get(type);
+          var listeners = m.get(type);
           listeners["delete"](listener);
 
           if (listeners.size === 0) {
@@ -198,8 +197,7 @@
         var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
         var listenerFunctions = target.listenerFunctions;
         var listenerObjects = target.listenerObjects;
-        var listeners;
-        var listener;
+        var listeners, listener;
         event.target = target;
 
         if (listenerFunctions.has(event.type)) {
