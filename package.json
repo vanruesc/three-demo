@@ -1,6 +1,6 @@
 {
 	"name": "three-demo",
-	"version": "3.11.0",
+	"version": "3.12.0",
 	"description": "A demo scaffold for three.js.",
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
@@ -62,7 +62,7 @@
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
 		"synthetic-event": ">= 0.0.0 < 2.0.0",
-		"three": ">= 0.89.0 < 0.108.0"
+		"three": ">= 0.89.0 < 0.109.0"
 	},
 
 	"devDependencies": {
@@ -84,6 +84,6 @@
 		"rollup-plugin-node-resolve": "5.x.x",
 		"synthetic-event": "1.x.x",
 		"stats.js": "0.x.x",
-		"three": "0.107.x"
+		"three": "0.108.x"
 	}
 }
