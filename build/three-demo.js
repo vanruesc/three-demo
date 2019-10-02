@@ -1,5 +1,5 @@
 /**
- * three-demo v3.13.0 build Tue Oct 01 2019
+ * three-demo v3.13.1 build Wed Oct 02 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -3265,9 +3265,9 @@
       }
     }, {
       key: "setSize",
-      value: function setSize(width, height) {
+      value: function setSize(width, height, updateStyle) {
         var demo = this.currentDemo;
-        this.renderer.setSize(width, height);
+        this.renderer.setSize(width, height, updateStyle);
 
         if (demo !== null && demo.camera !== null) {
           var camera = demo.camera;

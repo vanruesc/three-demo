@@ -3287,9 +3287,9 @@
       }
     }, {
       key: "setSize",
-      value: function setSize(width, height) {
+      value: function setSize(width, height, updateStyle) {
         var demo = this.currentDemo;
-        this.renderer.setSize(width, height);
+        this.renderer.setSize(width, height, updateStyle);
 
         if (demo !== null && demo.camera !== null) {
           var camera = demo.camera;
