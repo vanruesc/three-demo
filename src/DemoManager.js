@@ -262,13 +262,14 @@ export class DemoManager extends EventTarget {
 	 *
 	 * @param {Number} width - The width.
 	 * @param {Number} height - The height.
+	 * @param {Boolean} [updateStyle] - Determines whether the style of the canvas should be updated.
 	 */
 
-	setSize(width, height) {
+	setSize(width, height, updateStyle) {
 
 		const demo = this.currentDemo;
 
-		this.renderer.setSize(width, height);
+		this.renderer.setSize(width, height, updateStyle);
 
 		if(demo !== null && demo.camera !== null) {
 
