@@ -6,6 +6,7 @@ import { DemoManagerEvent } from "./DemoManagerEvent.js";
  * This event is dispatched by {@link DemoManager} when the user switches to
  * another demo.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("change", myListener);
  */
@@ -18,6 +19,7 @@ export const change = new DemoManagerEvent("change");
  * This event is dispatched by {@link DemoManager} when a demo has finished
  * loading and is about to start rendering.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("load", myListener);
  */

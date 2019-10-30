@@ -32,8 +32,6 @@
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Demo.js~Demo.html">Demo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManager.js~DemoManager.html">DemoManager</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/DemoManagerEvent.js~DemoManagerEvent.html">DemoManagerEvent</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-change">change</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-load">load</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -47,6 +45,7 @@
  * This event is dispatched by {@link DemoManager} when the user switches to
  * another demo.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener(&quot;change&quot;, myListener);
  */
@@ -59,6 +58,7 @@ export const change = new DemoManagerEvent(&quot;change&quot;);
  * This event is dispatched by {@link DemoManager} when a demo has finished
  * loading and is about to start rendering.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener(&quot;load&quot;, myListener);
  */

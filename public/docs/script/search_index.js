@@ -1,33 +1,21 @@
 window.esdocSearchIndex = [
   [
-    "three-demo/src/demo.js~demo",
+    "three-demo~demo",
     "class/src/Demo.js~Demo.html",
-    "<span>Demo</span> <span class=\"search-result-import-path\">three-demo/src/Demo.js</span>",
+    "<span>Demo</span> <span class=\"search-result-import-path\">three-demo</span>",
     "class"
   ],
   [
-    "three-demo/src/demomanager.js~demomanager",
+    "three-demo~demomanager",
     "class/src/DemoManager.js~DemoManager.html",
-    "<span>DemoManager</span> <span class=\"search-result-import-path\">three-demo/src/DemoManager.js</span>",
+    "<span>DemoManager</span> <span class=\"search-result-import-path\">three-demo</span>",
     "class"
   ],
   [
-    "three-demo/src/demomanagerevent.js~demomanagerevent",
+    "three-demo~demomanagerevent",
     "class/src/DemoManagerEvent.js~DemoManagerEvent.html",
-    "<span>DemoManagerEvent</span> <span class=\"search-result-import-path\">three-demo/src/DemoManagerEvent.js</span>",
+    "<span>DemoManagerEvent</span> <span class=\"search-result-import-path\">three-demo</span>",
     "class"
-  ],
-  [
-    "three-demo/src/demo-manager-events.js~change",
-    "variable/index.html#static-variable-change",
-    "<span>change</span> <span class=\"search-result-import-path\">three-demo/src/demo-manager-events.js</span>",
-    "variable"
-  ],
-  [
-    "three-demo/src/demo-manager-events.js~load",
-    "variable/index.html#static-variable-load",
-    "<span>load</span> <span class=\"search-result-import-path\">three-demo/src/demo-manager-events.js</span>",
-    "variable"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -420,46 +408,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/demomanager.js~demomanager#clock",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-clock",
-    "src/DemoManager.js~DemoManager#clock",
-    "member"
-  ],
-  [
     "src/demomanager.js~demomanager#constructor",
     "class/src/DemoManager.js~DemoManager.html#instance-constructor-constructor",
     "src/DemoManager.js~DemoManager#constructor",
     "method"
-  ],
-  [
-    "src/demomanager.js~demomanager#currentdemo",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-currentDemo",
-    "src/DemoManager.js~DemoManager#currentDemo",
-    "member"
-  ],
-  [
-    "src/demomanager.js~demomanager#demo",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-demo",
-    "src/DemoManager.js~DemoManager#demo",
-    "member"
-  ],
-  [
-    "src/demomanager.js~demomanager#demos",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-demos",
-    "src/DemoManager.js~DemoManager#demos",
-    "member"
-  ],
-  [
-    "src/demomanager.js~demomanager#loaddemo",
-    "class/src/DemoManager.js~DemoManager.html#instance-method-loadDemo",
-    "src/DemoManager.js~DemoManager#loadDemo",
-    "method"
-  ],
-  [
-    "src/demomanager.js~demomanager#menu",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-menu",
-    "src/DemoManager.js~DemoManager#menu",
-    "member"
   ],
   [
     "src/demomanager.js~demomanager#removedemo",
@@ -474,27 +426,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/demomanager.js~demomanager#renderer",
-    "class/src/DemoManager.js~DemoManager.html#instance-member-renderer",
-    "src/DemoManager.js~DemoManager#renderer",
-    "member"
-  ],
-  [
-    "src/demomanager.js~demomanager#resetmenu",
-    "class/src/DemoManager.js~DemoManager.html#instance-method-resetMenu",
-    "src/DemoManager.js~DemoManager#resetMenu",
-    "method"
-  ],
-  [
     "src/demomanager.js~demomanager#setsize",
     "class/src/DemoManager.js~DemoManager.html#instance-method-setSize",
     "src/DemoManager.js~DemoManager#setSize",
-    "method"
-  ],
-  [
-    "src/demomanager.js~demomanager#startdemo",
-    "class/src/DemoManager.js~DemoManager.html#instance-method-startDemo",
-    "src/DemoManager.js~DemoManager#startDemo",
     "method"
   ],
   [

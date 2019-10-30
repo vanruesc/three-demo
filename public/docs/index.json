@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/demo-manager-events.js",
-    "content": "import { DemoManagerEvent } from \"./DemoManagerEvent.js\";\r\n\r\n/**\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n */\r\n\r\nexport const change = new DemoManagerEvent(\"change\");\r\n\r\n/**\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n */\r\n\r\nexport const load = new DemoManagerEvent(\"load\");\r\n",
+    "content": "import { DemoManagerEvent } from \"./DemoManagerEvent.js\";\r\n\r\n/**\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n */\r\n\r\nexport const change = new DemoManagerEvent(\"change\");\r\n\r\n/**\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n */\r\n\r\nexport const load = new DemoManagerEvent(\"load\");\r\n",
     "static": true,
     "longname": "D:/Sourcecode/JavaScript/three-demo/src/demo-manager-events.js",
     "access": "public",
@@ -583,13 +583,14 @@
     "longname": "src/demo-manager-events.js~change",
     "access": "public",
     "export": true,
-    "importPath": "three-demo/src/demo-manager-events.js",
+    "importPath": "three-demo",
     "importStyle": "{change}",
     "description": "A demo manager change event.\n\nThis event is dispatched by {@link DemoManager} when the user switches to\nanother demo.",
     "examples": [
       "demoManager.addEventListener(\"change\", myListener);"
     ],
-    "lineNumber": 13,
+    "lineNumber": 14,
+    "ignore": true,
     "type": {
       "nullable": null,
       "types": [
@@ -608,13 +609,14 @@
     "longname": "src/demo-manager-events.js~load",
     "access": "public",
     "export": true,
-    "importPath": "three-demo/src/demo-manager-events.js",
+    "importPath": "three-demo",
     "importStyle": "{load}",
     "description": "A demo manager load event.\n\nThis event is dispatched by {@link DemoManager} when a demo has finished\nloading and is about to start rendering.",
     "examples": [
       "demoManager.addEventListener(\"load\", myListener);"
     ],
-    "lineNumber": 25,
+    "lineNumber": 27,
+    "ignore": true,
     "type": {
       "nullable": null,
       "types": [
@@ -644,7 +646,7 @@
     "longname": "src/Demo.js~Demo",
     "access": "public",
     "export": true,
-    "importPath": "three-demo/src/Demo.js",
+    "importPath": "three-demo",
     "importStyle": "{Demo}",
     "description": "A demo base class.",
     "lineNumber": 7,
@@ -993,7 +995,7 @@
     "longname": "src/DemoManager.js~DemoManager",
     "access": "public",
     "export": true,
-    "importPath": "three-demo/src/DemoManager.js",
+    "importPath": "three-demo",
     "importStyle": "{DemoManager}",
     "description": "A demo manager.",
     "lineNumber": 11,
@@ -1074,7 +1076,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 77,
@@ -1093,7 +1096,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 78,
@@ -1112,7 +1116,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 79,
@@ -1131,7 +1136,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 80,
@@ -1150,7 +1156,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 81,
@@ -1169,7 +1176,8 @@
       ],
       "spread": false,
       "description": null
-    }
+    },
+    "ignore": true
   },
   {
     "__docId__": 82,
@@ -1191,6 +1199,7 @@
       "spread": false,
       "description": "A clean menu."
     },
+    "ignore": true,
     "params": []
   },
   {
@@ -1217,6 +1226,7 @@
         "description": "A demo."
       }
     ],
+    "ignore": true,
     "return": null
   },
   {
@@ -1231,6 +1241,7 @@
     "access": "private",
     "description": "Loads the currently selected demo.",
     "lineNumber": 154,
+    "ignore": true,
     "params": [],
     "return": null
   },
@@ -1392,7 +1403,7 @@
     "longname": "src/DemoManagerEvent.js~DemoManagerEvent",
     "access": "public",
     "export": true,
-    "importPath": "three-demo/src/DemoManagerEvent.js",
+    "importPath": "three-demo",
     "importStyle": "{DemoManagerEvent}",
     "description": "A demo manager event.",
     "lineNumber": 7,
@@ -1485,7 +1496,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\r\n\t\"name\": \"three-demo\",\r\n\t\"version\": \"3.13.1\",\r\n\t\"description\": \"A demo scaffold for three.js.\",\r\n\t\"homepage\": \"https://github.com/vanruesc/three-demo\",\r\n\t\"main\": \"build/three-demo.js\",\r\n\t\"module\": \"src/index.js\",\r\n\t\"sideEffects\": false,\r\n\t\"license\": \"Zlib\",\r\n\r\n\t\"keywords\": [\r\n\t\t\"demo\",\r\n\t\t\"scaffold\",\r\n\t\t\"three\",\r\n\t\t\"3d\"\r\n\t],\r\n\r\n\t\"author\": {\r\n\t\t\"name\": \"Raoul van Rüschen\",\r\n\t\t\"email\": \"vanruesc@outlook.de\"\r\n\t},\r\n\r\n\t\"repository\": {\r\n\t\t\"type\": \"git\",\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo.git\"\r\n\t},\r\n\r\n\t\"bugs\": {\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo/issues\"\r\n\t},\r\n\r\n\t\"files\": [\r\n\t\t\"src\",\r\n\t\t\"build\"\r\n\t],\r\n\r\n\t\"scripts\": {\r\n\t\t\"ava\": \"ava\",\r\n\t\t\"lint\": \"npm run lint:lib && npm run lint:demo && npm run lint:test\",\r\n\t\t\"lint:config\": \"eslint *.js\",\r\n\t\t\"lint:lib\": \"eslint src\",\r\n\t\t\"lint:demo\": \"eslint demo/src\",\r\n\t\t\"lint:test\": \"eslint test\",\r\n\t\t\"build\": \"rollup -c\",\r\n\t\t\"build:production\": \"cross-env NODE_ENV=production rollup -c\",\r\n\t\t\"doc\": \"esdoc\",\r\n\t\t\"pretest\": \"npm run lint && npm run build:production\",\r\n\t\t\"test\": \"npm run ava\",\r\n\t\t\"prepack\": \"npm test\"\r\n\t},\r\n\r\n\t\"ava\": {\r\n\t\t\"failFast\": true,\r\n\t\t\"files\": [\"test/**/*.js\"]\r\n\t},\r\n\r\n\t\"eslintConfig\": {\r\n\t\t\"extends\": \"delta\"\r\n\t},\r\n\r\n\t\"peerDependencies\": {\r\n\t\t\"dat.gui\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"synthetic-event\": \">= 0.0.0 < 2.0.0\",\r\n\t\t\"three\": \">= 0.89.0 < 0.110.0\"\r\n\t},\r\n\r\n\t\"devDependencies\": {\r\n\t\t\"@babel/core\": \"7.x.x\",\r\n\t\t\"@babel/preset-env\": \"7.x.x\",\r\n\t\t\"ava\": \"2.x.x\",\r\n\t\t\"browser-env\": \"3.x.x\",\r\n\t\t\"cross-env\": \"6.x.x\",\r\n\t\t\"dat.gui\": \"0.x.x\",\r\n\t\t\"esdoc\": \"1.x.x\",\r\n\t\t\"esdoc-standard-plugin\": \"1.x.x\",\r\n\t\t\"eslint\": \"6.x.x\",\r\n\t\t\"eslint-config-delta\": \"1.x.x\",\r\n\t\t\"math-ds\": \"1.x.x\",\r\n\t\t\"rollup\": \"1.x.x\",\r\n\t\t\"rollup-plugin-babel\": \"4.x.x\",\r\n\t\t\"rollup-plugin-babel-minify\": \"9.x.x\",\r\n\t\t\"rollup-plugin-node-resolve\": \"5.x.x\",\r\n\t\t\"synthetic-event\": \"1.x.x\",\r\n\t\t\"stats.js\": \"0.x.x\",\r\n\t\t\"three\": \"0.109.x\"\r\n\t}\r\n}\r\n",
+    "content": "{\r\n\t\"name\": \"three-demo\",\r\n\t\"version\": \"3.14.0\",\r\n\t\"description\": \"A demo scaffold for three.js.\",\r\n\t\"homepage\": \"https://github.com/vanruesc/three-demo\",\r\n\t\"main\": \"build/three-demo.js\",\r\n\t\"module\": \"build/three-demo.esm.js\",\r\n\t\"sideEffects\": false,\r\n\t\"license\": \"Zlib\",\r\n\r\n\t\"keywords\": [\r\n\t\t\"demo\",\r\n\t\t\"scaffold\",\r\n\t\t\"three\",\r\n\t\t\"3d\"\r\n\t],\r\n\r\n\t\"author\": {\r\n\t\t\"name\": \"Raoul van Rüschen\",\r\n\t\t\"email\": \"vanruesc@outlook.de\"\r\n\t},\r\n\r\n\t\"repository\": {\r\n\t\t\"type\": \"git\",\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo.git\"\r\n\t},\r\n\r\n\t\"bugs\": {\r\n\t\t\"url\": \"https://github.com/vanruesc/three-demo/issues\"\r\n\t},\r\n\r\n\t\"files\": [\r\n\t\t\"src\",\r\n\t\t\"build\"\r\n\t],\r\n\r\n\t\"scripts\": {\r\n\t\t\"ava\": \"ava\",\r\n\t\t\"lint\": \"npm run lint:lib && npm run lint:demo && npm run lint:test\",\r\n\t\t\"lint:config\": \"eslint *.js\",\r\n\t\t\"lint:lib\": \"eslint src\",\r\n\t\t\"lint:demo\": \"eslint demo/src\",\r\n\t\t\"lint:test\": \"eslint test\",\r\n\t\t\"build\": \"rollup -c\",\r\n\t\t\"build:production\": \"cross-env NODE_ENV=production rollup -c\",\r\n\t\t\"watch\": \"rollup -c --watch\",\r\n\t\t\"doc\": \"rimraf public/docs && esdoc\",\r\n\t\t\"pretest\": \"npm run lint && npm run build:production\",\r\n\t\t\"test\": \"npm run ava\",\r\n\t\t\"prepack\": \"npm test\"\r\n\t},\r\n\r\n\t\"ava\": {\r\n\t\t\"failFast\": true,\r\n\t\t\"files\": [\"test/**/*.js\"]\r\n\t},\r\n\r\n\t\"eslintConfig\": {\r\n\t\t\"extends\": \"delta\"\r\n\t},\r\n\r\n\t\"peerDependencies\": {\r\n\t\t\"dat.gui\": \">= 0.0.0 < 1.0.0\",\r\n\t\t\"synthetic-event\": \">= 0.0.0 < 2.0.0\",\r\n\t\t\"three\": \">= 0.89.0 < 0.111.0\"\r\n\t},\r\n\r\n\t\"devDependencies\": {\r\n\t\t\"@babel/core\": \"7.x.x\",\r\n\t\t\"@babel/preset-env\": \"7.x.x\",\r\n\t\t\"ava\": \"2.x.x\",\r\n\t\t\"browser-env\": \"3.x.x\",\r\n\t\t\"cross-env\": \"6.x.x\",\r\n\t\t\"dat.gui\": \"0.x.x\",\r\n\t\t\"esdoc\": \"1.x.x\",\r\n\t\t\"esdoc-importpath-plugin\": \"1.x.x\",\r\n\t\t\"esdoc-standard-plugin\": \"1.x.x\",\r\n\t\t\"eslint\": \"6.x.x\",\r\n\t\t\"eslint-config-delta\": \"1.x.x\",\r\n\t\t\"math-ds\": \"1.x.x\",\r\n\t\t\"rimraf\": \"3.x.x\",\r\n\t\t\"rollup\": \"1.x.x\",\r\n\t\t\"rollup-plugin-babel\": \"4.x.x\",\r\n\t\t\"rollup-plugin-babel-minify\": \"9.x.x\",\r\n\t\t\"rollup-plugin-node-resolve\": \"5.x.x\",\r\n\t\t\"synthetic-event\": \"1.x.x\",\r\n\t\t\"stats.js\": \"0.x.x\",\r\n\t\t\"three\": \"0.110.x\"\r\n\t}\r\n}\r\n",
     "longname": "D:\\Sourcecode\\JavaScript\\three-demo\\package.json",
     "name": "package.json",
     "static": true,

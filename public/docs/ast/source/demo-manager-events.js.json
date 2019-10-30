@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 677,
+  "end": 701,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 26,
+      "line": 28,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 677,
+    "end": 701,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 26,
+        "line": 28,
         "column": 0
       }
     },
@@ -116,16 +116,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+            "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
             "start": 61,
-            "end": 300,
+            "end": 312,
             "loc": {
               "start": {
                 "line": 3,
                 "column": 0
               },
               "end": {
-                "line": 11,
+                "line": 12,
                 "column": 3
               }
             }
@@ -134,15 +134,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 304,
-        "end": 357,
+        "start": 316,
+        "end": 369,
         "loc": {
           "start": {
-            "line": 13,
+            "line": 14,
             "column": 0
           },
           "end": {
-            "line": 13,
+            "line": 14,
             "column": 53
           }
         },
@@ -150,44 +150,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 311,
-          "end": 357,
+          "start": 323,
+          "end": 369,
           "loc": {
             "start": {
-              "line": 13,
+              "line": 14,
               "column": 7
             },
             "end": {
-              "line": 13,
+              "line": 14,
               "column": 53
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 317,
-              "end": 356,
+              "start": 329,
+              "end": 368,
               "loc": {
                 "start": {
-                  "line": 13,
+                  "line": 14,
                   "column": 13
                 },
                 "end": {
-                  "line": 13,
+                  "line": 14,
                   "column": 52
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 317,
-                "end": 323,
+                "start": 329,
+                "end": 335,
                 "loc": {
                   "start": {
-                    "line": 13,
+                    "line": 14,
                     "column": 13
                   },
                   "end": {
-                    "line": 13,
+                    "line": 14,
                     "column": 19
                   },
                   "identifierName": "change"
@@ -197,29 +197,29 @@
               },
               "init": {
                 "type": "NewExpression",
-                "start": 326,
-                "end": 356,
+                "start": 338,
+                "end": 368,
                 "loc": {
                   "start": {
-                    "line": 13,
+                    "line": 14,
                     "column": 22
                   },
                   "end": {
-                    "line": 13,
+                    "line": 14,
                     "column": 52
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 330,
-                  "end": 346,
+                  "start": 342,
+                  "end": 358,
                   "loc": {
                     "start": {
-                      "line": 13,
+                      "line": 14,
                       "column": 26
                     },
                     "end": {
-                      "line": 13,
+                      "line": 14,
                       "column": 42
                     },
                     "identifierName": "DemoManagerEvent"
@@ -229,15 +229,15 @@
                 "arguments": [
                   {
                     "type": "StringLiteral",
-                    "start": 347,
-                    "end": 355,
+                    "start": 359,
+                    "end": 367,
                     "loc": {
                       "start": {
-                        "line": 13,
+                        "line": 14,
                         "column": 43
                       },
                       "end": {
-                        "line": 13,
+                        "line": 14,
                         "column": 51
                       }
                     },
@@ -256,16 +256,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+              "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
               "start": 61,
-              "end": 300,
+              "end": 312,
               "loc": {
                 "start": {
                   "line": 3,
                   "column": 0
                 },
                 "end": {
-                  "line": 11,
+                  "line": 12,
                   "column": 3
                 }
               }
@@ -274,16 +274,16 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-              "start": 361,
-              "end": 622,
+              "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+              "start": 373,
+              "end": 646,
               "loc": {
                 "start": {
-                  "line": 15,
+                  "line": 16,
                   "column": 0
                 },
                 "end": {
-                  "line": 23,
+                  "line": 25,
                   "column": 3
                 }
               }
@@ -293,16 +293,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+            "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
             "start": 61,
-            "end": 300,
+            "end": 312,
             "loc": {
               "start": {
                 "line": 3,
                 "column": 0
               },
               "end": {
-                "line": 11,
+                "line": 12,
                 "column": 3
               }
             }
@@ -311,16 +311,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-            "start": 361,
-            "end": 622,
+            "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+            "start": 373,
+            "end": 646,
             "loc": {
               "start": {
-                "line": 15,
+                "line": 16,
                 "column": 0
               },
               "end": {
-                "line": 23,
+                "line": 25,
                 "column": 3
               }
             }
@@ -329,15 +329,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 626,
-        "end": 675,
+        "start": 650,
+        "end": 699,
         "loc": {
           "start": {
-            "line": 25,
+            "line": 27,
             "column": 0
           },
           "end": {
-            "line": 25,
+            "line": 27,
             "column": 49
           }
         },
@@ -345,44 +345,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 633,
-          "end": 675,
+          "start": 657,
+          "end": 699,
           "loc": {
             "start": {
-              "line": 25,
+              "line": 27,
               "column": 7
             },
             "end": {
-              "line": 25,
+              "line": 27,
               "column": 49
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 639,
-              "end": 674,
+              "start": 663,
+              "end": 698,
               "loc": {
                 "start": {
-                  "line": 25,
+                  "line": 27,
                   "column": 13
                 },
                 "end": {
-                  "line": 25,
+                  "line": 27,
                   "column": 48
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 639,
-                "end": 643,
+                "start": 663,
+                "end": 667,
                 "loc": {
                   "start": {
-                    "line": 25,
+                    "line": 27,
                     "column": 13
                   },
                   "end": {
-                    "line": 25,
+                    "line": 27,
                     "column": 17
                   },
                   "identifierName": "load"
@@ -392,29 +392,29 @@
               },
               "init": {
                 "type": "NewExpression",
-                "start": 646,
-                "end": 674,
+                "start": 670,
+                "end": 698,
                 "loc": {
                   "start": {
-                    "line": 25,
+                    "line": 27,
                     "column": 20
                   },
                   "end": {
-                    "line": 25,
+                    "line": 27,
                     "column": 48
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 650,
-                  "end": 666,
+                  "start": 674,
+                  "end": 690,
                   "loc": {
                     "start": {
-                      "line": 25,
+                      "line": 27,
                       "column": 24
                     },
                     "end": {
-                      "line": 25,
+                      "line": 27,
                       "column": 40
                     },
                     "identifierName": "DemoManagerEvent"
@@ -424,15 +424,15 @@
                 "arguments": [
                   {
                     "type": "StringLiteral",
-                    "start": 667,
-                    "end": 673,
+                    "start": 691,
+                    "end": 697,
                     "loc": {
                       "start": {
-                        "line": 25,
+                        "line": 27,
                         "column": 41
                       },
                       "end": {
-                        "line": 25,
+                        "line": 27,
                         "column": 47
                       }
                     },
@@ -451,16 +451,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-              "start": 361,
-              "end": 622,
+              "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+              "start": 373,
+              "end": 646,
               "loc": {
                 "start": {
-                  "line": 15,
+                  "line": 16,
                   "column": 0
                 },
                 "end": {
-                  "line": 23,
+                  "line": 25,
                   "column": 3
                 }
               }
@@ -471,16 +471,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-            "start": 361,
-            "end": 622,
+            "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+            "start": 373,
+            "end": 646,
             "loc": {
               "start": {
-                "line": 15,
+                "line": 16,
                 "column": 0
               },
               "end": {
-                "line": 23,
+                "line": 25,
                 "column": 3
               }
             }
@@ -493,32 +493,32 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+      "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
       "start": 61,
-      "end": 300,
+      "end": 312,
       "loc": {
         "start": {
           "line": 3,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 3
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-      "start": 361,
-      "end": 622,
+      "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+      "start": 373,
+      "end": 646,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 25,
           "column": 3
         }
       }
@@ -710,16 +710,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
+      "value": "*\r\n * A demo manager change event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when the user switches to\r\n * another demo.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"change\", myListener);\r\n ",
       "start": 61,
-      "end": 300,
+      "end": 312,
       "loc": {
         "start": {
           "line": 3,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 3
         }
       }
@@ -739,15 +739,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 304,
-      "end": 310,
+      "start": 316,
+      "end": 322,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 6
         }
       }
@@ -767,15 +767,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 311,
-      "end": 316,
+      "start": 323,
+      "end": 328,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 7
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 12
         }
       }
@@ -793,15 +793,15 @@
         "binop": null
       },
       "value": "change",
-      "start": 317,
-      "end": 323,
+      "start": 329,
+      "end": 335,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 13
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 19
         }
       }
@@ -820,15 +820,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 324,
-      "end": 325,
+      "start": 336,
+      "end": 337,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 20
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 21
         }
       }
@@ -848,15 +848,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 326,
-      "end": 329,
+      "start": 338,
+      "end": 341,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 22
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 25
         }
       }
@@ -874,15 +874,15 @@
         "binop": null
       },
       "value": "DemoManagerEvent",
-      "start": 330,
-      "end": 346,
+      "start": 342,
+      "end": 358,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 26
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 42
         }
       }
@@ -899,15 +899,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 346,
-      "end": 347,
+      "start": 358,
+      "end": 359,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 42
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 43
         }
       }
@@ -926,15 +926,15 @@
         "updateContext": null
       },
       "value": "change",
-      "start": 347,
-      "end": 355,
+      "start": 359,
+      "end": 367,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 43
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 51
         }
       }
@@ -951,15 +951,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 355,
-      "end": 356,
+      "start": 367,
+      "end": 368,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 51
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 52
         }
       }
@@ -977,31 +977,31 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 356,
-      "end": 357,
+      "start": 368,
+      "end": 369,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 52
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 53
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
-      "start": 361,
-      "end": 622,
+      "value": "*\r\n * A demo manager load event.\r\n *\r\n * This event is dispatched by {@link DemoManager} when a demo has finished\r\n * loading and is about to start rendering.\r\n *\r\n * @ignore\r\n * @type {DemoManagerEvent}\r\n * @example demoManager.addEventListener(\"load\", myListener);\r\n ",
+      "start": 373,
+      "end": 646,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 25,
           "column": 3
         }
       }
@@ -1021,15 +1021,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 626,
-      "end": 632,
+      "start": 650,
+      "end": 656,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 0
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 6
         }
       }
@@ -1049,15 +1049,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 633,
-      "end": 638,
+      "start": 657,
+      "end": 662,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 7
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 12
         }
       }
@@ -1075,15 +1075,15 @@
         "binop": null
       },
       "value": "load",
-      "start": 639,
-      "end": 643,
+      "start": 663,
+      "end": 667,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 13
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 17
         }
       }
@@ -1102,15 +1102,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 644,
-      "end": 645,
+      "start": 668,
+      "end": 669,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 18
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 19
         }
       }
@@ -1130,15 +1130,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 646,
-      "end": 649,
+      "start": 670,
+      "end": 673,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 20
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 23
         }
       }
@@ -1156,15 +1156,15 @@
         "binop": null
       },
       "value": "DemoManagerEvent",
-      "start": 650,
-      "end": 666,
+      "start": 674,
+      "end": 690,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 24
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 40
         }
       }
@@ -1181,15 +1181,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 666,
-      "end": 667,
+      "start": 690,
+      "end": 691,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 40
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 41
         }
       }
@@ -1208,15 +1208,15 @@
         "updateContext": null
       },
       "value": "load",
-      "start": 667,
-      "end": 673,
+      "start": 691,
+      "end": 697,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 41
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 47
         }
       }
@@ -1233,15 +1233,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 673,
-      "end": 674,
+      "start": 697,
+      "end": 698,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 47
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 48
         }
       }
@@ -1259,15 +1259,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 674,
-      "end": 675,
+      "start": 698,
+      "end": 699,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 48
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 49
         }
       }
@@ -1285,15 +1285,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 677,
-      "end": 677,
+      "start": 701,
+      "end": 701,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 28,
           "column": 0
         },
         "end": {
-          "line": 26,
+          "line": 28,
           "column": 0
         }
       }

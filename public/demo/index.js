@@ -3130,20 +3130,21 @@
       c.updateDisplay();
     });
   }
+
   var GUI$1 = GUI;
 
   var DemoManagerEvent = function (_Event) {
     _inherits(DemoManagerEvent, _Event);
 
     function DemoManagerEvent(type) {
-      var _this;
+      var _this3;
 
       _classCallCheck(this, DemoManagerEvent);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(DemoManagerEvent).call(this, type));
-      _this.previousDemo = null;
-      _this.demo = null;
-      return _this;
+      _this3 = _possibleConstructorReturn(this, _getPrototypeOf(DemoManagerEvent).call(this, type));
+      _this3.previousDemo = null;
+      _this3.demo = null;
+      return _this3;
     }
 
     return DemoManagerEvent;
@@ -3156,38 +3157,38 @@
     _inherits(DemoManager, _EventTarget);
 
     function DemoManager(viewport) {
-      var _this;
+      var _this4;
 
-      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
-          _ref$aside = _ref.aside,
-          aside = _ref$aside === void 0 ? viewport : _ref$aside,
-          renderer = _ref.renderer;
+      var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref3$aside = _ref3.aside,
+          aside = _ref3$aside === void 0 ? viewport : _ref3$aside,
+          renderer = _ref3.renderer;
 
       _classCallCheck(this, DemoManager);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(DemoManager).call(this));
-      _this.renderer = renderer !== undefined ? renderer : function () {
+      _this4 = _possibleConstructorReturn(this, _getPrototypeOf(DemoManager).call(this));
+      _this4.renderer = renderer !== undefined ? renderer : function () {
         var renderer = new three.WebGLRenderer();
         renderer.setSize(viewport.clientWidth, viewport.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         return renderer;
       }();
-      viewport.appendChild(_this.renderer.domElement);
-      _this.clock = new three.Clock();
-      _this.menu = new GUI$1({
+      viewport.appendChild(_this4.renderer.domElement);
+      _this4.clock = new three.Clock();
+      _this4.menu = new GUI$1({
         autoPlace: false
       });
-      aside.appendChild(_this.menu.domElement);
-      _this.demos = new Map();
-      _this.demo = null;
-      _this.currentDemo = null;
-      return _this;
+      aside.appendChild(_this4.menu.domElement);
+      _this4.demos = new Map();
+      _this4.demo = null;
+      _this4.currentDemo = null;
+      return _this4;
     }
 
     _createClass(DemoManager, [{
       key: "resetMenu",
       value: function resetMenu() {
-        var _this2 = this;
+        var _this5 = this;
 
         var node = this.menu.domElement.parentNode;
         var menu = new GUI$1({
@@ -3197,7 +3198,7 @@
         if (this.demos.size > 1) {
           var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
           selection.onChange(function () {
-            return _this2.loadDemo();
+            return _this5.loadDemo();
           });
         }
 
@@ -3221,7 +3222,7 @@
     }, {
       key: "loadDemo",
       value: function loadDemo() {
-        var _this3 = this;
+        var _this6 = this;
 
         var nextDemo = this.demos.get(this.demo);
         var currentDemo = this.currentDemo;
@@ -3239,7 +3240,7 @@
         this.dispatchEvent(change);
         renderer.clear();
         nextDemo.load().then(function () {
-          return _this3.startDemo(nextDemo);
+          return _this6.startDemo(nextDemo);
         })["catch"](console.error);
       }
     }, {
@@ -3325,14 +3326,14 @@
     _inherits(ExampleDemo, _Demo);
 
     function ExampleDemo() {
-      var _this;
+      var _this7;
 
       _classCallCheck(this, ExampleDemo);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(ExampleDemo).call(this, "example"));
-      _this.mesh = null;
-      _this.speed = 0.01;
-      return _this;
+      _this7 = _possibleConstructorReturn(this, _getPrototypeOf(ExampleDemo).call(this, "example"));
+      _this7.mesh = null;
+      _this7.speed = 0.01;
+      return _this7;
     }
 
     _createClass(ExampleDemo, [{
