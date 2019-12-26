@@ -155,9 +155,7 @@
     }, {
       key: "reset",
       value: function reset() {
-        var fog = this.scene.fog;
         this.scene = new three.Scene();
-        this.scene.fog = fog;
         this.camera = null;
 
         if (this.controls !== null) {
@@ -3427,8 +3425,7 @@
     document.getElementById("viewport").children[0].style.display = "none";
   }
 
-  window.addEventListener("load", function main(event) {
-    this.removeEventListener("load", main);
+  window.addEventListener("load", function (event) {
     manager = new DemoManager(document.getElementById("viewport"), {
       aside: document.getElementById("aside")
     });
@@ -3461,10 +3458,20 @@
       }
     };
   }());
-  document.addEventListener("keydown", function onKeyDown(event) {
-    var aside = this.getElementById("aside");
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var infoImg = document.querySelector(".info img");
+    var infoDiv = document.querySelector(".info div");
 
-    if (event.altKey && aside !== null) {
+    if (infoImg !== null && infoDiv !== null) {
+      infoImg.addEventListener("click", function (event) {
+        infoDiv.style.display = infoDiv.style.display === "block" ? "none" : "block";
+      });
+    }
+  });
+  document.addEventListener("keydown", function (event) {
+    var aside = document.getElementById("aside");
+
+    if (aside !== null && event.key === "h") {
       event.preventDefault();
       aside.style.visibility = aside.style.visibility === "hidden" ? "visible" : "hidden";
     }

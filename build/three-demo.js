@@ -1,5 +1,5 @@
 /**
- * three-demo v3.14.0 build Wed Oct 30 2019
+ * three-demo v3.15.0 build Thu Dec 26 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -119,9 +119,7 @@
     }, {
       key: "reset",
       value: function reset() {
-        var fog = this.scene.fog;
         this.scene = new three.Scene();
-        this.scene.fog = fog;
         this.camera = null;
 
         if (this.controls !== null) {

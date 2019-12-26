@@ -1,5 +1,5 @@
 /**
- * three-demo v3.14.0 build Wed Oct 30 2019
+ * three-demo v3.15.0 build Thu Dec 26 2019
  * https://github.com/vanruesc/three-demo
  * Copyright 2019 Raoul van Rüschen, Zlib
  */
@@ -125,7 +125,7 @@ class Demo {
 	}
 
 	/**
-	 * Initialises this demo.
+	 * Initializes this demo.
 	 *
 	 * This method will be called after reset.
 	 */
@@ -165,10 +165,7 @@ class Demo {
 
 	reset() {
 
-		const fog = this.scene.fog;
-
 		this.scene = new Scene();
-		this.scene.fog = fog;
 		this.camera = null;
 
 		if(this.controls !== null) {
@@ -228,6 +225,7 @@ class DemoManagerEvent extends Event {
  * This event is dispatched by {@link DemoManager} when the user switches to
  * another demo.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("change", myListener);
  */
@@ -240,6 +238,7 @@ const change = new DemoManagerEvent("change");
  * This event is dispatched by {@link DemoManager} when a demo has finished
  * loading and is about to start rendering.
  *
+ * @ignore
  * @type {DemoManagerEvent}
  * @example demoManager.addEventListener("load", myListener);
  */
