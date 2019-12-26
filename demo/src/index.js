@@ -57,12 +57,9 @@ function onLoad(event) {
  * @param {Event} event - An event.
  */
 
-window.addEventListener("load", function main(event) {
+window.addEventListener("load", (event) => {
 
-	// Clean up.
-	this.removeEventListener("load", main);
-
-	// Initialise the demo manager.
+	// Initialize the demo manager.
 	manager = new DemoManager(document.getElementById("viewport"), {
 		aside: document.getElementById("aside")
 	});
@@ -125,17 +122,41 @@ window.addEventListener("resize", (function() {
 }()));
 
 /**
- * Toggles the visibility of the interface on Alt key press.
+ * Performs initialization tasks when the document is ready.
  *
  * @private
  * @param {Event} event - An event.
  */
 
-document.addEventListener("keydown", function onKeyDown(event) {
+document.addEventListener("DOMContentLoaded", (event) => {
 
-	const aside = this.getElementById("aside");
+	const infoImg = document.querySelector(".info img");
+	const infoDiv = document.querySelector(".info div");
 
-	if(event.altKey && aside !== null) {
+	if(infoImg !== null && infoDiv !== null) {
+
+		infoImg.addEventListener("click", (event) => {
+
+			infoDiv.style.display = (infoDiv.style.display === "block") ? "none" : "block";
+
+		});
+
+	}
+
+});
+
+/**
+ * Toggles the visibility of the interface on H key press.
+ *
+ * @private
+ * @param {Event} event - An event.
+ */
+
+document.addEventListener("keydown", (event) => {
+
+	const aside = document.getElementById("aside");
+
+	if(aside !== null && event.key === "h") {
 
 		event.preventDefault();
 		aside.style.visibility = (aside.style.visibility === "hidden") ? "visible" : "hidden";
