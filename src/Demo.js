@@ -118,7 +118,7 @@ export class Demo {
 	}
 
 	/**
-	 * Initialises this demo.
+	 * Initializes this demo.
 	 *
 	 * This method will be called after reset.
 	 */
@@ -158,10 +158,7 @@ export class Demo {
 
 	reset() {
 
-		const fog = this.scene.fog;
-
 		this.scene = new Scene();
-		this.scene.fog = fog;
 		this.camera = null;
 
 		if(this.controls !== null) {
