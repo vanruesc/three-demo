@@ -1,7 +1,8 @@
 /**
- * three-demo v3.15.0 build Thu Dec 26 2019
+ * three-demo v3.16.0 build Sun Feb 02 2020
  * https://github.com/vanruesc/three-demo
- * Copyright 2019 Raoul van Rüschen, Zlib
+ * Copyright 2020 Raoul van Rüschen
+ * @license Zlib
  */
 import { LoadingManager, Scene, WebGLRenderer, Clock, OrthographicCamera, CubeCamera } from 'three';
 import { Event, EventTarget } from 'synthetic-event';

@@ -1,7 +1,8 @@
 /**
- * three-demo v3.15.0 build Thu Dec 26 2019
+ * three-demo v3.16.0 build Sun Feb 02 2020
  * https://github.com/vanruesc/three-demo
- * Copyright 2019 Raoul van Rüschen, Zlib
+ * Copyright 2020 Raoul van Rüschen
+ * @license Zlib
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('three'), require('synthetic-event'), require('dat.gui')) :
