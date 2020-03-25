@@ -1,5 +1,5 @@
 /**
- * three-demo v3.17.0 build Mon Mar 02 2020
+ * three-demo v3.18.0 build Wed Mar 25 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
@@ -63,6 +63,19 @@
     return _setPrototypeOf(o, p);
   }
 
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function _assertThisInitialized(self) {
     if (self === void 0) {
       throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -77,6 +90,23 @@
     }
 
     return _assertThisInitialized(self);
+  }
+
+  function _createSuper(Derived) {
+    return function () {
+      var Super = _getPrototypeOf(Derived),
+          result;
+
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn(this, result);
+    };
   }
 
   var Demo = function () {
@@ -139,12 +169,14 @@
   var DemoManagerEvent = function (_Event) {
     _inherits(DemoManagerEvent, _Event);
 
+    var _super = _createSuper(DemoManagerEvent);
+
     function DemoManagerEvent(type) {
       var _this;
 
       _classCallCheck(this, DemoManagerEvent);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(DemoManagerEvent).call(this, type));
+      _this = _super.call(this, type);
       _this.previousDemo = null;
       _this.demo = null;
       return _this;
@@ -159,6 +191,8 @@
   var DemoManager = function (_EventTarget) {
     _inherits(DemoManager, _EventTarget);
 
+    var _super2 = _createSuper(DemoManager);
+
     function DemoManager(viewport) {
       var _this2;
 
@@ -169,7 +203,7 @@
 
       _classCallCheck(this, DemoManager);
 
-      _this2 = _possibleConstructorReturn(this, _getPrototypeOf(DemoManager).call(this));
+      _this2 = _super2.call(this);
       _this2.renderer = renderer !== undefined ? renderer : function () {
         var renderer = new three.WebGLRenderer();
         renderer.setSize(viewport.clientWidth, viewport.clientHeight);
