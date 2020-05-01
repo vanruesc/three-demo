@@ -1,10 +1,12 @@
+import babel from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
-import babel from "rollup-plugin-babel";
 import { eslint } from "rollup-plugin-eslint";
 import { terser } from "rollup-plugin-terser";
 
 const pkg = require("./package.json");
 const date = (new Date()).toDateString();
+
+// Meta settings.
 
 const banner = `/**
  * ${pkg.name} v${pkg.version} build ${date}
@@ -19,32 +21,46 @@ const globals = Object.assign({}, ...external.map((value) => ({
 	[value]: value.replace(/-/g, "").toUpperCase()
 })));
 
+// Plugin settings.
+
+const settings = {
+
+	babel: {
+		babelHelpers: "bundled"
+	}
+
+};
+
+// Bundle configurations.
+
 const lib = {
 
 	module: {
 		input: "src/index.js",
 		external,
 		plugins: [resolve(), eslint()],
-		output: [{
-			file: pkg.module,
-			format: "esm",
-			globals,
-			banner
-		}, {
-			file: pkg.main,
-			format: "esm",
-			globals
-		}, {
-			file: pkg.main.replace(".js", ".min.js"),
-			format: "esm",
-			globals
-		}]
+		output: [
+			{
+				file: pkg.module,
+				format: "esm",
+				globals,
+				banner
+			}, {
+				file: pkg.main,
+				format: "esm",
+				globals
+			}, {
+				file: pkg.main.replace(".js", ".min.js"),
+				format: "esm",
+				globals
+			}
+		]
 	},
 
 	main: {
 		input: pkg.main,
 		external,
-		plugins: [babel()],
+		plugins: [babel(settings.babel)],
 		output: {
 			file: pkg.main,
 			format: "umd",
@@ -57,7 +73,7 @@ const lib = {
 	min: {
 		input: pkg.main.replace(".js", ".min.js"),
 		external,
-		plugins: [terser(), babel()],
+		plugins: [terser(), babel(settings.babel)],
 		output: {
 			file: pkg.main.replace(".js", ".min.js"),
 			format: "umd",
@@ -74,27 +90,29 @@ const demo = {
 	module: {
 		input: "demo/src/index.js",
 		plugins: [resolve(), eslint()],
-		output: [{
-			file: "public/demo/index.js",
-			format: "esm"
-		}].concat(production ? [{
-			file: "public/demo/index.min.js",
-			format: "esm"
-		}] : [])
+		output: [
+			{
+				file: "public/demo/index.js",
+				format: "esm"
+			}, {
+				file: "public/demo/index.min.js",
+				format: "esm"
+			}
+		]
 	},
 
 	main: {
 		input: production ? "public/demo/index.js" : "demo/src/index.js",
-		plugins: production ? [babel()] : [resolve(), eslint()],
-		output: [{
+		plugins: production ? [babel(settings.babel)] : [resolve(), eslint()],
+		output: {
 			file: "public/demo/index.js",
 			format: "iife"
-		}]
+		}
 	},
 
 	min: {
 		input: "public/demo/index.min.js",
-		plugins: [terser(), babel()],
+		plugins: [terser(), babel(settings.babel)],
 		output: {
 			file: "public/demo/index.min.js",
 			format: "iife"
