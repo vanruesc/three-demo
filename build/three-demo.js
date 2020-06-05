@@ -1,5 +1,5 @@
 /**
- * three-demo v3.19.0 build Fri May 01 2020
+ * three-demo v3.19.1 build Fri Jun 05 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
@@ -95,7 +95,7 @@
   function _createSuper(Derived) {
     var hasNativeReflectConstruct = _isNativeReflectConstruct();
 
-    return function () {
+    return function _createSuperInternal() {
       var Super = _getPrototypeOf(Derived),
           result;
 
