@@ -1,8 +1,17 @@
 import { EventTarget } from "synthetic-event";
-import { Clock, CubeCamera, OrthographicCamera, WebGLRenderer } from "three";
+import { CubeCamera, OrthographicCamera, WebGLRenderer } from "three";
 import * as dat from "dat.gui";
 
 import * as events from "./demo-manager-events.js";
+
+/**
+ * Converts milliseconds to seconds.
+ *
+ * @type {Number}
+ * @private
+ */
+
+const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
 
 /**
  * A demo manager.
@@ -43,13 +52,13 @@ export class DemoManager extends EventTarget {
 		viewport.appendChild(this.renderer.domElement);
 
 		/**
-		 * A clock.
+		 * A timestamp.
 		 *
-		 * @type {Clock}
+		 * @type {DOMHighResTimeStamp}
 		 * @private
 		 */
 
-		this.clock = new Clock();
+		this.timestamp = 0.0;
 
 		/**
 		 * A menu for custom demo options.
@@ -298,17 +307,19 @@ export class DemoManager extends EventTarget {
 	/**
 	 * The main render loop.
 	 *
-	 * @param {DOMHighResTimeStamp} now - The current time.
+	 * @param {DOMHighResTimeStamp} timestamp - The current time.
 	 */
 
-	render(now) {
+	render(timestamp) {
+
+		const elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
+		this.timestamp = timestamp;
 
 		const demo = this.currentDemo;
-		const delta = this.clock.getDelta();
 
 		if(demo !== null && demo.ready) {
 
-			demo.render(delta);
+			demo.render(elapsed);
 
 		}
 
