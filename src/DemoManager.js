@@ -13,9 +13,9 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Constructs a new demo manager.
 	 *
-	 * @param {HTMLElement} viewport - The primary DOM container.
+	 * @param {HTMLElement} viewport - The viewport.
 	 * @param {Object} [options] - Additional options.
-	 * @param {HTMLElement} [options.aside] - A secondary DOM container.
+	 * @param {HTMLElement} [options.aside] - A secondary container.
 	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
 	 */
 

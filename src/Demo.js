@@ -108,7 +108,7 @@ export class Demo {
 	 *
 	 * Override this method to load assets.
 	 *
-	 * @return {Promise} A promise that will be fulfilled as soon as all assets have been loaded.
+	 * @return {Promise} A promise that resolves when all assets have been loaded.
 	 */
 
 	load() {
@@ -120,7 +120,7 @@ export class Demo {
 	/**
 	 * Initializes this demo.
 	 *
-	 * This method will be called after reset.
+	 * This method will be called after the demo has been reset.
 	 */
 
 	initialize() {}
@@ -130,10 +130,10 @@ export class Demo {
 	 *
 	 * Override this method to update and render the demo manually.
 	 *
-	 * @param {Number} delta - The time since the last frame in seconds.
+	 * @param {Number} deltaTime - The time since the last frame in seconds.
 	 */
 
-	render(delta) {
+	render(deltaTime) {
 
 		this.renderer.render(this.scene, this.camera);
 
