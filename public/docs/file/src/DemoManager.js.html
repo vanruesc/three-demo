@@ -38,10 +38,19 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/DemoManager.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { EventTarget } from &quot;synthetic-event&quot;;
-import { Clock, CubeCamera, OrthographicCamera, WebGLRenderer } from &quot;three&quot;;
+import { CubeCamera, OrthographicCamera, WebGLRenderer } from &quot;three&quot;;
 import * as dat from &quot;dat.gui&quot;;
 
 import * as events from &quot;./demo-manager-events.js&quot;;
+
+/**
+ * Converts milliseconds to seconds.
+ *
+ * @type {Number}
+ * @private
+ */
+
+const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
 
 /**
  * A demo manager.
@@ -52,9 +61,9 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Constructs a new demo manager.
 	 *
-	 * @param {HTMLElement} viewport - The primary DOM container.
+	 * @param {HTMLElement} viewport - The viewport.
 	 * @param {Object} [options] - Additional options.
-	 * @param {HTMLElement} [options.aside] - A secondary DOM container.
+	 * @param {HTMLElement} [options.aside] - A secondary container.
 	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
 	 */
 
@@ -82,13 +91,13 @@ export class DemoManager extends EventTarget {
 		viewport.appendChild(this.renderer.domElement);
 
 		/**
-		 * A clock.
+		 * A timestamp.
 		 *
-		 * @type {Clock}
+		 * @type {DOMHighResTimeStamp}
 		 * @private
 		 */
 
-		this.clock = new Clock();
+		this.timestamp = 0.0;
 
 		/**
 		 * A menu for custom demo options.
@@ -337,17 +346,19 @@ export class DemoManager extends EventTarget {
 	/**
 	 * The main render loop.
 	 *
-	 * @param {DOMHighResTimeStamp} now - The current time.
+	 * @param {DOMHighResTimeStamp} timestamp - The current time.
 	 */
 
-	render(now) {
+	render(timestamp) {
+
+		const elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
+		this.timestamp = timestamp;
 
 		const demo = this.currentDemo;
-		const delta = this.clock.getDelta();
 
 		if(demo !== null &amp;&amp; demo.ready) {
 
-			demo.render(delta);
+			demo.render(elapsed);
 
 		}
 

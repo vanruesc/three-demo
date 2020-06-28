@@ -1,9 +1,7 @@
 import {
-	AmbientLight,
 	CubeTextureLoader,
-	FogExp2,
 	Mesh,
-	MeshPhongMaterial,
+	MeshBasicMaterial,
 	PerspectiveCamera,
 	SphereBufferGeometry
 } from "three";
@@ -25,14 +23,6 @@ export class ExampleDemo extends Demo {
 		super("example");
 
 		/**
-		 * A sphere mesh.
-		 *
-		 * @type {Mesh}
-		 */
-
-		this.mesh = null;
-
-		/**
 		 * The rotation speed.
 		 *
 		 * @type {Number}
@@ -45,7 +35,7 @@ export class ExampleDemo extends Demo {
 	/**
 	 * Loads scene assets.
 	 *
-	 * @return {Promise} A promise that will be fulfilled as soon as all assets have been loaded.
+	 * @return {Promise} A promise that resolves when all assets have been loaded.
 	 */
 
 	load() {
@@ -67,15 +57,7 @@ export class ExampleDemo extends Demo {
 			if(assets.size === 0) {
 
 				loadingManager.onError = reject;
-				loadingManager.onProgress = (item, loaded, total) => {
-
-					if(loaded === total) {
-
-						resolve();
-
-					}
-
-				};
+				loadingManager.onLoad = resolve;
 
 				cubeTextureLoader.load(urls, (textureCube) => {
 
@@ -101,7 +83,6 @@ export class ExampleDemo extends Demo {
 
 		const scene = this.scene;
 		const assets = this.assets;
-		const renderer = this.renderer;
 
 		// Camera.
 
@@ -111,47 +92,31 @@ export class ExampleDemo extends Demo {
 		camera.rotation.z = Math.PI / 2;
 		this.camera = camera;
 
-		// Fog.
-
-		scene.fog = new FogExp2(0x000000, 0.2);
-		renderer.setClearColor(scene.fog.color);
-
-		// Lights.
-
-		const ambientLight = new AmbientLight(0xffffff);
-		scene.add(ambientLight);
-
 		// Objects.
 
-		const geometry = new SphereBufferGeometry(1, 64, 64);
-		const material = new MeshPhongMaterial({
-			envMap: assets.get("sky"),
-			color: 0xffffff,
-			dithering: true
-		});
+		const mesh = new Mesh(
+			new SphereBufferGeometry(1, 32, 32),
+			new MeshBasicMaterial({
+				envMap: assets.get("sky")
+			})
+		);
 
-		const mesh = new Mesh(geometry, material);
-		this.mesh = mesh;
 		scene.add(mesh);
-
-		// Reset speed.
-
-		this.speed = 0.01;
 
 	}
 
 	/**
 	 * Renders this demo.
 	 *
-	 * @param {Number} delta - The time since the last frame in seconds.
+	 * @param {Number} deltaTime - The time since the last frame in seconds.
 	 */
 
-	render(delta) {
+	render(deltaTime) {
 
 		const TWO_PI = Math.PI * 2;
 		const rotation = this.camera.rotation;
 
-		rotation.z += delta * this.speed;
+		rotation.z += deltaTime * this.speed;
 
 		if(Math.abs(rotation.z) >= TWO_PI) {
 
@@ -159,7 +124,7 @@ export class ExampleDemo extends Demo {
 
 		}
 
-		super.render(delta);
+		super.render(deltaTime);
 
 	}
 
@@ -172,6 +137,20 @@ export class ExampleDemo extends Demo {
 	registerOptions(menu) {
 
 		menu.add(this, "speed").min(-0.5).max(0.5).step(0.01);
+
+	}
+
+	/**
+	 * Resets this demo.
+	 *
+	 * @return {Demo} This demo.
+	 */
+
+	reset() {
+
+		super.reset();
+
+		this.speed = 0.01;
 
 	}
 

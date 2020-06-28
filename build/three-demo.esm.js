@@ -1,10 +1,10 @@
 /**
- * three-demo v3.19.1 build Fri Jun 05 2020
+ * three-demo v3.19.2 build Mon Jun 29 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
  */
-import { LoadingManager, Scene, WebGLRenderer, Clock, OrthographicCamera, CubeCamera } from 'three';
+import { LoadingManager, Scene, WebGLRenderer, OrthographicCamera, CubeCamera } from 'three';
 import { Event, EventTarget } from 'synthetic-event';
 import { GUI } from 'dat.gui';
 
@@ -116,7 +116,7 @@ class Demo {
 	 *
 	 * Override this method to load assets.
 	 *
-	 * @return {Promise} A promise that will be fulfilled as soon as all assets have been loaded.
+	 * @return {Promise} A promise that resolves when all assets have been loaded.
 	 */
 
 	load() {
@@ -128,7 +128,7 @@ class Demo {
 	/**
 	 * Initializes this demo.
 	 *
-	 * This method will be called after reset.
+	 * This method will be called after the demo has been reset.
 	 */
 
 	initialize() {}
@@ -138,10 +138,10 @@ class Demo {
 	 *
 	 * Override this method to update and render the demo manually.
 	 *
-	 * @param {Number} delta - The time since the last frame in seconds.
+	 * @param {Number} deltaTime - The time since the last frame in seconds.
 	 */
 
-	render(delta) {
+	render(deltaTime) {
 
 		this.renderer.render(this.scene, this.camera);
 
@@ -247,6 +247,15 @@ const change = new DemoManagerEvent("change");
 const load = new DemoManagerEvent("load");
 
 /**
+ * Converts milliseconds to seconds.
+ *
+ * @type {Number}
+ * @private
+ */
+
+const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
+
+/**
  * A demo manager.
  */
 
@@ -255,9 +264,9 @@ class DemoManager extends EventTarget {
 	/**
 	 * Constructs a new demo manager.
 	 *
-	 * @param {HTMLElement} viewport - The primary DOM container.
+	 * @param {HTMLElement} viewport - The viewport.
 	 * @param {Object} [options] - Additional options.
-	 * @param {HTMLElement} [options.aside] - A secondary DOM container.
+	 * @param {HTMLElement} [options.aside] - A secondary container.
 	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
 	 */
 
@@ -285,13 +294,13 @@ class DemoManager extends EventTarget {
 		viewport.appendChild(this.renderer.domElement);
 
 		/**
-		 * A clock.
+		 * A timestamp.
 		 *
-		 * @type {Clock}
+		 * @type {DOMHighResTimeStamp}
 		 * @private
 		 */
 
-		this.clock = new Clock();
+		this.timestamp = 0.0;
 
 		/**
 		 * A menu for custom demo options.
@@ -540,17 +549,19 @@ class DemoManager extends EventTarget {
 	/**
 	 * The main render loop.
 	 *
-	 * @param {DOMHighResTimeStamp} now - The current time.
+	 * @param {DOMHighResTimeStamp} timestamp - The current time.
 	 */
 
-	render(now) {
+	render(timestamp) {
+
+		const elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
+		this.timestamp = timestamp;
 
 		const demo = this.currentDemo;
-		const delta = this.clock.getDelta();
 
 		if(demo !== null && demo.ready) {
 
-			demo.render(delta);
+			demo.render(elapsed);
 
 		}
 

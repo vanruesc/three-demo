@@ -1,5 +1,5 @@
 /**
- * three-demo v3.19.1 build Fri Jun 05 2020
+ * three-demo v3.19.2 build Mon Jun 29 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
@@ -143,7 +143,7 @@
       value: function initialize() {}
     }, {
       key: "render",
-      value: function render(delta) {
+      value: function render(deltaTime) {
         this.renderer.render(this.scene, this.camera);
       }
     }, {
@@ -189,6 +189,7 @@
 
   var change = new DemoManagerEvent("change");
   var load = new DemoManagerEvent("load");
+  var MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
 
   var DemoManager = function (_EventTarget) {
     _inherits(DemoManager, _EventTarget);
@@ -213,7 +214,7 @@
         return renderer;
       }();
       viewport.appendChild(_this2.renderer.domElement);
-      _this2.clock = new three.Clock();
+      _this2.timestamp = 0.0;
       _this2.menu = new dat_gui.GUI({
         autoPlace: false
       });
@@ -348,12 +349,13 @@
       }
     }, {
       key: "render",
-      value: function render(now) {
+      value: function render(timestamp) {
+        var elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
+        this.timestamp = timestamp;
         var demo = this.currentDemo;
-        var delta = this.clock.getDelta();
 
         if (demo !== null && demo.ready) {
-          demo.render(delta);
+          demo.render(elapsed);
         }
       }
     }]);
