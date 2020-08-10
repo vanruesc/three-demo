@@ -21,6 +21,8 @@ const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
 
 /**
  * The contructor parameter interface.
+ *
+ * @ignore
  */
 
 interface ConstructorParameters {
