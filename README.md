@@ -6,19 +6,15 @@
 
 A compact demo framework for [three.js](https://threejs.org/).
 
-*[Demo](https://vanruesc.github.io/three-demo/public/demo)&ensp;&middot;&ensp;[API Reference](https://vanruesc.github.io/three-demo/public/docs)*
+*[Demo](https://vanruesc.github.io/three-demo/public/demo)&ensp;&middot;&ensp;[Documentation](https://vanruesc.github.io/three-demo/public/docs)*
 
 
 ## Installation
 
-This library requires the peer dependencies [dat.gui](https://github.com/dataarts/dat.gui), [synthetic-event](https://github.com/vanruesc/synthetic-event) and [three](https://github.com/mrdoob/three.js/).
+This library requires the peer dependencies [three](https://github.com/mrdoob/three.js/) and [dat.gui](https://github.com/dataarts/dat.gui).
 
 ```sh
-npm install dat.gui synthetic-event three
-```
-
-```sh
-npm install three-demo
+npm install dat.gui three three-demo
 ```
 
 
@@ -31,7 +27,7 @@ import { MyDemo } from "./MyDemo.js";
 // Initialize the demo manager.
 const manager = new DemoManager(document.getElementById("viewport"), {
 	aside: document.getElementById("aside"),
-	renderer: myWebGLRenderer
+	renderer
 });
 
 // React to events.
@@ -42,10 +38,10 @@ manager.addEventListener("load", console.log);
 manager.addDemo(new MyDemo());
 
 // Start rendering.
-(function render(now) {
+(function render(timestamp) {
 
 	requestAnimationFrame(render);
-	manager.render(now);
+	manager.render(timestamp);
 
 }());
 ```
