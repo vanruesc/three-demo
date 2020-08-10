@@ -1,23 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<title>Demo</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="styles.css">
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es5,es6"></script>
 		<script src="index.min.js"></script>
 	</head>
 	<body>
-		<div role="main" id="viewport"><p>Loading&hellip;</p></div>
+		<div role="main" id="viewport">
+			<div class="loading">
+				<p>Loading&hellip;</p>
+				<div class="progress-bar"><div></div></div>
+			</div>
+		</div>
 		<div role="complementary" id="aside">
 			<div class="info">
 				<img src="info.svg" alt="Information" title="Information">
-				<div>
-					<p>Skybox by Jockum Skoglund</p>
+				<div class="hidden">
+					<p>
+						Skybox by Jockum Skoglund
+					</p>
 					<p>Press H to hide all UI elements</p>
 				</div>
 			</div>
-			<a class="code" href="https://github.com/vanruesc/three-demo/tree/master/demo/src/demos" target="_blank"><img src="code.svg" alt="Source code" title="Source code"></a>
+			<a class="code" href="https://github.com/vanruesc/three-demo/tree/master/demo/src/demo" target="_blank"><img src="code.svg" alt="Source code" title="Source code"></a>
 			<a class="github" href="https://github.com/vanruesc/three-demo" target="_blank"><img src="github.svg" alt="GitHub" title="Repository"></a>
 		</div>
 	</body>
