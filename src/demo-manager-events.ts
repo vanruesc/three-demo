@@ -1,4 +1,4 @@
-import { DemoManagerEvent } from "./DemoManagerEvent.js";
+import { DemoManagerEvent } from "./DemoManagerEvent";
 
 /**
  * A demo manager change event.
@@ -7,8 +7,6 @@ import { DemoManagerEvent } from "./DemoManagerEvent.js";
  * another demo.
  *
  * @ignore
- * @type {DemoManagerEvent}
- * @example demoManager.addEventListener("change", myListener);
  */
 
 export const change = new DemoManagerEvent("change");
@@ -20,8 +18,6 @@ export const change = new DemoManagerEvent("change");
  * loading and is about to start rendering.
  *
  * @ignore
- * @type {DemoManagerEvent}
- * @example demoManager.addEventListener("load", myListener);
  */
 
 export const load = new DemoManagerEvent("load");

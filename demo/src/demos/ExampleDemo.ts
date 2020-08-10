@@ -1,9 +1,12 @@
+import { GUI } from "dat.gui";
+
 import {
 	CubeTextureLoader,
 	Mesh,
 	MeshBasicMaterial,
 	PerspectiveCamera,
-	SphereBufferGeometry
+	SphereBufferGeometry,
+	Texture
 } from "three";
 
 import { Demo } from "../../../src";
@@ -15,6 +18,12 @@ import { Demo } from "../../../src";
 export class ExampleDemo extends Demo {
 
 	/**
+	 * The background rotation speed.
+	 */
+
+	private speed: number;
+
+	/**
 	 * Constructs a new demo.
 	 */
 
@@ -22,23 +31,11 @@ export class ExampleDemo extends Demo {
 
 		super("example");
 
-		/**
-		 * The rotation speed.
-		 *
-		 * @type {Number}
-		 */
-
 		this.speed = 0.01;
 
 	}
 
-	/**
-	 * Loads scene assets.
-	 *
-	 * @return {Promise} A promise that resolves when all assets have been loaded.
-	 */
-
-	load() {
+	load(): Promise<void> {
 
 		const assets = this.assets;
 		const loadingManager = this.loadingManager;
@@ -61,7 +58,7 @@ export class ExampleDemo extends Demo {
 
 				cubeTextureLoader.load(urls, (textureCube) => {
 
-					assets.set("sky", textureCube);
+					assets.set("envMap", textureCube);
 
 				});
 
@@ -75,18 +72,15 @@ export class ExampleDemo extends Demo {
 
 	}
 
-	/**
-	 * Creates the scene.
-	 */
-
-	initialize() {
+	initialize(): void {
 
 		const scene = this.scene;
 		const assets = this.assets;
 
 		// Camera.
 
-		const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1);
+		const aspect = window.innerWidth / window.innerHeight;
+		const camera = new PerspectiveCamera(50, aspect, 0.1, 1);
 		camera.position.set(0, Math.max(1.15, 1.5 - camera.aspect * 0.1), 0);
 		camera.lookAt(scene.position);
 		camera.rotation.z = Math.PI / 2;
@@ -94,24 +88,18 @@ export class ExampleDemo extends Demo {
 
 		// Objects.
 
+		const envMap = assets.get("envMap") as Texture;
+
 		const mesh = new Mesh(
 			new SphereBufferGeometry(1, 32, 32),
-			new MeshBasicMaterial({
-				envMap: assets.get("sky")
-			})
+			new MeshBasicMaterial({ envMap })
 		);
 
 		scene.add(mesh);
 
 	}
 
-	/**
-	 * Renders this demo.
-	 *
-	 * @param {Number} deltaTime - The time since the last frame in seconds.
-	 */
-
-	render(deltaTime) {
+	render(deltaTime: number): void {
 
 		const TWO_PI = Math.PI * 2;
 		const rotation = this.camera.rotation;
@@ -128,29 +116,17 @@ export class ExampleDemo extends Demo {
 
 	}
 
-	/**
-	 * Registers configuration options.
-	 *
-	 * @param {GUI} menu - A menu.
-	 */
-
-	registerOptions(menu) {
+	registerOptions(menu: GUI): void {
 
 		menu.add(this, "speed").min(-0.5).max(0.5).step(0.01);
 
 	}
 
-	/**
-	 * Resets this demo.
-	 *
-	 * @return {Demo} This demo.
-	 */
-
-	reset() {
-
-		super.reset();
+	reset(): Demo {
 
 		this.speed = 0.01;
+
+		return super.reset();
 
 	}
 

@@ -1,8 +1,14 @@
-import { EventTarget } from "synthetic-event";
-import { CubeCamera, OrthographicCamera, WebGLRenderer } from "three";
-import * as dat from "dat.gui";
+import { GUI } from "dat.gui";
 
-import * as events from "./demo-manager-events.js";
+import {
+	EventDispatcher,
+	OrthographicCamera,
+	PerspectiveCamera,
+	WebGLRenderer
+} from "three";
+
+import { Demo } from "./Demo";
+import * as events from "./demo-manager-events";
 
 /**
  * Converts milliseconds to seconds.
@@ -14,103 +20,103 @@ import * as events from "./demo-manager-events.js";
 const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
 
 /**
+ * The contructor parameter interface.
+ */
+
+interface ConstructorParameters {
+
+	aside?: HTMLElement,
+	renderer?: WebGLRenderer
+
+}
+
+/**
  * A demo manager.
  */
 
-export class DemoManager extends EventTarget {
+export class DemoManager extends EventDispatcher {
+
+	/**
+	 * The main renderer.
+	 */
+
+	private renderer: WebGLRenderer;
+
+	/**
+	 * A timestamp.
+	 */
+
+	private timestamp: number;
+
+	/**
+	 * A menu for custom demo options.
+	 */
+
+	private menu: GUI;
+
+	/**
+	 * A collection of demos.
+	 */
+
+	private demos: Map<string, Demo>;
+
+	/**
+	 * The id of the current demo.
+	 */
+
+	private demo: string;
+
+	/**
+	 * The current demo.
+	 */
+
+	private currentDemo: Demo;
 
 	/**
 	 * Constructs a new demo manager.
 	 *
-	 * @param {HTMLElement} viewport - The viewport.
-	 * @param {Object} [options] - Additional options.
-	 * @param {HTMLElement} [options.aside] - A secondary container.
-	 * @param {WebGLRenderer} [options.renderer] - A custom renderer.
+	 * @param viewport - The viewport.
+	 * @param options - Additional options.
+	 * @param options.aside - A secondary container.
+	 * @param options.renderer - A custom renderer.
 	 */
 
-	constructor(viewport, { aside = viewport, renderer } = {}) {
+	constructor(viewport: HTMLElement, { aside = viewport, renderer }: ConstructorParameters) {
 
 		super();
 
-		/**
-		 * The main renderer.
-		 *
-		 * @type {WebGLRenderer}
-		 * @private
-		 */
+		this.renderer = renderer;
 
-		this.renderer = (renderer !== undefined) ? renderer : (() => {
+		if(this.renderer === undefined) {
 
 			const renderer = new WebGLRenderer();
 			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
 			renderer.setPixelRatio(window.devicePixelRatio);
+			this.renderer = renderer;
 
-			return renderer;
-
-		})();
-
-		viewport.appendChild(this.renderer.domElement);
-
-		/**
-		 * A timestamp.
-		 *
-		 * @type {DOMHighResTimeStamp}
-		 * @private
-		 */
+		}
 
 		this.timestamp = 0.0;
-
-		/**
-		 * A menu for custom demo options.
-		 *
-		 * @type {GUI}
-		 * @private
-		 */
-
-		this.menu = new dat.GUI({ autoPlace: false });
-
-		aside.appendChild(this.menu.domElement);
-
-		/**
-		 * A collection of demos.
-		 *
-		 * @type {Map}
-		 * @private
-		 */
-
-		this.demos = new Map();
-
-		/**
-		 * The id of the current demo.
-		 *
-		 * @type {String}
-		 * @private
-		 */
-
+		this.menu = new GUI({ autoPlace: false });
+		this.demos = new Map<string, Demo>();
 		this.demo = null;
-
-		/**
-		 * The current demo.
-		 *
-		 * @type {Demo}
-		 * @private
-		 */
-
 		this.currentDemo = null;
+
+		viewport.appendChild(this.renderer.domElement);
+		aside.appendChild(this.menu.domElement);
 
 	}
 
 	/**
 	 * Updates the demo options menu.
 	 *
-	 * @private
-	 * @return {GUI} A clean menu.
+	 * @return A new menu.
 	 */
 
-	resetMenu() {
+	private resetMenu(): GUI {
 
 		const node = this.menu.domElement.parentNode;
-		const menu = new dat.GUI({ autoPlace: false });
+		const menu = new GUI({ autoPlace: false });
 
 		// Don't create a demo selection if there's only one demo.
 		if(this.demos.size > 1) {
@@ -133,14 +139,12 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Activates the given demo if it's still selected.
 	 *
-	 * While the demo was loading, another demo may have been selected.
-	 *
-	 * @private
-	 * @param {Demo} demo - A demo.
+	 * @param demo - A demo.
 	 */
 
-	startDemo(demo) {
+	private startDemo(demo: Demo): void {
 
+		// Make sure the given demo is still selected.
 		if(demo.id === this.demo) {
 
 			demo.initialize();
@@ -155,12 +159,10 @@ export class DemoManager extends EventTarget {
 	}
 
 	/**
-	 * Loads the currently selected demo.
-	 *
-	 * @private
+	 * Loads the current demo.
 	 */
 
-	loadDemo() {
+	private loadDemo(): void {
 
 		const nextDemo = this.demos.get(this.demo);
 		const currentDemo = this.currentDemo;
@@ -187,18 +189,20 @@ export class DemoManager extends EventTarget {
 		// Clear the screen.
 		renderer.clear();
 
-		nextDemo.load().then(() => this.startDemo(nextDemo)).catch(console.error);
+		nextDemo.load()
+			.then(() => this.startDemo(nextDemo))
+			.catch(console.error);
 
 	}
 
 	/**
 	 * Adds a demo.
 	 *
-	 * @param {Demo} demo - The demo.
-	 * @return {DemoManager} This manager.
+	 * @param demo - The demo.
+	 * @return This manager.
 	 */
 
-	addDemo(demo) {
+	addDemo(demo: Demo): DemoManager {
 
 		const hash = window.location.hash.slice(1);
 		const currentDemo = this.currentDemo;
@@ -230,15 +234,13 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Removes a demo.
 	 *
-	 * @param {String} id - The id of the demo.
-	 * @return {DemoManager} This manager.
+	 * @param id - The ID of the demo.
+	 * @return This manager.
 	 */
 
-	removeDemo(id) {
+	removeDemo(id: string): DemoManager {
 
 		const demos = this.demos;
-
-		let firstEntry;
 
 		if(demos.has(id)) {
 
@@ -247,7 +249,8 @@ export class DemoManager extends EventTarget {
 			if(this.demo === id && demos.size > 0) {
 
 				// Load the first of the remaining demos.
-				firstEntry = demos.entries().next().value;
+				const entries: Array<[string, Demo]> = Array.from(demos.entries());
+				const firstEntry = entries[0];
 				this.demo = firstEntry[0];
 				this.currentDemo = firstEntry[1];
 				this.loadDemo();
@@ -269,20 +272,19 @@ export class DemoManager extends EventTarget {
 	/**
 	 * Sets the render size.
 	 *
-	 * @param {Number} width - The width.
-	 * @param {Number} height - The height.
-	 * @param {Boolean} [updateStyle] - Determines whether the style of the canvas should be updated.
+	 * @param width - The width.
+	 * @param height - The height.
+	 * @param updateStyle - Determines whether the style of the canvas should be updated.
 	 */
 
-	setSize(width, height, updateStyle) {
+	setSize(width: number, height: number, updateStyle = true): void {
 
 		const demo = this.currentDemo;
+		const camera = demo.getCamera();
 
 		this.renderer.setSize(width, height, updateStyle);
 
-		if(demo !== null && demo.camera !== null) {
-
-			const camera = demo.camera;
+		if(demo !== null && camera !== null) {
 
 			if(camera instanceof OrthographicCamera) {
 
@@ -292,9 +294,8 @@ export class DemoManager extends EventTarget {
 				camera.bottom = height / -2.0;
 				camera.updateProjectionMatrix();
 
-			} else if(!(camera instanceof CubeCamera)) {
+			} else if(camera instanceof PerspectiveCamera) {
 
-				// Perspective, Array or Stereo camera.
 				camera.aspect = width / height;
 				camera.updateProjectionMatrix();
 
@@ -305,12 +306,12 @@ export class DemoManager extends EventTarget {
 	}
 
 	/**
-	 * The main render loop.
+	 * Renders the current demo.
 	 *
-	 * @param {DOMHighResTimeStamp} timestamp - The current time.
+	 * @param timestamp - The current time in milliseconds.
 	 */
 
-	render(timestamp) {
+	render(timestamp: number): void {
 
 		const elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
 		this.timestamp = timestamp;

@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+    "outDir": "public/demo"
+	},
+	"include": [
+		"src/**/*",
+		"demo/src/**/*"
+	]
+}
