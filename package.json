@@ -33,13 +33,14 @@
 		"build"
 	],
 	"scripts": {
-		"build": "cross-env NODE_ENV=production rollup -c",
-		"build-debug": "rollup -c",
-		"doc": "rimraf public/docs && typedoc",
+		"build": "rollup -c",
+		"build:production": "cross-env NODE_ENV=production rollup -c",
+		"watch": "rollup -c -w",
 		"dev": "concurrently -k -n server,rollup,eslint \"hs -s\" \"rollup -c -w\" \"esw -w --ext .ts src demo/src\"",
+		"doc": "rimraf public/docs && typedoc",
 		"lint": "eslint src demo/src",
 		"prepack": "npm test && npm run doc",
-		"test": "npm run lint && rimraf build && npm run build"
+		"test": "npm run lint && rimraf build && npm run build:production"
 	},
 	"eslintConfig": {
 		"root": true,
