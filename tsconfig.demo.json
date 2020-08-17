@@ -1,7 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-    "outDir": "public/demo"
+		"outDir": "public/demo"
 	},
 	"include": [
 		"src/**/*",

@@ -1,15 +1,14 @@
 {
 	"compilerOptions": {
-    "rootDir": ".",
-    "outDir": "build",
+		"rootDir": ".",
+		"outDir": "build",
 		"moduleResolution": "node",
 		"module": "ESNext",
-    "target": "ES5",
-    "noEmit": true,
-    "strict": true,
-    "removeComments": true,
-    "strictNullChecks": false,
-		"downlevelIteration": true
+		"target": "ESNext",
+		"noEmit": true,
+		"strict": true,
+		"removeComments": true,
+		"strictNullChecks": false
 	},
 	"include": [
 		"src/**/*",
