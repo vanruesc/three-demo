@@ -1,3 +1,4 @@
+import buble from "@rollup/plugin-buble";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript  from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
@@ -22,8 +23,7 @@ const lib = {
 	module: {
 		input: "src/index.ts",
 		plugins: [resolve(), typescript({
-			tsconfig: "tsconfig.lib.json",
-			target: "ESNext"
+			tsconfig: "tsconfig.lib.json"
 		})],
 		external,
 		output: {
@@ -37,7 +37,7 @@ const lib = {
 		input: "src/index.ts",
 		plugins: [resolve(), typescript({
 			tsconfig: "tsconfig.lib.json"
-		})],
+		}), buble()],
 		external,
 		output: [{
 			dir: "build",
@@ -62,7 +62,7 @@ const demo = {
 	input: "demo/src/index.ts",
 	plugins: [resolve(), typescript({
 		tsconfig: "tsconfig.demo.json"
-	})],
+	})].concat(production ? [buble()] : []),
 	output: [{
 		dir: "public/demo",
 		entryFileNames: "[name].js",
