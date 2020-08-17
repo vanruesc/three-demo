@@ -59,6 +59,8 @@
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
 		Object.assign = function ( target ) {
+			var arguments$1 = arguments;
+
 
 			if ( target === undefined || target === null ) {
 
@@ -66,15 +68,15 @@
 
 			}
 
-			const output = Object( target );
+			var output = Object( target );
 
-			for ( let index = 1; index < arguments.length; index ++ ) {
+			for ( var index = 1; index < arguments.length; index ++ ) {
 
-				const source = arguments[ index ];
+				var source = arguments$1[ index ];
 
 				if ( source !== undefined && source !== null ) {
 
-					for ( const nextKey in source ) {
+					for ( var nextKey in source ) {
 
 						if ( Object.prototype.hasOwnProperty.call( source, nextKey ) ) {
 
@@ -94,168 +96,168 @@
 
 	}
 
-	const REVISION = '119';
-	const CullFaceNone = 0;
-	const CullFaceBack = 1;
-	const CullFaceFront = 2;
-	const PCFShadowMap = 1;
-	const PCFSoftShadowMap = 2;
-	const VSMShadowMap = 3;
-	const FrontSide = 0;
-	const BackSide = 1;
-	const DoubleSide = 2;
-	const FlatShading = 1;
-	const NoBlending = 0;
-	const NormalBlending = 1;
-	const AdditiveBlending = 2;
-	const SubtractiveBlending = 3;
-	const MultiplyBlending = 4;
-	const CustomBlending = 5;
-	const AddEquation = 100;
-	const SubtractEquation = 101;
-	const ReverseSubtractEquation = 102;
-	const MinEquation = 103;
-	const MaxEquation = 104;
-	const ZeroFactor = 200;
-	const OneFactor = 201;
-	const SrcColorFactor = 202;
-	const OneMinusSrcColorFactor = 203;
-	const SrcAlphaFactor = 204;
-	const OneMinusSrcAlphaFactor = 205;
-	const DstAlphaFactor = 206;
-	const OneMinusDstAlphaFactor = 207;
-	const DstColorFactor = 208;
-	const OneMinusDstColorFactor = 209;
-	const SrcAlphaSaturateFactor = 210;
-	const NeverDepth = 0;
-	const AlwaysDepth = 1;
-	const LessDepth = 2;
-	const LessEqualDepth = 3;
-	const EqualDepth = 4;
-	const GreaterEqualDepth = 5;
-	const GreaterDepth = 6;
-	const NotEqualDepth = 7;
-	const MultiplyOperation = 0;
-	const MixOperation = 1;
-	const AddOperation = 2;
-	const NoToneMapping = 0;
-	const LinearToneMapping = 1;
-	const ReinhardToneMapping = 2;
-	const CineonToneMapping = 3;
-	const ACESFilmicToneMapping = 4;
-	const CustomToneMapping = 5;
+	var REVISION = '119';
+	var CullFaceNone = 0;
+	var CullFaceBack = 1;
+	var CullFaceFront = 2;
+	var PCFShadowMap = 1;
+	var PCFSoftShadowMap = 2;
+	var VSMShadowMap = 3;
+	var FrontSide = 0;
+	var BackSide = 1;
+	var DoubleSide = 2;
+	var FlatShading = 1;
+	var NoBlending = 0;
+	var NormalBlending = 1;
+	var AdditiveBlending = 2;
+	var SubtractiveBlending = 3;
+	var MultiplyBlending = 4;
+	var CustomBlending = 5;
+	var AddEquation = 100;
+	var SubtractEquation = 101;
+	var ReverseSubtractEquation = 102;
+	var MinEquation = 103;
+	var MaxEquation = 104;
+	var ZeroFactor = 200;
+	var OneFactor = 201;
+	var SrcColorFactor = 202;
+	var OneMinusSrcColorFactor = 203;
+	var SrcAlphaFactor = 204;
+	var OneMinusSrcAlphaFactor = 205;
+	var DstAlphaFactor = 206;
+	var OneMinusDstAlphaFactor = 207;
+	var DstColorFactor = 208;
+	var OneMinusDstColorFactor = 209;
+	var SrcAlphaSaturateFactor = 210;
+	var NeverDepth = 0;
+	var AlwaysDepth = 1;
+	var LessDepth = 2;
+	var LessEqualDepth = 3;
+	var EqualDepth = 4;
+	var GreaterEqualDepth = 5;
+	var GreaterDepth = 6;
+	var NotEqualDepth = 7;
+	var MultiplyOperation = 0;
+	var MixOperation = 1;
+	var AddOperation = 2;
+	var NoToneMapping = 0;
+	var LinearToneMapping = 1;
+	var ReinhardToneMapping = 2;
+	var CineonToneMapping = 3;
+	var ACESFilmicToneMapping = 4;
+	var CustomToneMapping = 5;
 
-	const UVMapping = 300;
-	const CubeReflectionMapping = 301;
-	const CubeRefractionMapping = 302;
-	const EquirectangularReflectionMapping = 303;
-	const EquirectangularRefractionMapping = 304;
-	const CubeUVReflectionMapping = 306;
-	const CubeUVRefractionMapping = 307;
-	const RepeatWrapping = 1000;
-	const ClampToEdgeWrapping = 1001;
-	const MirroredRepeatWrapping = 1002;
-	const NearestFilter = 1003;
-	const NearestMipmapNearestFilter = 1004;
-	const NearestMipmapLinearFilter = 1005;
-	const LinearFilter = 1006;
-	const LinearMipmapNearestFilter = 1007;
-	const LinearMipmapLinearFilter = 1008;
-	const UnsignedByteType = 1009;
-	const ByteType = 1010;
-	const ShortType = 1011;
-	const UnsignedShortType = 1012;
-	const IntType = 1013;
-	const UnsignedIntType = 1014;
-	const FloatType = 1015;
-	const HalfFloatType = 1016;
-	const UnsignedShort4444Type = 1017;
-	const UnsignedShort5551Type = 1018;
-	const UnsignedShort565Type = 1019;
-	const UnsignedInt248Type = 1020;
-	const AlphaFormat = 1021;
-	const RGBFormat = 1022;
-	const RGBAFormat = 1023;
-	const LuminanceFormat = 1024;
-	const LuminanceAlphaFormat = 1025;
-	const DepthFormat = 1026;
-	const DepthStencilFormat = 1027;
-	const RedFormat = 1028;
-	const RedIntegerFormat = 1029;
-	const RGFormat = 1030;
-	const RGIntegerFormat = 1031;
-	const RGBIntegerFormat = 1032;
-	const RGBAIntegerFormat = 1033;
+	var UVMapping = 300;
+	var CubeReflectionMapping = 301;
+	var CubeRefractionMapping = 302;
+	var EquirectangularReflectionMapping = 303;
+	var EquirectangularRefractionMapping = 304;
+	var CubeUVReflectionMapping = 306;
+	var CubeUVRefractionMapping = 307;
+	var RepeatWrapping = 1000;
+	var ClampToEdgeWrapping = 1001;
+	var MirroredRepeatWrapping = 1002;
+	var NearestFilter = 1003;
+	var NearestMipmapNearestFilter = 1004;
+	var NearestMipmapLinearFilter = 1005;
+	var LinearFilter = 1006;
+	var LinearMipmapNearestFilter = 1007;
+	var LinearMipmapLinearFilter = 1008;
+	var UnsignedByteType = 1009;
+	var ByteType = 1010;
+	var ShortType = 1011;
+	var UnsignedShortType = 1012;
+	var IntType = 1013;
+	var UnsignedIntType = 1014;
+	var FloatType = 1015;
+	var HalfFloatType = 1016;
+	var UnsignedShort4444Type = 1017;
+	var UnsignedShort5551Type = 1018;
+	var UnsignedShort565Type = 1019;
+	var UnsignedInt248Type = 1020;
+	var AlphaFormat = 1021;
+	var RGBFormat = 1022;
+	var RGBAFormat = 1023;
+	var LuminanceFormat = 1024;
+	var LuminanceAlphaFormat = 1025;
+	var DepthFormat = 1026;
+	var DepthStencilFormat = 1027;
+	var RedFormat = 1028;
+	var RedIntegerFormat = 1029;
+	var RGFormat = 1030;
+	var RGIntegerFormat = 1031;
+	var RGBIntegerFormat = 1032;
+	var RGBAIntegerFormat = 1033;
 
-	const RGB_S3TC_DXT1_Format = 33776;
-	const RGBA_S3TC_DXT1_Format = 33777;
-	const RGBA_S3TC_DXT3_Format = 33778;
-	const RGBA_S3TC_DXT5_Format = 33779;
-	const RGB_PVRTC_4BPPV1_Format = 35840;
-	const RGB_PVRTC_2BPPV1_Format = 35841;
-	const RGBA_PVRTC_4BPPV1_Format = 35842;
-	const RGBA_PVRTC_2BPPV1_Format = 35843;
-	const RGB_ETC1_Format = 36196;
-	const RGB_ETC2_Format = 37492;
-	const RGBA_ETC2_EAC_Format = 37496;
-	const RGBA_ASTC_4x4_Format = 37808;
-	const RGBA_ASTC_5x4_Format = 37809;
-	const RGBA_ASTC_5x5_Format = 37810;
-	const RGBA_ASTC_6x5_Format = 37811;
-	const RGBA_ASTC_6x6_Format = 37812;
-	const RGBA_ASTC_8x5_Format = 37813;
-	const RGBA_ASTC_8x6_Format = 37814;
-	const RGBA_ASTC_8x8_Format = 37815;
-	const RGBA_ASTC_10x5_Format = 37816;
-	const RGBA_ASTC_10x6_Format = 37817;
-	const RGBA_ASTC_10x8_Format = 37818;
-	const RGBA_ASTC_10x10_Format = 37819;
-	const RGBA_ASTC_12x10_Format = 37820;
-	const RGBA_ASTC_12x12_Format = 37821;
-	const RGBA_BPTC_Format = 36492;
-	const SRGB8_ALPHA8_ASTC_4x4_Format = 37840;
-	const SRGB8_ALPHA8_ASTC_5x4_Format = 37841;
-	const SRGB8_ALPHA8_ASTC_5x5_Format = 37842;
-	const SRGB8_ALPHA8_ASTC_6x5_Format = 37843;
-	const SRGB8_ALPHA8_ASTC_6x6_Format = 37844;
-	const SRGB8_ALPHA8_ASTC_8x5_Format = 37845;
-	const SRGB8_ALPHA8_ASTC_8x6_Format = 37846;
-	const SRGB8_ALPHA8_ASTC_8x8_Format = 37847;
-	const SRGB8_ALPHA8_ASTC_10x5_Format = 37848;
-	const SRGB8_ALPHA8_ASTC_10x6_Format = 37849;
-	const SRGB8_ALPHA8_ASTC_10x8_Format = 37850;
-	const SRGB8_ALPHA8_ASTC_10x10_Format = 37851;
-	const SRGB8_ALPHA8_ASTC_12x10_Format = 37852;
-	const SRGB8_ALPHA8_ASTC_12x12_Format = 37853;
-	const LoopOnce = 2200;
-	const LoopRepeat = 2201;
-	const LoopPingPong = 2202;
-	const InterpolateDiscrete = 2300;
-	const InterpolateLinear = 2301;
-	const InterpolateSmooth = 2302;
-	const ZeroCurvatureEnding = 2400;
-	const ZeroSlopeEnding = 2401;
-	const WrapAroundEnding = 2402;
-	const NormalAnimationBlendMode = 2500;
-	const AdditiveAnimationBlendMode = 2501;
-	const TrianglesDrawMode = 0;
-	const LinearEncoding = 3000;
-	const sRGBEncoding = 3001;
-	const GammaEncoding = 3007;
-	const RGBEEncoding = 3002;
-	const LogLuvEncoding = 3003;
-	const RGBM7Encoding = 3004;
-	const RGBM16Encoding = 3005;
-	const RGBDEncoding = 3006;
-	const BasicDepthPacking = 3200;
-	const RGBADepthPacking = 3201;
-	const TangentSpaceNormalMap = 0;
-	const ObjectSpaceNormalMap = 1;
-	const KeepStencilOp = 7680;
-	const AlwaysStencilFunc = 519;
+	var RGB_S3TC_DXT1_Format = 33776;
+	var RGBA_S3TC_DXT1_Format = 33777;
+	var RGBA_S3TC_DXT3_Format = 33778;
+	var RGBA_S3TC_DXT5_Format = 33779;
+	var RGB_PVRTC_4BPPV1_Format = 35840;
+	var RGB_PVRTC_2BPPV1_Format = 35841;
+	var RGBA_PVRTC_4BPPV1_Format = 35842;
+	var RGBA_PVRTC_2BPPV1_Format = 35843;
+	var RGB_ETC1_Format = 36196;
+	var RGB_ETC2_Format = 37492;
+	var RGBA_ETC2_EAC_Format = 37496;
+	var RGBA_ASTC_4x4_Format = 37808;
+	var RGBA_ASTC_5x4_Format = 37809;
+	var RGBA_ASTC_5x5_Format = 37810;
+	var RGBA_ASTC_6x5_Format = 37811;
+	var RGBA_ASTC_6x6_Format = 37812;
+	var RGBA_ASTC_8x5_Format = 37813;
+	var RGBA_ASTC_8x6_Format = 37814;
+	var RGBA_ASTC_8x8_Format = 37815;
+	var RGBA_ASTC_10x5_Format = 37816;
+	var RGBA_ASTC_10x6_Format = 37817;
+	var RGBA_ASTC_10x8_Format = 37818;
+	var RGBA_ASTC_10x10_Format = 37819;
+	var RGBA_ASTC_12x10_Format = 37820;
+	var RGBA_ASTC_12x12_Format = 37821;
+	var RGBA_BPTC_Format = 36492;
+	var SRGB8_ALPHA8_ASTC_4x4_Format = 37840;
+	var SRGB8_ALPHA8_ASTC_5x4_Format = 37841;
+	var SRGB8_ALPHA8_ASTC_5x5_Format = 37842;
+	var SRGB8_ALPHA8_ASTC_6x5_Format = 37843;
+	var SRGB8_ALPHA8_ASTC_6x6_Format = 37844;
+	var SRGB8_ALPHA8_ASTC_8x5_Format = 37845;
+	var SRGB8_ALPHA8_ASTC_8x6_Format = 37846;
+	var SRGB8_ALPHA8_ASTC_8x8_Format = 37847;
+	var SRGB8_ALPHA8_ASTC_10x5_Format = 37848;
+	var SRGB8_ALPHA8_ASTC_10x6_Format = 37849;
+	var SRGB8_ALPHA8_ASTC_10x8_Format = 37850;
+	var SRGB8_ALPHA8_ASTC_10x10_Format = 37851;
+	var SRGB8_ALPHA8_ASTC_12x10_Format = 37852;
+	var SRGB8_ALPHA8_ASTC_12x12_Format = 37853;
+	var LoopOnce = 2200;
+	var LoopRepeat = 2201;
+	var LoopPingPong = 2202;
+	var InterpolateDiscrete = 2300;
+	var InterpolateLinear = 2301;
+	var InterpolateSmooth = 2302;
+	var ZeroCurvatureEnding = 2400;
+	var ZeroSlopeEnding = 2401;
+	var WrapAroundEnding = 2402;
+	var NormalAnimationBlendMode = 2500;
+	var AdditiveAnimationBlendMode = 2501;
+	var TrianglesDrawMode = 0;
+	var LinearEncoding = 3000;
+	var sRGBEncoding = 3001;
+	var GammaEncoding = 3007;
+	var RGBEEncoding = 3002;
+	var LogLuvEncoding = 3003;
+	var RGBM7Encoding = 3004;
+	var RGBM16Encoding = 3005;
+	var RGBDEncoding = 3006;
+	var BasicDepthPacking = 3200;
+	var RGBADepthPacking = 3201;
+	var TangentSpaceNormalMap = 0;
+	var ObjectSpaceNormalMap = 1;
+	var KeepStencilOp = 7680;
+	var AlwaysStencilFunc = 519;
 
-	const StaticDrawUsage = 35044;
-	const DynamicDrawUsage = 35048;
+	var StaticDrawUsage = 35044;
+	var DynamicDrawUsage = 35048;
 
 	/**
 	 * https://github.com/mrdoob/eventdispatcher.js/
@@ -267,9 +269,9 @@
 
 		addEventListener: function ( type, listener ) {
 
-			if ( this._listeners === undefined ) this._listeners = {};
+			if ( this._listeners === undefined ) { this._listeners = {}; }
 
-			const listeners = this._listeners;
+			var listeners = this._listeners;
 
 			if ( listeners[ type ] === undefined ) {
 
@@ -287,9 +289,9 @@
 
 		hasEventListener: function ( type, listener ) {
 
-			if ( this._listeners === undefined ) return false;
+			if ( this._listeners === undefined ) { return false; }
 
-			const listeners = this._listeners;
+			var listeners = this._listeners;
 
 			return listeners[ type ] !== undefined && listeners[ type ].indexOf( listener ) !== - 1;
 
@@ -297,14 +299,14 @@
 
 		removeEventListener: function ( type, listener ) {
 
-			if ( this._listeners === undefined ) return;
+			if ( this._listeners === undefined ) { return; }
 
-			const listeners = this._listeners;
-			const listenerArray = listeners[ type ];
+			var listeners = this._listeners;
+			var listenerArray = listeners[ type ];
 
 			if ( listenerArray !== undefined ) {
 
-				const index = listenerArray.indexOf( listener );
+				var index = listenerArray.indexOf( listener );
 
 				if ( index !== - 1 ) {
 
@@ -318,19 +320,19 @@
 
 		dispatchEvent: function ( event ) {
 
-			if ( this._listeners === undefined ) return;
+			if ( this._listeners === undefined ) { return; }
 
-			const listeners = this._listeners;
-			const listenerArray = listeners[ event.type ];
+			var listeners = this._listeners;
+			var listenerArray = listeners[ event.type ];
 
 			if ( listenerArray !== undefined ) {
 
 				event.target = this;
 
 				// Make a copy, in case listeners are removed while iterating.
-				const array = listenerArray.slice( 0 );
+				var array = listenerArray.slice( 0 );
 
-				for ( let i = 0, l = array.length; i < l; i ++ ) {
+				for ( var i = 0, l = array.length; i < l; i ++ ) {
 
 					array[ i ].call( this, event );
 
@@ -342,17 +344,17 @@
 
 	} );
 
-	const _lut = [];
+	var _lut = [];
 
-	for ( let i = 0; i < 256; i ++ ) {
+	for ( var i = 0; i < 256; i ++ ) {
 
 		_lut[ i ] = ( i < 16 ? '0' : '' ) + ( i ).toString( 16 );
 
 	}
 
-	let _seed = 1234567;
+	var _seed = 1234567;
 
-	const MathUtils = {
+	var MathUtils = {
 
 		DEG2RAD: Math.PI / 180,
 		RAD2DEG: 180 / Math.PI,
@@ -361,11 +363,11 @@
 
 			// http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
 
-			const d0 = Math.random() * 0xffffffff | 0;
-			const d1 = Math.random() * 0xffffffff | 0;
-			const d2 = Math.random() * 0xffffffff | 0;
-			const d3 = Math.random() * 0xffffffff | 0;
-			const uuid = _lut[ d0 & 0xff ] + _lut[ d0 >> 8 & 0xff ] + _lut[ d0 >> 16 & 0xff ] + _lut[ d0 >> 24 & 0xff ] + '-' +
+			var d0 = Math.random() * 0xffffffff | 0;
+			var d1 = Math.random() * 0xffffffff | 0;
+			var d2 = Math.random() * 0xffffffff | 0;
+			var d3 = Math.random() * 0xffffffff | 0;
+			var uuid = _lut[ d0 & 0xff ] + _lut[ d0 >> 8 & 0xff ] + _lut[ d0 >> 16 & 0xff ] + _lut[ d0 >> 24 & 0xff ] + '-' +
 				_lut[ d1 & 0xff ] + _lut[ d1 >> 8 & 0xff ] + '-' + _lut[ d1 >> 16 & 0x0f | 0x40 ] + _lut[ d1 >> 24 & 0xff ] + '-' +
 				_lut[ d2 & 0x3f | 0x80 ] + _lut[ d2 >> 8 & 0xff ] + '-' + _lut[ d2 >> 16 & 0xff ] + _lut[ d2 >> 24 & 0xff ] +
 				_lut[ d3 & 0xff ] + _lut[ d3 >> 8 & 0xff ] + _lut[ d3 >> 16 & 0xff ] + _lut[ d3 >> 24 & 0xff ];
@@ -410,8 +412,8 @@
 
 		smoothstep: function ( x, min, max ) {
 
-			if ( x <= min ) return 0;
-			if ( x >= max ) return 1;
+			if ( x <= min ) { return 0; }
+			if ( x >= max ) { return 1; }
 
 			x = ( x - min ) / ( max - min );
 
@@ -421,8 +423,8 @@
 
 		smootherstep: function ( x, min, max ) {
 
-			if ( x <= min ) return 0;
-			if ( x >= max ) return 1;
+			if ( x <= min ) { return 0; }
+			if ( x >= max ) { return 1; }
 
 			x = ( x - min ) / ( max - min );
 
@@ -458,7 +460,7 @@
 
 		seededRandom: function ( s ) {
 
-			if ( s !== undefined ) _seed = s % 2147483647;
+			if ( s !== undefined ) { _seed = s % 2147483647; }
 
 			// Park-Miller algorithm
 
@@ -506,20 +508,20 @@
 			// rotation by angle 'a' is applied first, then by angle 'b', then by angle 'c'
 			// angles are in radians
 
-			const cos = Math.cos;
-			const sin = Math.sin;
+			var cos = Math.cos;
+			var sin = Math.sin;
 
-			const c2 = cos( b / 2 );
-			const s2 = sin( b / 2 );
+			var c2 = cos( b / 2 );
+			var s2 = sin( b / 2 );
 
-			const c13 = cos( ( a + c ) / 2 );
-			const s13 = sin( ( a + c ) / 2 );
+			var c13 = cos( ( a + c ) / 2 );
+			var s13 = sin( ( a + c ) / 2 );
 
-			const c1_3 = cos( ( a - c ) / 2 );
-			const s1_3 = sin( ( a - c ) / 2 );
+			var c1_3 = cos( ( a - c ) / 2 );
+			var s1_3 = sin( ( a - c ) / 2 );
 
-			const c3_1 = cos( ( c - a ) / 2 );
-			const s3_1 = sin( ( c - a ) / 2 );
+			var c3_1 = cos( ( c - a ) / 2 );
+			var s3_1 = sin( ( c - a ) / 2 );
 
 			switch ( order ) {
 
@@ -556,7 +558,10 @@
 
 	};
 
-	function Vector2( x = 0, y = 0 ) {
+	function Vector2( x, y ) {
+		if ( x === void 0 ) x = 0;
+		if ( y === void 0 ) y = 0;
+
 
 		this.x = x;
 		this.y = y;
@@ -790,8 +795,8 @@
 
 		applyMatrix3: function ( m ) {
 
-			const x = this.x, y = this.y;
-			const e = m.elements;
+			var x = this.x, y = this.y;
+			var e = m.elements;
 
 			this.x = e[ 0 ] * x + e[ 3 ] * y + e[ 6 ];
 			this.y = e[ 1 ] * x + e[ 4 ] * y + e[ 7 ];
@@ -840,7 +845,7 @@
 
 		clampLength: function ( min, max ) {
 
-			const length = this.length();
+			var length = this.length();
 
 			return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
 
@@ -931,7 +936,7 @@
 
 			// computes the angle in radians with respect to the positive x-axis
 
-			const angle = Math.atan2( - this.y, - this.x ) + Math.PI;
+			var angle = Math.atan2( - this.y, - this.x ) + Math.PI;
 
 			return angle;
 
@@ -945,7 +950,7 @@
 
 		distanceToSquared: function ( v ) {
 
-			const dx = this.x - v.x, dy = this.y - v.y;
+			var dx = this.x - v.x, dy = this.y - v.y;
 			return dx * dx + dy * dy;
 
 		},
@@ -988,7 +993,7 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.x = array[ offset ];
 			this.y = array[ offset + 1 ];
@@ -999,8 +1004,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this.x;
 			array[ offset + 1 ] = this.y;
@@ -1026,10 +1031,10 @@
 
 		rotateAround: function ( center, angle ) {
 
-			const c = Math.cos( angle ), s = Math.sin( angle );
+			var c = Math.cos( angle ), s = Math.sin( angle );
 
-			const x = this.x - center.x;
-			const y = this.y - center.y;
+			var x = this.x - center.x;
+			var y = this.y - center.y;
 
 			this.x = x * c - y * s + center.x;
 			this.y = x * s + y * c + center.y;
@@ -1073,7 +1078,7 @@
 
 		set: function ( n11, n12, n13, n21, n22, n23, n31, n32, n33 ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] = n11; te[ 1 ] = n21; te[ 2 ] = n31;
 			te[ 3 ] = n12; te[ 4 ] = n22; te[ 5 ] = n32;
@@ -1105,8 +1110,8 @@
 
 		copy: function ( m ) {
 
-			const te = this.elements;
-			const me = m.elements;
+			var te = this.elements;
+			var me = m.elements;
 
 			te[ 0 ] = me[ 0 ]; te[ 1 ] = me[ 1 ]; te[ 2 ] = me[ 2 ];
 			te[ 3 ] = me[ 3 ]; te[ 4 ] = me[ 4 ]; te[ 5 ] = me[ 5 ];
@@ -1128,7 +1133,7 @@
 
 		setFromMatrix4: function ( m ) {
 
-			const me = m.elements;
+			var me = m.elements;
 
 			this.set(
 
@@ -1156,17 +1161,17 @@
 
 		multiplyMatrices: function ( a, b ) {
 
-			const ae = a.elements;
-			const be = b.elements;
-			const te = this.elements;
+			var ae = a.elements;
+			var be = b.elements;
+			var te = this.elements;
 
-			const a11 = ae[ 0 ], a12 = ae[ 3 ], a13 = ae[ 6 ];
-			const a21 = ae[ 1 ], a22 = ae[ 4 ], a23 = ae[ 7 ];
-			const a31 = ae[ 2 ], a32 = ae[ 5 ], a33 = ae[ 8 ];
+			var a11 = ae[ 0 ], a12 = ae[ 3 ], a13 = ae[ 6 ];
+			var a21 = ae[ 1 ], a22 = ae[ 4 ], a23 = ae[ 7 ];
+			var a31 = ae[ 2 ], a32 = ae[ 5 ], a33 = ae[ 8 ];
 
-			const b11 = be[ 0 ], b12 = be[ 3 ], b13 = be[ 6 ];
-			const b21 = be[ 1 ], b22 = be[ 4 ], b23 = be[ 7 ];
-			const b31 = be[ 2 ], b32 = be[ 5 ], b33 = be[ 8 ];
+			var b11 = be[ 0 ], b12 = be[ 3 ], b13 = be[ 6 ];
+			var b21 = be[ 1 ], b22 = be[ 4 ], b23 = be[ 7 ];
+			var b31 = be[ 2 ], b32 = be[ 5 ], b33 = be[ 8 ];
 
 			te[ 0 ] = a11 * b11 + a12 * b21 + a13 * b31;
 			te[ 3 ] = a11 * b12 + a12 * b22 + a13 * b32;
@@ -1186,7 +1191,7 @@
 
 		multiplyScalar: function ( s ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] *= s; te[ 3 ] *= s; te[ 6 ] *= s;
 			te[ 1 ] *= s; te[ 4 ] *= s; te[ 7 ] *= s;
@@ -1198,9 +1203,9 @@
 
 		determinant: function () {
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const a = te[ 0 ], b = te[ 1 ], c = te[ 2 ],
+			var a = te[ 0 ], b = te[ 1 ], c = te[ 2 ],
 				d = te[ 3 ], e = te[ 4 ], f = te[ 5 ],
 				g = te[ 6 ], h = te[ 7 ], i = te[ 8 ];
 
@@ -1216,7 +1221,7 @@
 
 			}
 
-			const me = matrix.elements,
+			var me = matrix.elements,
 				te = this.elements,
 
 				n11 = me[ 0 ], n21 = me[ 1 ], n31 = me[ 2 ],
@@ -1229,9 +1234,9 @@
 
 				det = n11 * t11 + n21 * t12 + n31 * t13;
 
-			if ( det === 0 ) return this.set( 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+			if ( det === 0 ) { return this.set( 0, 0, 0, 0, 0, 0, 0, 0, 0 ); }
 
-			const detInv = 1 / det;
+			var detInv = 1 / det;
 
 			te[ 0 ] = t11 * detInv;
 			te[ 1 ] = ( n31 * n23 - n33 * n21 ) * detInv;
@@ -1251,8 +1256,8 @@
 
 		transpose: function () {
 
-			let tmp;
-			const m = this.elements;
+			var tmp;
+			var m = this.elements;
 
 			tmp = m[ 1 ]; m[ 1 ] = m[ 3 ]; m[ 3 ] = tmp;
 			tmp = m[ 2 ]; m[ 2 ] = m[ 6 ]; m[ 6 ] = tmp;
@@ -1270,7 +1275,7 @@
 
 		transposeIntoArray: function ( r ) {
 
-			const m = this.elements;
+			var m = this.elements;
 
 			r[ 0 ] = m[ 0 ];
 			r[ 1 ] = m[ 3 ];
@@ -1288,8 +1293,8 @@
 
 		setUvTransform: function ( tx, ty, sx, sy, rotation, cx, cy ) {
 
-			const c = Math.cos( rotation );
-			const s = Math.sin( rotation );
+			var c = Math.cos( rotation );
+			var s = Math.sin( rotation );
 
 			this.set(
 				sx * c, sx * s, - sx * ( c * cx + s * cy ) + cx + tx,
@@ -1301,7 +1306,7 @@
 
 		scale: function ( sx, sy ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] *= sx; te[ 3 ] *= sx; te[ 6 ] *= sx;
 			te[ 1 ] *= sy; te[ 4 ] *= sy; te[ 7 ] *= sy;
@@ -1312,13 +1317,13 @@
 
 		rotate: function ( theta ) {
 
-			const c = Math.cos( theta );
-			const s = Math.sin( theta );
+			var c = Math.cos( theta );
+			var s = Math.sin( theta );
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const a11 = te[ 0 ], a12 = te[ 3 ], a13 = te[ 6 ];
-			const a21 = te[ 1 ], a22 = te[ 4 ], a23 = te[ 7 ];
+			var a11 = te[ 0 ], a12 = te[ 3 ], a13 = te[ 6 ];
+			var a21 = te[ 1 ], a22 = te[ 4 ], a23 = te[ 7 ];
 
 			te[ 0 ] = c * a11 + s * a21;
 			te[ 3 ] = c * a12 + s * a22;
@@ -1334,7 +1339,7 @@
 
 		translate: function ( tx, ty ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] += tx * te[ 2 ]; te[ 3 ] += tx * te[ 5 ]; te[ 6 ] += tx * te[ 8 ];
 			te[ 1 ] += ty * te[ 2 ]; te[ 4 ] += ty * te[ 5 ]; te[ 7 ] += ty * te[ 8 ];
@@ -1345,12 +1350,12 @@
 
 		equals: function ( matrix ) {
 
-			const te = this.elements;
-			const me = matrix.elements;
+			var te = this.elements;
+			var me = matrix.elements;
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
-				if ( te[ i ] !== me[ i ] ) return false;
+				if ( te[ i ] !== me[ i ] ) { return false; }
 
 			}
 
@@ -1360,9 +1365,9 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.elements[ i ] = array[ i + offset ];
 
@@ -1374,10 +1379,10 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
-			const te = this.elements;
+			var te = this.elements;
 
 			array[ offset ] = te[ 0 ];
 			array[ offset + 1 ] = te[ 1 ];
@@ -1397,9 +1402,9 @@
 
 	} );
 
-	let _canvas;
+	var _canvas;
 
-	const ImageUtils = {
+	var ImageUtils = {
 
 		getDataURL: function ( image ) {
 
@@ -1415,7 +1420,7 @@
 
 			}
 
-			let canvas;
+			var canvas;
 
 			if ( image instanceof HTMLCanvasElement ) {
 
@@ -1423,12 +1428,12 @@
 
 			} else {
 
-				if ( _canvas === undefined ) _canvas = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' );
+				if ( _canvas === undefined ) { _canvas = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' ); }
 
 				_canvas.width = image.width;
 				_canvas.height = image.height;
 
-				const context = _canvas.getContext( '2d' );
+				var context = _canvas.getContext( '2d' );
 
 				if ( image instanceof ImageData ) {
 
@@ -1458,7 +1463,7 @@
 
 	};
 
-	let textureId = 0;
+	var textureId = 0;
 
 	function Texture( image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding ) {
 
@@ -1571,7 +1576,7 @@
 
 		toJSON: function ( meta ) {
 
-			const isRootObject = ( meta === undefined || typeof meta === 'string' );
+			var isRootObject = ( meta === undefined || typeof meta === 'string' );
 
 			if ( ! isRootObject && meta.textures[ this.uuid ] !== undefined ) {
 
@@ -1579,7 +1584,7 @@
 
 			}
 
-			const output = {
+			var output = {
 
 				metadata: {
 					version: 4.5,
@@ -1618,7 +1623,7 @@
 
 				// TODO: Move to THREE.Image
 
-				const image = this.image;
+				var image = this.image;
 
 				if ( image.uuid === undefined ) {
 
@@ -1628,7 +1633,7 @@
 
 				if ( ! isRootObject && meta.images[ image.uuid ] === undefined ) {
 
-					let url;
+					var url;
 
 					if ( Array.isArray( image ) ) {
 
@@ -1636,7 +1641,7 @@
 
 						url = [];
 
-						for ( let i = 0, l = image.length; i < l; i ++ ) {
+						for ( var i = 0, l = image.length; i < l; i ++ ) {
 
 							url.push( ImageUtils.getDataURL( image[ i ] ) );
 
@@ -1679,7 +1684,7 @@
 
 		transformUv: function ( uv ) {
 
-			if ( this.mapping !== UVMapping ) return uv;
+			if ( this.mapping !== UVMapping ) { return uv; }
 
 			uv.applyMatrix3( this.matrix );
 
@@ -1763,13 +1768,18 @@
 
 		set: function ( value ) {
 
-			if ( value === true ) this.version ++;
+			if ( value === true ) { this.version ++; }
 
 		}
 
 	} );
 
-	function Vector4( x = 0, y = 0, z = 0, w = 1 ) {
+	function Vector4( x, y, z, w ) {
+		if ( x === void 0 ) x = 0;
+		if ( y === void 0 ) y = 0;
+		if ( z === void 0 ) z = 0;
+		if ( w === void 0 ) w = 1;
+
 
 		this.x = x;
 		this.y = y;
@@ -2023,8 +2033,8 @@
 
 		applyMatrix4: function ( m ) {
 
-			const x = this.x, y = this.y, z = this.z, w = this.w;
-			const e = m.elements;
+			var x = this.x, y = this.y, z = this.z, w = this.w;
+			var e = m.elements;
 
 			this.x = e[ 0 ] * x + e[ 4 ] * y + e[ 8 ] * z + e[ 12 ] * w;
 			this.y = e[ 1 ] * x + e[ 5 ] * y + e[ 9 ] * z + e[ 13 ] * w;
@@ -2049,7 +2059,7 @@
 
 			this.w = 2 * Math.acos( q.w );
 
-			const s = Math.sqrt( 1 - q.w * q.w );
+			var s = Math.sqrt( 1 - q.w * q.w );
 
 			if ( s < 0.0001 ) {
 
@@ -2075,8 +2085,8 @@
 
 			// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 
-			let angle, x, y, z; // variables for result
-			const epsilon = 0.01,		// margin to allow for rounding errors
+			var angle, x, y, z; // variables for result
+			var epsilon = 0.01,		// margin to allow for rounding errors
 				epsilon2 = 0.1,		// margin to distinguish between 0 and 180 degrees
 
 				te = m.elements,
@@ -2110,12 +2120,12 @@
 
 				angle = Math.PI;
 
-				const xx = ( m11 + 1 ) / 2;
-				const yy = ( m22 + 1 ) / 2;
-				const zz = ( m33 + 1 ) / 2;
-				const xy = ( m12 + m21 ) / 4;
-				const xz = ( m13 + m31 ) / 4;
-				const yz = ( m23 + m32 ) / 4;
+				var xx = ( m11 + 1 ) / 2;
+				var yy = ( m22 + 1 ) / 2;
+				var zz = ( m33 + 1 ) / 2;
+				var xy = ( m12 + m21 ) / 4;
+				var xz = ( m13 + m31 ) / 4;
+				var yz = ( m23 + m32 ) / 4;
 
 				if ( ( xx > yy ) && ( xx > zz ) ) {
 
@@ -2181,11 +2191,11 @@
 
 			// as we have reached here there are no singularities so we can handle normally
 
-			let s = Math.sqrt( ( m32 - m23 ) * ( m32 - m23 ) +
+			var s = Math.sqrt( ( m32 - m23 ) * ( m32 - m23 ) +
 				( m13 - m31 ) * ( m13 - m31 ) +
 				( m21 - m12 ) * ( m21 - m12 ) ); // used to normalize
 
-			if ( Math.abs( s ) < 0.001 ) s = 1;
+			if ( Math.abs( s ) < 0.001 ) { s = 1; }
 
 			// prevent divide by zero, should not happen if matrix is orthogonal and should be
 			// caught by singularity test above, but I've left it in just in case
@@ -2247,7 +2257,7 @@
 
 		clampLength: function ( min, max ) {
 
-			const length = this.length();
+			var length = this.length();
 
 			return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
 
@@ -2374,7 +2384,7 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.x = array[ offset ];
 			this.y = array[ offset + 1 ];
@@ -2387,8 +2397,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this.x;
 			array[ offset + 1 ] = this.y;
@@ -2543,7 +2553,12 @@
 
 	} );
 
-	function Quaternion( x = 0, y = 0, z = 0, w = 1 ) {
+	function Quaternion( x, y, z, w ) {
+		if ( x === void 0 ) x = 0;
+		if ( y === void 0 ) y = 0;
+		if ( z === void 0 ) z = 0;
+		if ( w === void 0 ) w = 1;
+
 
 		this._x = x;
 		this._y = y;
@@ -2564,19 +2579,19 @@
 
 			// fuzz-free, array-based Quaternion SLERP operation
 
-			let x0 = src0[ srcOffset0 + 0 ],
+			var x0 = src0[ srcOffset0 + 0 ],
 				y0 = src0[ srcOffset0 + 1 ],
 				z0 = src0[ srcOffset0 + 2 ],
 				w0 = src0[ srcOffset0 + 3 ];
 
-			const x1 = src1[ srcOffset1 + 0 ],
+			var x1 = src1[ srcOffset1 + 0 ],
 				y1 = src1[ srcOffset1 + 1 ],
 				z1 = src1[ srcOffset1 + 2 ],
 				w1 = src1[ srcOffset1 + 3 ];
 
 			if ( w0 !== w1 || x0 !== x1 || y0 !== y1 || z0 !== z1 ) {
 
-				let s = 1 - t,
+				var s = 1 - t,
 
 					cos = x0 * x1 + y0 * y1 + z0 * z1 + w0 * w1,
 
@@ -2586,7 +2601,7 @@
 				// Skip the Slerp for tiny steps to avoid numeric problems:
 				if ( sqrSin > Number.EPSILON ) {
 
-					const sin = Math.sqrt( sqrSin ),
+					var sin = Math.sqrt( sqrSin ),
 						len = Math.atan2( sin, cos * dir );
 
 					s = Math.sin( s * len ) / sin;
@@ -2594,7 +2609,7 @@
 
 				}
 
-				const tDir = t * dir;
+				var tDir = t * dir;
 
 				x0 = x0 * s + x1 * tDir;
 				y0 = y0 * s + y1 * tDir;
@@ -2604,7 +2619,7 @@
 				// Normalize in case we just did a lerp:
 				if ( s === 1 - t ) {
 
-					const f = 1 / Math.sqrt( x0 * x0 + y0 * y0 + z0 * z0 + w0 * w0 );
+					var f = 1 / Math.sqrt( x0 * x0 + y0 * y0 + z0 * z0 + w0 * w0 );
 
 					x0 *= f;
 					y0 *= f;
@@ -2624,15 +2639,15 @@
 
 		multiplyQuaternionsFlat: function ( dst, dstOffset, src0, srcOffset0, src1, srcOffset1 ) {
 
-			const x0 = src0[ srcOffset0 ];
-			const y0 = src0[ srcOffset0 + 1 ];
-			const z0 = src0[ srcOffset0 + 2 ];
-			const w0 = src0[ srcOffset0 + 3 ];
+			var x0 = src0[ srcOffset0 ];
+			var y0 = src0[ srcOffset0 + 1 ];
+			var z0 = src0[ srcOffset0 + 2 ];
+			var w0 = src0[ srcOffset0 + 3 ];
 
-			const x1 = src1[ srcOffset1 ];
-			const y1 = src1[ srcOffset1 + 1 ];
-			const z1 = src1[ srcOffset1 + 2 ];
-			const w1 = src1[ srcOffset1 + 3 ];
+			var x1 = src1[ srcOffset1 ];
+			var y1 = src1[ srcOffset1 + 1 ];
+			var z1 = src1[ srcOffset1 + 2 ];
+			var w1 = src1[ srcOffset1 + 3 ];
 
 			dst[ dstOffset ] = x0 * w1 + w0 * x1 + y0 * z1 - z0 * y1;
 			dst[ dstOffset + 1 ] = y0 * w1 + w0 * y1 + z0 * x1 - x0 * z1;
@@ -2761,22 +2776,22 @@
 
 			}
 
-			const x = euler._x, y = euler._y, z = euler._z, order = euler.order;
+			var x = euler._x, y = euler._y, z = euler._z, order = euler.order;
 
 			// http://www.mathworks.com/matlabcentral/fileexchange/
 			// 	20696-function-to-convert-between-dcm-euler-angles-quaternions-and-euler-vectors/
 			//	content/SpinCalc.m
 
-			const cos = Math.cos;
-			const sin = Math.sin;
+			var cos = Math.cos;
+			var sin = Math.sin;
 
-			const c1 = cos( x / 2 );
-			const c2 = cos( y / 2 );
-			const c3 = cos( z / 2 );
+			var c1 = cos( x / 2 );
+			var c2 = cos( y / 2 );
+			var c3 = cos( z / 2 );
 
-			const s1 = sin( x / 2 );
-			const s2 = sin( y / 2 );
-			const s3 = sin( z / 2 );
+			var s1 = sin( x / 2 );
+			var s2 = sin( y / 2 );
+			var s3 = sin( z / 2 );
 
 			switch ( order ) {
 
@@ -2827,7 +2842,7 @@
 
 			}
 
-			if ( update !== false ) this._onChangeCallback();
+			if ( update !== false ) { this._onChangeCallback(); }
 
 			return this;
 
@@ -2839,7 +2854,7 @@
 
 			// assumes axis is normalized
 
-			const halfAngle = angle / 2, s = Math.sin( halfAngle );
+			var halfAngle = angle / 2, s = Math.sin( halfAngle );
 
 			this._x = axis.x * s;
 			this._y = axis.y * s;
@@ -2858,7 +2873,7 @@
 
 			// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 
-			const te = m.elements,
+			var te = m.elements,
 
 				m11 = te[ 0 ], m12 = te[ 4 ], m13 = te[ 8 ],
 				m21 = te[ 1 ], m22 = te[ 5 ], m23 = te[ 9 ],
@@ -2868,7 +2883,7 @@
 
 			if ( trace > 0 ) {
 
-				const s = 0.5 / Math.sqrt( trace + 1.0 );
+				var s = 0.5 / Math.sqrt( trace + 1.0 );
 
 				this._w = 0.25 / s;
 				this._x = ( m32 - m23 ) * s;
@@ -2877,30 +2892,30 @@
 
 			} else if ( m11 > m22 && m11 > m33 ) {
 
-				const s = 2.0 * Math.sqrt( 1.0 + m11 - m22 - m33 );
+				var s$1 = 2.0 * Math.sqrt( 1.0 + m11 - m22 - m33 );
 
-				this._w = ( m32 - m23 ) / s;
-				this._x = 0.25 * s;
-				this._y = ( m12 + m21 ) / s;
-				this._z = ( m13 + m31 ) / s;
+				this._w = ( m32 - m23 ) / s$1;
+				this._x = 0.25 * s$1;
+				this._y = ( m12 + m21 ) / s$1;
+				this._z = ( m13 + m31 ) / s$1;
 
 			} else if ( m22 > m33 ) {
 
-				const s = 2.0 * Math.sqrt( 1.0 + m22 - m11 - m33 );
+				var s$2 = 2.0 * Math.sqrt( 1.0 + m22 - m11 - m33 );
 
-				this._w = ( m13 - m31 ) / s;
-				this._x = ( m12 + m21 ) / s;
-				this._y = 0.25 * s;
-				this._z = ( m23 + m32 ) / s;
+				this._w = ( m13 - m31 ) / s$2;
+				this._x = ( m12 + m21 ) / s$2;
+				this._y = 0.25 * s$2;
+				this._z = ( m23 + m32 ) / s$2;
 
 			} else {
 
-				const s = 2.0 * Math.sqrt( 1.0 + m33 - m11 - m22 );
+				var s$3 = 2.0 * Math.sqrt( 1.0 + m33 - m11 - m22 );
 
-				this._w = ( m21 - m12 ) / s;
-				this._x = ( m13 + m31 ) / s;
-				this._y = ( m23 + m32 ) / s;
-				this._z = 0.25 * s;
+				this._w = ( m21 - m12 ) / s$3;
+				this._x = ( m13 + m31 ) / s$3;
+				this._y = ( m23 + m32 ) / s$3;
+				this._z = 0.25 * s$3;
 
 			}
 
@@ -2914,9 +2929,9 @@
 
 			// assumes direction vectors vFrom and vTo are normalized
 
-			const EPS = 0.000001;
+			var EPS = 0.000001;
 
-			let r = vFrom.dot( vTo ) + 1;
+			var r = vFrom.dot( vTo ) + 1;
 
 			if ( r < EPS ) {
 
@@ -2961,11 +2976,11 @@
 
 		rotateTowards: function ( q, step ) {
 
-			const angle = this.angleTo( q );
+			var angle = this.angleTo( q );
 
-			if ( angle === 0 ) return this;
+			if ( angle === 0 ) { return this; }
 
-			const t = Math.min( 1, step / angle );
+			var t = Math.min( 1, step / angle );
 
 			this.slerp( q, t );
 
@@ -3019,7 +3034,7 @@
 
 		normalize: function () {
 
-			let l = this.length();
+			var l = this.length();
 
 			if ( l === 0 ) {
 
@@ -3068,8 +3083,8 @@
 
 			// from http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/code/index.htm
 
-			const qax = a._x, qay = a._y, qaz = a._z, qaw = a._w;
-			const qbx = b._x, qby = b._y, qbz = b._z, qbw = b._w;
+			var qax = a._x, qay = a._y, qaz = a._z, qaw = a._w;
+			var qbx = b._x, qby = b._y, qbz = b._z, qbw = b._w;
 
 			this._x = qax * qbw + qaw * qbx + qay * qbz - qaz * qby;
 			this._y = qay * qbw + qaw * qby + qaz * qbx - qax * qbz;
@@ -3084,14 +3099,14 @@
 
 		slerp: function ( qb, t ) {
 
-			if ( t === 0 ) return this;
-			if ( t === 1 ) return this.copy( qb );
+			if ( t === 0 ) { return this; }
+			if ( t === 1 ) { return this.copy( qb ); }
 
-			const x = this._x, y = this._y, z = this._z, w = this._w;
+			var x = this._x, y = this._y, z = this._z, w = this._w;
 
 			// http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/slerp/
 
-			let cosHalfTheta = w * qb._w + x * qb._x + y * qb._y + z * qb._z;
+			var cosHalfTheta = w * qb._w + x * qb._x + y * qb._y + z * qb._z;
 
 			if ( cosHalfTheta < 0 ) {
 
@@ -3119,11 +3134,11 @@
 
 			}
 
-			const sqrSinHalfTheta = 1.0 - cosHalfTheta * cosHalfTheta;
+			var sqrSinHalfTheta = 1.0 - cosHalfTheta * cosHalfTheta;
 
 			if ( sqrSinHalfTheta <= Number.EPSILON ) {
 
-				const s = 1 - t;
+				var s = 1 - t;
 				this._w = s * w + t * this._w;
 				this._x = s * x + t * this._x;
 				this._y = s * y + t * this._y;
@@ -3136,9 +3151,9 @@
 
 			}
 
-			const sinHalfTheta = Math.sqrt( sqrSinHalfTheta );
-			const halfTheta = Math.atan2( sinHalfTheta, cosHalfTheta );
-			const ratioA = Math.sin( ( 1 - t ) * halfTheta ) / sinHalfTheta,
+			var sinHalfTheta = Math.sqrt( sqrSinHalfTheta );
+			var halfTheta = Math.atan2( sinHalfTheta, cosHalfTheta );
+			var ratioA = Math.sin( ( 1 - t ) * halfTheta ) / sinHalfTheta,
 				ratioB = Math.sin( t * halfTheta ) / sinHalfTheta;
 
 			this._w = ( w * ratioA + this._w * ratioB );
@@ -3160,7 +3175,7 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this._x = array[ offset ];
 			this._y = array[ offset + 1 ];
@@ -3175,8 +3190,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this._x;
 			array[ offset + 1 ] = this._y;
@@ -3210,10 +3225,14 @@
 
 	} );
 
-	const _vector = new Vector3();
-	const _quaternion = new Quaternion();
+	var _vector = new Vector3();
+	var _quaternion = new Quaternion();
 
-	function Vector3( x = 0, y = 0, z = 0 ) {
+	function Vector3( x, y, z ) {
+		if ( x === void 0 ) x = 0;
+		if ( y === void 0 ) y = 0;
+		if ( z === void 0 ) z = 0;
+
 
 		this.x = x;
 		this.y = y;
@@ -3227,7 +3246,7 @@
 
 		set: function ( x, y, z ) {
 
-			if ( z === undefined ) z = this.z; // sprite.scale.set(x,y)
+			if ( z === undefined ) { z = this.z; } // sprite.scale.set(x,y)
 
 			this.x = x;
 			this.y = y;
@@ -3456,8 +3475,8 @@
 
 		applyMatrix3: function ( m ) {
 
-			const x = this.x, y = this.y, z = this.z;
-			const e = m.elements;
+			var x = this.x, y = this.y, z = this.z;
+			var e = m.elements;
 
 			this.x = e[ 0 ] * x + e[ 3 ] * y + e[ 6 ] * z;
 			this.y = e[ 1 ] * x + e[ 4 ] * y + e[ 7 ] * z;
@@ -3475,10 +3494,10 @@
 
 		applyMatrix4: function ( m ) {
 
-			const x = this.x, y = this.y, z = this.z;
-			const e = m.elements;
+			var x = this.x, y = this.y, z = this.z;
+			var e = m.elements;
 
-			const w = 1 / ( e[ 3 ] * x + e[ 7 ] * y + e[ 11 ] * z + e[ 15 ] );
+			var w = 1 / ( e[ 3 ] * x + e[ 7 ] * y + e[ 11 ] * z + e[ 15 ] );
 
 			this.x = ( e[ 0 ] * x + e[ 4 ] * y + e[ 8 ] * z + e[ 12 ] ) * w;
 			this.y = ( e[ 1 ] * x + e[ 5 ] * y + e[ 9 ] * z + e[ 13 ] ) * w;
@@ -3490,15 +3509,15 @@
 
 		applyQuaternion: function ( q ) {
 
-			const x = this.x, y = this.y, z = this.z;
-			const qx = q.x, qy = q.y, qz = q.z, qw = q.w;
+			var x = this.x, y = this.y, z = this.z;
+			var qx = q.x, qy = q.y, qz = q.z, qw = q.w;
 
 			// calculate quat * vector
 
-			const ix = qw * x + qy * z - qz * y;
-			const iy = qw * y + qz * x - qx * z;
-			const iz = qw * z + qx * y - qy * x;
-			const iw = - qx * x - qy * y - qz * z;
+			var ix = qw * x + qy * z - qz * y;
+			var iy = qw * y + qz * x - qx * z;
+			var iz = qw * z + qx * y - qy * x;
+			var iw = - qx * x - qy * y - qz * z;
 
 			// calculate result * inverse quat
 
@@ -3527,8 +3546,8 @@
 			// input: THREE.Matrix4 affine matrix
 			// vector interpreted as a direction
 
-			const x = this.x, y = this.y, z = this.z;
-			const e = m.elements;
+			var x = this.x, y = this.y, z = this.z;
+			var e = m.elements;
 
 			this.x = e[ 0 ] * x + e[ 4 ] * y + e[ 8 ] * z;
 			this.y = e[ 1 ] * x + e[ 5 ] * y + e[ 9 ] * z;
@@ -3598,7 +3617,7 @@
 
 		clampLength: function ( min, max ) {
 
-			const length = this.length();
+			var length = this.length();
 
 			return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
 
@@ -3727,8 +3746,8 @@
 
 		crossVectors: function ( a, b ) {
 
-			const ax = a.x, ay = a.y, az = a.z;
-			const bx = b.x, by = b.y, bz = b.z;
+			var ax = a.x, ay = a.y, az = a.z;
+			var bx = b.x, by = b.y, bz = b.z;
 
 			this.x = ay * bz - az * by;
 			this.y = az * bx - ax * bz;
@@ -3740,11 +3759,11 @@
 
 		projectOnVector: function ( v ) {
 
-			const denominator = v.lengthSq();
+			var denominator = v.lengthSq();
 
-			if ( denominator === 0 ) return this.set( 0, 0, 0 );
+			if ( denominator === 0 ) { return this.set( 0, 0, 0 ); }
 
-			const scalar = v.dot( this ) / denominator;
+			var scalar = v.dot( this ) / denominator;
 
 			return this.copy( v ).multiplyScalar( scalar );
 
@@ -3769,11 +3788,11 @@
 
 		angleTo: function ( v ) {
 
-			const denominator = Math.sqrt( this.lengthSq() * v.lengthSq() );
+			var denominator = Math.sqrt( this.lengthSq() * v.lengthSq() );
 
-			if ( denominator === 0 ) return Math.PI / 2;
+			if ( denominator === 0 ) { return Math.PI / 2; }
 
-			const theta = this.dot( v ) / denominator;
+			var theta = this.dot( v ) / denominator;
 
 			// clamp, to handle numerical problems
 
@@ -3789,7 +3808,7 @@
 
 		distanceToSquared: function ( v ) {
 
-			const dx = this.x - v.x, dy = this.y - v.y, dz = this.z - v.z;
+			var dx = this.x - v.x, dy = this.y - v.y, dz = this.z - v.z;
 
 			return dx * dx + dy * dy + dz * dz;
 
@@ -3809,7 +3828,7 @@
 
 		setFromSphericalCoords: function ( radius, phi, theta ) {
 
-			const sinPhiRadius = Math.sin( phi ) * radius;
+			var sinPhiRadius = Math.sin( phi ) * radius;
 
 			this.x = sinPhiRadius * Math.sin( theta );
 			this.y = Math.cos( phi ) * radius;
@@ -3837,7 +3856,7 @@
 
 		setFromMatrixPosition: function ( m ) {
 
-			const e = m.elements;
+			var e = m.elements;
 
 			this.x = e[ 12 ];
 			this.y = e[ 13 ];
@@ -3849,9 +3868,9 @@
 
 		setFromMatrixScale: function ( m ) {
 
-			const sx = this.setFromMatrixColumn( m, 0 ).length();
-			const sy = this.setFromMatrixColumn( m, 1 ).length();
-			const sz = this.setFromMatrixColumn( m, 2 ).length();
+			var sx = this.setFromMatrixColumn( m, 0 ).length();
+			var sy = this.setFromMatrixColumn( m, 1 ).length();
+			var sz = this.setFromMatrixColumn( m, 2 ).length();
 
 			this.x = sx;
 			this.y = sy;
@@ -3881,7 +3900,7 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.x = array[ offset ];
 			this.y = array[ offset + 1 ];
@@ -3893,8 +3912,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this.x;
 			array[ offset + 1 ] = this.y;
@@ -3932,13 +3951,13 @@
 
 	} );
 
-	const _v1 = new Vector3();
-	const _m1 = new Matrix4();
-	const _zero = new Vector3( 0, 0, 0 );
-	const _one = new Vector3( 1, 1, 1 );
-	const _x = new Vector3();
-	const _y = new Vector3();
-	const _z = new Vector3();
+	var _v1 = new Vector3();
+	var _m1 = new Matrix4();
+	var _zero = new Vector3( 0, 0, 0 );
+	var _one = new Vector3( 1, 1, 1 );
+	var _x = new Vector3();
+	var _y = new Vector3();
+	var _z = new Vector3();
 
 	function Matrix4() {
 
@@ -3965,7 +3984,7 @@
 
 		set: function ( n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44 ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] = n11; te[ 4 ] = n12; te[ 8 ] = n13; te[ 12 ] = n14;
 			te[ 1 ] = n21; te[ 5 ] = n22; te[ 9 ] = n23; te[ 13 ] = n24;
@@ -3999,8 +4018,8 @@
 
 		copy: function ( m ) {
 
-			const te = this.elements;
-			const me = m.elements;
+			var te = this.elements;
+			var me = m.elements;
 
 			te[ 0 ] = me[ 0 ]; te[ 1 ] = me[ 1 ]; te[ 2 ] = me[ 2 ]; te[ 3 ] = me[ 3 ];
 			te[ 4 ] = me[ 4 ]; te[ 5 ] = me[ 5 ]; te[ 6 ] = me[ 6 ]; te[ 7 ] = me[ 7 ];
@@ -4013,7 +4032,7 @@
 
 		copyPosition: function ( m ) {
 
-			const te = this.elements, me = m.elements;
+			var te = this.elements, me = m.elements;
 
 			te[ 12 ] = me[ 12 ];
 			te[ 13 ] = me[ 13 ];
@@ -4050,12 +4069,12 @@
 
 			// this method does not support reflection matrices
 
-			const te = this.elements;
-			const me = m.elements;
+			var te = this.elements;
+			var me = m.elements;
 
-			const scaleX = 1 / _v1.setFromMatrixColumn( m, 0 ).length();
-			const scaleY = 1 / _v1.setFromMatrixColumn( m, 1 ).length();
-			const scaleZ = 1 / _v1.setFromMatrixColumn( m, 2 ).length();
+			var scaleX = 1 / _v1.setFromMatrixColumn( m, 0 ).length();
+			var scaleY = 1 / _v1.setFromMatrixColumn( m, 1 ).length();
+			var scaleZ = 1 / _v1.setFromMatrixColumn( m, 2 ).length();
 
 			te[ 0 ] = me[ 0 ] * scaleX;
 			te[ 1 ] = me[ 1 ] * scaleX;
@@ -4089,16 +4108,16 @@
 
 			}
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const x = euler.x, y = euler.y, z = euler.z;
-			const a = Math.cos( x ), b = Math.sin( x );
-			const c = Math.cos( y ), d = Math.sin( y );
-			const e = Math.cos( z ), f = Math.sin( z );
+			var x = euler.x, y = euler.y, z = euler.z;
+			var a = Math.cos( x ), b = Math.sin( x );
+			var c = Math.cos( y ), d = Math.sin( y );
+			var e = Math.cos( z ), f = Math.sin( z );
 
 			if ( euler.order === 'XYZ' ) {
 
-				const ae = a * e, af = a * f, be = b * e, bf = b * f;
+				var ae = a * e, af = a * f, be = b * e, bf = b * f;
 
 				te[ 0 ] = c * e;
 				te[ 4 ] = - c * f;
@@ -4114,7 +4133,7 @@
 
 			} else if ( euler.order === 'YXZ' ) {
 
-				const ce = c * e, cf = c * f, de = d * e, df = d * f;
+				var ce = c * e, cf = c * f, de = d * e, df = d * f;
 
 				te[ 0 ] = ce + df * b;
 				te[ 4 ] = de * b - cf;
@@ -4130,15 +4149,15 @@
 
 			} else if ( euler.order === 'ZXY' ) {
 
-				const ce = c * e, cf = c * f, de = d * e, df = d * f;
+				var ce$1 = c * e, cf$1 = c * f, de$1 = d * e, df$1 = d * f;
 
-				te[ 0 ] = ce - df * b;
+				te[ 0 ] = ce$1 - df$1 * b;
 				te[ 4 ] = - a * f;
-				te[ 8 ] = de + cf * b;
+				te[ 8 ] = de$1 + cf$1 * b;
 
-				te[ 1 ] = cf + de * b;
+				te[ 1 ] = cf$1 + de$1 * b;
 				te[ 5 ] = a * e;
-				te[ 9 ] = df - ce * b;
+				te[ 9 ] = df$1 - ce$1 * b;
 
 				te[ 2 ] = - a * d;
 				te[ 6 ] = b;
@@ -4146,15 +4165,15 @@
 
 			} else if ( euler.order === 'ZYX' ) {
 
-				const ae = a * e, af = a * f, be = b * e, bf = b * f;
+				var ae$1 = a * e, af$1 = a * f, be$1 = b * e, bf$1 = b * f;
 
 				te[ 0 ] = c * e;
-				te[ 4 ] = be * d - af;
-				te[ 8 ] = ae * d + bf;
+				te[ 4 ] = be$1 * d - af$1;
+				te[ 8 ] = ae$1 * d + bf$1;
 
 				te[ 1 ] = c * f;
-				te[ 5 ] = bf * d + ae;
-				te[ 9 ] = af * d - be;
+				te[ 5 ] = bf$1 * d + ae$1;
+				te[ 9 ] = af$1 * d - be$1;
 
 				te[ 2 ] = - d;
 				te[ 6 ] = b * c;
@@ -4162,7 +4181,7 @@
 
 			} else if ( euler.order === 'YZX' ) {
 
-				const ac = a * c, ad = a * d, bc = b * c, bd = b * d;
+				var ac = a * c, ad = a * d, bc = b * c, bd = b * d;
 
 				te[ 0 ] = c * e;
 				te[ 4 ] = bd - ac * f;
@@ -4178,19 +4197,19 @@
 
 			} else if ( euler.order === 'XZY' ) {
 
-				const ac = a * c, ad = a * d, bc = b * c, bd = b * d;
+				var ac$1 = a * c, ad$1 = a * d, bc$1 = b * c, bd$1 = b * d;
 
 				te[ 0 ] = c * e;
 				te[ 4 ] = - f;
 				te[ 8 ] = d * e;
 
-				te[ 1 ] = ac * f + bd;
+				te[ 1 ] = ac$1 * f + bd$1;
 				te[ 5 ] = a * e;
-				te[ 9 ] = ad * f - bc;
+				te[ 9 ] = ad$1 * f - bc$1;
 
-				te[ 2 ] = bc * f - ad;
+				te[ 2 ] = bc$1 * f - ad$1;
 				te[ 6 ] = b * e;
-				te[ 10 ] = bd * f + ac;
+				te[ 10 ] = bd$1 * f + ac$1;
 
 			}
 
@@ -4217,7 +4236,7 @@
 
 		lookAt: function ( eye, target, up ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			_z.subVectors( eye, target );
 
@@ -4283,19 +4302,19 @@
 
 		multiplyMatrices: function ( a, b ) {
 
-			const ae = a.elements;
-			const be = b.elements;
-			const te = this.elements;
+			var ae = a.elements;
+			var be = b.elements;
+			var te = this.elements;
 
-			const a11 = ae[ 0 ], a12 = ae[ 4 ], a13 = ae[ 8 ], a14 = ae[ 12 ];
-			const a21 = ae[ 1 ], a22 = ae[ 5 ], a23 = ae[ 9 ], a24 = ae[ 13 ];
-			const a31 = ae[ 2 ], a32 = ae[ 6 ], a33 = ae[ 10 ], a34 = ae[ 14 ];
-			const a41 = ae[ 3 ], a42 = ae[ 7 ], a43 = ae[ 11 ], a44 = ae[ 15 ];
+			var a11 = ae[ 0 ], a12 = ae[ 4 ], a13 = ae[ 8 ], a14 = ae[ 12 ];
+			var a21 = ae[ 1 ], a22 = ae[ 5 ], a23 = ae[ 9 ], a24 = ae[ 13 ];
+			var a31 = ae[ 2 ], a32 = ae[ 6 ], a33 = ae[ 10 ], a34 = ae[ 14 ];
+			var a41 = ae[ 3 ], a42 = ae[ 7 ], a43 = ae[ 11 ], a44 = ae[ 15 ];
 
-			const b11 = be[ 0 ], b12 = be[ 4 ], b13 = be[ 8 ], b14 = be[ 12 ];
-			const b21 = be[ 1 ], b22 = be[ 5 ], b23 = be[ 9 ], b24 = be[ 13 ];
-			const b31 = be[ 2 ], b32 = be[ 6 ], b33 = be[ 10 ], b34 = be[ 14 ];
-			const b41 = be[ 3 ], b42 = be[ 7 ], b43 = be[ 11 ], b44 = be[ 15 ];
+			var b11 = be[ 0 ], b12 = be[ 4 ], b13 = be[ 8 ], b14 = be[ 12 ];
+			var b21 = be[ 1 ], b22 = be[ 5 ], b23 = be[ 9 ], b24 = be[ 13 ];
+			var b31 = be[ 2 ], b32 = be[ 6 ], b33 = be[ 10 ], b34 = be[ 14 ];
+			var b41 = be[ 3 ], b42 = be[ 7 ], b43 = be[ 11 ], b44 = be[ 15 ];
 
 			te[ 0 ] = a11 * b11 + a12 * b21 + a13 * b31 + a14 * b41;
 			te[ 4 ] = a11 * b12 + a12 * b22 + a13 * b32 + a14 * b42;
@@ -4323,7 +4342,7 @@
 
 		multiplyScalar: function ( s ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			te[ 0 ] *= s; te[ 4 ] *= s; te[ 8 ] *= s; te[ 12 ] *= s;
 			te[ 1 ] *= s; te[ 5 ] *= s; te[ 9 ] *= s; te[ 13 ] *= s;
@@ -4336,12 +4355,12 @@
 
 		determinant: function () {
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const n11 = te[ 0 ], n12 = te[ 4 ], n13 = te[ 8 ], n14 = te[ 12 ];
-			const n21 = te[ 1 ], n22 = te[ 5 ], n23 = te[ 9 ], n24 = te[ 13 ];
-			const n31 = te[ 2 ], n32 = te[ 6 ], n33 = te[ 10 ], n34 = te[ 14 ];
-			const n41 = te[ 3 ], n42 = te[ 7 ], n43 = te[ 11 ], n44 = te[ 15 ];
+			var n11 = te[ 0 ], n12 = te[ 4 ], n13 = te[ 8 ], n14 = te[ 12 ];
+			var n21 = te[ 1 ], n22 = te[ 5 ], n23 = te[ 9 ], n24 = te[ 13 ];
+			var n31 = te[ 2 ], n32 = te[ 6 ], n33 = te[ 10 ], n34 = te[ 14 ];
+			var n41 = te[ 3 ], n42 = te[ 7 ], n43 = te[ 11 ], n44 = te[ 15 ];
 
 			//TODO: make this more efficient
 			//( based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm )
@@ -4386,8 +4405,8 @@
 
 		transpose: function () {
 
-			const te = this.elements;
-			let tmp;
+			var te = this.elements;
+			var tmp;
 
 			tmp = te[ 1 ]; te[ 1 ] = te[ 4 ]; te[ 4 ] = tmp;
 			tmp = te[ 2 ]; te[ 2 ] = te[ 8 ]; te[ 8 ] = tmp;
@@ -4403,7 +4422,7 @@
 
 		setPosition: function ( x, y, z ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
 			if ( x.isVector3 ) {
 
@@ -4432,7 +4451,7 @@
 			}
 
 			// based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
-			const te = this.elements,
+			var te = this.elements,
 				me = m.elements,
 
 				n11 = me[ 0 ], n21 = me[ 1 ], n31 = me[ 2 ], n41 = me[ 3 ],
@@ -4445,11 +4464,11 @@
 				t13 = n13 * n24 * n42 - n14 * n23 * n42 + n14 * n22 * n43 - n12 * n24 * n43 - n13 * n22 * n44 + n12 * n23 * n44,
 				t14 = n14 * n23 * n32 - n13 * n24 * n32 - n14 * n22 * n33 + n12 * n24 * n33 + n13 * n22 * n34 - n12 * n23 * n34;
 
-			const det = n11 * t11 + n21 * t12 + n31 * t13 + n41 * t14;
+			var det = n11 * t11 + n21 * t12 + n31 * t13 + n41 * t14;
 
-			if ( det === 0 ) return this.set( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+			if ( det === 0 ) { return this.set( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ); }
 
-			const detInv = 1 / det;
+			var detInv = 1 / det;
 
 			te[ 0 ] = t11 * detInv;
 			te[ 1 ] = ( n24 * n33 * n41 - n23 * n34 * n41 - n24 * n31 * n43 + n21 * n34 * n43 + n23 * n31 * n44 - n21 * n33 * n44 ) * detInv;
@@ -4477,8 +4496,8 @@
 
 		scale: function ( v ) {
 
-			const te = this.elements;
-			const x = v.x, y = v.y, z = v.z;
+			var te = this.elements;
+			var x = v.x, y = v.y, z = v.z;
 
 			te[ 0 ] *= x; te[ 4 ] *= y; te[ 8 ] *= z;
 			te[ 1 ] *= x; te[ 5 ] *= y; te[ 9 ] *= z;
@@ -4491,11 +4510,11 @@
 
 		getMaxScaleOnAxis: function () {
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const scaleXSq = te[ 0 ] * te[ 0 ] + te[ 1 ] * te[ 1 ] + te[ 2 ] * te[ 2 ];
-			const scaleYSq = te[ 4 ] * te[ 4 ] + te[ 5 ] * te[ 5 ] + te[ 6 ] * te[ 6 ];
-			const scaleZSq = te[ 8 ] * te[ 8 ] + te[ 9 ] * te[ 9 ] + te[ 10 ] * te[ 10 ];
+			var scaleXSq = te[ 0 ] * te[ 0 ] + te[ 1 ] * te[ 1 ] + te[ 2 ] * te[ 2 ];
+			var scaleYSq = te[ 4 ] * te[ 4 ] + te[ 5 ] * te[ 5 ] + te[ 6 ] * te[ 6 ];
+			var scaleZSq = te[ 8 ] * te[ 8 ] + te[ 9 ] * te[ 9 ] + te[ 10 ] * te[ 10 ];
 
 			return Math.sqrt( Math.max( scaleXSq, scaleYSq, scaleZSq ) );
 
@@ -4518,7 +4537,7 @@
 
 		makeRotationX: function ( theta ) {
 
-			const c = Math.cos( theta ), s = Math.sin( theta );
+			var c = Math.cos( theta ), s = Math.sin( theta );
 
 			this.set(
 
@@ -4535,7 +4554,7 @@
 
 		makeRotationY: function ( theta ) {
 
-			const c = Math.cos( theta ), s = Math.sin( theta );
+			var c = Math.cos( theta ), s = Math.sin( theta );
 
 			this.set(
 
@@ -4552,7 +4571,7 @@
 
 		makeRotationZ: function ( theta ) {
 
-			const c = Math.cos( theta ), s = Math.sin( theta );
+			var c = Math.cos( theta ), s = Math.sin( theta );
 
 			this.set(
 
@@ -4571,11 +4590,11 @@
 
 			// Based on http://www.gamedev.net/reference/articles/article1199.asp
 
-			const c = Math.cos( angle );
-			const s = Math.sin( angle );
-			const t = 1 - c;
-			const x = axis.x, y = axis.y, z = axis.z;
-			const tx = t * x, ty = t * y;
+			var c = Math.cos( angle );
+			var s = Math.sin( angle );
+			var t = 1 - c;
+			var x = axis.x, y = axis.y, z = axis.z;
+			var tx = t * x, ty = t * y;
 
 			this.set(
 
@@ -4622,15 +4641,15 @@
 
 		compose: function ( position, quaternion, scale ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
-			const x = quaternion._x, y = quaternion._y, z = quaternion._z, w = quaternion._w;
-			const x2 = x + x,	y2 = y + y, z2 = z + z;
-			const xx = x * x2, xy = x * y2, xz = x * z2;
-			const yy = y * y2, yz = y * z2, zz = z * z2;
-			const wx = w * x2, wy = w * y2, wz = w * z2;
+			var x = quaternion._x, y = quaternion._y, z = quaternion._z, w = quaternion._w;
+			var x2 = x + x,	y2 = y + y, z2 = z + z;
+			var xx = x * x2, xy = x * y2, xz = x * z2;
+			var yy = y * y2, yz = y * z2, zz = z * z2;
+			var wx = w * x2, wy = w * y2, wz = w * z2;
 
-			const sx = scale.x, sy = scale.y, sz = scale.z;
+			var sx = scale.x, sy = scale.y, sz = scale.z;
 
 			te[ 0 ] = ( 1 - ( yy + zz ) ) * sx;
 			te[ 1 ] = ( xy + wz ) * sx;
@@ -4658,15 +4677,15 @@
 
 		decompose: function ( position, quaternion, scale ) {
 
-			const te = this.elements;
+			var te = this.elements;
 
-			let sx = _v1.set( te[ 0 ], te[ 1 ], te[ 2 ] ).length();
-			let sy = _v1.set( te[ 4 ], te[ 5 ], te[ 6 ] ).length();
-			let sz = _v1.set( te[ 8 ], te[ 9 ], te[ 10 ] ).length();
+			var sx = _v1.set( te[ 0 ], te[ 1 ], te[ 2 ] ).length();
+			var sy = _v1.set( te[ 4 ], te[ 5 ], te[ 6 ] ).length();
+			var sz = _v1.set( te[ 8 ], te[ 9 ], te[ 10 ] ).length();
 
 			// if determine is negative, we need to invert one scale
-			const det = this.determinant();
-			if ( det < 0 ) sx = - sx;
+			var det = this.determinant();
+			if ( det < 0 ) { sx = - sx; }
 
 			position.x = te[ 12 ];
 			position.y = te[ 13 ];
@@ -4675,9 +4694,9 @@
 			// scale the rotation part
 			_m1.copy( this );
 
-			const invSX = 1 / sx;
-			const invSY = 1 / sy;
-			const invSZ = 1 / sz;
+			var invSX = 1 / sx;
+			var invSY = 1 / sy;
+			var invSZ = 1 / sz;
 
 			_m1.elements[ 0 ] *= invSX;
 			_m1.elements[ 1 ] *= invSX;
@@ -4709,14 +4728,14 @@
 
 			}
 
-			const te = this.elements;
-			const x = 2 * near / ( right - left );
-			const y = 2 * near / ( top - bottom );
+			var te = this.elements;
+			var x = 2 * near / ( right - left );
+			var y = 2 * near / ( top - bottom );
 
-			const a = ( right + left ) / ( right - left );
-			const b = ( top + bottom ) / ( top - bottom );
-			const c = - ( far + near ) / ( far - near );
-			const d = - 2 * far * near / ( far - near );
+			var a = ( right + left ) / ( right - left );
+			var b = ( top + bottom ) / ( top - bottom );
+			var c = - ( far + near ) / ( far - near );
+			var d = - 2 * far * near / ( far - near );
 
 			te[ 0 ] = x;	te[ 4 ] = 0;	te[ 8 ] = a;	te[ 12 ] = 0;
 			te[ 1 ] = 0;	te[ 5 ] = y;	te[ 9 ] = b;	te[ 13 ] = 0;
@@ -4729,14 +4748,14 @@
 
 		makeOrthographic: function ( left, right, top, bottom, near, far ) {
 
-			const te = this.elements;
-			const w = 1.0 / ( right - left );
-			const h = 1.0 / ( top - bottom );
-			const p = 1.0 / ( far - near );
+			var te = this.elements;
+			var w = 1.0 / ( right - left );
+			var h = 1.0 / ( top - bottom );
+			var p = 1.0 / ( far - near );
 
-			const x = ( right + left ) * w;
-			const y = ( top + bottom ) * h;
-			const z = ( far + near ) * p;
+			var x = ( right + left ) * w;
+			var y = ( top + bottom ) * h;
+			var z = ( far + near ) * p;
 
 			te[ 0 ] = 2 * w;	te[ 4 ] = 0;	te[ 8 ] = 0;	te[ 12 ] = - x;
 			te[ 1 ] = 0;	te[ 5 ] = 2 * h;	te[ 9 ] = 0;	te[ 13 ] = - y;
@@ -4749,12 +4768,12 @@
 
 		equals: function ( matrix ) {
 
-			const te = this.elements;
-			const me = matrix.elements;
+			var te = this.elements;
+			var me = matrix.elements;
 
-			for ( let i = 0; i < 16; i ++ ) {
+			for ( var i = 0; i < 16; i ++ ) {
 
-				if ( te[ i ] !== me[ i ] ) return false;
+				if ( te[ i ] !== me[ i ] ) { return false; }
 
 			}
 
@@ -4764,9 +4783,9 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
-			for ( let i = 0; i < 16; i ++ ) {
+			for ( var i = 0; i < 16; i ++ ) {
 
 				this.elements[ i ] = array[ i + offset ];
 
@@ -4778,10 +4797,10 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
-			const te = this.elements;
+			var te = this.elements;
 
 			array[ offset ] = te[ 0 ];
 			array[ offset + 1 ] = te[ 1 ];
@@ -4809,10 +4828,15 @@
 
 	} );
 
-	const _matrix = new Matrix4();
-	const _quaternion$1 = new Quaternion();
+	var _matrix = new Matrix4();
+	var _quaternion$1 = new Quaternion();
 
-	function Euler( x = 0, y = 0, z = 0, order = Euler.DefaultOrder ) {
+	function Euler( x, y, z, order ) {
+		if ( x === void 0 ) x = 0;
+		if ( y === void 0 ) y = 0;
+		if ( z === void 0 ) z = 0;
+		if ( order === void 0 ) order = Euler.DefaultOrder;
+
 
 		this._x = x;
 		this._y = y;
@@ -4935,14 +4959,14 @@
 
 		setFromRotationMatrix: function ( m, order, update ) {
 
-			const clamp = MathUtils.clamp;
+			var clamp = MathUtils.clamp;
 
 			// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 
-			const te = m.elements;
-			const m11 = te[ 0 ], m12 = te[ 4 ], m13 = te[ 8 ];
-			const m21 = te[ 1 ], m22 = te[ 5 ], m23 = te[ 9 ];
-			const m31 = te[ 2 ], m32 = te[ 6 ], m33 = te[ 10 ];
+			var te = m.elements;
+			var m11 = te[ 0 ], m12 = te[ 4 ], m13 = te[ 8 ];
+			var m21 = te[ 1 ], m22 = te[ 5 ], m23 = te[ 9 ];
+			var m31 = te[ 2 ], m32 = te[ 6 ], m33 = te[ 10 ];
 
 			order = order || this._order;
 
@@ -5064,7 +5088,7 @@
 
 			this._order = order;
 
-			if ( update !== false ) this._onChangeCallback();
+			if ( update !== false ) { this._onChangeCallback(); }
 
 			return this;
 
@@ -5105,7 +5129,7 @@
 			this._x = array[ 0 ];
 			this._y = array[ 1 ];
 			this._z = array[ 2 ];
-			if ( array[ 3 ] !== undefined ) this._order = array[ 3 ];
+			if ( array[ 3 ] !== undefined ) { this._order = array[ 3 ]; }
 
 			this._onChangeCallback();
 
@@ -5115,8 +5139,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this._x;
 			array[ offset + 1 ] = this._y;
@@ -5205,23 +5229,23 @@
 
 	} );
 
-	let _object3DId = 0;
+	var _object3DId = 0;
 
-	const _v1$1 = new Vector3();
-	const _q1 = new Quaternion();
-	const _m1$1 = new Matrix4();
-	const _target = new Vector3();
+	var _v1$1 = new Vector3();
+	var _q1 = new Quaternion();
+	var _m1$1 = new Matrix4();
+	var _target = new Vector3();
 
-	const _position = new Vector3();
-	const _scale = new Vector3();
-	const _quaternion$2 = new Quaternion();
+	var _position = new Vector3();
+	var _scale = new Vector3();
+	var _quaternion$2 = new Quaternion();
 
-	const _xAxis = new Vector3( 1, 0, 0 );
-	const _yAxis = new Vector3( 0, 1, 0 );
-	const _zAxis = new Vector3( 0, 0, 1 );
+	var _xAxis = new Vector3( 1, 0, 0 );
+	var _yAxis = new Vector3( 0, 1, 0 );
+	var _zAxis = new Vector3( 0, 0, 1 );
 
-	const _addedEvent = { type: 'added' };
-	const _removedEvent = { type: 'removed' };
+	var _addedEvent = { type: 'added' };
+	var _removedEvent = { type: 'removed' };
 
 	function Object3D() {
 
@@ -5237,10 +5261,10 @@
 
 		this.up = Object3D.DefaultUp.clone();
 
-		const position = new Vector3();
-		const rotation = new Euler();
-		const quaternion = new Quaternion();
-		const scale = new Vector3( 1, 1, 1 );
+		var position = new Vector3();
+		var rotation = new Euler();
+		var quaternion = new Quaternion();
+		var scale = new Vector3( 1, 1, 1 );
 
 		function onRotationChange() {
 
@@ -5319,7 +5343,7 @@
 
 		applyMatrix4: function ( matrix ) {
 
-			if ( this.matrixAutoUpdate ) this.updateMatrix();
+			if ( this.matrixAutoUpdate ) { this.updateMatrix(); }
 
 			this.matrix.premultiply( matrix );
 
@@ -5467,7 +5491,7 @@
 
 			}
 
-			const parent = this.parent;
+			var parent = this.parent;
 
 			this.updateWorldMatrix( true, false );
 
@@ -5496,12 +5520,14 @@
 		},
 
 		add: function ( object ) {
+			var arguments$1 = arguments;
+
 
 			if ( arguments.length > 1 ) {
 
-				for ( let i = 0; i < arguments.length; i ++ ) {
+				for ( var i = 0; i < arguments.length; i ++ ) {
 
-					this.add( arguments[ i ] );
+					this.add( arguments$1[ i ] );
 
 				}
 
@@ -5540,12 +5566,14 @@
 		},
 
 		remove: function ( object ) {
+			var arguments$1 = arguments;
+
 
 			if ( arguments.length > 1 ) {
 
-				for ( let i = 0; i < arguments.length; i ++ ) {
+				for ( var i = 0; i < arguments.length; i ++ ) {
 
-					this.remove( arguments[ i ] );
+					this.remove( arguments$1[ i ] );
 
 				}
 
@@ -5553,7 +5581,7 @@
 
 			}
 
-			const index = this.children.indexOf( object );
+			var index = this.children.indexOf( object );
 
 			if ( index !== - 1 ) {
 
@@ -5608,12 +5636,12 @@
 
 		getObjectByProperty: function ( name, value ) {
 
-			if ( this[ name ] === value ) return this;
+			if ( this[ name ] === value ) { return this; }
 
-			for ( let i = 0, l = this.children.length; i < l; i ++ ) {
+			for ( var i = 0, l = this.children.length; i < l; i ++ ) {
 
-				const child = this.children[ i ];
-				const object = child.getObjectByProperty( name, value );
+				var child = this.children[ i ];
+				var object = child.getObjectByProperty( name, value );
 
 				if ( object !== undefined ) {
 
@@ -5687,7 +5715,7 @@
 
 			this.updateMatrixWorld( true );
 
-			const e = this.matrixWorld.elements;
+			var e = this.matrixWorld.elements;
 
 			return target.set( e[ 8 ], e[ 9 ], e[ 10 ] ).normalize();
 
@@ -5699,9 +5727,9 @@
 
 			callback( this );
 
-			const children = this.children;
+			var children = this.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				children[ i ].traverse( callback );
 
@@ -5711,13 +5739,13 @@
 
 		traverseVisible: function ( callback ) {
 
-			if ( this.visible === false ) return;
+			if ( this.visible === false ) { return; }
 
 			callback( this );
 
-			const children = this.children;
+			var children = this.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				children[ i ].traverseVisible( callback );
 
@@ -5727,7 +5755,7 @@
 
 		traverseAncestors: function ( callback ) {
 
-			const parent = this.parent;
+			var parent = this.parent;
 
 			if ( parent !== null ) {
 
@@ -5749,7 +5777,7 @@
 
 		updateMatrixWorld: function ( force ) {
 
-			if ( this.matrixAutoUpdate ) this.updateMatrix();
+			if ( this.matrixAutoUpdate ) { this.updateMatrix(); }
 
 			if ( this.matrixWorldNeedsUpdate || force ) {
 
@@ -5771,9 +5799,9 @@
 
 			// update children
 
-			const children = this.children;
+			var children = this.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				children[ i ].updateMatrixWorld( force );
 
@@ -5783,7 +5811,7 @@
 
 		updateWorldMatrix: function ( updateParents, updateChildren ) {
 
-			const parent = this.parent;
+			var parent = this.parent;
 
 			if ( updateParents === true && parent !== null ) {
 
@@ -5791,7 +5819,7 @@
 
 			}
 
-			if ( this.matrixAutoUpdate ) this.updateMatrix();
+			if ( this.matrixAutoUpdate ) { this.updateMatrix(); }
 
 			if ( this.parent === null ) {
 
@@ -5807,9 +5835,9 @@
 
 			if ( updateChildren === true ) {
 
-				const children = this.children;
+				var children = this.children;
 
-				for ( let i = 0, l = children.length; i < l; i ++ ) {
+				for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 					children[ i ].updateWorldMatrix( false, true );
 
@@ -5822,9 +5850,9 @@
 		toJSON: function ( meta ) {
 
 			// meta is a string when called from JSON.stringify
-			const isRootObject = ( meta === undefined || typeof meta === 'string' );
+			var isRootObject = ( meta === undefined || typeof meta === 'string' );
 
-			const output = {};
+			var output = {};
 
 			// meta is a hash used to collect geometries, materials.
 			// not providing it implies that this is the root object
@@ -5850,23 +5878,23 @@
 
 			// standard Object3D serialization
 
-			const object = {};
+			var object = {};
 
 			object.uuid = this.uuid;
 			object.type = this.type;
 
-			if ( this.name !== '' ) object.name = this.name;
-			if ( this.castShadow === true ) object.castShadow = true;
-			if ( this.receiveShadow === true ) object.receiveShadow = true;
-			if ( this.visible === false ) object.visible = false;
-			if ( this.frustumCulled === false ) object.frustumCulled = false;
-			if ( this.renderOrder !== 0 ) object.renderOrder = this.renderOrder;
-			if ( JSON.stringify( this.userData ) !== '{}' ) object.userData = this.userData;
+			if ( this.name !== '' ) { object.name = this.name; }
+			if ( this.castShadow === true ) { object.castShadow = true; }
+			if ( this.receiveShadow === true ) { object.receiveShadow = true; }
+			if ( this.visible === false ) { object.visible = false; }
+			if ( this.frustumCulled === false ) { object.frustumCulled = false; }
+			if ( this.renderOrder !== 0 ) { object.renderOrder = this.renderOrder; }
+			if ( JSON.stringify( this.userData ) !== '{}' ) { object.userData = this.userData; }
 
 			object.layers = this.layers.mask;
 			object.matrix = this.matrix.toArray();
 
-			if ( this.matrixAutoUpdate === false ) object.matrixAutoUpdate = false;
+			if ( this.matrixAutoUpdate === false ) { object.matrixAutoUpdate = false; }
 
 			// object specific properties
 
@@ -5896,17 +5924,17 @@
 
 				object.geometry = serialize( meta.geometries, this.geometry );
 
-				const parameters = this.geometry.parameters;
+				var parameters = this.geometry.parameters;
 
 				if ( parameters !== undefined && parameters.shapes !== undefined ) {
 
-					const shapes = parameters.shapes;
+					var shapes = parameters.shapes;
 
 					if ( Array.isArray( shapes ) ) {
 
-						for ( let i = 0, l = shapes.length; i < l; i ++ ) {
+						for ( var i = 0, l = shapes.length; i < l; i ++ ) {
 
-							const shape = shapes[ i ];
+							var shape = shapes[ i ];
 
 							serialize( meta.shapes, shape );
 
@@ -5926,11 +5954,11 @@
 
 				if ( Array.isArray( this.material ) ) {
 
-					const uuids = [];
+					var uuids = [];
 
-					for ( let i = 0, l = this.material.length; i < l; i ++ ) {
+					for ( var i$1 = 0, l$1 = this.material.length; i$1 < l$1; i$1 ++ ) {
 
-						uuids.push( serialize( meta.materials, this.material[ i ] ) );
+						uuids.push( serialize( meta.materials, this.material[ i$1 ] ) );
 
 					}
 
@@ -5950,9 +5978,9 @@
 
 				object.children = [];
 
-				for ( let i = 0; i < this.children.length; i ++ ) {
+				for ( var i$2 = 0; i$2 < this.children.length; i$2 ++ ) {
 
-					object.children.push( this.children[ i ].toJSON( meta ).object );
+					object.children.push( this.children[ i$2 ].toJSON( meta ).object );
 
 				}
 
@@ -5960,17 +5988,17 @@
 
 			if ( isRootObject ) {
 
-				const geometries = extractFromCache( meta.geometries );
-				const materials = extractFromCache( meta.materials );
-				const textures = extractFromCache( meta.textures );
-				const images = extractFromCache( meta.images );
-				const shapes = extractFromCache( meta.shapes );
+				var geometries = extractFromCache( meta.geometries );
+				var materials = extractFromCache( meta.materials );
+				var textures = extractFromCache( meta.textures );
+				var images = extractFromCache( meta.images );
+				var shapes$1 = extractFromCache( meta.shapes );
 
-				if ( geometries.length > 0 ) output.geometries = geometries;
-				if ( materials.length > 0 ) output.materials = materials;
-				if ( textures.length > 0 ) output.textures = textures;
-				if ( images.length > 0 ) output.images = images;
-				if ( shapes.length > 0 ) output.shapes = shapes;
+				if ( geometries.length > 0 ) { output.geometries = geometries; }
+				if ( materials.length > 0 ) { output.materials = materials; }
+				if ( textures.length > 0 ) { output.textures = textures; }
+				if ( images.length > 0 ) { output.images = images; }
+				if ( shapes$1.length > 0 ) { output.shapes = shapes$1; }
 
 			}
 
@@ -5983,10 +6011,10 @@
 			// and return as array
 			function extractFromCache( cache ) {
 
-				const values = [];
-				for ( const key in cache ) {
+				var values = [];
+				for ( var key in cache ) {
 
-					const data = cache[ key ];
+					var data = cache[ key ];
 					delete data.metadata;
 					values.push( data );
 
@@ -6006,7 +6034,7 @@
 
 		copy: function ( source, recursive ) {
 
-			if ( recursive === undefined ) recursive = true;
+			if ( recursive === undefined ) { recursive = true; }
 
 			this.name = source.name;
 
@@ -6036,9 +6064,9 @@
 
 			if ( recursive === true ) {
 
-				for ( let i = 0; i < source.children.length; i ++ ) {
+				for ( var i = 0; i < source.children.length; i ++ ) {
 
-					const child = source.children[ i ];
+					var child = source.children[ i ];
 					this.add( child.clone() );
 
 				}
@@ -6083,11 +6111,11 @@
 
 			Object3D.prototype.copy.call( this, source, recursive );
 
-			if ( source.background !== null ) this.background = source.background.clone();
-			if ( source.environment !== null ) this.environment = source.environment.clone();
-			if ( source.fog !== null ) this.fog = source.fog.clone();
+			if ( source.background !== null ) { this.background = source.background.clone(); }
+			if ( source.environment !== null ) { this.environment = source.environment.clone(); }
+			if ( source.fog !== null ) { this.fog = source.fog.clone(); }
 
-			if ( source.overrideMaterial !== null ) this.overrideMaterial = source.overrideMaterial.clone();
+			if ( source.overrideMaterial !== null ) { this.overrideMaterial = source.overrideMaterial.clone(); }
 
 			this.autoUpdate = source.autoUpdate;
 			this.matrixAutoUpdate = source.matrixAutoUpdate;
@@ -6098,11 +6126,11 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Object3D.prototype.toJSON.call( this, meta );
+			var data = Object3D.prototype.toJSON.call( this, meta );
 
-			if ( this.background !== null ) data.object.background = this.background.toJSON( meta );
-			if ( this.environment !== null ) data.object.environment = this.environment.toJSON( meta );
-			if ( this.fog !== null ) data.object.fog = this.fog.toJSON();
+			if ( this.background !== null ) { data.object.background = this.background.toJSON( meta ); }
+			if ( this.environment !== null ) { data.object.environment = this.environment.toJSON( meta ); }
+			if ( this.fog !== null ) { data.object.fog = this.fog.toJSON(); }
 
 			return data;
 
@@ -6116,7 +6144,7 @@
 
 	} );
 
-	const _points = [
+	var _points = [
 		new Vector3(),
 		new Vector3(),
 		new Vector3(),
@@ -6127,26 +6155,26 @@
 		new Vector3()
 	];
 
-	const _vector$1 = new Vector3();
+	var _vector$1 = new Vector3();
 
-	const _box = new Box3();
+	var _box = new Box3();
 
 	// triangle centered vertices
 
-	const _v0 = new Vector3();
-	const _v1$2 = new Vector3();
-	const _v2 = new Vector3();
+	var _v0 = new Vector3();
+	var _v1$2 = new Vector3();
+	var _v2 = new Vector3();
 
 	// triangle edge vectors
 
-	const _f0 = new Vector3();
-	const _f1 = new Vector3();
-	const _f2 = new Vector3();
+	var _f0 = new Vector3();
+	var _f1 = new Vector3();
+	var _f2 = new Vector3();
 
-	const _center = new Vector3();
-	const _extents = new Vector3();
-	const _triangleNormal = new Vector3();
-	const _testAxis = new Vector3();
+	var _center = new Vector3();
+	var _extents = new Vector3();
+	var _triangleNormal = new Vector3();
+	var _testAxis = new Vector3();
 
 	function Box3( min, max ) {
 
@@ -6171,27 +6199,27 @@
 
 		setFromArray: function ( array ) {
 
-			let minX = + Infinity;
-			let minY = + Infinity;
-			let minZ = + Infinity;
+			var minX = + Infinity;
+			var minY = + Infinity;
+			var minZ = + Infinity;
 
-			let maxX = - Infinity;
-			let maxY = - Infinity;
-			let maxZ = - Infinity;
+			var maxX = - Infinity;
+			var maxY = - Infinity;
+			var maxZ = - Infinity;
 
-			for ( let i = 0, l = array.length; i < l; i += 3 ) {
+			for ( var i = 0, l = array.length; i < l; i += 3 ) {
 
-				const x = array[ i ];
-				const y = array[ i + 1 ];
-				const z = array[ i + 2 ];
+				var x = array[ i ];
+				var y = array[ i + 1 ];
+				var z = array[ i + 2 ];
 
-				if ( x < minX ) minX = x;
-				if ( y < minY ) minY = y;
-				if ( z < minZ ) minZ = z;
+				if ( x < minX ) { minX = x; }
+				if ( y < minY ) { minY = y; }
+				if ( z < minZ ) { minZ = z; }
 
-				if ( x > maxX ) maxX = x;
-				if ( y > maxY ) maxY = y;
-				if ( z > maxZ ) maxZ = z;
+				if ( x > maxX ) { maxX = x; }
+				if ( y > maxY ) { maxY = y; }
+				if ( z > maxZ ) { maxZ = z; }
 
 			}
 
@@ -6204,27 +6232,27 @@
 
 		setFromBufferAttribute: function ( attribute ) {
 
-			let minX = + Infinity;
-			let minY = + Infinity;
-			let minZ = + Infinity;
+			var minX = + Infinity;
+			var minY = + Infinity;
+			var minZ = + Infinity;
 
-			let maxX = - Infinity;
-			let maxY = - Infinity;
-			let maxZ = - Infinity;
+			var maxX = - Infinity;
+			var maxY = - Infinity;
+			var maxZ = - Infinity;
 
-			for ( let i = 0, l = attribute.count; i < l; i ++ ) {
+			for ( var i = 0, l = attribute.count; i < l; i ++ ) {
 
-				const x = attribute.getX( i );
-				const y = attribute.getY( i );
-				const z = attribute.getZ( i );
+				var x = attribute.getX( i );
+				var y = attribute.getY( i );
+				var z = attribute.getZ( i );
 
-				if ( x < minX ) minX = x;
-				if ( y < minY ) minY = y;
-				if ( z < minZ ) minZ = z;
+				if ( x < minX ) { minX = x; }
+				if ( y < minY ) { minY = y; }
+				if ( z < minZ ) { minZ = z; }
 
-				if ( x > maxX ) maxX = x;
-				if ( y > maxY ) maxY = y;
-				if ( z > maxZ ) maxZ = z;
+				if ( x > maxX ) { maxX = x; }
+				if ( y > maxY ) { maxY = y; }
+				if ( z > maxZ ) { maxZ = z; }
 
 			}
 
@@ -6239,7 +6267,7 @@
 
 			this.makeEmpty();
 
-			for ( let i = 0, il = points.length; i < il; i ++ ) {
+			for ( var i = 0, il = points.length; i < il; i ++ ) {
 
 				this.expandByPoint( points[ i ] );
 
@@ -6251,7 +6279,7 @@
 
 		setFromCenterAndSize: function ( center, size ) {
 
-			const halfSize = _vector$1.copy( size ).multiplyScalar( 0.5 );
+			var halfSize = _vector$1.copy( size ).multiplyScalar( 0.5 );
 
 			this.min.copy( center ).sub( halfSize );
 			this.max.copy( center ).add( halfSize );
@@ -6360,7 +6388,7 @@
 
 			object.updateWorldMatrix( false, false );
 
-			const geometry = object.geometry;
+			var geometry = object.geometry;
 
 			if ( geometry !== undefined ) {
 
@@ -6377,9 +6405,9 @@
 
 			}
 
-			const children = object.children;
+			var children = object.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				this.expandByObject( children[ i ] );
 
@@ -6449,7 +6477,7 @@
 			// We compute the minimum and maximum dot product values. If those values
 			// are on the same side (back or front) of the plane, then there is no intersection.
 
-			let min, max;
+			var min, max;
 
 			if ( plane.normal.x > 0 ) {
 
@@ -6516,7 +6544,7 @@
 			// test against axes that are given by cross product combinations of the edges of the triangle and the edges of the aabb
 			// make an axis testing of each of the 3 sides of the aabb against each of the 3 sides of the triangle = 9 axis of separation
 			// axis_ij = u_i x f_j (u0, u1, u2 = face normals of aabb = x,y,z axes vectors since aabb is axis aligned)
-			let axes = [
+			var axes = [
 				0, - _f0.z, _f0.y, 0, - _f1.z, _f1.y, 0, - _f2.z, _f2.y,
 				_f0.z, 0, - _f0.x, _f1.z, 0, - _f1.x, _f2.z, 0, - _f2.x,
 				- _f0.y, _f0.x, 0, - _f1.y, _f1.x, 0, - _f2.y, _f2.x, 0
@@ -6559,7 +6587,7 @@
 
 		distanceToPoint: function ( point ) {
 
-			const clampedPoint = _vector$1.copy( point ).clamp( this.min, this.max );
+			var clampedPoint = _vector$1.copy( point ).clamp( this.min, this.max );
 
 			return clampedPoint.sub( point ).length();
 
@@ -6588,7 +6616,7 @@
 			this.max.min( box.max );
 
 			// ensure that if there is no overlap, the result is fully empty, not slightly empty with non-inf/+inf values that will cause subsequence intersects to erroneously return valid values.
-			if ( this.isEmpty() ) this.makeEmpty();
+			if ( this.isEmpty() ) { this.makeEmpty(); }
 
 			return this;
 
@@ -6606,7 +6634,7 @@
 		applyMatrix4: function ( matrix ) {
 
 			// transform of empty box is an empty box.
-			if ( this.isEmpty() ) return this;
+			if ( this.isEmpty() ) { return this; }
 
 			// NOTE: I am using a binary pattern to specify all 2^3 combinations below
 			_points[ 0 ].set( this.min.x, this.min.y, this.min.z ).applyMatrix4( matrix ); // 000
@@ -6643,15 +6671,15 @@
 
 	function satForAxes( axes, v0, v1, v2, extents ) {
 
-		for ( let i = 0, j = axes.length - 3; i <= j; i += 3 ) {
+		for ( var i = 0, j = axes.length - 3; i <= j; i += 3 ) {
 
 			_testAxis.fromArray( axes, i );
 			// project the aabb onto the seperating axis
-			const r = extents.x * Math.abs( _testAxis.x ) + extents.y * Math.abs( _testAxis.y ) + extents.z * Math.abs( _testAxis.z );
+			var r = extents.x * Math.abs( _testAxis.x ) + extents.y * Math.abs( _testAxis.y ) + extents.z * Math.abs( _testAxis.z );
 			// project all 3 vertices of the triangle onto the seperating axis
-			const p0 = v0.dot( _testAxis );
-			const p1 = v1.dot( _testAxis );
-			const p2 = v2.dot( _testAxis );
+			var p0 = v0.dot( _testAxis );
+			var p1 = v1.dot( _testAxis );
+			var p2 = v2.dot( _testAxis );
 			// actual test, basically see if either of the most extreme of the triangle points intersects r
 			if ( Math.max( - Math.max( p0, p1, p2 ), Math.min( p0, p1, p2 ) ) > r ) {
 
@@ -6667,7 +6695,7 @@
 
 	}
 
-	const _box$1 = new Box3();
+	var _box$1 = new Box3();
 
 	function Sphere( center, radius ) {
 
@@ -6689,7 +6717,7 @@
 
 		setFromPoints: function ( points, optionalCenter ) {
 
-			const center = this.center;
+			var center = this.center;
 
 			if ( optionalCenter !== undefined ) {
 
@@ -6701,9 +6729,9 @@
 
 			}
 
-			let maxRadiusSq = 0;
+			var maxRadiusSq = 0;
 
-			for ( let i = 0, il = points.length; i < il; i ++ ) {
+			for ( var i = 0, il = points.length; i < il; i ++ ) {
 
 				maxRadiusSq = Math.max( maxRadiusSq, center.distanceToSquared( points[ i ] ) );
 
@@ -6759,7 +6787,7 @@
 
 		intersectsSphere: function ( sphere ) {
 
-			const radiusSum = this.radius + sphere.radius;
+			var radiusSum = this.radius + sphere.radius;
 
 			return sphere.center.distanceToSquared( this.center ) <= ( radiusSum * radiusSum );
 
@@ -6779,7 +6807,7 @@
 
 		clampPoint: function ( point, target ) {
 
-			const deltaLengthSq = this.center.distanceToSquared( point );
+			var deltaLengthSq = this.center.distanceToSquared( point );
 
 			if ( target === undefined ) {
 
@@ -6850,14 +6878,14 @@
 
 	} );
 
-	const _vector$2 = new Vector3();
-	const _segCenter = new Vector3();
-	const _segDir = new Vector3();
-	const _diff = new Vector3();
+	var _vector$2 = new Vector3();
+	var _segCenter = new Vector3();
+	var _segDir = new Vector3();
+	var _diff = new Vector3();
 
-	const _edge1 = new Vector3();
-	const _edge2 = new Vector3();
-	const _normal = new Vector3();
+	var _edge1 = new Vector3();
+	var _edge2 = new Vector3();
+	var _normal = new Vector3();
 
 	function Ray( origin, direction ) {
 
@@ -6932,7 +6960,7 @@
 
 			target.subVectors( point, this.origin );
 
-			const directionDistance = target.dot( this.direction );
+			var directionDistance = target.dot( this.direction );
 
 			if ( directionDistance < 0 ) {
 
@@ -6952,7 +6980,7 @@
 
 		distanceSqToPoint: function ( point ) {
 
-			const directionDistance = _vector$2.subVectors( point, this.origin ).dot( this.direction );
+			var directionDistance = _vector$2.subVectors( point, this.origin ).dot( this.direction );
 
 			// point behind the ray
 
@@ -6981,13 +7009,13 @@
 			_segDir.copy( v1 ).sub( v0 ).normalize();
 			_diff.copy( this.origin ).sub( _segCenter );
 
-			const segExtent = v0.distanceTo( v1 ) * 0.5;
-			const a01 = - this.direction.dot( _segDir );
-			const b0 = _diff.dot( this.direction );
-			const b1 = - _diff.dot( _segDir );
-			const c = _diff.lengthSq();
-			const det = Math.abs( 1 - a01 * a01 );
-			let s0, s1, sqrDist, extDet;
+			var segExtent = v0.distanceTo( v1 ) * 0.5;
+			var a01 = - this.direction.dot( _segDir );
+			var b0 = _diff.dot( this.direction );
+			var b1 = - _diff.dot( _segDir );
+			var c = _diff.lengthSq();
+			var det = Math.abs( 1 - a01 * a01 );
+			var s0, s1, sqrDist, extDet;
 
 			if ( det > 0 ) {
 
@@ -7006,7 +7034,7 @@
 							// region 0
 							// Minimum at interior points of ray and segment.
 
-							const invDet = 1 / det;
+							var invDet = 1 / det;
 							s0 *= invDet;
 							s1 *= invDet;
 							sqrDist = s0 * ( s0 + a01 * s1 + 2 * b0 ) + s1 * ( a01 * s0 + s1 + 2 * b1 ) + c;
@@ -7090,27 +7118,27 @@
 		intersectSphere: function ( sphere, target ) {
 
 			_vector$2.subVectors( sphere.center, this.origin );
-			const tca = _vector$2.dot( this.direction );
-			const d2 = _vector$2.dot( _vector$2 ) - tca * tca;
-			const radius2 = sphere.radius * sphere.radius;
+			var tca = _vector$2.dot( this.direction );
+			var d2 = _vector$2.dot( _vector$2 ) - tca * tca;
+			var radius2 = sphere.radius * sphere.radius;
 
-			if ( d2 > radius2 ) return null;
+			if ( d2 > radius2 ) { return null; }
 
-			const thc = Math.sqrt( radius2 - d2 );
+			var thc = Math.sqrt( radius2 - d2 );
 
 			// t0 = first intersect point - entrance on front of sphere
-			const t0 = tca - thc;
+			var t0 = tca - thc;
 
 			// t1 = second intersect point - exit point on back of sphere
-			const t1 = tca + thc;
+			var t1 = tca + thc;
 
 			// test to see if both t0 and t1 are behind the ray - if so, return null
-			if ( t0 < 0 && t1 < 0 ) return null;
+			if ( t0 < 0 && t1 < 0 ) { return null; }
 
 			// test to see if t0 is behind the ray:
 			// if it is, the ray is inside the sphere, so return the second exit point scaled by t1,
 			// in order to always return an intersect point that is in front of the ray.
-			if ( t0 < 0 ) return this.at( t1, target );
+			if ( t0 < 0 ) { return this.at( t1, target ); }
 
 			// else t0 is in front of the ray, so return the first collision point scaled by t0
 			return this.at( t0, target );
@@ -7125,7 +7153,7 @@
 
 		distanceToPlane: function ( plane ) {
 
-			const denominator = plane.normal.dot( this.direction );
+			var denominator = plane.normal.dot( this.direction );
 
 			if ( denominator === 0 ) {
 
@@ -7142,7 +7170,7 @@
 
 			}
 
-			const t = - ( this.origin.dot( plane.normal ) + plane.constant ) / denominator;
+			var t = - ( this.origin.dot( plane.normal ) + plane.constant ) / denominator;
 
 			// Return if the ray never intersects the plane
 
@@ -7152,7 +7180,7 @@
 
 		intersectPlane: function ( plane, target ) {
 
-			const t = this.distanceToPlane( plane );
+			var t = this.distanceToPlane( plane );
 
 			if ( t === null ) {
 
@@ -7168,7 +7196,7 @@
 
 			// check if the ray lies on the plane first
 
-			const distToPoint = plane.distanceToPoint( this.origin );
+			var distToPoint = plane.distanceToPoint( this.origin );
 
 			if ( distToPoint === 0 ) {
 
@@ -7176,7 +7204,7 @@
 
 			}
 
-			const denominator = plane.normal.dot( this.direction );
+			var denominator = plane.normal.dot( this.direction );
 
 			if ( denominator * distToPoint < 0 ) {
 
@@ -7192,13 +7220,13 @@
 
 		intersectBox: function ( box, target ) {
 
-			let tmin, tmax, tymin, tymax, tzmin, tzmax;
+			var tmin, tmax, tymin, tymax, tzmin, tzmax;
 
-			const invdirx = 1 / this.direction.x,
+			var invdirx = 1 / this.direction.x,
 				invdiry = 1 / this.direction.y,
 				invdirz = 1 / this.direction.z;
 
-			const origin = this.origin;
+			var origin = this.origin;
 
 			if ( invdirx >= 0 ) {
 
@@ -7224,14 +7252,14 @@
 
 			}
 
-			if ( ( tmin > tymax ) || ( tymin > tmax ) ) return null;
+			if ( ( tmin > tymax ) || ( tymin > tmax ) ) { return null; }
 
 			// These lines also handle the case where tmin or tmax is NaN
 			// (result of 0 * Infinity). x !== x returns true if x is NaN
 
-			if ( tymin > tmin || tmin !== tmin ) tmin = tymin;
+			if ( tymin > tmin || tmin !== tmin ) { tmin = tymin; }
 
-			if ( tymax < tmax || tmax !== tmax ) tmax = tymax;
+			if ( tymax < tmax || tmax !== tmax ) { tmax = tymax; }
 
 			if ( invdirz >= 0 ) {
 
@@ -7245,15 +7273,15 @@
 
 			}
 
-			if ( ( tmin > tzmax ) || ( tzmin > tmax ) ) return null;
+			if ( ( tmin > tzmax ) || ( tzmin > tmax ) ) { return null; }
 
-			if ( tzmin > tmin || tmin !== tmin ) tmin = tzmin;
+			if ( tzmin > tmin || tmin !== tmin ) { tmin = tzmin; }
 
-			if ( tzmax < tmax || tmax !== tmax ) tmax = tzmax;
+			if ( tzmax < tmax || tmax !== tmax ) { tmax = tzmax; }
 
 			//return point closest to the ray (positive side)
 
-			if ( tmax < 0 ) return null;
+			if ( tmax < 0 ) { return null; }
 
 			return this.at( tmin >= 0 ? tmin : tmax, target );
 
@@ -7280,12 +7308,12 @@
 			//   |Dot(D,N)|*b1 = sign(Dot(D,N))*Dot(D,Cross(Q,E2))
 			//   |Dot(D,N)|*b2 = sign(Dot(D,N))*Dot(D,Cross(E1,Q))
 			//   |Dot(D,N)|*t = -sign(Dot(D,N))*Dot(Q,N)
-			let DdN = this.direction.dot( _normal );
-			let sign;
+			var DdN = this.direction.dot( _normal );
+			var sign;
 
 			if ( DdN > 0 ) {
 
-				if ( backfaceCulling ) return null;
+				if ( backfaceCulling ) { return null; }
 				sign = 1;
 
 			} else if ( DdN < 0 ) {
@@ -7300,7 +7328,7 @@
 			}
 
 			_diff.subVectors( this.origin, a );
-			const DdQxE2 = sign * this.direction.dot( _edge2.crossVectors( _diff, _edge2 ) );
+			var DdQxE2 = sign * this.direction.dot( _edge2.crossVectors( _diff, _edge2 ) );
 
 			// b1 < 0, no intersection
 			if ( DdQxE2 < 0 ) {
@@ -7309,7 +7337,7 @@
 
 			}
 
-			const DdE1xQ = sign * this.direction.dot( _edge1.cross( _diff ) );
+			var DdE1xQ = sign * this.direction.dot( _edge1.cross( _diff ) );
 
 			// b2 < 0, no intersection
 			if ( DdE1xQ < 0 ) {
@@ -7326,7 +7354,7 @@
 			}
 
 			// Line intersects triangle, check if ray does.
-			const QdN = - sign * _diff.dot( _normal );
+			var QdN = - sign * _diff.dot( _normal );
 
 			// t < 0, no intersection
 			if ( QdN < 0 ) {
@@ -7357,9 +7385,9 @@
 
 	} );
 
-	const _vector1 = new Vector3();
-	const _vector2 = new Vector3();
-	const _normalMatrix = new Matrix3();
+	var _vector1 = new Vector3();
+	var _vector2 = new Vector3();
+	var _normalMatrix = new Matrix3();
 
 	function Plane( normal, constant ) {
 
@@ -7403,7 +7431,7 @@
 
 		setFromCoplanarPoints: function ( a, b, c ) {
 
-			const normal = _vector1.subVectors( c, b ).cross( _vector2.subVectors( a, b ) ).normalize();
+			var normal = _vector1.subVectors( c, b ).cross( _vector2.subVectors( a, b ) ).normalize();
 
 			// Q: should an error be thrown if normal is zero (e.g. degenerate plane)?
 
@@ -7432,7 +7460,7 @@
 
 			// Note: will lead to a divide by zero if the plane is invalid.
 
-			const inverseNormalLength = 1.0 / this.normal.length();
+			var inverseNormalLength = 1.0 / this.normal.length();
 			this.normal.multiplyScalar( inverseNormalLength );
 			this.constant *= inverseNormalLength;
 
@@ -7483,9 +7511,9 @@
 
 			}
 
-			const direction = line.delta( _vector1 );
+			var direction = line.delta( _vector1 );
 
-			const denominator = this.normal.dot( direction );
+			var denominator = this.normal.dot( direction );
 
 			if ( denominator === 0 ) {
 
@@ -7501,7 +7529,7 @@
 
 			}
 
-			const t = - ( line.start.dot( this.normal ) + this.constant ) / denominator;
+			var t = - ( line.start.dot( this.normal ) + this.constant ) / denominator;
 
 			if ( t < 0 || t > 1 ) {
 
@@ -7517,8 +7545,8 @@
 
 			// Note: this tests if a line intersects the plane, not whether it (or its end-points) are coplanar with it.
 
-			const startSign = this.distanceToPoint( line.start );
-			const endSign = this.distanceToPoint( line.end );
+			var startSign = this.distanceToPoint( line.start );
+			var endSign = this.distanceToPoint( line.end );
 
 			return ( startSign < 0 && endSign > 0 ) || ( endSign < 0 && startSign > 0 );
 
@@ -7551,11 +7579,11 @@
 
 		applyMatrix4: function ( matrix, optionalNormalMatrix ) {
 
-			const normalMatrix = optionalNormalMatrix || _normalMatrix.getNormalMatrix( matrix );
+			var normalMatrix = optionalNormalMatrix || _normalMatrix.getNormalMatrix( matrix );
 
-			const referencePoint = this.coplanarPoint( _vector1 ).applyMatrix4( matrix );
+			var referencePoint = this.coplanarPoint( _vector1 ).applyMatrix4( matrix );
 
-			const normal = this.normal.applyMatrix3( normalMatrix ).normalize();
+			var normal = this.normal.applyMatrix3( normalMatrix ).normalize();
 
 			this.constant = - referencePoint.dot( normal );
 
@@ -7579,17 +7607,17 @@
 
 	} );
 
-	const _v0$1 = new Vector3();
-	const _v1$3 = new Vector3();
-	const _v2$1 = new Vector3();
-	const _v3 = new Vector3();
+	var _v0$1 = new Vector3();
+	var _v1$3 = new Vector3();
+	var _v2$1 = new Vector3();
+	var _v3 = new Vector3();
 
-	const _vab = new Vector3();
-	const _vac = new Vector3();
-	const _vbc = new Vector3();
-	const _vap = new Vector3();
-	const _vbp = new Vector3();
-	const _vcp = new Vector3();
+	var _vab = new Vector3();
+	var _vac = new Vector3();
+	var _vbc = new Vector3();
+	var _vap = new Vector3();
+	var _vbp = new Vector3();
+	var _vcp = new Vector3();
 
 	function Triangle( a, b, c ) {
 
@@ -7614,7 +7642,7 @@
 			_v0$1.subVectors( a, b );
 			target.cross( _v0$1 );
 
-			const targetLengthSq = target.lengthSq();
+			var targetLengthSq = target.lengthSq();
 			if ( targetLengthSq > 0 ) {
 
 				return target.multiplyScalar( 1 / Math.sqrt( targetLengthSq ) );
@@ -7633,13 +7661,13 @@
 			_v1$3.subVectors( b, a );
 			_v2$1.subVectors( point, a );
 
-			const dot00 = _v0$1.dot( _v0$1 );
-			const dot01 = _v0$1.dot( _v1$3 );
-			const dot02 = _v0$1.dot( _v2$1 );
-			const dot11 = _v1$3.dot( _v1$3 );
-			const dot12 = _v1$3.dot( _v2$1 );
+			var dot00 = _v0$1.dot( _v0$1 );
+			var dot01 = _v0$1.dot( _v1$3 );
+			var dot02 = _v0$1.dot( _v2$1 );
+			var dot11 = _v1$3.dot( _v1$3 );
+			var dot12 = _v1$3.dot( _v2$1 );
 
-			const denom = ( dot00 * dot11 - dot01 * dot01 );
+			var denom = ( dot00 * dot11 - dot01 * dot01 );
 
 			if ( target === undefined ) {
 
@@ -7657,9 +7685,9 @@
 
 			}
 
-			const invDenom = 1 / denom;
-			const u = ( dot11 * dot02 - dot01 * dot12 ) * invDenom;
-			const v = ( dot00 * dot12 - dot01 * dot02 ) * invDenom;
+			var invDenom = 1 / denom;
+			var u = ( dot11 * dot02 - dot01 * dot12 ) * invDenom;
+			var v = ( dot00 * dot12 - dot01 * dot02 ) * invDenom;
 
 			// barycentric coordinates must always sum to 1
 			return target.set( 1 - u - v, v, u );
@@ -7817,8 +7845,8 @@
 
 			}
 
-			const a = this.a, b = this.b, c = this.c;
-			let v, w;
+			var a = this.a, b = this.b, c = this.c;
+			var v, w;
 
 			// algorithm thanks to Real-Time Collision Detection by Christer Ericson,
 			// published by Morgan Kaufmann Publishers, (c) 2005 Elsevier Inc.,
@@ -7829,8 +7857,8 @@
 			_vab.subVectors( b, a );
 			_vac.subVectors( c, a );
 			_vap.subVectors( p, a );
-			const d1 = _vab.dot( _vap );
-			const d2 = _vac.dot( _vap );
+			var d1 = _vab.dot( _vap );
+			var d2 = _vac.dot( _vap );
 			if ( d1 <= 0 && d2 <= 0 ) {
 
 				// vertex region of A; barycentric coords (1, 0, 0)
@@ -7839,8 +7867,8 @@
 			}
 
 			_vbp.subVectors( p, b );
-			const d3 = _vab.dot( _vbp );
-			const d4 = _vac.dot( _vbp );
+			var d3 = _vab.dot( _vbp );
+			var d4 = _vac.dot( _vbp );
 			if ( d3 >= 0 && d4 <= d3 ) {
 
 				// vertex region of B; barycentric coords (0, 1, 0)
@@ -7848,7 +7876,7 @@
 
 			}
 
-			const vc = d1 * d4 - d3 * d2;
+			var vc = d1 * d4 - d3 * d2;
 			if ( vc <= 0 && d1 >= 0 && d3 <= 0 ) {
 
 				v = d1 / ( d1 - d3 );
@@ -7858,8 +7886,8 @@
 			}
 
 			_vcp.subVectors( p, c );
-			const d5 = _vab.dot( _vcp );
-			const d6 = _vac.dot( _vcp );
+			var d5 = _vab.dot( _vcp );
+			var d6 = _vac.dot( _vcp );
 			if ( d6 >= 0 && d5 <= d6 ) {
 
 				// vertex region of C; barycentric coords (0, 0, 1)
@@ -7867,7 +7895,7 @@
 
 			}
 
-			const vb = d5 * d2 - d1 * d6;
+			var vb = d5 * d2 - d1 * d6;
 			if ( vb <= 0 && d2 >= 0 && d6 <= 0 ) {
 
 				w = d2 / ( d2 - d6 );
@@ -7876,7 +7904,7 @@
 
 			}
 
-			const va = d3 * d6 - d5 * d4;
+			var va = d3 * d6 - d5 * d4;
 			if ( va <= 0 && ( d4 - d3 ) >= 0 && ( d5 - d6 ) >= 0 ) {
 
 				_vbc.subVectors( c, b );
@@ -7887,7 +7915,7 @@
 			}
 
 			// face region
-			const denom = 1 / ( va + vb + vc );
+			var denom = 1 / ( va + vb + vc );
 			// u = va * denom
 			v = vb * denom;
 			w = vc * denom;
@@ -7904,7 +7932,7 @@
 
 	} );
 
-	const _colorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua': 0x00FFFF, 'aquamarine': 0x7FFFD4, 'azure': 0xF0FFFF,
+	var _colorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua': 0x00FFFF, 'aquamarine': 0x7FFFD4, 'azure': 0xF0FFFF,
 		'beige': 0xF5F5DC, 'bisque': 0xFFE4C4, 'black': 0x000000, 'blanchedalmond': 0xFFEBCD, 'blue': 0x0000FF, 'blueviolet': 0x8A2BE2,
 		'brown': 0xA52A2A, 'burlywood': 0xDEB887, 'cadetblue': 0x5F9EA0, 'chartreuse': 0x7FFF00, 'chocolate': 0xD2691E, 'coral': 0xFF7F50,
 		'cornflowerblue': 0x6495ED, 'cornsilk': 0xFFF8DC, 'crimson': 0xDC143C, 'cyan': 0x00FFFF, 'darkblue': 0x00008B, 'darkcyan': 0x008B8B,
@@ -7929,8 +7957,8 @@
 		'springgreen': 0x00FF7F, 'steelblue': 0x4682B4, 'tan': 0xD2B48C, 'teal': 0x008080, 'thistle': 0xD8BFD8, 'tomato': 0xFF6347, 'turquoise': 0x40E0D0,
 		'violet': 0xEE82EE, 'wheat': 0xF5DEB3, 'white': 0xFFFFFF, 'whitesmoke': 0xF5F5F5, 'yellow': 0xFFFF00, 'yellowgreen': 0x9ACD32 };
 
-	const _hslA = { h: 0, s: 0, l: 0 };
-	const _hslB = { h: 0, s: 0, l: 0 };
+	var _hslA = { h: 0, s: 0, l: 0 };
+	var _hslB = { h: 0, s: 0, l: 0 };
 
 	function Color( r, g, b ) {
 
@@ -7947,11 +7975,11 @@
 
 	function hue2rgb( p, q, t ) {
 
-		if ( t < 0 ) t += 1;
-		if ( t > 1 ) t -= 1;
-		if ( t < 1 / 6 ) return p + ( q - p ) * 6 * t;
-		if ( t < 1 / 2 ) return q;
-		if ( t < 2 / 3 ) return p + ( q - p ) * 6 * ( 2 / 3 - t );
+		if ( t < 0 ) { t += 1; }
+		if ( t > 1 ) { t -= 1; }
+		if ( t < 1 / 6 ) { return p + ( q - p ) * 6 * t; }
+		if ( t < 1 / 2 ) { return q; }
+		if ( t < 2 / 3 ) { return p + ( q - p ) * 6 * ( 2 / 3 - t ); }
 		return p;
 
 	}
@@ -8039,8 +8067,8 @@
 
 			} else {
 
-				const p = l <= 0.5 ? l * ( 1 + s ) : l + s - ( l * s );
-				const q = ( 2 * l ) - p;
+				var p = l <= 0.5 ? l * ( 1 + s ) : l + s - ( l * s );
+				var q = ( 2 * l ) - p;
 
 				this.r = hue2rgb( q, p, h + 1 / 3 );
 				this.g = hue2rgb( q, p, h );
@@ -8056,7 +8084,7 @@
 
 			function handleAlpha( string ) {
 
-				if ( string === undefined ) return;
+				if ( string === undefined ) { return; }
 
 				if ( parseFloat( string ) < 1 ) {
 
@@ -8067,15 +8095,15 @@
 			}
 
 
-			let m;
+			var m;
 
 			if ( m = /^((?:rgb|hsl)a?)\(\s*([^\)]*)\)/.exec( style ) ) {
 
 				// rgb / hsl
 
-				let color;
-				const name = m[ 1 ];
-				const components = m[ 2 ];
+				var color;
+				var name = m[ 1 ];
+				var components = m[ 2 ];
 
 				switch ( name ) {
 
@@ -8116,9 +8144,9 @@
 						if ( color = /^([0-9]*\.?[0-9]+)\s*,\s*(\d+)\%\s*,\s*(\d+)\%\s*(,\s*([0-9]*\.?[0-9]+)\s*)?$/.exec( components ) ) {
 
 							// hsl(120,50%,50%) hsla(120,50%,50%,0.5)
-							const h = parseFloat( color[ 1 ] ) / 360;
-							const s = parseInt( color[ 2 ], 10 ) / 100;
-							const l = parseInt( color[ 3 ], 10 ) / 100;
+							var h = parseFloat( color[ 1 ] ) / 360;
+							var s = parseInt( color[ 2 ], 10 ) / 100;
+							var l = parseInt( color[ 3 ], 10 ) / 100;
 
 							handleAlpha( color[ 5 ] );
 
@@ -8134,8 +8162,8 @@
 
 				// hex color
 
-				const hex = m[ 1 ];
-				const size = hex.length;
+				var hex = m[ 1 ];
+				var size = hex.length;
 
 				if ( size === 3 ) {
 
@@ -8172,7 +8200,7 @@
 		setColorName: function ( style ) {
 
 			// color keywords
-			const hex = _colorKeywords[ style ];
+			var hex = _colorKeywords[ style ];
 
 			if ( hex !== undefined ) {
 
@@ -8208,7 +8236,7 @@
 
 		copyGammaToLinear: function ( color, gammaFactor ) {
 
-			if ( gammaFactor === undefined ) gammaFactor = 2.0;
+			if ( gammaFactor === undefined ) { gammaFactor = 2.0; }
 
 			this.r = Math.pow( color.r, gammaFactor );
 			this.g = Math.pow( color.g, gammaFactor );
@@ -8220,9 +8248,9 @@
 
 		copyLinearToGamma: function ( color, gammaFactor ) {
 
-			if ( gammaFactor === undefined ) gammaFactor = 2.0;
+			if ( gammaFactor === undefined ) { gammaFactor = 2.0; }
 
-			const safeInverse = ( gammaFactor > 0 ) ? ( 1.0 / gammaFactor ) : 1.0;
+			var safeInverse = ( gammaFactor > 0 ) ? ( 1.0 / gammaFactor ) : 1.0;
 
 			this.r = Math.pow( color.r, safeInverse );
 			this.g = Math.pow( color.g, safeInverse );
@@ -8307,13 +8335,13 @@
 
 			}
 
-			const r = this.r, g = this.g, b = this.b;
+			var r = this.r, g = this.g, b = this.b;
 
-			const max = Math.max( r, g, b );
-			const min = Math.min( r, g, b );
+			var max = Math.max( r, g, b );
+			var min = Math.min( r, g, b );
 
-			let hue, saturation;
-			const lightness = ( min + max ) / 2.0;
+			var hue, saturation;
+			var lightness = ( min + max ) / 2.0;
 
 			if ( min === max ) {
 
@@ -8322,7 +8350,7 @@
 
 			} else {
 
-				const delta = max - min;
+				var delta = max - min;
 
 				saturation = lightness <= 0.5 ? delta / ( max + min ) : delta / ( 2 - max - min );
 
@@ -8439,9 +8467,9 @@
 			this.getHSL( _hslA );
 			color.getHSL( _hslB );
 
-			const h = MathUtils.lerp( _hslA.h, _hslB.h, alpha );
-			const s = MathUtils.lerp( _hslA.s, _hslB.s, alpha );
-			const l = MathUtils.lerp( _hslA.l, _hslB.l, alpha );
+			var h = MathUtils.lerp( _hslA.h, _hslB.h, alpha );
+			var s = MathUtils.lerp( _hslA.s, _hslB.s, alpha );
+			var l = MathUtils.lerp( _hslA.l, _hslB.l, alpha );
 
 			this.setHSL( h, s, l );
 
@@ -8457,7 +8485,7 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.r = array[ offset ];
 			this.g = array[ offset + 1 ];
@@ -8469,8 +8497,8 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
 			array[ offset ] = this.r;
 			array[ offset + 1 ] = this.g;
@@ -8545,15 +8573,15 @@
 
 			this.materialIndex = source.materialIndex;
 
-			for ( let i = 0, il = source.vertexNormals.length; i < il; i ++ ) {
+			for ( var i = 0, il = source.vertexNormals.length; i < il; i ++ ) {
 
 				this.vertexNormals[ i ] = source.vertexNormals[ i ].clone();
 
 			}
 
-			for ( let i = 0, il = source.vertexColors.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = source.vertexColors.length; i$1 < il$1; i$1 ++ ) {
 
-				this.vertexColors[ i ] = source.vertexColors[ i ].clone();
+				this.vertexColors[ i$1 ] = source.vertexColors[ i$1 ].clone();
 
 			}
 
@@ -8563,7 +8591,7 @@
 
 	} );
 
-	let materialId = 0;
+	var materialId = 0;
 
 	function Material() {
 
@@ -8649,11 +8677,11 @@
 
 		setValues: function ( values ) {
 
-			if ( values === undefined ) return;
+			if ( values === undefined ) { return; }
 
-			for ( const key in values ) {
+			for ( var key in values ) {
 
-				const newValue = values[ key ];
+				var newValue = values[ key ];
 
 				if ( newValue === undefined ) {
 
@@ -8671,7 +8699,7 @@
 
 				}
 
-				const currentValue = this[ key ];
+				var currentValue = this[ key ];
 
 				if ( currentValue === undefined ) {
 
@@ -8700,7 +8728,7 @@
 
 		toJSON: function ( meta ) {
 
-			const isRoot = ( meta === undefined || typeof meta === 'string' );
+			var isRoot = ( meta === undefined || typeof meta === 'string' );
 
 			if ( isRoot ) {
 
@@ -8711,7 +8739,7 @@
 
 			}
 
-			const data = {
+			var data = {
 				metadata: {
 					version: 4.5,
 					type: 'Material',
@@ -8723,21 +8751,21 @@
 			data.uuid = this.uuid;
 			data.type = this.type;
 
-			if ( this.name !== '' ) data.name = this.name;
+			if ( this.name !== '' ) { data.name = this.name; }
 
-			if ( this.color && this.color.isColor ) data.color = this.color.getHex();
+			if ( this.color && this.color.isColor ) { data.color = this.color.getHex(); }
 
-			if ( this.roughness !== undefined ) data.roughness = this.roughness;
-			if ( this.metalness !== undefined ) data.metalness = this.metalness;
+			if ( this.roughness !== undefined ) { data.roughness = this.roughness; }
+			if ( this.metalness !== undefined ) { data.metalness = this.metalness; }
 
-			if ( this.sheen && this.sheen.isColor ) data.sheen = this.sheen.getHex();
-			if ( this.emissive && this.emissive.isColor ) data.emissive = this.emissive.getHex();
-			if ( this.emissiveIntensity && this.emissiveIntensity !== 1 ) data.emissiveIntensity = this.emissiveIntensity;
+			if ( this.sheen && this.sheen.isColor ) { data.sheen = this.sheen.getHex(); }
+			if ( this.emissive && this.emissive.isColor ) { data.emissive = this.emissive.getHex(); }
+			if ( this.emissiveIntensity && this.emissiveIntensity !== 1 ) { data.emissiveIntensity = this.emissiveIntensity; }
 
-			if ( this.specular && this.specular.isColor ) data.specular = this.specular.getHex();
-			if ( this.shininess !== undefined ) data.shininess = this.shininess;
-			if ( this.clearcoat !== undefined ) data.clearcoat = this.clearcoat;
-			if ( this.clearcoatRoughness !== undefined ) data.clearcoatRoughness = this.clearcoatRoughness;
+			if ( this.specular && this.specular.isColor ) { data.specular = this.specular.getHex(); }
+			if ( this.shininess !== undefined ) { data.shininess = this.shininess; }
+			if ( this.clearcoat !== undefined ) { data.clearcoat = this.clearcoat; }
+			if ( this.clearcoatRoughness !== undefined ) { data.clearcoatRoughness = this.clearcoatRoughness; }
 
 			if ( this.clearcoatMap && this.clearcoatMap.isTexture ) {
 
@@ -8758,10 +8786,10 @@
 
 			}
 
-			if ( this.map && this.map.isTexture ) data.map = this.map.toJSON( meta ).uuid;
-			if ( this.matcap && this.matcap.isTexture ) data.matcap = this.matcap.toJSON( meta ).uuid;
-			if ( this.alphaMap && this.alphaMap.isTexture ) data.alphaMap = this.alphaMap.toJSON( meta ).uuid;
-			if ( this.lightMap && this.lightMap.isTexture ) data.lightMap = this.lightMap.toJSON( meta ).uuid;
+			if ( this.map && this.map.isTexture ) { data.map = this.map.toJSON( meta ).uuid; }
+			if ( this.matcap && this.matcap.isTexture ) { data.matcap = this.matcap.toJSON( meta ).uuid; }
+			if ( this.alphaMap && this.alphaMap.isTexture ) { data.alphaMap = this.alphaMap.toJSON( meta ).uuid; }
+			if ( this.lightMap && this.lightMap.isTexture ) { data.lightMap = this.lightMap.toJSON( meta ).uuid; }
 
 			if ( this.aoMap && this.aoMap.isTexture ) {
 
@@ -8793,11 +8821,11 @@
 
 			}
 
-			if ( this.roughnessMap && this.roughnessMap.isTexture ) data.roughnessMap = this.roughnessMap.toJSON( meta ).uuid;
-			if ( this.metalnessMap && this.metalnessMap.isTexture ) data.metalnessMap = this.metalnessMap.toJSON( meta ).uuid;
+			if ( this.roughnessMap && this.roughnessMap.isTexture ) { data.roughnessMap = this.roughnessMap.toJSON( meta ).uuid; }
+			if ( this.metalnessMap && this.metalnessMap.isTexture ) { data.metalnessMap = this.metalnessMap.toJSON( meta ).uuid; }
 
-			if ( this.emissiveMap && this.emissiveMap.isTexture ) data.emissiveMap = this.emissiveMap.toJSON( meta ).uuid;
-			if ( this.specularMap && this.specularMap.isTexture ) data.specularMap = this.specularMap.toJSON( meta ).uuid;
+			if ( this.emissiveMap && this.emissiveMap.isTexture ) { data.emissiveMap = this.emissiveMap.toJSON( meta ).uuid; }
+			if ( this.specularMap && this.specularMap.isTexture ) { data.specularMap = this.specularMap.toJSON( meta ).uuid; }
 
 			if ( this.envMap && this.envMap.isTexture ) {
 
@@ -8805,8 +8833,8 @@
 				data.reflectivity = this.reflectivity; // Scale behind envMap
 				data.refractionRatio = this.refractionRatio;
 
-				if ( this.combine !== undefined ) data.combine = this.combine;
-				if ( this.envMapIntensity !== undefined ) data.envMapIntensity = this.envMapIntensity;
+				if ( this.combine !== undefined ) { data.combine = this.combine; }
+				if ( this.envMapIntensity !== undefined ) { data.envMapIntensity = this.envMapIntensity; }
 
 			}
 
@@ -8816,16 +8844,16 @@
 
 			}
 
-			if ( this.size !== undefined ) data.size = this.size;
-			if ( this.sizeAttenuation !== undefined ) data.sizeAttenuation = this.sizeAttenuation;
+			if ( this.size !== undefined ) { data.size = this.size; }
+			if ( this.sizeAttenuation !== undefined ) { data.sizeAttenuation = this.sizeAttenuation; }
 
-			if ( this.blending !== NormalBlending ) data.blending = this.blending;
-			if ( this.flatShading === true ) data.flatShading = this.flatShading;
-			if ( this.side !== FrontSide ) data.side = this.side;
-			if ( this.vertexColors ) data.vertexColors = true;
+			if ( this.blending !== NormalBlending ) { data.blending = this.blending; }
+			if ( this.flatShading === true ) { data.flatShading = this.flatShading; }
+			if ( this.side !== FrontSide ) { data.side = this.side; }
+			if ( this.vertexColors ) { data.vertexColors = true; }
 
-			if ( this.opacity < 1 ) data.opacity = this.opacity;
-			if ( this.transparent === true ) data.transparent = this.transparent;
+			if ( this.opacity < 1 ) { data.opacity = this.opacity; }
+			if ( this.transparent === true ) { data.transparent = this.transparent; }
 
 			data.depthFunc = this.depthFunc;
 			data.depthTest = this.depthTest;
@@ -8841,46 +8869,46 @@
 			data.stencilZPass = this.stencilZPass;
 
 			// rotation (SpriteMaterial)
-			if ( this.rotation && this.rotation !== 0 ) data.rotation = this.rotation;
+			if ( this.rotation && this.rotation !== 0 ) { data.rotation = this.rotation; }
 
-			if ( this.polygonOffset === true ) data.polygonOffset = true;
-			if ( this.polygonOffsetFactor !== 0 ) data.polygonOffsetFactor = this.polygonOffsetFactor;
-			if ( this.polygonOffsetUnits !== 0 ) data.polygonOffsetUnits = this.polygonOffsetUnits;
+			if ( this.polygonOffset === true ) { data.polygonOffset = true; }
+			if ( this.polygonOffsetFactor !== 0 ) { data.polygonOffsetFactor = this.polygonOffsetFactor; }
+			if ( this.polygonOffsetUnits !== 0 ) { data.polygonOffsetUnits = this.polygonOffsetUnits; }
 
-			if ( this.linewidth && this.linewidth !== 1 ) data.linewidth = this.linewidth;
-			if ( this.dashSize !== undefined ) data.dashSize = this.dashSize;
-			if ( this.gapSize !== undefined ) data.gapSize = this.gapSize;
-			if ( this.scale !== undefined ) data.scale = this.scale;
+			if ( this.linewidth && this.linewidth !== 1 ) { data.linewidth = this.linewidth; }
+			if ( this.dashSize !== undefined ) { data.dashSize = this.dashSize; }
+			if ( this.gapSize !== undefined ) { data.gapSize = this.gapSize; }
+			if ( this.scale !== undefined ) { data.scale = this.scale; }
 
-			if ( this.dithering === true ) data.dithering = true;
+			if ( this.dithering === true ) { data.dithering = true; }
 
-			if ( this.alphaTest > 0 ) data.alphaTest = this.alphaTest;
-			if ( this.premultipliedAlpha === true ) data.premultipliedAlpha = this.premultipliedAlpha;
+			if ( this.alphaTest > 0 ) { data.alphaTest = this.alphaTest; }
+			if ( this.premultipliedAlpha === true ) { data.premultipliedAlpha = this.premultipliedAlpha; }
 
-			if ( this.wireframe === true ) data.wireframe = this.wireframe;
-			if ( this.wireframeLinewidth > 1 ) data.wireframeLinewidth = this.wireframeLinewidth;
-			if ( this.wireframeLinecap !== 'round' ) data.wireframeLinecap = this.wireframeLinecap;
-			if ( this.wireframeLinejoin !== 'round' ) data.wireframeLinejoin = this.wireframeLinejoin;
+			if ( this.wireframe === true ) { data.wireframe = this.wireframe; }
+			if ( this.wireframeLinewidth > 1 ) { data.wireframeLinewidth = this.wireframeLinewidth; }
+			if ( this.wireframeLinecap !== 'round' ) { data.wireframeLinecap = this.wireframeLinecap; }
+			if ( this.wireframeLinejoin !== 'round' ) { data.wireframeLinejoin = this.wireframeLinejoin; }
 
-			if ( this.morphTargets === true ) data.morphTargets = true;
-			if ( this.morphNormals === true ) data.morphNormals = true;
-			if ( this.skinning === true ) data.skinning = true;
+			if ( this.morphTargets === true ) { data.morphTargets = true; }
+			if ( this.morphNormals === true ) { data.morphNormals = true; }
+			if ( this.skinning === true ) { data.skinning = true; }
 
-			if ( this.visible === false ) data.visible = false;
+			if ( this.visible === false ) { data.visible = false; }
 
-			if ( this.toneMapped === false ) data.toneMapped = false;
+			if ( this.toneMapped === false ) { data.toneMapped = false; }
 
-			if ( JSON.stringify( this.userData ) !== '{}' ) data.userData = this.userData;
+			if ( JSON.stringify( this.userData ) !== '{}' ) { data.userData = this.userData; }
 
 			// TODO: Copied from Object3D.toJSON
 
 			function extractFromCache( cache ) {
 
-				const values = [];
+				var values = [];
 
-				for ( const key in cache ) {
+				for ( var key in cache ) {
 
-					const data = cache[ key ];
+					var data = cache[ key ];
 					delete data.metadata;
 					values.push( data );
 
@@ -8892,11 +8920,11 @@
 
 			if ( isRoot ) {
 
-				const textures = extractFromCache( meta.textures );
-				const images = extractFromCache( meta.images );
+				var textures = extractFromCache( meta.textures );
+				var images = extractFromCache( meta.images );
 
-				if ( textures.length > 0 ) data.textures = textures;
-				if ( images.length > 0 ) data.images = images;
+				if ( textures.length > 0 ) { data.textures = textures; }
+				if ( images.length > 0 ) { data.images = images; }
 
 			}
 
@@ -8944,15 +8972,15 @@
 			this.stencilZPass = source.stencilZPass;
 			this.stencilWrite = source.stencilWrite;
 
-			const srcPlanes = source.clippingPlanes;
-			let dstPlanes = null;
+			var srcPlanes = source.clippingPlanes;
+			var dstPlanes = null;
 
 			if ( srcPlanes !== null ) {
 
-				const n = srcPlanes.length;
+				var n = srcPlanes.length;
 				dstPlanes = new Array( n );
 
-				for ( let i = 0; i !== n; ++ i ) {
+				for ( var i = 0; i !== n; ++ i ) {
 
 					dstPlanes[ i ] = srcPlanes[ i ].clone();
 
@@ -9001,7 +9029,7 @@
 
 		set: function ( value ) {
 
-			if ( value === true ) this.version ++;
+			if ( value === true ) { this.version ++; }
 
 		}
 
@@ -9116,8 +9144,8 @@
 
 	};
 
-	const _vector$3 = new Vector3();
-	const _vector2$1 = new Vector2();
+	var _vector$3 = new Vector3();
+	var _vector2$1 = new Vector2();
 
 	function BufferAttribute( array, itemSize, normalized ) {
 
@@ -9145,7 +9173,7 @@
 
 		set: function ( value ) {
 
-			if ( value === true ) this.version ++;
+			if ( value === true ) { this.version ++; }
 
 		}
 
@@ -9184,7 +9212,7 @@
 			index1 *= this.itemSize;
 			index2 *= attribute.itemSize;
 
-			for ( let i = 0, l = this.itemSize; i < l; i ++ ) {
+			for ( var i = 0, l = this.itemSize; i < l; i ++ ) {
 
 				this.array[ index1 + i ] = attribute.array[ index2 + i ];
 
@@ -9204,12 +9232,12 @@
 
 		copyColorsArray: function ( colors ) {
 
-			const array = this.array;
-			let offset = 0;
+			var array = this.array;
+			var offset = 0;
 
-			for ( let i = 0, l = colors.length; i < l; i ++ ) {
+			for ( var i = 0, l = colors.length; i < l; i ++ ) {
 
-				let color = colors[ i ];
+				var color = colors[ i ];
 
 				if ( color === undefined ) {
 
@@ -9230,12 +9258,12 @@
 
 		copyVector2sArray: function ( vectors ) {
 
-			const array = this.array;
-			let offset = 0;
+			var array = this.array;
+			var offset = 0;
 
-			for ( let i = 0, l = vectors.length; i < l; i ++ ) {
+			for ( var i = 0, l = vectors.length; i < l; i ++ ) {
 
-				let vector = vectors[ i ];
+				var vector = vectors[ i ];
 
 				if ( vector === undefined ) {
 
@@ -9255,12 +9283,12 @@
 
 		copyVector3sArray: function ( vectors ) {
 
-			const array = this.array;
-			let offset = 0;
+			var array = this.array;
+			var offset = 0;
 
-			for ( let i = 0, l = vectors.length; i < l; i ++ ) {
+			for ( var i = 0, l = vectors.length; i < l; i ++ ) {
 
-				let vector = vectors[ i ];
+				var vector = vectors[ i ];
 
 				if ( vector === undefined ) {
 
@@ -9281,12 +9309,12 @@
 
 		copyVector4sArray: function ( vectors ) {
 
-			const array = this.array;
-			let offset = 0;
+			var array = this.array;
+			var offset = 0;
 
-			for ( let i = 0, l = vectors.length; i < l; i ++ ) {
+			for ( var i = 0, l = vectors.length; i < l; i ++ ) {
 
-				let vector = vectors[ i ];
+				var vector = vectors[ i ];
 
 				if ( vector === undefined ) {
 
@@ -9310,7 +9338,7 @@
 
 			if ( this.itemSize === 2 ) {
 
-				for ( let i = 0, l = this.count; i < l; i ++ ) {
+				for ( var i = 0, l = this.count; i < l; i ++ ) {
 
 					_vector2$1.fromBufferAttribute( this, i );
 					_vector2$1.applyMatrix3( m );
@@ -9321,12 +9349,12 @@
 
 			} else if ( this.itemSize === 3 ) {
 
-				for ( let i = 0, l = this.count; i < l; i ++ ) {
+				for ( var i$1 = 0, l$1 = this.count; i$1 < l$1; i$1 ++ ) {
 
-					_vector$3.fromBufferAttribute( this, i );
+					_vector$3.fromBufferAttribute( this, i$1 );
 					_vector$3.applyMatrix3( m );
 
-					this.setXYZ( i, _vector$3.x, _vector$3.y, _vector$3.z );
+					this.setXYZ( i$1, _vector$3.x, _vector$3.y, _vector$3.z );
 
 				}
 
@@ -9338,7 +9366,7 @@
 
 		applyMatrix4: function ( m ) {
 
-			for ( let i = 0, l = this.count; i < l; i ++ ) {
+			for ( var i = 0, l = this.count; i < l; i ++ ) {
 
 				_vector$3.x = this.getX( i );
 				_vector$3.y = this.getY( i );
@@ -9356,7 +9384,7 @@
 
 		applyNormalMatrix: function ( m ) {
 
-			for ( let i = 0, l = this.count; i < l; i ++ ) {
+			for ( var i = 0, l = this.count; i < l; i ++ ) {
 
 				_vector$3.x = this.getX( i );
 				_vector$3.y = this.getY( i );
@@ -9374,7 +9402,7 @@
 
 		transformDirection: function ( m ) {
 
-			for ( let i = 0, l = this.count; i < l; i ++ ) {
+			for ( var i = 0, l = this.count; i < l; i ++ ) {
 
 				_vector$3.x = this.getX( i );
 				_vector$3.y = this.getY( i );
@@ -9392,7 +9420,7 @@
 
 		set: function ( value, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.array.set( value, offset );
 
@@ -9644,16 +9672,16 @@
 
 		computeGroups: function ( geometry ) {
 
-			const groups = [];
+			var groups = [];
 
-			let group, i;
-			let materialIndex = undefined;
+			var group, i;
+			var materialIndex = undefined;
 
-			const faces = geometry.faces;
+			var faces = geometry.faces;
 
 			for ( i = 0; i < faces.length; i ++ ) {
 
-				const face = faces[ i ];
+				var face = faces[ i ];
 
 				// materials
 
@@ -9690,25 +9718,25 @@
 
 		fromGeometry: function ( geometry ) {
 
-			const faces = geometry.faces;
-			const vertices = geometry.vertices;
-			const faceVertexUvs = geometry.faceVertexUvs;
+			var faces = geometry.faces;
+			var vertices = geometry.vertices;
+			var faceVertexUvs = geometry.faceVertexUvs;
 
-			const hasFaceVertexUv = faceVertexUvs[ 0 ] && faceVertexUvs[ 0 ].length > 0;
-			const hasFaceVertexUv2 = faceVertexUvs[ 1 ] && faceVertexUvs[ 1 ].length > 0;
+			var hasFaceVertexUv = faceVertexUvs[ 0 ] && faceVertexUvs[ 0 ].length > 0;
+			var hasFaceVertexUv2 = faceVertexUvs[ 1 ] && faceVertexUvs[ 1 ].length > 0;
 
 			// morphs
 
-			const morphTargets = geometry.morphTargets;
-			const morphTargetsLength = morphTargets.length;
+			var morphTargets = geometry.morphTargets;
+			var morphTargetsLength = morphTargets.length;
 
-			let morphTargetsPosition;
+			var morphTargetsPosition;
 
 			if ( morphTargetsLength > 0 ) {
 
 				morphTargetsPosition = [];
 
-				for ( let i = 0; i < morphTargetsLength; i ++ ) {
+				for ( var i = 0; i < morphTargetsLength; i ++ ) {
 
 					morphTargetsPosition[ i ] = {
 						name: morphTargets[ i ].name,
@@ -9721,19 +9749,19 @@
 
 			}
 
-			const morphNormals = geometry.morphNormals;
-			const morphNormalsLength = morphNormals.length;
+			var morphNormals = geometry.morphNormals;
+			var morphNormalsLength = morphNormals.length;
 
-			let morphTargetsNormal;
+			var morphTargetsNormal;
 
 			if ( morphNormalsLength > 0 ) {
 
 				morphTargetsNormal = [];
 
-				for ( let i = 0; i < morphNormalsLength; i ++ ) {
+				for ( var i$1 = 0; i$1 < morphNormalsLength; i$1 ++ ) {
 
-					morphTargetsNormal[ i ] = {
-						name: morphNormals[ i ].name,
+					morphTargetsNormal[ i$1 ] = {
+						name: morphNormals[ i$1 ].name,
 					 	data: []
 					};
 
@@ -9745,11 +9773,11 @@
 
 			// skins
 
-			const skinIndices = geometry.skinIndices;
-			const skinWeights = geometry.skinWeights;
+			var skinIndices = geometry.skinIndices;
+			var skinWeights = geometry.skinWeights;
 
-			const hasSkinIndices = skinIndices.length === vertices.length;
-			const hasSkinWeights = skinWeights.length === vertices.length;
+			var hasSkinIndices = skinIndices.length === vertices.length;
+			var hasSkinWeights = skinWeights.length === vertices.length;
 
 			//
 
@@ -9759,13 +9787,13 @@
 
 			}
 
-			for ( let i = 0; i < faces.length; i ++ ) {
+			for ( var i$2 = 0; i$2 < faces.length; i$2 ++ ) {
 
-				const face = faces[ i ];
+				var face = faces[ i$2 ];
 
 				this.vertices.push( vertices[ face.a ], vertices[ face.b ], vertices[ face.c ] );
 
-				const vertexNormals = face.vertexNormals;
+				var vertexNormals = face.vertexNormals;
 
 				if ( vertexNormals.length === 3 ) {
 
@@ -9773,13 +9801,13 @@
 
 				} else {
 
-					const normal = face.normal;
+					var normal = face.normal;
 
 					this.normals.push( normal, normal, normal );
 
 				}
 
-				const vertexColors = face.vertexColors;
+				var vertexColors = face.vertexColors;
 
 				if ( vertexColors.length === 3 ) {
 
@@ -9787,7 +9815,7 @@
 
 				} else {
 
-					const color = face.color;
+					var color = face.color;
 
 					this.colors.push( color, color, color );
 
@@ -9795,7 +9823,7 @@
 
 				if ( hasFaceVertexUv === true ) {
 
-					const vertexUvs = faceVertexUvs[ 0 ][ i ];
+					var vertexUvs = faceVertexUvs[ 0 ][ i$2 ];
 
 					if ( vertexUvs !== undefined ) {
 
@@ -9803,7 +9831,7 @@
 
 					} else {
 
-						console.warn( 'THREE.DirectGeometry.fromGeometry(): Undefined vertexUv ', i );
+						console.warn( 'THREE.DirectGeometry.fromGeometry(): Undefined vertexUv ', i$2 );
 
 						this.uvs.push( new Vector2(), new Vector2(), new Vector2() );
 
@@ -9813,15 +9841,15 @@
 
 				if ( hasFaceVertexUv2 === true ) {
 
-					const vertexUvs = faceVertexUvs[ 1 ][ i ];
+					var vertexUvs$1 = faceVertexUvs[ 1 ][ i$2 ];
 
-					if ( vertexUvs !== undefined ) {
+					if ( vertexUvs$1 !== undefined ) {
 
-						this.uvs2.push( vertexUvs[ 0 ], vertexUvs[ 1 ], vertexUvs[ 2 ] );
+						this.uvs2.push( vertexUvs$1[ 0 ], vertexUvs$1[ 1 ], vertexUvs$1[ 2 ] );
 
 					} else {
 
-						console.warn( 'THREE.DirectGeometry.fromGeometry(): Undefined vertexUv2 ', i );
+						console.warn( 'THREE.DirectGeometry.fromGeometry(): Undefined vertexUv2 ', i$2 );
 
 						this.uvs2.push( new Vector2(), new Vector2(), new Vector2() );
 
@@ -9831,19 +9859,19 @@
 
 				// morphs
 
-				for ( let j = 0; j < morphTargetsLength; j ++ ) {
+				for ( var j = 0; j < morphTargetsLength; j ++ ) {
 
-					const morphTarget = morphTargets[ j ].vertices;
+					var morphTarget = morphTargets[ j ].vertices;
 
 					morphTargetsPosition[ j ].data.push( morphTarget[ face.a ], morphTarget[ face.b ], morphTarget[ face.c ] );
 
 				}
 
-				for ( let j = 0; j < morphNormalsLength; j ++ ) {
+				for ( var j$1 = 0; j$1 < morphNormalsLength; j$1 ++ ) {
 
-					const morphNormal = morphNormals[ j ].vertexNormals[ i ];
+					var morphNormal = morphNormals[ j$1 ].vertexNormals[ i$2 ];
 
-					morphTargetsNormal[ j ].data.push( morphNormal.a, morphNormal.b, morphNormal.c );
+					morphTargetsNormal[ j$1 ].data.push( morphNormal.a, morphNormal.b, morphNormal.c );
 
 				}
 
@@ -9891,13 +9919,13 @@
 
 	function arrayMax( array ) {
 
-		if ( array.length === 0 ) return - Infinity;
+		if ( array.length === 0 ) { return - Infinity; }
 
-		let max = array[ 0 ];
+		var max = array[ 0 ];
 
-		for ( let i = 1, l = array.length; i < l; ++ i ) {
+		for ( var i = 1, l = array.length; i < l; ++ i ) {
 
-			if ( array[ i ] > max ) max = array[ i ];
+			if ( array[ i ] > max ) { max = array[ i ]; }
 
 		}
 
@@ -9905,14 +9933,14 @@
 
 	}
 
-	let _bufferGeometryId = 1; // BufferGeometry uses odd numbers as Id
+	var _bufferGeometryId = 1; // BufferGeometry uses odd numbers as Id
 
-	const _m1$2 = new Matrix4();
-	const _obj = new Object3D();
-	const _offset = new Vector3();
-	const _box$2 = new Box3();
-	const _boxMorphTargets = new Box3();
-	const _vector$4 = new Vector3();
+	var _m1$2 = new Matrix4();
+	var _obj = new Object3D();
+	var _offset = new Vector3();
+	var _box$2 = new Box3();
+	var _boxMorphTargets = new Box3();
+	var _vector$4 = new Vector3();
 
 	function BufferGeometry() {
 
@@ -10015,7 +10043,7 @@
 
 		applyMatrix4: function ( matrix ) {
 
-			const position = this.attributes.position;
+			var position = this.attributes.position;
 
 			if ( position !== undefined ) {
 
@@ -10025,11 +10053,11 @@
 
 			}
 
-			const normal = this.attributes.normal;
+			var normal = this.attributes.normal;
 
 			if ( normal !== undefined ) {
 
-				const normalMatrix = new Matrix3().getNormalMatrix( matrix );
+				var normalMatrix = new Matrix3().getNormalMatrix( matrix );
 
 				normal.applyNormalMatrix( normalMatrix );
 
@@ -10037,7 +10065,7 @@
 
 			}
 
-			const tangent = this.attributes.tangent;
+			var tangent = this.attributes.tangent;
 
 			if ( tangent !== undefined ) {
 
@@ -10151,19 +10179,19 @@
 
 			// console.log( 'THREE.BufferGeometry.setFromObject(). Converting', object, this );
 
-			const geometry = object.geometry;
+			var geometry = object.geometry;
 
 			if ( object.isPoints || object.isLine ) {
 
-				const positions = new Float32BufferAttribute( geometry.vertices.length * 3, 3 );
-				const colors = new Float32BufferAttribute( geometry.colors.length * 3, 3 );
+				var positions = new Float32BufferAttribute( geometry.vertices.length * 3, 3 );
+				var colors = new Float32BufferAttribute( geometry.colors.length * 3, 3 );
 
 				this.setAttribute( 'position', positions.copyVector3sArray( geometry.vertices ) );
 				this.setAttribute( 'color', colors.copyColorsArray( geometry.colors ) );
 
 				if ( geometry.lineDistances && geometry.lineDistances.length === geometry.vertices.length ) {
 
-					const lineDistances = new Float32BufferAttribute( geometry.lineDistances.length, 1 );
+					var lineDistances = new Float32BufferAttribute( geometry.lineDistances.length, 1 );
 
 					this.setAttribute( 'lineDistance', lineDistances.copyArray( geometry.lineDistances ) );
 
@@ -10197,11 +10225,11 @@
 
 		setFromPoints: function ( points ) {
 
-			const position = [];
+			var position = [];
 
-			for ( let i = 0, l = points.length; i < l; i ++ ) {
+			for ( var i = 0, l = points.length; i < l; i ++ ) {
 
-				const point = points[ i ];
+				var point = points[ i ];
 				position.push( point.x, point.y, point.z || 0 );
 
 			}
@@ -10214,11 +10242,11 @@
 
 		updateFromObject: function ( object ) {
 
-			let geometry = object.geometry;
+			var geometry = object.geometry;
 
 			if ( object.isMesh ) {
 
-				let direct = geometry.__directGeometry;
+				var direct = geometry.__directGeometry;
 
 				if ( geometry.elementsNeedUpdate === true ) {
 
@@ -10251,7 +10279,7 @@
 
 			if ( geometry.verticesNeedUpdate === true ) {
 
-				const attribute = this.attributes.position;
+				var attribute = this.attributes.position;
 
 				if ( attribute !== undefined ) {
 
@@ -10266,12 +10294,12 @@
 
 			if ( geometry.normalsNeedUpdate === true ) {
 
-				const attribute = this.attributes.normal;
+				var attribute$1 = this.attributes.normal;
 
-				if ( attribute !== undefined ) {
+				if ( attribute$1 !== undefined ) {
 
-					attribute.copyVector3sArray( geometry.normals );
-					attribute.needsUpdate = true;
+					attribute$1.copyVector3sArray( geometry.normals );
+					attribute$1.needsUpdate = true;
 
 				}
 
@@ -10281,12 +10309,12 @@
 
 			if ( geometry.colorsNeedUpdate === true ) {
 
-				const attribute = this.attributes.color;
+				var attribute$2 = this.attributes.color;
 
-				if ( attribute !== undefined ) {
+				if ( attribute$2 !== undefined ) {
 
-					attribute.copyColorsArray( geometry.colors );
-					attribute.needsUpdate = true;
+					attribute$2.copyColorsArray( geometry.colors );
+					attribute$2.needsUpdate = true;
 
 				}
 
@@ -10296,12 +10324,12 @@
 
 			if ( geometry.uvsNeedUpdate ) {
 
-				const attribute = this.attributes.uv;
+				var attribute$3 = this.attributes.uv;
 
-				if ( attribute !== undefined ) {
+				if ( attribute$3 !== undefined ) {
 
-					attribute.copyVector2sArray( geometry.uvs );
-					attribute.needsUpdate = true;
+					attribute$3.copyVector2sArray( geometry.uvs );
+					attribute$3.needsUpdate = true;
 
 				}
 
@@ -10311,12 +10339,12 @@
 
 			if ( geometry.lineDistancesNeedUpdate ) {
 
-				const attribute = this.attributes.lineDistance;
+				var attribute$4 = this.attributes.lineDistance;
 
-				if ( attribute !== undefined ) {
+				if ( attribute$4 !== undefined ) {
 
-					attribute.copyArray( geometry.lineDistances );
-					attribute.needsUpdate = true;
+					attribute$4.copyArray( geometry.lineDistances );
+					attribute$4.needsUpdate = true;
 
 				}
 
@@ -10347,33 +10375,33 @@
 
 		fromDirectGeometry: function ( geometry ) {
 
-			const positions = new Float32Array( geometry.vertices.length * 3 );
+			var positions = new Float32Array( geometry.vertices.length * 3 );
 			this.setAttribute( 'position', new BufferAttribute( positions, 3 ).copyVector3sArray( geometry.vertices ) );
 
 			if ( geometry.normals.length > 0 ) {
 
-				const normals = new Float32Array( geometry.normals.length * 3 );
+				var normals = new Float32Array( geometry.normals.length * 3 );
 				this.setAttribute( 'normal', new BufferAttribute( normals, 3 ).copyVector3sArray( geometry.normals ) );
 
 			}
 
 			if ( geometry.colors.length > 0 ) {
 
-				const colors = new Float32Array( geometry.colors.length * 3 );
+				var colors = new Float32Array( geometry.colors.length * 3 );
 				this.setAttribute( 'color', new BufferAttribute( colors, 3 ).copyColorsArray( geometry.colors ) );
 
 			}
 
 			if ( geometry.uvs.length > 0 ) {
 
-				const uvs = new Float32Array( geometry.uvs.length * 2 );
+				var uvs = new Float32Array( geometry.uvs.length * 2 );
 				this.setAttribute( 'uv', new BufferAttribute( uvs, 2 ).copyVector2sArray( geometry.uvs ) );
 
 			}
 
 			if ( geometry.uvs2.length > 0 ) {
 
-				const uvs2 = new Float32Array( geometry.uvs2.length * 2 );
+				var uvs2 = new Float32Array( geometry.uvs2.length * 2 );
 				this.setAttribute( 'uv2', new BufferAttribute( uvs2, 2 ).copyVector2sArray( geometry.uvs2 ) );
 
 			}
@@ -10384,16 +10412,16 @@
 
 			// morphs
 
-			for ( const name in geometry.morphTargets ) {
+			for ( var name in geometry.morphTargets ) {
 
-				const array = [];
-				const morphTargets = geometry.morphTargets[ name ];
+				var array = [];
+				var morphTargets = geometry.morphTargets[ name ];
 
-				for ( let i = 0, l = morphTargets.length; i < l; i ++ ) {
+				for ( var i = 0, l = morphTargets.length; i < l; i ++ ) {
 
-					const morphTarget = morphTargets[ i ];
+					var morphTarget = morphTargets[ i ];
 
-					const attribute = new Float32BufferAttribute( morphTarget.data.length * 3, 3 );
+					var attribute = new Float32BufferAttribute( morphTarget.data.length * 3, 3 );
 					attribute.name = morphTarget.name;
 
 					array.push( attribute.copyVector3sArray( morphTarget.data ) );
@@ -10408,14 +10436,14 @@
 
 			if ( geometry.skinIndices.length > 0 ) {
 
-				const skinIndices = new Float32BufferAttribute( geometry.skinIndices.length * 4, 4 );
+				var skinIndices = new Float32BufferAttribute( geometry.skinIndices.length * 4, 4 );
 				this.setAttribute( 'skinIndex', skinIndices.copyVector4sArray( geometry.skinIndices ) );
 
 			}
 
 			if ( geometry.skinWeights.length > 0 ) {
 
-				const skinWeights = new Float32BufferAttribute( geometry.skinWeights.length * 4, 4 );
+				var skinWeights = new Float32BufferAttribute( geometry.skinWeights.length * 4, 4 );
 				this.setAttribute( 'skinWeight', skinWeights.copyVector4sArray( geometry.skinWeights ) );
 
 			}
@@ -10446,8 +10474,8 @@
 
 			}
 
-			const position = this.attributes.position;
-			const morphAttributesPosition = this.morphAttributes.position;
+			var position = this.attributes.position;
+			var morphAttributesPosition = this.morphAttributes.position;
 
 			if ( position !== undefined ) {
 
@@ -10457,9 +10485,9 @@
 
 				if ( morphAttributesPosition ) {
 
-					for ( let i = 0, il = morphAttributesPosition.length; i < il; i ++ ) {
+					for ( var i = 0, il = morphAttributesPosition.length; i < il; i ++ ) {
 
-						const morphAttribute = morphAttributesPosition[ i ];
+						var morphAttribute = morphAttributesPosition[ i ];
 						_box$2.setFromBufferAttribute( morphAttribute );
 
 						if ( this.morphTargetsRelative ) {
@@ -10503,14 +10531,14 @@
 
 			}
 
-			const position = this.attributes.position;
-			const morphAttributesPosition = this.morphAttributes.position;
+			var position = this.attributes.position;
+			var morphAttributesPosition = this.morphAttributes.position;
 
 			if ( position ) {
 
 				// first, find the center of the bounding sphere
 
-				const center = this.boundingSphere.center;
+				var center = this.boundingSphere.center;
 
 				_box$2.setFromBufferAttribute( position );
 
@@ -10518,9 +10546,9 @@
 
 				if ( morphAttributesPosition ) {
 
-					for ( let i = 0, il = morphAttributesPosition.length; i < il; i ++ ) {
+					for ( var i = 0, il = morphAttributesPosition.length; i < il; i ++ ) {
 
-						const morphAttribute = morphAttributesPosition[ i ];
+						var morphAttribute = morphAttributesPosition[ i ];
 						_boxMorphTargets.setFromBufferAttribute( morphAttribute );
 
 						if ( this.morphTargetsRelative ) {
@@ -10547,11 +10575,11 @@
 				// second, try to find a boundingSphere with a radius smaller than the
 				// boundingSphere of the boundingBox: sqrt(3) smaller in the best case
 
-				let maxRadiusSq = 0;
+				var maxRadiusSq = 0;
 
-				for ( let i = 0, il = position.count; i < il; i ++ ) {
+				for ( var i$1 = 0, il$1 = position.count; i$1 < il$1; i$1 ++ ) {
 
-					_vector$4.fromBufferAttribute( position, i );
+					_vector$4.fromBufferAttribute( position, i$1 );
 
 					maxRadiusSq = Math.max( maxRadiusSq, center.distanceToSquared( _vector$4 ) );
 
@@ -10561,14 +10589,14 @@
 
 				if ( morphAttributesPosition ) {
 
-					for ( let i = 0, il = morphAttributesPosition.length; i < il; i ++ ) {
+					for ( var i$2 = 0, il$2 = morphAttributesPosition.length; i$2 < il$2; i$2 ++ ) {
 
-						const morphAttribute = morphAttributesPosition[ i ];
-						const morphTargetsRelative = this.morphTargetsRelative;
+						var morphAttribute$1 = morphAttributesPosition[ i$2 ];
+						var morphTargetsRelative = this.morphTargetsRelative;
 
-						for ( let j = 0, jl = morphAttribute.count; j < jl; j ++ ) {
+						for ( var j = 0, jl = morphAttribute$1.count; j < jl; j ++ ) {
 
-							_vector$4.fromBufferAttribute( morphAttribute, j );
+							_vector$4.fromBufferAttribute( morphAttribute$1, j );
 
 							if ( morphTargetsRelative ) {
 
@@ -10605,12 +10633,12 @@
 
 		computeVertexNormals: function () {
 
-			const index = this.index;
-			const positionAttribute = this.getAttribute( 'position' );
+			var index = this.index;
+			var positionAttribute = this.getAttribute( 'position' );
 
 			if ( positionAttribute !== undefined ) {
 
-				let normalAttribute = this.getAttribute( 'normal' );
+				var normalAttribute = this.getAttribute( 'normal' );
 
 				if ( normalAttribute === undefined ) {
 
@@ -10621,7 +10649,7 @@
 
 					// reset existing normals to zero
 
-					for ( let i = 0, il = normalAttribute.count; i < il; i ++ ) {
+					for ( var i = 0, il = normalAttribute.count; i < il; i ++ ) {
 
 						normalAttribute.setXYZ( i, 0, 0, 0 );
 
@@ -10629,19 +10657,19 @@
 
 				}
 
-				const pA = new Vector3(), pB = new Vector3(), pC = new Vector3();
-				const nA = new Vector3(), nB = new Vector3(), nC = new Vector3();
-				const cb = new Vector3(), ab = new Vector3();
+				var pA = new Vector3(), pB = new Vector3(), pC = new Vector3();
+				var nA = new Vector3(), nB = new Vector3(), nC = new Vector3();
+				var cb = new Vector3(), ab = new Vector3();
 
 				// indexed elements
 
 				if ( index ) {
 
-					for ( let i = 0, il = index.count; i < il; i += 3 ) {
+					for ( var i$1 = 0, il$1 = index.count; i$1 < il$1; i$1 += 3 ) {
 
-						const vA = index.getX( i + 0 );
-						const vB = index.getX( i + 1 );
-						const vC = index.getX( i + 2 );
+						var vA = index.getX( i$1 + 0 );
+						var vB = index.getX( i$1 + 1 );
+						var vC = index.getX( i$1 + 2 );
 
 						pA.fromBufferAttribute( positionAttribute, vA );
 						pB.fromBufferAttribute( positionAttribute, vB );
@@ -10669,19 +10697,19 @@
 
 					// non-indexed elements (unconnected triangle soup)
 
-					for ( let i = 0, il = positionAttribute.count; i < il; i += 3 ) {
+					for ( var i$2 = 0, il$2 = positionAttribute.count; i$2 < il$2; i$2 += 3 ) {
 
-						pA.fromBufferAttribute( positionAttribute, i + 0 );
-						pB.fromBufferAttribute( positionAttribute, i + 1 );
-						pC.fromBufferAttribute( positionAttribute, i + 2 );
+						pA.fromBufferAttribute( positionAttribute, i$2 + 0 );
+						pB.fromBufferAttribute( positionAttribute, i$2 + 1 );
+						pC.fromBufferAttribute( positionAttribute, i$2 + 2 );
 
 						cb.subVectors( pC, pB );
 						ab.subVectors( pA, pB );
 						cb.cross( ab );
 
-						normalAttribute.setXYZ( i + 0, cb.x, cb.y, cb.z );
-						normalAttribute.setXYZ( i + 1, cb.x, cb.y, cb.z );
-						normalAttribute.setXYZ( i + 2, cb.x, cb.y, cb.z );
+						normalAttribute.setXYZ( i$2 + 0, cb.x, cb.y, cb.z );
+						normalAttribute.setXYZ( i$2 + 1, cb.x, cb.y, cb.z );
+						normalAttribute.setXYZ( i$2 + 2, cb.x, cb.y, cb.z );
 
 					}
 
@@ -10715,22 +10743,22 @@
 
 			}
 
-			const attributes = this.attributes;
+			var attributes = this.attributes;
 
-			for ( const key in attributes ) {
+			for ( var key in attributes ) {
 
-				if ( geometry.attributes[ key ] === undefined ) continue;
+				if ( geometry.attributes[ key ] === undefined ) { continue; }
 
-				const attribute1 = attributes[ key ];
-				const attributeArray1 = attribute1.array;
+				var attribute1 = attributes[ key ];
+				var attributeArray1 = attribute1.array;
 
-				const attribute2 = geometry.attributes[ key ];
-				const attributeArray2 = attribute2.array;
+				var attribute2 = geometry.attributes[ key ];
+				var attributeArray2 = attribute2.array;
 
-				const attributeOffset = attribute2.itemSize * offset;
-				const length = Math.min( attributeArray2.length, attributeArray1.length - attributeOffset );
+				var attributeOffset = attribute2.itemSize * offset;
+				var length = Math.min( attributeArray2.length, attributeArray1.length - attributeOffset );
 
-				for ( let i = 0, j = attributeOffset; i < length; i ++, j ++ ) {
+				for ( var i = 0, j = attributeOffset; i < length; i ++, j ++ ) {
 
 					attributeArray1[ j ] = attributeArray2[ i ];
 
@@ -10744,9 +10772,9 @@
 
 		normalizeNormals: function () {
 
-			const normals = this.attributes.normal;
+			var normals = this.attributes.normal;
 
-			for ( let i = 0, il = normals.count; i < il; i ++ ) {
+			for ( var i = 0, il = normals.count; i < il; i ++ ) {
 
 				_vector$4.fromBufferAttribute( normals, i );
 
@@ -10762,19 +10790,19 @@
 
 			function convertBufferAttribute( attribute, indices ) {
 
-				const array = attribute.array;
-				const itemSize = attribute.itemSize;
-				const normalized = attribute.normalized;
+				var array = attribute.array;
+				var itemSize = attribute.itemSize;
+				var normalized = attribute.normalized;
 
-				const array2 = new array.constructor( indices.length * itemSize );
+				var array2 = new array.constructor( indices.length * itemSize );
 
-				let index = 0, index2 = 0;
+				var index = 0, index2 = 0;
 
-				for ( let i = 0, l = indices.length; i < l; i ++ ) {
+				for ( var i = 0, l = indices.length; i < l; i ++ ) {
 
 					index = indices[ i ] * itemSize;
 
-					for ( let j = 0; j < itemSize; j ++ ) {
+					for ( var j = 0; j < itemSize; j ++ ) {
 
 						array2[ index2 ++ ] = array[ index ++ ];
 
@@ -10795,18 +10823,18 @@
 
 			}
 
-			const geometry2 = new BufferGeometry();
+			var geometry2 = new BufferGeometry();
 
-			const indices = this.index.array;
-			const attributes = this.attributes;
+			var indices = this.index.array;
+			var attributes = this.attributes;
 
 			// attributes
 
-			for ( const name in attributes ) {
+			for ( var name in attributes ) {
 
-				const attribute = attributes[ name ];
+				var attribute = attributes[ name ];
 
-				const newAttribute = convertBufferAttribute( attribute, indices );
+				var newAttribute = convertBufferAttribute( attribute, indices );
 
 				geometry2.setAttribute( name, newAttribute );
 
@@ -10814,24 +10842,24 @@
 
 			// morph attributes
 
-			const morphAttributes = this.morphAttributes;
+			var morphAttributes = this.morphAttributes;
 
-			for ( const name in morphAttributes ) {
+			for ( var name$1 in morphAttributes ) {
 
-				const morphArray = [];
-				const morphAttribute = morphAttributes[ name ]; // morphAttribute: array of Float32BufferAttributes
+				var morphArray = [];
+				var morphAttribute = morphAttributes[ name$1 ]; // morphAttribute: array of Float32BufferAttributes
 
-				for ( let i = 0, il = morphAttribute.length; i < il; i ++ ) {
+				for ( var i = 0, il = morphAttribute.length; i < il; i ++ ) {
 
-					const attribute = morphAttribute[ i ];
+					var attribute$1 = morphAttribute[ i ];
 
-					const newAttribute = convertBufferAttribute( attribute, indices );
+					var newAttribute$1 = convertBufferAttribute( attribute$1, indices );
 
-					morphArray.push( newAttribute );
+					morphArray.push( newAttribute$1 );
 
 				}
 
-				geometry2.morphAttributes[ name ] = morphArray;
+				geometry2.morphAttributes[ name$1 ] = morphArray;
 
 			}
 
@@ -10839,11 +10867,11 @@
 
 			// groups
 
-			const groups = this.groups;
+			var groups = this.groups;
 
-			for ( let i = 0, l = groups.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l = groups.length; i$1 < l; i$1 ++ ) {
 
-				const group = groups[ i ];
+				var group = groups[ i$1 ];
 				geometry2.addGroup( group.start, group.count, group.materialIndex );
 
 			}
@@ -10854,7 +10882,7 @@
 
 		toJSON: function () {
 
-			const data = {
+			var data = {
 				metadata: {
 					version: 4.5,
 					type: 'BufferGeometry',
@@ -10866,16 +10894,16 @@
 
 			data.uuid = this.uuid;
 			data.type = this.type;
-			if ( this.name !== '' ) data.name = this.name;
-			if ( Object.keys( this.userData ).length > 0 ) data.userData = this.userData;
+			if ( this.name !== '' ) { data.name = this.name; }
+			if ( Object.keys( this.userData ).length > 0 ) { data.userData = this.userData; }
 
 			if ( this.parameters !== undefined ) {
 
-				const parameters = this.parameters;
+				var parameters = this.parameters;
 
-				for ( const key in parameters ) {
+				for ( var key in parameters ) {
 
-					if ( parameters[ key ] !== undefined ) data[ key ] = parameters[ key ];
+					if ( parameters[ key ] !== undefined ) { data[ key ] = parameters[ key ]; }
 
 				}
 
@@ -10885,7 +10913,7 @@
 
 			data.data = { attributes: {} };
 
-			const index = this.index;
+			var index = this.index;
 
 			if ( index !== null ) {
 
@@ -10896,44 +10924,44 @@
 
 			}
 
-			const attributes = this.attributes;
+			var attributes = this.attributes;
 
-			for ( const key in attributes ) {
+			for ( var key$1 in attributes ) {
 
-				const attribute = attributes[ key ];
+				var attribute = attributes[ key$1 ];
 
-				const attributeData = attribute.toJSON( data.data );
+				var attributeData = attribute.toJSON( data.data );
 
-				if ( attribute.name !== '' ) attributeData.name = attribute.name;
+				if ( attribute.name !== '' ) { attributeData.name = attribute.name; }
 
-				data.data.attributes[ key ] = attributeData;
+				data.data.attributes[ key$1 ] = attributeData;
 
 			}
 
-			const morphAttributes = {};
-			let hasMorphAttributes = false;
+			var morphAttributes = {};
+			var hasMorphAttributes = false;
 
-			for ( const key in this.morphAttributes ) {
+			for ( var key$2 in this.morphAttributes ) {
 
-				const attributeArray = this.morphAttributes[ key ];
+				var attributeArray = this.morphAttributes[ key$2 ];
 
-				const array = [];
+				var array = [];
 
-				for ( let i = 0, il = attributeArray.length; i < il; i ++ ) {
+				for ( var i = 0, il = attributeArray.length; i < il; i ++ ) {
 
-					const attribute = attributeArray[ i ];
+					var attribute$1 = attributeArray[ i ];
 
-					const attributeData = attribute.toJSON( data.data );
+					var attributeData$1 = attribute$1.toJSON( data.data );
 
-					if ( attribute.name !== '' ) attributeData.name = attribute.name;
+					if ( attribute$1.name !== '' ) { attributeData$1.name = attribute$1.name; }
 
-					array.push( attributeData );
+					array.push( attributeData$1 );
 
 				}
 
 				if ( array.length > 0 ) {
 
-					morphAttributes[ key ] = array;
+					morphAttributes[ key$2 ] = array;
 
 					hasMorphAttributes = true;
 
@@ -10948,7 +10976,7 @@
 
 			}
 
-			const groups = this.groups;
+			var groups = this.groups;
 
 			if ( groups.length > 0 ) {
 
@@ -10956,7 +10984,7 @@
 
 			}
 
-			const boundingSphere = this.boundingSphere;
+			var boundingSphere = this.boundingSphere;
 
 			if ( boundingSphere !== null ) {
 
@@ -11014,7 +11042,7 @@
 
 			// used for storing cloned, shared data
 
-			const data = {};
+			var data = {};
 
 			// name
 
@@ -11022,7 +11050,7 @@
 
 			// index
 
-			const index = source.index;
+			var index = source.index;
 
 			if ( index !== null ) {
 
@@ -11032,31 +11060,31 @@
 
 			// attributes
 
-			const attributes = source.attributes;
+			var attributes = source.attributes;
 
-			for ( const name in attributes ) {
+			for ( var name in attributes ) {
 
-				const attribute = attributes[ name ];
+				var attribute = attributes[ name ];
 				this.setAttribute( name, attribute.clone( data ) );
 
 			}
 
 			// morph attributes
 
-			const morphAttributes = source.morphAttributes;
+			var morphAttributes = source.morphAttributes;
 
-			for ( const name in morphAttributes ) {
+			for ( var name$1 in morphAttributes ) {
 
-				const array = [];
-				const morphAttribute = morphAttributes[ name ]; // morphAttribute: array of Float32BufferAttributes
+				var array = [];
+				var morphAttribute = morphAttributes[ name$1 ]; // morphAttribute: array of Float32BufferAttributes
 
-				for ( let i = 0, l = morphAttribute.length; i < l; i ++ ) {
+				for ( var i = 0, l = morphAttribute.length; i < l; i ++ ) {
 
 					array.push( morphAttribute[ i ].clone( data ) );
 
 				}
 
-				this.morphAttributes[ name ] = array;
+				this.morphAttributes[ name$1 ] = array;
 
 			}
 
@@ -11064,18 +11092,18 @@
 
 			// groups
 
-			const groups = source.groups;
+			var groups = source.groups;
 
-			for ( let i = 0, l = groups.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l$1 = groups.length; i$1 < l$1; i$1 ++ ) {
 
-				const group = groups[ i ];
+				var group = groups[ i$1 ];
 				this.addGroup( group.start, group.count, group.materialIndex );
 
 			}
 
 			// bounding box
 
-			const boundingBox = source.boundingBox;
+			var boundingBox = source.boundingBox;
 
 			if ( boundingBox !== null ) {
 
@@ -11085,7 +11113,7 @@
 
 			// bounding sphere
 
-			const boundingSphere = source.boundingSphere;
+			var boundingSphere = source.boundingSphere;
 
 			if ( boundingSphere !== null ) {
 
@@ -11114,28 +11142,28 @@
 
 	} );
 
-	const _inverseMatrix = new Matrix4();
-	const _ray = new Ray();
-	const _sphere = new Sphere();
+	var _inverseMatrix = new Matrix4();
+	var _ray = new Ray();
+	var _sphere = new Sphere();
 
-	const _vA = new Vector3();
-	const _vB = new Vector3();
-	const _vC = new Vector3();
+	var _vA = new Vector3();
+	var _vB = new Vector3();
+	var _vC = new Vector3();
 
-	const _tempA = new Vector3();
-	const _tempB = new Vector3();
-	const _tempC = new Vector3();
+	var _tempA = new Vector3();
+	var _tempB = new Vector3();
+	var _tempC = new Vector3();
 
-	const _morphA = new Vector3();
-	const _morphB = new Vector3();
-	const _morphC = new Vector3();
+	var _morphA = new Vector3();
+	var _morphB = new Vector3();
+	var _morphC = new Vector3();
 
-	const _uvA = new Vector2();
-	const _uvB = new Vector2();
-	const _uvC = new Vector2();
+	var _uvA = new Vector2();
+	var _uvB = new Vector2();
+	var _uvC = new Vector2();
 
-	const _intersectionPoint = new Vector3();
-	const _intersectionPointWorld = new Vector3();
+	var _intersectionPoint = new Vector3();
+	var _intersectionPointWorld = new Vector3();
 
 	function Mesh( geometry, material ) {
 
@@ -11181,25 +11209,25 @@
 
 		updateMorphTargets: function () {
 
-			const geometry = this.geometry;
+			var geometry = this.geometry;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const morphAttributes = geometry.morphAttributes;
-				const keys = Object.keys( morphAttributes );
+				var morphAttributes = geometry.morphAttributes;
+				var keys = Object.keys( morphAttributes );
 
 				if ( keys.length > 0 ) {
 
-					const morphAttribute = morphAttributes[ keys[ 0 ] ];
+					var morphAttribute = morphAttributes[ keys[ 0 ] ];
 
 					if ( morphAttribute !== undefined ) {
 
 						this.morphTargetInfluences = [];
 						this.morphTargetDictionary = {};
 
-						for ( let m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
+						for ( var m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
 
-							const name = morphAttribute[ m ].name || String( m );
+							var name = morphAttribute[ m ].name || String( m );
 
 							this.morphTargetInfluences.push( 0 );
 							this.morphTargetDictionary[ name ] = m;
@@ -11212,7 +11240,7 @@
 
 			} else {
 
-				const morphTargets = geometry.morphTargets;
+				var morphTargets = geometry.morphTargets;
 
 				if ( morphTargets !== undefined && morphTargets.length > 0 ) {
 
@@ -11226,20 +11254,20 @@
 
 		raycast: function ( raycaster, intersects ) {
 
-			const geometry = this.geometry;
-			const material = this.material;
-			const matrixWorld = this.matrixWorld;
+			var geometry = this.geometry;
+			var material = this.material;
+			var matrixWorld = this.matrixWorld;
 
-			if ( material === undefined ) return;
+			if ( material === undefined ) { return; }
 
 			// Checking boundingSphere distance to ray
 
-			if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
+			if ( geometry.boundingSphere === null ) { geometry.computeBoundingSphere(); }
 
 			_sphere.copy( geometry.boundingSphere );
 			_sphere.applyMatrix4( matrixWorld );
 
-			if ( raycaster.ray.intersectsSphere( _sphere ) === false ) return;
+			if ( raycaster.ray.intersectsSphere( _sphere ) === false ) { return; }
 
 			//
 
@@ -11250,22 +11278,22 @@
 
 			if ( geometry.boundingBox !== null ) {
 
-				if ( _ray.intersectsBox( geometry.boundingBox ) === false ) return;
+				if ( _ray.intersectsBox( geometry.boundingBox ) === false ) { return; }
 
 			}
 
-			let intersection;
+			var intersection;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const index = geometry.index;
-				const position = geometry.attributes.position;
-				const morphPosition = geometry.morphAttributes.position;
-				const morphTargetsRelative = geometry.morphTargetsRelative;
-				const uv = geometry.attributes.uv;
-				const uv2 = geometry.attributes.uv2;
-				const groups = geometry.groups;
-				const drawRange = geometry.drawRange;
+				var index = geometry.index;
+				var position = geometry.attributes.position;
+				var morphPosition = geometry.morphAttributes.position;
+				var morphTargetsRelative = geometry.morphTargetsRelative;
+				var uv = geometry.attributes.uv;
+				var uv2 = geometry.attributes.uv2;
+				var groups = geometry.groups;
+				var drawRange = geometry.drawRange;
 
 				if ( index !== null ) {
 
@@ -11273,19 +11301,19 @@
 
 					if ( Array.isArray( material ) ) {
 
-						for ( let i = 0, il = groups.length; i < il; i ++ ) {
+						for ( var i = 0, il = groups.length; i < il; i ++ ) {
 
-							const group = groups[ i ];
-							const groupMaterial = material[ group.materialIndex ];
+							var group = groups[ i ];
+							var groupMaterial = material[ group.materialIndex ];
 
-							const start = Math.max( group.start, drawRange.start );
-							const end = Math.min( ( group.start + group.count ), ( drawRange.start + drawRange.count ) );
+							var start = Math.max( group.start, drawRange.start );
+							var end = Math.min( ( group.start + group.count ), ( drawRange.start + drawRange.count ) );
 
-							for ( let j = start, jl = end; j < jl; j += 3 ) {
+							for ( var j = start, jl = end; j < jl; j += 3 ) {
 
-								const a = index.getX( j );
-								const b = index.getX( j + 1 );
-								const c = index.getX( j + 2 );
+								var a = index.getX( j );
+								var b = index.getX( j + 1 );
+								var c = index.getX( j + 2 );
 
 								intersection = checkBufferGeometryIntersection( this, groupMaterial, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a, b, c );
 
@@ -11303,20 +11331,20 @@
 
 					} else {
 
-						const start = Math.max( 0, drawRange.start );
-						const end = Math.min( index.count, ( drawRange.start + drawRange.count ) );
+						var start$1 = Math.max( 0, drawRange.start );
+						var end$1 = Math.min( index.count, ( drawRange.start + drawRange.count ) );
 
-						for ( let i = start, il = end; i < il; i += 3 ) {
+						for ( var i$1 = start$1, il$1 = end$1; i$1 < il$1; i$1 += 3 ) {
 
-							const a = index.getX( i );
-							const b = index.getX( i + 1 );
-							const c = index.getX( i + 2 );
+							var a$1 = index.getX( i$1 );
+							var b$1 = index.getX( i$1 + 1 );
+							var c$1 = index.getX( i$1 + 2 );
 
-							intersection = checkBufferGeometryIntersection( this, material, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a, b, c );
+							intersection = checkBufferGeometryIntersection( this, material, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a$1, b$1, c$1 );
 
 							if ( intersection ) {
 
-								intersection.faceIndex = Math.floor( i / 3 ); // triangle number in indexed buffer semantics
+								intersection.faceIndex = Math.floor( i$1 / 3 ); // triangle number in indexed buffer semantics
 								intersects.push( intersection );
 
 							}
@@ -11331,26 +11359,26 @@
 
 					if ( Array.isArray( material ) ) {
 
-						for ( let i = 0, il = groups.length; i < il; i ++ ) {
+						for ( var i$2 = 0, il$2 = groups.length; i$2 < il$2; i$2 ++ ) {
 
-							const group = groups[ i ];
-							const groupMaterial = material[ group.materialIndex ];
+							var group$1 = groups[ i$2 ];
+							var groupMaterial$1 = material[ group$1.materialIndex ];
 
-							const start = Math.max( group.start, drawRange.start );
-							const end = Math.min( ( group.start + group.count ), ( drawRange.start + drawRange.count ) );
+							var start$2 = Math.max( group$1.start, drawRange.start );
+							var end$2 = Math.min( ( group$1.start + group$1.count ), ( drawRange.start + drawRange.count ) );
 
-							for ( let j = start, jl = end; j < jl; j += 3 ) {
+							for ( var j$1 = start$2, jl$1 = end$2; j$1 < jl$1; j$1 += 3 ) {
 
-								const a = j;
-								const b = j + 1;
-								const c = j + 2;
+								var a$2 = j$1;
+								var b$2 = j$1 + 1;
+								var c$2 = j$1 + 2;
 
-								intersection = checkBufferGeometryIntersection( this, groupMaterial, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a, b, c );
+								intersection = checkBufferGeometryIntersection( this, groupMaterial$1, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a$2, b$2, c$2 );
 
 								if ( intersection ) {
 
-									intersection.faceIndex = Math.floor( j / 3 ); // triangle number in non-indexed buffer semantics
-									intersection.face.materialIndex = group.materialIndex;
+									intersection.faceIndex = Math.floor( j$1 / 3 ); // triangle number in non-indexed buffer semantics
+									intersection.face.materialIndex = group$1.materialIndex;
 									intersects.push( intersection );
 
 								}
@@ -11361,20 +11389,20 @@
 
 					} else {
 
-						const start = Math.max( 0, drawRange.start );
-						const end = Math.min( position.count, ( drawRange.start + drawRange.count ) );
+						var start$3 = Math.max( 0, drawRange.start );
+						var end$3 = Math.min( position.count, ( drawRange.start + drawRange.count ) );
 
-						for ( let i = start, il = end; i < il; i += 3 ) {
+						for ( var i$3 = start$3, il$3 = end$3; i$3 < il$3; i$3 += 3 ) {
 
-							const a = i;
-							const b = i + 1;
-							const c = i + 2;
+							var a$3 = i$3;
+							var b$3 = i$3 + 1;
+							var c$3 = i$3 + 2;
 
-							intersection = checkBufferGeometryIntersection( this, material, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a, b, c );
+							intersection = checkBufferGeometryIntersection( this, material, raycaster, _ray, position, morphPosition, morphTargetsRelative, uv, uv2, a$3, b$3, c$3 );
 
 							if ( intersection ) {
 
-								intersection.faceIndex = Math.floor( i / 3 ); // triangle number in non-indexed buffer semantics
+								intersection.faceIndex = Math.floor( i$3 / 3 ); // triangle number in non-indexed buffer semantics
 								intersects.push( intersection );
 
 							}
@@ -11387,25 +11415,25 @@
 
 			} else if ( geometry.isGeometry ) {
 
-				const isMultiMaterial = Array.isArray( material );
+				var isMultiMaterial = Array.isArray( material );
 
-				const vertices = geometry.vertices;
-				const faces = geometry.faces;
-				let uvs;
+				var vertices = geometry.vertices;
+				var faces = geometry.faces;
+				var uvs;
 
-				const faceVertexUvs = geometry.faceVertexUvs[ 0 ];
-				if ( faceVertexUvs.length > 0 ) uvs = faceVertexUvs;
+				var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
+				if ( faceVertexUvs.length > 0 ) { uvs = faceVertexUvs; }
 
-				for ( let f = 0, fl = faces.length; f < fl; f ++ ) {
+				for ( var f = 0, fl = faces.length; f < fl; f ++ ) {
 
-					const face = faces[ f ];
-					const faceMaterial = isMultiMaterial ? material[ face.materialIndex ] : material;
+					var face = faces[ f ];
+					var faceMaterial = isMultiMaterial ? material[ face.materialIndex ] : material;
 
-					if ( faceMaterial === undefined ) continue;
+					if ( faceMaterial === undefined ) { continue; }
 
-					const fvA = vertices[ face.a ];
-					const fvB = vertices[ face.b ];
-					const fvC = vertices[ face.c ];
+					var fvA = vertices[ face.a ];
+					var fvB = vertices[ face.b ];
+					var fvC = vertices[ face.c ];
 
 					intersection = checkIntersection( this, faceMaterial, raycaster, _ray, fvA, fvB, fvC, _intersectionPoint );
 
@@ -11413,7 +11441,7 @@
 
 						if ( uvs && uvs[ f ] ) {
 
-							const uvs_f = uvs[ f ];
+							var uvs_f = uvs[ f ];
 							_uvA.copy( uvs_f[ 0 ] );
 							_uvB.copy( uvs_f[ 1 ] );
 							_uvC.copy( uvs_f[ 2 ] );
@@ -11438,7 +11466,7 @@
 
 	function checkIntersection( object, material, raycaster, ray, pA, pB, pC, point ) {
 
-		let intersect;
+		var intersect;
 
 		if ( material.side === BackSide ) {
 
@@ -11450,14 +11478,14 @@
 
 		}
 
-		if ( intersect === null ) return null;
+		if ( intersect === null ) { return null; }
 
 		_intersectionPointWorld.copy( point );
 		_intersectionPointWorld.applyMatrix4( object.matrixWorld );
 
-		const distance = raycaster.ray.origin.distanceTo( _intersectionPointWorld );
+		var distance = raycaster.ray.origin.distanceTo( _intersectionPointWorld );
 
-		if ( distance < raycaster.near || distance > raycaster.far ) return null;
+		if ( distance < raycaster.near || distance > raycaster.far ) { return null; }
 
 		return {
 			distance: distance,
@@ -11473,7 +11501,7 @@
 		_vB.fromBufferAttribute( position, b );
 		_vC.fromBufferAttribute( position, c );
 
-		const morphInfluences = object.morphTargetInfluences;
+		var morphInfluences = object.morphTargetInfluences;
 
 		if ( material.morphTargets && morphPosition && morphInfluences ) {
 
@@ -11481,12 +11509,12 @@
 			_morphB.set( 0, 0, 0 );
 			_morphC.set( 0, 0, 0 );
 
-			for ( let i = 0, il = morphPosition.length; i < il; i ++ ) {
+			for ( var i = 0, il = morphPosition.length; i < il; i ++ ) {
 
-				const influence = morphInfluences[ i ];
-				const morphAttribute = morphPosition[ i ];
+				var influence = morphInfluences[ i ];
+				var morphAttribute = morphPosition[ i ];
 
-				if ( influence === 0 ) continue;
+				if ( influence === 0 ) { continue; }
 
 				_tempA.fromBufferAttribute( morphAttribute, a );
 				_tempB.fromBufferAttribute( morphAttribute, b );
@@ -11522,7 +11550,7 @@
 
 		}
 
-		const intersection = checkIntersection( object, material, raycaster, ray, _vA, _vB, _vC, _intersectionPoint );
+		var intersection = checkIntersection( object, material, raycaster, ray, _vA, _vB, _vC, _intersectionPoint );
 
 		if ( intersection ) {
 
@@ -11546,7 +11574,7 @@
 
 			}
 
-			const face = new Face3( a, b, c );
+			var face = new Face3( a, b, c );
 			Triangle.getNormal( _vA, _vB, _vC, face.normal );
 
 			intersection.face = face;
@@ -11557,10 +11585,10 @@
 
 	}
 
-	let _geometryId = 0; // Geometry uses even numbers as Id
-	const _m1$3 = new Matrix4();
-	const _obj$1 = new Object3D();
-	const _offset$1 = new Vector3();
+	var _geometryId = 0; // Geometry uses even numbers as Id
+	var _m1$3 = new Matrix4();
+	var _obj$1 = new Object3D();
+	var _offset$1 = new Vector3();
 
 	function Geometry() {
 
@@ -11607,21 +11635,21 @@
 
 		applyMatrix4: function ( matrix ) {
 
-			const normalMatrix = new Matrix3().getNormalMatrix( matrix );
+			var normalMatrix = new Matrix3().getNormalMatrix( matrix );
 
-			for ( let i = 0, il = this.vertices.length; i < il; i ++ ) {
+			for ( var i = 0, il = this.vertices.length; i < il; i ++ ) {
 
-				const vertex = this.vertices[ i ];
+				var vertex = this.vertices[ i ];
 				vertex.applyMatrix4( matrix );
 
 			}
 
-			for ( let i = 0, il = this.faces.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = this.faces.length; i$1 < il$1; i$1 ++ ) {
 
-				const face = this.faces[ i ];
+				var face = this.faces[ i$1 ];
 				face.normal.applyMatrix3( normalMatrix ).normalize();
 
-				for ( let j = 0, jl = face.vertexNormals.length; j < jl; j ++ ) {
+				for ( var j = 0, jl = face.vertexNormals.length; j < jl; j ++ ) {
 
 					face.vertexNormals[ j ].applyMatrix3( normalMatrix ).normalize();
 
@@ -11722,10 +11750,10 @@
 
 		fromBufferGeometry: function ( geometry ) {
 
-			const scope = this;
+			var scope = this;
 
-			const index = geometry.index !== null ? geometry.index : undefined;
-			const attributes = geometry.attributes;
+			var index = geometry.index !== null ? geometry.index : undefined;
+			var attributes = geometry.attributes;
 
 			if ( attributes.position === undefined ) {
 
@@ -11734,15 +11762,15 @@
 
 			}
 
-			const position = attributes.position;
-			const normal = attributes.normal;
-			const color = attributes.color;
-			const uv = attributes.uv;
-			const uv2 = attributes.uv2;
+			var position = attributes.position;
+			var normal = attributes.normal;
+			var color = attributes.color;
+			var uv = attributes.uv;
+			var uv2 = attributes.uv2;
 
-			if ( uv2 !== undefined ) this.faceVertexUvs[ 1 ] = [];
+			if ( uv2 !== undefined ) { this.faceVertexUvs[ 1 ] = []; }
 
-			for ( let i = 0; i < position.count; i ++ ) {
+			for ( var i = 0; i < position.count; i ++ ) {
 
 				scope.vertices.push( new Vector3().fromBufferAttribute( position, i ) );
 
@@ -11756,19 +11784,19 @@
 
 			function addFace( a, b, c, materialIndex ) {
 
-				const vertexColors = ( color === undefined ) ? [] : [
+				var vertexColors = ( color === undefined ) ? [] : [
 					scope.colors[ a ].clone(),
 					scope.colors[ b ].clone(),
 					scope.colors[ c ].clone()
 				];
 
-				const vertexNormals = ( normal === undefined ) ? [] : [
+				var vertexNormals = ( normal === undefined ) ? [] : [
 					new Vector3().fromBufferAttribute( normal, a ),
 					new Vector3().fromBufferAttribute( normal, b ),
 					new Vector3().fromBufferAttribute( normal, c )
 				];
 
-				const face = new Face3( a, b, c, vertexNormals, vertexColors, materialIndex );
+				var face = new Face3( a, b, c, vertexNormals, vertexColors, materialIndex );
 
 				scope.faces.push( face );
 
@@ -11794,18 +11822,18 @@
 
 			}
 
-			const groups = geometry.groups;
+			var groups = geometry.groups;
 
 			if ( groups.length > 0 ) {
 
-				for ( let i = 0; i < groups.length; i ++ ) {
+				for ( var i$1 = 0; i$1 < groups.length; i$1 ++ ) {
 
-					const group = groups[ i ];
+					var group = groups[ i$1 ];
 
-					const start = group.start;
-					const count = group.count;
+					var start = group.start;
+					var count = group.count;
 
-					for ( let j = start, jl = start + count; j < jl; j += 3 ) {
+					for ( var j = start, jl = start + count; j < jl; j += 3 ) {
 
 						if ( index !== undefined ) {
 
@@ -11825,17 +11853,17 @@
 
 				if ( index !== undefined ) {
 
-					for ( let i = 0; i < index.count; i += 3 ) {
+					for ( var i$2 = 0; i$2 < index.count; i$2 += 3 ) {
 
-						addFace( index.getX( i ), index.getX( i + 1 ), index.getX( i + 2 ) );
+						addFace( index.getX( i$2 ), index.getX( i$2 + 1 ), index.getX( i$2 + 2 ) );
 
 					}
 
 				} else {
 
-					for ( let i = 0; i < position.count; i += 3 ) {
+					for ( var i$3 = 0; i$3 < position.count; i$3 += 3 ) {
 
-						addFace( i, i + 1, i + 2 );
+						addFace( i$3, i$3 + 1, i$3 + 2 );
 
 					}
 
@@ -11877,12 +11905,12 @@
 
 			this.computeBoundingSphere();
 
-			const center = this.boundingSphere.center;
-			const radius = this.boundingSphere.radius;
+			var center = this.boundingSphere.center;
+			var radius = this.boundingSphere.radius;
 
-			const s = radius === 0 ? 1 : 1.0 / radius;
+			var s = radius === 0 ? 1 : 1.0 / radius;
 
-			const matrix = new Matrix4();
+			var matrix = new Matrix4();
 			matrix.set(
 				s, 0, 0, - s * center.x,
 				0, s, 0, - s * center.y,
@@ -11898,15 +11926,15 @@
 
 		computeFaceNormals: function () {
 
-			const cb = new Vector3(), ab = new Vector3();
+			var cb = new Vector3(), ab = new Vector3();
 
-			for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+			for ( var f = 0, fl = this.faces.length; f < fl; f ++ ) {
 
-				const face = this.faces[ f ];
+				var face = this.faces[ f ];
 
-				const vA = this.vertices[ face.a ];
-				const vB = this.vertices[ face.b ];
-				const vC = this.vertices[ face.c ];
+				var vA = this.vertices[ face.a ];
+				var vB = this.vertices[ face.b ];
+				var vC = this.vertices[ face.c ];
 
 				cb.subVectors( vC, vB );
 				ab.subVectors( vA, vB );
@@ -11922,11 +11950,11 @@
 
 		computeVertexNormals: function ( areaWeighted ) {
 
-			if ( areaWeighted === undefined ) areaWeighted = true;
+			if ( areaWeighted === undefined ) { areaWeighted = true; }
 
-			const vertices = new Array( this.vertices.length );
+			var vertices = new Array( this.vertices.length );
 
-			for ( let v = 0, vl = this.vertices.length; v < vl; v ++ ) {
+			for ( var v = 0, vl = this.vertices.length; v < vl; v ++ ) {
 
 				vertices[ v ] = new Vector3();
 
@@ -11937,15 +11965,15 @@
 				// vertex normals weighted by triangle areas
 				// http://www.iquilezles.org/www/articles/normals/normals.htm
 
-				const cb = new Vector3(), ab = new Vector3();
+				var cb = new Vector3(), ab = new Vector3();
 
-				for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+				for ( var f = 0, fl = this.faces.length; f < fl; f ++ ) {
 
-					const face = this.faces[ f ];
+					var face = this.faces[ f ];
 
-					const vA = this.vertices[ face.a ];
-					const vB = this.vertices[ face.b ];
-					const vC = this.vertices[ face.c ];
+					var vA = this.vertices[ face.a ];
+					var vB = this.vertices[ face.b ];
+					var vC = this.vertices[ face.c ];
 
 					cb.subVectors( vC, vB );
 					ab.subVectors( vA, vB );
@@ -11961,41 +11989,41 @@
 
 				this.computeFaceNormals();
 
-				for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+				for ( var f$1 = 0, fl$1 = this.faces.length; f$1 < fl$1; f$1 ++ ) {
 
-					const face = this.faces[ f ];
+					var face$1 = this.faces[ f$1 ];
 
-					vertices[ face.a ].add( face.normal );
-					vertices[ face.b ].add( face.normal );
-					vertices[ face.c ].add( face.normal );
+					vertices[ face$1.a ].add( face$1.normal );
+					vertices[ face$1.b ].add( face$1.normal );
+					vertices[ face$1.c ].add( face$1.normal );
 
 				}
 
 			}
 
-			for ( let v = 0, vl = this.vertices.length; v < vl; v ++ ) {
+			for ( var v$1 = 0, vl$1 = this.vertices.length; v$1 < vl$1; v$1 ++ ) {
 
-				vertices[ v ].normalize();
+				vertices[ v$1 ].normalize();
 
 			}
 
-			for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+			for ( var f$2 = 0, fl$2 = this.faces.length; f$2 < fl$2; f$2 ++ ) {
 
-				const face = this.faces[ f ];
+				var face$2 = this.faces[ f$2 ];
 
-				const vertexNormals = face.vertexNormals;
+				var vertexNormals = face$2.vertexNormals;
 
 				if ( vertexNormals.length === 3 ) {
 
-					vertexNormals[ 0 ].copy( vertices[ face.a ] );
-					vertexNormals[ 1 ].copy( vertices[ face.b ] );
-					vertexNormals[ 2 ].copy( vertices[ face.c ] );
+					vertexNormals[ 0 ].copy( vertices[ face$2.a ] );
+					vertexNormals[ 1 ].copy( vertices[ face$2.b ] );
+					vertexNormals[ 2 ].copy( vertices[ face$2.c ] );
 
 				} else {
 
-					vertexNormals[ 0 ] = vertices[ face.a ].clone();
-					vertexNormals[ 1 ] = vertices[ face.b ].clone();
-					vertexNormals[ 2 ] = vertices[ face.c ].clone();
+					vertexNormals[ 0 ] = vertices[ face$2.a ].clone();
+					vertexNormals[ 1 ] = vertices[ face$2.b ].clone();
+					vertexNormals[ 2 ] = vertices[ face$2.c ].clone();
 
 				}
 
@@ -12013,11 +12041,11 @@
 
 			this.computeFaceNormals();
 
-			for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+			for ( var f = 0, fl = this.faces.length; f < fl; f ++ ) {
 
-				const face = this.faces[ f ];
+				var face = this.faces[ f ];
 
-				const vertexNormals = face.vertexNormals;
+				var vertexNormals = face.vertexNormals;
 
 				if ( vertexNormals.length === 3 ) {
 
@@ -12049,9 +12077,9 @@
 			// - create temp variables on first access
 			//   otherwise just copy (for faster repeated calls)
 
-			for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+			for ( var f = 0, fl = this.faces.length; f < fl; f ++ ) {
 
-				const face = this.faces[ f ];
+				var face = this.faces[ f ];
 
 				if ( ! face.__originalFaceNormal ) {
 
@@ -12063,9 +12091,9 @@
 
 				}
 
-				if ( ! face.__originalVertexNormals ) face.__originalVertexNormals = [];
+				if ( ! face.__originalVertexNormals ) { face.__originalVertexNormals = []; }
 
-				for ( let i = 0, il = face.vertexNormals.length; i < il; i ++ ) {
+				for ( var i = 0, il = face.vertexNormals.length; i < il; i ++ ) {
 
 					if ( ! face.__originalVertexNormals[ i ] ) {
 
@@ -12083,26 +12111,26 @@
 
 			// use temp geometry to compute face and vertex normals for each morph
 
-			const tmpGeo = new Geometry();
+			var tmpGeo = new Geometry();
 			tmpGeo.faces = this.faces;
 
-			for ( let i = 0, il = this.morphTargets.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = this.morphTargets.length; i$1 < il$1; i$1 ++ ) {
 
 				// create on first access
 
-				if ( ! this.morphNormals[ i ] ) {
+				if ( ! this.morphNormals[ i$1 ] ) {
 
-					this.morphNormals[ i ] = {};
-					this.morphNormals[ i ].faceNormals = [];
-					this.morphNormals[ i ].vertexNormals = [];
+					this.morphNormals[ i$1 ] = {};
+					this.morphNormals[ i$1 ].faceNormals = [];
+					this.morphNormals[ i$1 ].vertexNormals = [];
 
-					const dstNormalsFace = this.morphNormals[ i ].faceNormals;
-					const dstNormalsVertex = this.morphNormals[ i ].vertexNormals;
+					var dstNormalsFace = this.morphNormals[ i$1 ].faceNormals;
+					var dstNormalsVertex = this.morphNormals[ i$1 ].vertexNormals;
 
-					for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+					for ( var f$1 = 0, fl$1 = this.faces.length; f$1 < fl$1; f$1 ++ ) {
 
-						const faceNormal = new Vector3();
-						const vertexNormals = { a: new Vector3(), b: new Vector3(), c: new Vector3() };
+						var faceNormal = new Vector3();
+						var vertexNormals = { a: new Vector3(), b: new Vector3(), c: new Vector3() };
 
 						dstNormalsFace.push( faceNormal );
 						dstNormalsVertex.push( vertexNormals );
@@ -12111,11 +12139,11 @@
 
 				}
 
-				const morphNormals = this.morphNormals[ i ];
+				var morphNormals = this.morphNormals[ i$1 ];
 
 				// set vertices to morph target
 
-				tmpGeo.vertices = this.morphTargets[ i ].vertices;
+				tmpGeo.vertices = this.morphTargets[ i$1 ].vertices;
 
 				// compute morph normals
 
@@ -12124,18 +12152,18 @@
 
 				// store morph normals
 
-				for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+				for ( var f$2 = 0, fl$2 = this.faces.length; f$2 < fl$2; f$2 ++ ) {
 
-					const face = this.faces[ f ];
+					var face$1 = this.faces[ f$2 ];
 
-					const faceNormal = morphNormals.faceNormals[ f ];
-					const vertexNormals = morphNormals.vertexNormals[ f ];
+					var faceNormal$1 = morphNormals.faceNormals[ f$2 ];
+					var vertexNormals$1 = morphNormals.vertexNormals[ f$2 ];
 
-					faceNormal.copy( face.normal );
+					faceNormal$1.copy( face$1.normal );
 
-					vertexNormals.a.copy( face.vertexNormals[ 0 ] );
-					vertexNormals.b.copy( face.vertexNormals[ 1 ] );
-					vertexNormals.c.copy( face.vertexNormals[ 2 ] );
+					vertexNormals$1.a.copy( face$1.vertexNormals[ 0 ] );
+					vertexNormals$1.b.copy( face$1.vertexNormals[ 1 ] );
+					vertexNormals$1.c.copy( face$1.vertexNormals[ 2 ] );
 
 				}
 
@@ -12143,12 +12171,12 @@
 
 			// restore original normals
 
-			for ( let f = 0, fl = this.faces.length; f < fl; f ++ ) {
+			for ( var f$3 = 0, fl$3 = this.faces.length; f$3 < fl$3; f$3 ++ ) {
 
-				const face = this.faces[ f ];
+				var face$2 = this.faces[ f$3 ];
 
-				face.normal = face.__originalFaceNormal;
-				face.vertexNormals = face.__originalVertexNormals;
+				face$2.normal = face$2.__originalFaceNormal;
+				face$2.vertexNormals = face$2.__originalVertexNormals;
 
 			}
 
@@ -12187,7 +12215,7 @@
 
 			}
 
-			let normalMatrix,
+			var normalMatrix,
 				vertexOffset = this.vertices.length,
 				vertices1 = this.vertices,
 				vertices2 = geometry.vertices,
@@ -12196,7 +12224,7 @@
 				colors1 = this.colors,
 				colors2 = geometry.colors;
 
-			if ( materialIndexOffset === undefined ) materialIndexOffset = 0;
+			if ( materialIndexOffset === undefined ) { materialIndexOffset = 0; }
 
 			if ( matrix !== undefined ) {
 
@@ -12206,13 +12234,13 @@
 
 			// vertices
 
-			for ( let i = 0, il = vertices2.length; i < il; i ++ ) {
+			for ( var i = 0, il = vertices2.length; i < il; i ++ ) {
 
-				const vertex = vertices2[ i ];
+				var vertex = vertices2[ i ];
 
-				const vertexCopy = vertex.clone();
+				var vertexCopy = vertex.clone();
 
-				if ( matrix !== undefined ) vertexCopy.applyMatrix4( matrix );
+				if ( matrix !== undefined ) { vertexCopy.applyMatrix4( matrix ); }
 
 				vertices1.push( vertexCopy );
 
@@ -12220,17 +12248,17 @@
 
 			// colors
 
-			for ( let i = 0, il = colors2.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = colors2.length; i$1 < il$1; i$1 ++ ) {
 
-				colors1.push( colors2[ i ].clone() );
+				colors1.push( colors2[ i$1 ].clone() );
 
 			}
 
 			// faces
 
-			for ( let i = 0, il = faces2.length; i < il; i ++ ) {
+			for ( var i$2 = 0, il$2 = faces2.length; i$2 < il$2; i$2 ++ ) {
 
-				let face = faces2[ i ], faceCopy, normal, color,
+				var face = faces2[ i$2 ], faceCopy = (void 0), normal = (void 0), color = (void 0),
 					faceVertexNormals = face.vertexNormals,
 					faceVertexColors = face.vertexColors;
 
@@ -12243,7 +12271,7 @@
 
 				}
 
-				for ( let j = 0, jl = faceVertexNormals.length; j < jl; j ++ ) {
+				for ( var j = 0, jl = faceVertexNormals.length; j < jl; j ++ ) {
 
 					normal = faceVertexNormals[ j ].clone();
 
@@ -12259,9 +12287,9 @@
 
 				faceCopy.color.copy( face.color );
 
-				for ( let j = 0, jl = faceVertexColors.length; j < jl; j ++ ) {
+				for ( var j$1 = 0, jl$1 = faceVertexColors.length; j$1 < jl$1; j$1 ++ ) {
 
-					color = faceVertexColors[ j ];
+					color = faceVertexColors[ j$1 ];
 					faceCopy.vertexColors.push( color.clone() );
 
 				}
@@ -12274,23 +12302,23 @@
 
 			// uvs
 
-			for ( let i = 0, il = geometry.faceVertexUvs.length; i < il; i ++ ) {
+			for ( var i$3 = 0, il$3 = geometry.faceVertexUvs.length; i$3 < il$3; i$3 ++ ) {
 
-				const faceVertexUvs2 = geometry.faceVertexUvs[ i ];
+				var faceVertexUvs2 = geometry.faceVertexUvs[ i$3 ];
 
-				if ( this.faceVertexUvs[ i ] === undefined ) this.faceVertexUvs[ i ] = [];
+				if ( this.faceVertexUvs[ i$3 ] === undefined ) { this.faceVertexUvs[ i$3 ] = []; }
 
-				for ( let j = 0, jl = faceVertexUvs2.length; j < jl; j ++ ) {
+				for ( var j$2 = 0, jl$2 = faceVertexUvs2.length; j$2 < jl$2; j$2 ++ ) {
 
-					const uvs2 = faceVertexUvs2[ j ], uvsCopy = [];
+					var uvs2 = faceVertexUvs2[ j$2 ], uvsCopy = [];
 
-					for ( let k = 0, kl = uvs2.length; k < kl; k ++ ) {
+					for ( var k = 0, kl = uvs2.length; k < kl; k ++ ) {
 
 						uvsCopy.push( uvs2[ k ].clone() );
 
 					}
 
-					this.faceVertexUvs[ i ].push( uvsCopy );
+					this.faceVertexUvs[ i$3 ].push( uvsCopy );
 
 				}
 
@@ -12307,7 +12335,7 @@
 
 			}
 
-			if ( mesh.matrixAutoUpdate ) mesh.updateMatrix();
+			if ( mesh.matrixAutoUpdate ) { mesh.updateMatrix(); }
 
 			this.merge( mesh.geometry, mesh.matrix );
 
@@ -12321,16 +12349,16 @@
 
 		mergeVertices: function () {
 
-			const verticesMap = {}; // Hashmap for looking up vertices by position coordinates (and making sure they are unique)
-			const unique = [], changes = [];
+			var verticesMap = {}; // Hashmap for looking up vertices by position coordinates (and making sure they are unique)
+			var unique = [], changes = [];
 
-			const precisionPoints = 4; // number of decimal points, e.g. 4 for epsilon of 0.0001
-			const precision = Math.pow( 10, precisionPoints );
+			var precisionPoints = 4; // number of decimal points, e.g. 4 for epsilon of 0.0001
+			var precision = Math.pow( 10, precisionPoints );
 
-			for ( let i = 0, il = this.vertices.length; i < il; i ++ ) {
+			for ( var i = 0, il = this.vertices.length; i < il; i ++ ) {
 
-				const v = this.vertices[ i ];
-				const key = Math.round( v.x * precision ) + '_' + Math.round( v.y * precision ) + '_' + Math.round( v.z * precision );
+				var v = this.vertices[ i ];
+				var key = Math.round( v.x * precision ) + '_' + Math.round( v.y * precision ) + '_' + Math.round( v.z * precision );
 
 				if ( verticesMap[ key ] === undefined ) {
 
@@ -12350,25 +12378,25 @@
 
 			// if faces are completely degenerate after merging vertices, we
 			// have to remove them from the geometry.
-			const faceIndicesToRemove = [];
+			var faceIndicesToRemove = [];
 
-			for ( let i = 0, il = this.faces.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = this.faces.length; i$1 < il$1; i$1 ++ ) {
 
-				const face = this.faces[ i ];
+				var face = this.faces[ i$1 ];
 
 				face.a = changes[ face.a ];
 				face.b = changes[ face.b ];
 				face.c = changes[ face.c ];
 
-				const indices = [ face.a, face.b, face.c ];
+				var indices = [ face.a, face.b, face.c ];
 
 				// if any duplicate vertices are found in a Face3
 				// we have to remove the face as nothing can be saved
-				for ( let n = 0; n < 3; n ++ ) {
+				for ( var n = 0; n < 3; n ++ ) {
 
 					if ( indices[ n ] === indices[ ( n + 1 ) % 3 ] ) {
 
-						faceIndicesToRemove.push( i );
+						faceIndicesToRemove.push( i$1 );
 						break;
 
 					}
@@ -12377,13 +12405,13 @@
 
 			}
 
-			for ( let i = faceIndicesToRemove.length - 1; i >= 0; i -- ) {
+			for ( var i$2 = faceIndicesToRemove.length - 1; i$2 >= 0; i$2 -- ) {
 
-				const idx = faceIndicesToRemove[ i ];
+				var idx = faceIndicesToRemove[ i$2 ];
 
 				this.faces.splice( idx, 1 );
 
-				for ( let j = 0, jl = this.faceVertexUvs.length; j < jl; j ++ ) {
+				for ( var j = 0, jl = this.faceVertexUvs.length; j < jl; j ++ ) {
 
 					this.faceVertexUvs[ j ].splice( idx, 1 );
 
@@ -12393,7 +12421,7 @@
 
 			// Use unique set of vertices
 
-			const diff = this.vertices.length - unique.length;
+			var diff = this.vertices.length - unique.length;
 			this.vertices = unique;
 			return diff;
 
@@ -12403,9 +12431,9 @@
 
 			this.vertices = [];
 
-			for ( let i = 0, l = points.length; i < l; i ++ ) {
+			for ( var i = 0, l = points.length; i < l; i ++ ) {
 
-				const point = points[ i ];
+				var point = points[ i ];
 				this.vertices.push( new Vector3( point.x, point.y, point.z || 0 ) );
 
 			}
@@ -12416,12 +12444,12 @@
 
 		sortFacesByMaterialIndex: function () {
 
-			const faces = this.faces;
-			const length = faces.length;
+			var faces = this.faces;
+			var length = faces.length;
 
 			// tag faces
 
-			for ( let i = 0; i < length; i ++ ) {
+			for ( var i = 0; i < length; i ++ ) {
 
 				faces[ i ]._id = i;
 
@@ -12439,31 +12467,31 @@
 
 			// sort uvs
 
-			const uvs1 = this.faceVertexUvs[ 0 ];
-			const uvs2 = this.faceVertexUvs[ 1 ];
+			var uvs1 = this.faceVertexUvs[ 0 ];
+			var uvs2 = this.faceVertexUvs[ 1 ];
 
-			let newUvs1, newUvs2;
+			var newUvs1, newUvs2;
 
-			if ( uvs1 && uvs1.length === length ) newUvs1 = [];
-			if ( uvs2 && uvs2.length === length ) newUvs2 = [];
+			if ( uvs1 && uvs1.length === length ) { newUvs1 = []; }
+			if ( uvs2 && uvs2.length === length ) { newUvs2 = []; }
 
-			for ( let i = 0; i < length; i ++ ) {
+			for ( var i$1 = 0; i$1 < length; i$1 ++ ) {
 
-				const id = faces[ i ]._id;
+				var id = faces[ i$1 ]._id;
 
-				if ( newUvs1 ) newUvs1.push( uvs1[ id ] );
-				if ( newUvs2 ) newUvs2.push( uvs2[ id ] );
+				if ( newUvs1 ) { newUvs1.push( uvs1[ id ] ); }
+				if ( newUvs2 ) { newUvs2.push( uvs2[ id ] ); }
 
 			}
 
-			if ( newUvs1 ) this.faceVertexUvs[ 0 ] = newUvs1;
-			if ( newUvs2 ) this.faceVertexUvs[ 1 ] = newUvs2;
+			if ( newUvs1 ) { this.faceVertexUvs[ 0 ] = newUvs1; }
+			if ( newUvs2 ) { this.faceVertexUvs[ 1 ] = newUvs2; }
 
 		},
 
 		toJSON: function () {
 
-			const data = {
+			var data = {
 				metadata: {
 					version: 4.5,
 					type: 'Geometry',
@@ -12475,15 +12503,15 @@
 
 			data.uuid = this.uuid;
 			data.type = this.type;
-			if ( this.name !== '' ) data.name = this.name;
+			if ( this.name !== '' ) { data.name = this.name; }
 
 			if ( this.parameters !== undefined ) {
 
-				const parameters = this.parameters;
+				var parameters = this.parameters;
 
-				for ( const key in parameters ) {
+				for ( var key in parameters ) {
 
-					if ( parameters[ key ] !== undefined ) data[ key ] = parameters[ key ];
+					if ( parameters[ key ] !== undefined ) { data[ key ] = parameters[ key ]; }
 
 				}
 
@@ -12491,36 +12519,36 @@
 
 			}
 
-			const vertices = [];
+			var vertices = [];
 
-			for ( let i = 0; i < this.vertices.length; i ++ ) {
+			for ( var i = 0; i < this.vertices.length; i ++ ) {
 
-				const vertex = this.vertices[ i ];
+				var vertex = this.vertices[ i ];
 				vertices.push( vertex.x, vertex.y, vertex.z );
 
 			}
 
-			const faces = [];
-			const normals = [];
-			const normalsHash = {};
-			const colors = [];
-			const colorsHash = {};
-			const uvs = [];
-			const uvsHash = {};
+			var faces = [];
+			var normals = [];
+			var normalsHash = {};
+			var colors = [];
+			var colorsHash = {};
+			var uvs = [];
+			var uvsHash = {};
 
-			for ( let i = 0; i < this.faces.length; i ++ ) {
+			for ( var i$1 = 0; i$1 < this.faces.length; i$1 ++ ) {
 
-				const face = this.faces[ i ];
+				var face = this.faces[ i$1 ];
 
-				const hasMaterial = true;
-				const hasFaceUv = false; // deprecated
-				const hasFaceVertexUv = this.faceVertexUvs[ 0 ][ i ] !== undefined;
-				const hasFaceNormal = face.normal.length() > 0;
-				const hasFaceVertexNormal = face.vertexNormals.length > 0;
-				const hasFaceColor = face.color.r !== 1 || face.color.g !== 1 || face.color.b !== 1;
-				const hasFaceVertexColor = face.vertexColors.length > 0;
+				var hasMaterial = true;
+				var hasFaceUv = false; // deprecated
+				var hasFaceVertexUv = this.faceVertexUvs[ 0 ][ i$1 ] !== undefined;
+				var hasFaceNormal = face.normal.length() > 0;
+				var hasFaceVertexNormal = face.vertexNormals.length > 0;
+				var hasFaceColor = face.color.r !== 1 || face.color.g !== 1 || face.color.b !== 1;
+				var hasFaceVertexColor = face.vertexColors.length > 0;
 
-				let faceType = 0;
+				var faceType = 0;
 
 				faceType = setBit( faceType, 0, 0 ); // isQuad
 				faceType = setBit( faceType, 1, hasMaterial );
@@ -12537,7 +12565,7 @@
 
 				if ( hasFaceVertexUv ) {
 
-					const faceVertexUvs = this.faceVertexUvs[ 0 ][ i ];
+					var faceVertexUvs = this.faceVertexUvs[ 0 ][ i$1 ];
 
 					faces.push(
 						getUvIndex( faceVertexUvs[ 0 ] ),
@@ -12555,7 +12583,7 @@
 
 				if ( hasFaceVertexNormal ) {
 
-					const vertexNormals = face.vertexNormals;
+					var vertexNormals = face.vertexNormals;
 
 					faces.push(
 						getNormalIndex( vertexNormals[ 0 ] ),
@@ -12573,7 +12601,7 @@
 
 				if ( hasFaceVertexColor ) {
 
-					const vertexColors = face.vertexColors;
+					var vertexColors = face.vertexColors;
 
 					faces.push(
 						getColorIndex( vertexColors[ 0 ] ),
@@ -12593,7 +12621,7 @@
 
 			function getNormalIndex( normal ) {
 
-				const hash = normal.x.toString() + normal.y.toString() + normal.z.toString();
+				var hash = normal.x.toString() + normal.y.toString() + normal.z.toString();
 
 				if ( normalsHash[ hash ] !== undefined ) {
 
@@ -12610,7 +12638,7 @@
 
 			function getColorIndex( color ) {
 
-				const hash = color.r.toString() + color.g.toString() + color.b.toString();
+				var hash = color.r.toString() + color.g.toString() + color.b.toString();
 
 				if ( colorsHash[ hash ] !== undefined ) {
 
@@ -12627,7 +12655,7 @@
 
 			function getUvIndex( uv ) {
 
-				const hash = uv.x.toString() + uv.y.toString();
+				var hash = uv.x.toString() + uv.y.toString();
 
 				if ( uvsHash[ hash ] !== undefined ) {
 
@@ -12646,8 +12674,8 @@
 
 			data.data.vertices = vertices;
 			data.data.normals = normals;
-			if ( colors.length > 0 ) data.data.colors = colors;
-			if ( uvs.length > 0 ) data.data.uvs = [ uvs ]; // temporal backward compatibility
+			if ( colors.length > 0 ) { data.data.colors = colors; }
+			if ( uvs.length > 0 ) { data.data.uvs = [ uvs ]; } // temporal backward compatibility
 			data.data.faces = faces;
 
 			return data;
@@ -12706,9 +12734,9 @@
 
 			// vertices
 
-			const vertices = source.vertices;
+			var vertices = source.vertices;
 
-			for ( let i = 0, il = vertices.length; i < il; i ++ ) {
+			for ( var i = 0, il = vertices.length; i < il; i ++ ) {
 
 				this.vertices.push( vertices[ i ].clone() );
 
@@ -12716,49 +12744,49 @@
 
 			// colors
 
-			const colors = source.colors;
+			var colors = source.colors;
 
-			for ( let i = 0, il = colors.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = colors.length; i$1 < il$1; i$1 ++ ) {
 
-				this.colors.push( colors[ i ].clone() );
+				this.colors.push( colors[ i$1 ].clone() );
 
 			}
 
 			// faces
 
-			const faces = source.faces;
+			var faces = source.faces;
 
-			for ( let i = 0, il = faces.length; i < il; i ++ ) {
+			for ( var i$2 = 0, il$2 = faces.length; i$2 < il$2; i$2 ++ ) {
 
-				this.faces.push( faces[ i ].clone() );
+				this.faces.push( faces[ i$2 ].clone() );
 
 			}
 
 			// face vertex uvs
 
-			for ( let i = 0, il = source.faceVertexUvs.length; i < il; i ++ ) {
+			for ( var i$3 = 0, il$3 = source.faceVertexUvs.length; i$3 < il$3; i$3 ++ ) {
 
-				const faceVertexUvs = source.faceVertexUvs[ i ];
+				var faceVertexUvs = source.faceVertexUvs[ i$3 ];
 
-				if ( this.faceVertexUvs[ i ] === undefined ) {
+				if ( this.faceVertexUvs[ i$3 ] === undefined ) {
 
-					this.faceVertexUvs[ i ] = [];
+					this.faceVertexUvs[ i$3 ] = [];
 
 				}
 
-				for ( let j = 0, jl = faceVertexUvs.length; j < jl; j ++ ) {
+				for ( var j = 0, jl = faceVertexUvs.length; j < jl; j ++ ) {
 
-					const uvs = faceVertexUvs[ j ], uvsCopy = [];
+					var uvs = faceVertexUvs[ j ], uvsCopy = [];
 
-					for ( let k = 0, kl = uvs.length; k < kl; k ++ ) {
+					for ( var k = 0, kl = uvs.length; k < kl; k ++ ) {
 
-						const uv = uvs[ k ];
+						var uv = uvs[ k ];
 
 						uvsCopy.push( uv.clone() );
 
 					}
 
-					this.faceVertexUvs[ i ].push( uvsCopy );
+					this.faceVertexUvs[ i$3 ].push( uvsCopy );
 
 				}
 
@@ -12766,22 +12794,22 @@
 
 			// morph targets
 
-			const morphTargets = source.morphTargets;
+			var morphTargets = source.morphTargets;
 
-			for ( let i = 0, il = morphTargets.length; i < il; i ++ ) {
+			for ( var i$4 = 0, il$4 = morphTargets.length; i$4 < il$4; i$4 ++ ) {
 
-				const morphTarget = {};
-				morphTarget.name = morphTargets[ i ].name;
+				var morphTarget = {};
+				morphTarget.name = morphTargets[ i$4 ].name;
 
 				// vertices
 
-				if ( morphTargets[ i ].vertices !== undefined ) {
+				if ( morphTargets[ i$4 ].vertices !== undefined ) {
 
 					morphTarget.vertices = [];
 
-					for ( let j = 0, jl = morphTargets[ i ].vertices.length; j < jl; j ++ ) {
+					for ( var j$1 = 0, jl$1 = morphTargets[ i$4 ].vertices.length; j$1 < jl$1; j$1 ++ ) {
 
-						morphTarget.vertices.push( morphTargets[ i ].vertices[ j ].clone() );
+						morphTarget.vertices.push( morphTargets[ i$4 ].vertices[ j$1 ].clone() );
 
 					}
 
@@ -12789,13 +12817,13 @@
 
 				// normals
 
-				if ( morphTargets[ i ].normals !== undefined ) {
+				if ( morphTargets[ i$4 ].normals !== undefined ) {
 
 					morphTarget.normals = [];
 
-					for ( let j = 0, jl = morphTargets[ i ].normals.length; j < jl; j ++ ) {
+					for ( var j$2 = 0, jl$2 = morphTargets[ i$4 ].normals.length; j$2 < jl$2; j$2 ++ ) {
 
-						morphTarget.normals.push( morphTargets[ i ].normals[ j ].clone() );
+						morphTarget.normals.push( morphTargets[ i$4 ].normals[ j$2 ].clone() );
 
 					}
 
@@ -12807,22 +12835,22 @@
 
 			// morph normals
 
-			const morphNormals = source.morphNormals;
+			var morphNormals = source.morphNormals;
 
-			for ( let i = 0, il = morphNormals.length; i < il; i ++ ) {
+			for ( var i$5 = 0, il$5 = morphNormals.length; i$5 < il$5; i$5 ++ ) {
 
-				const morphNormal = {};
+				var morphNormal = {};
 
 				// vertex normals
 
-				if ( morphNormals[ i ].vertexNormals !== undefined ) {
+				if ( morphNormals[ i$5 ].vertexNormals !== undefined ) {
 
 					morphNormal.vertexNormals = [];
 
-					for ( let j = 0, jl = morphNormals[ i ].vertexNormals.length; j < jl; j ++ ) {
+					for ( var j$3 = 0, jl$3 = morphNormals[ i$5 ].vertexNormals.length; j$3 < jl$3; j$3 ++ ) {
 
-						const srcVertexNormal = morphNormals[ i ].vertexNormals[ j ];
-						const destVertexNormal = {};
+						var srcVertexNormal = morphNormals[ i$5 ].vertexNormals[ j$3 ];
+						var destVertexNormal = {};
 
 						destVertexNormal.a = srcVertexNormal.a.clone();
 						destVertexNormal.b = srcVertexNormal.b.clone();
@@ -12836,13 +12864,13 @@
 
 				// face normals
 
-				if ( morphNormals[ i ].faceNormals !== undefined ) {
+				if ( morphNormals[ i$5 ].faceNormals !== undefined ) {
 
 					morphNormal.faceNormals = [];
 
-					for ( let j = 0, jl = morphNormals[ i ].faceNormals.length; j < jl; j ++ ) {
+					for ( var j$4 = 0, jl$4 = morphNormals[ i$5 ].faceNormals.length; j$4 < jl$4; j$4 ++ ) {
 
-						morphNormal.faceNormals.push( morphNormals[ i ].faceNormals[ j ].clone() );
+						morphNormal.faceNormals.push( morphNormals[ i$5 ].faceNormals[ j$4 ].clone() );
 
 					}
 
@@ -12854,37 +12882,37 @@
 
 			// skin weights
 
-			const skinWeights = source.skinWeights;
+			var skinWeights = source.skinWeights;
 
-			for ( let i = 0, il = skinWeights.length; i < il; i ++ ) {
+			for ( var i$6 = 0, il$6 = skinWeights.length; i$6 < il$6; i$6 ++ ) {
 
-				this.skinWeights.push( skinWeights[ i ].clone() );
+				this.skinWeights.push( skinWeights[ i$6 ].clone() );
 
 			}
 
 			// skin indices
 
-			const skinIndices = source.skinIndices;
+			var skinIndices = source.skinIndices;
 
-			for ( let i = 0, il = skinIndices.length; i < il; i ++ ) {
+			for ( var i$7 = 0, il$7 = skinIndices.length; i$7 < il$7; i$7 ++ ) {
 
-				this.skinIndices.push( skinIndices[ i ].clone() );
+				this.skinIndices.push( skinIndices[ i$7 ].clone() );
 
 			}
 
 			// line distances
 
-			const lineDistances = source.lineDistances;
+			var lineDistances = source.lineDistances;
 
-			for ( let i = 0, il = lineDistances.length; i < il; i ++ ) {
+			for ( var i$8 = 0, il$8 = lineDistances.length; i$8 < il$8; i$8 ++ ) {
 
-				this.lineDistances.push( lineDistances[ i ] );
+				this.lineDistances.push( lineDistances[ i$8 ] );
 
 			}
 
 			// bounding box
 
-			const boundingBox = source.boundingBox;
+			var boundingBox = source.boundingBox;
 
 			if ( boundingBox !== null ) {
 
@@ -12894,7 +12922,7 @@
 
 			// bounding sphere
 
-			const boundingSphere = source.boundingSphere;
+			var boundingSphere = source.boundingSphere;
 
 			if ( boundingSphere !== null ) {
 
@@ -12926,11 +12954,10 @@
 
 	// BoxGeometry
 
-	class BoxGeometry extends Geometry {
+	var BoxGeometry = /*@__PURE__*/(function (Geometry) {
+		function BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) {
 
-		constructor( width, height, depth, widthSegments, heightSegments, depthSegments ) {
-
-			super();
+			Geometry.call(this);
 
 			this.type = 'BoxGeometry';
 
@@ -12948,15 +12975,26 @@
 
 		}
 
-	}
+		if ( Geometry ) BoxGeometry.__proto__ = Geometry;
+		BoxGeometry.prototype = Object.create( Geometry && Geometry.prototype );
+		BoxGeometry.prototype.constructor = BoxGeometry;
+
+		return BoxGeometry;
+	}(Geometry));
 
 	// BoxBufferGeometry
 
-	class BoxBufferGeometry extends BufferGeometry {
+	var BoxBufferGeometry = /*@__PURE__*/(function (BufferGeometry) {
+		function BoxBufferGeometry( width, height, depth, widthSegments, heightSegments, depthSegments ) {
+			if ( width === void 0 ) width = 1;
+			if ( height === void 0 ) height = 1;
+			if ( depth === void 0 ) depth = 1;
+			if ( widthSegments === void 0 ) widthSegments = 1;
+			if ( heightSegments === void 0 ) heightSegments = 1;
+			if ( depthSegments === void 0 ) depthSegments = 1;
 
-		constructor( width = 1, height = 1, depth = 1, widthSegments = 1, heightSegments = 1, depthSegments = 1 ) {
 
-			super();
+			BufferGeometry.call(this);
 
 			this.type = 'BoxBufferGeometry';
 
@@ -12969,7 +13007,7 @@
 				depthSegments: depthSegments
 			};
 
-			const scope = this;
+			var scope = this;
 
 			// segments
 
@@ -12979,15 +13017,15 @@
 
 			// buffers
 
-			const indices = [];
-			const vertices = [];
-			const normals = [];
-			const uvs = [];
+			var indices = [];
+			var vertices = [];
+			var normals = [];
+			var uvs = [];
 
 			// helper variables
 
-			let numberOfVertices = 0;
-			let groupStart = 0;
+			var numberOfVertices = 0;
+			var groupStart = 0;
 
 			// build each side of the box geometry
 
@@ -13007,30 +13045,30 @@
 
 			function buildPlane( u, v, w, udir, vdir, width, height, depth, gridX, gridY, materialIndex ) {
 
-				const segmentWidth = width / gridX;
-				const segmentHeight = height / gridY;
+				var segmentWidth = width / gridX;
+				var segmentHeight = height / gridY;
 
-				const widthHalf = width / 2;
-				const heightHalf = height / 2;
-				const depthHalf = depth / 2;
+				var widthHalf = width / 2;
+				var heightHalf = height / 2;
+				var depthHalf = depth / 2;
 
-				const gridX1 = gridX + 1;
-				const gridY1 = gridY + 1;
+				var gridX1 = gridX + 1;
+				var gridY1 = gridY + 1;
 
-				let vertexCounter = 0;
-				let groupCount = 0;
+				var vertexCounter = 0;
+				var groupCount = 0;
 
-				const vector = new Vector3();
+				var vector = new Vector3();
 
 				// generate vertices, normals and uvs
 
-				for ( let iy = 0; iy < gridY1; iy ++ ) {
+				for ( var iy = 0; iy < gridY1; iy ++ ) {
 
-					const y = iy * segmentHeight - heightHalf;
+					var y = iy * segmentHeight - heightHalf;
 
-					for ( let ix = 0; ix < gridX1; ix ++ ) {
+					for ( var ix = 0; ix < gridX1; ix ++ ) {
 
-						const x = ix * segmentWidth - widthHalf;
+						var x = ix * segmentWidth - widthHalf;
 
 						// set values to correct vector component
 
@@ -13071,14 +13109,14 @@
 				// 2. a single segment consists of two faces
 				// 3. so we need to generate six (2*3) indices per segment
 
-				for ( let iy = 0; iy < gridY; iy ++ ) {
+				for ( var iy$1 = 0; iy$1 < gridY; iy$1 ++ ) {
 
-					for ( let ix = 0; ix < gridX; ix ++ ) {
+					for ( var ix$1 = 0; ix$1 < gridX; ix$1 ++ ) {
 
-						const a = numberOfVertices + ix + gridX1 * iy;
-						const b = numberOfVertices + ix + gridX1 * ( iy + 1 );
-						const c = numberOfVertices + ( ix + 1 ) + gridX1 * ( iy + 1 );
-						const d = numberOfVertices + ( ix + 1 ) + gridX1 * iy;
+						var a = numberOfVertices + ix$1 + gridX1 * iy$1;
+						var b = numberOfVertices + ix$1 + gridX1 * ( iy$1 + 1 );
+						var c = numberOfVertices + ( ix$1 + 1 ) + gridX1 * ( iy$1 + 1 );
+						var d = numberOfVertices + ( ix$1 + 1 ) + gridX1 * iy$1;
 
 						// faces
 
@@ -13109,7 +13147,12 @@
 
 		}
 
-	}
+		if ( BufferGeometry ) BoxBufferGeometry.__proto__ = BufferGeometry;
+		BoxBufferGeometry.prototype = Object.create( BufferGeometry && BufferGeometry.prototype );
+		BoxBufferGeometry.prototype.constructor = BoxBufferGeometry;
+
+		return BoxBufferGeometry;
+	}(BufferGeometry));
 
 	/**
 	 * Uniform Utilities
@@ -13117,15 +13160,15 @@
 
 	function cloneUniforms( src ) {
 
-		const dst = {};
+		var dst = {};
 
-		for ( const u in src ) {
+		for ( var u in src ) {
 
 			dst[ u ] = {};
 
-			for ( const p in src[ u ] ) {
+			for ( var p in src[ u ] ) {
 
-				const property = src[ u ][ p ];
+				var property = src[ u ][ p ];
 
 				if ( property && ( property.isColor ||
 					property.isMatrix3 || property.isMatrix4 ||
@@ -13154,13 +13197,13 @@
 
 	function mergeUniforms( uniforms ) {
 
-		const merged = {};
+		var merged = {};
 
-		for ( let u = 0; u < uniforms.length; u ++ ) {
+		for ( var u = 0; u < uniforms.length; u ++ ) {
 
-			const tmp = cloneUniforms( uniforms[ u ] );
+			var tmp = cloneUniforms( uniforms[ u ] );
 
-			for ( const p in tmp ) {
+			for ( var p in tmp ) {
 
 				merged[ p ] = tmp[ p ];
 
@@ -13174,7 +13217,7 @@
 
 	// Legacy
 
-	const UniformsUtils = { clone: cloneUniforms, merge: mergeUniforms };
+	var UniformsUtils = { clone: cloneUniforms, merge: mergeUniforms };
 
 	var default_vertex = "void main() {\n\tgl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}";
 
@@ -13291,14 +13334,14 @@
 
 	ShaderMaterial.prototype.toJSON = function ( meta ) {
 
-		const data = Material.prototype.toJSON.call( this, meta );
+		var data = Material.prototype.toJSON.call( this, meta );
 
 		data.uniforms = {};
 
-		for ( const name in this.uniforms ) {
+		for ( var name in this.uniforms ) {
 
-			const uniform = this.uniforms[ name ];
-			const value = uniform.value;
+			var uniform = this.uniforms[ name ];
+			var value = uniform.value;
 
 			if ( value && value.isTexture ) {
 
@@ -13361,20 +13404,20 @@
 
 		}
 
-		if ( Object.keys( this.defines ).length > 0 ) data.defines = this.defines;
+		if ( Object.keys( this.defines ).length > 0 ) { data.defines = this.defines; }
 
 		data.vertexShader = this.vertexShader;
 		data.fragmentShader = this.fragmentShader;
 
-		const extensions = {};
+		var extensions = {};
 
-		for ( const key in this.extensions ) {
+		for ( var key in this.extensions ) {
 
-			if ( this.extensions[ key ] === true ) extensions[ key ] = true;
+			if ( this.extensions[ key ] === true ) { extensions[ key ] = true; }
 
 		}
 
-		if ( Object.keys( extensions ).length > 0 ) data.extensions = extensions;
+		if ( Object.keys( extensions ).length > 0 ) { data.extensions = extensions; }
 
 		return data;
 
@@ -13423,7 +13466,7 @@
 
 			this.updateMatrixWorld( true );
 
-			const e = this.matrixWorld.elements;
+			var e = this.matrixWorld.elements;
 
 			return target.set( - e[ 8 ], - e[ 9 ], - e[ 10 ] ).normalize();
 
@@ -13514,7 +13557,7 @@
 		setFocalLength: function ( focalLength ) {
 
 			// see http://www.bobatkins.com/photography/technical/field_of_view.html
-			const vExtentSlope = 0.5 * this.getFilmHeight() / focalLength;
+			var vExtentSlope = 0.5 * this.getFilmHeight() / focalLength;
 
 			this.fov = MathUtils.RAD2DEG * 2 * Math.atan( vExtentSlope );
 			this.updateProjectionMatrix();
@@ -13526,7 +13569,7 @@
 		 */
 		getFocalLength: function () {
 
-			const vExtentSlope = Math.tan( MathUtils.DEG2RAD * 0.5 * this.fov );
+			var vExtentSlope = Math.tan( MathUtils.DEG2RAD * 0.5 * this.fov );
 
 			return 0.5 * this.getFilmHeight() / vExtentSlope;
 
@@ -13632,7 +13675,7 @@
 
 		updateProjectionMatrix: function () {
 
-			let near = this.near,
+			var near = this.near,
 				top = near * Math.tan( MathUtils.DEG2RAD * 0.5 * this.fov ) / this.zoom,
 				height = 2 * top,
 				width = this.aspect * height,
@@ -13641,7 +13684,7 @@
 
 			if ( this.view !== null && this.view.enabled ) {
 
-				const fullWidth = view.fullWidth,
+				var fullWidth = view.fullWidth,
 					fullHeight = view.fullHeight;
 
 				left += view.offsetX * width / fullWidth;
@@ -13651,8 +13694,8 @@
 
 			}
 
-			const skew = this.filmOffset;
-			if ( skew !== 0 ) left += near * skew / this.getFilmWidth();
+			var skew = this.filmOffset;
+			if ( skew !== 0 ) { left += near * skew / this.getFilmWidth(); }
 
 			this.projectionMatrix.makePerspective( left, left + width, top, top - height, near, this.far );
 
@@ -13662,7 +13705,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Object3D.prototype.toJSON.call( this, meta );
+			var data = Object3D.prototype.toJSON.call( this, meta );
 
 			data.object.fov = this.fov;
 			data.object.zoom = this.zoom;
@@ -13673,7 +13716,7 @@
 
 			data.object.aspect = this.aspect;
 
-			if ( this.view !== null ) data.object.view = Object.assign( {}, this.view );
+			if ( this.view !== null ) { data.object.view = Object.assign( {}, this.view ); }
 
 			data.object.filmGauge = this.filmGauge;
 			data.object.filmOffset = this.filmOffset;
@@ -13684,7 +13727,7 @@
 
 	} );
 
-	const fov = 90, aspect = 1;
+	var fov = 90, aspect = 1;
 
 	function CubeCamera( near, far, renderTarget ) {
 
@@ -13701,37 +13744,37 @@
 
 		this.renderTarget = renderTarget;
 
-		const cameraPX = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraPX = new PerspectiveCamera( fov, aspect, near, far );
 		cameraPX.layers = this.layers;
 		cameraPX.up.set( 0, - 1, 0 );
 		cameraPX.lookAt( new Vector3( 1, 0, 0 ) );
 		this.add( cameraPX );
 
-		const cameraNX = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraNX = new PerspectiveCamera( fov, aspect, near, far );
 		cameraNX.layers = this.layers;
 		cameraNX.up.set( 0, - 1, 0 );
 		cameraNX.lookAt( new Vector3( - 1, 0, 0 ) );
 		this.add( cameraNX );
 
-		const cameraPY = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraPY = new PerspectiveCamera( fov, aspect, near, far );
 		cameraPY.layers = this.layers;
 		cameraPY.up.set( 0, 0, 1 );
 		cameraPY.lookAt( new Vector3( 0, 1, 0 ) );
 		this.add( cameraPY );
 
-		const cameraNY = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraNY = new PerspectiveCamera( fov, aspect, near, far );
 		cameraNY.layers = this.layers;
 		cameraNY.up.set( 0, 0, - 1 );
 		cameraNY.lookAt( new Vector3( 0, - 1, 0 ) );
 		this.add( cameraNY );
 
-		const cameraPZ = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraPZ = new PerspectiveCamera( fov, aspect, near, far );
 		cameraPZ.layers = this.layers;
 		cameraPZ.up.set( 0, - 1, 0 );
 		cameraPZ.lookAt( new Vector3( 0, 0, 1 ) );
 		this.add( cameraPZ );
 
-		const cameraNZ = new PerspectiveCamera( fov, aspect, near, far );
+		var cameraNZ = new PerspectiveCamera( fov, aspect, near, far );
 		cameraNZ.layers = this.layers;
 		cameraNZ.up.set( 0, - 1, 0 );
 		cameraNZ.lookAt( new Vector3( 0, 0, - 1 ) );
@@ -13739,14 +13782,14 @@
 
 		this.update = function ( renderer, scene ) {
 
-			if ( this.parent === null ) this.updateMatrixWorld();
+			if ( this.parent === null ) { this.updateMatrixWorld(); }
 
-			const currentXrEnabled = renderer.xr.enabled;
-			const currentRenderTarget = renderer.getRenderTarget();
+			var currentXrEnabled = renderer.xr.enabled;
+			var currentRenderTarget = renderer.getRenderTarget();
 
 			renderer.xr.enabled = false;
 
-			const generateMipmaps = renderTarget.texture.generateMipmaps;
+			var generateMipmaps = renderTarget.texture.generateMipmaps;
 
 			renderTarget.texture.generateMipmaps = false;
 
@@ -13778,9 +13821,9 @@
 
 		this.clear = function ( renderer, color, depth, stencil ) {
 
-			const currentRenderTarget = renderer.getRenderTarget();
+			var currentRenderTarget = renderer.getRenderTarget();
 
-			for ( let i = 0; i < 6; i ++ ) {
+			for ( var i = 0; i < 6; i ++ ) {
 
 				renderer.setRenderTarget( renderTarget, i );
 
@@ -13826,55 +13869,20 @@
 		this.texture.minFilter = texture.minFilter;
 		this.texture.magFilter = texture.magFilter;
 
-		const scene = new Scene();
+		var scene = new Scene();
 
-		const shader = {
+		var shader = {
 
 			uniforms: {
 				tEquirect: { value: null },
 			},
 
-			vertexShader: /* glsl */`
+			vertexShader: /* glsl */"\n\n\t\t\tvarying vec3 vWorldDirection;\n\n\t\t\tvec3 transformDirection( in vec3 dir, in mat4 matrix ) {\n\n\t\t\t\treturn normalize( ( matrix * vec4( dir, 0.0 ) ).xyz );\n\n\t\t\t}\n\n\t\t\tvoid main() {\n\n\t\t\t\tvWorldDirection = transformDirection( position, modelMatrix );\n\n\t\t\t\t#include <begin_vertex>\n\t\t\t\t#include <project_vertex>\n\n\t\t\t}\n\t\t",
 
-			varying vec3 vWorldDirection;
-
-			vec3 transformDirection( in vec3 dir, in mat4 matrix ) {
-
-				return normalize( ( matrix * vec4( dir, 0.0 ) ).xyz );
-
-			}
-
-			void main() {
-
-				vWorldDirection = transformDirection( position, modelMatrix );
-
-				#include <begin_vertex>
-				#include <project_vertex>
-
-			}
-		`,
-
-			fragmentShader: /* glsl */`
-
-			uniform sampler2D tEquirect;
-
-			varying vec3 vWorldDirection;
-
-			#include <common>
-
-			void main() {
-
-				vec3 direction = normalize( vWorldDirection );
-
-				vec2 sampleUV = equirectUv( direction );
-
-				gl_FragColor = texture2D( tEquirect, sampleUV );
-
-			}
-		`
+			fragmentShader: /* glsl */"\n\n\t\t\tuniform sampler2D tEquirect;\n\n\t\t\tvarying vec3 vWorldDirection;\n\n\t\t\t#include <common>\n\n\t\t\tvoid main() {\n\n\t\t\t\tvec3 direction = normalize( vWorldDirection );\n\n\t\t\t\tvec2 sampleUV = equirectUv( direction );\n\n\t\t\t\tgl_FragColor = texture2D( tEquirect, sampleUV );\n\n\t\t\t}\n\t\t"
 		};
 
-		const material = new ShaderMaterial( {
+		var material = new ShaderMaterial( {
 
 			name: 'CubemapFromEquirect',
 
@@ -13888,11 +13896,11 @@
 
 		material.uniforms.tEquirect.value = texture;
 
-		const mesh = new Mesh( new BoxBufferGeometry( 5, 5, 5 ), material );
+		var mesh = new Mesh( new BoxBufferGeometry( 5, 5, 5 ), material );
 
 		scene.add( mesh );
 
-		const camera = new CubeCamera( 1, 10, this );
+		var camera = new CubeCamera( 1, 10, this );
 		camera.update( renderer, scene );
 
 		mesh.geometry.dispose();
@@ -13924,8 +13932,8 @@
 
 	DataTexture.prototype.isDataTexture = true;
 
-	const _sphere$1 = new Sphere();
-	const _vector$5 = new Vector3();
+	var _sphere$1 = new Sphere();
+	var _vector$5 = new Vector3();
 
 	function Frustum( p0, p1, p2, p3, p4, p5 ) {
 
@@ -13946,7 +13954,7 @@
 
 		set: function ( p0, p1, p2, p3, p4, p5 ) {
 
-			const planes = this.planes;
+			var planes = this.planes;
 
 			planes[ 0 ].copy( p0 );
 			planes[ 1 ].copy( p1 );
@@ -13967,9 +13975,9 @@
 
 		copy: function ( frustum ) {
 
-			const planes = this.planes;
+			var planes = this.planes;
 
-			for ( let i = 0; i < 6; i ++ ) {
+			for ( var i = 0; i < 6; i ++ ) {
 
 				planes[ i ].copy( frustum.planes[ i ] );
 
@@ -13981,12 +13989,12 @@
 
 		setFromProjectionMatrix: function ( m ) {
 
-			const planes = this.planes;
-			const me = m.elements;
-			const me0 = me[ 0 ], me1 = me[ 1 ], me2 = me[ 2 ], me3 = me[ 3 ];
-			const me4 = me[ 4 ], me5 = me[ 5 ], me6 = me[ 6 ], me7 = me[ 7 ];
-			const me8 = me[ 8 ], me9 = me[ 9 ], me10 = me[ 10 ], me11 = me[ 11 ];
-			const me12 = me[ 12 ], me13 = me[ 13 ], me14 = me[ 14 ], me15 = me[ 15 ];
+			var planes = this.planes;
+			var me = m.elements;
+			var me0 = me[ 0 ], me1 = me[ 1 ], me2 = me[ 2 ], me3 = me[ 3 ];
+			var me4 = me[ 4 ], me5 = me[ 5 ], me6 = me[ 6 ], me7 = me[ 7 ];
+			var me8 = me[ 8 ], me9 = me[ 9 ], me10 = me[ 10 ], me11 = me[ 11 ];
+			var me12 = me[ 12 ], me13 = me[ 13 ], me14 = me[ 14 ], me15 = me[ 15 ];
 
 			planes[ 0 ].setComponents( me3 - me0, me7 - me4, me11 - me8, me15 - me12 ).normalize();
 			planes[ 1 ].setComponents( me3 + me0, me7 + me4, me11 + me8, me15 + me12 ).normalize();
@@ -14001,9 +14009,9 @@
 
 		intersectsObject: function ( object ) {
 
-			const geometry = object.geometry;
+			var geometry = object.geometry;
 
-			if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
+			if ( geometry.boundingSphere === null ) { geometry.computeBoundingSphere(); }
 
 			_sphere$1.copy( geometry.boundingSphere ).applyMatrix4( object.matrixWorld );
 
@@ -14023,13 +14031,13 @@
 
 		intersectsSphere: function ( sphere ) {
 
-			const planes = this.planes;
-			const center = sphere.center;
-			const negRadius = - sphere.radius;
+			var planes = this.planes;
+			var center = sphere.center;
+			var negRadius = - sphere.radius;
 
-			for ( let i = 0; i < 6; i ++ ) {
+			for ( var i = 0; i < 6; i ++ ) {
 
-				const distance = planes[ i ].distanceToPoint( center );
+				var distance = planes[ i ].distanceToPoint( center );
 
 				if ( distance < negRadius ) {
 
@@ -14045,11 +14053,11 @@
 
 		intersectsBox: function ( box ) {
 
-			const planes = this.planes;
+			var planes = this.planes;
 
-			for ( let i = 0; i < 6; i ++ ) {
+			for ( var i = 0; i < 6; i ++ ) {
 
-				const plane = planes[ i ];
+				var plane = planes[ i ];
 
 				// corner at max distance
 
@@ -14071,9 +14079,9 @@
 
 		containsPoint: function ( point ) {
 
-			const planes = this.planes;
+			var planes = this.planes;
 
-			for ( let i = 0; i < 6; i ++ ) {
+			for ( var i = 0; i < 6; i ++ ) {
 
 				if ( planes[ i ].distanceToPoint( point ) < 0 ) {
 
@@ -14093,7 +14101,7 @@
 	 * Uniforms library for shared webgl shaders
 	 */
 
-	const UniformsLib = {
+	var UniformsLib = {
 
 		common: {
 
@@ -14297,10 +14305,10 @@
 
 	function WebGLAnimation() {
 
-		let context = null;
-		let isAnimating = false;
-		let animationLoop = null;
-		let requestId = null;
+		var context = null;
+		var isAnimating = false;
+		var animationLoop = null;
+		var requestId = null;
 
 		function onAnimationFrame( time, frame ) {
 
@@ -14314,8 +14322,8 @@
 
 			start: function () {
 
-				if ( isAnimating === true ) return;
-				if ( animationLoop === null ) return;
+				if ( isAnimating === true ) { return; }
+				if ( animationLoop === null ) { return; }
 
 				requestId = context.requestAnimationFrame( onAnimationFrame );
 
@@ -14349,23 +14357,23 @@
 
 	function WebGLAttributes( gl, capabilities ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
+		var isWebGL2 = capabilities.isWebGL2;
 
-		const buffers = new WeakMap();
+		var buffers = new WeakMap();
 
 		function createBuffer( attribute, bufferType ) {
 
-			const array = attribute.array;
-			const usage = attribute.usage;
+			var array = attribute.array;
+			var usage = attribute.usage;
 
-			const buffer = gl.createBuffer();
+			var buffer = gl.createBuffer();
 
 			gl.bindBuffer( bufferType, buffer );
 			gl.bufferData( bufferType, array, usage );
 
 			attribute.onUploadCallback();
 
-			let type = 5126;
+			var type = 5126;
 
 			if ( array instanceof Float32Array ) {
 
@@ -14412,8 +14420,8 @@
 
 		function updateBuffer( buffer, attribute, bufferType ) {
 
-			const array = attribute.array;
-			const updateRange = attribute.updateRange;
+			var array = attribute.array;
+			var updateRange = attribute.updateRange;
 
 			gl.bindBuffer( bufferType, buffer );
 
@@ -14447,7 +14455,7 @@
 
 		function get( attribute ) {
 
-			if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
+			if ( attribute.isInterleavedBufferAttribute ) { attribute = attribute.data; }
 
 			return buffers.get( attribute );
 
@@ -14455,9 +14463,9 @@
 
 		function remove( attribute ) {
 
-			if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
+			if ( attribute.isInterleavedBufferAttribute ) { attribute = attribute.data; }
 
-			const data = buffers.get( attribute );
+			var data = buffers.get( attribute );
 
 			if ( data ) {
 
@@ -14471,9 +14479,9 @@
 
 		function update( attribute, bufferType ) {
 
-			if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
+			if ( attribute.isInterleavedBufferAttribute ) { attribute = attribute.data; }
 
-			const data = buffers.get( attribute );
+			var data = buffers.get( attribute );
 
 			if ( data === undefined ) {
 
@@ -14540,34 +14548,34 @@
 		width = width || 1;
 		height = height || 1;
 
-		const width_half = width / 2;
-		const height_half = height / 2;
+		var width_half = width / 2;
+		var height_half = height / 2;
 
-		const gridX = Math.floor( widthSegments ) || 1;
-		const gridY = Math.floor( heightSegments ) || 1;
+		var gridX = Math.floor( widthSegments ) || 1;
+		var gridY = Math.floor( heightSegments ) || 1;
 
-		const gridX1 = gridX + 1;
-		const gridY1 = gridY + 1;
+		var gridX1 = gridX + 1;
+		var gridY1 = gridY + 1;
 
-		const segment_width = width / gridX;
-		const segment_height = height / gridY;
+		var segment_width = width / gridX;
+		var segment_height = height / gridY;
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// generate vertices, normals and uvs
 
-		for ( let iy = 0; iy < gridY1; iy ++ ) {
+		for ( var iy = 0; iy < gridY1; iy ++ ) {
 
-			const y = iy * segment_height - height_half;
+			var y = iy * segment_height - height_half;
 
-			for ( let ix = 0; ix < gridX1; ix ++ ) {
+			for ( var ix = 0; ix < gridX1; ix ++ ) {
 
-				const x = ix * segment_width - width_half;
+				var x = ix * segment_width - width_half;
 
 				vertices.push( x, - y, 0 );
 
@@ -14582,14 +14590,14 @@
 
 		// indices
 
-		for ( let iy = 0; iy < gridY; iy ++ ) {
+		for ( var iy$1 = 0; iy$1 < gridY; iy$1 ++ ) {
 
-			for ( let ix = 0; ix < gridX; ix ++ ) {
+			for ( var ix$1 = 0; ix$1 < gridX; ix$1 ++ ) {
 
-				const a = ix + gridX1 * iy;
-				const b = ix + gridX1 * ( iy + 1 );
-				const c = ( ix + 1 ) + gridX1 * ( iy + 1 );
-				const d = ( ix + 1 ) + gridX1 * iy;
+				var a = ix$1 + gridX1 * iy$1;
+				var b = ix$1 + gridX1 * ( iy$1 + 1 );
+				var c = ( ix$1 + 1 ) + gridX1 * ( iy$1 + 1 );
+				var d = ( ix$1 + 1 ) + gridX1 * iy$1;
 
 				// faces
 
@@ -14870,7 +14878,7 @@
 
 	var sprite_vert = "uniform float rotation;\nuniform vec2 center;\n#include <common>\n#include <uv_pars_vertex>\n#include <fog_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvoid main() {\n\t#include <uv_vertex>\n\tvec4 mvPosition = modelViewMatrix * vec4( 0.0, 0.0, 0.0, 1.0 );\n\tvec2 scale;\n\tscale.x = length( vec3( modelMatrix[ 0 ].x, modelMatrix[ 0 ].y, modelMatrix[ 0 ].z ) );\n\tscale.y = length( vec3( modelMatrix[ 1 ].x, modelMatrix[ 1 ].y, modelMatrix[ 1 ].z ) );\n\t#ifndef USE_SIZEATTENUATION\n\t\tbool isPerspective = isPerspectiveMatrix( projectionMatrix );\n\t\tif ( isPerspective ) scale *= - mvPosition.z;\n\t#endif\n\tvec2 alignedPosition = ( position.xy - ( center - vec2( 0.5 ) ) ) * scale;\n\tvec2 rotatedPosition;\n\trotatedPosition.x = cos( rotation ) * alignedPosition.x - sin( rotation ) * alignedPosition.y;\n\trotatedPosition.y = sin( rotation ) * alignedPosition.x + cos( rotation ) * alignedPosition.y;\n\tmvPosition.xy += rotatedPosition;\n\tgl_Position = projectionMatrix * mvPosition;\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\t#include <fog_vertex>\n}";
 
-	const ShaderChunk = {
+	var ShaderChunk = {
 		alphamap_fragment: alphamap_fragment,
 		alphamap_pars_fragment: alphamap_pars_fragment,
 		alphatest_fragment: alphatest_fragment,
@@ -15003,7 +15011,7 @@
 		sprite_vert: sprite_vert
 	};
 
-	const ShaderLib = {
+	var ShaderLib = {
 
 		basic: {
 
@@ -15272,8 +15280,7 @@
 				{
 					color: { value: new Color( 0x00000 ) },
 					opacity: { value: 1.0 }
-				},
-			] ),
+				} ] ),
 
 			vertexShader: ShaderChunk.shadow_vert,
 			fragmentShader: ShaderChunk.shadow_frag
@@ -15306,25 +15313,25 @@
 
 	function WebGLBackground( renderer, state, objects, premultipliedAlpha ) {
 
-		const clearColor = new Color( 0x000000 );
-		let clearAlpha = 0;
+		var clearColor = new Color( 0x000000 );
+		var clearAlpha = 0;
 
-		let planeMesh;
-		let boxMesh;
+		var planeMesh;
+		var boxMesh;
 
-		let currentBackground = null;
-		let currentBackgroundVersion = 0;
-		let currentTonemapping = null;
+		var currentBackground = null;
+		var currentBackgroundVersion = 0;
+		var currentTonemapping = null;
 
 		function render( renderList, scene, camera, forceClear ) {
 
-			let background = scene.isScene === true ? scene.background : null;
+			var background = scene.isScene === true ? scene.background : null;
 
 			// Ignore background in AR
 			// TODO: Reconsider this.
 
-			const xr = renderer.xr;
-			const session = xr.getSession && xr.getSession();
+			var xr = renderer.xr;
+			var session = xr.getSession && xr.getSession();
 
 			if ( session && session.environmentBlendMode === 'additive' ) {
 
@@ -15391,7 +15398,7 @@
 
 				}
 
-				const texture = background.isWebGLCubeRenderTarget ? background.texture : background;
+				var texture = background.isWebGLCubeRenderTarget ? background.texture : background;
 
 				boxMesh.material.uniforms.envMap.value = texture;
 				boxMesh.material.uniforms.flipEnvMap.value = texture.isCubeTexture ? - 1 : 1;
@@ -15515,23 +15522,23 @@
 
 	function WebGLBindingStates( gl, extensions, attributes, capabilities ) {
 
-		const maxVertexAttributes = gl.getParameter( 34921 );
+		var maxVertexAttributes = gl.getParameter( 34921 );
 
-		const extension = capabilities.isWebGL2 ? null : extensions.get( 'OES_vertex_array_object' );
-		const vaoAvailable = capabilities.isWebGL2 || extension !== null;
+		var extension = capabilities.isWebGL2 ? null : extensions.get( 'OES_vertex_array_object' );
+		var vaoAvailable = capabilities.isWebGL2 || extension !== null;
 
-		const bindingStates = {};
+		var bindingStates = {};
 
-		const defaultState = createBindingState( null );
-		let currentState = defaultState;
+		var defaultState = createBindingState( null );
+		var currentState = defaultState;
 
 		function setup( object, material, program, geometry, index ) {
 
-			let updateBuffers = false;
+			var updateBuffers = false;
 
 			if ( vaoAvailable ) {
 
-				const state = getBindingState( geometry, program, material );
+				var state = getBindingState( geometry, program, material );
 
 				if ( currentState !== state ) {
 
@@ -15542,11 +15549,11 @@
 
 				updateBuffers = needsUpdate( geometry );
 
-				if ( updateBuffers ) saveCache( geometry );
+				if ( updateBuffers ) { saveCache( geometry ); }
 
 			} else {
 
-				const wireframe = ( material.wireframe === true );
+				var wireframe = ( material.wireframe === true );
 
 				if ( currentState.geometry !== geometry.id ||
 					currentState.program !== program.id ||
@@ -15590,7 +15597,7 @@
 
 		function createVertexArrayObject() {
 
-			if ( capabilities.isWebGL2 ) return gl.createVertexArray();
+			if ( capabilities.isWebGL2 ) { return gl.createVertexArray(); }
 
 			return extension.createVertexArrayOES();
 
@@ -15598,7 +15605,7 @@
 
 		function bindVertexArrayObject( vao ) {
 
-			if ( capabilities.isWebGL2 ) return gl.bindVertexArray( vao );
+			if ( capabilities.isWebGL2 ) { return gl.bindVertexArray( vao ); }
 
 			return extension.bindVertexArrayOES( vao );
 
@@ -15606,7 +15613,7 @@
 
 		function deleteVertexArrayObject( vao ) {
 
-			if ( capabilities.isWebGL2 ) return gl.deleteVertexArray( vao );
+			if ( capabilities.isWebGL2 ) { return gl.deleteVertexArray( vao ); }
 
 			return extension.deleteVertexArrayOES( vao );
 
@@ -15614,9 +15621,9 @@
 
 		function getBindingState( geometry, program, material ) {
 
-			const wireframe = ( material.wireframe === true );
+			var wireframe = ( material.wireframe === true );
 
-			let programMap = bindingStates[ geometry.id ];
+			var programMap = bindingStates[ geometry.id ];
 
 			if ( programMap === undefined ) {
 
@@ -15625,7 +15632,7 @@
 
 			}
 
-			let stateMap = programMap[ program.id ];
+			var stateMap = programMap[ program.id ];
 
 			if ( stateMap === undefined ) {
 
@@ -15634,7 +15641,7 @@
 
 			}
 
-			let state = stateMap[ wireframe ];
+			var state = stateMap[ wireframe ];
 
 			if ( state === undefined ) {
 
@@ -15649,11 +15656,11 @@
 
 		function createBindingState( vao ) {
 
-			const newAttributes = [];
-			const enabledAttributes = [];
-			const attributeDivisors = [];
+			var newAttributes = [];
+			var enabledAttributes = [];
+			var attributeDivisors = [];
 
-			for ( let i = 0; i < maxVertexAttributes; i ++ ) {
+			for ( var i = 0; i < maxVertexAttributes; i ++ ) {
 
 				newAttributes[ i ] = 0;
 				enabledAttributes[ i ] = 0;
@@ -15680,19 +15687,19 @@
 
 		function needsUpdate( geometry ) {
 
-			const cachedAttributes = currentState.attributes;
-			const geometryAttributes = geometry.attributes;
+			var cachedAttributes = currentState.attributes;
+			var geometryAttributes = geometry.attributes;
 
-			if ( Object.keys( cachedAttributes ).length !== Object.keys( geometryAttributes ).length ) return true;
+			if ( Object.keys( cachedAttributes ).length !== Object.keys( geometryAttributes ).length ) { return true; }
 
-			for ( const key in geometryAttributes ) {
+			for ( var key in geometryAttributes ) {
 
-				const cachedAttribute = cachedAttributes[ key ];
-				const geometryAttribute = geometryAttributes[ key ];
+				var cachedAttribute = cachedAttributes[ key ];
+				var geometryAttribute = geometryAttributes[ key ];
 
-				if ( cachedAttribute.attribute !== geometryAttribute ) return true;
+				if ( cachedAttribute.attribute !== geometryAttribute ) { return true; }
 
-				if ( cachedAttribute.data !== geometryAttribute.data ) return true;
+				if ( cachedAttribute.data !== geometryAttribute.data ) { return true; }
 
 			}
 
@@ -15702,14 +15709,14 @@
 
 		function saveCache( geometry ) {
 
-			const cache = {};
-			const attributes = geometry.attributes;
+			var cache = {};
+			var attributes = geometry.attributes;
 
-			for ( const key in attributes ) {
+			for ( var key in attributes ) {
 
-				const attribute = attributes[ key ];
+				var attribute = attributes[ key ];
 
-				const data = {};
+				var data = {};
 				data.attribute = attribute;
 
 				if ( attribute.data ) {
@@ -15728,9 +15735,9 @@
 
 		function initAttributes() {
 
-			const newAttributes = currentState.newAttributes;
+			var newAttributes = currentState.newAttributes;
 
-			for ( let i = 0, il = newAttributes.length; i < il; i ++ ) {
+			for ( var i = 0, il = newAttributes.length; i < il; i ++ ) {
 
 				newAttributes[ i ] = 0;
 
@@ -15746,9 +15753,9 @@
 
 		function enableAttributeAndDivisor( attribute, meshPerAttribute ) {
 
-			const newAttributes = currentState.newAttributes;
-			const enabledAttributes = currentState.enabledAttributes;
-			const attributeDivisors = currentState.attributeDivisors;
+			var newAttributes = currentState.newAttributes;
+			var enabledAttributes = currentState.enabledAttributes;
+			var attributeDivisors = currentState.attributeDivisors;
 
 			newAttributes[ attribute ] = 1;
 
@@ -15761,7 +15768,7 @@
 
 			if ( attributeDivisors[ attribute ] !== meshPerAttribute ) {
 
-				const extension = capabilities.isWebGL2 ? gl : extensions.get( 'ANGLE_instanced_arrays' );
+				var extension = capabilities.isWebGL2 ? gl : extensions.get( 'ANGLE_instanced_arrays' );
 
 				extension[ capabilities.isWebGL2 ? 'vertexAttribDivisor' : 'vertexAttribDivisorANGLE' ]( attribute, meshPerAttribute );
 				attributeDivisors[ attribute ] = meshPerAttribute;
@@ -15772,10 +15779,10 @@
 
 		function disableUnusedAttributes() {
 
-			const newAttributes = currentState.newAttributes;
-			const enabledAttributes = currentState.enabledAttributes;
+			var newAttributes = currentState.newAttributes;
+			var enabledAttributes = currentState.enabledAttributes;
 
-			for ( let i = 0, il = enabledAttributes.length; i < il; i ++ ) {
+			for ( var i = 0, il = enabledAttributes.length; i < il; i ++ ) {
 
 				if ( enabledAttributes[ i ] !== newAttributes[ i ] ) {
 
@@ -15806,46 +15813,46 @@
 
 			if ( capabilities.isWebGL2 === false && ( object.isInstancedMesh || geometry.isInstancedBufferGeometry ) ) {
 
-				if ( extensions.get( 'ANGLE_instanced_arrays' ) === null ) return;
+				if ( extensions.get( 'ANGLE_instanced_arrays' ) === null ) { return; }
 
 			}
 
 			initAttributes();
 
-			const geometryAttributes = geometry.attributes;
+			var geometryAttributes = geometry.attributes;
 
-			const programAttributes = program.getAttributes();
+			var programAttributes = program.getAttributes();
 
-			const materialDefaultAttributeValues = material.defaultAttributeValues;
+			var materialDefaultAttributeValues = material.defaultAttributeValues;
 
-			for ( const name in programAttributes ) {
+			for ( var name in programAttributes ) {
 
-				const programAttribute = programAttributes[ name ];
+				var programAttribute = programAttributes[ name ];
 
 				if ( programAttribute >= 0 ) {
 
-					const geometryAttribute = geometryAttributes[ name ];
+					var geometryAttribute = geometryAttributes[ name ];
 
 					if ( geometryAttribute !== undefined ) {
 
-						const normalized = geometryAttribute.normalized;
-						const size = geometryAttribute.itemSize;
+						var normalized = geometryAttribute.normalized;
+						var size = geometryAttribute.itemSize;
 
-						const attribute = attributes.get( geometryAttribute );
+						var attribute = attributes.get( geometryAttribute );
 
 						// TODO Attribute may not be available on context restore
 
-						if ( attribute === undefined ) continue;
+						if ( attribute === undefined ) { continue; }
 
-						const buffer = attribute.buffer;
-						const type = attribute.type;
-						const bytesPerElement = attribute.bytesPerElement;
+						var buffer = attribute.buffer;
+						var type = attribute.type;
+						var bytesPerElement = attribute.bytesPerElement;
 
 						if ( geometryAttribute.isInterleavedBufferAttribute ) {
 
-							const data = geometryAttribute.data;
-							const stride = data.stride;
-							const offset = geometryAttribute.offset;
+							var data = geometryAttribute.data;
+							var stride = data.stride;
+							var offset = geometryAttribute.offset;
 
 							if ( data && data.isInstancedInterleavedBuffer ) {
 
@@ -15891,30 +15898,30 @@
 
 					} else if ( name === 'instanceMatrix' ) {
 
-						const attribute = attributes.get( object.instanceMatrix );
+						var attribute$1 = attributes.get( object.instanceMatrix );
 
 						// TODO Attribute may not be available on context restore
 
-						if ( attribute === undefined ) continue;
+						if ( attribute$1 === undefined ) { continue; }
 
-						const buffer = attribute.buffer;
-						const type = attribute.type;
+						var buffer$1 = attribute$1.buffer;
+						var type$1 = attribute$1.type;
 
 						enableAttributeAndDivisor( programAttribute + 0, 1 );
 						enableAttributeAndDivisor( programAttribute + 1, 1 );
 						enableAttributeAndDivisor( programAttribute + 2, 1 );
 						enableAttributeAndDivisor( programAttribute + 3, 1 );
 
-						gl.bindBuffer( 34962, buffer );
+						gl.bindBuffer( 34962, buffer$1 );
 
-						gl.vertexAttribPointer( programAttribute + 0, 4, type, false, 64, 0 );
-						gl.vertexAttribPointer( programAttribute + 1, 4, type, false, 64, 16 );
-						gl.vertexAttribPointer( programAttribute + 2, 4, type, false, 64, 32 );
-						gl.vertexAttribPointer( programAttribute + 3, 4, type, false, 64, 48 );
+						gl.vertexAttribPointer( programAttribute + 0, 4, type$1, false, 64, 0 );
+						gl.vertexAttribPointer( programAttribute + 1, 4, type$1, false, 64, 16 );
+						gl.vertexAttribPointer( programAttribute + 2, 4, type$1, false, 64, 32 );
+						gl.vertexAttribPointer( programAttribute + 3, 4, type$1, false, 64, 48 );
 
 					} else if ( materialDefaultAttributeValues !== undefined ) {
 
-						const value = materialDefaultAttributeValues[ name ];
+						var value = materialDefaultAttributeValues[ name ];
 
 						if ( value !== undefined ) {
 
@@ -15953,15 +15960,15 @@
 
 			reset();
 
-			for ( const geometryId in bindingStates ) {
+			for ( var geometryId in bindingStates ) {
 
-				const programMap = bindingStates[ geometryId ];
+				var programMap = bindingStates[ geometryId ];
 
-				for ( const programId in programMap ) {
+				for ( var programId in programMap ) {
 
-					const stateMap = programMap[ programId ];
+					var stateMap = programMap[ programId ];
 
-					for ( const wireframe in stateMap ) {
+					for ( var wireframe in stateMap ) {
 
 						deleteVertexArrayObject( stateMap[ wireframe ].object );
 
@@ -15981,15 +15988,15 @@
 
 		function releaseStatesOfGeometry( geometry ) {
 
-			if ( bindingStates[ geometry.id ] === undefined ) return;
+			if ( bindingStates[ geometry.id ] === undefined ) { return; }
 
-			const programMap = bindingStates[ geometry.id ];
+			var programMap = bindingStates[ geometry.id ];
 
-			for ( const programId in programMap ) {
+			for ( var programId in programMap ) {
 
-				const stateMap = programMap[ programId ];
+				var stateMap = programMap[ programId ];
 
-				for ( const wireframe in stateMap ) {
+				for ( var wireframe in stateMap ) {
 
 					deleteVertexArrayObject( stateMap[ wireframe ].object );
 
@@ -16007,15 +16014,15 @@
 
 		function releaseStatesOfProgram( program ) {
 
-			for ( const geometryId in bindingStates ) {
+			for ( var geometryId in bindingStates ) {
 
-				const programMap = bindingStates[ geometryId ];
+				var programMap = bindingStates[ geometryId ];
 
-				if ( programMap[ program.id ] === undefined ) continue;
+				if ( programMap[ program.id ] === undefined ) { continue; }
 
-				const stateMap = programMap[ program.id ];
+				var stateMap = programMap[ program.id ];
 
-				for ( const wireframe in stateMap ) {
+				for ( var wireframe in stateMap ) {
 
 					deleteVertexArrayObject( stateMap[ wireframe ].object );
 
@@ -16033,7 +16040,7 @@
 
 			resetDefaultState();
 
-			if ( currentState === defaultState ) return;
+			if ( currentState === defaultState ) { return; }
 
 			currentState = defaultState;
 			bindVertexArrayObject( currentState.object );
@@ -16069,9 +16076,9 @@
 
 	function WebGLBufferRenderer( gl, extensions, info, capabilities ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
+		var isWebGL2 = capabilities.isWebGL2;
 
-		let mode;
+		var mode;
 
 		function setMode( value ) {
 
@@ -16089,9 +16096,9 @@
 
 		function renderInstances( start, count, primcount ) {
 
-			if ( primcount === 0 ) return;
+			if ( primcount === 0 ) { return; }
 
-			let extension, methodName;
+			var extension, methodName;
 
 			if ( isWebGL2 ) {
 
@@ -16128,13 +16135,13 @@
 
 	function WebGLCapabilities( gl, extensions, parameters ) {
 
-		let maxAnisotropy;
+		var maxAnisotropy;
 
 		function getMaxAnisotropy() {
 
-			if ( maxAnisotropy !== undefined ) return maxAnisotropy;
+			if ( maxAnisotropy !== undefined ) { return maxAnisotropy; }
 
-			const extension = extensions.get( 'EXT_texture_filter_anisotropic' );
+			var extension = extensions.get( 'EXT_texture_filter_anisotropic' );
 
 			if ( extension !== null ) {
 
@@ -16181,12 +16188,12 @@
 		}
 
 		/* eslint-disable no-undef */
-		const isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext ) ||
+		var isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext ) ||
 			( typeof WebGL2ComputeRenderingContext !== 'undefined' && gl instanceof WebGL2ComputeRenderingContext );
 		/* eslint-enable no-undef */
 
-		let precision = parameters.precision !== undefined ? parameters.precision : 'highp';
-		const maxPrecision = getMaxPrecision( precision );
+		var precision = parameters.precision !== undefined ? parameters.precision : 'highp';
+		var maxPrecision = getMaxPrecision( precision );
 
 		if ( maxPrecision !== precision ) {
 
@@ -16195,23 +16202,23 @@
 
 		}
 
-		const logarithmicDepthBuffer = parameters.logarithmicDepthBuffer === true;
+		var logarithmicDepthBuffer = parameters.logarithmicDepthBuffer === true;
 
-		const maxTextures = gl.getParameter( 34930 );
-		const maxVertexTextures = gl.getParameter( 35660 );
-		const maxTextureSize = gl.getParameter( 3379 );
-		const maxCubemapSize = gl.getParameter( 34076 );
+		var maxTextures = gl.getParameter( 34930 );
+		var maxVertexTextures = gl.getParameter( 35660 );
+		var maxTextureSize = gl.getParameter( 3379 );
+		var maxCubemapSize = gl.getParameter( 34076 );
 
-		const maxAttributes = gl.getParameter( 34921 );
-		const maxVertexUniforms = gl.getParameter( 36347 );
-		const maxVaryings = gl.getParameter( 36348 );
-		const maxFragmentUniforms = gl.getParameter( 36349 );
+		var maxAttributes = gl.getParameter( 34921 );
+		var maxVertexUniforms = gl.getParameter( 36347 );
+		var maxVaryings = gl.getParameter( 36348 );
+		var maxFragmentUniforms = gl.getParameter( 36349 );
 
-		const vertexTextures = maxVertexTextures > 0;
-		const floatFragmentTextures = isWebGL2 || !! extensions.get( 'OES_texture_float' );
-		const floatVertexTextures = vertexTextures && floatFragmentTextures;
+		var vertexTextures = maxVertexTextures > 0;
+		var floatFragmentTextures = isWebGL2 || !! extensions.get( 'OES_texture_float' );
+		var floatVertexTextures = vertexTextures && floatFragmentTextures;
 
-		const maxSamples = isWebGL2 ? gl.getParameter( 36183 ) : 0;
+		var maxSamples = isWebGL2 ? gl.getParameter( 36183 ) : 0;
 
 		return {
 
@@ -16245,14 +16252,14 @@
 
 	function WebGLClipping() {
 
-		const scope = this;
+		var scope = this;
 
-		let globalState = null,
+		var globalState = null,
 			numGlobalPlanes = 0,
 			localClippingEnabled = false,
 			renderingShadows = false;
 
-		const plane = new Plane(),
+		var plane = new Plane(),
 			viewNormalMatrix = new Matrix3(),
 
 			uniform = { value: null, needsUpdate: false };
@@ -16263,7 +16270,7 @@
 
 		this.init = function ( planes, enableLocalClipping, camera ) {
 
-			const enabled =
+			var enabled =
 				planes.length !== 0 ||
 				enableLocalClipping ||
 				// enable state of previous frame - the clipping code has to
@@ -16314,16 +16321,16 @@
 
 			} else {
 
-				const nGlobal = renderingShadows ? 0 : numGlobalPlanes,
+				var nGlobal = renderingShadows ? 0 : numGlobalPlanes,
 					lGlobal = nGlobal * 4;
 
-				let dstArray = cache.clippingState || null;
+				var dstArray = cache.clippingState || null;
 
 				uniform.value = dstArray; // ensure unique state
 
 				dstArray = projectPlanes( planes, camera, lGlobal, fromCache );
 
-				for ( let i = 0; i !== lGlobal; ++ i ) {
+				for ( var i = 0; i !== lGlobal; ++ i ) {
 
 					dstArray[ i ] = globalState[ i ];
 
@@ -16354,7 +16361,7 @@
 
 		function projectPlanes( planes, camera, dstOffset, skipTransform ) {
 
-			let nPlanes = planes !== null ? planes.length : 0,
+			var nPlanes = planes !== null ? planes.length : 0,
 				dstArray = null;
 
 			if ( nPlanes !== 0 ) {
@@ -16363,7 +16370,7 @@
 
 				if ( skipTransform !== true || dstArray === null ) {
 
-					const flatSize = dstOffset + nPlanes * 4,
+					var flatSize = dstOffset + nPlanes * 4,
 						viewMatrix = camera.matrixWorldInverse;
 
 					viewNormalMatrix.getNormalMatrix( viewMatrix );
@@ -16374,7 +16381,7 @@
 
 					}
 
-					for ( let i = 0, i4 = dstOffset; i !== nPlanes; ++ i, i4 += 4 ) {
+					for ( var i = 0, i4 = dstOffset; i !== nPlanes; ++ i, i4 += 4 ) {
 
 						plane.copy( planes[ i ] ).applyMatrix4( viewMatrix, viewNormalMatrix );
 
@@ -16401,7 +16408,7 @@
 
 	function WebGLExtensions( gl ) {
 
-		const extensions = {};
+		var extensions = {};
 
 		return {
 
@@ -16413,7 +16420,7 @@
 
 				}
 
-				let extension;
+				var extension;
 
 				switch ( name ) {
 
@@ -16462,13 +16469,13 @@
 
 	function WebGLGeometries( gl, attributes, info, bindingStates ) {
 
-		const geometries = new WeakMap();
-		const wireframeAttributes = new WeakMap();
+		var geometries = new WeakMap();
+		var wireframeAttributes = new WeakMap();
 
 		function onGeometryDispose( event ) {
 
-			const geometry = event.target;
-			const buffergeometry = geometries.get( geometry );
+			var geometry = event.target;
+			var buffergeometry = geometries.get( geometry );
 
 			if ( buffergeometry.index !== null ) {
 
@@ -16476,7 +16483,7 @@
 
 			}
 
-			for ( const name in buffergeometry.attributes ) {
+			for ( var name in buffergeometry.attributes ) {
 
 				attributes.remove( buffergeometry.attributes[ name ] );
 
@@ -16486,7 +16493,7 @@
 
 			geometries.delete( geometry );
 
-			const attribute = wireframeAttributes.get( buffergeometry );
+			var attribute = wireframeAttributes.get( buffergeometry );
 
 			if ( attribute ) {
 
@@ -16511,9 +16518,9 @@
 
 		function get( object, geometry ) {
 
-			let buffergeometry = geometries.get( geometry );
+			var buffergeometry = geometries.get( geometry );
 
-			if ( buffergeometry ) return buffergeometry;
+			if ( buffergeometry ) { return buffergeometry; }
 
 			geometry.addEventListener( 'dispose', onGeometryDispose );
 
@@ -16543,11 +16550,11 @@
 
 		function update( geometry ) {
 
-			const geometryAttributes = geometry.attributes;
+			var geometryAttributes = geometry.attributes;
 
 			// Updating index buffer in VAO now. See WebGLBindingStates.
 
-			for ( const name in geometryAttributes ) {
+			for ( var name in geometryAttributes ) {
 
 				attributes.update( geometryAttributes[ name ], 34962 );
 
@@ -16555,13 +16562,13 @@
 
 			// morph targets
 
-			const morphAttributes = geometry.morphAttributes;
+			var morphAttributes = geometry.morphAttributes;
 
-			for ( const name in morphAttributes ) {
+			for ( var name$1 in morphAttributes ) {
 
-				const array = morphAttributes[ name ];
+				var array = morphAttributes[ name$1 ];
 
-				for ( let i = 0, l = array.length; i < l; i ++ ) {
+				for ( var i = 0, l = array.length; i < l; i ++ ) {
 
 					attributes.update( array[ i ], 34962 );
 
@@ -16573,22 +16580,22 @@
 
 		function updateWireframeAttribute( geometry ) {
 
-			const indices = [];
+			var indices = [];
 
-			const geometryIndex = geometry.index;
-			const geometryPosition = geometry.attributes.position;
-			let version = 0;
+			var geometryIndex = geometry.index;
+			var geometryPosition = geometry.attributes.position;
+			var version = 0;
 
 			if ( geometryIndex !== null ) {
 
-				const array = geometryIndex.array;
+				var array = geometryIndex.array;
 				version = geometryIndex.version;
 
-				for ( let i = 0, l = array.length; i < l; i += 3 ) {
+				for ( var i = 0, l = array.length; i < l; i += 3 ) {
 
-					const a = array[ i + 0 ];
-					const b = array[ i + 1 ];
-					const c = array[ i + 2 ];
+					var a = array[ i + 0 ];
+					var b = array[ i + 1 ];
+					var c = array[ i + 2 ];
 
 					indices.push( a, b, b, c, c, a );
 
@@ -16596,31 +16603,31 @@
 
 			} else {
 
-				const array = geometryPosition.array;
+				var array$1 = geometryPosition.array;
 				version = geometryPosition.version;
 
-				for ( let i = 0, l = ( array.length / 3 ) - 1; i < l; i += 3 ) {
+				for ( var i$1 = 0, l$1 = ( array$1.length / 3 ) - 1; i$1 < l$1; i$1 += 3 ) {
 
-					const a = i + 0;
-					const b = i + 1;
-					const c = i + 2;
+					var a$1 = i$1 + 0;
+					var b$1 = i$1 + 1;
+					var c$1 = i$1 + 2;
 
-					indices.push( a, b, b, c, c, a );
+					indices.push( a$1, b$1, b$1, c$1, c$1, a$1 );
 
 				}
 
 			}
 
-			const attribute = new ( arrayMax( indices ) > 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
+			var attribute = new ( arrayMax( indices ) > 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
 			attribute.version = version;
 
 			// Updating index buffer in VAO now. See WebGLBindingStates
 
 			//
 
-			const previousAttribute = wireframeAttributes.get( geometry );
+			var previousAttribute = wireframeAttributes.get( geometry );
 
-			if ( previousAttribute ) attributes.remove( previousAttribute );
+			if ( previousAttribute ) { attributes.remove( previousAttribute ); }
 
 			//
 
@@ -16630,11 +16637,11 @@
 
 		function getWireframeAttribute( geometry ) {
 
-			const currentAttribute = wireframeAttributes.get( geometry );
+			var currentAttribute = wireframeAttributes.get( geometry );
 
 			if ( currentAttribute ) {
 
-				const geometryIndex = geometry.index;
+				var geometryIndex = geometry.index;
 
 				if ( geometryIndex !== null ) {
 
@@ -16671,9 +16678,9 @@
 
 	function WebGLIndexedBufferRenderer( gl, extensions, info, capabilities ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
+		var isWebGL2 = capabilities.isWebGL2;
 
-		let mode;
+		var mode;
 
 		function setMode( value ) {
 
@@ -16681,7 +16688,7 @@
 
 		}
 
-		let type, bytesPerElement;
+		var type, bytesPerElement;
 
 		function setIndex( value ) {
 
@@ -16700,9 +16707,9 @@
 
 		function renderInstances( start, count, primcount ) {
 
-			if ( primcount === 0 ) return;
+			if ( primcount === 0 ) { return; }
 
-			let extension, methodName;
+			var extension, methodName;
 
 			if ( isWebGL2 ) {
 
@@ -16740,12 +16747,12 @@
 
 	function WebGLInfo( gl ) {
 
-		const memory = {
+		var memory = {
 			geometries: 0,
 			textures: 0
 		};
 
-		const render = {
+		var render = {
 			frame: 0,
 			calls: 0,
 			triangles: 0,
@@ -16822,12 +16829,12 @@
 
 	function WebGLMorphtargets( gl ) {
 
-		const influencesList = {};
-		const morphInfluences = new Float32Array( 8 );
+		var influencesList = {};
+		var morphInfluences = new Float32Array( 8 );
 
-		const workInfluences = [];
+		var workInfluences = [];
 
-		for ( let i = 0; i < 8; i ++ ) {
+		for ( var i = 0; i < 8; i ++ ) {
 
 			workInfluences[ i ] = [ i, 0 ];
 
@@ -16835,14 +16842,14 @@
 
 		function update( object, geometry, material, program ) {
 
-			const objectInfluences = object.morphTargetInfluences;
+			var objectInfluences = object.morphTargetInfluences;
 
 			// When object doesn't have morph target influences defined, we treat it as a 0-length array
 			// This is important to make sure we set up morphTargetBaseInfluence / morphTargetInfluences
 
-			const length = objectInfluences === undefined ? 0 : objectInfluences.length;
+			var length = objectInfluences === undefined ? 0 : objectInfluences.length;
 
-			let influences = influencesList[ geometry.id ];
+			var influences = influencesList[ geometry.id ];
 
 			if ( influences === undefined ) {
 
@@ -16850,7 +16857,7 @@
 
 				influences = [];
 
-				for ( let i = 0; i < length; i ++ ) {
+				for ( var i = 0; i < length; i ++ ) {
 
 					influences[ i ] = [ i, 0 ];
 
@@ -16862,28 +16869,28 @@
 
 			// Collect influences
 
-			for ( let i = 0; i < length; i ++ ) {
+			for ( var i$1 = 0; i$1 < length; i$1 ++ ) {
 
-				const influence = influences[ i ];
+				var influence = influences[ i$1 ];
 
-				influence[ 0 ] = i;
-				influence[ 1 ] = objectInfluences[ i ];
+				influence[ 0 ] = i$1;
+				influence[ 1 ] = objectInfluences[ i$1 ];
 
 			}
 
 			influences.sort( absNumericalSort );
 
-			for ( let i = 0; i < 8; i ++ ) {
+			for ( var i$2 = 0; i$2 < 8; i$2 ++ ) {
 
-				if ( i < length && influences[ i ][ 1 ] ) {
+				if ( i$2 < length && influences[ i$2 ][ 1 ] ) {
 
-					workInfluences[ i ][ 0 ] = influences[ i ][ 0 ];
-					workInfluences[ i ][ 1 ] = influences[ i ][ 1 ];
+					workInfluences[ i$2 ][ 0 ] = influences[ i$2 ][ 0 ];
+					workInfluences[ i$2 ][ 1 ] = influences[ i$2 ][ 1 ];
 
 				} else {
 
-					workInfluences[ i ][ 0 ] = Number.MAX_SAFE_INTEGER;
-					workInfluences[ i ][ 1 ] = 0;
+					workInfluences[ i$2 ][ 0 ] = Number.MAX_SAFE_INTEGER;
+					workInfluences[ i$2 ][ 1 ] = 0;
 
 				}
 
@@ -16891,49 +16898,49 @@
 
 			workInfluences.sort( numericalSort );
 
-			const morphTargets = material.morphTargets && geometry.morphAttributes.position;
-			const morphNormals = material.morphNormals && geometry.morphAttributes.normal;
+			var morphTargets = material.morphTargets && geometry.morphAttributes.position;
+			var morphNormals = material.morphNormals && geometry.morphAttributes.normal;
 
-			let morphInfluencesSum = 0;
+			var morphInfluencesSum = 0;
 
-			for ( let i = 0; i < 8; i ++ ) {
+			for ( var i$3 = 0; i$3 < 8; i$3 ++ ) {
 
-				const influence = workInfluences[ i ];
-				const index = influence[ 0 ];
-				const value = influence[ 1 ];
+				var influence$1 = workInfluences[ i$3 ];
+				var index = influence$1[ 0 ];
+				var value = influence$1[ 1 ];
 
 				if ( index !== Number.MAX_SAFE_INTEGER && value ) {
 
-					if ( morphTargets && geometry.getAttribute( 'morphTarget' + i ) !== morphTargets[ index ] ) {
+					if ( morphTargets && geometry.getAttribute( 'morphTarget' + i$3 ) !== morphTargets[ index ] ) {
 
-						geometry.setAttribute( 'morphTarget' + i, morphTargets[ index ] );
-
-					}
-
-					if ( morphNormals && geometry.getAttribute( 'morphNormal' + i ) !== morphNormals[ index ] ) {
-
-						geometry.setAttribute( 'morphNormal' + i, morphNormals[ index ] );
+						geometry.setAttribute( 'morphTarget' + i$3, morphTargets[ index ] );
 
 					}
 
-					morphInfluences[ i ] = value;
+					if ( morphNormals && geometry.getAttribute( 'morphNormal' + i$3 ) !== morphNormals[ index ] ) {
+
+						geometry.setAttribute( 'morphNormal' + i$3, morphNormals[ index ] );
+
+					}
+
+					morphInfluences[ i$3 ] = value;
 					morphInfluencesSum += value;
 
 				} else {
 
-					if ( morphTargets && geometry.getAttribute( 'morphTarget' + i ) !== undefined ) {
+					if ( morphTargets && geometry.getAttribute( 'morphTarget' + i$3 ) !== undefined ) {
 
-						geometry.deleteAttribute( 'morphTarget' + i );
-
-					}
-
-					if ( morphNormals && geometry.getAttribute( 'morphNormal' + i ) !== undefined ) {
-
-						geometry.deleteAttribute( 'morphNormal' + i );
+						geometry.deleteAttribute( 'morphTarget' + i$3 );
 
 					}
 
-					morphInfluences[ i ] = 0;
+					if ( morphNormals && geometry.getAttribute( 'morphNormal' + i$3 ) !== undefined ) {
+
+						geometry.deleteAttribute( 'morphNormal' + i$3 );
+
+					}
+
+					morphInfluences[ i$3 ] = 0;
 
 				}
 
@@ -16942,7 +16949,7 @@
 			// GLSL shader uses formula baseinfluence * base + sum(target * influence)
 			// This allows us to switch between absolute morphs and relative morphs without changing shader code
 			// When baseinfluence = 1 - sum(influence), the above is equivalent to sum((target - base) * influence)
-			const morphBaseInfluence = geometry.morphTargetsRelative ? 1 : 1 - morphInfluencesSum;
+			var morphBaseInfluence = geometry.morphTargetsRelative ? 1 : 1 - morphInfluencesSum;
 
 			program.getUniforms().setValue( gl, 'morphTargetBaseInfluence', morphBaseInfluence );
 			program.getUniforms().setValue( gl, 'morphTargetInfluences', morphInfluences );
@@ -16959,14 +16966,14 @@
 
 	function WebGLObjects( gl, geometries, attributes, info ) {
 
-		let updateMap = new WeakMap();
+		var updateMap = new WeakMap();
 
 		function update( object ) {
 
-			const frame = info.render.frame;
+			var frame = info.render.frame;
 
-			const geometry = object.geometry;
-			const buffergeometry = geometries.get( object, geometry );
+			var geometry = object.geometry;
+			var buffergeometry = geometries.get( object, geometry );
 
 			// Update once per frame
 
@@ -17138,35 +17145,35 @@
 	 *
 	 */
 
-	const emptyTexture = new Texture();
-	const emptyTexture2dArray = new DataTexture2DArray();
-	const emptyTexture3d = new DataTexture3D();
-	const emptyCubeTexture = new CubeTexture();
+	var emptyTexture = new Texture();
+	var emptyTexture2dArray = new DataTexture2DArray();
+	var emptyTexture3d = new DataTexture3D();
+	var emptyCubeTexture = new CubeTexture();
 
 	// --- Utilities ---
 
 	// Array Caches (provide typed arrays for temporary by size)
 
-	const arrayCacheF32 = [];
-	const arrayCacheI32 = [];
+	var arrayCacheF32 = [];
+	var arrayCacheI32 = [];
 
 	// Float32Array caches used for uploading Matrix uniforms
 
-	const mat4array = new Float32Array( 16 );
-	const mat3array = new Float32Array( 9 );
-	const mat2array = new Float32Array( 4 );
+	var mat4array = new Float32Array( 16 );
+	var mat3array = new Float32Array( 9 );
+	var mat2array = new Float32Array( 4 );
 
 	// Flattening for arrays of vectors and matrices
 
 	function flatten( array, nBlocks, blockSize ) {
 
-		const firstElem = array[ 0 ];
+		var firstElem = array[ 0 ];
 
-		if ( firstElem <= 0 || firstElem > 0 ) return array;
+		if ( firstElem <= 0 || firstElem > 0 ) { return array; }
 		// unoptimized: ! isNaN( firstElem )
 		// see http://jacksondunstan.com/articles/983
 
-		let n = nBlocks * blockSize,
+		var n = nBlocks * blockSize,
 			r = arrayCacheF32[ n ];
 
 		if ( r === undefined ) {
@@ -17180,7 +17187,7 @@
 
 			firstElem.toArray( r, 0 );
 
-			for ( let i = 1, offset = 0; i !== nBlocks; ++ i ) {
+			for ( var i = 1, offset = 0; i !== nBlocks; ++ i ) {
 
 				offset += blockSize;
 				array[ i ].toArray( r, offset );
@@ -17195,11 +17202,11 @@
 
 	function arraysEqual( a, b ) {
 
-		if ( a.length !== b.length ) return false;
+		if ( a.length !== b.length ) { return false; }
 
-		for ( let i = 0, l = a.length; i < l; i ++ ) {
+		for ( var i = 0, l = a.length; i < l; i ++ ) {
 
-			if ( a[ i ] !== b[ i ] ) return false;
+			if ( a[ i ] !== b[ i ] ) { return false; }
 
 		}
 
@@ -17209,7 +17216,7 @@
 
 	function copyArray( a, b ) {
 
-		for ( let i = 0, l = b.length; i < l; i ++ ) {
+		for ( var i = 0, l = b.length; i < l; i ++ ) {
 
 			a[ i ] = b[ i ];
 
@@ -17221,7 +17228,7 @@
 
 	function allocTexUnits( textures, n ) {
 
-		let r = arrayCacheI32[ n ];
+		var r = arrayCacheI32[ n ];
 
 		if ( r === undefined ) {
 
@@ -17230,7 +17237,7 @@
 
 		}
 
-		for ( let i = 0; i !== n; ++ i ) {
+		for ( var i = 0; i !== n; ++ i ) {
 
 			r[ i ] = textures.allocateTextureUnit();
 
@@ -17249,9 +17256,9 @@
 
 	function setValueV1f( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( cache[ 0 ] === v ) return;
+		if ( cache[ 0 ] === v ) { return; }
 
 		gl.uniform1f( this.addr, v );
 
@@ -17263,7 +17270,7 @@
 
 	function setValueV2f( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
 		if ( v.x !== undefined ) {
 
@@ -17278,7 +17285,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniform2fv( this.addr, v );
 
@@ -17290,7 +17297,7 @@
 
 	function setValueV3f( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
 		if ( v.x !== undefined ) {
 
@@ -17318,7 +17325,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniform3fv( this.addr, v );
 
@@ -17330,7 +17337,7 @@
 
 	function setValueV4f( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
 		if ( v.x !== undefined ) {
 
@@ -17347,7 +17354,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniform4fv( this.addr, v );
 
@@ -17361,12 +17368,12 @@
 
 	function setValueM2( gl, v ) {
 
-		const cache = this.cache;
-		const elements = v.elements;
+		var cache = this.cache;
+		var elements = v.elements;
 
 		if ( elements === undefined ) {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniformMatrix2fv( this.addr, false, v );
 
@@ -17374,7 +17381,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, elements ) ) return;
+			if ( arraysEqual( cache, elements ) ) { return; }
 
 			mat2array.set( elements );
 
@@ -17388,12 +17395,12 @@
 
 	function setValueM3( gl, v ) {
 
-		const cache = this.cache;
-		const elements = v.elements;
+		var cache = this.cache;
+		var elements = v.elements;
 
 		if ( elements === undefined ) {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniformMatrix3fv( this.addr, false, v );
 
@@ -17401,7 +17408,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, elements ) ) return;
+			if ( arraysEqual( cache, elements ) ) { return; }
 
 			mat3array.set( elements );
 
@@ -17415,12 +17422,12 @@
 
 	function setValueM4( gl, v ) {
 
-		const cache = this.cache;
-		const elements = v.elements;
+		var cache = this.cache;
+		var elements = v.elements;
 
 		if ( elements === undefined ) {
 
-			if ( arraysEqual( cache, v ) ) return;
+			if ( arraysEqual( cache, v ) ) { return; }
 
 			gl.uniformMatrix4fv( this.addr, false, v );
 
@@ -17428,7 +17435,7 @@
 
 		} else {
 
-			if ( arraysEqual( cache, elements ) ) return;
+			if ( arraysEqual( cache, elements ) ) { return; }
 
 			mat4array.set( elements );
 
@@ -17444,8 +17451,8 @@
 
 	function setValueT1( gl, v, textures ) {
 
-		const cache = this.cache;
-		const unit = textures.allocateTextureUnit();
+		var cache = this.cache;
+		var unit = textures.allocateTextureUnit();
 
 		if ( cache[ 0 ] !== unit ) {
 
@@ -17460,8 +17467,8 @@
 
 	function setValueT2DArray1( gl, v, textures ) {
 
-		const cache = this.cache;
-		const unit = textures.allocateTextureUnit();
+		var cache = this.cache;
+		var unit = textures.allocateTextureUnit();
 
 		if ( cache[ 0 ] !== unit ) {
 
@@ -17476,8 +17483,8 @@
 
 	function setValueT3D1( gl, v, textures ) {
 
-		const cache = this.cache;
-		const unit = textures.allocateTextureUnit();
+		var cache = this.cache;
+		var unit = textures.allocateTextureUnit();
 
 		if ( cache[ 0 ] !== unit ) {
 
@@ -17492,8 +17499,8 @@
 
 	function setValueT6( gl, v, textures ) {
 
-		const cache = this.cache;
-		const unit = textures.allocateTextureUnit();
+		var cache = this.cache;
+		var unit = textures.allocateTextureUnit();
 
 		if ( cache[ 0 ] !== unit ) {
 
@@ -17510,9 +17517,9 @@
 
 	function setValueV1i( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( cache[ 0 ] === v ) return;
+		if ( cache[ 0 ] === v ) { return; }
 
 		gl.uniform1i( this.addr, v );
 
@@ -17522,9 +17529,9 @@
 
 	function setValueV2i( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( arraysEqual( cache, v ) ) return;
+		if ( arraysEqual( cache, v ) ) { return; }
 
 		gl.uniform2iv( this.addr, v );
 
@@ -17534,9 +17541,9 @@
 
 	function setValueV3i( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( arraysEqual( cache, v ) ) return;
+		if ( arraysEqual( cache, v ) ) { return; }
 
 		gl.uniform3iv( this.addr, v );
 
@@ -17546,9 +17553,9 @@
 
 	function setValueV4i( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( arraysEqual( cache, v ) ) return;
+		if ( arraysEqual( cache, v ) ) { return; }
 
 		gl.uniform4iv( this.addr, v );
 
@@ -17560,9 +17567,9 @@
 
 	function setValueV1ui( gl, v ) {
 
-		const cache = this.cache;
+		var cache = this.cache;
 
-		if ( cache[ 0 ] === v ) return;
+		if ( cache[ 0 ] === v ) { return; }
 
 		gl.uniform1ui( this.addr, v );
 
@@ -17657,7 +17664,7 @@
 
 	function setValueV2fArray( gl, v ) {
 
-		const data = flatten( v, this.size, 2 );
+		var data = flatten( v, this.size, 2 );
 
 		gl.uniform2fv( this.addr, data );
 
@@ -17665,7 +17672,7 @@
 
 	function setValueV3fArray( gl, v ) {
 
-		const data = flatten( v, this.size, 3 );
+		var data = flatten( v, this.size, 3 );
 
 		gl.uniform3fv( this.addr, data );
 
@@ -17673,7 +17680,7 @@
 
 	function setValueV4fArray( gl, v ) {
 
-		const data = flatten( v, this.size, 4 );
+		var data = flatten( v, this.size, 4 );
 
 		gl.uniform4fv( this.addr, data );
 
@@ -17683,7 +17690,7 @@
 
 	function setValueM2Array( gl, v ) {
 
-		const data = flatten( v, this.size, 4 );
+		var data = flatten( v, this.size, 4 );
 
 		gl.uniformMatrix2fv( this.addr, false, data );
 
@@ -17691,7 +17698,7 @@
 
 	function setValueM3Array( gl, v ) {
 
-		const data = flatten( v, this.size, 9 );
+		var data = flatten( v, this.size, 9 );
 
 		gl.uniformMatrix3fv( this.addr, false, data );
 
@@ -17699,7 +17706,7 @@
 
 	function setValueM4Array( gl, v ) {
 
-		const data = flatten( v, this.size, 16 );
+		var data = flatten( v, this.size, 16 );
 
 		gl.uniformMatrix4fv( this.addr, false, data );
 
@@ -17709,13 +17716,13 @@
 
 	function setValueT1Array( gl, v, textures ) {
 
-		const n = v.length;
+		var n = v.length;
 
-		const units = allocTexUnits( textures, n );
+		var units = allocTexUnits( textures, n );
 
 		gl.uniform1iv( this.addr, units );
 
-		for ( let i = 0; i !== n; ++ i ) {
+		for ( var i = 0; i !== n; ++ i ) {
 
 			textures.safeSetTexture2D( v[ i ] || emptyTexture, units[ i ] );
 
@@ -17725,13 +17732,13 @@
 
 	function setValueT6Array( gl, v, textures ) {
 
-		const n = v.length;
+		var n = v.length;
 
-		const units = allocTexUnits( textures, n );
+		var units = allocTexUnits( textures, n );
 
 		gl.uniform1iv( this.addr, units );
 
-		for ( let i = 0; i !== n; ++ i ) {
+		for ( var i = 0; i !== n; ++ i ) {
 
 			textures.safeSetTextureCube( v[ i ] || emptyCubeTexture, units[ i ] );
 
@@ -17803,7 +17810,7 @@
 
 	PureArrayUniform.prototype.updateCache = function ( data ) {
 
-		let cache = this.cache;
+		var cache = this.cache;
 
 		if ( data instanceof Float32Array && cache.length !== data.length ) {
 
@@ -17826,11 +17833,11 @@
 
 	StructuredUniform.prototype.setValue = function ( gl, value, textures ) {
 
-		const seq = this.seq;
+		var seq = this.seq;
 
-		for ( let i = 0, n = seq.length; i !== n; ++ i ) {
+		for ( var i = 0, n = seq.length; i !== n; ++ i ) {
 
-			const u = seq[ i ];
+			var u = seq[ i ];
 			u.setValue( gl, value[ u.id ], textures );
 
 		}
@@ -17841,7 +17848,7 @@
 
 	// Parser - builds up the property tree from the path strings
 
-	const RePathPart = /([\w\d_]+)(\])?(\[|\.)?/g;
+	var RePathPart = /([\w\d_]+)(\])?(\[|\.)?/g;
 
 	// extracts
 	// 	- the identifier (member name or array index)
@@ -17861,7 +17868,7 @@
 
 	function parseUniform( activeInfo, addr, container ) {
 
-		const path = activeInfo.name,
+		var path = activeInfo.name,
 			pathLength = path.length;
 
 		// reset RegExp object, because of the early exit of a previous run
@@ -17869,14 +17876,14 @@
 
 		while ( true ) {
 
-			const match = RePathPart.exec( path ),
+			var match = RePathPart.exec( path ),
 				matchEnd = RePathPart.lastIndex;
 
-			let id = match[ 1 ],
+			var id = match[ 1 ],
 				idIsIndex = match[ 2 ] === ']',
 				subscript = match[ 3 ];
 
-			if ( idIsIndex ) id = id | 0; // convert to integer
+			if ( idIsIndex ) { id = id | 0; } // convert to integer
 
 			if ( subscript === undefined || subscript === '[' && matchEnd + 2 === pathLength ) {
 
@@ -17892,8 +17899,8 @@
 
 				// step into inner node / create it in case it doesn't exist
 
-				const map = container.map;
-				let next = map[ id ];
+				var map = container.map;
+				var next = map[ id ];
 
 				if ( next === undefined ) {
 
@@ -17917,11 +17924,11 @@
 		this.seq = [];
 		this.map = {};
 
-		const n = gl.getProgramParameter( program, 35718 );
+		var n = gl.getProgramParameter( program, 35718 );
 
-		for ( let i = 0; i < n; ++ i ) {
+		for ( var i = 0; i < n; ++ i ) {
 
-			const info = gl.getActiveUniform( program, i ),
+			var info = gl.getActiveUniform( program, i ),
 				addr = gl.getUniformLocation( program, info.name );
 
 			parseUniform( info, addr, this );
@@ -17932,17 +17939,17 @@
 
 	WebGLUniforms.prototype.setValue = function ( gl, name, value, textures ) {
 
-		const u = this.map[ name ];
+		var u = this.map[ name ];
 
-		if ( u !== undefined ) u.setValue( gl, value, textures );
+		if ( u !== undefined ) { u.setValue( gl, value, textures ); }
 
 	};
 
 	WebGLUniforms.prototype.setOptional = function ( gl, object, name ) {
 
-		const v = object[ name ];
+		var v = object[ name ];
 
-		if ( v !== undefined ) this.setValue( gl, name, v );
+		if ( v !== undefined ) { this.setValue( gl, name, v ); }
 
 	};
 
@@ -17951,9 +17958,9 @@
 
 	WebGLUniforms.upload = function ( gl, seq, values, textures ) {
 
-		for ( let i = 0, n = seq.length; i !== n; ++ i ) {
+		for ( var i = 0, n = seq.length; i !== n; ++ i ) {
 
-			const u = seq[ i ],
+			var u = seq[ i ],
 				v = values[ u.id ];
 
 			if ( v.needsUpdate !== false ) {
@@ -17969,12 +17976,12 @@
 
 	WebGLUniforms.seqWithValue = function ( seq, values ) {
 
-		const r = [];
+		var r = [];
 
-		for ( let i = 0, n = seq.length; i !== n; ++ i ) {
+		for ( var i = 0, n = seq.length; i !== n; ++ i ) {
 
-			const u = seq[ i ];
-			if ( u.id in values ) r.push( u );
+			var u = seq[ i ];
+			if ( u.id in values ) { r.push( u ); }
 
 		}
 
@@ -17984,7 +17991,7 @@
 
 	function WebGLShader( gl, type, string ) {
 
-		const shader = gl.createShader( type );
+		var shader = gl.createShader( type );
 
 		gl.shaderSource( shader, string );
 		gl.compileShader( shader );
@@ -17993,13 +18000,13 @@
 
 	}
 
-	let programIdCount = 0;
+	var programIdCount = 0;
 
 	function addLineNumbers( string ) {
 
-		const lines = string.split( '\n' );
+		var lines = string.split( '\n' );
 
-		for ( let i = 0; i < lines.length; i ++ ) {
+		for ( var i = 0; i < lines.length; i ++ ) {
 
 			lines[ i ] = ( i + 1 ) + ': ' + lines[ i ];
 
@@ -18039,15 +18046,15 @@
 
 	function getShaderErrors( gl, shader, type ) {
 
-		const status = gl.getShaderParameter( shader, 35713 );
-		const log = gl.getShaderInfoLog( shader ).trim();
+		var status = gl.getShaderParameter( shader, 35713 );
+		var log = gl.getShaderInfoLog( shader ).trim();
 
-		if ( status && log === '' ) return '';
+		if ( status && log === '' ) { return ''; }
 
 		// --enable-privileged-webgl-extension
 		// console.log( '**' + type + '**', gl.getExtension( 'WEBGL_debug_shaders' ).getTranslatedShaderSource( shader ) );
 
-		const source = gl.getShaderSource( shader );
+		var source = gl.getShaderSource( shader );
 
 		return 'THREE.WebGLShader: gl.getShaderInfoLog() ' + type + '\n' + log + addLineNumbers( source );
 
@@ -18055,21 +18062,21 @@
 
 	function getTexelDecodingFunction( functionName, encoding ) {
 
-		const components = getEncodingComponents( encoding );
+		var components = getEncodingComponents( encoding );
 		return 'vec4 ' + functionName + '( vec4 value ) { return ' + components[ 0 ] + 'ToLinear' + components[ 1 ] + '; }';
 
 	}
 
 	function getTexelEncodingFunction( functionName, encoding ) {
 
-		const components = getEncodingComponents( encoding );
+		var components = getEncodingComponents( encoding );
 		return 'vec4 ' + functionName + '( vec4 value ) { return LinearTo' + components[ 0 ] + components[ 1 ] + '; }';
 
 	}
 
 	function getToneMappingFunction( functionName, toneMapping ) {
 
-		let toneMappingName;
+		var toneMappingName;
 
 		switch ( toneMapping ) {
 
@@ -18105,7 +18112,7 @@
 
 	function generateExtensions( parameters ) {
 
-		const chunks = [
+		var chunks = [
 			( parameters.extensionDerivatives || parameters.envMapCubeUV || parameters.bumpMap || parameters.tangentSpaceNormalMap || parameters.clearcoatNormalMap || parameters.flatShading || parameters.shaderID === 'physical' ) ? '#extension GL_OES_standard_derivatives : enable' : '',
 			( parameters.extensionFragDepth || parameters.logarithmicDepthBuffer ) && parameters.rendererExtensionFragDepth ? '#extension GL_EXT_frag_depth : enable' : '',
 			( parameters.extensionDrawBuffers && parameters.rendererExtensionDrawBuffers ) ? '#extension GL_EXT_draw_buffers : require' : '',
@@ -18118,13 +18125,13 @@
 
 	function generateDefines( defines ) {
 
-		const chunks = [];
+		var chunks = [];
 
-		for ( const name in defines ) {
+		for ( var name in defines ) {
 
-			const value = defines[ name ];
+			var value = defines[ name ];
 
-			if ( value === false ) continue;
+			if ( value === false ) { continue; }
 
 			chunks.push( '#define ' + name + ' ' + value );
 
@@ -18136,14 +18143,14 @@
 
 	function fetchAttributeLocations( gl, program ) {
 
-		const attributes = {};
+		var attributes = {};
 
-		const n = gl.getProgramParameter( program, 35721 );
+		var n = gl.getProgramParameter( program, 35721 );
 
-		for ( let i = 0; i < n; i ++ ) {
+		for ( var i = 0; i < n; i ++ ) {
 
-			const info = gl.getActiveAttrib( program, i );
-			const name = info.name;
+			var info = gl.getActiveAttrib( program, i );
+			var name = info.name;
 
 			// console.log( 'THREE.WebGLProgram: ACTIVE VERTEX ATTRIBUTE:', name, i );
 
@@ -18185,7 +18192,7 @@
 
 	// Resolve Includes
 
-	const includePattern = /^[ \t]*#include +<([\w\d./]+)>/gm;
+	var includePattern = /^[ \t]*#include +<([\w\d./]+)>/gm;
 
 	function resolveIncludes( string ) {
 
@@ -18195,7 +18202,7 @@
 
 	function includeReplacer( match, include ) {
 
-		const string = ShaderChunk[ include ];
+		var string = ShaderChunk[ include ];
 
 		if ( string === undefined ) {
 
@@ -18209,8 +18216,8 @@
 
 	// Unroll Loops
 
-	const deprecatedUnrollLoopPattern = /#pragma unroll_loop[\s]+?for \( int i \= (\d+)\; i < (\d+)\; i \+\+ \) \{([\s\S]+?)(?=\})\}/g;
-	const unrollLoopPattern = /#pragma unroll_loop_start[\s]+?for \( int i \= (\d+)\; i < (\d+)\; i \+\+ \) \{([\s\S]+?)(?=\})\}[\s]+?#pragma unroll_loop_end/g;
+	var deprecatedUnrollLoopPattern = /#pragma unroll_loop[\s]+?for \( int i \= (\d+)\; i < (\d+)\; i \+\+ \) \{([\s\S]+?)(?=\})\}/g;
+	var unrollLoopPattern = /#pragma unroll_loop_start[\s]+?for \( int i \= (\d+)\; i < (\d+)\; i \+\+ \) \{([\s\S]+?)(?=\})\}[\s]+?#pragma unroll_loop_end/g;
 
 	function unrollLoops( string ) {
 
@@ -18229,9 +18236,9 @@
 
 	function loopReplacer( match, start, end, snippet ) {
 
-		let string = '';
+		var string = '';
 
-		for ( let i = parseInt( start ); i < parseInt( end ); i ++ ) {
+		for ( var i = parseInt( start ); i < parseInt( end ); i ++ ) {
 
 			string += snippet
 				.replace( /\[ i \]/g, '[ ' + i + ' ]' )
@@ -18247,7 +18254,7 @@
 
 	function generatePrecision( parameters ) {
 
-		let precisionstring = "precision " + parameters.precision + " float;\nprecision " + parameters.precision + " int;";
+		var precisionstring = "precision " + parameters.precision + " float;\nprecision " + parameters.precision + " int;";
 
 		if ( parameters.precision === "highp" ) {
 
@@ -18269,7 +18276,7 @@
 
 	function generateShadowMapTypeDefine( parameters ) {
 
-		let shadowMapTypeDefine = 'SHADOWMAP_TYPE_BASIC';
+		var shadowMapTypeDefine = 'SHADOWMAP_TYPE_BASIC';
 
 		if ( parameters.shadowMapType === PCFShadowMap ) {
 
@@ -18291,7 +18298,7 @@
 
 	function generateEnvMapTypeDefine( parameters ) {
 
-		let envMapTypeDefine = 'ENVMAP_TYPE_CUBE';
+		var envMapTypeDefine = 'ENVMAP_TYPE_CUBE';
 
 		if ( parameters.envMap ) {
 
@@ -18322,7 +18329,7 @@
 
 	function generateEnvMapModeDefine( parameters ) {
 
-		let envMapModeDefine = 'ENVMAP_MODE_REFLECTION';
+		var envMapModeDefine = 'ENVMAP_MODE_REFLECTION';
 
 		if ( parameters.envMap ) {
 
@@ -18345,7 +18352,7 @@
 
 	function generateEnvMapBlendingDefine( parameters ) {
 
-		let envMapBlendingDefine = 'ENVMAP_BLENDING_NONE';
+		var envMapBlendingDefine = 'ENVMAP_BLENDING_NONE';
 
 		if ( parameters.envMap ) {
 
@@ -18373,28 +18380,28 @@
 
 	function WebGLProgram( renderer, cacheKey, parameters, bindingStates ) {
 
-		const gl = renderer.getContext();
+		var gl = renderer.getContext();
 
-		const defines = parameters.defines;
+		var defines = parameters.defines;
 
-		let vertexShader = parameters.vertexShader;
-		let fragmentShader = parameters.fragmentShader;
+		var vertexShader = parameters.vertexShader;
+		var fragmentShader = parameters.fragmentShader;
 
-		const shadowMapTypeDefine = generateShadowMapTypeDefine( parameters );
-		const envMapTypeDefine = generateEnvMapTypeDefine( parameters );
-		const envMapModeDefine = generateEnvMapModeDefine( parameters );
-		const envMapBlendingDefine = generateEnvMapBlendingDefine( parameters );
+		var shadowMapTypeDefine = generateShadowMapTypeDefine( parameters );
+		var envMapTypeDefine = generateEnvMapTypeDefine( parameters );
+		var envMapModeDefine = generateEnvMapModeDefine( parameters );
+		var envMapBlendingDefine = generateEnvMapBlendingDefine( parameters );
 
 
-		const gammaFactorDefine = ( renderer.gammaFactor > 0 ) ? renderer.gammaFactor : 1.0;
+		var gammaFactorDefine = ( renderer.gammaFactor > 0 ) ? renderer.gammaFactor : 1.0;
 
-		const customExtensions = parameters.isWebGL2 ? '' : generateExtensions( parameters );
+		var customExtensions = parameters.isWebGL2 ? '' : generateExtensions( parameters );
 
-		const customDefines = generateDefines( defines );
+		var customDefines = generateDefines( defines );
 
-		const program = gl.createProgram();
+		var program = gl.createProgram();
 
-		let prefixVertex, prefixFragment;
+		var prefixVertex, prefixFragment;
 
 		if ( parameters.isRawShaderMaterial ) {
 
@@ -18684,14 +18691,14 @@
 
 		}
 
-		const vertexGlsl = prefixVertex + vertexShader;
-		const fragmentGlsl = prefixFragment + fragmentShader;
+		var vertexGlsl = prefixVertex + vertexShader;
+		var fragmentGlsl = prefixFragment + fragmentShader;
 
 		// console.log( '*VERTEX*', vertexGlsl );
 		// console.log( '*FRAGMENT*', fragmentGlsl );
 
-		const glVertexShader = WebGLShader( gl, 35633, vertexGlsl );
-		const glFragmentShader = WebGLShader( gl, 35632, fragmentGlsl );
+		var glVertexShader = WebGLShader( gl, 35633, vertexGlsl );
+		var glFragmentShader = WebGLShader( gl, 35632, fragmentGlsl );
 
 		gl.attachShader( program, glVertexShader );
 		gl.attachShader( program, glFragmentShader );
@@ -18714,19 +18721,19 @@
 		// check for link errors
 		if ( renderer.debug.checkShaderErrors ) {
 
-			const programLog = gl.getProgramInfoLog( program ).trim();
-			const vertexLog = gl.getShaderInfoLog( glVertexShader ).trim();
-			const fragmentLog = gl.getShaderInfoLog( glFragmentShader ).trim();
+			var programLog = gl.getProgramInfoLog( program ).trim();
+			var vertexLog = gl.getShaderInfoLog( glVertexShader ).trim();
+			var fragmentLog = gl.getShaderInfoLog( glFragmentShader ).trim();
 
-			let runnable = true;
-			let haveDiagnostics = true;
+			var runnable = true;
+			var haveDiagnostics = true;
 
 			if ( gl.getProgramParameter( program, 35714 ) === false ) {
 
 				runnable = false;
 
-				const vertexErrors = getShaderErrors( gl, glVertexShader, 'vertex' );
-				const fragmentErrors = getShaderErrors( gl, glFragmentShader, 'fragment' );
+				var vertexErrors = getShaderErrors( gl, glVertexShader, 'vertex' );
+				var fragmentErrors = getShaderErrors( gl, glFragmentShader, 'fragment' );
 
 				console.error( 'THREE.WebGLProgram: shader error: ', gl.getError(), '35715', gl.getProgramParameter( program, 35715 ), 'gl.getProgramInfoLog', programLog, vertexErrors, fragmentErrors );
 
@@ -18779,7 +18786,7 @@
 
 		// set up caching for uniform locations
 
-		let cachedUniforms;
+		var cachedUniforms;
 
 		this.getUniforms = function () {
 
@@ -18795,7 +18802,7 @@
 
 		// set up caching for attribute locations
 
-		let cachedAttributes;
+		var cachedAttributes;
 
 		this.getAttributes = function () {
 
@@ -18836,17 +18843,17 @@
 
 	function WebGLPrograms( renderer, extensions, capabilities, bindingStates ) {
 
-		const programs = [];
+		var programs = [];
 
-		const isWebGL2 = capabilities.isWebGL2;
-		const logarithmicDepthBuffer = capabilities.logarithmicDepthBuffer;
-		const floatVertexTextures = capabilities.floatVertexTextures;
-		const maxVertexUniforms = capabilities.maxVertexUniforms;
-		const vertexTextures = capabilities.vertexTextures;
+		var isWebGL2 = capabilities.isWebGL2;
+		var logarithmicDepthBuffer = capabilities.logarithmicDepthBuffer;
+		var floatVertexTextures = capabilities.floatVertexTextures;
+		var maxVertexUniforms = capabilities.maxVertexUniforms;
+		var vertexTextures = capabilities.vertexTextures;
 
-		let precision = capabilities.precision;
+		var precision = capabilities.precision;
 
-		const shaderIDs = {
+		var shaderIDs = {
 			MeshDepthMaterial: 'depth',
 			MeshDistanceMaterial: 'distanceRGBA',
 			MeshNormalMaterial: 'normal',
@@ -18864,7 +18871,7 @@
 			SpriteMaterial: 'sprite'
 		};
 
-		const parameterNames = [
+		var parameterNames = [
 			"precision", "isWebGL2", "supportsVertexTextures", "outputEncoding", "instancing",
 			"map", "mapEncoding", "matcap", "matcapEncoding", "envMap", "envMapMode", "envMapEncoding", "envMapCubeUV",
 			"lightMap", "lightMapEncoding", "aoMap", "emissiveMap", "emissiveMapEncoding", "bumpMap", "normalMap", "objectSpaceNormalMap", "tangentSpaceNormalMap", "clearcoatMap", "clearcoatRoughnessMap", "clearcoatNormalMap", "displacementMap", "specularMap",
@@ -18882,8 +18889,8 @@
 
 		function allocateBones( object ) {
 
-			const skeleton = object.skeleton;
-			const bones = skeleton.bones;
+			var skeleton = object.skeleton;
+			var bones = skeleton.bones;
 
 			if ( floatVertexTextures ) {
 
@@ -18898,10 +18905,10 @@
 				//  - limit here is ANGLE's 254 max uniform vectors
 				//    (up to 54 should be safe)
 
-				const nVertexUniforms = maxVertexUniforms;
-				const nVertexMatrices = Math.floor( ( nVertexUniforms - 20 ) / 4 );
+				var nVertexUniforms = maxVertexUniforms;
+				var nVertexMatrices = Math.floor( ( nVertexUniforms - 20 ) / 4 );
 
-				const maxBones = Math.min( nVertexMatrices, bones.length );
+				var maxBones = Math.min( nVertexMatrices, bones.length );
 
 				if ( maxBones < bones.length ) {
 
@@ -18918,7 +18925,7 @@
 
 		function getTextureEncodingFromMap( map ) {
 
-			let encoding;
+			var encoding;
 
 			if ( ! map ) {
 
@@ -18941,17 +18948,17 @@
 
 		function getParameters( material, lights, shadows, scene, nClipPlanes, nClipIntersection, object ) {
 
-			const fog = scene.fog;
-			const environment = material.isMeshStandardMaterial ? scene.environment : null;
+			var fog = scene.fog;
+			var environment = material.isMeshStandardMaterial ? scene.environment : null;
 
-			const envMap = material.envMap || environment;
+			var envMap = material.envMap || environment;
 
-			const shaderID = shaderIDs[ material.type ];
+			var shaderID = shaderIDs[ material.type ];
 
 			// heuristics to create shader parameters according to lights in the scene
 			// (not to blow over maxLights budget)
 
-			const maxBones = object.isSkinnedMesh ? allocateBones( object ) : 0;
+			var maxBones = object.isSkinnedMesh ? allocateBones( object ) : 0;
 
 			if ( material.precision !== null ) {
 
@@ -18965,11 +18972,11 @@
 
 			}
 
-			let vertexShader, fragmentShader;
+			var vertexShader, fragmentShader;
 
 			if ( shaderID ) {
 
-				const shader = ShaderLib[ shaderID ];
+				var shader = ShaderLib[ shaderID ];
 
 				vertexShader = shader.vertexShader;
 				fragmentShader = shader.fragmentShader;
@@ -18981,9 +18988,9 @@
 
 			}
 
-			const currentRenderTarget = renderer.getRenderTarget();
+			var currentRenderTarget = renderer.getRenderTarget();
 
-			const parameters = {
+			var parameters = {
 
 				isWebGL2: isWebGL2,
 
@@ -19110,7 +19117,7 @@
 
 		function getProgramCacheKey( parameters ) {
 
-			const array = [];
+			var array = [];
 
 			if ( parameters.shaderID ) {
 
@@ -19125,7 +19132,7 @@
 
 			if ( parameters.defines !== undefined ) {
 
-				for ( const name in parameters.defines ) {
+				for ( var name in parameters.defines ) {
 
 					array.push( name );
 					array.push( parameters.defines[ name ] );
@@ -19136,7 +19143,7 @@
 
 			if ( parameters.isRawShaderMaterial === undefined ) {
 
-				for ( let i = 0; i < parameterNames.length; i ++ ) {
+				for ( var i = 0; i < parameterNames.length; i ++ ) {
 
 					array.push( parameters[ parameterNames[ i ] ] );
 
@@ -19155,12 +19162,12 @@
 
 		function getUniforms( material ) {
 
-			const shaderID = shaderIDs[ material.type ];
-			let uniforms;
+			var shaderID = shaderIDs[ material.type ];
+			var uniforms;
 
 			if ( shaderID ) {
 
-				const shader = ShaderLib[ shaderID ];
+				var shader = ShaderLib[ shaderID ];
 				uniforms = UniformsUtils.clone( shader.uniforms );
 
 			} else {
@@ -19175,12 +19182,12 @@
 
 		function acquireProgram( parameters, cacheKey ) {
 
-			let program;
+			var program;
 
 			// Check if code has been already compiled
-			for ( let p = 0, pl = programs.length; p < pl; p ++ ) {
+			for ( var p = 0, pl = programs.length; p < pl; p ++ ) {
 
-				const preexistingProgram = programs[ p ];
+				var preexistingProgram = programs[ p ];
 
 				if ( preexistingProgram.cacheKey === cacheKey ) {
 
@@ -19209,7 +19216,7 @@
 			if ( -- program.usedTimes === 0 ) {
 
 				// Remove from unordered set
-				const i = programs.indexOf( program );
+				var i = programs.indexOf( program );
 				programs[ i ] = programs[ programs.length - 1 ];
 				programs.pop();
 
@@ -19234,11 +19241,11 @@
 
 	function WebGLProperties() {
 
-		let properties = new WeakMap();
+		var properties = new WeakMap();
 
 		function get( object ) {
 
-			let map = properties.get( object );
+			var map = properties.get( object );
 
 			if ( map === undefined ) {
 
@@ -19333,13 +19340,13 @@
 
 	function WebGLRenderList( properties ) {
 
-		const renderItems = [];
-		let renderItemsIndex = 0;
+		var renderItems = [];
+		var renderItemsIndex = 0;
 
-		const opaque = [];
-		const transparent = [];
+		var opaque = [];
+		var transparent = [];
 
-		const defaultProgram = { id: - 1 };
+		var defaultProgram = { id: - 1 };
 
 		function init() {
 
@@ -19352,8 +19359,8 @@
 
 		function getNextRenderItem( object, geometry, material, groupOrder, z, group ) {
 
-			let renderItem = renderItems[ renderItemsIndex ];
-			const materialProperties = properties.get( material );
+			var renderItem = renderItems[ renderItemsIndex ];
+			var materialProperties = properties.get( material );
 
 			if ( renderItem === undefined ) {
 
@@ -19393,7 +19400,7 @@
 
 		function push( object, geometry, material, groupOrder, z, group ) {
 
-			const renderItem = getNextRenderItem( object, geometry, material, groupOrder, z, group );
+			var renderItem = getNextRenderItem( object, geometry, material, groupOrder, z, group );
 
 			( material.transparent === true ? transparent : opaque ).push( renderItem );
 
@@ -19401,7 +19408,7 @@
 
 		function unshift( object, geometry, material, groupOrder, z, group ) {
 
-			const renderItem = getNextRenderItem( object, geometry, material, groupOrder, z, group );
+			var renderItem = getNextRenderItem( object, geometry, material, groupOrder, z, group );
 
 			( material.transparent === true ? transparent : opaque ).unshift( renderItem );
 
@@ -19409,8 +19416,8 @@
 
 		function sort( customOpaqueSort, customTransparentSort ) {
 
-			if ( opaque.length > 1 ) opaque.sort( customOpaqueSort || painterSortStable );
-			if ( transparent.length > 1 ) transparent.sort( customTransparentSort || reversePainterSortStable );
+			if ( opaque.length > 1 ) { opaque.sort( customOpaqueSort || painterSortStable ); }
+			if ( transparent.length > 1 ) { transparent.sort( customTransparentSort || reversePainterSortStable ); }
 
 		}
 
@@ -19418,11 +19425,11 @@
 
 			// Clear references from inactive renderItems in the list
 
-			for ( let i = renderItemsIndex, il = renderItems.length; i < il; i ++ ) {
+			for ( var i = renderItemsIndex, il = renderItems.length; i < il; i ++ ) {
 
-				const renderItem = renderItems[ i ];
+				var renderItem = renderItems[ i ];
 
-				if ( renderItem.id === null ) break;
+				if ( renderItem.id === null ) { break; }
 
 				renderItem.id = null;
 				renderItem.object = null;
@@ -19452,11 +19459,11 @@
 
 	function WebGLRenderLists( properties ) {
 
-		let lists = new WeakMap();
+		var lists = new WeakMap();
 
 		function onSceneDispose( event ) {
 
-			const scene = event.target;
+			var scene = event.target;
 
 			scene.removeEventListener( 'dispose', onSceneDispose );
 
@@ -19466,8 +19473,8 @@
 
 		function get( scene, camera ) {
 
-			const cameras = lists.get( scene );
-			let list;
+			var cameras = lists.get( scene );
+			var list;
 
 			if ( cameras === undefined ) {
 
@@ -19508,7 +19515,7 @@
 
 	function UniformsCache() {
 
-		const lights = {};
+		var lights = {};
 
 		return {
 
@@ -19520,7 +19527,7 @@
 
 				}
 
-				let uniforms;
+				var uniforms;
 
 				switch ( light.type ) {
 
@@ -19583,7 +19590,7 @@
 
 	function ShadowUniformsCache() {
 
-		const lights = {};
+		var lights = {};
 
 		return {
 
@@ -19595,7 +19602,7 @@
 
 				}
 
-				let uniforms;
+				var uniforms;
 
 				switch ( light.type ) {
 
@@ -19644,7 +19651,7 @@
 
 
 
-	let nextVersion = 0;
+	var nextVersion = 0;
 
 	function shadowCastingLightsFirst( lightA, lightB ) {
 
@@ -19654,11 +19661,11 @@
 
 	function WebGLLights() {
 
-		const cache = new UniformsCache();
+		var cache = new UniformsCache();
 
-		const shadowCache = ShadowUniformsCache();
+		var shadowCache = ShadowUniformsCache();
 
-		const state = {
+		var state = {
 
 			version: 0,
 
@@ -19693,41 +19700,41 @@
 
 		};
 
-		for ( let i = 0; i < 9; i ++ ) state.probe.push( new Vector3() );
+		for ( var i = 0; i < 9; i ++ ) { state.probe.push( new Vector3() ); }
 
-		const vector3 = new Vector3();
-		const matrix4 = new Matrix4();
-		const matrix42 = new Matrix4();
+		var vector3 = new Vector3();
+		var matrix4 = new Matrix4();
+		var matrix42 = new Matrix4();
 
 		function setup( lights, shadows, camera ) {
 
-			let r = 0, g = 0, b = 0;
+			var r = 0, g = 0, b = 0;
 
-			for ( let i = 0; i < 9; i ++ ) state.probe[ i ].set( 0, 0, 0 );
+			for ( var i = 0; i < 9; i ++ ) { state.probe[ i ].set( 0, 0, 0 ); }
 
-			let directionalLength = 0;
-			let pointLength = 0;
-			let spotLength = 0;
-			let rectAreaLength = 0;
-			let hemiLength = 0;
+			var directionalLength = 0;
+			var pointLength = 0;
+			var spotLength = 0;
+			var rectAreaLength = 0;
+			var hemiLength = 0;
 
-			let numDirectionalShadows = 0;
-			let numPointShadows = 0;
-			let numSpotShadows = 0;
+			var numDirectionalShadows = 0;
+			var numPointShadows = 0;
+			var numSpotShadows = 0;
 
-			const viewMatrix = camera.matrixWorldInverse;
+			var viewMatrix = camera.matrixWorldInverse;
 
 			lights.sort( shadowCastingLightsFirst );
 
-			for ( let i = 0, l = lights.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l = lights.length; i$1 < l; i$1 ++ ) {
 
-				const light = lights[ i ];
+				var light = lights[ i$1 ];
 
-				const color = light.color;
-				const intensity = light.intensity;
-				const distance = light.distance;
+				var color = light.color;
+				var intensity = light.intensity;
+				var distance = light.distance;
 
-				const shadowMap = ( light.shadow && light.shadow.map ) ? light.shadow.map.texture : null;
+				var shadowMap = ( light.shadow && light.shadow.map ) ? light.shadow.map.texture : null;
 
 				if ( light.isAmbientLight ) {
 
@@ -19737,7 +19744,7 @@
 
 				} else if ( light.isLightProbe ) {
 
-					for ( let j = 0; j < 9; j ++ ) {
+					for ( var j = 0; j < 9; j ++ ) {
 
 						state.probe[ j ].addScaledVector( light.sh.coefficients[ j ], intensity );
 
@@ -19745,7 +19752,7 @@
 
 				} else if ( light.isDirectionalLight ) {
 
-					const uniforms = cache.get( light );
+					var uniforms = cache.get( light );
 
 					uniforms.color.copy( light.color ).multiplyScalar( light.intensity );
 					uniforms.direction.setFromMatrixPosition( light.matrixWorld );
@@ -19755,9 +19762,9 @@
 
 					if ( light.castShadow ) {
 
-						const shadow = light.shadow;
+						var shadow = light.shadow;
 
-						const shadowUniforms = shadowCache.get( light );
+						var shadowUniforms = shadowCache.get( light );
 
 						shadowUniforms.shadowBias = shadow.bias;
 						shadowUniforms.shadowNormalBias = shadow.normalBias;
@@ -19778,35 +19785,35 @@
 
 				} else if ( light.isSpotLight ) {
 
-					const uniforms = cache.get( light );
+					var uniforms$1 = cache.get( light );
 
-					uniforms.position.setFromMatrixPosition( light.matrixWorld );
-					uniforms.position.applyMatrix4( viewMatrix );
+					uniforms$1.position.setFromMatrixPosition( light.matrixWorld );
+					uniforms$1.position.applyMatrix4( viewMatrix );
 
-					uniforms.color.copy( color ).multiplyScalar( intensity );
-					uniforms.distance = distance;
+					uniforms$1.color.copy( color ).multiplyScalar( intensity );
+					uniforms$1.distance = distance;
 
-					uniforms.direction.setFromMatrixPosition( light.matrixWorld );
+					uniforms$1.direction.setFromMatrixPosition( light.matrixWorld );
 					vector3.setFromMatrixPosition( light.target.matrixWorld );
-					uniforms.direction.sub( vector3 );
-					uniforms.direction.transformDirection( viewMatrix );
+					uniforms$1.direction.sub( vector3 );
+					uniforms$1.direction.transformDirection( viewMatrix );
 
-					uniforms.coneCos = Math.cos( light.angle );
-					uniforms.penumbraCos = Math.cos( light.angle * ( 1 - light.penumbra ) );
-					uniforms.decay = light.decay;
+					uniforms$1.coneCos = Math.cos( light.angle );
+					uniforms$1.penumbraCos = Math.cos( light.angle * ( 1 - light.penumbra ) );
+					uniforms$1.decay = light.decay;
 
 					if ( light.castShadow ) {
 
-						const shadow = light.shadow;
+						var shadow$1 = light.shadow;
 
-						const shadowUniforms = shadowCache.get( light );
+						var shadowUniforms$1 = shadowCache.get( light );
 
-						shadowUniforms.shadowBias = shadow.bias;
-						shadowUniforms.shadowNormalBias = shadow.normalBias;
-						shadowUniforms.shadowRadius = shadow.radius;
-						shadowUniforms.shadowMapSize = shadow.mapSize;
+						shadowUniforms$1.shadowBias = shadow$1.bias;
+						shadowUniforms$1.shadowNormalBias = shadow$1.normalBias;
+						shadowUniforms$1.shadowRadius = shadow$1.radius;
+						shadowUniforms$1.shadowMapSize = shadow$1.mapSize;
 
-						state.spotShadow[ spotLength ] = shadowUniforms;
+						state.spotShadow[ spotLength ] = shadowUniforms$1;
 						state.spotShadowMap[ spotLength ] = shadowMap;
 						state.spotShadowMatrix[ spotLength ] = light.shadow.matrix;
 
@@ -19814,22 +19821,22 @@
 
 					}
 
-					state.spot[ spotLength ] = uniforms;
+					state.spot[ spotLength ] = uniforms$1;
 
 					spotLength ++;
 
 				} else if ( light.isRectAreaLight ) {
 
-					const uniforms = cache.get( light );
+					var uniforms$2 = cache.get( light );
 
 					// (a) intensity is the total visible light emitted
 					//uniforms.color.copy( color ).multiplyScalar( intensity / ( light.width * light.height * Math.PI ) );
 
 					// (b) intensity is the brightness of the light
-					uniforms.color.copy( color ).multiplyScalar( intensity );
+					uniforms$2.color.copy( color ).multiplyScalar( intensity );
 
-					uniforms.position.setFromMatrixPosition( light.matrixWorld );
-					uniforms.position.applyMatrix4( viewMatrix );
+					uniforms$2.position.setFromMatrixPosition( light.matrixWorld );
+					uniforms$2.position.applyMatrix4( viewMatrix );
 
 					// extract local rotation of light to derive width/height half vectors
 					matrix42.identity();
@@ -19837,44 +19844,44 @@
 					matrix4.premultiply( viewMatrix );
 					matrix42.extractRotation( matrix4 );
 
-					uniforms.halfWidth.set( light.width * 0.5, 0.0, 0.0 );
-					uniforms.halfHeight.set( 0.0, light.height * 0.5, 0.0 );
+					uniforms$2.halfWidth.set( light.width * 0.5, 0.0, 0.0 );
+					uniforms$2.halfHeight.set( 0.0, light.height * 0.5, 0.0 );
 
-					uniforms.halfWidth.applyMatrix4( matrix42 );
-					uniforms.halfHeight.applyMatrix4( matrix42 );
+					uniforms$2.halfWidth.applyMatrix4( matrix42 );
+					uniforms$2.halfHeight.applyMatrix4( matrix42 );
 
 					// TODO (abelnation): RectAreaLight distance?
 					// uniforms.distance = distance;
 
-					state.rectArea[ rectAreaLength ] = uniforms;
+					state.rectArea[ rectAreaLength ] = uniforms$2;
 
 					rectAreaLength ++;
 
 				} else if ( light.isPointLight ) {
 
-					const uniforms = cache.get( light );
+					var uniforms$3 = cache.get( light );
 
-					uniforms.position.setFromMatrixPosition( light.matrixWorld );
-					uniforms.position.applyMatrix4( viewMatrix );
+					uniforms$3.position.setFromMatrixPosition( light.matrixWorld );
+					uniforms$3.position.applyMatrix4( viewMatrix );
 
-					uniforms.color.copy( light.color ).multiplyScalar( light.intensity );
-					uniforms.distance = light.distance;
-					uniforms.decay = light.decay;
+					uniforms$3.color.copy( light.color ).multiplyScalar( light.intensity );
+					uniforms$3.distance = light.distance;
+					uniforms$3.decay = light.decay;
 
 					if ( light.castShadow ) {
 
-						const shadow = light.shadow;
+						var shadow$2 = light.shadow;
 
-						const shadowUniforms = shadowCache.get( light );
+						var shadowUniforms$2 = shadowCache.get( light );
 
-						shadowUniforms.shadowBias = shadow.bias;
-						shadowUniforms.shadowNormalBias = shadow.normalBias;
-						shadowUniforms.shadowRadius = shadow.radius;
-						shadowUniforms.shadowMapSize = shadow.mapSize;
-						shadowUniforms.shadowCameraNear = shadow.camera.near;
-						shadowUniforms.shadowCameraFar = shadow.camera.far;
+						shadowUniforms$2.shadowBias = shadow$2.bias;
+						shadowUniforms$2.shadowNormalBias = shadow$2.normalBias;
+						shadowUniforms$2.shadowRadius = shadow$2.radius;
+						shadowUniforms$2.shadowMapSize = shadow$2.mapSize;
+						shadowUniforms$2.shadowCameraNear = shadow$2.camera.near;
+						shadowUniforms$2.shadowCameraFar = shadow$2.camera.far;
 
-						state.pointShadow[ pointLength ] = shadowUniforms;
+						state.pointShadow[ pointLength ] = shadowUniforms$2;
 						state.pointShadowMap[ pointLength ] = shadowMap;
 						state.pointShadowMatrix[ pointLength ] = light.shadow.matrix;
 
@@ -19882,22 +19889,22 @@
 
 					}
 
-					state.point[ pointLength ] = uniforms;
+					state.point[ pointLength ] = uniforms$3;
 
 					pointLength ++;
 
 				} else if ( light.isHemisphereLight ) {
 
-					const uniforms = cache.get( light );
+					var uniforms$4 = cache.get( light );
 
-					uniforms.direction.setFromMatrixPosition( light.matrixWorld );
-					uniforms.direction.transformDirection( viewMatrix );
-					uniforms.direction.normalize();
+					uniforms$4.direction.setFromMatrixPosition( light.matrixWorld );
+					uniforms$4.direction.transformDirection( viewMatrix );
+					uniforms$4.direction.normalize();
 
-					uniforms.skyColor.copy( light.color ).multiplyScalar( intensity );
-					uniforms.groundColor.copy( light.groundColor ).multiplyScalar( intensity );
+					uniforms$4.skyColor.copy( light.color ).multiplyScalar( intensity );
+					uniforms$4.groundColor.copy( light.groundColor ).multiplyScalar( intensity );
 
-					state.hemi[ hemiLength ] = uniforms;
+					state.hemi[ hemiLength ] = uniforms$4;
 
 					hemiLength ++;
 
@@ -19909,7 +19916,7 @@
 			state.ambient[ 1 ] = g;
 			state.ambient[ 2 ] = b;
 
-			const hash = state.hash;
+			var hash = state.hash;
 
 			if ( hash.directionalLength !== directionalLength ||
 				hash.pointLength !== pointLength ||
@@ -19961,10 +19968,10 @@
 
 	function WebGLRenderState() {
 
-		const lights = new WebGLLights();
+		var lights = new WebGLLights();
 
-		const lightsArray = [];
-		const shadowsArray = [];
+		var lightsArray = [];
+		var shadowsArray = [];
 
 		function init() {
 
@@ -19991,7 +19998,7 @@
 
 		}
 
-		const state = {
+		var state = {
 			lightsArray: lightsArray,
 			shadowsArray: shadowsArray,
 
@@ -20011,11 +20018,11 @@
 
 	function WebGLRenderStates() {
 
-		let renderStates = new WeakMap();
+		var renderStates = new WeakMap();
 
 		function onSceneDispose( event ) {
 
-			const scene = event.target;
+			var scene = event.target;
 
 			scene.removeEventListener( 'dispose', onSceneDispose );
 
@@ -20025,7 +20032,7 @@
 
 		function get( scene, camera ) {
 
-			let renderState;
+			var renderState;
 
 			if ( renderStates.has( scene ) === false ) {
 
@@ -20224,9 +20231,9 @@
 
 	function WebGLShadowMap( _renderer, _objects, maxTextureSize ) {
 
-		let _frustum = new Frustum();
+		var _frustum = new Frustum();
 
-		const _shadowMapSize = new Vector2(),
+		var _shadowMapSize = new Vector2(),
 			_viewportSize = new Vector2(),
 
 			_viewport = new Vector4(),
@@ -20236,9 +20243,9 @@
 
 			_materialCache = {};
 
-		const shadowSide = { 0: BackSide, 1: FrontSide, 2: DoubleSide };
+		var shadowSide = { 0: BackSide, 1: FrontSide, 2: DoubleSide };
 
-		const shadowMaterialVertical = new ShaderMaterial( {
+		var shadowMaterialVertical = new ShaderMaterial( {
 
 			defines: {
 				SAMPLE_RATE: 2.0 / 8.0,
@@ -20257,10 +20264,10 @@
 
 		} );
 
-		const shadowMaterialHorizonal = shadowMaterialVertical.clone();
+		var shadowMaterialHorizonal = shadowMaterialVertical.clone();
 		shadowMaterialHorizonal.defines.HORIZONAL_PASS = 1;
 
-		const fullScreenTri = new BufferGeometry();
+		var fullScreenTri = new BufferGeometry();
 		fullScreenTri.setAttribute(
 			"position",
 			new BufferAttribute(
@@ -20269,9 +20276,9 @@
 			)
 		);
 
-		const fullScreenMesh = new Mesh( fullScreenTri, shadowMaterialVertical );
+		var fullScreenMesh = new Mesh( fullScreenTri, shadowMaterialVertical );
 
-		const scope = this;
+		var scope = this;
 
 		this.enabled = false;
 
@@ -20282,16 +20289,16 @@
 
 		this.render = function ( lights, scene, camera ) {
 
-			if ( scope.enabled === false ) return;
-			if ( scope.autoUpdate === false && scope.needsUpdate === false ) return;
+			if ( scope.enabled === false ) { return; }
+			if ( scope.autoUpdate === false && scope.needsUpdate === false ) { return; }
 
-			if ( lights.length === 0 ) return;
+			if ( lights.length === 0 ) { return; }
 
-			const currentRenderTarget = _renderer.getRenderTarget();
-			const activeCubeFace = _renderer.getActiveCubeFace();
-			const activeMipmapLevel = _renderer.getActiveMipmapLevel();
+			var currentRenderTarget = _renderer.getRenderTarget();
+			var activeCubeFace = _renderer.getActiveCubeFace();
+			var activeMipmapLevel = _renderer.getActiveMipmapLevel();
 
-			const _state = _renderer.state;
+			var _state = _renderer.state;
 
 			// Set GL state for depth map.
 			_state.setBlending( NoBlending );
@@ -20301,12 +20308,12 @@
 
 			// render depth map
 
-			for ( let i = 0, il = lights.length; i < il; i ++ ) {
+			for ( var i = 0, il = lights.length; i < il; i ++ ) {
 
-				const light = lights[ i ];
-				const shadow = light.shadow;
+				var light = lights[ i ];
+				var shadow = light.shadow;
 
-				if ( shadow.autoUpdate === false && shadow.needsUpdate === false ) continue;
+				if ( shadow.autoUpdate === false && shadow.needsUpdate === false ) { continue; }
 
 				if ( shadow === undefined ) {
 
@@ -20317,7 +20324,7 @@
 
 				_shadowMapSize.copy( shadow.mapSize );
 
-				const shadowFrameExtents = shadow.getFrameExtents();
+				var shadowFrameExtents = shadow.getFrameExtents();
 
 				_shadowMapSize.multiply( shadowFrameExtents );
 
@@ -20345,7 +20352,7 @@
 
 				if ( shadow.map === null && ! shadow.isPointLightShadow && this.type === VSMShadowMap ) {
 
-					const pars = { minFilter: LinearFilter, magFilter: LinearFilter, format: RGBAFormat, stencilBuffer: false };
+					var pars = { minFilter: LinearFilter, magFilter: LinearFilter, format: RGBAFormat, stencilBuffer: false };
 
 					shadow.map = new WebGLRenderTarget( _shadowMapSize.x, _shadowMapSize.y, pars );
 					shadow.map.texture.name = light.name + ".shadowMap";
@@ -20358,9 +20365,9 @@
 
 				if ( shadow.map === null ) {
 
-					const pars = { minFilter: NearestFilter, magFilter: NearestFilter, format: RGBAFormat, stencilBuffer: false };
+					var pars$1 = { minFilter: NearestFilter, magFilter: NearestFilter, format: RGBAFormat, stencilBuffer: false };
 
-					shadow.map = new WebGLRenderTarget( _shadowMapSize.x, _shadowMapSize.y, pars );
+					shadow.map = new WebGLRenderTarget( _shadowMapSize.x, _shadowMapSize.y, pars$1 );
 					shadow.map.texture.name = light.name + ".shadowMap";
 
 					shadow.camera.updateProjectionMatrix();
@@ -20370,11 +20377,11 @@
 				_renderer.setRenderTarget( shadow.map );
 				_renderer.clear();
 
-				const viewportCount = shadow.getViewportCount();
+				var viewportCount = shadow.getViewportCount();
 
-				for ( let vp = 0; vp < viewportCount; vp ++ ) {
+				for ( var vp = 0; vp < viewportCount; vp ++ ) {
 
-					const viewport = shadow.getViewport( vp );
+					var viewport = shadow.getViewport( vp );
 
 					_viewport.set(
 						_viewportSize.x * viewport.x,
@@ -20413,7 +20420,7 @@
 
 		function VSMPass( shadow, camera ) {
 
-			const geometry = _objects.update( fullScreenMesh );
+			var geometry = _objects.update( fullScreenMesh );
 
 			// vertical pass
 
@@ -20437,9 +20444,9 @@
 
 		function getDepthMaterialVariant( useMorphing, useSkinning, useInstancing ) {
 
-			const index = useMorphing << 0 | useSkinning << 1 | useInstancing << 2;
+			var index = useMorphing << 0 | useSkinning << 1 | useInstancing << 2;
 
-			let material = _depthMaterials[ index ];
+			var material = _depthMaterials[ index ];
 
 			if ( material === undefined ) {
 
@@ -20462,9 +20469,9 @@
 
 		function getDistanceMaterialVariant( useMorphing, useSkinning, useInstancing ) {
 
-			const index = useMorphing << 0 | useSkinning << 1 | useInstancing << 2;
+			var index = useMorphing << 0 | useSkinning << 1 | useInstancing << 2;
 
-			let material = _distanceMaterials[ index ];
+			var material = _distanceMaterials[ index ];
 
 			if ( material === undefined ) {
 
@@ -20485,10 +20492,10 @@
 
 		function getDepthMaterial( object, geometry, material, light, shadowCameraNear, shadowCameraFar, type ) {
 
-			let result = null;
+			var result = null;
 
-			let getMaterialVariant = getDepthMaterialVariant;
-			let customMaterial = object.customDepthMaterial;
+			var getMaterialVariant = getDepthMaterialVariant;
+			var customMaterial = object.customDepthMaterial;
 
 			if ( light.isPointLight === true ) {
 
@@ -20499,7 +20506,7 @@
 
 			if ( customMaterial === undefined ) {
 
-				let useMorphing = false;
+				var useMorphing = false;
 
 				if ( material.morphTargets === true ) {
 
@@ -20507,7 +20514,7 @@
 
 				}
 
-				let useSkinning = false;
+				var useSkinning = false;
 
 				if ( object.isSkinnedMesh === true ) {
 
@@ -20523,7 +20530,7 @@
 
 				}
 
-				const useInstancing = object.isInstancedMesh === true;
+				var useInstancing = object.isInstancedMesh === true;
 
 				result = getMaterialVariant( useMorphing, useSkinning, useInstancing );
 
@@ -20540,9 +20547,9 @@
 				// in this case we need a unique material instance reflecting the
 				// appropriate state
 
-				const keyA = result.uuid, keyB = material.uuid;
+				var keyA = result.uuid, keyB = material.uuid;
 
-				let materialsForVariant = _materialCache[ keyA ];
+				var materialsForVariant = _materialCache[ keyA ];
 
 				if ( materialsForVariant === undefined ) {
 
@@ -20551,7 +20558,7 @@
 
 				}
 
-				let cachedMaterial = materialsForVariant[ keyB ];
+				var cachedMaterial = materialsForVariant[ keyB ];
 
 				if ( cachedMaterial === undefined ) {
 
@@ -20598,9 +20605,9 @@
 
 		function renderObject( object, camera, shadowCamera, light, type ) {
 
-			if ( object.visible === false ) return;
+			if ( object.visible === false ) { return; }
 
-			const visible = object.layers.test( camera.layers );
+			var visible = object.layers.test( camera.layers );
 
 			if ( visible && ( object.isMesh || object.isLine || object.isPoints ) ) {
 
@@ -20608,21 +20615,21 @@
 
 					object.modelViewMatrix.multiplyMatrices( shadowCamera.matrixWorldInverse, object.matrixWorld );
 
-					const geometry = _objects.update( object );
-					const material = object.material;
+					var geometry = _objects.update( object );
+					var material = object.material;
 
 					if ( Array.isArray( material ) ) {
 
-						const groups = geometry.groups;
+						var groups = geometry.groups;
 
-						for ( let k = 0, kl = groups.length; k < kl; k ++ ) {
+						for ( var k = 0, kl = groups.length; k < kl; k ++ ) {
 
-							const group = groups[ k ];
-							const groupMaterial = material[ group.materialIndex ];
+							var group = groups[ k ];
+							var groupMaterial = material[ group.materialIndex ];
 
 							if ( groupMaterial && groupMaterial.visible ) {
 
-								const depthMaterial = getDepthMaterial( object, geometry, groupMaterial, light, shadowCamera.near, shadowCamera.far, type );
+								var depthMaterial = getDepthMaterial( object, geometry, groupMaterial, light, shadowCamera.near, shadowCamera.far, type );
 
 								_renderer.renderBufferDirect( shadowCamera, null, geometry, depthMaterial, object, group );
 
@@ -20632,9 +20639,9 @@
 
 					} else if ( material.visible ) {
 
-						const depthMaterial = getDepthMaterial( object, geometry, material, light, shadowCamera.near, shadowCamera.far, type );
+						var depthMaterial$1 = getDepthMaterial( object, geometry, material, light, shadowCamera.near, shadowCamera.far, type );
 
-						_renderer.renderBufferDirect( shadowCamera, null, geometry, depthMaterial, object, null );
+						_renderer.renderBufferDirect( shadowCamera, null, geometry, depthMaterial$1, object, null );
 
 					}
 
@@ -20642,9 +20649,9 @@
 
 			}
 
-			const children = object.children;
+			var children = object.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				renderObject( children[ i ], camera, shadowCamera, light, type );
 
@@ -20656,15 +20663,15 @@
 
 	function WebGLState( gl, extensions, capabilities ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
+		var isWebGL2 = capabilities.isWebGL2;
 
 		function ColorBuffer() {
 
-			let locked = false;
+			var locked = false;
 
-			const color = new Vector4();
-			let currentColorMask = null;
-			const currentColorClear = new Vector4( 0, 0, 0, 0 );
+			var color = new Vector4();
+			var currentColorMask = null;
+			var currentColorClear = new Vector4( 0, 0, 0, 0 );
 
 			return {
 
@@ -20719,11 +20726,11 @@
 
 		function DepthBuffer() {
 
-			let locked = false;
+			var locked = false;
 
-			let currentDepthMask = null;
-			let currentDepthFunc = null;
-			let currentDepthClear = null;
+			var currentDepthMask = null;
+			var currentDepthFunc = null;
+			var currentDepthClear = null;
 
 			return {
 
@@ -20851,16 +20858,16 @@
 
 		function StencilBuffer() {
 
-			let locked = false;
+			var locked = false;
 
-			let currentStencilMask = null;
-			let currentStencilFunc = null;
-			let currentStencilRef = null;
-			let currentStencilFuncMask = null;
-			let currentStencilFail = null;
-			let currentStencilZFail = null;
-			let currentStencilZPass = null;
-			let currentStencilClear = null;
+			var currentStencilMask = null;
+			var currentStencilFunc = null;
+			var currentStencilRef = null;
+			var currentStencilFuncMask = null;
+			var currentStencilFail = null;
+			var currentStencilZFail = null;
+			var currentStencilZPass = null;
+			var currentStencilClear = null;
 
 			return {
 
@@ -20963,37 +20970,37 @@
 
 		//
 
-		const colorBuffer = new ColorBuffer();
-		const depthBuffer = new DepthBuffer();
-		const stencilBuffer = new StencilBuffer();
+		var colorBuffer = new ColorBuffer();
+		var depthBuffer = new DepthBuffer();
+		var stencilBuffer = new StencilBuffer();
 
-		let enabledCapabilities = {};
+		var enabledCapabilities = {};
 
-		let currentProgram = null;
+		var currentProgram = null;
 
-		let currentBlendingEnabled = null;
-		let currentBlending = null;
-		let currentBlendEquation = null;
-		let currentBlendSrc = null;
-		let currentBlendDst = null;
-		let currentBlendEquationAlpha = null;
-		let currentBlendSrcAlpha = null;
-		let currentBlendDstAlpha = null;
-		let currentPremultipledAlpha = false;
+		var currentBlendingEnabled = null;
+		var currentBlending = null;
+		var currentBlendEquation = null;
+		var currentBlendSrc = null;
+		var currentBlendDst = null;
+		var currentBlendEquationAlpha = null;
+		var currentBlendSrcAlpha = null;
+		var currentBlendDstAlpha = null;
+		var currentPremultipledAlpha = false;
 
-		let currentFlipSided = null;
-		let currentCullFace = null;
+		var currentFlipSided = null;
+		var currentCullFace = null;
 
-		let currentLineWidth = null;
+		var currentLineWidth = null;
 
-		let currentPolygonOffsetFactor = null;
-		let currentPolygonOffsetUnits = null;
+		var currentPolygonOffsetFactor = null;
+		var currentPolygonOffsetUnits = null;
 
-		const maxTextures = gl.getParameter( 35661 );
+		var maxTextures = gl.getParameter( 35661 );
 
-		let lineWidthAvailable = false;
-		let version = 0;
-		const glVersion = gl.getParameter( 7938 );
+		var lineWidthAvailable = false;
+		var version = 0;
+		var glVersion = gl.getParameter( 7938 );
 
 		if ( glVersion.indexOf( 'WebGL' ) !== - 1 ) {
 
@@ -21007,22 +21014,22 @@
 
 		}
 
-		let currentTextureSlot = null;
-		let currentBoundTextures = {};
+		var currentTextureSlot = null;
+		var currentBoundTextures = {};
 
-		const currentScissor = new Vector4();
-		const currentViewport = new Vector4();
+		var currentScissor = new Vector4();
+		var currentViewport = new Vector4();
 
 		function createTexture( type, target, count ) {
 
-			const data = new Uint8Array( 4 ); // 4 is required to match default unpack alignment of 4.
-			const texture = gl.createTexture();
+			var data = new Uint8Array( 4 ); // 4 is required to match default unpack alignment of 4.
+			var texture = gl.createTexture();
 
 			gl.bindTexture( type, texture );
 			gl.texParameteri( type, 10241, 9728 );
 			gl.texParameteri( type, 10240, 9728 );
 
-			for ( let i = 0; i < count; i ++ ) {
+			for ( var i = 0; i < count; i ++ ) {
 
 				gl.texImage2D( target + i, 0, 6408, 1, 1, 0, 6408, 5121, data );
 
@@ -21032,7 +21039,7 @@
 
 		}
 
-		const emptyTextures = {};
+		var emptyTextures = {};
 		emptyTextures[ 3553 ] = createTexture( 3553, 3553, 1 );
 		emptyTextures[ 34067 ] = createTexture( 34067, 34069, 6 );
 
@@ -21091,11 +21098,10 @@
 
 		}
 
-		const equationToGL = {
-			[ AddEquation ]: 32774,
-			[ SubtractEquation ]: 32778,
-			[ ReverseSubtractEquation ]: 32779
-		};
+		var equationToGL = {};
+		equationToGL[ AddEquation ] = 32774;
+		equationToGL[ SubtractEquation ] = 32778;
+		equationToGL[ ReverseSubtractEquation ] = 32779;
 
 		if ( isWebGL2 ) {
 
@@ -21104,7 +21110,7 @@
 
 		} else {
 
-			const extension = extensions.get( 'EXT_blend_minmax' );
+			var extension = extensions.get( 'EXT_blend_minmax' );
 
 			if ( extension !== null ) {
 
@@ -21115,19 +21121,18 @@
 
 		}
 
-		const factorToGL = {
-			[ ZeroFactor ]: 0,
-			[ OneFactor ]: 1,
-			[ SrcColorFactor ]: 768,
-			[ SrcAlphaFactor ]: 770,
-			[ SrcAlphaSaturateFactor ]: 776,
-			[ DstColorFactor ]: 774,
-			[ DstAlphaFactor ]: 772,
-			[ OneMinusSrcColorFactor ]: 769,
-			[ OneMinusSrcAlphaFactor ]: 771,
-			[ OneMinusDstColorFactor ]: 775,
-			[ OneMinusDstAlphaFactor ]: 773
-		};
+		var factorToGL = {};
+		factorToGL[ ZeroFactor ] = 0;
+		factorToGL[ OneFactor ] = 1;
+		factorToGL[ SrcColorFactor ] = 768;
+		factorToGL[ SrcAlphaFactor ] = 770;
+		factorToGL[ SrcAlphaSaturateFactor ] = 776;
+		factorToGL[ DstColorFactor ] = 774;
+		factorToGL[ DstAlphaFactor ] = 772;
+		factorToGL[ OneMinusSrcColorFactor ] = 769;
+		factorToGL[ OneMinusSrcAlphaFactor ] = 771;
+		factorToGL[ OneMinusDstColorFactor ] = 775;
+		factorToGL[ OneMinusDstAlphaFactor ] = 773;
 
 		function setBlending( blending, blendEquation, blendSrc, blendDst, blendEquationAlpha, blendSrcAlpha, blendDstAlpha, premultipliedAlpha ) {
 
@@ -21269,8 +21274,8 @@
 				? disable( 2884 )
 				: enable( 2884 );
 
-			let flipSided = ( material.side === BackSide );
-			if ( frontFaceCW ) flipSided = ! flipSided;
+			var flipSided = ( material.side === BackSide );
+			if ( frontFaceCW ) { flipSided = ! flipSided; }
 
 			setFlipSided( flipSided );
 
@@ -21283,7 +21288,7 @@
 			depthBuffer.setMask( material.depthWrite );
 			colorBuffer.setMask( material.colorWrite );
 
-			const stencilWrite = material.stencilWrite;
+			var stencilWrite = material.stencilWrite;
 			stencilBuffer.setTest( stencilWrite );
 			if ( stencilWrite ) {
 
@@ -21357,7 +21362,7 @@
 
 			if ( width !== currentLineWidth ) {
 
-				if ( lineWidthAvailable ) gl.lineWidth( width );
+				if ( lineWidthAvailable ) { gl.lineWidth( width ); }
 
 				currentLineWidth = width;
 
@@ -21406,7 +21411,7 @@
 
 		function activeTexture( webglSlot ) {
 
-			if ( webglSlot === undefined ) webglSlot = 33984 + maxTextures - 1;
+			if ( webglSlot === undefined ) { webglSlot = 33984 + maxTextures - 1; }
 
 			if ( currentTextureSlot !== webglSlot ) {
 
@@ -21425,7 +21430,7 @@
 
 			}
 
-			let boundTexture = currentBoundTextures[ currentTextureSlot ];
+			var boundTexture = currentBoundTextures[ currentTextureSlot ];
 
 			if ( boundTexture === undefined ) {
 
@@ -21447,7 +21452,7 @@
 
 		function unbindTexture() {
 
-			const boundTexture = currentBoundTextures[ currentTextureSlot ];
+			var boundTexture = currentBoundTextures[ currentTextureSlot ];
 
 			if ( boundTexture !== undefined && boundTexture.type !== undefined ) {
 
@@ -21590,20 +21595,20 @@
 
 	function WebGLTextures( _gl, extensions, state, properties, capabilities, utils, info ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
-		const maxTextures = capabilities.maxTextures;
-		const maxCubemapSize = capabilities.maxCubemapSize;
-		const maxTextureSize = capabilities.maxTextureSize;
-		const maxSamples = capabilities.maxSamples;
+		var isWebGL2 = capabilities.isWebGL2;
+		var maxTextures = capabilities.maxTextures;
+		var maxCubemapSize = capabilities.maxCubemapSize;
+		var maxTextureSize = capabilities.maxTextureSize;
+		var maxSamples = capabilities.maxSamples;
 
-		const _videoTextures = new WeakMap();
-		let _canvas;
+		var _videoTextures = new WeakMap();
+		var _canvas;
 
 		// cordova iOS (as of 5.0) still uses UIWebView, which provides OffscreenCanvas,
 		// also OffscreenCanvas.getContext("webgl"), but not OffscreenCanvas.getContext("2d")!
 		// Some implementations may only implement OffscreenCanvas partially (e.g. lacking 2d).
 
-		let useOffscreenCanvas = false;
+		var useOffscreenCanvas = false;
 
 		try {
 
@@ -21628,7 +21633,7 @@
 
 		function resizeImage( image, needsPowerOfTwo, needsNewCanvas, maxSize ) {
 
-			let scale = 1;
+			var scale = 1;
 
 			// handle case if texture exceeds max size
 
@@ -21648,21 +21653,21 @@
 					( typeof HTMLCanvasElement !== 'undefined' && image instanceof HTMLCanvasElement ) ||
 					( typeof ImageBitmap !== 'undefined' && image instanceof ImageBitmap ) ) {
 
-					const floor = needsPowerOfTwo ? MathUtils.floorPowerOfTwo : Math.floor;
+					var floor = needsPowerOfTwo ? MathUtils.floorPowerOfTwo : Math.floor;
 
-					const width = floor( scale * image.width );
-					const height = floor( scale * image.height );
+					var width = floor( scale * image.width );
+					var height = floor( scale * image.height );
 
-					if ( _canvas === undefined ) _canvas = createCanvas( width, height );
+					if ( _canvas === undefined ) { _canvas = createCanvas( width, height ); }
 
 					// cube textures can't reuse the same canvas
 
-					const canvas = needsNewCanvas ? createCanvas( width, height ) : _canvas;
+					var canvas = needsNewCanvas ? createCanvas( width, height ) : _canvas;
 
 					canvas.width = width;
 					canvas.height = height;
 
-					const context = canvas.getContext( '2d' );
+					var context = canvas.getContext( '2d' );
 					context.drawImage( image, 0, 0, width, height );
 
 					console.warn( 'THREE.WebGLRenderer: Texture has been resized from (' + image.width + 'x' + image.height + ') to (' + width + 'x' + height + ').' );
@@ -21695,7 +21700,7 @@
 
 		function textureNeedsPowerOfTwo( texture ) {
 
-			if ( isWebGL2 ) return false;
+			if ( isWebGL2 ) { return false; }
 
 			return ( texture.wrapS !== ClampToEdgeWrapping || texture.wrapT !== ClampToEdgeWrapping ) ||
 				( texture.minFilter !== NearestFilter && texture.minFilter !== LinearFilter );
@@ -21713,7 +21718,7 @@
 
 			_gl.generateMipmap( target );
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
 			// Note: Math.log( x ) * Math.LOG2E used instead of Math.log2( x ) which is not supported by IE11
 			textureProperties.__maxMipLevel = Math.log( Math.max( width, height ) ) * Math.LOG2E;
@@ -21722,39 +21727,39 @@
 
 		function getInternalFormat( internalFormatName, glFormat, glType ) {
 
-			if ( isWebGL2 === false ) return glFormat;
+			if ( isWebGL2 === false ) { return glFormat; }
 
 			if ( internalFormatName !== null ) {
 
-				if ( _gl[ internalFormatName ] !== undefined ) return _gl[ internalFormatName ];
+				if ( _gl[ internalFormatName ] !== undefined ) { return _gl[ internalFormatName ]; }
 
 				console.warn( 'THREE.WebGLRenderer: Attempt to use non-existing WebGL internal format \'' + internalFormatName + '\'' );
 
 			}
 
-			let internalFormat = glFormat;
+			var internalFormat = glFormat;
 
 			if ( glFormat === 6403 ) {
 
-				if ( glType === 5126 ) internalFormat = 33326;
-				if ( glType === 5131 ) internalFormat = 33325;
-				if ( glType === 5121 ) internalFormat = 33321;
+				if ( glType === 5126 ) { internalFormat = 33326; }
+				if ( glType === 5131 ) { internalFormat = 33325; }
+				if ( glType === 5121 ) { internalFormat = 33321; }
 
 			}
 
 			if ( glFormat === 6407 ) {
 
-				if ( glType === 5126 ) internalFormat = 34837;
-				if ( glType === 5131 ) internalFormat = 34843;
-				if ( glType === 5121 ) internalFormat = 32849;
+				if ( glType === 5126 ) { internalFormat = 34837; }
+				if ( glType === 5131 ) { internalFormat = 34843; }
+				if ( glType === 5121 ) { internalFormat = 32849; }
 
 			}
 
 			if ( glFormat === 6408 ) {
 
-				if ( glType === 5126 ) internalFormat = 34836;
-				if ( glType === 5131 ) internalFormat = 34842;
-				if ( glType === 5121 ) internalFormat = 32856;
+				if ( glType === 5126 ) { internalFormat = 34836; }
+				if ( glType === 5131 ) { internalFormat = 34842; }
+				if ( glType === 5121 ) { internalFormat = 32856; }
 
 			}
 
@@ -21787,7 +21792,7 @@
 
 		function onTextureDispose( event ) {
 
-			const texture = event.target;
+			var texture = event.target;
 
 			texture.removeEventListener( 'dispose', onTextureDispose );
 
@@ -21805,7 +21810,7 @@
 
 		function onRenderTargetDispose( event ) {
 
-			const renderTarget = event.target;
+			var renderTarget = event.target;
 
 			renderTarget.removeEventListener( 'dispose', onRenderTargetDispose );
 
@@ -21819,9 +21824,9 @@
 
 		function deallocateTexture( texture ) {
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
-			if ( textureProperties.__webglInit === undefined ) return;
+			if ( textureProperties.__webglInit === undefined ) { return; }
 
 			_gl.deleteTexture( textureProperties.__webglTexture );
 
@@ -21831,10 +21836,10 @@
 
 		function deallocateRenderTarget( renderTarget ) {
 
-			const renderTargetProperties = properties.get( renderTarget );
-			const textureProperties = properties.get( renderTarget.texture );
+			var renderTargetProperties = properties.get( renderTarget );
+			var textureProperties = properties.get( renderTarget.texture );
 
-			if ( ! renderTarget ) return;
+			if ( ! renderTarget ) { return; }
 
 			if ( textureProperties.__webglTexture !== undefined ) {
 
@@ -21850,20 +21855,20 @@
 
 			if ( renderTarget.isWebGLCubeRenderTarget ) {
 
-				for ( let i = 0; i < 6; i ++ ) {
+				for ( var i = 0; i < 6; i ++ ) {
 
 					_gl.deleteFramebuffer( renderTargetProperties.__webglFramebuffer[ i ] );
-					if ( renderTargetProperties.__webglDepthbuffer ) _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthbuffer[ i ] );
+					if ( renderTargetProperties.__webglDepthbuffer ) { _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthbuffer[ i ] ); }
 
 				}
 
 			} else {
 
 				_gl.deleteFramebuffer( renderTargetProperties.__webglFramebuffer );
-				if ( renderTargetProperties.__webglDepthbuffer ) _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthbuffer );
-				if ( renderTargetProperties.__webglMultisampledFramebuffer ) _gl.deleteFramebuffer( renderTargetProperties.__webglMultisampledFramebuffer );
-				if ( renderTargetProperties.__webglColorRenderbuffer ) _gl.deleteRenderbuffer( renderTargetProperties.__webglColorRenderbuffer );
-				if ( renderTargetProperties.__webglDepthRenderbuffer ) _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthRenderbuffer );
+				if ( renderTargetProperties.__webglDepthbuffer ) { _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthbuffer ); }
+				if ( renderTargetProperties.__webglMultisampledFramebuffer ) { _gl.deleteFramebuffer( renderTargetProperties.__webglMultisampledFramebuffer ); }
+				if ( renderTargetProperties.__webglColorRenderbuffer ) { _gl.deleteRenderbuffer( renderTargetProperties.__webglColorRenderbuffer ); }
+				if ( renderTargetProperties.__webglDepthRenderbuffer ) { _gl.deleteRenderbuffer( renderTargetProperties.__webglDepthRenderbuffer ); }
 
 			}
 
@@ -21874,7 +21879,7 @@
 
 		//
 
-		let textureUnits = 0;
+		var textureUnits = 0;
 
 		function resetTextureUnits() {
 
@@ -21884,7 +21889,7 @@
 
 		function allocateTextureUnit() {
 
-			const textureUnit = textureUnits;
+			var textureUnit = textureUnits;
 
 			if ( textureUnit >= maxTextures ) {
 
@@ -21902,13 +21907,13 @@
 
 		function setTexture2D( texture, slot ) {
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
-			if ( texture.isVideoTexture ) updateVideoTexture( texture );
+			if ( texture.isVideoTexture ) { updateVideoTexture( texture ); }
 
 			if ( texture.version > 0 && textureProperties.__version !== texture.version ) {
 
-				const image = texture.image;
+				var image = texture.image;
 
 				if ( image === undefined ) {
 
@@ -21934,7 +21939,7 @@
 
 		function setTexture2DArray( texture, slot ) {
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
 			if ( texture.version > 0 && textureProperties.__version !== texture.version ) {
 
@@ -21950,7 +21955,7 @@
 
 		function setTexture3D( texture, slot ) {
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
 			if ( texture.version > 0 && textureProperties.__version !== texture.version ) {
 
@@ -21966,9 +21971,9 @@
 
 		function setTextureCube( texture, slot ) {
 
-			if ( texture.image.length !== 6 ) return;
+			if ( texture.image.length !== 6 ) { return; }
 
-			const textureProperties = properties.get( texture );
+			var textureProperties = properties.get( texture );
 
 			if ( texture.version > 0 && textureProperties.__version !== texture.version ) {
 
@@ -21979,12 +21984,12 @@
 
 				_gl.pixelStorei( 37440, texture.flipY );
 
-				const isCompressed = ( texture && ( texture.isCompressedTexture || texture.image[ 0 ].isCompressedTexture ) );
-				const isDataTexture = ( texture.image[ 0 ] && texture.image[ 0 ].isDataTexture );
+				var isCompressed = ( texture && ( texture.isCompressedTexture || texture.image[ 0 ].isCompressedTexture ) );
+				var isDataTexture = ( texture.image[ 0 ] && texture.image[ 0 ].isDataTexture );
 
-				const cubeImage = [];
+				var cubeImage = [];
 
-				for ( let i = 0; i < 6; i ++ ) {
+				for ( var i = 0; i < 6; i ++ ) {
 
 					if ( ! isCompressed && ! isDataTexture ) {
 
@@ -21998,7 +22003,7 @@
 
 				}
 
-				const image = cubeImage[ 0 ],
+				var image = cubeImage[ 0 ],
 					supportsMips = isPowerOfTwo( image ) || isWebGL2,
 					glFormat = utils.convert( texture.format ),
 					glType = utils.convert( texture.type ),
@@ -22006,23 +22011,23 @@
 
 				setTextureParameters( 34067, texture, supportsMips );
 
-				let mipmaps;
+				var mipmaps;
 
 				if ( isCompressed ) {
 
-					for ( let i = 0; i < 6; i ++ ) {
+					for ( var i$1 = 0; i$1 < 6; i$1 ++ ) {
 
-						mipmaps = cubeImage[ i ].mipmaps;
+						mipmaps = cubeImage[ i$1 ].mipmaps;
 
-						for ( let j = 0; j < mipmaps.length; j ++ ) {
+						for ( var j = 0; j < mipmaps.length; j ++ ) {
 
-							const mipmap = mipmaps[ j ];
+							var mipmap = mipmaps[ j ];
 
 							if ( texture.format !== RGBAFormat && texture.format !== RGBFormat ) {
 
 								if ( glFormat !== null ) {
 
-									state.compressedTexImage2D( 34069 + i, j, glInternalFormat, mipmap.width, mipmap.height, 0, mipmap.data );
+									state.compressedTexImage2D( 34069 + i$1, j, glInternalFormat, mipmap.width, mipmap.height, 0, mipmap.data );
 
 								} else {
 
@@ -22032,7 +22037,7 @@
 
 							} else {
 
-								state.texImage2D( 34069 + i, j, glInternalFormat, mipmap.width, mipmap.height, 0, glFormat, glType, mipmap.data );
+								state.texImage2D( 34069 + i$1, j, glInternalFormat, mipmap.width, mipmap.height, 0, glFormat, glType, mipmap.data );
 
 							}
 
@@ -22046,30 +22051,30 @@
 
 					mipmaps = texture.mipmaps;
 
-					for ( let i = 0; i < 6; i ++ ) {
+					for ( var i$2 = 0; i$2 < 6; i$2 ++ ) {
 
 						if ( isDataTexture ) {
 
-							state.texImage2D( 34069 + i, 0, glInternalFormat, cubeImage[ i ].width, cubeImage[ i ].height, 0, glFormat, glType, cubeImage[ i ].data );
+							state.texImage2D( 34069 + i$2, 0, glInternalFormat, cubeImage[ i$2 ].width, cubeImage[ i$2 ].height, 0, glFormat, glType, cubeImage[ i$2 ].data );
 
-							for ( let j = 0; j < mipmaps.length; j ++ ) {
+							for ( var j$1 = 0; j$1 < mipmaps.length; j$1 ++ ) {
 
-								const mipmap = mipmaps[ j ];
-								const mipmapImage = mipmap.image[ i ].image;
+								var mipmap$1 = mipmaps[ j$1 ];
+								var mipmapImage = mipmap$1.image[ i$2 ].image;
 
-								state.texImage2D( 34069 + i, j + 1, glInternalFormat, mipmapImage.width, mipmapImage.height, 0, glFormat, glType, mipmapImage.data );
+								state.texImage2D( 34069 + i$2, j$1 + 1, glInternalFormat, mipmapImage.width, mipmapImage.height, 0, glFormat, glType, mipmapImage.data );
 
 							}
 
 						} else {
 
-							state.texImage2D( 34069 + i, 0, glInternalFormat, glFormat, glType, cubeImage[ i ] );
+							state.texImage2D( 34069 + i$2, 0, glInternalFormat, glFormat, glType, cubeImage[ i$2 ] );
 
-							for ( let j = 0; j < mipmaps.length; j ++ ) {
+							for ( var j$2 = 0; j$2 < mipmaps.length; j$2 ++ ) {
 
-								const mipmap = mipmaps[ j ];
+								var mipmap$2 = mipmaps[ j$2 ];
 
-								state.texImage2D( 34069 + i, j + 1, glInternalFormat, glFormat, glType, mipmap.image[ i ] );
+								state.texImage2D( 34069 + i$2, j$2 + 1, glInternalFormat, glFormat, glType, mipmap$2.image[ i$2 ] );
 
 							}
 
@@ -22090,7 +22095,7 @@
 
 				textureProperties.__version = texture.version;
 
-				if ( texture.onUpdate ) texture.onUpdate( texture );
+				if ( texture.onUpdate ) { texture.onUpdate( texture ); }
 
 			} else {
 
@@ -22108,21 +22113,18 @@
 
 		}
 
-		const wrappingToGL = {
-			[ RepeatWrapping ]: 10497,
-			[ ClampToEdgeWrapping ]: 33071,
-			[ MirroredRepeatWrapping ]: 33648
-		};
+		var wrappingToGL = {};
+		wrappingToGL[ RepeatWrapping ] = 10497;
+		wrappingToGL[ ClampToEdgeWrapping ] = 33071;
+		wrappingToGL[ MirroredRepeatWrapping ] = 33648;
 
-		const filterToGL = {
-			[ NearestFilter ]: 9728,
-			[ NearestMipmapNearestFilter ]: 9984,
-			[ NearestMipmapLinearFilter ]: 9986,
-
-			[ LinearFilter ]: 9729,
-			[ LinearMipmapNearestFilter ]: 9985,
-			[ LinearMipmapLinearFilter ]: 9987
-		};
+		var filterToGL = {};
+		filterToGL[ NearestFilter ] = 9728;
+		filterToGL[ NearestMipmapNearestFilter ] = 9984;
+		filterToGL[ NearestMipmapLinearFilter ] = 9986;
+		filterToGL[ LinearFilter ] = 9729;
+		filterToGL[ LinearMipmapNearestFilter ] = 9985;
+		filterToGL[ LinearMipmapLinearFilter ] = 9987;
 
 		function setTextureParameters( textureType, texture, supportsMips ) {
 
@@ -22168,12 +22170,12 @@
 
 			}
 
-			const extension = extensions.get( 'EXT_texture_filter_anisotropic' );
+			var extension = extensions.get( 'EXT_texture_filter_anisotropic' );
 
 			if ( extension ) {
 
-				if ( texture.type === FloatType && extensions.get( 'OES_texture_float_linear' ) === null ) return;
-				if ( texture.type === HalfFloatType && ( isWebGL2 || extensions.get( 'OES_texture_half_float_linear' ) ) === null ) return;
+				if ( texture.type === FloatType && extensions.get( 'OES_texture_float_linear' ) === null ) { return; }
+				if ( texture.type === HalfFloatType && ( isWebGL2 || extensions.get( 'OES_texture_half_float_linear' ) ) === null ) { return; }
 
 				if ( texture.anisotropy > 1 || properties.get( texture ).__currentAnisotropy ) {
 
@@ -22204,10 +22206,10 @@
 
 		function uploadTexture( textureProperties, texture, slot ) {
 
-			let textureType = 3553;
+			var textureType = 3553;
 
-			if ( texture.isDataTexture2DArray ) textureType = 35866;
-			if ( texture.isDataTexture3D ) textureType = 32879;
+			if ( texture.isDataTexture2DArray ) { textureType = 35866; }
+			if ( texture.isDataTexture3D ) { textureType = 32879; }
 
 			initTexture( textureProperties, texture );
 
@@ -22218,19 +22220,19 @@
 			_gl.pixelStorei( 37441, texture.premultiplyAlpha );
 			_gl.pixelStorei( 3317, texture.unpackAlignment );
 
-			const needsPowerOfTwo = textureNeedsPowerOfTwo( texture ) && isPowerOfTwo( texture.image ) === false;
-			const image = resizeImage( texture.image, needsPowerOfTwo, false, maxTextureSize );
+			var needsPowerOfTwo = textureNeedsPowerOfTwo( texture ) && isPowerOfTwo( texture.image ) === false;
+			var image = resizeImage( texture.image, needsPowerOfTwo, false, maxTextureSize );
 
-			const supportsMips = isPowerOfTwo( image ) || isWebGL2,
+			var supportsMips = isPowerOfTwo( image ) || isWebGL2,
 				glFormat = utils.convert( texture.format );
 
-			let glType = utils.convert( texture.type ),
+			var glType = utils.convert( texture.type ),
 				glInternalFormat = getInternalFormat( texture.internalFormat, glFormat, glType );
 
 			setTextureParameters( textureType, texture, supportsMips );
 
-			let mipmap;
-			const mipmaps = texture.mipmaps;
+			var mipmap;
+			var mipmaps = texture.mipmaps;
 
 			if ( texture.isDepthTexture ) {
 
@@ -22318,7 +22320,7 @@
 
 				if ( mipmaps.length > 0 && supportsMips ) {
 
-					for ( let i = 0, il = mipmaps.length; i < il; i ++ ) {
+					for ( var i = 0, il = mipmaps.length; i < il; i ++ ) {
 
 						mipmap = mipmaps[ i ];
 						state.texImage2D( 3553, i, glInternalFormat, mipmap.width, mipmap.height, 0, glFormat, glType, mipmap.data );
@@ -22337,15 +22339,15 @@
 
 			} else if ( texture.isCompressedTexture ) {
 
-				for ( let i = 0, il = mipmaps.length; i < il; i ++ ) {
+				for ( var i$1 = 0, il$1 = mipmaps.length; i$1 < il$1; i$1 ++ ) {
 
-					mipmap = mipmaps[ i ];
+					mipmap = mipmaps[ i$1 ];
 
 					if ( texture.format !== RGBAFormat && texture.format !== RGBFormat ) {
 
 						if ( glFormat !== null ) {
 
-							state.compressedTexImage2D( 3553, i, glInternalFormat, mipmap.width, mipmap.height, 0, mipmap.data );
+							state.compressedTexImage2D( 3553, i$1, glInternalFormat, mipmap.width, mipmap.height, 0, mipmap.data );
 
 						} else {
 
@@ -22355,7 +22357,7 @@
 
 					} else {
 
-						state.texImage2D( 3553, i, glInternalFormat, mipmap.width, mipmap.height, 0, glFormat, glType, mipmap.data );
+						state.texImage2D( 3553, i$1, glInternalFormat, mipmap.width, mipmap.height, 0, glFormat, glType, mipmap.data );
 
 					}
 
@@ -22383,10 +22385,10 @@
 
 				if ( mipmaps.length > 0 && supportsMips ) {
 
-					for ( let i = 0, il = mipmaps.length; i < il; i ++ ) {
+					for ( var i$2 = 0, il$2 = mipmaps.length; i$2 < il$2; i$2 ++ ) {
 
-						mipmap = mipmaps[ i ];
-						state.texImage2D( 3553, i, glInternalFormat, glFormat, glType, mipmap );
+						mipmap = mipmaps[ i$2 ];
+						state.texImage2D( 3553, i$2, glInternalFormat, glFormat, glType, mipmap );
 
 					}
 
@@ -22410,7 +22412,7 @@
 
 			textureProperties.__version = texture.version;
 
-			if ( texture.onUpdate ) texture.onUpdate( texture );
+			if ( texture.onUpdate ) { texture.onUpdate( texture ); }
 
 		}
 
@@ -22419,9 +22421,9 @@
 		// Setup storage for target texture and bind it to correct framebuffer
 		function setupFrameBufferTexture( framebuffer, renderTarget, attachment, textureTarget ) {
 
-			const glFormat = utils.convert( renderTarget.texture.format );
-			const glType = utils.convert( renderTarget.texture.type );
-			const glInternalFormat = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
+			var glFormat = utils.convert( renderTarget.texture.format );
+			var glType = utils.convert( renderTarget.texture.type );
+			var glInternalFormat = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
 			state.texImage2D( textureTarget, 0, glInternalFormat, renderTarget.width, renderTarget.height, 0, glFormat, glType, null );
 			_gl.bindFramebuffer( 36160, framebuffer );
 			_gl.framebufferTexture2D( 36160, attachment, textureTarget, properties.get( renderTarget.texture ).__webglTexture, 0 );
@@ -22436,11 +22438,11 @@
 
 			if ( renderTarget.depthBuffer && ! renderTarget.stencilBuffer ) {
 
-				let glInternalFormat = 33189;
+				var glInternalFormat = 33189;
 
 				if ( isMultisample ) {
 
-					const depthTexture = renderTarget.depthTexture;
+					var depthTexture = renderTarget.depthTexture;
 
 					if ( depthTexture && depthTexture.isDepthTexture ) {
 
@@ -22456,7 +22458,7 @@
 
 					}
 
-					const samples = getRenderTargetSamples( renderTarget );
+					var samples = getRenderTargetSamples( renderTarget );
 
 					_gl.renderbufferStorageMultisample( 36161, samples, glInternalFormat, renderTarget.width, renderTarget.height );
 
@@ -22472,9 +22474,9 @@
 
 				if ( isMultisample ) {
 
-					const samples = getRenderTargetSamples( renderTarget );
+					var samples$1 = getRenderTargetSamples( renderTarget );
 
-					_gl.renderbufferStorageMultisample( 36161, samples, 35056, renderTarget.width, renderTarget.height );
+					_gl.renderbufferStorageMultisample( 36161, samples$1, 35056, renderTarget.width, renderTarget.height );
 
 				} else {
 
@@ -22487,19 +22489,19 @@
 
 			} else {
 
-				const glFormat = utils.convert( renderTarget.texture.format );
-				const glType = utils.convert( renderTarget.texture.type );
-				const glInternalFormat = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
+				var glFormat = utils.convert( renderTarget.texture.format );
+				var glType = utils.convert( renderTarget.texture.type );
+				var glInternalFormat$1 = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
 
 				if ( isMultisample ) {
 
-					const samples = getRenderTargetSamples( renderTarget );
+					var samples$2 = getRenderTargetSamples( renderTarget );
 
-					_gl.renderbufferStorageMultisample( 36161, samples, glInternalFormat, renderTarget.width, renderTarget.height );
+					_gl.renderbufferStorageMultisample( 36161, samples$2, glInternalFormat$1, renderTarget.width, renderTarget.height );
 
 				} else {
 
-					_gl.renderbufferStorage( 36161, glInternalFormat, renderTarget.width, renderTarget.height );
+					_gl.renderbufferStorage( 36161, glInternalFormat$1, renderTarget.width, renderTarget.height );
 
 				}
 
@@ -22512,8 +22514,8 @@
 		// Setup resources for a Depth Texture for a FBO (needs an extension)
 		function setupDepthTexture( framebuffer, renderTarget ) {
 
-			const isCube = ( renderTarget && renderTarget.isWebGLCubeRenderTarget );
-			if ( isCube ) throw new Error( 'Depth Texture with cube render targets is not supported' );
+			var isCube = ( renderTarget && renderTarget.isWebGLCubeRenderTarget );
+			if ( isCube ) { throw new Error( 'Depth Texture with cube render targets is not supported' ); }
 
 			_gl.bindFramebuffer( 36160, framebuffer );
 
@@ -22536,7 +22538,7 @@
 
 			setTexture2D( renderTarget.depthTexture, 0 );
 
-			const webglDepthTexture = properties.get( renderTarget.depthTexture ).__webglTexture;
+			var webglDepthTexture = properties.get( renderTarget.depthTexture ).__webglTexture;
 
 			if ( renderTarget.depthTexture.format === DepthFormat ) {
 
@@ -22557,13 +22559,13 @@
 		// Setup GL resources for a non-texture depth buffer
 		function setupDepthRenderbuffer( renderTarget ) {
 
-			const renderTargetProperties = properties.get( renderTarget );
+			var renderTargetProperties = properties.get( renderTarget );
 
-			const isCube = ( renderTarget.isWebGLCubeRenderTarget === true );
+			var isCube = ( renderTarget.isWebGLCubeRenderTarget === true );
 
 			if ( renderTarget.depthTexture ) {
 
-				if ( isCube ) throw new Error( 'target.depthTexture not supported in Cube render targets' );
+				if ( isCube ) { throw new Error( 'target.depthTexture not supported in Cube render targets' ); }
 
 				setupDepthTexture( renderTargetProperties.__webglFramebuffer, renderTarget );
 
@@ -22573,7 +22575,7 @@
 
 					renderTargetProperties.__webglDepthbuffer = [];
 
-					for ( let i = 0; i < 6; i ++ ) {
+					for ( var i = 0; i < 6; i ++ ) {
 
 						_gl.bindFramebuffer( 36160, renderTargetProperties.__webglFramebuffer[ i ] );
 						renderTargetProperties.__webglDepthbuffer[ i ] = _gl.createRenderbuffer();
@@ -22598,8 +22600,8 @@
 		// Set up GL resources for the render target
 		function setupRenderTarget( renderTarget ) {
 
-			const renderTargetProperties = properties.get( renderTarget );
-			const textureProperties = properties.get( renderTarget.texture );
+			var renderTargetProperties = properties.get( renderTarget );
+			var textureProperties = properties.get( renderTarget.texture );
 
 			renderTarget.addEventListener( 'dispose', onRenderTargetDispose );
 
@@ -22607,9 +22609,9 @@
 
 			info.memory.textures ++;
 
-			const isCube = ( renderTarget.isWebGLCubeRenderTarget === true );
-			const isMultisample = ( renderTarget.isWebGLMultisampleRenderTarget === true );
-			const supportsMips = isPowerOfTwo( renderTarget ) || isWebGL2;
+			var isCube = ( renderTarget.isWebGLCubeRenderTarget === true );
+			var isMultisample = ( renderTarget.isWebGLMultisampleRenderTarget === true );
+			var supportsMips = isPowerOfTwo( renderTarget ) || isWebGL2;
 
 			// Handles WebGL2 RGBFormat fallback - #18858
 
@@ -22627,7 +22629,7 @@
 
 				renderTargetProperties.__webglFramebuffer = [];
 
-				for ( let i = 0; i < 6; i ++ ) {
+				for ( var i = 0; i < 6; i ++ ) {
 
 					renderTargetProperties.__webglFramebuffer[ i ] = _gl.createFramebuffer();
 
@@ -22646,10 +22648,10 @@
 
 						_gl.bindRenderbuffer( 36161, renderTargetProperties.__webglColorRenderbuffer );
 
-						const glFormat = utils.convert( renderTarget.texture.format );
-						const glType = utils.convert( renderTarget.texture.type );
-						const glInternalFormat = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
-						const samples = getRenderTargetSamples( renderTarget );
+						var glFormat = utils.convert( renderTarget.texture.format );
+						var glType = utils.convert( renderTarget.texture.type );
+						var glInternalFormat = getInternalFormat( renderTarget.texture.internalFormat, glFormat, glType );
+						var samples = getRenderTargetSamples( renderTarget );
 						_gl.renderbufferStorageMultisample( 36161, samples, glInternalFormat, renderTarget.width, renderTarget.height );
 
 						_gl.bindFramebuffer( 36160, renderTargetProperties.__webglMultisampledFramebuffer );
@@ -22683,9 +22685,9 @@
 				state.bindTexture( 34067, textureProperties.__webglTexture );
 				setTextureParameters( 34067, renderTarget.texture, supportsMips );
 
-				for ( let i = 0; i < 6; i ++ ) {
+				for ( var i$1 = 0; i$1 < 6; i$1 ++ ) {
 
-					setupFrameBufferTexture( renderTargetProperties.__webglFramebuffer[ i ], renderTarget, 36064, 34069 + i );
+					setupFrameBufferTexture( renderTargetProperties.__webglFramebuffer[ i$1 ], renderTarget, 36064, 34069 + i$1 );
 
 				}
 
@@ -22725,13 +22727,13 @@
 
 		function updateRenderTargetMipmap( renderTarget ) {
 
-			const texture = renderTarget.texture;
-			const supportsMips = isPowerOfTwo( renderTarget ) || isWebGL2;
+			var texture = renderTarget.texture;
+			var supportsMips = isPowerOfTwo( renderTarget ) || isWebGL2;
 
 			if ( textureNeedsGenerateMipmaps( texture, supportsMips ) ) {
 
-				const target = renderTarget.isWebGLCubeRenderTarget ? 34067 : 3553;
-				const webglTexture = properties.get( texture ).__webglTexture;
+				var target = renderTarget.isWebGLCubeRenderTarget ? 34067 : 3553;
+				var webglTexture = properties.get( texture ).__webglTexture;
 
 				state.bindTexture( target, webglTexture );
 				generateMipmap( target, texture, renderTarget.width, renderTarget.height );
@@ -22747,17 +22749,17 @@
 
 				if ( isWebGL2 ) {
 
-					const renderTargetProperties = properties.get( renderTarget );
+					var renderTargetProperties = properties.get( renderTarget );
 
 					_gl.bindFramebuffer( 36008, renderTargetProperties.__webglMultisampledFramebuffer );
 					_gl.bindFramebuffer( 36009, renderTargetProperties.__webglFramebuffer );
 
-					const width = renderTarget.width;
-					const height = renderTarget.height;
-					let mask = 16384;
+					var width = renderTarget.width;
+					var height = renderTarget.height;
+					var mask = 16384;
 
-					if ( renderTarget.depthBuffer ) mask |= 256;
-					if ( renderTarget.stencilBuffer ) mask |= 1024;
+					if ( renderTarget.depthBuffer ) { mask |= 256; }
+					if ( renderTarget.stencilBuffer ) { mask |= 1024; }
 
 					_gl.blitFramebuffer( 0, 0, width, height, 0, 0, width, height, mask, 9728 );
 
@@ -22782,7 +22784,7 @@
 
 		function updateVideoTexture( texture ) {
 
-			const frame = info.render.frame;
+			var frame = info.render.frame;
 
 			// Check the last frame we updated the VideoTexture
 
@@ -22797,8 +22799,8 @@
 
 		// backwards compatibility
 
-		let warnedTexture2D = false;
-		let warnedTextureCube = false;
+		var warnedTexture2D = false;
+		var warnedTextureCube = false;
 
 		function safeSetTexture2D( texture, slot ) {
 
@@ -22874,27 +22876,27 @@
 
 	function WebGLUtils( gl, extensions, capabilities ) {
 
-		const isWebGL2 = capabilities.isWebGL2;
+		var isWebGL2 = capabilities.isWebGL2;
 
 		function convert( p ) {
 
-			let extension;
+			var extension;
 
-			if ( p === UnsignedByteType ) return 5121;
-			if ( p === UnsignedShort4444Type ) return 32819;
-			if ( p === UnsignedShort5551Type ) return 32820;
-			if ( p === UnsignedShort565Type ) return 33635;
+			if ( p === UnsignedByteType ) { return 5121; }
+			if ( p === UnsignedShort4444Type ) { return 32819; }
+			if ( p === UnsignedShort5551Type ) { return 32820; }
+			if ( p === UnsignedShort565Type ) { return 33635; }
 
-			if ( p === ByteType ) return 5120;
-			if ( p === ShortType ) return 5122;
-			if ( p === UnsignedShortType ) return 5123;
-			if ( p === IntType ) return 5124;
-			if ( p === UnsignedIntType ) return 5125;
-			if ( p === FloatType ) return 5126;
+			if ( p === ByteType ) { return 5120; }
+			if ( p === ShortType ) { return 5122; }
+			if ( p === UnsignedShortType ) { return 5123; }
+			if ( p === IntType ) { return 5124; }
+			if ( p === UnsignedIntType ) { return 5125; }
+			if ( p === FloatType ) { return 5126; }
 
 			if ( p === HalfFloatType ) {
 
-				if ( isWebGL2 ) return 5131;
+				if ( isWebGL2 ) { return 5131; }
 
 				extension = extensions.get( 'OES_texture_half_float' );
 
@@ -22910,22 +22912,22 @@
 
 			}
 
-			if ( p === AlphaFormat ) return 6406;
-			if ( p === RGBFormat ) return 6407;
-			if ( p === RGBAFormat ) return 6408;
-			if ( p === LuminanceFormat ) return 6409;
-			if ( p === LuminanceAlphaFormat ) return 6410;
-			if ( p === DepthFormat ) return 6402;
-			if ( p === DepthStencilFormat ) return 34041;
-			if ( p === RedFormat ) return 6403;
+			if ( p === AlphaFormat ) { return 6406; }
+			if ( p === RGBFormat ) { return 6407; }
+			if ( p === RGBAFormat ) { return 6408; }
+			if ( p === LuminanceFormat ) { return 6409; }
+			if ( p === LuminanceAlphaFormat ) { return 6410; }
+			if ( p === DepthFormat ) { return 6402; }
+			if ( p === DepthStencilFormat ) { return 34041; }
+			if ( p === RedFormat ) { return 6403; }
 
 			// WebGL2 formats.
 
-			if ( p === RedIntegerFormat ) return 36244;
-			if ( p === RGFormat ) return 33319;
-			if ( p === RGIntegerFormat ) return 33320;
-			if ( p === RGBIntegerFormat ) return 36248;
-			if ( p === RGBAIntegerFormat ) return 36249;
+			if ( p === RedIntegerFormat ) { return 36244; }
+			if ( p === RGFormat ) { return 33319; }
+			if ( p === RGIntegerFormat ) { return 33320; }
+			if ( p === RGBIntegerFormat ) { return 36248; }
+			if ( p === RGBAIntegerFormat ) { return 36249; }
 
 			if ( p === RGB_S3TC_DXT1_Format || p === RGBA_S3TC_DXT1_Format ||
 				p === RGBA_S3TC_DXT3_Format || p === RGBA_S3TC_DXT5_Format ) {
@@ -22934,10 +22936,10 @@
 
 				if ( extension !== null ) {
 
-					if ( p === RGB_S3TC_DXT1_Format ) return extension.COMPRESSED_RGB_S3TC_DXT1_EXT;
-					if ( p === RGBA_S3TC_DXT1_Format ) return extension.COMPRESSED_RGBA_S3TC_DXT1_EXT;
-					if ( p === RGBA_S3TC_DXT3_Format ) return extension.COMPRESSED_RGBA_S3TC_DXT3_EXT;
-					if ( p === RGBA_S3TC_DXT5_Format ) return extension.COMPRESSED_RGBA_S3TC_DXT5_EXT;
+					if ( p === RGB_S3TC_DXT1_Format ) { return extension.COMPRESSED_RGB_S3TC_DXT1_EXT; }
+					if ( p === RGBA_S3TC_DXT1_Format ) { return extension.COMPRESSED_RGBA_S3TC_DXT1_EXT; }
+					if ( p === RGBA_S3TC_DXT3_Format ) { return extension.COMPRESSED_RGBA_S3TC_DXT3_EXT; }
+					if ( p === RGBA_S3TC_DXT5_Format ) { return extension.COMPRESSED_RGBA_S3TC_DXT5_EXT; }
 
 				} else {
 
@@ -22954,10 +22956,10 @@
 
 				if ( extension !== null ) {
 
-					if ( p === RGB_PVRTC_4BPPV1_Format ) return extension.COMPRESSED_RGB_PVRTC_4BPPV1_IMG;
-					if ( p === RGB_PVRTC_2BPPV1_Format ) return extension.COMPRESSED_RGB_PVRTC_2BPPV1_IMG;
-					if ( p === RGBA_PVRTC_4BPPV1_Format ) return extension.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG;
-					if ( p === RGBA_PVRTC_2BPPV1_Format ) return extension.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG;
+					if ( p === RGB_PVRTC_4BPPV1_Format ) { return extension.COMPRESSED_RGB_PVRTC_4BPPV1_IMG; }
+					if ( p === RGB_PVRTC_2BPPV1_Format ) { return extension.COMPRESSED_RGB_PVRTC_2BPPV1_IMG; }
+					if ( p === RGBA_PVRTC_4BPPV1_Format ) { return extension.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG; }
+					if ( p === RGBA_PVRTC_2BPPV1_Format ) { return extension.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG; }
 
 				} else {
 
@@ -22989,8 +22991,8 @@
 
 				if ( extension !== null ) {
 
-					if ( p === RGB_ETC2_Format ) return extension.COMPRESSED_RGB8_ETC2;
-					if ( p === RGBA_ETC2_EAC_Format ) return extension.COMPRESSED_RGBA8_ETC2_EAC;
+					if ( p === RGB_ETC2_Format ) { return extension.COMPRESSED_RGB8_ETC2; }
+					if ( p === RGBA_ETC2_EAC_Format ) { return extension.COMPRESSED_RGBA8_ETC2_EAC; }
 
 				}
 
@@ -23043,7 +23045,7 @@
 
 			if ( p === UnsignedInt248Type ) {
 
-				if ( isWebGL2 ) return 34042;
+				if ( isWebGL2 ) { return 34042; }
 
 				extension = extensions.get( 'WEBGL_depth_texture' );
 
@@ -23122,10 +23124,10 @@
 
 				if ( window.XRHand ) {
 
-					for ( let i = 0; i <= window.XRHand.LITTLE_PHALANX_TIP; i ++ ) {
+					for ( var i = 0; i <= window.XRHand.LITTLE_PHALANX_TIP; i ++ ) {
 
 						// The transform of this joint will be updated with the joint pose on each frame
-						let joint = new Group();
+						var joint = new Group();
 						joint.matrixAutoUpdate = false;
 						joint.visible = false;
 						this._hand.joints.push( joint );
@@ -23222,13 +23224,13 @@
 
 		update: function ( inputSource, frame, referenceSpace ) {
 
-			let inputPose = null;
-			let gripPose = null;
-			let handPose = null;
+			var inputPose = null;
+			var gripPose = null;
+			var handPose = null;
 
-			const targetRay = this._targetRay;
-			const grip = this._grip;
-			const hand = this._hand;
+			var targetRay = this._targetRay;
+			var grip = this._grip;
+			var hand = this._hand;
 
 			if ( inputSource ) {
 
@@ -23236,13 +23238,13 @@
 
 					handPose = true;
 
-					for ( let i = 0; i <= window.XRHand.LITTLE_PHALANX_TIP; i ++ ) {
+					for ( var i = 0; i <= window.XRHand.LITTLE_PHALANX_TIP; i ++ ) {
 
 						if ( inputSource.hand[ i ] ) {
 
 							// Update the joints groups with the XRJoint poses
-							let jointPose = frame.getJointPose( inputSource.hand[ i ], referenceSpace );
-							const joint = hand.joints[ i ];
+							var jointPose = frame.getJointPose( inputSource.hand[ i ], referenceSpace );
+							var joint = hand.joints[ i ];
 
 							if ( jointPose !== null ) {
 
@@ -23257,12 +23259,12 @@
 							// Custom events
 
 							// Check pinch
-							const indexTip = hand.joints[ window.XRHand.INDEX_PHALANX_TIP ];
-							const thumbTip = hand.joints[ window.XRHand.THUMB_PHALANX_TIP ];
-							const distance = indexTip.position.distanceTo( thumbTip.position );
+							var indexTip = hand.joints[ window.XRHand.INDEX_PHALANX_TIP ];
+							var thumbTip = hand.joints[ window.XRHand.THUMB_PHALANX_TIP ];
+							var distance = indexTip.position.distanceTo( thumbTip.position );
 
-							const distanceToPinch = 0.02;
-							const threshold = 0.005;
+							var distanceToPinch = 0.02;
+							var threshold = 0.005;
 
 							if ( hand.inputState.pinching && distance > distanceToPinch + threshold ) {
 
@@ -23346,38 +23348,38 @@
 
 	function WebXRManager( renderer, gl ) {
 
-		const scope = this;
+		var scope = this;
 
-		let session = null;
+		var session = null;
 
-		let framebufferScaleFactor = 1.0;
+		var framebufferScaleFactor = 1.0;
 
-		let referenceSpace = null;
-		let referenceSpaceType = 'local-floor';
+		var referenceSpace = null;
+		var referenceSpaceType = 'local-floor';
 
-		let pose = null;
+		var pose = null;
 
-		const controllers = [];
-		const inputSourcesMap = new Map();
+		var controllers = [];
+		var inputSourcesMap = new Map();
 
 		//
 
-		const cameraL = new PerspectiveCamera();
+		var cameraL = new PerspectiveCamera();
 		cameraL.layers.enable( 1 );
 		cameraL.viewport = new Vector4();
 
-		const cameraR = new PerspectiveCamera();
+		var cameraR = new PerspectiveCamera();
 		cameraR.layers.enable( 2 );
 		cameraR.viewport = new Vector4();
 
-		const cameras = [ cameraL, cameraR ];
+		var cameras = [ cameraL, cameraR ];
 
-		const cameraVR = new ArrayCamera();
+		var cameraVR = new ArrayCamera();
 		cameraVR.layers.enable( 1 );
 		cameraVR.layers.enable( 2 );
 
-		let _currentDepthNear = null;
-		let _currentDepthFar = null;
+		var _currentDepthNear = null;
+		var _currentDepthFar = null;
 
 		//
 
@@ -23387,7 +23389,7 @@
 
 		this.getController = function ( index ) {
 
-			let controller = controllers[ index ];
+			var controller = controllers[ index ];
 
 			if ( controller === undefined ) {
 
@@ -23402,7 +23404,7 @@
 
 		this.getControllerGrip = function ( index ) {
 
-			let controller = controllers[ index ];
+			var controller = controllers[ index ];
 
 			if ( controller === undefined ) {
 
@@ -23417,7 +23419,7 @@
 
 		this.getHand = function ( index ) {
 
-			let controller = controllers[ index ];
+			var controller = controllers[ index ];
 
 			if ( controller === undefined ) {
 
@@ -23434,7 +23436,7 @@
 
 		function onSessionEvent( event ) {
 
-			const controller = inputSourcesMap.get( event.inputSource );
+			var controller = inputSourcesMap.get( event.inputSource );
 
 			if ( controller ) {
 
@@ -23529,7 +23531,7 @@
 				session.addEventListener( 'squeezeend', onSessionEvent );
 				session.addEventListener( 'end', onSessionEnd );
 
-				const attributes = gl.getContextAttributes();
+				var attributes = gl.getContextAttributes();
 
 				if ( attributes.xrCompatible !== true ) {
 
@@ -23537,7 +23539,7 @@
 
 				}
 
-				const layerInit = {
+				var layerInit = {
 					antialias: attributes.antialias,
 					alpha: attributes.alpha,
 					depth: attributes.depth,
@@ -23546,7 +23548,7 @@
 				};
 
 				// eslint-disable-next-line no-undef
-				const baseLayer = new XRWebGLLayer( session, gl, layerInit );
+				var baseLayer = new XRWebGLLayer( session, gl, layerInit );
 
 				session.updateRenderState( { baseLayer: baseLayer } );
 
@@ -23562,11 +23564,11 @@
 
 		function updateInputSources( event ) {
 
-			const inputSources = session.inputSources;
+			var inputSources = session.inputSources;
 
 			// Assign inputSources to available controllers
 
-			for ( let i = 0; i < controllers.length; i ++ ) {
+			for ( var i = 0; i < controllers.length; i ++ ) {
 
 				inputSourcesMap.set( inputSources[ i ], controllers[ i ] );
 
@@ -23574,10 +23576,10 @@
 
 			// Notify disconnected
 
-			for ( let i = 0; i < event.removed.length; i ++ ) {
+			for ( var i$1 = 0; i$1 < event.removed.length; i$1 ++ ) {
 
-				const inputSource = event.removed[ i ];
-				const controller = inputSourcesMap.get( inputSource );
+				var inputSource = event.removed[ i$1 ];
+				var controller = inputSourcesMap.get( inputSource );
 
 				if ( controller ) {
 
@@ -23590,14 +23592,14 @@
 
 			// Notify connected
 
-			for ( let i = 0; i < event.added.length; i ++ ) {
+			for ( var i$2 = 0; i$2 < event.added.length; i$2 ++ ) {
 
-				const inputSource = event.added[ i ];
-				const controller = inputSourcesMap.get( inputSource );
+				var inputSource$1 = event.added[ i$2 ];
+				var controller$1 = inputSourcesMap.get( inputSource$1 );
 
-				if ( controller ) {
+				if ( controller$1 ) {
 
-					controller.dispatchEvent( { type: 'connected', data: inputSource } );
+					controller$1.dispatchEvent( { type: 'connected', data: inputSource$1 } );
 
 				}
 
@@ -23607,8 +23609,8 @@
 
 		//
 
-		const cameraLPos = new Vector3();
-		const cameraRPos = new Vector3();
+		var cameraLPos = new Vector3();
+		var cameraRPos = new Vector3();
 
 		/**
 		 * Assumes 2 cameras that are parallel and share an X-axis, and that
@@ -23621,28 +23623,28 @@
 			cameraLPos.setFromMatrixPosition( cameraL.matrixWorld );
 			cameraRPos.setFromMatrixPosition( cameraR.matrixWorld );
 
-			const ipd = cameraLPos.distanceTo( cameraRPos );
+			var ipd = cameraLPos.distanceTo( cameraRPos );
 
-			const projL = cameraL.projectionMatrix.elements;
-			const projR = cameraR.projectionMatrix.elements;
+			var projL = cameraL.projectionMatrix.elements;
+			var projR = cameraR.projectionMatrix.elements;
 
 			// VR systems will have identical far and near planes, and
 			// most likely identical top and bottom frustum extents.
 			// Use the left camera for these values.
-			const near = projL[ 14 ] / ( projL[ 10 ] - 1 );
-			const far = projL[ 14 ] / ( projL[ 10 ] + 1 );
-			const topFov = ( projL[ 9 ] + 1 ) / projL[ 5 ];
-			const bottomFov = ( projL[ 9 ] - 1 ) / projL[ 5 ];
+			var near = projL[ 14 ] / ( projL[ 10 ] - 1 );
+			var far = projL[ 14 ] / ( projL[ 10 ] + 1 );
+			var topFov = ( projL[ 9 ] + 1 ) / projL[ 5 ];
+			var bottomFov = ( projL[ 9 ] - 1 ) / projL[ 5 ];
 
-			const leftFov = ( projL[ 8 ] - 1 ) / projL[ 0 ];
-			const rightFov = ( projR[ 8 ] + 1 ) / projR[ 0 ];
-			const left = near * leftFov;
-			const right = near * rightFov;
+			var leftFov = ( projL[ 8 ] - 1 ) / projL[ 0 ];
+			var rightFov = ( projR[ 8 ] + 1 ) / projR[ 0 ];
+			var left = near * leftFov;
+			var right = near * rightFov;
 
 			// Calculate the new camera's position offset from the
 			// left camera. xOffset should be roughly half `ipd`.
-			const zOffset = ipd / ( - leftFov + rightFov );
-			const xOffset = zOffset * - leftFov;
+			var zOffset = ipd / ( - leftFov + rightFov );
+			var xOffset = zOffset * - leftFov;
 
 			// TODO: Better way to apply this offset?
 			cameraL.matrixWorld.decompose( camera.position, camera.quaternion, camera.scale );
@@ -23654,12 +23656,12 @@
 			// Find the union of the frustum values of the cameras and scale
 			// the values so that the near plane's position does not change in world space,
 			// although must now be relative to the new union camera.
-			const near2 = near + zOffset;
-			const far2 = far + zOffset;
-			const left2 = left - xOffset;
-			const right2 = right + ( ipd - xOffset );
-			const top2 = topFov * far / far2 * near2;
-			const bottom2 = bottomFov * far / far2 * near2;
+			var near2 = near + zOffset;
+			var far2 = far + zOffset;
+			var left2 = left - xOffset;
+			var right2 = right + ( ipd - xOffset );
+			var top2 = topFov * far / far2 * near2;
+			var bottom2 = bottomFov * far / far2 * near2;
 
 			camera.projectionMatrix.makePerspective( left2, right2, top2, bottom2, near2, far2 );
 
@@ -23700,12 +23702,12 @@
 
 			}
 
-			const parent = camera.parent;
-			const cameras = cameraVR.cameras;
+			var parent = camera.parent;
+			var cameras = cameraVR.cameras;
 
 			updateCamera( cameraVR, parent );
 
-			for ( let i = 0; i < cameras.length; i ++ ) {
+			for ( var i = 0; i < cameras.length; i ++ ) {
 
 				updateCamera( cameras[ i ], parent );
 
@@ -23715,11 +23717,11 @@
 
 			camera.matrixWorld.copy( cameraVR.matrixWorld );
 
-			const children = camera.children;
+			var children = camera.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l = children.length; i$1 < l; i$1 ++ ) {
 
-				children[ i ].updateMatrixWorld( true );
+				children[ i$1 ].updateMatrixWorld( true );
 
 			}
 
@@ -23743,7 +23745,7 @@
 
 		// Animation Loop
 
-		let onAnimationFrameCallback = null;
+		var onAnimationFrameCallback = null;
 
 		function onAnimationFrame( time, frame ) {
 
@@ -23751,12 +23753,12 @@
 
 			if ( pose !== null ) {
 
-				const views = pose.views;
-				const baseLayer = session.renderState.baseLayer;
+				var views = pose.views;
+				var baseLayer = session.renderState.baseLayer;
 
 				renderer.setFramebuffer( baseLayer.framebuffer );
 
-				let cameraVRNeedsUpdate = false;
+				var cameraVRNeedsUpdate = false;
 
 				// check if it's necessary to rebuild cameraVR's camera list
 
@@ -23767,12 +23769,12 @@
 
 				}
 
-				for ( let i = 0; i < views.length; i ++ ) {
+				for ( var i = 0; i < views.length; i ++ ) {
 
-					const view = views[ i ];
-					const viewport = baseLayer.getViewport( view );
+					var view = views[ i ];
+					var viewport = baseLayer.getViewport( view );
 
-					const camera = cameras[ i ];
+					var camera = cameras[ i ];
 					camera.matrix.fromArray( view.transform.matrix );
 					camera.projectionMatrix.fromArray( view.projectionMatrix );
 					camera.viewport.set( viewport.x, viewport.y, viewport.width, viewport.height );
@@ -23795,22 +23797,22 @@
 
 			//
 
-			const inputSources = session.inputSources;
+			var inputSources = session.inputSources;
 
-			for ( let i = 0; i < controllers.length; i ++ ) {
+			for ( var i$1 = 0; i$1 < controllers.length; i$1 ++ ) {
 
-				const controller = controllers[ i ];
-				const inputSource = inputSources[ i ];
+				var controller = controllers[ i$1 ];
+				var inputSource = inputSources[ i$1 ];
 
 				controller.update( inputSource, frame, referenceSpace );
 
 			}
 
-			if ( onAnimationFrameCallback ) onAnimationFrameCallback( time, frame );
+			if ( onAnimationFrameCallback ) { onAnimationFrameCallback( time, frame ); }
 
 		}
 
-		const animation = new WebGLAnimation();
+		var animation = new WebGLAnimation();
 		animation.setAnimationLoop( onAnimationFrame );
 
 		this.setAnimationLoop = function ( callback ) {
@@ -23964,7 +23966,7 @@
 
 			}
 
-			const envMap = material.envMap || environment;
+			var envMap = material.envMap || environment;
 
 			if ( envMap ) {
 
@@ -24007,7 +24009,7 @@
 			// 5. alpha map
 			// 6. emissive map
 
-			let uvScaleMap;
+			var uvScaleMap;
 
 			if ( material.map ) {
 
@@ -24070,7 +24072,7 @@
 			// 1. ao map
 			// 2. light map
 
-			let uv2ScaleMap;
+			var uv2ScaleMap;
 
 			if ( material.aoMap ) {
 
@@ -24141,7 +24143,7 @@
 			// 1. color map
 			// 2. alpha map
 
-			let uvScaleMap;
+			var uvScaleMap;
 
 			if ( material.map ) {
 
@@ -24189,7 +24191,7 @@
 			// 1. color map
 			// 2. alpha map
 
-			let uvScaleMap;
+			var uvScaleMap;
 
 			if ( material.map ) {
 
@@ -24240,7 +24242,7 @@
 
 				uniforms.bumpMap.value = material.bumpMap;
 				uniforms.bumpScale.value = material.bumpScale;
-				if ( material.side === BackSide ) uniforms.bumpScale.value *= - 1;
+				if ( material.side === BackSide ) { uniforms.bumpScale.value *= - 1; }
 
 			}
 
@@ -24248,7 +24250,7 @@
 
 				uniforms.normalMap.value = material.normalMap;
 				uniforms.normalScale.value.copy( material.normalScale );
-				if ( material.side === BackSide ) uniforms.normalScale.value.negate();
+				if ( material.side === BackSide ) { uniforms.normalScale.value.negate(); }
 
 			}
 
@@ -24280,7 +24282,7 @@
 
 				uniforms.bumpMap.value = material.bumpMap;
 				uniforms.bumpScale.value = material.bumpScale;
-				if ( material.side === BackSide ) uniforms.bumpScale.value *= - 1;
+				if ( material.side === BackSide ) { uniforms.bumpScale.value *= - 1; }
 
 			}
 
@@ -24288,7 +24290,7 @@
 
 				uniforms.normalMap.value = material.normalMap;
 				uniforms.normalScale.value.copy( material.normalScale );
-				if ( material.side === BackSide ) uniforms.normalScale.value.negate();
+				if ( material.side === BackSide ) { uniforms.normalScale.value.negate(); }
 
 			}
 
@@ -24329,7 +24331,7 @@
 
 				uniforms.bumpMap.value = material.bumpMap;
 				uniforms.bumpScale.value = material.bumpScale;
-				if ( material.side === BackSide ) uniforms.bumpScale.value *= - 1;
+				if ( material.side === BackSide ) { uniforms.bumpScale.value *= - 1; }
 
 			}
 
@@ -24337,7 +24339,7 @@
 
 				uniforms.normalMap.value = material.normalMap;
 				uniforms.normalScale.value.copy( material.normalScale );
-				if ( material.side === BackSide ) uniforms.normalScale.value.negate();
+				if ( material.side === BackSide ) { uniforms.normalScale.value.negate(); }
 
 			}
 
@@ -24366,7 +24368,7 @@
 
 			uniforms.clearcoat.value = material.clearcoat;
 			uniforms.clearcoatRoughness.value = material.clearcoatRoughness;
-			if ( material.sheen ) uniforms.sheen.value.copy( material.sheen );
+			if ( material.sheen ) { uniforms.sheen.value.copy( material.sheen ); }
 
 			if ( material.clearcoatMap ) {
 
@@ -24415,7 +24417,7 @@
 
 				uniforms.bumpMap.value = material.bumpMap;
 				uniforms.bumpScale.value = material.bumpScale;
-				if ( material.side === BackSide ) uniforms.bumpScale.value *= - 1;
+				if ( material.side === BackSide ) { uniforms.bumpScale.value *= - 1; }
 
 			}
 
@@ -24423,7 +24425,7 @@
 
 				uniforms.normalMap.value = material.normalMap;
 				uniforms.normalScale.value.copy( material.normalScale );
-				if ( material.side === BackSide ) uniforms.normalScale.value.negate();
+				if ( material.side === BackSide ) { uniforms.normalScale.value.negate(); }
 
 			}
 
@@ -24471,7 +24473,7 @@
 
 				uniforms.bumpMap.value = material.bumpMap;
 				uniforms.bumpScale.value = material.bumpScale;
-				if ( material.side === BackSide ) uniforms.bumpScale.value *= - 1;
+				if ( material.side === BackSide ) { uniforms.bumpScale.value *= - 1; }
 
 			}
 
@@ -24479,7 +24481,7 @@
 
 				uniforms.normalMap.value = material.normalMap;
 				uniforms.normalScale.value.copy( material.normalScale );
-				if ( material.side === BackSide ) uniforms.normalScale.value.negate();
+				if ( material.side === BackSide ) { uniforms.normalScale.value.negate(); }
 
 			}
 
@@ -24504,7 +24506,7 @@
 
 		parameters = parameters || {};
 
-		const _canvas = parameters.canvas !== undefined ? parameters.canvas : document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' ),
+		var _canvas = parameters.canvas !== undefined ? parameters.canvas : document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' ),
 			_context = parameters.context !== undefined ? parameters.context : null,
 
 			_alpha = parameters.alpha !== undefined ? parameters.alpha : false,
@@ -24516,8 +24518,8 @@
 			_powerPreference = parameters.powerPreference !== undefined ? parameters.powerPreference : 'default',
 			_failIfMajorPerformanceCaveat = parameters.failIfMajorPerformanceCaveat !== undefined ? parameters.failIfMajorPerformanceCaveat : false;
 
-		let currentRenderList = null;
-		let currentRenderState = null;
+		var currentRenderList = null;
+		var currentRenderState = null;
 
 		// public properties
 
@@ -24570,57 +24572,57 @@
 
 		// internal properties
 
-		const _this = this;
+		var _this = this;
 
-		let _isContextLost = false;
+		var _isContextLost = false;
 
 		// internal state cache
 
-		let _framebuffer = null;
+		var _framebuffer = null;
 
-		let _currentActiveCubeFace = 0;
-		let _currentActiveMipmapLevel = 0;
-		let _currentRenderTarget = null;
-		let _currentFramebuffer = null;
-		let _currentMaterialId = - 1;
+		var _currentActiveCubeFace = 0;
+		var _currentActiveMipmapLevel = 0;
+		var _currentRenderTarget = null;
+		var _currentFramebuffer = null;
+		var _currentMaterialId = - 1;
 
-		let _currentCamera = null;
-		let _currentArrayCamera = null;
+		var _currentCamera = null;
+		var _currentArrayCamera = null;
 
-		const _currentViewport = new Vector4();
-		const _currentScissor = new Vector4();
-		let _currentScissorTest = null;
+		var _currentViewport = new Vector4();
+		var _currentScissor = new Vector4();
+		var _currentScissorTest = null;
 
 		//
 
-		let _width = _canvas.width;
-		let _height = _canvas.height;
+		var _width = _canvas.width;
+		var _height = _canvas.height;
 
-		let _pixelRatio = 1;
-		let _opaqueSort = null;
-		let _transparentSort = null;
+		var _pixelRatio = 1;
+		var _opaqueSort = null;
+		var _transparentSort = null;
 
-		const _viewport = new Vector4( 0, 0, _width, _height );
-		const _scissor = new Vector4( 0, 0, _width, _height );
-		let _scissorTest = false;
+		var _viewport = new Vector4( 0, 0, _width, _height );
+		var _scissor = new Vector4( 0, 0, _width, _height );
+		var _scissorTest = false;
 
 		// frustum
 
-		const _frustum = new Frustum();
+		var _frustum = new Frustum();
 
 		// clipping
 
-		const _clipping = new WebGLClipping();
-		let _clippingEnabled = false;
-		let _localClippingEnabled = false;
+		var _clipping = new WebGLClipping();
+		var _clippingEnabled = false;
+		var _localClippingEnabled = false;
 
 		// camera matrices cache
 
-		const _projScreenMatrix = new Matrix4();
+		var _projScreenMatrix = new Matrix4();
 
-		const _vector3 = new Vector3();
+		var _vector3 = new Vector3();
 
-		const _emptyScene = { background: null, fog: null, environment: null, overrideMaterial: null, isScene: true };
+		var _emptyScene = { background: null, fog: null, environment: null, overrideMaterial: null, isScene: true };
 
 		function getTargetPixelRatio() {
 
@@ -24630,15 +24632,15 @@
 
 		// initialize
 
-		let _gl = _context;
+		var _gl = _context;
 
 		function getContext( contextNames, contextAttributes ) {
 
-			for ( let i = 0; i < contextNames.length; i ++ ) {
+			for ( var i = 0; i < contextNames.length; i ++ ) {
 
-				const contextName = contextNames[ i ];
-				const context = _canvas.getContext( contextName, contextAttributes );
-				if ( context !== null ) return context;
+				var contextName = contextNames[ i ];
+				var context = _canvas.getContext( contextName, contextAttributes );
+				if ( context !== null ) { return context; }
 
 			}
 
@@ -24648,7 +24650,7 @@
 
 		try {
 
-			const contextAttributes = {
+			var contextAttributes = {
 				alpha: _alpha,
 				depth: _depth,
 				stencil: _stencil,
@@ -24666,7 +24668,7 @@
 
 			if ( _gl === null ) {
 
-				const contextNames = [ 'webgl2', 'webgl', 'experimental-webgl' ];
+				var contextNames = [ 'webgl2', 'webgl', 'experimental-webgl' ];
 
 				if ( _this.isWebGL1Renderer === true ) {
 
@@ -24711,13 +24713,13 @@
 
 		}
 
-		let extensions, capabilities, state, info;
-		let properties, textures, attributes, geometries, objects;
-		let programCache, materials, renderLists, renderStates;
+		var extensions, capabilities, state, info;
+		var properties, textures, attributes, geometries, objects;
+		var programCache, materials, renderLists, renderStates;
 
-		let background, morphtargets, bufferRenderer, indexedBufferRenderer;
+		var background, morphtargets, bufferRenderer, indexedBufferRenderer;
 
-		let utils, bindingStates;
+		var utils, bindingStates;
 
 		function initGLContext() {
 
@@ -24779,13 +24781,13 @@
 
 		// xr
 
-		const xr = new WebXRManager( _this, _gl );
+		var xr = new WebXRManager( _this, _gl );
 
 		this.xr = xr;
 
 		// shadow map
 
-		const shadowMap = new WebGLShadowMap( _this, objects, capabilities.maxTextureSize );
+		var shadowMap = new WebGLShadowMap( _this, objects, capabilities.maxTextureSize );
 
 		this.shadowMap = shadowMap;
 
@@ -24805,15 +24807,15 @@
 
 		this.forceContextLoss = function () {
 
-			const extension = extensions.get( 'WEBGL_lose_context' );
-			if ( extension ) extension.loseContext();
+			var extension = extensions.get( 'WEBGL_lose_context' );
+			if ( extension ) { extension.loseContext(); }
 
 		};
 
 		this.forceContextRestore = function () {
 
-			const extension = extensions.get( 'WEBGL_lose_context' );
-			if ( extension ) extension.restoreContext();
+			var extension = extensions.get( 'WEBGL_lose_context' );
+			if ( extension ) { extension.restoreContext(); }
 
 		};
 
@@ -24825,7 +24827,7 @@
 
 		this.setPixelRatio = function ( value ) {
 
-			if ( value === undefined ) return;
+			if ( value === undefined ) { return; }
 
 			_pixelRatio = value;
 
@@ -25011,11 +25013,11 @@
 
 		this.clear = function ( color, depth, stencil ) {
 
-			let bits = 0;
+			var bits = 0;
 
-			if ( color === undefined || color ) bits |= 16384;
-			if ( depth === undefined || depth ) bits |= 256;
-			if ( stencil === undefined || stencil ) bits |= 1024;
+			if ( color === undefined || color ) { bits |= 16384; }
+			if ( depth === undefined || depth ) { bits |= 256; }
+			if ( stencil === undefined || stencil ) { bits |= 1024; }
 
 			_gl.clear( bits );
 
@@ -25082,7 +25084,7 @@
 
 		function onMaterialDispose( event ) {
 
-			const material = event.target;
+			var material = event.target;
 
 			material.removeEventListener( 'dispose', onMaterialDispose );
 
@@ -25103,7 +25105,7 @@
 
 		function releaseMaterialProgramReference( material ) {
 
-			const programInfo = properties.get( material ).program;
+			var programInfo = properties.get( material ).program;
 
 			if ( programInfo !== undefined ) {
 
@@ -25129,14 +25131,14 @@
 
 			bindingStates.initAttributes();
 
-			const buffers = properties.get( object );
+			var buffers = properties.get( object );
 
-			if ( object.hasPositions && ! buffers.position ) buffers.position = _gl.createBuffer();
-			if ( object.hasNormals && ! buffers.normal ) buffers.normal = _gl.createBuffer();
-			if ( object.hasUvs && ! buffers.uv ) buffers.uv = _gl.createBuffer();
-			if ( object.hasColors && ! buffers.color ) buffers.color = _gl.createBuffer();
+			if ( object.hasPositions && ! buffers.position ) { buffers.position = _gl.createBuffer(); }
+			if ( object.hasNormals && ! buffers.normal ) { buffers.normal = _gl.createBuffer(); }
+			if ( object.hasUvs && ! buffers.uv ) { buffers.uv = _gl.createBuffer(); }
+			if ( object.hasColors && ! buffers.color ) { buffers.color = _gl.createBuffer(); }
 
-			const programAttributes = program.getAttributes();
+			var programAttributes = program.getAttributes();
 
 			if ( object.hasPositions ) {
 
@@ -25188,24 +25190,24 @@
 
 		this.renderBufferDirect = function ( camera, scene, geometry, material, object, group ) {
 
-			if ( scene === null ) scene = _emptyScene; // renderBufferDirect second parameter used to be fog (could be null)
+			if ( scene === null ) { scene = _emptyScene; } // renderBufferDirect second parameter used to be fog (could be null)
 
-			const frontFaceCW = ( object.isMesh && object.matrixWorld.determinant() < 0 );
+			var frontFaceCW = ( object.isMesh && object.matrixWorld.determinant() < 0 );
 
-			const program = setProgram( camera, scene, material, object );
+			var program = setProgram( camera, scene, material, object );
 
 			state.setMaterial( material, frontFaceCW );
 
 			//
 
-			let index = geometry.index;
-			const position = geometry.attributes.position;
+			var index = geometry.index;
+			var position = geometry.attributes.position;
 
 			//
 
 			if ( index === null ) {
 
-				if ( position === undefined || position.count === 0 ) return;
+				if ( position === undefined || position.count === 0 ) { return; }
 
 			} else if ( index.count === 0 ) {
 
@@ -25215,7 +25217,7 @@
 
 			//
 
-			let rangeFactor = 1;
+			var rangeFactor = 1;
 
 			if ( material.wireframe === true ) {
 
@@ -25232,8 +25234,8 @@
 
 			bindingStates.setup( object, material, program, geometry, index );
 
-			let attribute;
-			let renderer = bufferRenderer;
+			var attribute;
+			var renderer = bufferRenderer;
 
 			if ( index !== null ) {
 
@@ -25246,20 +25248,20 @@
 
 			//
 
-			const dataCount = ( index !== null ) ? index.count : position.count;
+			var dataCount = ( index !== null ) ? index.count : position.count;
 
-			const rangeStart = geometry.drawRange.start * rangeFactor;
-			const rangeCount = geometry.drawRange.count * rangeFactor;
+			var rangeStart = geometry.drawRange.start * rangeFactor;
+			var rangeCount = geometry.drawRange.count * rangeFactor;
 
-			const groupStart = group !== null ? group.start * rangeFactor : 0;
-			const groupCount = group !== null ? group.count * rangeFactor : Infinity;
+			var groupStart = group !== null ? group.start * rangeFactor : 0;
+			var groupCount = group !== null ? group.count * rangeFactor : Infinity;
 
-			const drawStart = Math.max( rangeStart, groupStart );
-			const drawEnd = Math.min( dataCount, rangeStart + rangeCount, groupStart + groupCount ) - 1;
+			var drawStart = Math.max( rangeStart, groupStart );
+			var drawEnd = Math.min( dataCount, rangeStart + rangeCount, groupStart + groupCount ) - 1;
 
-			const drawCount = Math.max( 0, drawEnd - drawStart + 1 );
+			var drawCount = Math.max( 0, drawEnd - drawStart + 1 );
 
-			if ( drawCount === 0 ) return;
+			if ( drawCount === 0 ) { return; }
 
 			//
 
@@ -25278,9 +25280,9 @@
 
 			} else if ( object.isLine ) {
 
-				let lineWidth = material.linewidth;
+				var lineWidth = material.linewidth;
 
-				if ( lineWidth === undefined ) lineWidth = 1; // Not using Line*Material
+				if ( lineWidth === undefined ) { lineWidth = 1; } // Not using Line*Material
 
 				state.setLineWidth( lineWidth * getTargetPixelRatio() );
 
@@ -25314,7 +25316,7 @@
 
 			} else if ( geometry.isInstancedBufferGeometry ) {
 
-				const instanceCount = Math.min( geometry.instanceCount, geometry._maxInstanceCount );
+				var instanceCount = Math.min( geometry.instanceCount, geometry._maxInstanceCount );
 
 				renderer.renderInstances( drawStart, drawCount, instanceCount );
 
@@ -25351,19 +25353,19 @@
 
 			currentRenderState.setupLights( camera );
 
-			const compiled = new WeakMap();
+			var compiled = new WeakMap();
 
 			scene.traverse( function ( object ) {
 
-				let material = object.material;
+				var material = object.material;
 
 				if ( material ) {
 
 					if ( Array.isArray( material ) ) {
 
-						for ( let i = 0; i < material.length; i ++ ) {
+						for ( var i = 0; i < material.length; i ++ ) {
 
-							let material2 = material[ i ];
+							var material2 = material[ i ];
 
 							if ( compiled.has( material2 ) === false ) {
 
@@ -25389,19 +25391,19 @@
 
 		// Animation Loop
 
-		let onAnimationFrameCallback = null;
+		var onAnimationFrameCallback = null;
 
 		function onAnimationFrame( time ) {
 
-			if ( xr.isPresenting ) return;
-			if ( onAnimationFrameCallback ) onAnimationFrameCallback( time );
+			if ( xr.isPresenting ) { return; }
+			if ( onAnimationFrameCallback ) { onAnimationFrameCallback( time ); }
 
 		}
 
-		const animation = new WebGLAnimation();
+		var animation = new WebGLAnimation();
 		animation.setAnimationLoop( onAnimationFrame );
 
-		if ( typeof window !== 'undefined' ) animation.setContext( window );
+		if ( typeof window !== 'undefined' ) { animation.setContext( window ); }
 
 		this.setAnimationLoop = function ( callback ) {
 
@@ -25416,7 +25418,7 @@
 
 		this.render = function ( scene, camera ) {
 
-			let renderTarget, forceClear;
+			var renderTarget, forceClear;
 
 			if ( arguments[ 2 ] !== undefined ) {
 
@@ -25439,7 +25441,7 @@
 
 			}
 
-			if ( _isContextLost === true ) return;
+			if ( _isContextLost === true ) { return; }
 
 			// reset caching for this frame
 
@@ -25449,11 +25451,11 @@
 
 			// update scene graph
 
-			if ( scene.autoUpdate === true ) scene.updateMatrixWorld();
+			if ( scene.autoUpdate === true ) { scene.updateMatrixWorld(); }
 
 			// update camera matrices and frustum
 
-			if ( camera.parent === null ) camera.updateMatrixWorld();
+			if ( camera.parent === null ) { camera.updateMatrixWorld(); }
 
 			if ( xr.enabled === true && xr.isPresenting === true ) {
 
@@ -25462,7 +25464,7 @@
 			}
 
 			//
-			if ( scene.isScene === true ) scene.onBeforeRender( _this, scene, camera, renderTarget || _currentRenderTarget );
+			if ( scene.isScene === true ) { scene.onBeforeRender( _this, scene, camera, renderTarget || _currentRenderTarget ); }
 
 			currentRenderState = renderStates.get( scene, camera );
 			currentRenderState.init();
@@ -25488,19 +25490,19 @@
 
 			//
 
-			if ( _clippingEnabled === true ) _clipping.beginShadows();
+			if ( _clippingEnabled === true ) { _clipping.beginShadows(); }
 
-			const shadowsArray = currentRenderState.state.shadowsArray;
+			var shadowsArray = currentRenderState.state.shadowsArray;
 
 			shadowMap.render( shadowsArray, scene, camera );
 
 			currentRenderState.setupLights( camera );
 
-			if ( _clippingEnabled === true ) _clipping.endShadows();
+			if ( _clippingEnabled === true ) { _clipping.endShadows(); }
 
 			//
 
-			if ( this.info.autoReset === true ) this.info.reset();
+			if ( this.info.autoReset === true ) { this.info.reset(); }
 
 			if ( renderTarget !== undefined ) {
 
@@ -25514,15 +25516,15 @@
 
 			// render scene
 
-			const opaqueObjects = currentRenderList.opaque;
-			const transparentObjects = currentRenderList.transparent;
+			var opaqueObjects = currentRenderList.opaque;
+			var transparentObjects = currentRenderList.transparent;
 
-			if ( opaqueObjects.length > 0 ) renderObjects( opaqueObjects, scene, camera );
-			if ( transparentObjects.length > 0 ) renderObjects( transparentObjects, scene, camera );
+			if ( opaqueObjects.length > 0 ) { renderObjects( opaqueObjects, scene, camera ); }
+			if ( transparentObjects.length > 0 ) { renderObjects( transparentObjects, scene, camera ); }
 
 			//
 
-			if ( scene.isScene === true ) scene.onAfterRender( _this, scene, camera );
+			if ( scene.isScene === true ) { scene.onAfterRender( _this, scene, camera ); }
 
 			//
 
@@ -25555,9 +25557,9 @@
 
 		function projectObject( object, camera, groupOrder, sortObjects ) {
 
-			if ( object.visible === false ) return;
+			if ( object.visible === false ) { return; }
 
-			const visible = object.layers.test( camera.layers );
+			var visible = object.layers.test( camera.layers );
 
 			if ( visible ) {
 
@@ -25567,7 +25569,7 @@
 
 				} else if ( object.isLOD ) {
 
-					if ( object.autoUpdate === true ) object.update( camera );
+					if ( object.autoUpdate === true ) { object.update( camera ); }
 
 				} else if ( object.isLight ) {
 
@@ -25590,8 +25592,8 @@
 
 						}
 
-						const geometry = objects.update( object );
-						const material = object.material;
+						var geometry = objects.update( object );
+						var material = object.material;
 
 						if ( material.visible ) {
 
@@ -25636,29 +25638,29 @@
 
 						}
 
-						const geometry = objects.update( object );
-						const material = object.material;
+						var geometry$1 = objects.update( object );
+						var material$1 = object.material;
 
-						if ( Array.isArray( material ) ) {
+						if ( Array.isArray( material$1 ) ) {
 
-							const groups = geometry.groups;
+							var groups = geometry$1.groups;
 
-							for ( let i = 0, l = groups.length; i < l; i ++ ) {
+							for ( var i = 0, l = groups.length; i < l; i ++ ) {
 
-								const group = groups[ i ];
-								const groupMaterial = material[ group.materialIndex ];
+								var group = groups[ i ];
+								var groupMaterial = material$1[ group.materialIndex ];
 
 								if ( groupMaterial && groupMaterial.visible ) {
 
-									currentRenderList.push( object, geometry, groupMaterial, groupOrder, _vector3.z, group );
+									currentRenderList.push( object, geometry$1, groupMaterial, groupOrder, _vector3.z, group );
 
 								}
 
 							}
 
-						} else if ( material.visible ) {
+						} else if ( material$1.visible ) {
 
-							currentRenderList.push( object, geometry, material, groupOrder, _vector3.z, null );
+							currentRenderList.push( object, geometry$1, material$1, groupOrder, _vector3.z, null );
 
 						}
 
@@ -25668,11 +25670,11 @@
 
 			}
 
-			const children = object.children;
+			var children = object.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l$1 = children.length; i$1 < l$1; i$1 ++ ) {
 
-				projectObject( children[ i ], camera, groupOrder, sortObjects );
+				projectObject( children[ i$1 ], camera, groupOrder, sortObjects );
 
 			}
 
@@ -25680,26 +25682,26 @@
 
 		function renderObjects( renderList, scene, camera ) {
 
-			const overrideMaterial = scene.isScene === true ? scene.overrideMaterial : null;
+			var overrideMaterial = scene.isScene === true ? scene.overrideMaterial : null;
 
-			for ( let i = 0, l = renderList.length; i < l; i ++ ) {
+			for ( var i = 0, l = renderList.length; i < l; i ++ ) {
 
-				const renderItem = renderList[ i ];
+				var renderItem = renderList[ i ];
 
-				const object = renderItem.object;
-				const geometry = renderItem.geometry;
-				const material = overrideMaterial === null ? renderItem.material : overrideMaterial;
-				const group = renderItem.group;
+				var object = renderItem.object;
+				var geometry = renderItem.geometry;
+				var material = overrideMaterial === null ? renderItem.material : overrideMaterial;
+				var group = renderItem.group;
 
 				if ( camera.isArrayCamera ) {
 
 					_currentArrayCamera = camera;
 
-					const cameras = camera.cameras;
+					var cameras = camera.cameras;
 
-					for ( let j = 0, jl = cameras.length; j < jl; j ++ ) {
+					for ( var j = 0, jl = cameras.length; j < jl; j ++ ) {
 
-						const camera2 = cameras[ j ];
+						var camera2 = cameras[ j ];
 
 						if ( object.layers.test( camera2.layers ) ) {
 
@@ -25735,7 +25737,7 @@
 
 			if ( object.isImmediateRenderObject ) {
 
-				const program = setProgram( camera, scene, material, object );
+				var program = setProgram( camera, scene, material, object );
 
 				state.setMaterial( material );
 
@@ -25756,20 +25758,20 @@
 
 		function initMaterial( material, scene, object ) {
 
-			if ( scene.isScene !== true ) scene = _emptyScene; // scene could be a Mesh, Line, Points, ...
+			if ( scene.isScene !== true ) { scene = _emptyScene; } // scene could be a Mesh, Line, Points, ...
 
-			const materialProperties = properties.get( material );
+			var materialProperties = properties.get( material );
 
-			const lights = currentRenderState.state.lights;
-			const shadowsArray = currentRenderState.state.shadowsArray;
+			var lights = currentRenderState.state.lights;
+			var shadowsArray = currentRenderState.state.shadowsArray;
 
-			const lightsStateVersion = lights.state.version;
+			var lightsStateVersion = lights.state.version;
 
-			const parameters = programCache.getParameters( material, lights.state, shadowsArray, scene, _clipping.numPlanes, _clipping.numIntersection, object );
-			const programCacheKey = programCache.getProgramCacheKey( parameters );
+			var parameters = programCache.getParameters( material, lights.state, shadowsArray, scene, _clipping.numPlanes, _clipping.numIntersection, object );
+			var programCacheKey = programCache.getProgramCacheKey( parameters );
 
-			let program = materialProperties.program;
-			let programChange = true;
+			var program = materialProperties.program;
+			var programChange = true;
 
 			if ( program === undefined ) {
 
@@ -25813,13 +25815,13 @@
 
 			}
 
-			const programAttributes = program.getAttributes();
+			var programAttributes = program.getAttributes();
 
 			if ( material.morphTargets ) {
 
 				material.numSupportedMorphTargets = 0;
 
-				for ( let i = 0; i < _this.maxMorphTargets; i ++ ) {
+				for ( var i = 0; i < _this.maxMorphTargets; i ++ ) {
 
 					if ( programAttributes[ 'morphTarget' + i ] >= 0 ) {
 
@@ -25835,9 +25837,9 @@
 
 				material.numSupportedMorphNormals = 0;
 
-				for ( let i = 0; i < _this.maxMorphNormals; i ++ ) {
+				for ( var i$1 = 0; i$1 < _this.maxMorphNormals; i$1 ++ ) {
 
-					if ( programAttributes[ 'morphNormal' + i ] >= 0 ) {
+					if ( programAttributes[ 'morphNormal' + i$1 ] >= 0 ) {
 
 						material.numSupportedMorphNormals ++;
 
@@ -25847,7 +25849,7 @@
 
 			}
 
-			const uniforms = materialProperties.uniforms;
+			var uniforms = materialProperties.uniforms;
 
 			if ( ! material.isShaderMaterial &&
 				! material.isRawShaderMaterial ||
@@ -25892,7 +25894,7 @@
 
 			}
 
-			const progUniforms = materialProperties.program.getUniforms(),
+			var progUniforms = materialProperties.program.getUniforms(),
 				uniformsList =
 					WebGLUniforms.seqWithValue( progUniforms.seq, uniforms );
 
@@ -25902,22 +25904,22 @@
 
 		function setProgram( camera, scene, material, object ) {
 
-			if ( scene.isScene !== true ) scene = _emptyScene; // scene could be a Mesh, Line, Points, ...
+			if ( scene.isScene !== true ) { scene = _emptyScene; } // scene could be a Mesh, Line, Points, ...
 
 			textures.resetTextureUnits();
 
-			const fog = scene.fog;
-			const environment = material.isMeshStandardMaterial ? scene.environment : null;
-			const encoding = ( _currentRenderTarget === null ) ? _this.outputEncoding : _currentRenderTarget.texture.encoding;
+			var fog = scene.fog;
+			var environment = material.isMeshStandardMaterial ? scene.environment : null;
+			var encoding = ( _currentRenderTarget === null ) ? _this.outputEncoding : _currentRenderTarget.texture.encoding;
 
-			const materialProperties = properties.get( material );
-			const lights = currentRenderState.state.lights;
+			var materialProperties = properties.get( material );
+			var lights = currentRenderState.state.lights;
 
 			if ( _clippingEnabled === true ) {
 
 				if ( _localClippingEnabled === true || camera !== _currentCamera ) {
 
-					const useCache =
+					var useCache =
 						camera === _currentCamera &&
 						material.id === _currentMaterialId;
 
@@ -25969,11 +25971,11 @@
 
 			}
 
-			let refreshProgram = false;
-			let refreshMaterial = false;
-			let refreshLights = false;
+			var refreshProgram = false;
+			var refreshMaterial = false;
+			var refreshLights = false;
 
-			const program = materialProperties.program,
+			var program = materialProperties.program,
 				p_uniforms = program.getUniforms(),
 				m_uniforms = materialProperties.uniforms;
 
@@ -26026,7 +26028,7 @@
 					material.isMeshStandardMaterial ||
 					material.envMap ) {
 
-					const uCamPos = p_uniforms.map.cameraPosition;
+					var uCamPos = p_uniforms.map.cameraPosition;
 
 					if ( uCamPos !== undefined ) {
 
@@ -26072,11 +26074,11 @@
 				p_uniforms.setOptional( _gl, object, 'bindMatrix' );
 				p_uniforms.setOptional( _gl, object, 'bindMatrixInverse' );
 
-				const skeleton = object.skeleton;
+				var skeleton = object.skeleton;
 
 				if ( skeleton ) {
 
-					const bones = skeleton.bones;
+					var bones = skeleton.bones;
 
 					if ( capabilities.floatVertexTextures ) {
 
@@ -26090,14 +26092,14 @@
 							//       64x64 pixel texture max 1024 bones * 4 pixels = (64 * 64)
 
 
-							let size = Math.sqrt( bones.length * 4 ); // 4 pixels needed for 1 matrix
+							var size = Math.sqrt( bones.length * 4 ); // 4 pixels needed for 1 matrix
 							size = MathUtils.ceilPowerOfTwo( size );
 							size = Math.max( size, 4 );
 
-							const boneMatrices = new Float32Array( size * size * 4 ); // 4 floats per RGBA pixel
+							var boneMatrices = new Float32Array( size * size * 4 ); // 4 floats per RGBA pixel
 							boneMatrices.set( skeleton.boneMatrices ); // copy current values
 
-							const boneTexture = new DataTexture( boneMatrices, size, size, RGBAFormat, FloatType );
+							var boneTexture = new DataTexture( boneMatrices, size, size, RGBAFormat, FloatType );
 
 							skeleton.boneMatrices = boneMatrices;
 							skeleton.boneTexture = boneTexture;
@@ -26157,8 +26159,8 @@
 				// RectAreaLight Texture
 				// TODO (mrdoob): Find a nicer implementation
 
-				if ( m_uniforms.ltc_1 !== undefined ) m_uniforms.ltc_1.value = UniformsLib.LTC_1;
-				if ( m_uniforms.ltc_2 !== undefined ) m_uniforms.ltc_2.value = UniformsLib.LTC_2;
+				if ( m_uniforms.ltc_1 !== undefined ) { m_uniforms.ltc_1.value = UniformsLib.LTC_1; }
+				if ( m_uniforms.ltc_2 !== undefined ) { m_uniforms.ltc_2.value = UniformsLib.LTC_2; }
 
 				WebGLUniforms.upload( _gl, materialProperties.uniformsList, m_uniforms, textures );
 
@@ -26216,7 +26218,7 @@
 		//
 		this.setFramebuffer = function ( value ) {
 
-			if ( _framebuffer !== value && _currentRenderTarget === null ) _gl.bindFramebuffer( 36160, value );
+			if ( _framebuffer !== value && _currentRenderTarget === null ) { _gl.bindFramebuffer( 36160, value ); }
 
 			_framebuffer = value;
 
@@ -26252,16 +26254,16 @@
 
 			}
 
-			let framebuffer = _framebuffer;
-			let isCube = false;
+			var framebuffer = _framebuffer;
+			var isCube = false;
 
 			if ( renderTarget ) {
 
-				const __webglFramebuffer = properties.get( renderTarget ).__webglFramebuffer;
+				var _webglFramebuffer = properties.get( renderTarget ).__webglFramebuffer;
 
 				if ( renderTarget.isWebGLCubeRenderTarget ) {
 
-					framebuffer = __webglFramebuffer[ activeCubeFace || 0 ];
+					framebuffer = _webglFramebuffer[ activeCubeFace || 0 ];
 					isCube = true;
 
 				} else if ( renderTarget.isWebGLMultisampleRenderTarget ) {
@@ -26270,7 +26272,7 @@
 
 				} else {
 
-					framebuffer = __webglFramebuffer;
+					framebuffer = _webglFramebuffer;
 
 				}
 
@@ -26299,7 +26301,7 @@
 
 			if ( isCube ) {
 
-				const textureProperties = properties.get( renderTarget.texture );
+				var textureProperties = properties.get( renderTarget.texture );
 				_gl.framebufferTexture2D( 36160, 36064, 34069 + ( activeCubeFace || 0 ), textureProperties.__webglTexture, activeMipmapLevel || 0 );
 
 			}
@@ -26315,7 +26317,7 @@
 
 			}
 
-			let framebuffer = properties.get( renderTarget ).__webglFramebuffer;
+			var framebuffer = properties.get( renderTarget ).__webglFramebuffer;
 
 			if ( renderTarget.isWebGLCubeRenderTarget && activeCubeFaceIndex !== undefined ) {
 
@@ -26325,7 +26327,7 @@
 
 			if ( framebuffer ) {
 
-				let restore = false;
+				var restore = false;
 
 				if ( framebuffer !== _currentFramebuffer ) {
 
@@ -26337,9 +26339,9 @@
 
 				try {
 
-					const texture = renderTarget.texture;
-					const textureFormat = texture.format;
-					const textureType = texture.type;
+					var texture = renderTarget.texture;
+					var textureFormat = texture.format;
+					var textureType = texture.type;
 
 					if ( textureFormat !== RGBAFormat && utils.convert( textureFormat ) !== _gl.getParameter( 35739 ) ) {
 
@@ -26389,12 +26391,12 @@
 
 		this.copyFramebufferToTexture = function ( position, texture, level ) {
 
-			if ( level === undefined ) level = 0;
+			if ( level === undefined ) { level = 0; }
 
-			const levelScale = Math.pow( 2, - level );
-			const width = Math.floor( texture.image.width * levelScale );
-			const height = Math.floor( texture.image.height * levelScale );
-			const glFormat = utils.convert( texture.format );
+			var levelScale = Math.pow( 2, - level );
+			var width = Math.floor( texture.image.width * levelScale );
+			var height = Math.floor( texture.image.height * levelScale );
+			var glFormat = utils.convert( texture.format );
 
 			textures.setTexture2D( texture, 0 );
 
@@ -26406,12 +26408,12 @@
 
 		this.copyTextureToTexture = function ( position, srcTexture, dstTexture, level ) {
 
-			if ( level === undefined ) level = 0;
+			if ( level === undefined ) { level = 0; }
 
-			const width = srcTexture.image.width;
-			const height = srcTexture.image.height;
-			const glFormat = utils.convert( dstTexture.format );
-			const glType = utils.convert( dstTexture.type );
+			var width = srcTexture.image.width;
+			var height = srcTexture.image.height;
+			var glFormat = utils.convert( dstTexture.format );
+			var glType = utils.convert( dstTexture.type );
 
 			textures.setTexture2D( dstTexture, 0 );
 
@@ -26440,7 +26442,7 @@
 			}
 
 			// Generate mipmaps only when copying level 0
-			if ( level === 0 && dstTexture.generateMipmaps ) _gl.generateMipmap( 3553 );
+			if ( level === 0 && dstTexture.generateMipmaps ) { _gl.generateMipmap( 3553 ); }
 
 			state.unbindTexture();
 
@@ -26560,7 +26562,7 @@
 
 		set: function ( value ) {
 
-			if ( value === true ) this.version ++;
+			if ( value === true ) { this.version ++; }
 
 		}
 
@@ -26596,7 +26598,7 @@
 			index1 *= this.stride;
 			index2 *= attribute.stride;
 
-			for ( let i = 0, l = this.stride; i < l; i ++ ) {
+			for ( var i = 0, l = this.stride; i < l; i ++ ) {
 
 				this.array[ index1 + i ] = attribute.array[ index2 + i ];
 
@@ -26608,7 +26610,7 @@
 
 		set: function ( value, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
 			this.array.set( value, offset );
 
@@ -26636,9 +26638,9 @@
 
 			}
 
-			const array = new this.array.constructor( data.arrayBuffers[ this.array.buffer._uuid ] );
+			var array = new this.array.constructor( data.arrayBuffers[ this.array.buffer._uuid ] );
 
-			const ib = new InterleavedBuffer( array, this.stride );
+			var ib = new InterleavedBuffer( array, this.stride );
 			ib.setUsage( this.usage );
 
 			return ib;
@@ -26688,7 +26690,7 @@
 
 	} );
 
-	const _vector$6 = new Vector3();
+	var _vector$6 = new Vector3();
 
 	function InterleavedBufferAttribute( interleavedBuffer, itemSize, offset, normalized ) {
 
@@ -26742,7 +26744,7 @@
 
 		applyMatrix4: function ( m ) {
 
-			for ( let i = 0, l = this.data.count; i < l; i ++ ) {
+			for ( var i = 0, l = this.data.count; i < l; i ++ ) {
 
 				_vector$6.x = this.getX( i );
 				_vector$6.y = this.getY( i );
@@ -26856,13 +26858,13 @@
 
 				console.log( 'THREE.InterleavedBufferAttribute.clone(): Cloning an interlaved buffer attribute will deinterleave buffer data.' );
 
-				const array = [];
+				var array = [];
 
-				for ( let i = 0; i < this.count; i ++ ) {
+				for ( var i = 0; i < this.count; i ++ ) {
 
-					const index = i * this.data.stride + this.offset;
+					var index = i * this.data.stride + this.offset;
 
-					for ( let j = 0; j < this.itemSize; j ++ ) {
+					for ( var j = 0; j < this.itemSize; j ++ ) {
 
 						array.push( this.data.array[ index + j ] );
 
@@ -26898,13 +26900,13 @@
 
 				console.log( 'THREE.InterleavedBufferAttribute.toJSON(): Serializing an interlaved buffer attribute will deinterleave buffer data.' );
 
-				const array = [];
+				var array = [];
 
-				for ( let i = 0; i < this.count; i ++ ) {
+				for ( var i = 0; i < this.count; i ++ ) {
 
-					const index = i * this.data.stride + this.offset;
+					var index = i * this.data.stride + this.offset;
 
-					for ( let j = 0; j < this.itemSize; j ++ ) {
+					for ( var j = 0; j < this.itemSize; j ++ ) {
 
 						array.push( this.data.array[ index + j ] );
 
@@ -27005,23 +27007,23 @@
 
 	};
 
-	let _geometry;
+	var _geometry;
 
-	const _intersectPoint = new Vector3();
-	const _worldScale = new Vector3();
-	const _mvPosition = new Vector3();
+	var _intersectPoint = new Vector3();
+	var _worldScale = new Vector3();
+	var _mvPosition = new Vector3();
 
-	const _alignedPosition = new Vector2();
-	const _rotatedPosition = new Vector2();
-	const _viewWorldMatrix = new Matrix4();
+	var _alignedPosition = new Vector2();
+	var _rotatedPosition = new Vector2();
+	var _viewWorldMatrix = new Matrix4();
 
-	const _vA$1 = new Vector3();
-	const _vB$1 = new Vector3();
-	const _vC$1 = new Vector3();
+	var _vA$1 = new Vector3();
+	var _vB$1 = new Vector3();
+	var _vC$1 = new Vector3();
 
-	const _uvA$1 = new Vector2();
-	const _uvB$1 = new Vector2();
-	const _uvC$1 = new Vector2();
+	var _uvA$1 = new Vector2();
+	var _uvB$1 = new Vector2();
+	var _uvC$1 = new Vector2();
 
 	function Sprite( material ) {
 
@@ -27033,14 +27035,14 @@
 
 			_geometry = new BufferGeometry();
 
-			const float32Array = new Float32Array( [
+			var float32Array = new Float32Array( [
 				- 0.5, - 0.5, 0, 0, 0,
 				0.5, - 0.5, 0, 1, 0,
 				0.5, 0.5, 0, 1, 1,
 				- 0.5, 0.5, 0, 0, 1
 			] );
 
-			const interleavedBuffer = new InterleavedBuffer( float32Array, 5 );
+			var interleavedBuffer = new InterleavedBuffer( float32Array, 5 );
 
 			_geometry.setIndex( [ 0, 1, 2,	0, 2, 3 ] );
 			_geometry.setAttribute( 'position', new InterleavedBufferAttribute( interleavedBuffer, 3, 0, false ) );
@@ -27082,8 +27084,8 @@
 
 			}
 
-			const rotation = this.material.rotation;
-			let sin, cos;
+			var rotation = this.material.rotation;
+			var sin, cos;
 
 			if ( rotation !== 0 ) {
 
@@ -27092,7 +27094,7 @@
 
 			}
 
-			const center = this.center;
+			var center = this.center;
 
 			transformVertex( _vA$1.set( - 0.5, - 0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
 			transformVertex( _vB$1.set( 0.5, - 0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
@@ -27103,7 +27105,7 @@
 			_uvC$1.set( 1, 1 );
 
 			// check first triangle
-			let intersect = raycaster.ray.intersectTriangle( _vA$1, _vB$1, _vC$1, false, _intersectPoint );
+			var intersect = raycaster.ray.intersectTriangle( _vA$1, _vB$1, _vC$1, false, _intersectPoint );
 
 			if ( intersect === null ) {
 
@@ -27120,9 +27122,9 @@
 
 			}
 
-			const distance = raycaster.ray.origin.distanceTo( _intersectPoint );
+			var distance = raycaster.ray.origin.distanceTo( _intersectPoint );
 
-			if ( distance < raycaster.near || distance > raycaster.far ) return;
+			if ( distance < raycaster.near || distance > raycaster.far ) { return; }
 
 			intersects.push( {
 
@@ -27140,7 +27142,7 @@
 
 			Object3D.prototype.copy.call( this, source );
 
-			if ( source.center !== undefined ) this.center.copy( source.center );
+			if ( source.center !== undefined ) { this.center.copy( source.center ); }
 
 			this.material = source.material;
 
@@ -27177,8 +27179,8 @@
 
 	}
 
-	const _v1$4 = new Vector3();
-	const _v2$2 = new Vector3();
+	var _v1$4 = new Vector3();
+	var _v2$2 = new Vector3();
 
 	function LOD() {
 
@@ -27209,11 +27211,11 @@
 
 			Object3D.prototype.copy.call( this, source, false );
 
-			const levels = source.levels;
+			var levels = source.levels;
 
-			for ( let i = 0, l = levels.length; i < l; i ++ ) {
+			for ( var i = 0, l = levels.length; i < l; i ++ ) {
 
-				const level = levels[ i ];
+				var level = levels[ i ];
 
 				this.addLevel( level.object.clone(), level.distance );
 
@@ -27227,13 +27229,13 @@
 
 		addLevel: function ( object, distance ) {
 
-			if ( distance === undefined ) distance = 0;
+			if ( distance === undefined ) { distance = 0; }
 
 			distance = Math.abs( distance );
 
-			const levels = this.levels;
+			var levels = this.levels;
 
-			let l;
+			var l;
 
 			for ( l = 0; l < levels.length; l ++ ) {
 
@@ -27261,11 +27263,11 @@
 
 		getObjectForDistance: function ( distance ) {
 
-			const levels = this.levels;
+			var levels = this.levels;
 
 			if ( levels.length > 0 ) {
 
-				let i, l;
+				var i, l;
 
 				for ( i = 1, l = levels.length; i < l; i ++ ) {
 
@@ -27287,13 +27289,13 @@
 
 		raycast: function ( raycaster, intersects ) {
 
-			const levels = this.levels;
+			var levels = this.levels;
 
 			if ( levels.length > 0 ) {
 
 				_v1$4.setFromMatrixPosition( this.matrixWorld );
 
-				const distance = raycaster.ray.origin.distanceTo( _v1$4 );
+				var distance = raycaster.ray.origin.distanceTo( _v1$4 );
 
 				this.getObjectForDistance( distance ).raycast( raycaster, intersects );
 
@@ -27303,18 +27305,18 @@
 
 		update: function ( camera ) {
 
-			const levels = this.levels;
+			var levels = this.levels;
 
 			if ( levels.length > 1 ) {
 
 				_v1$4.setFromMatrixPosition( camera.matrixWorld );
 				_v2$2.setFromMatrixPosition( this.matrixWorld );
 
-				const distance = _v1$4.distanceTo( _v2$2 ) / camera.zoom;
+				var distance = _v1$4.distanceTo( _v2$2 ) / camera.zoom;
 
 				levels[ 0 ].object.visible = true;
 
-				let i, l;
+				var i, l;
 
 				for ( i = 1, l = levels.length; i < l; i ++ ) {
 
@@ -27345,17 +27347,17 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Object3D.prototype.toJSON.call( this, meta );
+			var data = Object3D.prototype.toJSON.call( this, meta );
 
-			if ( this.autoUpdate === false ) data.object.autoUpdate = false;
+			if ( this.autoUpdate === false ) { data.object.autoUpdate = false; }
 
 			data.object.levels = [];
 
-			const levels = this.levels;
+			var levels = this.levels;
 
-			for ( let i = 0, l = levels.length; i < l; i ++ ) {
+			for ( var i = 0, l = levels.length; i < l; i ++ ) {
 
-				const level = levels[ i ];
+				var level = levels[ i ];
 
 				data.object.levels.push( {
 					object: level.object.uuid,
@@ -27435,18 +27437,18 @@
 
 		normalizeSkinWeights: function () {
 
-			const vector = new Vector4();
+			var vector = new Vector4();
 
-			const skinWeight = this.geometry.attributes.skinWeight;
+			var skinWeight = this.geometry.attributes.skinWeight;
 
-			for ( let i = 0, l = skinWeight.count; i < l; i ++ ) {
+			for ( var i = 0, l = skinWeight.count; i < l; i ++ ) {
 
 				vector.x = skinWeight.getX( i );
 				vector.y = skinWeight.getY( i );
 				vector.z = skinWeight.getZ( i );
 				vector.w = skinWeight.getW( i );
 
-				const scale = 1.0 / vector.manhattanLength();
+				var scale = 1.0 / vector.manhattanLength();
 
 				if ( scale !== Infinity ) {
 
@@ -27486,18 +27488,18 @@
 
 		boneTransform: ( function () {
 
-			const basePosition = new Vector3();
+			var basePosition = new Vector3();
 
-			const skinIndex = new Vector4();
-			const skinWeight = new Vector4();
+			var skinIndex = new Vector4();
+			var skinWeight = new Vector4();
 
-			const vector = new Vector3();
-			const matrix = new Matrix4();
+			var vector = new Vector3();
+			var matrix = new Matrix4();
 
 			return function ( index, target ) {
 
-				const skeleton = this.skeleton;
-				const geometry = this.geometry;
+				var skeleton = this.skeleton;
+				var geometry = this.geometry;
 
 				skinIndex.fromBufferAttribute( geometry.attributes.skinIndex, index );
 				skinWeight.fromBufferAttribute( geometry.attributes.skinWeight, index );
@@ -27506,13 +27508,13 @@
 
 				target.set( 0, 0, 0 );
 
-				for ( let i = 0; i < 4; i ++ ) {
+				for ( var i = 0; i < 4; i ++ ) {
 
-					const weight = skinWeight.getComponent( i );
+					var weight = skinWeight.getComponent( i );
 
 					if ( weight !== 0 ) {
 
-						const boneIndex = skinIndex.getComponent( i );
+						var boneIndex = skinIndex.getComponent( i );
 
 						matrix.multiplyMatrices( skeleton.bones[ boneIndex ].matrixWorld, skeleton.boneInverses[ boneIndex ] );
 
@@ -27530,8 +27532,8 @@
 
 	} );
 
-	const _offsetMatrix = new Matrix4();
-	const _identityMatrix = new Matrix4();
+	var _offsetMatrix = new Matrix4();
+	var _identityMatrix = new Matrix4();
 
 	function Skeleton( bones, boneInverses ) {
 
@@ -27562,7 +27564,7 @@
 
 				this.boneInverses = [];
 
-				for ( let i = 0, il = this.bones.length; i < il; i ++ ) {
+				for ( var i = 0, il = this.bones.length; i < il; i ++ ) {
 
 					this.boneInverses.push( new Matrix4() );
 
@@ -27580,9 +27582,9 @@
 
 			this.boneInverses = [];
 
-			for ( let i = 0, il = this.bones.length; i < il; i ++ ) {
+			for ( var i = 0, il = this.bones.length; i < il; i ++ ) {
 
-				const inverse = new Matrix4();
+				var inverse = new Matrix4();
 
 				if ( this.bones[ i ] ) {
 
@@ -27600,9 +27602,9 @@
 
 			// recover the bind-time world matrices
 
-			for ( let i = 0, il = this.bones.length; i < il; i ++ ) {
+			for ( var i = 0, il = this.bones.length; i < il; i ++ ) {
 
-				const bone = this.bones[ i ];
+				var bone = this.bones[ i ];
 
 				if ( bone ) {
 
@@ -27614,24 +27616,24 @@
 
 			// compute the local matrices, positions, rotations and scales
 
-			for ( let i = 0, il = this.bones.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il$1 = this.bones.length; i$1 < il$1; i$1 ++ ) {
 
-				const bone = this.bones[ i ];
+				var bone$1 = this.bones[ i$1 ];
 
-				if ( bone ) {
+				if ( bone$1 ) {
 
-					if ( bone.parent && bone.parent.isBone ) {
+					if ( bone$1.parent && bone$1.parent.isBone ) {
 
-						bone.matrix.getInverse( bone.parent.matrixWorld );
-						bone.matrix.multiply( bone.matrixWorld );
+						bone$1.matrix.getInverse( bone$1.parent.matrixWorld );
+						bone$1.matrix.multiply( bone$1.matrixWorld );
 
 					} else {
 
-						bone.matrix.copy( bone.matrixWorld );
+						bone$1.matrix.copy( bone$1.matrixWorld );
 
 					}
 
-					bone.matrix.decompose( bone.position, bone.quaternion, bone.scale );
+					bone$1.matrix.decompose( bone$1.position, bone$1.quaternion, bone$1.scale );
 
 				}
 
@@ -27641,18 +27643,18 @@
 
 		update: function () {
 
-			const bones = this.bones;
-			const boneInverses = this.boneInverses;
-			const boneMatrices = this.boneMatrices;
-			const boneTexture = this.boneTexture;
+			var bones = this.bones;
+			var boneInverses = this.boneInverses;
+			var boneMatrices = this.boneMatrices;
+			var boneTexture = this.boneTexture;
 
 			// flatten bone matrices to array
 
-			for ( let i = 0, il = bones.length; i < il; i ++ ) {
+			for ( var i = 0, il = bones.length; i < il; i ++ ) {
 
 				// compute the offset between the current and the original transform
 
-				const matrix = bones[ i ] ? bones[ i ].matrixWorld : _identityMatrix;
+				var matrix = bones[ i ] ? bones[ i ].matrixWorld : _identityMatrix;
 
 				_offsetMatrix.multiplyMatrices( matrix, boneInverses[ i ] );
 				_offsetMatrix.toArray( boneMatrices, i * 16 );
@@ -27675,9 +27677,9 @@
 
 		getBoneByName: function ( name ) {
 
-			for ( let i = 0, il = this.bones.length; i < il; i ++ ) {
+			for ( var i = 0, il = this.bones.length; i < il; i ++ ) {
 
-				const bone = this.bones[ i ];
+				var bone = this.bones[ i ];
 
 				if ( bone.name === name ) {
 
@@ -27721,12 +27723,12 @@
 
 	} );
 
-	const _instanceLocalMatrix = new Matrix4();
-	const _instanceWorldMatrix = new Matrix4();
+	var _instanceLocalMatrix = new Matrix4();
+	var _instanceWorldMatrix = new Matrix4();
 
-	const _instanceIntersects = [];
+	var _instanceIntersects = [];
 
-	const _mesh = new Mesh();
+	var _mesh = new Mesh();
 
 	function InstancedMesh( geometry, material, count ) {
 
@@ -27765,15 +27767,15 @@
 
 		raycast: function ( raycaster, intersects ) {
 
-			const matrixWorld = this.matrixWorld;
-			const raycastTimes = this.count;
+			var matrixWorld = this.matrixWorld;
+			var raycastTimes = this.count;
 
 			_mesh.geometry = this.geometry;
 			_mesh.material = this.material;
 
-			if ( _mesh.material === undefined ) return;
+			if ( _mesh.material === undefined ) { return; }
 
-			for ( let instanceId = 0; instanceId < raycastTimes; instanceId ++ ) {
+			for ( var instanceId = 0; instanceId < raycastTimes; instanceId ++ ) {
 
 				// calculate the world matrix for each instance
 
@@ -27789,9 +27791,9 @@
 
 				// process the result of raycast
 
-				for ( let i = 0, l = _instanceIntersects.length; i < l; i ++ ) {
+				for ( var i = 0, l = _instanceIntersects.length; i < l; i ++ ) {
 
-					const intersect = _instanceIntersects[ i ];
+					var intersect = _instanceIntersects[ i ];
 					intersect.instanceId = instanceId;
 					intersect.object = this;
 					intersects.push( intersect );
@@ -27866,11 +27868,11 @@
 
 	};
 
-	const _start = new Vector3();
-	const _end = new Vector3();
-	const _inverseMatrix$1 = new Matrix4();
-	const _ray$1 = new Ray();
-	const _sphere$2 = new Sphere();
+	var _start = new Vector3();
+	var _end = new Vector3();
+	var _inverseMatrix$1 = new Matrix4();
+	var _ray$1 = new Ray();
+	var _sphere$2 = new Sphere();
 
 	function Line( geometry, material, mode ) {
 
@@ -27910,7 +27912,7 @@
 
 		computeLineDistances: function () {
 
-			const geometry = this.geometry;
+			var geometry = this.geometry;
 
 			if ( geometry.isBufferGeometry ) {
 
@@ -27918,10 +27920,10 @@
 
 				if ( geometry.index === null ) {
 
-					const positionAttribute = geometry.attributes.position;
-					const lineDistances = [ 0 ];
+					var positionAttribute = geometry.attributes.position;
+					var lineDistances = [ 0 ];
 
-					for ( let i = 1, l = positionAttribute.count; i < l; i ++ ) {
+					for ( var i = 1, l = positionAttribute.count; i < l; i ++ ) {
 
 						_start.fromBufferAttribute( positionAttribute, i - 1 );
 						_end.fromBufferAttribute( positionAttribute, i );
@@ -27941,15 +27943,15 @@
 
 			} else if ( geometry.isGeometry ) {
 
-				const vertices = geometry.vertices;
-				const lineDistances = geometry.lineDistances;
+				var vertices = geometry.vertices;
+				var lineDistances$1 = geometry.lineDistances;
 
-				lineDistances[ 0 ] = 0;
+				lineDistances$1[ 0 ] = 0;
 
-				for ( let i = 1, l = vertices.length; i < l; i ++ ) {
+				for ( var i$1 = 1, l$1 = vertices.length; i$1 < l$1; i$1 ++ ) {
 
-					lineDistances[ i ] = lineDistances[ i - 1 ];
-					lineDistances[ i ] += vertices[ i - 1 ].distanceTo( vertices[ i ] );
+					lineDistances$1[ i$1 ] = lineDistances$1[ i$1 - 1 ];
+					lineDistances$1[ i$1 ] += vertices[ i$1 - 1 ].distanceTo( vertices[ i$1 ] );
 
 				}
 
@@ -27961,61 +27963,61 @@
 
 		raycast: function ( raycaster, intersects ) {
 
-			const geometry = this.geometry;
-			const matrixWorld = this.matrixWorld;
-			const threshold = raycaster.params.Line.threshold;
+			var geometry = this.geometry;
+			var matrixWorld = this.matrixWorld;
+			var threshold = raycaster.params.Line.threshold;
 
 			// Checking boundingSphere distance to ray
 
-			if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
+			if ( geometry.boundingSphere === null ) { geometry.computeBoundingSphere(); }
 
 			_sphere$2.copy( geometry.boundingSphere );
 			_sphere$2.applyMatrix4( matrixWorld );
 			_sphere$2.radius += threshold;
 
-			if ( raycaster.ray.intersectsSphere( _sphere$2 ) === false ) return;
+			if ( raycaster.ray.intersectsSphere( _sphere$2 ) === false ) { return; }
 
 			//
 
 			_inverseMatrix$1.getInverse( matrixWorld );
 			_ray$1.copy( raycaster.ray ).applyMatrix4( _inverseMatrix$1 );
 
-			const localThreshold = threshold / ( ( this.scale.x + this.scale.y + this.scale.z ) / 3 );
-			const localThresholdSq = localThreshold * localThreshold;
+			var localThreshold = threshold / ( ( this.scale.x + this.scale.y + this.scale.z ) / 3 );
+			var localThresholdSq = localThreshold * localThreshold;
 
-			const vStart = new Vector3();
-			const vEnd = new Vector3();
-			const interSegment = new Vector3();
-			const interRay = new Vector3();
-			const step = ( this && this.isLineSegments ) ? 2 : 1;
+			var vStart = new Vector3();
+			var vEnd = new Vector3();
+			var interSegment = new Vector3();
+			var interRay = new Vector3();
+			var step = ( this && this.isLineSegments ) ? 2 : 1;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const index = geometry.index;
-				const attributes = geometry.attributes;
-				const positions = attributes.position.array;
+				var index = geometry.index;
+				var attributes = geometry.attributes;
+				var positions = attributes.position.array;
 
 				if ( index !== null ) {
 
-					const indices = index.array;
+					var indices = index.array;
 
-					for ( let i = 0, l = indices.length - 1; i < l; i += step ) {
+					for ( var i = 0, l = indices.length - 1; i < l; i += step ) {
 
-						const a = indices[ i ];
-						const b = indices[ i + 1 ];
+						var a = indices[ i ];
+						var b = indices[ i + 1 ];
 
 						vStart.fromArray( positions, a * 3 );
 						vEnd.fromArray( positions, b * 3 );
 
-						const distSq = _ray$1.distanceSqToSegment( vStart, vEnd, interRay, interSegment );
+						var distSq = _ray$1.distanceSqToSegment( vStart, vEnd, interRay, interSegment );
 
-						if ( distSq > localThresholdSq ) continue;
+						if ( distSq > localThresholdSq ) { continue; }
 
 						interRay.applyMatrix4( this.matrixWorld ); //Move back to world space for distance calculation
 
-						const distance = raycaster.ray.origin.distanceTo( interRay );
+						var distance = raycaster.ray.origin.distanceTo( interRay );
 
-						if ( distance < raycaster.near || distance > raycaster.far ) continue;
+						if ( distance < raycaster.near || distance > raycaster.far ) { continue; }
 
 						intersects.push( {
 
@@ -28034,28 +28036,28 @@
 
 				} else {
 
-					for ( let i = 0, l = positions.length / 3 - 1; i < l; i += step ) {
+					for ( var i$1 = 0, l$1 = positions.length / 3 - 1; i$1 < l$1; i$1 += step ) {
 
-						vStart.fromArray( positions, 3 * i );
-						vEnd.fromArray( positions, 3 * i + 3 );
+						vStart.fromArray( positions, 3 * i$1 );
+						vEnd.fromArray( positions, 3 * i$1 + 3 );
 
-						const distSq = _ray$1.distanceSqToSegment( vStart, vEnd, interRay, interSegment );
+						var distSq$1 = _ray$1.distanceSqToSegment( vStart, vEnd, interRay, interSegment );
 
-						if ( distSq > localThresholdSq ) continue;
+						if ( distSq$1 > localThresholdSq ) { continue; }
 
 						interRay.applyMatrix4( this.matrixWorld ); //Move back to world space for distance calculation
 
-						const distance = raycaster.ray.origin.distanceTo( interRay );
+						var distance$1 = raycaster.ray.origin.distanceTo( interRay );
 
-						if ( distance < raycaster.near || distance > raycaster.far ) continue;
+						if ( distance$1 < raycaster.near || distance$1 > raycaster.far ) { continue; }
 
 						intersects.push( {
 
-							distance: distance,
+							distance: distance$1,
 							// What do we want? intersection point on the ray or on the segment??
 							// point: raycaster.ray.at( distance ),
 							point: interSegment.clone().applyMatrix4( this.matrixWorld ),
-							index: i,
+							index: i$1,
 							face: null,
 							faceIndex: null,
 							object: this
@@ -28068,28 +28070,28 @@
 
 			} else if ( geometry.isGeometry ) {
 
-				const vertices = geometry.vertices;
-				const nbVertices = vertices.length;
+				var vertices = geometry.vertices;
+				var nbVertices = vertices.length;
 
-				for ( let i = 0; i < nbVertices - 1; i += step ) {
+				for ( var i$2 = 0; i$2 < nbVertices - 1; i$2 += step ) {
 
-					const distSq = _ray$1.distanceSqToSegment( vertices[ i ], vertices[ i + 1 ], interRay, interSegment );
+					var distSq$2 = _ray$1.distanceSqToSegment( vertices[ i$2 ], vertices[ i$2 + 1 ], interRay, interSegment );
 
-					if ( distSq > localThresholdSq ) continue;
+					if ( distSq$2 > localThresholdSq ) { continue; }
 
 					interRay.applyMatrix4( this.matrixWorld ); //Move back to world space for distance calculation
 
-					const distance = raycaster.ray.origin.distanceTo( interRay );
+					var distance$2 = raycaster.ray.origin.distanceTo( interRay );
 
-					if ( distance < raycaster.near || distance > raycaster.far ) continue;
+					if ( distance$2 < raycaster.near || distance$2 > raycaster.far ) { continue; }
 
 					intersects.push( {
 
-						distance: distance,
+						distance: distance$2,
 						// What do we want? intersection point on the ray or on the segment??
 						// point: raycaster.ray.at( distance ),
 						point: interSegment.clone().applyMatrix4( this.matrixWorld ),
-						index: i,
+						index: i$2,
 						face: null,
 						faceIndex: null,
 						object: this
@@ -28104,25 +28106,25 @@
 
 		updateMorphTargets: function () {
 
-			const geometry = this.geometry;
+			var geometry = this.geometry;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const morphAttributes = geometry.morphAttributes;
-				const keys = Object.keys( morphAttributes );
+				var morphAttributes = geometry.morphAttributes;
+				var keys = Object.keys( morphAttributes );
 
 				if ( keys.length > 0 ) {
 
-					const morphAttribute = morphAttributes[ keys[ 0 ] ];
+					var morphAttribute = morphAttributes[ keys[ 0 ] ];
 
 					if ( morphAttribute !== undefined ) {
 
 						this.morphTargetInfluences = [];
 						this.morphTargetDictionary = {};
 
-						for ( let m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
+						for ( var m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
 
-							const name = morphAttribute[ m ].name || String( m );
+							var name = morphAttribute[ m ].name || String( m );
 
 							this.morphTargetInfluences.push( 0 );
 							this.morphTargetDictionary[ name ] = m;
@@ -28135,7 +28137,7 @@
 
 			} else {
 
-				const morphTargets = geometry.morphTargets;
+				var morphTargets = geometry.morphTargets;
 
 				if ( morphTargets !== undefined && morphTargets.length > 0 ) {
 
@@ -28149,8 +28151,8 @@
 
 	} );
 
-	const _start$1 = new Vector3();
-	const _end$1 = new Vector3();
+	var _start$1 = new Vector3();
+	var _end$1 = new Vector3();
 
 	function LineSegments( geometry, material ) {
 
@@ -28168,7 +28170,7 @@
 
 		computeLineDistances: function () {
 
-			const geometry = this.geometry;
+			var geometry = this.geometry;
 
 			if ( geometry.isBufferGeometry ) {
 
@@ -28176,10 +28178,10 @@
 
 				if ( geometry.index === null ) {
 
-					const positionAttribute = geometry.attributes.position;
-					const lineDistances = [];
+					var positionAttribute = geometry.attributes.position;
+					var lineDistances = [];
 
-					for ( let i = 0, l = positionAttribute.count; i < l; i += 2 ) {
+					for ( var i = 0, l = positionAttribute.count; i < l; i += 2 ) {
 
 						_start$1.fromBufferAttribute( positionAttribute, i );
 						_end$1.fromBufferAttribute( positionAttribute, i + 1 );
@@ -28199,16 +28201,16 @@
 
 			} else if ( geometry.isGeometry ) {
 
-				const vertices = geometry.vertices;
-				const lineDistances = geometry.lineDistances;
+				var vertices = geometry.vertices;
+				var lineDistances$1 = geometry.lineDistances;
 
-				for ( let i = 0, l = vertices.length; i < l; i += 2 ) {
+				for ( var i$1 = 0, l$1 = vertices.length; i$1 < l$1; i$1 += 2 ) {
 
-					_start$1.copy( vertices[ i ] );
-					_end$1.copy( vertices[ i + 1 ] );
+					_start$1.copy( vertices[ i$1 ] );
+					_end$1.copy( vertices[ i$1 + 1 ] );
 
-					lineDistances[ i ] = ( i === 0 ) ? 0 : lineDistances[ i - 1 ];
-					lineDistances[ i + 1 ] = lineDistances[ i ] + _start$1.distanceTo( _end$1 );
+					lineDistances$1[ i$1 ] = ( i$1 === 0 ) ? 0 : lineDistances$1[ i$1 - 1 ];
+					lineDistances$1[ i$1 + 1 ] = lineDistances$1[ i$1 ] + _start$1.distanceTo( _end$1 );
 
 				}
 
@@ -28295,10 +28297,10 @@
 
 	};
 
-	const _inverseMatrix$2 = new Matrix4();
-	const _ray$2 = new Ray();
-	const _sphere$3 = new Sphere();
-	const _position$1 = new Vector3();
+	var _inverseMatrix$2 = new Matrix4();
+	var _ray$2 = new Ray();
+	var _sphere$3 = new Sphere();
+	var _position$1 = new Vector3();
 
 	function Points( geometry, material ) {
 
@@ -28332,41 +28334,41 @@
 
 		raycast: function ( raycaster, intersects ) {
 
-			const geometry = this.geometry;
-			const matrixWorld = this.matrixWorld;
-			const threshold = raycaster.params.Points.threshold;
+			var geometry = this.geometry;
+			var matrixWorld = this.matrixWorld;
+			var threshold = raycaster.params.Points.threshold;
 
 			// Checking boundingSphere distance to ray
 
-			if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
+			if ( geometry.boundingSphere === null ) { geometry.computeBoundingSphere(); }
 
 			_sphere$3.copy( geometry.boundingSphere );
 			_sphere$3.applyMatrix4( matrixWorld );
 			_sphere$3.radius += threshold;
 
-			if ( raycaster.ray.intersectsSphere( _sphere$3 ) === false ) return;
+			if ( raycaster.ray.intersectsSphere( _sphere$3 ) === false ) { return; }
 
 			//
 
 			_inverseMatrix$2.getInverse( matrixWorld );
 			_ray$2.copy( raycaster.ray ).applyMatrix4( _inverseMatrix$2 );
 
-			const localThreshold = threshold / ( ( this.scale.x + this.scale.y + this.scale.z ) / 3 );
-			const localThresholdSq = localThreshold * localThreshold;
+			var localThreshold = threshold / ( ( this.scale.x + this.scale.y + this.scale.z ) / 3 );
+			var localThresholdSq = localThreshold * localThreshold;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const index = geometry.index;
-				const attributes = geometry.attributes;
-				const positions = attributes.position.array;
+				var index = geometry.index;
+				var attributes = geometry.attributes;
+				var positions = attributes.position.array;
 
 				if ( index !== null ) {
 
-					const indices = index.array;
+					var indices = index.array;
 
-					for ( let i = 0, il = indices.length; i < il; i ++ ) {
+					for ( var i = 0, il = indices.length; i < il; i ++ ) {
 
-						const a = indices[ i ];
+						var a = indices[ i ];
 
 						_position$1.fromArray( positions, a * 3 );
 
@@ -28376,11 +28378,11 @@
 
 				} else {
 
-					for ( let i = 0, l = positions.length / 3; i < l; i ++ ) {
+					for ( var i$1 = 0, l = positions.length / 3; i$1 < l; i$1 ++ ) {
 
-						_position$1.fromArray( positions, i * 3 );
+						_position$1.fromArray( positions, i$1 * 3 );
 
-						testPoint( _position$1, i, localThresholdSq, matrixWorld, raycaster, intersects, this );
+						testPoint( _position$1, i$1, localThresholdSq, matrixWorld, raycaster, intersects, this );
 
 					}
 
@@ -28388,11 +28390,11 @@
 
 			} else {
 
-				const vertices = geometry.vertices;
+				var vertices = geometry.vertices;
 
-				for ( let i = 0, l = vertices.length; i < l; i ++ ) {
+				for ( var i$2 = 0, l$1 = vertices.length; i$2 < l$1; i$2 ++ ) {
 
-					testPoint( vertices[ i ], i, localThresholdSq, matrixWorld, raycaster, intersects, this );
+					testPoint( vertices[ i$2 ], i$2, localThresholdSq, matrixWorld, raycaster, intersects, this );
 
 				}
 
@@ -28402,25 +28404,25 @@
 
 		updateMorphTargets: function () {
 
-			const geometry = this.geometry;
+			var geometry = this.geometry;
 
 			if ( geometry.isBufferGeometry ) {
 
-				const morphAttributes = geometry.morphAttributes;
-				const keys = Object.keys( morphAttributes );
+				var morphAttributes = geometry.morphAttributes;
+				var keys = Object.keys( morphAttributes );
 
 				if ( keys.length > 0 ) {
 
-					const morphAttribute = morphAttributes[ keys[ 0 ] ];
+					var morphAttribute = morphAttributes[ keys[ 0 ] ];
 
 					if ( morphAttribute !== undefined ) {
 
 						this.morphTargetInfluences = [];
 						this.morphTargetDictionary = {};
 
-						for ( let m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
+						for ( var m = 0, ml = morphAttribute.length; m < ml; m ++ ) {
 
-							const name = morphAttribute[ m ].name || String( m );
+							var name = morphAttribute[ m ].name || String( m );
 
 							this.morphTargetInfluences.push( 0 );
 							this.morphTargetDictionary[ name ] = m;
@@ -28433,7 +28435,7 @@
 
 			} else {
 
-				const morphTargets = geometry.morphTargets;
+				var morphTargets = geometry.morphTargets;
 
 				if ( morphTargets !== undefined && morphTargets.length > 0 ) {
 
@@ -28449,18 +28451,18 @@
 
 	function testPoint( point, index, localThresholdSq, matrixWorld, raycaster, intersects, object ) {
 
-		const rayPointDistanceSq = _ray$2.distanceSqToPoint( point );
+		var rayPointDistanceSq = _ray$2.distanceSqToPoint( point );
 
 		if ( rayPointDistanceSq < localThresholdSq ) {
 
-			const intersectPoint = new Vector3();
+			var intersectPoint = new Vector3();
 
 			_ray$2.closestPointToPoint( point, intersectPoint );
 			intersectPoint.applyMatrix4( matrixWorld );
 
-			const distance = raycaster.ray.origin.distanceTo( intersectPoint );
+			var distance = raycaster.ray.origin.distanceTo( intersectPoint );
 
-			if ( distance < raycaster.near || distance > raycaster.far ) return;
+			if ( distance < raycaster.near || distance > raycaster.far ) { return; }
 
 			intersects.push( {
 
@@ -28488,7 +28490,7 @@
 
 		this.generateMipmaps = false;
 
-		const scope = this;
+		var scope = this;
 
 		function updateVideo() {
 
@@ -28513,8 +28515,8 @@
 
 		update: function () {
 
-			const video = this.image;
-			const hasVideoFrameCallback = 'requestVideoFrameCallback' in video;
+			var video = this.image;
+			var hasVideoFrameCallback = 'requestVideoFrameCallback' in video;
 
 			if ( hasVideoFrameCallback === false && video.readyState >= video.HAVE_CURRENT_DATA ) {
 
@@ -28572,8 +28574,8 @@
 
 		}
 
-		if ( type === undefined && format === DepthFormat ) type = UnsignedShortType;
-		if ( type === undefined && format === DepthStencilFormat ) type = UnsignedInt248Type;
+		if ( type === undefined && format === DepthFormat ) { type = UnsignedShortType; }
+		if ( type === undefined && format === DepthStencilFormat ) { type = UnsignedInt248Type; }
 
 		Texture.call( this, null, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy );
 
@@ -28599,12 +28601,12 @@
 
 		// buffer
 
-		const vertices = [];
+		var vertices = [];
 
 		// helper variables
 
-		const edge = [ 0, 0 ], edges = {};
-		const keys = [ 'a', 'b', 'c' ];
+		var edge = [ 0, 0 ], edges = {};
+		var keys = [ 'a', 'b', 'c' ];
 
 		// different logic for Geometry and BufferGeometry
 
@@ -28612,20 +28614,20 @@
 
 			// create a data structure that contains all edges without duplicates
 
-			const faces = geometry.faces;
+			var faces = geometry.faces;
 
-			for ( let i = 0, l = faces.length; i < l; i ++ ) {
+			for ( var i = 0, l = faces.length; i < l; i ++ ) {
 
-				const face = faces[ i ];
+				var face = faces[ i ];
 
-				for ( let j = 0; j < 3; j ++ ) {
+				for ( var j = 0; j < 3; j ++ ) {
 
-					const edge1 = face[ keys[ j ] ];
-					const edge2 = face[ keys[ ( j + 1 ) % 3 ] ];
+					var edge1 = face[ keys[ j ] ];
+					var edge2 = face[ keys[ ( j + 1 ) % 3 ] ];
 					edge[ 0 ] = Math.min( edge1, edge2 ); // sorting prevents duplicates
 					edge[ 1 ] = Math.max( edge1, edge2 );
 
-					const key = edge[ 0 ] + ',' + edge[ 1 ];
+					var key = edge[ 0 ] + ',' + edge[ 1 ];
 
 					if ( edges[ key ] === undefined ) {
 
@@ -28639,11 +28641,11 @@
 
 			// generate vertices
 
-			for ( const key in edges ) {
+			for ( var key$1 in edges ) {
 
-				const e = edges[ key ];
+				var e = edges[ key$1 ];
 
-				let vertex = geometry.vertices[ e.index1 ];
+				var vertex = geometry.vertices[ e.index1 ];
 				vertices.push( vertex.x, vertex.y, vertex.z );
 
 				vertex = geometry.vertices[ e.index2 ];
@@ -28653,15 +28655,15 @@
 
 		} else if ( geometry && geometry.isBufferGeometry ) {
 
-			let vertex = new Vector3();
+			var vertex$1 = new Vector3();
 
 			if ( geometry.index !== null ) {
 
 				// indexed BufferGeometry
 
-				const position = geometry.attributes.position;
-				const indices = geometry.index;
-				let groups = geometry.groups;
+				var position = geometry.attributes.position;
+				var indices = geometry.index;
+				var groups = geometry.groups;
 
 				if ( groups.length === 0 ) {
 
@@ -28671,27 +28673,27 @@
 
 				// create a data structure that contains all eges without duplicates
 
-				for ( let o = 0, ol = groups.length; o < ol; ++ o ) {
+				for ( var o = 0, ol = groups.length; o < ol; ++ o ) {
 
-					const group = groups[ o ];
+					var group = groups[ o ];
 
-					const start = group.start;
-					const count = group.count;
+					var start = group.start;
+					var count = group.count;
 
-					for ( let i = start, l = ( start + count ); i < l; i += 3 ) {
+					for ( var i$1 = start, l$1 = ( start + count ); i$1 < l$1; i$1 += 3 ) {
 
-						for ( let j = 0; j < 3; j ++ ) {
+						for ( var j$1 = 0; j$1 < 3; j$1 ++ ) {
 
-							const edge1 = indices.getX( i + j );
-							const edge2 = indices.getX( i + ( j + 1 ) % 3 );
-							edge[ 0 ] = Math.min( edge1, edge2 ); // sorting prevents duplicates
-							edge[ 1 ] = Math.max( edge1, edge2 );
+							var edge1$1 = indices.getX( i$1 + j$1 );
+							var edge2$1 = indices.getX( i$1 + ( j$1 + 1 ) % 3 );
+							edge[ 0 ] = Math.min( edge1$1, edge2$1 ); // sorting prevents duplicates
+							edge[ 1 ] = Math.max( edge1$1, edge2$1 );
 
-							const key = edge[ 0 ] + ',' + edge[ 1 ];
+							var key$2 = edge[ 0 ] + ',' + edge[ 1 ];
 
-							if ( edges[ key ] === undefined ) {
+							if ( edges[ key$2 ] === undefined ) {
 
-								edges[ key ] = { index1: edge[ 0 ], index2: edge[ 1 ] };
+								edges[ key$2 ] = { index1: edge[ 0 ], index2: edge[ 1 ] };
 
 							}
 
@@ -28703,15 +28705,15 @@
 
 				// generate vertices
 
-				for ( const key in edges ) {
+				for ( var key$3 in edges ) {
 
-					const e = edges[ key ];
+					var e$1 = edges[ key$3 ];
 
-					vertex.fromBufferAttribute( position, e.index1 );
-					vertices.push( vertex.x, vertex.y, vertex.z );
+					vertex$1.fromBufferAttribute( position, e$1.index1 );
+					vertices.push( vertex$1.x, vertex$1.y, vertex$1.z );
 
-					vertex.fromBufferAttribute( position, e.index2 );
-					vertices.push( vertex.x, vertex.y, vertex.z );
+					vertex$1.fromBufferAttribute( position, e$1.index2 );
+					vertices.push( vertex$1.x, vertex$1.y, vertex$1.z );
 
 				}
 
@@ -28719,22 +28721,22 @@
 
 				// non-indexed BufferGeometry
 
-				const position = geometry.attributes.position;
+				var position$1 = geometry.attributes.position;
 
-				for ( let i = 0, l = ( position.count / 3 ); i < l; i ++ ) {
+				for ( var i$2 = 0, l$2 = ( position$1.count / 3 ); i$2 < l$2; i$2 ++ ) {
 
-					for ( let j = 0; j < 3; j ++ ) {
+					for ( var j$2 = 0; j$2 < 3; j$2 ++ ) {
 
 						// three edges per triangle, an edge is represented as (index1, index2)
 						// e.g. the first triangle has the following edges: (0,1),(1,2),(2,0)
 
-						const index1 = 3 * i + j;
-						vertex.fromBufferAttribute( position, index1 );
-						vertices.push( vertex.x, vertex.y, vertex.z );
+						var index1 = 3 * i$2 + j$2;
+						vertex$1.fromBufferAttribute( position$1, index1 );
+						vertices.push( vertex$1.x, vertex$1.y, vertex$1.z );
 
-						const index2 = 3 * i + ( ( j + 1 ) % 3 );
-						vertex.fromBufferAttribute( position, index2 );
-						vertices.push( vertex.x, vertex.y, vertex.z );
+						var index2 = 3 * i$2 + ( ( j$2 + 1 ) % 3 );
+						vertex$1.fromBufferAttribute( position$1, index2 );
+						vertices.push( vertex$1.x, vertex$1.y, vertex$1.z );
 
 					}
 
@@ -28796,17 +28798,17 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
-		const EPS = 0.00001;
+		var EPS = 0.00001;
 
-		const normal = new Vector3();
+		var normal = new Vector3();
 
-		const p0 = new Vector3(), p1 = new Vector3();
-		const pu = new Vector3(), pv = new Vector3();
+		var p0 = new Vector3(), p1 = new Vector3();
+		var pu = new Vector3(), pv = new Vector3();
 
 		if ( func.length < 3 ) {
 
@@ -28816,15 +28818,15 @@
 
 		// generate vertices, normals and uvs
 
-		const sliceCount = slices + 1;
+		var sliceCount = slices + 1;
 
-		for ( let i = 0; i <= stacks; i ++ ) {
+		for ( var i = 0; i <= stacks; i ++ ) {
 
-			const v = i / stacks;
+			var v = i / stacks;
 
-			for ( let j = 0; j <= slices; j ++ ) {
+			for ( var j = 0; j <= slices; j ++ ) {
 
-				const u = j / slices;
+				var u = j / slices;
 
 				// vertex
 
@@ -28874,14 +28876,14 @@
 
 		// generate indices
 
-		for ( let i = 0; i < stacks; i ++ ) {
+		for ( var i$1 = 0; i$1 < stacks; i$1 ++ ) {
 
-			for ( let j = 0; j < slices; j ++ ) {
+			for ( var j$1 = 0; j$1 < slices; j$1 ++ ) {
 
-				const a = i * sliceCount + j;
-				const b = i * sliceCount + j + 1;
-				const c = ( i + 1 ) * sliceCount + j + 1;
-				const d = ( i + 1 ) * sliceCount + j;
+				var a = i$1 * sliceCount + j$1;
+				var b = i$1 * sliceCount + j$1 + 1;
+				var c = ( i$1 + 1 ) * sliceCount + j$1 + 1;
+				var d = ( i$1 + 1 ) * sliceCount + j$1;
 
 				// faces one and two
 
@@ -28947,8 +28949,8 @@
 
 		// default buffer data
 
-		const vertexBuffer = [];
-		const uvBuffer = [];
+		var vertexBuffer = [];
+		var uvBuffer = [];
 
 		// the subdivision creates the vertex buffer data
 
@@ -28982,13 +28984,13 @@
 
 		function subdivide( detail ) {
 
-			const a = new Vector3();
-			const b = new Vector3();
-			const c = new Vector3();
+			var a = new Vector3();
+			var b = new Vector3();
+			var c = new Vector3();
 
 			// iterate over all faces and apply a subdivison with the given detail value
 
-			for ( let i = 0; i < indices.length; i += 3 ) {
+			for ( var i = 0; i < indices.length; i += 3 ) {
 
 				// get the vertices of the face
 
@@ -29006,24 +29008,24 @@
 
 		function subdivideFace( a, b, c, detail ) {
 
-			const cols = Math.pow( 2, detail );
+			var cols = Math.pow( 2, detail );
 
 			// we use this multidimensional array as a data structure for creating the subdivision
 
-			const v = [];
+			var v = [];
 
 			// construct all of the vertices for this subdivision
 
-			for ( let i = 0; i <= cols; i ++ ) {
+			for ( var i = 0; i <= cols; i ++ ) {
 
 				v[ i ] = [];
 
-				const aj = a.clone().lerp( c, i / cols );
-				const bj = b.clone().lerp( c, i / cols );
+				var aj = a.clone().lerp( c, i / cols );
+				var bj = b.clone().lerp( c, i / cols );
 
-				const rows = cols - i;
+				var rows = cols - i;
 
-				for ( let j = 0; j <= rows; j ++ ) {
+				for ( var j = 0; j <= rows; j ++ ) {
 
 					if ( j === 0 && i === cols ) {
 
@@ -29041,23 +29043,23 @@
 
 			// construct all of the faces
 
-			for ( let i = 0; i < cols; i ++ ) {
+			for ( var i$1 = 0; i$1 < cols; i$1 ++ ) {
 
-				for ( let j = 0; j < 2 * ( cols - i ) - 1; j ++ ) {
+				for ( var j$1 = 0; j$1 < 2 * ( cols - i$1 ) - 1; j$1 ++ ) {
 
-					const k = Math.floor( j / 2 );
+					var k = Math.floor( j$1 / 2 );
 
-					if ( j % 2 === 0 ) {
+					if ( j$1 % 2 === 0 ) {
 
-						pushVertex( v[ i ][ k + 1 ] );
-						pushVertex( v[ i + 1 ][ k ] );
-						pushVertex( v[ i ][ k ] );
+						pushVertex( v[ i$1 ][ k + 1 ] );
+						pushVertex( v[ i$1 + 1 ][ k ] );
+						pushVertex( v[ i$1 ][ k ] );
 
 					} else {
 
-						pushVertex( v[ i ][ k + 1 ] );
-						pushVertex( v[ i + 1 ][ k + 1 ] );
-						pushVertex( v[ i + 1 ][ k ] );
+						pushVertex( v[ i$1 ][ k + 1 ] );
+						pushVertex( v[ i$1 + 1 ][ k + 1 ] );
+						pushVertex( v[ i$1 + 1 ][ k ] );
 
 					}
 
@@ -29069,11 +29071,11 @@
 
 		function applyRadius( radius ) {
 
-			const vertex = new Vector3();
+			var vertex = new Vector3();
 
 			// iterate over the entire buffer and apply the radius to each vertex
 
-			for ( let i = 0; i < vertexBuffer.length; i += 3 ) {
+			for ( var i = 0; i < vertexBuffer.length; i += 3 ) {
 
 				vertex.x = vertexBuffer[ i + 0 ];
 				vertex.y = vertexBuffer[ i + 1 ];
@@ -29091,16 +29093,16 @@
 
 		function generateUVs() {
 
-			const vertex = new Vector3();
+			var vertex = new Vector3();
 
-			for ( let i = 0; i < vertexBuffer.length; i += 3 ) {
+			for ( var i = 0; i < vertexBuffer.length; i += 3 ) {
 
 				vertex.x = vertexBuffer[ i + 0 ];
 				vertex.y = vertexBuffer[ i + 1 ];
 				vertex.z = vertexBuffer[ i + 2 ];
 
-				const u = azimuth( vertex ) / 2 / Math.PI + 0.5;
-				const v = inclination( vertex ) / Math.PI + 0.5;
+				var u = azimuth( vertex ) / 2 / Math.PI + 0.5;
+				var v = inclination( vertex ) / Math.PI + 0.5;
 				uvBuffer.push( u, 1 - v );
 
 			}
@@ -29115,24 +29117,24 @@
 
 			// handle case when face straddles the seam, see #3269
 
-			for ( let i = 0; i < uvBuffer.length; i += 6 ) {
+			for ( var i = 0; i < uvBuffer.length; i += 6 ) {
 
 				// uv data of a single face
 
-				const x0 = uvBuffer[ i + 0 ];
-				const x1 = uvBuffer[ i + 2 ];
-				const x2 = uvBuffer[ i + 4 ];
+				var x0 = uvBuffer[ i + 0 ];
+				var x1 = uvBuffer[ i + 2 ];
+				var x2 = uvBuffer[ i + 4 ];
 
-				const max = Math.max( x0, x1, x2 );
-				const min = Math.min( x0, x1, x2 );
+				var max = Math.max( x0, x1, x2 );
+				var min = Math.min( x0, x1, x2 );
 
 				// 0.9 is somewhat arbitrary
 
 				if ( max > 0.9 && min < 0.1 ) {
 
-					if ( x0 < 0.2 ) uvBuffer[ i + 0 ] += 1;
-					if ( x1 < 0.2 ) uvBuffer[ i + 2 ] += 1;
-					if ( x2 < 0.2 ) uvBuffer[ i + 4 ] += 1;
+					if ( x0 < 0.2 ) { uvBuffer[ i + 0 ] += 1; }
+					if ( x1 < 0.2 ) { uvBuffer[ i + 2 ] += 1; }
+					if ( x2 < 0.2 ) { uvBuffer[ i + 4 ] += 1; }
 
 				}
 
@@ -29148,7 +29150,7 @@
 
 		function getVertexByIndex( index, vertex ) {
 
-			const stride = index * 3;
+			var stride = index * 3;
 
 			vertex.x = vertices[ stride + 0 ];
 			vertex.y = vertices[ stride + 1 ];
@@ -29158,17 +29160,17 @@
 
 		function correctUVs() {
 
-			const a = new Vector3();
-			const b = new Vector3();
-			const c = new Vector3();
+			var a = new Vector3();
+			var b = new Vector3();
+			var c = new Vector3();
 
-			const centroid = new Vector3();
+			var centroid = new Vector3();
 
-			const uvA = new Vector2();
-			const uvB = new Vector2();
-			const uvC = new Vector2();
+			var uvA = new Vector2();
+			var uvB = new Vector2();
+			var uvC = new Vector2();
 
-			for ( let i = 0, j = 0; i < vertexBuffer.length; i += 9, j += 6 ) {
+			for ( var i = 0, j = 0; i < vertexBuffer.length; i += 9, j += 6 ) {
 
 				a.set( vertexBuffer[ i + 0 ], vertexBuffer[ i + 1 ], vertexBuffer[ i + 2 ] );
 				b.set( vertexBuffer[ i + 3 ], vertexBuffer[ i + 4 ], vertexBuffer[ i + 5 ] );
@@ -29180,7 +29182,7 @@
 
 				centroid.copy( a ).add( b ).add( c ).divideScalar( 3 );
 
-				const azi = azimuth( centroid );
+				var azi = azimuth( centroid );
 
 				correctUV( uvA, j + 0, a, azi );
 				correctUV( uvB, j + 2, b, azi );
@@ -29253,11 +29255,11 @@
 
 	function TetrahedronBufferGeometry( radius, detail ) {
 
-		const vertices = [
+		var vertices = [
 			1, 1, 1, 	- 1, - 1, 1, 	- 1, 1, - 1, 	1, - 1, - 1
 		];
 
-		const indices = [
+		var indices = [
 			2, 1, 0, 	0, 3, 2,	1, 3, 0,	2, 3, 1
 		];
 
@@ -29300,12 +29302,12 @@
 
 	function OctahedronBufferGeometry( radius, detail ) {
 
-		const vertices = [
+		var vertices = [
 			1, 0, 0, 	- 1, 0, 0,	0, 1, 0,
 			0, - 1, 0, 	0, 0, 1,	0, 0, - 1
 		];
 
-		const indices = [
+		var indices = [
 			0, 2, 4,	0, 4, 3,	0, 3, 5,
 			0, 5, 2,	1, 2, 5,	1, 5, 3,
 			1, 3, 4,	1, 4, 2
@@ -29350,15 +29352,15 @@
 
 	function IcosahedronBufferGeometry( radius, detail ) {
 
-		const t = ( 1 + Math.sqrt( 5 ) ) / 2;
+		var t = ( 1 + Math.sqrt( 5 ) ) / 2;
 
-		const vertices = [
+		var vertices = [
 			- 1, t, 0, 	1, t, 0, 	- 1, - t, 0, 	1, - t, 0,
 			 0, - 1, t, 	0, 1, t,	0, - 1, - t, 	0, 1, - t,
 			 t, 0, - 1, 	t, 0, 1, 	- t, 0, - 1, 	- t, 0, 1
 		];
 
-		const indices = [
+		var indices = [
 			 0, 11, 5, 	0, 5, 1, 	0, 1, 7, 	0, 7, 10, 	0, 10, 11,
 			 1, 5, 9, 	5, 11, 4,	11, 10, 2,	10, 7, 6,	7, 1, 8,
 			 3, 9, 4, 	3, 4, 2,	3, 2, 6,	3, 6, 8,	3, 8, 9,
@@ -29404,10 +29406,10 @@
 
 	function DodecahedronBufferGeometry( radius, detail ) {
 
-		const t = ( 1 + Math.sqrt( 5 ) ) / 2;
-		const r = 1 / t;
+		var t = ( 1 + Math.sqrt( 5 ) ) / 2;
+		var r = 1 / t;
 
-		const vertices = [
+		var vertices = [
 
 			// (±1, ±1, ±1)
 			- 1, - 1, - 1,	- 1, - 1, 1,
@@ -29428,7 +29430,7 @@
 			- t, 0, r, t, 0, r
 		];
 
-		const indices = [
+		var indices = [
 			3, 11, 7, 	3, 7, 15, 	3, 15, 13,
 			7, 19, 17, 	7, 17, 6, 	7, 6, 15,
 			17, 4, 8, 	17, 8, 10, 	17, 10, 6,
@@ -29473,9 +29475,9 @@
 			closed: closed
 		};
 
-		if ( taper !== undefined ) console.warn( 'THREE.TubeGeometry: taper has been removed.' );
+		if ( taper !== undefined ) { console.warn( 'THREE.TubeGeometry: taper has been removed.' ); }
 
-		const bufferGeometry = new TubeBufferGeometry( path, tubularSegments, radius, radialSegments, closed );
+		var bufferGeometry = new TubeBufferGeometry( path, tubularSegments, radius, radialSegments, closed );
 
 		// expose internals
 
@@ -29514,7 +29516,7 @@
 		radialSegments = radialSegments || 8;
 		closed = closed || false;
 
-		const frames = path.computeFrenetFrames( tubularSegments, closed );
+		var frames = path.computeFrenetFrames( tubularSegments, closed );
 
 		// expose internals
 
@@ -29524,17 +29526,17 @@
 
 		// helper variables
 
-		const vertex = new Vector3();
-		const normal = new Vector3();
-		const uv = new Vector2();
-		let P = new Vector3();
+		var vertex = new Vector3();
+		var normal = new Vector3();
+		var uv = new Vector2();
+		var P = new Vector3();
 
 		// buffer
 
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
-		const indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
+		var indices = [];
 
 		// create buffer data
 
@@ -29551,7 +29553,7 @@
 
 		function generateBufferData() {
 
-			for ( let i = 0; i < tubularSegments; i ++ ) {
+			for ( var i = 0; i < tubularSegments; i ++ ) {
 
 				generateSegment( i );
 
@@ -29583,17 +29585,17 @@
 
 			// retrieve corresponding normal and binormal
 
-			const N = frames.normals[ i ];
-			const B = frames.binormals[ i ];
+			var N = frames.normals[ i ];
+			var B = frames.binormals[ i ];
 
 			// generate normals and vertices for the current segment
 
-			for ( let j = 0; j <= radialSegments; j ++ ) {
+			for ( var j = 0; j <= radialSegments; j ++ ) {
 
-				const v = j / radialSegments * Math.PI * 2;
+				var v = j / radialSegments * Math.PI * 2;
 
-				const sin = Math.sin( v );
-				const cos = - Math.cos( v );
+				var sin = Math.sin( v );
+				var cos = - Math.cos( v );
 
 				// normal
 
@@ -29618,14 +29620,14 @@
 
 		function generateIndices() {
 
-			for ( let j = 1; j <= tubularSegments; j ++ ) {
+			for ( var j = 1; j <= tubularSegments; j ++ ) {
 
-				for ( let i = 1; i <= radialSegments; i ++ ) {
+				for ( var i = 1; i <= radialSegments; i ++ ) {
 
-					const a = ( radialSegments + 1 ) * ( j - 1 ) + ( i - 1 );
-					const b = ( radialSegments + 1 ) * j + ( i - 1 );
-					const c = ( radialSegments + 1 ) * j + i;
-					const d = ( radialSegments + 1 ) * ( j - 1 ) + i;
+					var a = ( radialSegments + 1 ) * ( j - 1 ) + ( i - 1 );
+					var b = ( radialSegments + 1 ) * j + ( i - 1 );
+					var c = ( radialSegments + 1 ) * j + i;
+					var d = ( radialSegments + 1 ) * ( j - 1 ) + i;
 
 					// faces
 
@@ -29640,9 +29642,9 @@
 
 		function generateUVs() {
 
-			for ( let i = 0; i <= tubularSegments; i ++ ) {
+			for ( var i = 0; i <= tubularSegments; i ++ ) {
 
-				for ( let j = 0; j <= radialSegments; j ++ ) {
+				for ( var j = 0; j <= radialSegments; j ++ ) {
 
 					uv.x = i / tubularSegments;
 					uv.y = j / radialSegments;
@@ -29662,7 +29664,7 @@
 
 	TubeBufferGeometry.prototype.toJSON = function () {
 
-		const data = BufferGeometry.prototype.toJSON.call( this );
+		var data = BufferGeometry.prototype.toJSON.call( this );
 
 		data.path = this.parameters.path.toJSON();
 
@@ -29687,7 +29689,7 @@
 			q: q
 		};
 
-		if ( heightScale !== undefined ) console.warn( 'THREE.TorusKnotGeometry: heightScale has been deprecated. Use .scale( x, y, z ) instead.' );
+		if ( heightScale !== undefined ) { console.warn( 'THREE.TorusKnotGeometry: heightScale has been deprecated. Use .scale( x, y, z ) instead.' ); }
 
 		this.fromBufferGeometry( new TorusKnotBufferGeometry( radius, tube, tubularSegments, radialSegments, p, q ) );
 		this.mergeVertices();
@@ -29723,30 +29725,30 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// helper variables
 
-		const vertex = new Vector3();
-		const normal = new Vector3();
+		var vertex = new Vector3();
+		var normal = new Vector3();
 
-		const P1 = new Vector3();
-		const P2 = new Vector3();
+		var P1 = new Vector3();
+		var P2 = new Vector3();
 
-		const B = new Vector3();
-		const T = new Vector3();
-		const N = new Vector3();
+		var B = new Vector3();
+		var T = new Vector3();
+		var N = new Vector3();
 
 		// generate vertices, normals and uvs
 
-		for ( let i = 0; i <= tubularSegments; ++ i ) {
+		for ( var i = 0; i <= tubularSegments; ++ i ) {
 
 			// the radian "u" is used to calculate the position on the torus curve of the current tubular segement
 
-			const u = i / tubularSegments * p * Math.PI * 2;
+			var u = i / tubularSegments * p * Math.PI * 2;
 
 			// now we calculate two points. P1 is our current position on the curve, P2 is a little farther ahead.
 			// these points are used to create a special "coordinate space", which is necessary to calculate the correct vertex positions
@@ -29766,14 +29768,14 @@
 			B.normalize();
 			N.normalize();
 
-			for ( let j = 0; j <= radialSegments; ++ j ) {
+			for ( var j = 0; j <= radialSegments; ++ j ) {
 
 				// now calculate the vertices. they are nothing more than an extrusion of the torus curve.
 				// because we extrude a shape in the xy-plane, there is no need to calculate a z-value.
 
-				const v = j / radialSegments * Math.PI * 2;
-				const cx = - tube * Math.cos( v );
-				const cy = tube * Math.sin( v );
+				var v = j / radialSegments * Math.PI * 2;
+				var cx = - tube * Math.cos( v );
+				var cy = tube * Math.sin( v );
 
 				// now calculate the final vertex position.
 				// first we orient the extrusion with our basis vectos, then we add it to the current position on the curve
@@ -29801,16 +29803,16 @@
 
 		// generate indices
 
-		for ( let j = 1; j <= tubularSegments; j ++ ) {
+		for ( var j$1 = 1; j$1 <= tubularSegments; j$1 ++ ) {
 
-			for ( let i = 1; i <= radialSegments; i ++ ) {
+			for ( var i$1 = 1; i$1 <= radialSegments; i$1 ++ ) {
 
 				// indices
 
-				const a = ( radialSegments + 1 ) * ( j - 1 ) + ( i - 1 );
-				const b = ( radialSegments + 1 ) * j + ( i - 1 );
-				const c = ( radialSegments + 1 ) * j + i;
-				const d = ( radialSegments + 1 ) * ( j - 1 ) + i;
+				var a = ( radialSegments + 1 ) * ( j$1 - 1 ) + ( i$1 - 1 );
+				var b = ( radialSegments + 1 ) * j$1 + ( i$1 - 1 );
+				var c = ( radialSegments + 1 ) * j$1 + i$1;
+				var d = ( radialSegments + 1 ) * ( j$1 - 1 ) + i$1;
 
 				// faces
 
@@ -29832,10 +29834,10 @@
 
 		function calculatePositionOnCurve( u, p, q, radius, position ) {
 
-			const cu = Math.cos( u );
-			const su = Math.sin( u );
-			const quOverP = q / p * u;
-			const cs = Math.cos( quOverP );
+			var cu = Math.cos( u );
+			var su = Math.sin( u );
+			var quOverP = q / p * u;
+			var cs = Math.cos( quOverP );
 
 			position.x = radius * ( 2 + cs ) * 0.5 * cu;
 			position.y = radius * ( 2 + cs ) * su * 0.5;
@@ -29896,25 +29898,25 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// helper variables
 
-		const center = new Vector3();
-		const vertex = new Vector3();
-		const normal = new Vector3();
+		var center = new Vector3();
+		var vertex = new Vector3();
+		var normal = new Vector3();
 
 		// generate vertices, normals and uvs
 
-		for ( let j = 0; j <= radialSegments; j ++ ) {
+		for ( var j = 0; j <= radialSegments; j ++ ) {
 
-			for ( let i = 0; i <= tubularSegments; i ++ ) {
+			for ( var i = 0; i <= tubularSegments; i ++ ) {
 
-				const u = i / tubularSegments * arc;
-				const v = j / radialSegments * Math.PI * 2;
+				var u = i / tubularSegments * arc;
+				var v = j / radialSegments * Math.PI * 2;
 
 				// vertex
 
@@ -29943,16 +29945,16 @@
 
 		// generate indices
 
-		for ( let j = 1; j <= radialSegments; j ++ ) {
+		for ( var j$1 = 1; j$1 <= radialSegments; j$1 ++ ) {
 
-			for ( let i = 1; i <= tubularSegments; i ++ ) {
+			for ( var i$1 = 1; i$1 <= tubularSegments; i$1 ++ ) {
 
 				// indices
 
-				const a = ( tubularSegments + 1 ) * j + i - 1;
-				const b = ( tubularSegments + 1 ) * ( j - 1 ) + i - 1;
-				const c = ( tubularSegments + 1 ) * ( j - 1 ) + i;
-				const d = ( tubularSegments + 1 ) * j + i;
+				var a = ( tubularSegments + 1 ) * j$1 + i$1 - 1;
+				var b = ( tubularSegments + 1 ) * ( j$1 - 1 ) + i$1 - 1;
+				var c = ( tubularSegments + 1 ) * ( j$1 - 1 ) + i$1;
+				var d = ( tubularSegments + 1 ) * j$1 + i$1;
 
 				// faces
 
@@ -29979,22 +29981,22 @@
 	 * Port from https://github.com/mapbox/earcut (v2.2.2)
 	 */
 
-	const Earcut = {
+	var Earcut = {
 
 		triangulate: function ( data, holeIndices, dim ) {
 
 			dim = dim || 2;
 
-			let hasHoles = holeIndices && holeIndices.length,
+			var hasHoles = holeIndices && holeIndices.length,
 				outerLen = hasHoles ? holeIndices[ 0 ] * dim : data.length,
 				outerNode = linkedList( data, 0, outerLen, dim, true ),
 				triangles = [];
 
-			if ( ! outerNode || outerNode.next === outerNode.prev ) return triangles;
+			if ( ! outerNode || outerNode.next === outerNode.prev ) { return triangles; }
 
-			let minX, minY, maxX, maxY, x, y, invSize;
+			var minX, minY, maxX, maxY, x, y, invSize;
 
-			if ( hasHoles ) outerNode = eliminateHoles( data, holeIndices, outerNode, dim );
+			if ( hasHoles ) { outerNode = eliminateHoles( data, holeIndices, outerNode, dim ); }
 
 			// if the shape is not too simple, we'll use z-order curve hash later; calculate polygon bbox
 			if ( data.length > 80 * dim ) {
@@ -30002,14 +30004,14 @@
 				minX = maxX = data[ 0 ];
 				minY = maxY = data[ 1 ];
 
-				for ( let i = dim; i < outerLen; i += dim ) {
+				for ( var i = dim; i < outerLen; i += dim ) {
 
 					x = data[ i ];
 					y = data[ i + 1 ];
-					if ( x < minX ) minX = x;
-					if ( y < minY ) minY = y;
-					if ( x > maxX ) maxX = x;
-					if ( y > maxY ) maxY = y;
+					if ( x < minX ) { minX = x; }
+					if ( y < minY ) { minY = y; }
+					if ( x > maxX ) { maxX = x; }
+					if ( y > maxY ) { maxY = y; }
 
 				}
 
@@ -30030,15 +30032,15 @@
 	// create a circular doubly linked list from polygon points in the specified winding order
 	function linkedList( data, start, end, dim, clockwise ) {
 
-		let i, last;
+		var i, last;
 
 		if ( clockwise === ( signedArea( data, start, end, dim ) > 0 ) ) {
 
-			for ( i = start; i < end; i += dim ) last = insertNode( i, data[ i ], data[ i + 1 ], last );
+			for ( i = start; i < end; i += dim ) { last = insertNode( i, data[ i ], data[ i + 1 ], last ); }
 
 		} else {
 
-			for ( i = end - dim; i >= start; i -= dim ) last = insertNode( i, data[ i ], data[ i + 1 ], last );
+			for ( i = end - dim; i >= start; i -= dim ) { last = insertNode( i, data[ i ], data[ i + 1 ], last ); }
 
 		}
 
@@ -30056,10 +30058,10 @@
 	// eliminate colinear or duplicate points
 	function filterPoints( start, end ) {
 
-		if ( ! start ) return start;
-		if ( ! end ) end = start;
+		if ( ! start ) { return start; }
+		if ( ! end ) { end = start; }
 
-		let p = start,
+		var p = start,
 			again;
 		do {
 
@@ -30069,7 +30071,7 @@
 
 				removeNode( p );
 				p = end = p.prev;
-				if ( p === p.next ) break;
+				if ( p === p.next ) { break; }
 				again = true;
 
 			} else {
@@ -30087,12 +30089,12 @@
 	// main ear slicing loop which triangulates a polygon (given as a linked list)
 	function earcutLinked( ear, triangles, dim, minX, minY, invSize, pass ) {
 
-		if ( ! ear ) return;
+		if ( ! ear ) { return; }
 
 		// interlink polygon nodes in z-order
-		if ( ! pass && invSize ) indexCurve( ear, minX, minY, invSize );
+		if ( ! pass && invSize ) { indexCurve( ear, minX, minY, invSize ); }
 
-		let stop = ear,
+		var stop = ear,
 			prev, next;
 
 		// iterate through ears, slicing them one by one
@@ -30154,19 +30156,19 @@
 	// check whether a polygon node forms a valid ear with adjacent nodes
 	function isEar( ear ) {
 
-		let a = ear.prev,
+		var a = ear.prev,
 			b = ear,
 			c = ear.next;
 
-		if ( area( a, b, c ) >= 0 ) return false; // reflex, can't be an ear
+		if ( area( a, b, c ) >= 0 ) { return false; } // reflex, can't be an ear
 
 		// now make sure we don't have other points inside the potential ear
-		let p = ear.next.next;
+		var p = ear.next.next;
 
 		while ( p !== ear.prev ) {
 
 			if ( pointInTriangle( a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y ) &&
-				area( p.prev, p, p.next ) >= 0 ) return false;
+				area( p.prev, p, p.next ) >= 0 ) { return false; }
 			p = p.next;
 
 		}
@@ -30177,23 +30179,23 @@
 
 	function isEarHashed( ear, minX, minY, invSize ) {
 
-		let a = ear.prev,
+		var a = ear.prev,
 			b = ear,
 			c = ear.next;
 
-		if ( area( a, b, c ) >= 0 ) return false; // reflex, can't be an ear
+		if ( area( a, b, c ) >= 0 ) { return false; } // reflex, can't be an ear
 
 		// triangle bbox; min & max are calculated like this for speed
-		let minTX = a.x < b.x ? ( a.x < c.x ? a.x : c.x ) : ( b.x < c.x ? b.x : c.x ),
+		var minTX = a.x < b.x ? ( a.x < c.x ? a.x : c.x ) : ( b.x < c.x ? b.x : c.x ),
 			minTY = a.y < b.y ? ( a.y < c.y ? a.y : c.y ) : ( b.y < c.y ? b.y : c.y ),
 			maxTX = a.x > b.x ? ( a.x > c.x ? a.x : c.x ) : ( b.x > c.x ? b.x : c.x ),
 			maxTY = a.y > b.y ? ( a.y > c.y ? a.y : c.y ) : ( b.y > c.y ? b.y : c.y );
 
 		// z-order range for the current triangle bbox;
-		let minZ = zOrder( minTX, minTY, minX, minY, invSize ),
+		var minZ = zOrder( minTX, minTY, minX, minY, invSize ),
 			maxZ = zOrder( maxTX, maxTY, minX, minY, invSize );
 
-		let p = ear.prevZ,
+		var p = ear.prevZ,
 			n = ear.nextZ;
 
 		// look for points inside the triangle in both directions
@@ -30201,12 +30203,12 @@
 
 			if ( p !== ear.prev && p !== ear.next &&
 				pointInTriangle( a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y ) &&
-				area( p.prev, p, p.next ) >= 0 ) return false;
+				area( p.prev, p, p.next ) >= 0 ) { return false; }
 			p = p.prevZ;
 
 			if ( n !== ear.prev && n !== ear.next &&
 				pointInTriangle( a.x, a.y, b.x, b.y, c.x, c.y, n.x, n.y ) &&
-				area( n.prev, n, n.next ) >= 0 ) return false;
+				area( n.prev, n, n.next ) >= 0 ) { return false; }
 			n = n.nextZ;
 
 		}
@@ -30216,7 +30218,7 @@
 
 			if ( p !== ear.prev && p !== ear.next &&
 				pointInTriangle( a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y ) &&
-				area( p.prev, p, p.next ) >= 0 ) return false;
+				area( p.prev, p, p.next ) >= 0 ) { return false; }
 			p = p.prevZ;
 
 		}
@@ -30226,7 +30228,7 @@
 
 			if ( n !== ear.prev && n !== ear.next &&
 				pointInTriangle( a.x, a.y, b.x, b.y, c.x, c.y, n.x, n.y ) &&
-				area( n.prev, n, n.next ) >= 0 ) return false;
+				area( n.prev, n, n.next ) >= 0 ) { return false; }
 			n = n.nextZ;
 
 		}
@@ -30238,10 +30240,10 @@
 	// go through all polygon nodes and cure small local self-intersections
 	function cureLocalIntersections( start, triangles, dim ) {
 
-		let p = start;
+		var p = start;
 		do {
 
-			let a = p.prev,
+			var a = p.prev,
 				b = p.next.next;
 
 			if ( ! equals( a, b ) && intersects( a, p, p.next, b ) && locallyInside( a, b ) && locallyInside( b, a ) ) {
@@ -30270,16 +30272,16 @@
 	function splitEarcut( start, triangles, dim, minX, minY, invSize ) {
 
 		// look for a valid diagonal that divides the polygon into two
-		let a = start;
+		var a = start;
 		do {
 
-			let b = a.next.next;
+			var b = a.next.next;
 			while ( b !== a.prev ) {
 
 				if ( a.i !== b.i && isValidDiagonal( a, b ) ) {
 
 					// split the polygon in two by the diagonal
-					let c = splitPolygon( a, b );
+					var c = splitPolygon( a, b );
 
 					// filter colinear points around the cuts
 					a = filterPoints( a, a.next );
@@ -30305,7 +30307,7 @@
 	// link every hole into the outer loop, producing a single-ring polygon without holes
 	function eliminateHoles( data, holeIndices, outerNode, dim ) {
 
-		let queue = [],
+		var queue = [],
 			i, len, start, end, list;
 
 		for ( i = 0, len = holeIndices.length; i < len; i ++ ) {
@@ -30313,7 +30315,7 @@
 			start = holeIndices[ i ] * dim;
 			end = i < len - 1 ? holeIndices[ i + 1 ] * dim : data.length;
 			list = linkedList( data, start, end, dim, false );
-			if ( list === list.next ) list.steiner = true;
+			if ( list === list.next ) { list.steiner = true; }
 			queue.push( getLeftmost( list ) );
 
 		}
@@ -30344,7 +30346,7 @@
 		outerNode = findHoleBridge( hole, outerNode );
 		if ( outerNode ) {
 
-			const b = splitPolygon( outerNode, hole );
+			var b = splitPolygon( outerNode, hole );
 
 			// filter collinear points around the cuts
 			filterPoints( outerNode, outerNode.next );
@@ -30357,7 +30359,7 @@
 	// David Eberly's algorithm for finding a bridge between hole and outer polygon
 	function findHoleBridge( hole, outerNode ) {
 
-		let p = outerNode,
+		var p = outerNode,
 			hx = hole.x,
 			hy = hole.y,
 			qx = - Infinity,
@@ -30369,14 +30371,14 @@
 
 			if ( hy <= p.y && hy >= p.next.y && p.next.y !== p.y ) {
 
-				let x = p.x + ( hy - p.y ) * ( p.next.x - p.x ) / ( p.next.y - p.y );
+				var x = p.x + ( hy - p.y ) * ( p.next.x - p.x ) / ( p.next.y - p.y );
 				if ( x <= hx && x > qx ) {
 
 					qx = x;
 					if ( x === hx ) {
 
-						if ( hy === p.y ) return p;
-						if ( hy === p.next.y ) return p.next;
+						if ( hy === p.y ) { return p; }
+						if ( hy === p.next.y ) { return p.next; }
 
 					}
 
@@ -30390,15 +30392,15 @@
 
 		} while ( p !== outerNode );
 
-		if ( ! m ) return null;
+		if ( ! m ) { return null; }
 
-		if ( hx === qx ) return m; // hole touches outer segment; pick leftmost endpoint
+		if ( hx === qx ) { return m; } // hole touches outer segment; pick leftmost endpoint
 
 		// look for points inside the triangle of hole point, segment intersection and endpoint;
 		// if there are no points found, we have a valid connection;
 		// otherwise choose the point of the minimum angle with the ray as connection point
 
-		let stop = m,
+		var stop = m,
 			mx = m.x,
 			my = m.y,
 			tanMin = Infinity,
@@ -30440,10 +30442,10 @@
 	// interlink polygon nodes in z-order
 	function indexCurve( start, minX, minY, invSize ) {
 
-		let p = start;
+		var p = start;
 		do {
 
-			if ( p.z === null ) p.z = zOrder( p.x, p.y, minX, minY, invSize );
+			if ( p.z === null ) { p.z = zOrder( p.x, p.y, minX, minY, invSize ); }
 			p.prevZ = p.prev;
 			p.nextZ = p.next;
 			p = p.next;
@@ -30461,7 +30463,7 @@
 	// http://www.chiark.greenend.org.uk/~sgtatham/algorithms/listsort.html
 	function sortLinked( list ) {
 
-		let i, p, q, e, tail, numMerges, pSize, qSize,
+		var i, p, q, e, tail, numMerges, pSize, qSize,
 			inSize = 1;
 
 		do {
@@ -30480,7 +30482,7 @@
 
 					pSize ++;
 					q = q.nextZ;
-					if ( ! q ) break;
+					if ( ! q ) { break; }
 
 				}
 
@@ -30502,8 +30504,8 @@
 
 					}
 
-					if ( tail ) tail.nextZ = e;
-					else list = e;
+					if ( tail ) { tail.nextZ = e; }
+					else { list = e; }
 
 					e.prevZ = tail;
 					tail = e;
@@ -30547,11 +30549,11 @@
 	// find the leftmost node of a polygon ring
 	function getLeftmost( start ) {
 
-		let p = start,
+		var p = start,
 			leftmost = start;
 		do {
 
-			if ( p.x < leftmost.x || ( p.x === leftmost.x && p.y < leftmost.y ) ) leftmost = p;
+			if ( p.x < leftmost.x || ( p.x === leftmost.x && p.y < leftmost.y ) ) { leftmost = p; }
 			p = p.next;
 
 		} while ( p !== start );
@@ -30596,17 +30598,17 @@
 	// check if two segments intersect
 	function intersects( p1, q1, p2, q2 ) {
 
-		const o1 = sign( area( p1, q1, p2 ) );
-		const o2 = sign( area( p1, q1, q2 ) );
-		const o3 = sign( area( p2, q2, p1 ) );
-		const o4 = sign( area( p2, q2, q1 ) );
+		var o1 = sign( area( p1, q1, p2 ) );
+		var o2 = sign( area( p1, q1, q2 ) );
+		var o3 = sign( area( p2, q2, p1 ) );
+		var o4 = sign( area( p2, q2, q1 ) );
 
-		if ( o1 !== o2 && o3 !== o4 ) return true; // general case
+		if ( o1 !== o2 && o3 !== o4 ) { return true; } // general case
 
-		if ( o1 === 0 && onSegment( p1, p2, q1 ) ) return true; // p1, q1 and p2 are collinear and p2 lies on p1q1
-		if ( o2 === 0 && onSegment( p1, q2, q1 ) ) return true; // p1, q1 and q2 are collinear and q2 lies on p1q1
-		if ( o3 === 0 && onSegment( p2, p1, q2 ) ) return true; // p2, q2 and p1 are collinear and p1 lies on p2q2
-		if ( o4 === 0 && onSegment( p2, q1, q2 ) ) return true; // p2, q2 and q1 are collinear and q1 lies on p2q2
+		if ( o1 === 0 && onSegment( p1, p2, q1 ) ) { return true; } // p1, q1 and p2 are collinear and p2 lies on p1q1
+		if ( o2 === 0 && onSegment( p1, q2, q1 ) ) { return true; } // p1, q1 and q2 are collinear and q2 lies on p1q1
+		if ( o3 === 0 && onSegment( p2, p1, q2 ) ) { return true; } // p2, q2 and p1 are collinear and p1 lies on p2q2
+		if ( o4 === 0 && onSegment( p2, q1, q2 ) ) { return true; } // p2, q2 and q1 are collinear and q1 lies on p2q2
 
 		return false;
 
@@ -30628,11 +30630,11 @@
 	// check if a polygon diagonal intersects any polygon segments
 	function intersectsPolygon( a, b ) {
 
-		let p = a;
+		var p = a;
 		do {
 
 			if ( p.i !== a.i && p.next.i !== a.i && p.i !== b.i && p.next.i !== b.i &&
-					intersects( p, p.next, a, b ) ) return true;
+					intersects( p, p.next, a, b ) ) { return true; }
 			p = p.next;
 
 		} while ( p !== a );
@@ -30653,7 +30655,7 @@
 	// check if the middle point of a polygon diagonal is inside the polygon
 	function middleInside( a, b ) {
 
-		let p = a,
+		var p = a,
 			inside = false,
 			px = ( a.x + b.x ) / 2,
 			py = ( a.y + b.y ) / 2;
@@ -30661,7 +30663,7 @@
 
 			if ( ( ( p.y > py ) !== ( p.next.y > py ) ) && p.next.y !== p.y &&
 					( px < ( p.next.x - p.x ) * ( py - p.y ) / ( p.next.y - p.y ) + p.x ) )
-				inside = ! inside;
+				{ inside = ! inside; }
 			p = p.next;
 
 		} while ( p !== a );
@@ -30674,7 +30676,7 @@
 	// if one belongs to the outer ring and another to a hole, it merges it into a single ring
 	function splitPolygon( a, b ) {
 
-		let a2 = new Node( a.i, a.x, a.y ),
+		var a2 = new Node( a.i, a.x, a.y ),
 			b2 = new Node( b.i, b.x, b.y ),
 			an = a.next,
 			bp = b.prev;
@@ -30698,7 +30700,7 @@
 	// create a node and optionally link it with previous one (in a circular doubly linked list)
 	function insertNode( i, x, y, last ) {
 
-		const p = new Node( i, x, y );
+		var p = new Node( i, x, y );
 
 		if ( ! last ) {
 
@@ -30723,8 +30725,8 @@
 		p.next.prev = p.prev;
 		p.prev.next = p.next;
 
-		if ( p.prevZ ) p.prevZ.nextZ = p.nextZ;
-		if ( p.nextZ ) p.nextZ.prevZ = p.prevZ;
+		if ( p.prevZ ) { p.prevZ.nextZ = p.nextZ; }
+		if ( p.nextZ ) { p.nextZ.prevZ = p.prevZ; }
 
 	}
 
@@ -30755,8 +30757,8 @@
 
 	function signedArea( data, start, end, dim ) {
 
-		let sum = 0;
-		for ( let i = start, j = end - dim; i < end; i += dim ) {
+		var sum = 0;
+		for ( var i = start, j = end - dim; i < end; i += dim ) {
 
 			sum += ( data[ j ] - data[ i ] ) * ( data[ i + 1 ] + data[ j + 1 ] );
 			j = i;
@@ -30767,16 +30769,16 @@
 
 	}
 
-	const ShapeUtils = {
+	var ShapeUtils = {
 
 		// calculate area of the contour polygon
 
 		area: function ( contour ) {
 
-			const n = contour.length;
-			let a = 0.0;
+			var n = contour.length;
+			var a = 0.0;
 
-			for ( let p = n - 1, q = 0; q < n; p = q ++ ) {
+			for ( var p = n - 1, q = 0; q < n; p = q ++ ) {
 
 				a += contour[ p ].x * contour[ q ].y - contour[ q ].x * contour[ p ].y;
 
@@ -30794,20 +30796,20 @@
 
 		triangulateShape: function ( contour, holes ) {
 
-			const vertices = []; // flat array of vertices like [ x0,y0, x1,y1, x2,y2, ... ]
-			const holeIndices = []; // array of hole indices
-			const faces = []; // final array of vertex indices like [ [ a,b,d ], [ b,c,d ] ]
+			var vertices = []; // flat array of vertices like [ x0,y0, x1,y1, x2,y2, ... ]
+			var holeIndices = []; // array of hole indices
+			var faces = []; // final array of vertex indices like [ [ a,b,d ], [ b,c,d ] ]
 
 			removeDupEndPts( contour );
 			addContour( vertices, contour );
 
 			//
 
-			let holeIndex = contour.length;
+			var holeIndex = contour.length;
 
 			holes.forEach( removeDupEndPts );
 
-			for ( let i = 0; i < holes.length; i ++ ) {
+			for ( var i = 0; i < holes.length; i ++ ) {
 
 				holeIndices.push( holeIndex );
 				holeIndex += holes[ i ].length;
@@ -30817,13 +30819,13 @@
 
 			//
 
-			const triangles = Earcut.triangulate( vertices, holeIndices );
+			var triangles = Earcut.triangulate( vertices, holeIndices );
 
 			//
 
-			for ( let i = 0; i < triangles.length; i += 3 ) {
+			for ( var i$1 = 0; i$1 < triangles.length; i$1 += 3 ) {
 
-				faces.push( triangles.slice( i, i + 3 ) );
+				faces.push( triangles.slice( i$1, i$1 + 3 ) );
 
 			}
 
@@ -30835,7 +30837,7 @@
 
 	function removeDupEndPts( points ) {
 
-		const l = points.length;
+		var l = points.length;
 
 		if ( l > 2 && points[ l - 1 ].equals( points[ 0 ] ) ) {
 
@@ -30847,7 +30849,7 @@
 
 	function addContour( vertices, contour ) {
 
-		for ( let i = 0; i < contour.length; i ++ ) {
+		for ( var i = 0; i < contour.length; i ++ ) {
 
 			vertices.push( contour[ i ].x );
 			vertices.push( contour[ i ].y );
@@ -30901,10 +30903,10 @@
 
 	ExtrudeGeometry.prototype.toJSON = function () {
 
-		const data = Geometry.prototype.toJSON.call( this );
+		var data = Geometry.prototype.toJSON.call( this );
 
-		const shapes = this.parameters.shapes;
-		const options = this.parameters.options;
+		var shapes = this.parameters.shapes;
+		var options = this.parameters.options;
 
 		return toJSON( shapes, options, data );
 
@@ -30925,14 +30927,14 @@
 
 		shapes = Array.isArray( shapes ) ? shapes : [ shapes ];
 
-		const scope = this;
+		var scope = this;
 
-		const verticesArray = [];
-		const uvArray = [];
+		var verticesArray = [];
+		var uvArray = [];
 
-		for ( let i = 0, l = shapes.length; i < l; i ++ ) {
+		for ( var i = 0, l = shapes.length; i < l; i ++ ) {
 
-			const shape = shapes[ i ];
+			var shape = shapes[ i ];
 			addShape( shape );
 
 		}
@@ -30948,23 +30950,23 @@
 
 		function addShape( shape ) {
 
-			const placeholder = [];
+			var placeholder = [];
 
 			// options
 
-			const curveSegments = options.curveSegments !== undefined ? options.curveSegments : 12;
-			const steps = options.steps !== undefined ? options.steps : 1;
-			let depth = options.depth !== undefined ? options.depth : 100;
+			var curveSegments = options.curveSegments !== undefined ? options.curveSegments : 12;
+			var steps = options.steps !== undefined ? options.steps : 1;
+			var depth = options.depth !== undefined ? options.depth : 100;
 
-			let bevelEnabled = options.bevelEnabled !== undefined ? options.bevelEnabled : true;
-			let bevelThickness = options.bevelThickness !== undefined ? options.bevelThickness : 6;
-			let bevelSize = options.bevelSize !== undefined ? options.bevelSize : bevelThickness - 2;
-			let bevelOffset = options.bevelOffset !== undefined ? options.bevelOffset : 0;
-			let bevelSegments = options.bevelSegments !== undefined ? options.bevelSegments : 3;
+			var bevelEnabled = options.bevelEnabled !== undefined ? options.bevelEnabled : true;
+			var bevelThickness = options.bevelThickness !== undefined ? options.bevelThickness : 6;
+			var bevelSize = options.bevelSize !== undefined ? options.bevelSize : bevelThickness - 2;
+			var bevelOffset = options.bevelOffset !== undefined ? options.bevelOffset : 0;
+			var bevelSegments = options.bevelSegments !== undefined ? options.bevelSegments : 3;
 
-			const extrudePath = options.extrudePath;
+			var extrudePath = options.extrudePath;
 
-			const uvgen = options.UVGenerator !== undefined ? options.UVGenerator : WorldUVGenerator;
+			var uvgen = options.UVGenerator !== undefined ? options.UVGenerator : WorldUVGenerator;
 
 			// deprecated options
 
@@ -30977,8 +30979,8 @@
 
 			//
 
-			let extrudePts, extrudeByPath = false;
-			let splineTube, binormal, normal, position2;
+			var extrudePts, extrudeByPath = false;
+			var splineTube, binormal, normal, position2;
 
 			if ( extrudePath ) {
 
@@ -31014,12 +31016,12 @@
 
 			// Variables initialization
 
-			const shapePoints = shape.extractPoints( curveSegments );
+			var shapePoints = shape.extractPoints( curveSegments );
 
-			let vertices = shapePoints.shape;
-			const holes = shapePoints.holes;
+			var vertices = shapePoints.shape;
+			var holes = shapePoints.holes;
 
-			const reverse = ! ShapeUtils.isClockWise( vertices );
+			var reverse = ! ShapeUtils.isClockWise( vertices );
 
 			if ( reverse ) {
 
@@ -31027,9 +31029,9 @@
 
 				// Maybe we should also check if holes are in the opposite direction, just to be safe ...
 
-				for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+				for ( var h = 0, hl = holes.length; h < hl; h ++ ) {
 
-					const ahole = holes[ h ];
+					var ahole = holes[ h ];
 
 					if ( ShapeUtils.isClockWise( ahole ) ) {
 
@@ -31042,30 +31044,30 @@
 			}
 
 
-			const faces = ShapeUtils.triangulateShape( vertices, holes );
+			var faces = ShapeUtils.triangulateShape( vertices, holes );
 
 			/* Vertices */
 
-			const contour = vertices; // vertices has all points but contour has only points of circumference
+			var contour = vertices; // vertices has all points but contour has only points of circumference
 
-			for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+			for ( var h$1 = 0, hl$1 = holes.length; h$1 < hl$1; h$1 ++ ) {
 
-				const ahole = holes[ h ];
+				var ahole$1 = holes[ h$1 ];
 
-				vertices = vertices.concat( ahole );
+				vertices = vertices.concat( ahole$1 );
 
 			}
 
 
 			function scalePt2( pt, vec, size ) {
 
-				if ( ! vec ) console.error( "THREE.ExtrudeGeometry: vec does not exist" );
+				if ( ! vec ) { console.error( "THREE.ExtrudeGeometry: vec does not exist" ); }
 
 				return vec.clone().multiplyScalar( size ).add( pt );
 
 			}
 
-			const vlen = vertices.length, flen = faces.length;
+			var vlen = vertices.length, flen = faces.length;
 
 
 			// Find directions for point movement
@@ -31080,20 +31082,20 @@
 				// inPt' is the intersection of the two lines parallel to the two
 				//  adjacent edges of inPt at a distance of 1 unit on the left side.
 
-				let v_trans_x, v_trans_y, shrink_by; // resulting translation vector for inPt
+				var v_trans_x, v_trans_y, shrink_by; // resulting translation vector for inPt
 
 				// good reading for geometry algorithms (here: line-line intersection)
 				// http://geomalgorithms.com/a05-_intersect-1.html
 
-				const v_prev_x = inPt.x - inPrev.x,
+				var v_prev_x = inPt.x - inPrev.x,
 					v_prev_y = inPt.y - inPrev.y;
-				const v_next_x = inNext.x - inPt.x,
+				var v_next_x = inNext.x - inPt.x,
 					v_next_y = inNext.y - inPt.y;
 
-				const v_prev_lensq = ( v_prev_x * v_prev_x + v_prev_y * v_prev_y );
+				var v_prev_lensq = ( v_prev_x * v_prev_x + v_prev_y * v_prev_y );
 
 				// check for collinear edges
-				const collinear0 = ( v_prev_x * v_next_y - v_prev_y * v_next_x );
+				var collinear0 = ( v_prev_x * v_next_y - v_prev_y * v_next_x );
 
 				if ( Math.abs( collinear0 ) > Number.EPSILON ) {
 
@@ -31101,20 +31103,20 @@
 
 					// length of vectors for normalizing
 
-					const v_prev_len = Math.sqrt( v_prev_lensq );
-					const v_next_len = Math.sqrt( v_next_x * v_next_x + v_next_y * v_next_y );
+					var v_prev_len = Math.sqrt( v_prev_lensq );
+					var v_next_len = Math.sqrt( v_next_x * v_next_x + v_next_y * v_next_y );
 
 					// shift adjacent points by unit vectors to the left
 
-					const ptPrevShift_x = ( inPrev.x - v_prev_y / v_prev_len );
-					const ptPrevShift_y = ( inPrev.y + v_prev_x / v_prev_len );
+					var ptPrevShift_x = ( inPrev.x - v_prev_y / v_prev_len );
+					var ptPrevShift_y = ( inPrev.y + v_prev_x / v_prev_len );
 
-					const ptNextShift_x = ( inNext.x - v_next_y / v_next_len );
-					const ptNextShift_y = ( inNext.y + v_next_x / v_next_len );
+					var ptNextShift_x = ( inNext.x - v_next_y / v_next_len );
+					var ptNextShift_y = ( inNext.y + v_next_x / v_next_len );
 
 					// scaling factor for v_prev to intersection point
 
-					const sf = ( ( ptNextShift_x - ptPrevShift_x ) * v_next_y -
+					var sf = ( ( ptNextShift_x - ptPrevShift_x ) * v_next_y -
 							( ptNextShift_y - ptPrevShift_y ) * v_next_x ) /
 						( v_prev_x * v_next_y - v_prev_y * v_next_x );
 
@@ -31125,7 +31127,7 @@
 
 					// Don't normalize!, otherwise sharp corners become ugly
 					//  but prevent crazy spikes
-					const v_trans_lensq = ( v_trans_x * v_trans_x + v_trans_y * v_trans_y );
+					var v_trans_lensq = ( v_trans_x * v_trans_x + v_trans_y * v_trans_y );
 					if ( v_trans_lensq <= 2 ) {
 
 						return new Vector2( v_trans_x, v_trans_y );
@@ -31140,7 +31142,7 @@
 
 					// handle special case of collinear edges
 
-					let direction_eq = false; // assumes: opposite
+					var direction_eq = false; // assumes: opposite
 
 					if ( v_prev_x > Number.EPSILON ) {
 
@@ -31195,12 +31197,12 @@
 			}
 
 
-			const contourMovements = [];
+			var contourMovements = [];
 
-			for ( let i = 0, il = contour.length, j = il - 1, k = i + 1; i < il; i ++, j ++, k ++ ) {
+			for ( var i = 0, il = contour.length, j = il - 1, k = i + 1; i < il; i ++, j ++, k ++ ) {
 
-				if ( j === il ) j = 0;
-				if ( k === il ) k = 0;
+				if ( j === il ) { j = 0; }
+				if ( k === il ) { k = 0; }
 
 				//  (j)---(i)---(k)
 				// console.log('i,j,k', i, j , k)
@@ -31209,22 +31211,22 @@
 
 			}
 
-			const holesMovements = [];
-			let oneHoleMovements, verticesMovements = contourMovements.concat();
+			var holesMovements = [];
+			var oneHoleMovements, verticesMovements = contourMovements.concat();
 
-			for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+			for ( var h$2 = 0, hl$2 = holes.length; h$2 < hl$2; h$2 ++ ) {
 
-				const ahole = holes[ h ];
+				var ahole$2 = holes[ h$2 ];
 
 				oneHoleMovements = [];
 
-				for ( let i = 0, il = ahole.length, j = il - 1, k = i + 1; i < il; i ++, j ++, k ++ ) {
+				for ( var i$1 = 0, il$1 = ahole$2.length, j$1 = il$1 - 1, k$1 = i$1 + 1; i$1 < il$1; i$1 ++, j$1 ++, k$1 ++ ) {
 
-					if ( j === il ) j = 0;
-					if ( k === il ) k = 0;
+					if ( j$1 === il$1 ) { j$1 = 0; }
+					if ( k$1 === il$1 ) { k$1 = 0; }
 
 					//  (j)---(i)---(k)
-					oneHoleMovements[ i ] = getBevelVec( ahole[ i ], ahole[ j ], ahole[ k ] );
+					oneHoleMovements[ i$1 ] = getBevelVec( ahole$2[ i$1 ], ahole$2[ j$1 ], ahole$2[ k$1 ] );
 
 				}
 
@@ -31236,19 +31238,19 @@
 
 			// Loop bevelSegments, 1 for the front, 1 for the back
 
-			for ( let b = 0; b < bevelSegments; b ++ ) {
+			for ( var b = 0; b < bevelSegments; b ++ ) {
 
 				//for ( b = bevelSegments; b > 0; b -- ) {
 
-				const t = b / bevelSegments;
-				const z = bevelThickness * Math.cos( t * Math.PI / 2 );
-				const bs = bevelSize * Math.sin( t * Math.PI / 2 ) + bevelOffset;
+				var t = b / bevelSegments;
+				var z = bevelThickness * Math.cos( t * Math.PI / 2 );
+				var bs$1 = bevelSize * Math.sin( t * Math.PI / 2 ) + bevelOffset;
 
 				// contract shape
 
-				for ( let i = 0, il = contour.length; i < il; i ++ ) {
+				for ( var i$2 = 0, il$2 = contour.length; i$2 < il$2; i$2 ++ ) {
 
-					const vert = scalePt2( contour[ i ], contourMovements[ i ], bs );
+					var vert = scalePt2( contour[ i$2 ], contourMovements[ i$2 ], bs$1 );
 
 					v( vert.x, vert.y, - z );
 
@@ -31256,16 +31258,16 @@
 
 				// expand holes
 
-				for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+				for ( var h$3 = 0, hl$3 = holes.length; h$3 < hl$3; h$3 ++ ) {
 
-					const ahole = holes[ h ];
-					oneHoleMovements = holesMovements[ h ];
+					var ahole$3 = holes[ h$3 ];
+					oneHoleMovements = holesMovements[ h$3 ];
 
-					for ( let i = 0, il = ahole.length; i < il; i ++ ) {
+					for ( var i$3 = 0, il$3 = ahole$3.length; i$3 < il$3; i$3 ++ ) {
 
-						const vert = scalePt2( ahole[ i ], oneHoleMovements[ i ], bs );
+						var vert$1 = scalePt2( ahole$3[ i$3 ], oneHoleMovements[ i$3 ], bs$1 );
 
-						v( vert.x, vert.y, - z );
+						v( vert$1.x, vert$1.y, - z );
 
 					}
 
@@ -31273,24 +31275,24 @@
 
 			}
 
-			const bs = bevelSize + bevelOffset;
+			var bs = bevelSize + bevelOffset;
 
 			// Back facing vertices
 
-			for ( let i = 0; i < vlen; i ++ ) {
+			for ( var i$4 = 0; i$4 < vlen; i$4 ++ ) {
 
-				const vert = bevelEnabled ? scalePt2( vertices[ i ], verticesMovements[ i ], bs ) : vertices[ i ];
+				var vert$2 = bevelEnabled ? scalePt2( vertices[ i$4 ], verticesMovements[ i$4 ], bs ) : vertices[ i$4 ];
 
 				if ( ! extrudeByPath ) {
 
-					v( vert.x, vert.y, 0 );
+					v( vert$2.x, vert$2.y, 0 );
 
 				} else {
 
 					// v( vert.x, vert.y + extrudePts[ 0 ].y, extrudePts[ 0 ].x );
 
-					normal.copy( splineTube.normals[ 0 ] ).multiplyScalar( vert.x );
-					binormal.copy( splineTube.binormals[ 0 ] ).multiplyScalar( vert.y );
+					normal.copy( splineTube.normals[ 0 ] ).multiplyScalar( vert$2.x );
+					binormal.copy( splineTube.binormals[ 0 ] ).multiplyScalar( vert$2.y );
 
 					position2.copy( extrudePts[ 0 ] ).add( normal ).add( binormal );
 
@@ -31303,22 +31305,22 @@
 			// Add stepped vertices...
 			// Including front facing vertices
 
-			for ( let s = 1; s <= steps; s ++ ) {
+			for ( var s = 1; s <= steps; s ++ ) {
 
-				for ( let i = 0; i < vlen; i ++ ) {
+				for ( var i$5 = 0; i$5 < vlen; i$5 ++ ) {
 
-					const vert = bevelEnabled ? scalePt2( vertices[ i ], verticesMovements[ i ], bs ) : vertices[ i ];
+					var vert$3 = bevelEnabled ? scalePt2( vertices[ i$5 ], verticesMovements[ i$5 ], bs ) : vertices[ i$5 ];
 
 					if ( ! extrudeByPath ) {
 
-						v( vert.x, vert.y, depth / steps * s );
+						v( vert$3.x, vert$3.y, depth / steps * s );
 
 					} else {
 
 						// v( vert.x, vert.y + extrudePts[ s - 1 ].y, extrudePts[ s - 1 ].x );
 
-						normal.copy( splineTube.normals[ s ] ).multiplyScalar( vert.x );
-						binormal.copy( splineTube.binormals[ s ] ).multiplyScalar( vert.y );
+						normal.copy( splineTube.normals[ s ] ).multiplyScalar( vert$3.x );
+						binormal.copy( splineTube.binormals[ s ] ).multiplyScalar( vert$3.y );
 
 						position2.copy( extrudePts[ s ] ).add( normal ).add( binormal );
 
@@ -31334,39 +31336,39 @@
 			// Add bevel segments planes
 
 			//for ( b = 1; b <= bevelSegments; b ++ ) {
-			for ( let b = bevelSegments - 1; b >= 0; b -- ) {
+			for ( var b$1 = bevelSegments - 1; b$1 >= 0; b$1 -- ) {
 
-				const t = b / bevelSegments;
-				const z = bevelThickness * Math.cos( t * Math.PI / 2 );
-				const bs = bevelSize * Math.sin( t * Math.PI / 2 ) + bevelOffset;
+				var t$1 = b$1 / bevelSegments;
+				var z$1 = bevelThickness * Math.cos( t$1 * Math.PI / 2 );
+				var bs$2 = bevelSize * Math.sin( t$1 * Math.PI / 2 ) + bevelOffset;
 
 				// contract shape
 
-				for ( let i = 0, il = contour.length; i < il; i ++ ) {
+				for ( var i$6 = 0, il$4 = contour.length; i$6 < il$4; i$6 ++ ) {
 
-					const vert = scalePt2( contour[ i ], contourMovements[ i ], bs );
-					v( vert.x, vert.y, depth + z );
+					var vert$4 = scalePt2( contour[ i$6 ], contourMovements[ i$6 ], bs$2 );
+					v( vert$4.x, vert$4.y, depth + z$1 );
 
 				}
 
 				// expand holes
 
-				for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+				for ( var h$4 = 0, hl$4 = holes.length; h$4 < hl$4; h$4 ++ ) {
 
-					const ahole = holes[ h ];
-					oneHoleMovements = holesMovements[ h ];
+					var ahole$4 = holes[ h$4 ];
+					oneHoleMovements = holesMovements[ h$4 ];
 
-					for ( let i = 0, il = ahole.length; i < il; i ++ ) {
+					for ( var i$7 = 0, il$5 = ahole$4.length; i$7 < il$5; i$7 ++ ) {
 
-						const vert = scalePt2( ahole[ i ], oneHoleMovements[ i ], bs );
+						var vert$5 = scalePt2( ahole$4[ i$7 ], oneHoleMovements[ i$7 ], bs$2 );
 
 						if ( ! extrudeByPath ) {
 
-							v( vert.x, vert.y, depth + z );
+							v( vert$5.x, vert$5.y, depth + z$1 );
 
 						} else {
 
-							v( vert.x, vert.y + extrudePts[ steps - 1 ].y, extrudePts[ steps - 1 ].x + z );
+							v( vert$5.x, vert$5.y + extrudePts[ steps - 1 ].y, extrudePts[ steps - 1 ].x + z$1 );
 
 						}
 
@@ -31391,18 +31393,18 @@
 
 			function buildLidFaces() {
 
-				const start = verticesArray.length / 3;
+				var start = verticesArray.length / 3;
 
 				if ( bevelEnabled ) {
 
-					let layer = 0; // steps + 1
-					let offset = vlen * layer;
+					var layer = 0; // steps + 1
+					var offset = vlen * layer;
 
 					// Bottom faces
 
-					for ( let i = 0; i < flen; i ++ ) {
+					for ( var i = 0; i < flen; i ++ ) {
 
-						const face = faces[ i ];
+						var face = faces[ i ];
 						f3( face[ 2 ] + offset, face[ 1 ] + offset, face[ 0 ] + offset );
 
 					}
@@ -31412,10 +31414,10 @@
 
 					// Top faces
 
-					for ( let i = 0; i < flen; i ++ ) {
+					for ( var i$1 = 0; i$1 < flen; i$1 ++ ) {
 
-						const face = faces[ i ];
-						f3( face[ 0 ] + offset, face[ 1 ] + offset, face[ 2 ] + offset );
+						var face$1 = faces[ i$1 ];
+						f3( face$1[ 0 ] + offset, face$1[ 1 ] + offset, face$1[ 2 ] + offset );
 
 					}
 
@@ -31423,19 +31425,19 @@
 
 					// Bottom faces
 
-					for ( let i = 0; i < flen; i ++ ) {
+					for ( var i$2 = 0; i$2 < flen; i$2 ++ ) {
 
-						const face = faces[ i ];
-						f3( face[ 2 ], face[ 1 ], face[ 0 ] );
+						var face$2 = faces[ i$2 ];
+						f3( face$2[ 2 ], face$2[ 1 ], face$2[ 0 ] );
 
 					}
 
 					// Top faces
 
-					for ( let i = 0; i < flen; i ++ ) {
+					for ( var i$3 = 0; i$3 < flen; i$3 ++ ) {
 
-						const face = faces[ i ];
-						f3( face[ 0 ] + vlen * steps, face[ 1 ] + vlen * steps, face[ 2 ] + vlen * steps );
+						var face$3 = faces[ i$3 ];
+						f3( face$3[ 0 ] + vlen * steps, face$3[ 1 ] + vlen * steps, face$3[ 2 ] + vlen * steps );
 
 					}
 
@@ -31449,14 +31451,14 @@
 
 			function buildSideFaces() {
 
-				const start = verticesArray.length / 3;
-				let layeroffset = 0;
+				var start = verticesArray.length / 3;
+				var layeroffset = 0;
 				sidewalls( contour, layeroffset );
 				layeroffset += contour.length;
 
-				for ( let h = 0, hl = holes.length; h < hl; h ++ ) {
+				for ( var h = 0, hl = holes.length; h < hl; h ++ ) {
 
-					const ahole = holes[ h ];
+					var ahole = holes[ h ];
 					sidewalls( ahole, layeroffset );
 
 					//, true
@@ -31472,22 +31474,22 @@
 
 			function sidewalls( contour, layeroffset ) {
 
-				let i = contour.length;
+				var i = contour.length;
 
 				while ( -- i >= 0 ) {
 
-					const j = i;
-					let k = i - 1;
-					if ( k < 0 ) k = contour.length - 1;
+					var j = i;
+					var k = i - 1;
+					if ( k < 0 ) { k = contour.length - 1; }
 
 					//console.log('b', i,j, i-1, k,vertices.length);
 
-					for ( let s = 0, sl = ( steps + bevelSegments * 2 ); s < sl; s ++ ) {
+					for ( var s = 0, sl = ( steps + bevelSegments * 2 ); s < sl; s ++ ) {
 
-						const slen1 = vlen * s;
-						const slen2 = vlen * ( s + 1 );
+						var slen1 = vlen * s;
+						var slen2 = vlen * ( s + 1 );
 
-						const a = layeroffset + j + slen1,
+						var a = layeroffset + j + slen1,
 							b = layeroffset + k + slen1,
 							c = layeroffset + k + slen2,
 							d = layeroffset + j + slen2;
@@ -31515,8 +31517,8 @@
 				addVertex( b );
 				addVertex( c );
 
-				const nextIndex = verticesArray.length / 3;
-				const uvs = uvgen.generateTopUV( scope, verticesArray, nextIndex - 3, nextIndex - 2, nextIndex - 1 );
+				var nextIndex = verticesArray.length / 3;
+				var uvs = uvgen.generateTopUV( scope, verticesArray, nextIndex - 3, nextIndex - 2, nextIndex - 1 );
 
 				addUV( uvs[ 0 ] );
 				addUV( uvs[ 1 ] );
@@ -31535,8 +31537,8 @@
 				addVertex( d );
 
 
-				const nextIndex = verticesArray.length / 3;
-				const uvs = uvgen.generateSideWallUV( scope, verticesArray, nextIndex - 6, nextIndex - 3, nextIndex - 2, nextIndex - 1 );
+				var nextIndex = verticesArray.length / 3;
+				var uvs = uvgen.generateSideWallUV( scope, verticesArray, nextIndex - 6, nextIndex - 3, nextIndex - 2, nextIndex - 1 );
 
 				addUV( uvs[ 0 ] );
 				addUV( uvs[ 1 ] );
@@ -31573,10 +31575,10 @@
 
 	ExtrudeBufferGeometry.prototype.toJSON = function () {
 
-		const data = BufferGeometry.prototype.toJSON.call( this );
+		var data = BufferGeometry.prototype.toJSON.call( this );
 
-		const shapes = this.parameters.shapes;
-		const options = this.parameters.options;
+		var shapes = this.parameters.shapes;
+		var options = this.parameters.options;
 
 		return toJSON( shapes, options, data );
 
@@ -31584,16 +31586,16 @@
 
 	//
 
-	const WorldUVGenerator = {
+	var WorldUVGenerator = {
 
 		generateTopUV: function ( geometry, vertices, indexA, indexB, indexC ) {
 
-			const a_x = vertices[ indexA * 3 ];
-			const a_y = vertices[ indexA * 3 + 1 ];
-			const b_x = vertices[ indexB * 3 ];
-			const b_y = vertices[ indexB * 3 + 1 ];
-			const c_x = vertices[ indexC * 3 ];
-			const c_y = vertices[ indexC * 3 + 1 ];
+			var a_x = vertices[ indexA * 3 ];
+			var a_y = vertices[ indexA * 3 + 1 ];
+			var b_x = vertices[ indexB * 3 ];
+			var b_y = vertices[ indexB * 3 + 1 ];
+			var c_x = vertices[ indexC * 3 ];
+			var c_y = vertices[ indexC * 3 + 1 ];
 
 			return [
 				new Vector2( a_x, a_y ),
@@ -31605,18 +31607,18 @@
 
 		generateSideWallUV: function ( geometry, vertices, indexA, indexB, indexC, indexD ) {
 
-			const a_x = vertices[ indexA * 3 ];
-			const a_y = vertices[ indexA * 3 + 1 ];
-			const a_z = vertices[ indexA * 3 + 2 ];
-			const b_x = vertices[ indexB * 3 ];
-			const b_y = vertices[ indexB * 3 + 1 ];
-			const b_z = vertices[ indexB * 3 + 2 ];
-			const c_x = vertices[ indexC * 3 ];
-			const c_y = vertices[ indexC * 3 + 1 ];
-			const c_z = vertices[ indexC * 3 + 2 ];
-			const d_x = vertices[ indexD * 3 ];
-			const d_y = vertices[ indexD * 3 + 1 ];
-			const d_z = vertices[ indexD * 3 + 2 ];
+			var a_x = vertices[ indexA * 3 ];
+			var a_y = vertices[ indexA * 3 + 1 ];
+			var a_z = vertices[ indexA * 3 + 2 ];
+			var b_x = vertices[ indexB * 3 ];
+			var b_y = vertices[ indexB * 3 + 1 ];
+			var b_z = vertices[ indexB * 3 + 2 ];
+			var c_x = vertices[ indexC * 3 ];
+			var c_y = vertices[ indexC * 3 + 1 ];
+			var c_z = vertices[ indexC * 3 + 2 ];
+			var d_x = vertices[ indexD * 3 ];
+			var d_y = vertices[ indexD * 3 + 1 ];
+			var d_z = vertices[ indexD * 3 + 2 ];
 
 			if ( Math.abs( a_y - b_y ) < 0.01 ) {
 
@@ -31649,9 +31651,9 @@
 
 		if ( Array.isArray( shapes ) ) {
 
-			for ( let i = 0, l = shapes.length; i < l; i ++ ) {
+			for ( var i = 0, l = shapes.length; i < l; i ++ ) {
 
-				const shape = shapes[ i ];
+				var shape = shapes[ i ];
 
 				data.shapes.push( shape.uuid );
 
@@ -31665,7 +31667,7 @@
 
 		//
 
-		if ( options.extrudePath !== undefined ) data.options.extrudePath = options.extrudePath.toJSON();
+		if ( options.extrudePath !== undefined ) { data.options.extrudePath = options.extrudePath.toJSON(); }
 
 		return data;
 
@@ -31715,7 +31717,7 @@
 
 		parameters = parameters || {};
 
-		const font = parameters.font;
+		var font = parameters.font;
 
 		if ( ! ( font && font.isFont ) ) {
 
@@ -31724,7 +31726,7 @@
 
 		}
 
-		const shapes = font.generateShapes( text, parameters.size );
+		var shapes = font.generateShapes( text, parameters.size );
 
 		// translate parameters to ExtrudeGeometry API
 
@@ -31732,9 +31734,9 @@
 
 		// defaults
 
-		if ( parameters.bevelThickness === undefined ) parameters.bevelThickness = 10;
-		if ( parameters.bevelSize === undefined ) parameters.bevelSize = 8;
-		if ( parameters.bevelEnabled === undefined ) parameters.bevelEnabled = false;
+		if ( parameters.bevelThickness === undefined ) { parameters.bevelThickness = 10; }
+		if ( parameters.bevelSize === undefined ) { parameters.bevelSize = 8; }
+		if ( parameters.bevelEnabled === undefined ) { parameters.bevelEnabled = false; }
 
 		ExtrudeBufferGeometry.call( this, shapes, parameters );
 
@@ -31800,32 +31802,32 @@
 		thetaStart = thetaStart !== undefined ? thetaStart : 0;
 		thetaLength = thetaLength !== undefined ? thetaLength : Math.PI;
 
-		const thetaEnd = Math.min( thetaStart + thetaLength, Math.PI );
+		var thetaEnd = Math.min( thetaStart + thetaLength, Math.PI );
 
-		let index = 0;
-		const grid = [];
+		var index = 0;
+		var grid = [];
 
-		const vertex = new Vector3();
-		const normal = new Vector3();
+		var vertex = new Vector3();
+		var normal = new Vector3();
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// generate vertices, normals and uvs
 
-		for ( let iy = 0; iy <= heightSegments; iy ++ ) {
+		for ( var iy = 0; iy <= heightSegments; iy ++ ) {
 
-			const verticesRow = [];
+			var verticesRow = [];
 
-			const v = iy / heightSegments;
+			var v = iy / heightSegments;
 
 			// special case for the poles
 
-			let uOffset = 0;
+			var uOffset = 0;
 
 			if ( iy == 0 && thetaStart == 0 ) {
 
@@ -31837,9 +31839,9 @@
 
 			}
 
-			for ( let ix = 0; ix <= widthSegments; ix ++ ) {
+			for ( var ix = 0; ix <= widthSegments; ix ++ ) {
 
-				const u = ix / widthSegments;
+				var u = ix / widthSegments;
 
 				// vertex
 
@@ -31868,17 +31870,17 @@
 
 		// indices
 
-		for ( let iy = 0; iy < heightSegments; iy ++ ) {
+		for ( var iy$1 = 0; iy$1 < heightSegments; iy$1 ++ ) {
 
-			for ( let ix = 0; ix < widthSegments; ix ++ ) {
+			for ( var ix$1 = 0; ix$1 < widthSegments; ix$1 ++ ) {
 
-				const a = grid[ iy ][ ix + 1 ];
-				const b = grid[ iy ][ ix ];
-				const c = grid[ iy + 1 ][ ix ];
-				const d = grid[ iy + 1 ][ ix + 1 ];
+				var a = grid[ iy$1 ][ ix$1 + 1 ];
+				var b = grid[ iy$1 ][ ix$1 ];
+				var c = grid[ iy$1 + 1 ][ ix$1 ];
+				var d = grid[ iy$1 + 1 ][ ix$1 + 1 ];
 
-				if ( iy !== 0 || thetaStart > 0 ) indices.push( a, b, d );
-				if ( iy !== heightSegments - 1 || thetaEnd < Math.PI ) indices.push( b, c, d );
+				if ( iy$1 !== 0 || thetaStart > 0 ) { indices.push( a, b, d ); }
+				if ( iy$1 !== heightSegments - 1 || thetaEnd < Math.PI ) { indices.push( b, c, d ); }
 
 			}
 
@@ -31949,27 +31951,27 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// some helper variables
 
-		let radius = innerRadius;
-		const radiusStep = ( ( outerRadius - innerRadius ) / phiSegments );
-		const vertex = new Vector3();
-		const uv = new Vector2();
+		var radius = innerRadius;
+		var radiusStep = ( ( outerRadius - innerRadius ) / phiSegments );
+		var vertex = new Vector3();
+		var uv = new Vector2();
 
 		// generate vertices, normals and uvs
 
-		for ( let j = 0; j <= phiSegments; j ++ ) {
+		for ( var j = 0; j <= phiSegments; j ++ ) {
 
-			for ( let i = 0; i <= thetaSegments; i ++ ) {
+			for ( var i = 0; i <= thetaSegments; i ++ ) {
 
 				// values are generate from the inside of the ring to the outside
 
-				const segment = thetaStart + i / thetaSegments * thetaLength;
+				var segment = thetaStart + i / thetaSegments * thetaLength;
 
 				// vertex
 
@@ -31999,18 +32001,18 @@
 
 		// indices
 
-		for ( let j = 0; j < phiSegments; j ++ ) {
+		for ( var j$1 = 0; j$1 < phiSegments; j$1 ++ ) {
 
-			const thetaSegmentLevel = j * ( thetaSegments + 1 );
+			var thetaSegmentLevel = j$1 * ( thetaSegments + 1 );
 
-			for ( let i = 0; i < thetaSegments; i ++ ) {
+			for ( var i$1 = 0; i$1 < thetaSegments; i$1 ++ ) {
 
-				const segment = i + thetaSegmentLevel;
+				var segment$1 = i$1 + thetaSegmentLevel;
 
-				const a = segment;
-				const b = segment + thetaSegments + 1;
-				const c = segment + thetaSegments + 2;
-				const d = segment + 1;
+				var a = segment$1;
+				var b = segment$1 + thetaSegments + 1;
+				var c = segment$1 + thetaSegments + 2;
+				var d = segment$1 + 1;
 
 				// faces
 
@@ -32082,26 +32084,26 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var uvs = [];
 
 		// helper variables
 
-		const inverseSegments = 1.0 / segments;
-		const vertex = new Vector3();
-		const uv = new Vector2();
+		var inverseSegments = 1.0 / segments;
+		var vertex = new Vector3();
+		var uv = new Vector2();
 
 		// generate vertices and uvs
 
-		for ( let i = 0; i <= segments; i ++ ) {
+		for ( var i = 0; i <= segments; i ++ ) {
 
-			const phi = phiStart + i * inverseSegments * phiLength;
+			var phi = phiStart + i * inverseSegments * phiLength;
 
-			const sin = Math.sin( phi );
-			const cos = Math.cos( phi );
+			var sin = Math.sin( phi );
+			var cos = Math.cos( phi );
 
-			for ( let j = 0; j <= ( points.length - 1 ); j ++ ) {
+			for ( var j = 0; j <= ( points.length - 1 ); j ++ ) {
 
 				// vertex
 
@@ -32125,16 +32127,16 @@
 
 		// indices
 
-		for ( let i = 0; i < segments; i ++ ) {
+		for ( var i$1 = 0; i$1 < segments; i$1 ++ ) {
 
-			for ( let j = 0; j < ( points.length - 1 ); j ++ ) {
+			for ( var j$1 = 0; j$1 < ( points.length - 1 ); j$1 ++ ) {
 
-				const base = j + i * points.length;
+				var base = j$1 + i$1 * points.length;
 
-				const a = base;
-				const b = base + points.length;
-				const c = base + points.length + 1;
-				const d = base + 1;
+				var a = base;
+				var b = base + points.length;
+				var c = base + points.length + 1;
+				var d = base + 1;
 
 				// faces
 
@@ -32160,28 +32162,28 @@
 
 		if ( phiLength === Math.PI * 2 ) {
 
-			const normals = this.attributes.normal.array;
-			const n1 = new Vector3();
-			const n2 = new Vector3();
-			const n = new Vector3();
+			var normals = this.attributes.normal.array;
+			var n1 = new Vector3();
+			var n2 = new Vector3();
+			var n = new Vector3();
 
 			// this is the buffer offset for the last line of vertices
 
-			const base = segments * points.length * 3;
+			var base$1 = segments * points.length * 3;
 
-			for ( let i = 0, j = 0; i < points.length; i ++, j += 3 ) {
+			for ( var i$2 = 0, j$2 = 0; i$2 < points.length; i$2 ++, j$2 += 3 ) {
 
 				// select the normal of the vertex in the first line
 
-				n1.x = normals[ j + 0 ];
-				n1.y = normals[ j + 1 ];
-				n1.z = normals[ j + 2 ];
+				n1.x = normals[ j$2 + 0 ];
+				n1.y = normals[ j$2 + 1 ];
+				n1.z = normals[ j$2 + 2 ];
 
 				// select the normal of the vertex in the last line
 
-				n2.x = normals[ base + j + 0 ];
-				n2.y = normals[ base + j + 1 ];
-				n2.z = normals[ base + j + 2 ];
+				n2.x = normals[ base$1 + j$2 + 0 ];
+				n2.y = normals[ base$1 + j$2 + 1 ];
+				n2.z = normals[ base$1 + j$2 + 2 ];
 
 				// average normals
 
@@ -32189,9 +32191,9 @@
 
 				// assign the new values to both normals
 
-				normals[ j + 0 ] = normals[ base + j + 0 ] = n.x;
-				normals[ j + 1 ] = normals[ base + j + 1 ] = n.y;
-				normals[ j + 2 ] = normals[ base + j + 2 ] = n.z;
+				normals[ j$2 + 0 ] = normals[ base$1 + j$2 + 0 ] = n.x;
+				normals[ j$2 + 1 ] = normals[ base$1 + j$2 + 1 ] = n.y;
+				normals[ j$2 + 2 ] = normals[ base$1 + j$2 + 2 ] = n.z;
 
 			}
 
@@ -32233,9 +32235,9 @@
 
 	ShapeGeometry.prototype.toJSON = function () {
 
-		const data = Geometry.prototype.toJSON.call( this );
+		var data = Geometry.prototype.toJSON.call( this );
 
-		const shapes = this.parameters.shapes;
+		var shapes = this.parameters.shapes;
 
 		return toJSON$1( shapes, data );
 
@@ -32258,15 +32260,15 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// helper variables
 
-		let groupStart = 0;
-		let groupCount = 0;
+		var groupStart = 0;
+		var groupCount = 0;
 
 		// allow single and array values for "shapes" parameter
 
@@ -32276,7 +32278,7 @@
 
 		} else {
 
-			for ( let i = 0; i < shapes.length; i ++ ) {
+			for ( var i = 0; i < shapes.length; i ++ ) {
 
 				addShape( shapes[ i ] );
 
@@ -32301,11 +32303,11 @@
 
 		function addShape( shape ) {
 
-			const indexOffset = vertices.length / 3;
-			const points = shape.extractPoints( curveSegments );
+			var indexOffset = vertices.length / 3;
+			var points = shape.extractPoints( curveSegments );
 
-			let shapeVertices = points.shape;
-			const shapeHoles = points.holes;
+			var shapeVertices = points.shape;
+			var shapeHoles = points.holes;
 
 			// check direction of vertices
 
@@ -32315,9 +32317,9 @@
 
 			}
 
-			for ( let i = 0, l = shapeHoles.length; i < l; i ++ ) {
+			for ( var i = 0, l = shapeHoles.length; i < l; i ++ ) {
 
-				const shapeHole = shapeHoles[ i ];
+				var shapeHole = shapeHoles[ i ];
 
 				if ( ShapeUtils.isClockWise( shapeHole ) === true ) {
 
@@ -32327,22 +32329,22 @@
 
 			}
 
-			const faces = ShapeUtils.triangulateShape( shapeVertices, shapeHoles );
+			var faces = ShapeUtils.triangulateShape( shapeVertices, shapeHoles );
 
 			// join vertices of inner and outer paths to a single array
 
-			for ( let i = 0, l = shapeHoles.length; i < l; i ++ ) {
+			for ( var i$1 = 0, l$1 = shapeHoles.length; i$1 < l$1; i$1 ++ ) {
 
-				const shapeHole = shapeHoles[ i ];
-				shapeVertices = shapeVertices.concat( shapeHole );
+				var shapeHole$1 = shapeHoles[ i$1 ];
+				shapeVertices = shapeVertices.concat( shapeHole$1 );
 
 			}
 
 			// vertices, normals, uvs
 
-			for ( let i = 0, l = shapeVertices.length; i < l; i ++ ) {
+			for ( var i$2 = 0, l$2 = shapeVertices.length; i$2 < l$2; i$2 ++ ) {
 
-				const vertex = shapeVertices[ i ];
+				var vertex = shapeVertices[ i$2 ];
 
 				vertices.push( vertex.x, vertex.y, 0 );
 				normals.push( 0, 0, 1 );
@@ -32352,13 +32354,13 @@
 
 			// incides
 
-			for ( let i = 0, l = faces.length; i < l; i ++ ) {
+			for ( var i$3 = 0, l$3 = faces.length; i$3 < l$3; i$3 ++ ) {
 
-				const face = faces[ i ];
+				var face = faces[ i$3 ];
 
-				const a = face[ 0 ] + indexOffset;
-				const b = face[ 1 ] + indexOffset;
-				const c = face[ 2 ] + indexOffset;
+				var a = face[ 0 ] + indexOffset;
+				var b = face[ 1 ] + indexOffset;
+				var c = face[ 2 ] + indexOffset;
 
 				indices.push( a, b, c );
 				groupCount += 3;
@@ -32374,9 +32376,9 @@
 
 	ShapeBufferGeometry.prototype.toJSON = function () {
 
-		const data = BufferGeometry.prototype.toJSON.call( this );
+		var data = BufferGeometry.prototype.toJSON.call( this );
 
-		const shapes = this.parameters.shapes;
+		var shapes = this.parameters.shapes;
 
 		return toJSON$1( shapes, data );
 
@@ -32390,9 +32392,9 @@
 
 		if ( Array.isArray( shapes ) ) {
 
-			for ( let i = 0, l = shapes.length; i < l; i ++ ) {
+			for ( var i = 0, l = shapes.length; i < l; i ++ ) {
 
-				const shape = shapes[ i ];
+				var shape = shapes[ i ];
 
 				data.shapes.push( shape.uuid );
 
@@ -32422,18 +32424,18 @@
 
 		// buffer
 
-		const vertices = [];
+		var vertices = [];
 
 		// helper variables
 
-		const thresholdDot = Math.cos( MathUtils.DEG2RAD * thresholdAngle );
-		const edge = [ 0, 0 ], edges = {};
-		let edge1, edge2, key;
-		const keys = [ 'a', 'b', 'c' ];
+		var thresholdDot = Math.cos( MathUtils.DEG2RAD * thresholdAngle );
+		var edge = [ 0, 0 ], edges = {};
+		var edge1, edge2, key;
+		var keys = [ 'a', 'b', 'c' ];
 
 		// prepare source geometry
 
-		let geometry2;
+		var geometry2;
 
 		if ( geometry.isBufferGeometry ) {
 
@@ -32449,16 +32451,16 @@
 		geometry2.mergeVertices();
 		geometry2.computeFaceNormals();
 
-		const sourceVertices = geometry2.vertices;
-		const faces = geometry2.faces;
+		var sourceVertices = geometry2.vertices;
+		var faces = geometry2.faces;
 
 		// now create a data structure where each entry represents an edge with its adjoining faces
 
-		for ( let i = 0, l = faces.length; i < l; i ++ ) {
+		for ( var i = 0, l = faces.length; i < l; i ++ ) {
 
-			const face = faces[ i ];
+			var face = faces[ i ];
 
-			for ( let j = 0; j < 3; j ++ ) {
+			for ( var j = 0; j < 3; j ++ ) {
 
 				edge1 = face[ keys[ j ] ];
 				edge2 = face[ keys[ ( j + 1 ) % 3 ] ];
@@ -32485,13 +32487,13 @@
 
 		for ( key in edges ) {
 
-			const e = edges[ key ];
+			var e = edges[ key ];
 
 			// an edge is only rendered if the angle (in degrees) between the face normals of the adjoining faces exceeds this value. default = 1 degree.
 
 			if ( e.face2 === undefined || faces[ e.face1 ].normal.dot( faces[ e.face2 ].normal ) <= thresholdDot ) {
 
-				let vertex = sourceVertices[ e.index1 ];
+				var vertex = sourceVertices[ e.index1 ];
 				vertices.push( vertex.x, vertex.y, vertex.z );
 
 				vertex = sourceVertices[ e.index2 ];
@@ -32556,7 +32558,7 @@
 			thetaLength: thetaLength
 		};
 
-		const scope = this;
+		var scope = this;
 
 		radiusTop = radiusTop !== undefined ? radiusTop : 1;
 		radiusBottom = radiusBottom !== undefined ? radiusBottom : 1;
@@ -32571,17 +32573,17 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// helper variables
 
-		let index = 0;
-		const indexArray = [];
-		const halfHeight = height / 2;
-		let groupStart = 0;
+		var index = 0;
+		var indexArray = [];
+		var halfHeight = height / 2;
+		var groupStart = 0;
 
 		// generate geometry
 
@@ -32589,8 +32591,8 @@
 
 		if ( openEnded === false ) {
 
-			if ( radiusTop > 0 ) generateCap( true );
-			if ( radiusBottom > 0 ) generateCap( false );
+			if ( radiusTop > 0 ) { generateCap( true ); }
+			if ( radiusBottom > 0 ) { generateCap( false ); }
 
 		}
 
@@ -32603,34 +32605,34 @@
 
 		function generateTorso() {
 
-			const normal = new Vector3();
-			const vertex = new Vector3();
+			var normal = new Vector3();
+			var vertex = new Vector3();
 
-			let groupCount = 0;
+			var groupCount = 0;
 
 			// this will be used to calculate the normal
-			const slope = ( radiusBottom - radiusTop ) / height;
+			var slope = ( radiusBottom - radiusTop ) / height;
 
 			// generate vertices, normals and uvs
 
-			for ( let y = 0; y <= heightSegments; y ++ ) {
+			for ( var y = 0; y <= heightSegments; y ++ ) {
 
-				const indexRow = [];
+				var indexRow = [];
 
-				const v = y / heightSegments;
+				var v = y / heightSegments;
 
 				// calculate the radius of the current row
 
-				const radius = v * ( radiusBottom - radiusTop ) + radiusTop;
+				var radius = v * ( radiusBottom - radiusTop ) + radiusTop;
 
-				for ( let x = 0; x <= radialSegments; x ++ ) {
+				for ( var x = 0; x <= radialSegments; x ++ ) {
 
-					const u = x / radialSegments;
+					var u = x / radialSegments;
 
-					const theta = u * thetaLength + thetaStart;
+					var theta = u * thetaLength + thetaStart;
 
-					const sinTheta = Math.sin( theta );
-					const cosTheta = Math.cos( theta );
+					var sinTheta = Math.sin( theta );
+					var cosTheta = Math.cos( theta );
 
 					// vertex
 
@@ -32662,16 +32664,16 @@
 
 			// generate indices
 
-			for ( let x = 0; x < radialSegments; x ++ ) {
+			for ( var x$1 = 0; x$1 < radialSegments; x$1 ++ ) {
 
-				for ( let y = 0; y < heightSegments; y ++ ) {
+				for ( var y$1 = 0; y$1 < heightSegments; y$1 ++ ) {
 
 					// we use the index array to access the correct indices
 
-					const a = indexArray[ y ][ x ];
-					const b = indexArray[ y + 1 ][ x ];
-					const c = indexArray[ y + 1 ][ x + 1 ];
-					const d = indexArray[ y ][ x + 1 ];
+					var a = indexArray[ y$1 ][ x$1 ];
+					var b = indexArray[ y$1 + 1 ][ x$1 ];
+					var c = indexArray[ y$1 + 1 ][ x$1 + 1 ];
+					var d = indexArray[ y$1 ][ x$1 + 1 ];
 
 					// faces
 
@@ -32698,15 +32700,15 @@
 
 		function generateCap( top ) {
 
-			let centerIndexStart, centerIndexEnd;
+			var centerIndexStart, centerIndexEnd;
 
-			const uv = new Vector2();
-			const vertex = new Vector3();
+			var uv = new Vector2();
+			var vertex = new Vector3();
 
-			let groupCount = 0;
+			var groupCount = 0;
 
-			const radius = ( top === true ) ? radiusTop : radiusBottom;
-			const sign = ( top === true ) ? 1 : - 1;
+			var radius = ( top === true ) ? radiusTop : radiusBottom;
+			var sign = ( top === true ) ? 1 : - 1;
 
 			// save the index of the first center vertex
 			centerIndexStart = index;
@@ -32715,7 +32717,7 @@
 			// because the geometry needs one set of uvs per face,
 			// we must generate a center vertex per face/segment
 
-			for ( let x = 1; x <= radialSegments; x ++ ) {
+			for ( var x = 1; x <= radialSegments; x ++ ) {
 
 				// vertex
 
@@ -32741,13 +32743,13 @@
 
 			// now we generate the surrounding vertices, normals and uvs
 
-			for ( let x = 0; x <= radialSegments; x ++ ) {
+			for ( var x$1 = 0; x$1 <= radialSegments; x$1 ++ ) {
 
-				const u = x / radialSegments;
-				const theta = u * thetaLength + thetaStart;
+				var u = x$1 / radialSegments;
+				var theta = u * thetaLength + thetaStart;
 
-				const cosTheta = Math.cos( theta );
-				const sinTheta = Math.sin( theta );
+				var cosTheta = Math.cos( theta );
+				var sinTheta = Math.sin( theta );
 
 				// vertex
 
@@ -32774,10 +32776,10 @@
 
 			// generate indices
 
-			for ( let x = 0; x < radialSegments; x ++ ) {
+			for ( var x$2 = 0; x$2 < radialSegments; x$2 ++ ) {
 
-				const c = centerIndexStart + x;
-				const i = centerIndexEnd + x;
+				var c = centerIndexStart + x$2;
+				var i = centerIndexEnd + x$2;
 
 				if ( top === true ) {
 
@@ -32904,15 +32906,15 @@
 
 		// buffers
 
-		const indices = [];
-		const vertices = [];
-		const normals = [];
-		const uvs = [];
+		var indices = [];
+		var vertices = [];
+		var normals = [];
+		var uvs = [];
 
 		// helper variables
 
-		const vertex = new Vector3();
-		const uv = new Vector2();
+		var vertex = new Vector3();
+		var uv = new Vector2();
 
 		// center point
 
@@ -32920,9 +32922,9 @@
 		normals.push( 0, 0, 1 );
 		uvs.push( 0.5, 0.5 );
 
-		for ( let s = 0, i = 3; s <= segments; s ++, i += 3 ) {
+		for ( var s = 0, i = 3; s <= segments; s ++, i += 3 ) {
 
-			const segment = thetaStart + s / segments * thetaLength;
+			var segment = thetaStart + s / segments * thetaLength;
 
 			// vertex
 
@@ -32946,9 +32948,9 @@
 
 		// indices
 
-		for ( let i = 1; i <= segments; i ++ ) {
+		for ( var i$1 = 1; i$1 <= segments; i$1 ++ ) {
 
-			indices.push( i, i + 1, 0 );
+			indices.push( i$1, i$1 + 1, 0 );
 
 		}
 
@@ -33996,7 +33998,7 @@
 		Material: Material
 	});
 
-	const AnimationUtils = {
+	var AnimationUtils = {
 
 		// same as Array.prototype.slice, but also works on typed arrays
 		arraySlice: function ( array, from, to ) {
@@ -34017,7 +34019,7 @@
 		convertArray: function ( array, type, forceClone ) {
 
 			if ( ! array || // let 'undefined' and 'null' pass
-				! forceClone && array.constructor === type ) return array;
+				! forceClone && array.constructor === type ) { return array; }
 
 			if ( typeof type.BYTES_PER_ELEMENT === 'number' ) {
 
@@ -34045,9 +34047,9 @@
 
 			}
 
-			const n = times.length;
-			const result = new Array( n );
-			for ( let i = 0; i !== n; ++ i ) result[ i ] = i;
+			var n = times.length;
+			var result = new Array( n );
+			for ( var i = 0; i !== n; ++ i ) { result[ i ] = i; }
 
 			result.sort( compareTime );
 
@@ -34058,14 +34060,14 @@
 		// uses the array previously returned by 'getKeyframeOrder' to sort data
 		sortedArray: function ( values, stride, order ) {
 
-			const nValues = values.length;
-			const result = new values.constructor( nValues );
+			var nValues = values.length;
+			var result = new values.constructor( nValues );
 
-			for ( let i = 0, dstOffset = 0; dstOffset !== nValues; ++ i ) {
+			for ( var i = 0, dstOffset = 0; dstOffset !== nValues; ++ i ) {
 
-				const srcOffset = order[ i ] * stride;
+				var srcOffset = order[ i ] * stride;
 
-				for ( let j = 0; j !== stride; ++ j ) {
+				for ( var j = 0; j !== stride; ++ j ) {
 
 					result[ dstOffset ++ ] = values[ srcOffset + j ];
 
@@ -34080,7 +34082,7 @@
 		// function for parsing AOS keyframe formats
 		flattenJSON: function ( jsonKeys, times, values, valuePropertyName ) {
 
-			let i = 1, key = jsonKeys[ 0 ];
+			var i = 1, key = jsonKeys[ 0 ];
 
 			while ( key !== undefined && key[ valuePropertyName ] === undefined ) {
 
@@ -34088,10 +34090,10 @@
 
 			}
 
-			if ( key === undefined ) return; // no data
+			if ( key === undefined ) { return; } // no data
 
-			let value = key[ valuePropertyName ];
-			if ( value === undefined ) return; // no data
+			var value = key[ valuePropertyName ];
+			if ( value === undefined ) { return; } // no data
 
 			if ( Array.isArray( value ) ) {
 
@@ -34156,29 +34158,29 @@
 
 			fps = fps || 30;
 
-			const clip = sourceClip.clone();
+			var clip = sourceClip.clone();
 
 			clip.name = name;
 
-			const tracks = [];
+			var tracks = [];
 
-			for ( let i = 0; i < clip.tracks.length; ++ i ) {
+			for ( var i = 0; i < clip.tracks.length; ++ i ) {
 
-				const track = clip.tracks[ i ];
-				const valueSize = track.getValueSize();
+				var track = clip.tracks[ i ];
+				var valueSize = track.getValueSize();
 
-				const times = [];
-				const values = [];
+				var times = [];
+				var values = [];
 
-				for ( let j = 0; j < track.times.length; ++ j ) {
+				for ( var j = 0; j < track.times.length; ++ j ) {
 
-					const frame = track.times[ j ] * fps;
+					var frame = track.times[ j ] * fps;
 
-					if ( frame < startFrame || frame >= endFrame ) continue;
+					if ( frame < startFrame || frame >= endFrame ) { continue; }
 
 					times.push( track.times[ j ] );
 
-					for ( let k = 0; k < valueSize; ++ k ) {
+					for ( var k = 0; k < valueSize; ++ k ) {
 
 						values.push( track.values[ j * valueSize + k ] );
 
@@ -34186,7 +34188,7 @@
 
 				}
 
-				if ( times.length === 0 ) continue;
+				if ( times.length === 0 ) { continue; }
 
 				track.times = AnimationUtils.convertArray( times, track.times.constructor );
 				track.values = AnimationUtils.convertArray( values, track.values.constructor );
@@ -34199,13 +34201,13 @@
 
 			// find minimum .times value across all tracks in the trimmed clip
 
-			let minStartTime = Infinity;
+			var minStartTime = Infinity;
 
-			for ( let i = 0; i < clip.tracks.length; ++ i ) {
+			for ( var i$1 = 0; i$1 < clip.tracks.length; ++ i$1 ) {
 
-				if ( minStartTime > clip.tracks[ i ].times[ 0 ] ) {
+				if ( minStartTime > clip.tracks[ i$1 ].times[ 0 ] ) {
 
-					minStartTime = clip.tracks[ i ].times[ 0 ];
+					minStartTime = clip.tracks[ i$1 ].times[ 0 ];
 
 				}
 
@@ -34213,9 +34215,9 @@
 
 			// shift all tracks such that clip begins at t=0
 
-			for ( let i = 0; i < clip.tracks.length; ++ i ) {
+			for ( var i$2 = 0; i$2 < clip.tracks.length; ++ i$2 ) {
 
-				clip.tracks[ i ].shift( - 1 * minStartTime );
+				clip.tracks[ i$2 ].shift( - 1 * minStartTime );
 
 			}
 
@@ -34227,35 +34229,35 @@
 
 		makeClipAdditive: function ( targetClip, referenceFrame, referenceClip, fps ) {
 
-			if ( referenceFrame === undefined ) referenceFrame = 0;
-			if ( referenceClip === undefined ) referenceClip = targetClip;
-			if ( fps === undefined || fps <= 0 ) fps = 30;
+			if ( referenceFrame === undefined ) { referenceFrame = 0; }
+			if ( referenceClip === undefined ) { referenceClip = targetClip; }
+			if ( fps === undefined || fps <= 0 ) { fps = 30; }
 
-			const numTracks = targetClip.tracks.length;
-			const referenceTime = referenceFrame / fps;
+			var numTracks = targetClip.tracks.length;
+			var referenceTime = referenceFrame / fps;
 
 			// Make each track's values relative to the values at the reference frame
-			for ( let i = 0; i < numTracks; ++ i ) {
+			var loop = function ( i ) {
 
-				const referenceTrack = referenceClip.tracks[ i ];
-				const referenceTrackType = referenceTrack.ValueTypeName;
+				var referenceTrack = referenceClip.tracks[ i ];
+				var referenceTrackType = referenceTrack.ValueTypeName;
 
 				// Skip this track if it's non-numeric
-				if ( referenceTrackType === 'bool' || referenceTrackType === 'string' ) continue;
+				if ( referenceTrackType === 'bool' || referenceTrackType === 'string' ) { return; }
 
 				// Find the track in the target clip whose name and type matches the reference track
-				const targetTrack = targetClip.tracks.find( function ( track ) {
+				var targetTrack = targetClip.tracks.find( function ( track ) {
 
 					return track.name === referenceTrack.name
 					&& track.ValueTypeName === referenceTrackType;
 
 				} );
 
-				if ( targetTrack === undefined ) continue;
+				if ( targetTrack === undefined ) { return; }
 
-				const valueSize = referenceTrack.getValueSize();
-				const lastIndex = referenceTrack.times.length - 1;
-				let referenceValue;
+				var valueSize = referenceTrack.getValueSize();
+				var lastIndex = referenceTrack.times.length - 1;
+				var referenceValue = (void 0);
 
 				// Find the value to subtract out of the track
 				if ( referenceTime <= referenceTrack.times[ 0 ] ) {
@@ -34266,13 +34268,13 @@
 				} else if ( referenceTime >= referenceTrack.times[ lastIndex ] ) {
 
 					// Reference frame is after the last keyframe, so just use the last keyframe
-					const startIndex = lastIndex * valueSize;
+					var startIndex = lastIndex * valueSize;
 					referenceValue = AnimationUtils.arraySlice( referenceTrack.values, startIndex );
 
 				} else {
 
 					// Interpolate to the reference value
-					const interpolant = referenceTrack.createInterpolant();
+					var interpolant = referenceTrack.createInterpolant();
 					interpolant.evaluate( referenceTime );
 					referenceValue = interpolant.resultBuffer;
 
@@ -34281,7 +34283,7 @@
 				// Conjugate the quaternion
 				if ( referenceTrackType === 'quaternion' ) {
 
-					const referenceQuat = new Quaternion(
+					var referenceQuat = new Quaternion(
 						referenceValue[ 0 ],
 						referenceValue[ 1 ],
 						referenceValue[ 2 ],
@@ -34293,10 +34295,10 @@
 
 				// Subtract the reference value from all of the track values
 
-				const numTimes = targetTrack.times.length;
-				for ( let j = 0; j < numTimes; ++ j ) {
+				var numTimes = targetTrack.times.length;
+				for ( var j = 0; j < numTimes; ++ j ) {
 
-					const valueStart = j * valueSize;
+					var valueStart = j * valueSize;
 
 					if ( referenceTrackType === 'quaternion' ) {
 
@@ -34313,7 +34315,7 @@
 					} else {
 
 						// Subtract each value for all other numeric track types
-						for ( let k = 0; k < valueSize; ++ k ) {
+						for ( var k = 0; k < valueSize; ++ k ) {
 
 							targetTrack.values[ valueStart + k ] -= referenceValue[ k ];
 
@@ -34323,7 +34325,9 @@
 
 				}
 
-			}
+			};
+
+			for ( var i = 0; i < numTracks; ++ i ) loop( i );
 
 			targetClip.blendMode = AdditiveAnimationBlendMode;
 
@@ -34370,7 +34374,7 @@
 
 		evaluate: function ( t ) {
 
-			let pp = this.parameterPositions,
+			var pp = this.parameterPositions,
 				i1 = this._cachedIndex,
 
 				t1 = pp[ i1 ],
@@ -34380,7 +34384,7 @@
 
 				seek: {
 
-					let right;
+					var right;
 
 					linear_scan: {
 
@@ -34390,11 +34394,11 @@
 						//- 				if ( t >= t1 || t1 === undefined ) {
 						forward_scan: if ( ! ( t < t1 ) ) {
 
-							for ( let giveUpAt = i1 + 2; ; ) {
+							for ( var giveUpAt = i1 + 2; ; ) {
 
 								if ( t1 === undefined ) {
 
-									if ( t < t0 ) break forward_scan;
+									if ( t < t0 ) { break forward_scan; }
 
 									// after end
 
@@ -34404,7 +34408,7 @@
 
 								}
 
-								if ( i1 === giveUpAt ) break; // this loop
+								if ( i1 === giveUpAt ) { break; } // this loop
 
 								t0 = t1;
 								t1 = pp[ ++ i1 ];
@@ -34430,7 +34434,7 @@
 
 							// looping?
 
-							const t1global = pp[ 1 ];
+							var t1global = pp[ 1 ];
 
 							if ( t < t1global ) {
 
@@ -34441,7 +34445,7 @@
 
 							// linear reverse scan
 
-							for ( let giveUpAt = i1 - 2; ; ) {
+							for ( var giveUpAt$1 = i1 - 2; ; ) {
 
 								if ( t0 === undefined ) {
 
@@ -34452,7 +34456,7 @@
 
 								}
 
-								if ( i1 === giveUpAt ) break; // this loop
+								if ( i1 === giveUpAt$1 ) { break; } // this loop
 
 								t1 = t0;
 								t0 = pp[ -- i1 - 1 ];
@@ -34483,7 +34487,7 @@
 
 					while ( i1 < right ) {
 
-						const mid = ( i1 + right ) >>> 1;
+						var mid = ( i1 + right ) >>> 1;
 
 						if ( t < pp[ mid ] ) {
 
@@ -34546,12 +34550,12 @@
 
 			// copies a sample value to the result buffer
 
-			const result = this.resultBuffer,
+			var result = this.resultBuffer,
 				values = this.sampleValues,
 				stride = this.valueSize,
 				offset = index * stride;
 
-			for ( let i = 0; i !== stride; ++ i ) {
+			for ( var i = 0; i !== stride; ++ i ) {
 
 				result[ i ] = values[ offset + i ];
 
@@ -34621,7 +34625,7 @@
 
 		intervalChanged_: function ( i1, t0, t1 ) {
 
-			let pp = this.parameterPositions,
+			var pp = this.parameterPositions,
 				iPrev = i1 - 2,
 				iNext = i1 + 1,
 
@@ -34688,7 +34692,7 @@
 
 			}
 
-			const halfDt = ( t1 - t0 ) * 0.5,
+			var halfDt = ( t1 - t0 ) * 0.5,
 				stride = this.valueSize;
 
 			this._weightPrev = halfDt / ( t0 - tPrev );
@@ -34700,7 +34704,7 @@
 
 		interpolate_: function ( i1, t0, t, t1 ) {
 
-			const result = this.resultBuffer,
+			var result = this.resultBuffer,
 				values = this.sampleValues,
 				stride = this.valueSize,
 
@@ -34714,14 +34718,14 @@
 
 			// evaluate polynomials
 
-			const sP = - wP * ppp + 2 * wP * pp - wP * p;
-			const s0 = ( 1 + wP ) * ppp + ( - 1.5 - 2 * wP ) * pp + ( - 0.5 + wP ) * p + 1;
-			const s1 = ( - 1 - wN ) * ppp + ( 1.5 + wN ) * pp + 0.5 * p;
-			const sN = wN * ppp - wN * pp;
+			var sP = - wP * ppp + 2 * wP * pp - wP * p;
+			var s0 = ( 1 + wP ) * ppp + ( - 1.5 - 2 * wP ) * pp + ( - 0.5 + wP ) * p + 1;
+			var s1 = ( - 1 - wN ) * ppp + ( 1.5 + wN ) * pp + 0.5 * p;
+			var sN = wN * ppp - wN * pp;
 
 			// combine data linearly
 
-			for ( let i = 0; i !== stride; ++ i ) {
+			for ( var i = 0; i !== stride; ++ i ) {
 
 				result[ i ] =
 						sP * values[ oP + i ] +
@@ -34749,7 +34753,7 @@
 
 		interpolate_: function ( i1, t0, t, t1 ) {
 
-			const result = this.resultBuffer,
+			var result = this.resultBuffer,
 				values = this.sampleValues,
 				stride = this.valueSize,
 
@@ -34759,7 +34763,7 @@
 				weight1 = ( t - t0 ) / ( t1 - t0 ),
 				weight0 = 1 - weight1;
 
-			for ( let i = 0; i !== stride; ++ i ) {
+			for ( var i = 0; i !== stride; ++ i ) {
 
 				result[ i ] =
 						values[ offset0 + i ] * weight0 +
@@ -34799,8 +34803,8 @@
 
 	function KeyframeTrack( name, times, values, interpolation ) {
 
-		if ( name === undefined ) throw new Error( 'THREE.KeyframeTrack: track name is undefined' );
-		if ( times === undefined || times.length === 0 ) throw new Error( 'THREE.KeyframeTrack: no keyframes in track named ' + name );
+		if ( name === undefined ) { throw new Error( 'THREE.KeyframeTrack: track name is undefined' ); }
+		if ( times === undefined || times.length === 0 ) { throw new Error( 'THREE.KeyframeTrack: no keyframes in track named ' + name ); }
 
 		this.name = name;
 
@@ -34820,9 +34824,9 @@
 
 		toJSON: function ( track ) {
 
-			const trackType = track.constructor;
+			var trackType = track.constructor;
 
-			let json;
+			var json;
 
 			// derived classes can define a static toJSON method
 			if ( trackType.toJSON !== undefined ) {
@@ -34840,7 +34844,7 @@
 
 				};
 
-				const interpolation = track.getInterpolation();
+				var interpolation = track.getInterpolation();
 
 				if ( interpolation !== track.DefaultInterpolation ) {
 
@@ -34888,7 +34892,7 @@
 
 		setInterpolation: function ( interpolation ) {
 
-			let factoryMethod;
+			var factoryMethod;
 
 			switch ( interpolation ) {
 
@@ -34914,7 +34918,7 @@
 
 			if ( factoryMethod === undefined ) {
 
-				const message = "unsupported interpolation for " +
+				var message = "unsupported interpolation for " +
 					this.ValueTypeName + " keyframe track named " + this.name;
 
 				if ( this.createInterpolant === undefined ) {
@@ -34974,9 +34978,9 @@
 
 			if ( timeOffset !== 0.0 ) {
 
-				const times = this.times;
+				var times = this.times;
 
-				for ( let i = 0, n = times.length; i !== n; ++ i ) {
+				for ( var i = 0, n = times.length; i !== n; ++ i ) {
 
 					times[ i ] += timeOffset;
 
@@ -34993,9 +34997,9 @@
 
 			if ( timeScale !== 1.0 ) {
 
-				const times = this.times;
+				var times = this.times;
 
-				for ( let i = 0, n = times.length; i !== n; ++ i ) {
+				for ( var i = 0, n = times.length; i !== n; ++ i ) {
 
 					times[ i ] *= timeScale;
 
@@ -35011,10 +35015,10 @@
 		// IMPORTANT: We do not shift around keys to the start of the track time, because for interpolated keys this will change their values
 		trim: function ( startTime, endTime ) {
 
-			const times = this.times,
+			var times = this.times,
 				nKeys = times.length;
 
-			let from = 0,
+			var from = 0,
 				to = nKeys - 1;
 
 			while ( from !== nKeys && times[ from ] < startTime ) {
@@ -35041,7 +35045,7 @@
 
 				}
 
-				const stride = this.getValueSize();
+				var stride = this.getValueSize();
 				this.times = AnimationUtils.arraySlice( times, from, to );
 				this.values = AnimationUtils.arraySlice( this.values, from * stride, to * stride );
 
@@ -35054,9 +35058,9 @@
 		// ensure we do not get a GarbageInGarbageOut situation, make sure tracks are at least minimally viable
 		validate: function () {
 
-			let valid = true;
+			var valid = true;
 
-			const valueSize = this.getValueSize();
+			var valueSize = this.getValueSize();
 			if ( valueSize - Math.floor( valueSize ) !== 0 ) {
 
 				console.error( 'THREE.KeyframeTrack: Invalid value size in track.', this );
@@ -35064,7 +35068,7 @@
 
 			}
 
-			const times = this.times,
+			var times = this.times,
 				values = this.values,
 
 				nKeys = times.length;
@@ -35076,11 +35080,11 @@
 
 			}
 
-			let prevTime = null;
+			var prevTime = null;
 
-			for ( let i = 0; i !== nKeys; i ++ ) {
+			for ( var i = 0; i !== nKeys; i ++ ) {
 
-				const currTime = times[ i ];
+				var currTime = times[ i ];
 
 				if ( typeof currTime === 'number' && isNaN( currTime ) ) {
 
@@ -35106,13 +35110,13 @@
 
 				if ( AnimationUtils.isTypedArray( values ) ) {
 
-					for ( let i = 0, n = values.length; i !== n; ++ i ) {
+					for ( var i$1 = 0, n = values.length; i$1 !== n; ++ i$1 ) {
 
-						const value = values[ i ];
+						var value = values[ i$1 ];
 
 						if ( isNaN( value ) ) {
 
-							console.error( 'THREE.KeyframeTrack: Value is not a valid number.', this, i, value );
+							console.error( 'THREE.KeyframeTrack: Value is not a valid number.', this, i$1, value );
 							valid = false;
 							break;
 
@@ -35133,7 +35137,7 @@
 		optimize: function () {
 
 			// times or values may be shared with other tracks, so overwriting is unsafe
-			const times = AnimationUtils.arraySlice( this.times ),
+			var times = AnimationUtils.arraySlice( this.times ),
 				values = AnimationUtils.arraySlice( this.values ),
 				stride = this.getValueSize(),
 
@@ -35141,14 +35145,14 @@
 
 				lastIndex = times.length - 1;
 
-			let writeIndex = 1;
+			var writeIndex = 1;
 
-			for ( let i = 1; i < lastIndex; ++ i ) {
+			for ( var i = 1; i < lastIndex; ++ i ) {
 
-				let keep = false;
+				var keep = false;
 
-				const time = times[ i ];
-				const timeNext = times[ i + 1 ];
+				var time = times[ i ];
+				var timeNext = times[ i + 1 ];
 
 				// remove adjacent keyframes scheduled at the same time
 
@@ -35158,13 +35162,13 @@
 
 						// remove unnecessary keyframes same as their neighbors
 
-						const offset = i * stride,
+						var offset = i * stride,
 							offsetP = offset - stride,
 							offsetN = offset + stride;
 
-						for ( let j = 0; j !== stride; ++ j ) {
+						for ( var j = 0; j !== stride; ++ j ) {
 
-							const value = values[ offset + j ];
+							var value = values[ offset + j ];
 
 							if ( value !== values[ offsetP + j ] ||
 								value !== values[ offsetN + j ] ) {
@@ -35192,12 +35196,12 @@
 
 						times[ writeIndex ] = times[ i ];
 
-						const readOffset = i * stride,
+						var readOffset = i * stride,
 							writeOffset = writeIndex * stride;
 
-						for ( let j = 0; j !== stride; ++ j ) {
+						for ( var j$1 = 0; j$1 !== stride; ++ j$1 ) {
 
-							values[ writeOffset + j ] = values[ readOffset + j ];
+							values[ writeOffset + j$1 ] = values[ readOffset + j$1 ];
 
 						}
 
@@ -35215,9 +35219,9 @@
 
 				times[ writeIndex ] = times[ lastIndex ];
 
-				for ( let readOffset = lastIndex * stride, writeOffset = writeIndex * stride, j = 0; j !== stride; ++ j ) {
+				for ( var readOffset$1 = lastIndex * stride, writeOffset$1 = writeIndex * stride, j$2 = 0; j$2 !== stride; ++ j$2 ) {
 
-					values[ writeOffset + j ] = values[ readOffset + j ];
+					values[ writeOffset$1 + j$2 ] = values[ readOffset$1 + j$2 ];
 
 				}
 
@@ -35243,11 +35247,11 @@
 
 		clone: function () {
 
-			const times = AnimationUtils.arraySlice( this.times, 0 );
-			const values = AnimationUtils.arraySlice( this.values, 0 );
+			var times = AnimationUtils.arraySlice( this.times, 0 );
+			var values = AnimationUtils.arraySlice( this.values, 0 );
 
-			const TypedKeyframeTrack = this.constructor;
-			const track = new TypedKeyframeTrack( this.name, times, values );
+			var TypedKeyframeTrack = this.constructor;
+			var track = new TypedKeyframeTrack( this.name, times, values );
 
 			// Interpolant argument to constructor is not saved, so copy the factory method directly.
 			track.createInterpolant = this.createInterpolant;
@@ -35349,15 +35353,15 @@
 
 		interpolate_: function ( i1, t0, t, t1 ) {
 
-			const result = this.resultBuffer,
+			var result = this.resultBuffer,
 				values = this.sampleValues,
 				stride = this.valueSize,
 
 				alpha = ( t - t0 ) / ( t1 - t0 );
 
-			let offset = i1 * stride;
+			var offset = i1 * stride;
 
-			for ( let end = offset + stride; offset !== end; offset += 4 ) {
+			for ( var end = offset + stride; offset !== end; offset += 4 ) {
 
 				Quaternion.slerpFlat( result, 0, values, offset - stride, values, offset, alpha );
 
@@ -35514,11 +35518,11 @@
 
 		}
 
-		const trackType = getTrackTypeForValueTypeName( json.type );
+		var trackType = getTrackTypeForValueTypeName( json.type );
 
 		if ( json.times === undefined ) {
 
-			const times = [], values = [];
+			var times = [], values = [];
 
 			AnimationUtils.flattenJSON( json.keys, times, values, 'value' );
 
@@ -35545,11 +35549,11 @@
 
 		parse: function ( json ) {
 
-			const tracks = [],
+			var tracks = [],
 				jsonTracks = json.tracks,
 				frameTime = 1.0 / ( json.fps || 1.0 );
 
-			for ( let i = 0, n = jsonTracks.length; i !== n; ++ i ) {
+			for ( var i = 0, n = jsonTracks.length; i !== n; ++ i ) {
 
 				tracks.push( parseKeyframeTrack( jsonTracks[ i ] ).scale( frameTime ) );
 
@@ -35561,10 +35565,10 @@
 
 		toJSON: function ( clip ) {
 
-			const tracks = [],
+			var tracks = [],
 				clipTracks = clip.tracks;
 
-			const json = {
+			var json = {
 
 				'name': clip.name,
 				'duration': clip.duration,
@@ -35574,7 +35578,7 @@
 
 			};
 
-			for ( let i = 0, n = clipTracks.length; i !== n; ++ i ) {
+			for ( var i = 0, n = clipTracks.length; i !== n; ++ i ) {
 
 				tracks.push( KeyframeTrack.toJSON( clipTracks[ i ] ) );
 
@@ -35586,13 +35590,13 @@
 
 		CreateFromMorphTargetSequence: function ( name, morphTargetSequence, fps, noLoop ) {
 
-			const numMorphTargets = morphTargetSequence.length;
-			const tracks = [];
+			var numMorphTargets = morphTargetSequence.length;
+			var tracks = [];
 
-			for ( let i = 0; i < numMorphTargets; i ++ ) {
+			for ( var i = 0; i < numMorphTargets; i ++ ) {
 
-				let times = [];
-				let values = [];
+				var times = [];
+				var values = [];
 
 				times.push(
 					( i + numMorphTargets - 1 ) % numMorphTargets,
@@ -35601,7 +35605,7 @@
 
 				values.push( 0, 1, 0 );
 
-				const order = AnimationUtils.getKeyframeOrder( times );
+				var order = AnimationUtils.getKeyframeOrder( times );
 				times = AnimationUtils.sortedArray( times, 1, order );
 				values = AnimationUtils.sortedArray( values, 1, order );
 
@@ -35628,16 +35632,16 @@
 
 		findByName: function ( objectOrClipArray, name ) {
 
-			let clipArray = objectOrClipArray;
+			var clipArray = objectOrClipArray;
 
 			if ( ! Array.isArray( objectOrClipArray ) ) {
 
-				const o = objectOrClipArray;
+				var o = objectOrClipArray;
 				clipArray = o.geometry && o.geometry.animations || o.animations;
 
 			}
 
-			for ( let i = 0; i < clipArray.length; i ++ ) {
+			for ( var i = 0; i < clipArray.length; i ++ ) {
 
 				if ( clipArray[ i ].name === name ) {
 
@@ -35653,24 +35657,24 @@
 
 		CreateClipsFromMorphTargetSequences: function ( morphTargets, fps, noLoop ) {
 
-			const animationToMorphTargets = {};
+			var animationToMorphTargets = {};
 
 			// tested with https://regex101.com/ on trick sequences
 			// such flamingo_flyA_003, flamingo_run1_003, crdeath0059
-			const pattern = /^([\w-]*?)([\d]+)$/;
+			var pattern = /^([\w-]*?)([\d]+)$/;
 
 			// sort morph target names into animation groups based
 			// patterns like Walk_001, Walk_002, Run_001, Run_002
-			for ( let i = 0, il = morphTargets.length; i < il; i ++ ) {
+			for ( var i = 0, il = morphTargets.length; i < il; i ++ ) {
 
-				const morphTarget = morphTargets[ i ];
-				const parts = morphTarget.name.match( pattern );
+				var morphTarget = morphTargets[ i ];
+				var parts = morphTarget.name.match( pattern );
 
 				if ( parts && parts.length > 1 ) {
 
-					const name = parts[ 1 ];
+					var name = parts[ 1 ];
 
-					let animationMorphTargets = animationToMorphTargets[ name ];
+					var animationMorphTargets = animationToMorphTargets[ name ];
 
 					if ( ! animationMorphTargets ) {
 
@@ -35684,11 +35688,11 @@
 
 			}
 
-			const clips = [];
+			var clips = [];
 
-			for ( const name in animationToMorphTargets ) {
+			for ( var name$1 in animationToMorphTargets ) {
 
-				clips.push( AnimationClip.CreateFromMorphTargetSequence( name, animationToMorphTargets[ name ], fps, noLoop ) );
+				clips.push( AnimationClip.CreateFromMorphTargetSequence( name$1, animationToMorphTargets[ name$1 ], fps, noLoop ) );
 
 			}
 
@@ -35706,13 +35710,13 @@
 
 			}
 
-			const addNonemptyTrack = function ( trackType, trackName, animationKeys, propertyName, destTracks ) {
+			var addNonemptyTrack = function ( trackType, trackName, animationKeys, propertyName, destTracks ) {
 
 				// only return track if there are actually keys.
 				if ( animationKeys.length !== 0 ) {
 
-					const times = [];
-					const values = [];
+					var times = [];
+					var values = [];
 
 					AnimationUtils.flattenJSON( animationKeys, times, values, propertyName );
 
@@ -35727,37 +35731,37 @@
 
 			};
 
-			const tracks = [];
+			var tracks = [];
 
-			const clipName = animation.name || 'default';
-			const fps = animation.fps || 30;
-			const blendMode = animation.blendMode;
+			var clipName = animation.name || 'default';
+			var fps = animation.fps || 30;
+			var blendMode = animation.blendMode;
 
 			// automatic length determination in AnimationClip.
-			let duration = animation.length || - 1;
+			var duration = animation.length || - 1;
 
-			const hierarchyTracks = animation.hierarchy || [];
+			var hierarchyTracks = animation.hierarchy || [];
 
-			for ( let h = 0; h < hierarchyTracks.length; h ++ ) {
+			for ( var h = 0; h < hierarchyTracks.length; h ++ ) {
 
-				const animationKeys = hierarchyTracks[ h ].keys;
+				var animationKeys = hierarchyTracks[ h ].keys;
 
 				// skip empty tracks
-				if ( ! animationKeys || animationKeys.length === 0 ) continue;
+				if ( ! animationKeys || animationKeys.length === 0 ) { continue; }
 
 				// process morph targets
 				if ( animationKeys[ 0 ].morphTargets ) {
 
 					// figure out all morph targets used in this track
-					const morphTargetNames = {};
+					var morphTargetNames = {};
 
-					let k;
+					var k = (void 0);
 
 					for ( k = 0; k < animationKeys.length; k ++ ) {
 
 						if ( animationKeys[ k ].morphTargets ) {
 
-							for ( let m = 0; m < animationKeys[ k ].morphTargets.length; m ++ ) {
+							for ( var m = 0; m < animationKeys[ k ].morphTargets.length; m ++ ) {
 
 								morphTargetNames[ animationKeys[ k ].morphTargets[ m ] ] = - 1;
 
@@ -35770,14 +35774,14 @@
 					// create a track for each morph target with all zero
 					// morphTargetInfluences except for the keys in which
 					// the morphTarget is named.
-					for ( const morphTargetName in morphTargetNames ) {
+					for ( var morphTargetName in morphTargetNames ) {
 
-						const times = [];
-						const values = [];
+						var times = [];
+						var values = [];
 
-						for ( let m = 0; m !== animationKeys[ k ].morphTargets.length; ++ m ) {
+						for ( var m$1 = 0; m$1 !== animationKeys[ k ].morphTargets.length; ++ m$1 ) {
 
-							const animationKey = animationKeys[ k ];
+							var animationKey = animationKeys[ k ];
 
 							times.push( animationKey.time );
 							values.push( ( animationKey.morphTarget === morphTargetName ) ? 1 : 0 );
@@ -35794,7 +35798,7 @@
 
 					// ...assume skeletal animation
 
-					const boneName = '.bones[' + bones[ h ].name + ']';
+					var boneName = '.bones[' + bones[ h ].name + ']';
 
 					addNonemptyTrack(
 						VectorKeyframeTrack, boneName + '.position',
@@ -35818,7 +35822,7 @@
 
 			}
 
-			const clip = new AnimationClip( clipName, duration, tracks, blendMode );
+			var clip = new AnimationClip( clipName, duration, tracks, blendMode );
 
 			return clip;
 
@@ -35830,12 +35834,12 @@
 
 		resetDuration: function () {
 
-			const tracks = this.tracks;
-			let duration = 0;
+			var tracks = this.tracks;
+			var duration = 0;
 
-			for ( let i = 0, n = tracks.length; i !== n; ++ i ) {
+			for ( var i = 0, n = tracks.length; i !== n; ++ i ) {
 
-				const track = this.tracks[ i ];
+				var track = this.tracks[ i ];
 
 				duration = Math.max( duration, track.times[ track.times.length - 1 ] );
 
@@ -35849,7 +35853,7 @@
 
 		trim: function () {
 
-			for ( let i = 0; i < this.tracks.length; i ++ ) {
+			for ( var i = 0; i < this.tracks.length; i ++ ) {
 
 				this.tracks[ i ].trim( 0, this.duration );
 
@@ -35861,9 +35865,9 @@
 
 		validate: function () {
 
-			let valid = true;
+			var valid = true;
 
-			for ( let i = 0; i < this.tracks.length; i ++ ) {
+			for ( var i = 0; i < this.tracks.length; i ++ ) {
 
 				valid = valid && this.tracks[ i ].validate();
 
@@ -35875,7 +35879,7 @@
 
 		optimize: function () {
 
-			for ( let i = 0; i < this.tracks.length; i ++ ) {
+			for ( var i = 0; i < this.tracks.length; i ++ ) {
 
 				this.tracks[ i ].optimize();
 
@@ -35887,9 +35891,9 @@
 
 		clone: function () {
 
-			const tracks = [];
+			var tracks = [];
 
-			for ( let i = 0; i < this.tracks.length; i ++ ) {
+			for ( var i = 0; i < this.tracks.length; i ++ ) {
 
 				tracks.push( this.tracks[ i ].clone() );
 
@@ -35901,7 +35905,7 @@
 
 	} );
 
-	const Cache = {
+	var Cache = {
 
 		enabled: false,
 
@@ -35909,7 +35913,7 @@
 
 		add: function ( key, file ) {
 
-			if ( this.enabled === false ) return;
+			if ( this.enabled === false ) { return; }
 
 			// console.log( 'THREE.Cache', 'Adding key:', key );
 
@@ -35919,7 +35923,7 @@
 
 		get: function ( key ) {
 
-			if ( this.enabled === false ) return;
+			if ( this.enabled === false ) { return; }
 
 			// console.log( 'THREE.Cache', 'Checking key:', key );
 
@@ -35943,13 +35947,13 @@
 
 	function LoadingManager( onLoad, onProgress, onError ) {
 
-		const scope = this;
+		var scope = this;
 
-		let isLoading = false;
-		let itemsLoaded = 0;
-		let itemsTotal = 0;
-		let urlModifier = undefined;
-		const handlers = [];
+		var isLoading = false;
+		var itemsLoaded = 0;
+		var itemsTotal = 0;
+		var urlModifier = undefined;
+		var handlers = [];
 
 		// Refer to #5689 for the reason why we don't set .onStart
 		// in the constructor
@@ -36041,7 +36045,7 @@
 
 		this.removeHandler = function ( regex ) {
 
-			const index = handlers.indexOf( regex );
+			var index = handlers.indexOf( regex );
 
 			if ( index !== - 1 ) {
 
@@ -36055,12 +36059,12 @@
 
 		this.getHandler = function ( file ) {
 
-			for ( let i = 0, l = handlers.length; i < l; i += 2 ) {
+			for ( var i = 0, l = handlers.length; i < l; i += 2 ) {
 
-				const regex = handlers[ i ];
-				const loader = handlers[ i + 1 ];
+				var regex = handlers[ i ];
+				var loader = handlers[ i + 1 ];
 
-				if ( regex.global ) regex.lastIndex = 0; // see #17920
+				if ( regex.global ) { regex.lastIndex = 0; } // see #17920
 
 				if ( regex.test( file ) ) {
 
@@ -36076,7 +36080,7 @@
 
 	}
 
-	const DefaultLoadingManager = new LoadingManager();
+	var DefaultLoadingManager = new LoadingManager();
 
 	function Loader( manager ) {
 
@@ -36095,7 +36099,7 @@
 
 		loadAsync: function ( url, onProgress ) {
 
-			const scope = this;
+			var scope = this;
 
 			return new Promise( function ( resolve, reject ) {
 
@@ -36137,7 +36141,7 @@
 
 	} );
 
-	const loading = {};
+	var loading = {};
 
 	function FileLoader( manager ) {
 
@@ -36151,15 +36155,15 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			if ( url === undefined ) url = '';
+			if ( url === undefined ) { url = ''; }
 
-			if ( this.path !== undefined ) url = this.path + url;
+			if ( this.path !== undefined ) { url = this.path + url; }
 
 			url = this.manager.resolveURL( url );
 
-			const scope = this;
+			var scope = this;
 
-			const cached = Cache.get( url );
+			var cached = Cache.get( url );
 
 			if ( cached !== undefined ) {
 
@@ -36167,7 +36171,7 @@
 
 				setTimeout( function () {
 
-					if ( onLoad ) onLoad( cached );
+					if ( onLoad ) { onLoad( cached ); }
 
 					scope.manager.itemEnd( url );
 
@@ -36194,34 +36198,34 @@
 			}
 
 			// Check for data: URI
-			const dataUriRegex = /^data:(.*?)(;base64)?,(.*)$/;
-			const dataUriRegexResult = url.match( dataUriRegex );
-			let request;
+			var dataUriRegex = /^data:(.*?)(;base64)?,(.*)$/;
+			var dataUriRegexResult = url.match( dataUriRegex );
+			var request;
 
 			// Safari can not handle Data URIs through XMLHttpRequest so process manually
 			if ( dataUriRegexResult ) {
 
-				const mimeType = dataUriRegexResult[ 1 ];
-				const isBase64 = !! dataUriRegexResult[ 2 ];
+				var mimeType = dataUriRegexResult[ 1 ];
+				var isBase64 = !! dataUriRegexResult[ 2 ];
 
-				let data = dataUriRegexResult[ 3 ];
+				var data = dataUriRegexResult[ 3 ];
 				data = decodeURIComponent( data );
 
-				if ( isBase64 ) data = atob( data );
+				if ( isBase64 ) { data = atob( data ); }
 
 				try {
 
-					let response;
-					const responseType = ( this.responseType || '' ).toLowerCase();
+					var response;
+					var responseType = ( this.responseType || '' ).toLowerCase();
 
 					switch ( responseType ) {
 
 						case 'arraybuffer':
 						case 'blob':
 
-							const view = new Uint8Array( data.length );
+							var view = new Uint8Array( data.length );
 
-							for ( let i = 0; i < data.length; i ++ ) {
+							for ( var i = 0; i < data.length; i ++ ) {
 
 								view[ i ] = data.charCodeAt( i );
 
@@ -36241,7 +36245,7 @@
 
 						case 'document':
 
-							const parser = new DOMParser();
+							var parser = new DOMParser();
 							response = parser.parseFromString( data, mimeType );
 
 							break;
@@ -36263,7 +36267,7 @@
 					// Wait for next browser tick like standard XMLHttpRequest event dispatching does
 					setTimeout( function () {
 
-						if ( onLoad ) onLoad( response );
+						if ( onLoad ) { onLoad( response ); }
 
 						scope.manager.itemEnd( url );
 
@@ -36274,7 +36278,7 @@
 					// Wait for next browser tick like standard XMLHttpRequest event dispatching does
 					setTimeout( function () {
 
-						if ( onError ) onError( error );
+						if ( onError ) { onError( error ); }
 
 						scope.manager.itemError( url );
 						scope.manager.itemEnd( url );
@@ -36303,9 +36307,9 @@
 
 				request.addEventListener( 'load', function ( event ) {
 
-					const response = this.response;
+					var response = this.response;
 
-					const callbacks = loading[ url ];
+					var callbacks = loading[ url ];
 
 					delete loading[ url ];
 
@@ -36314,16 +36318,16 @@
 						// Some browsers return HTTP Status 0 when using non-http protocol
 						// e.g. 'file://' or 'data://'. Handle as success.
 
-						if ( this.status === 0 ) console.warn( 'THREE.FileLoader: HTTP Status 0 received.' );
+						if ( this.status === 0 ) { console.warn( 'THREE.FileLoader: HTTP Status 0 received.' ); }
 
 						// Add to cache only on HTTP success, so that we do not cache
 						// error response bodies as proper responses to requests.
 						Cache.add( url, response );
 
-						for ( let i = 0, il = callbacks.length; i < il; i ++ ) {
+						for ( var i = 0, il = callbacks.length; i < il; i ++ ) {
 
-							const callback = callbacks[ i ];
-							if ( callback.onLoad ) callback.onLoad( response );
+							var callback = callbacks[ i ];
+							if ( callback.onLoad ) { callback.onLoad( response ); }
 
 						}
 
@@ -36331,10 +36335,10 @@
 
 					} else {
 
-						for ( let i = 0, il = callbacks.length; i < il; i ++ ) {
+						for ( var i$1 = 0, il$1 = callbacks.length; i$1 < il$1; i$1 ++ ) {
 
-							const callback = callbacks[ i ];
-							if ( callback.onError ) callback.onError( event );
+							var callback$1 = callbacks[ i$1 ];
+							if ( callback$1.onError ) { callback$1.onError( event ); }
 
 						}
 
@@ -36347,12 +36351,12 @@
 
 				request.addEventListener( 'progress', function ( event ) {
 
-					const callbacks = loading[ url ];
+					var callbacks = loading[ url ];
 
-					for ( let i = 0, il = callbacks.length; i < il; i ++ ) {
+					for ( var i = 0, il = callbacks.length; i < il; i ++ ) {
 
-						const callback = callbacks[ i ];
-						if ( callback.onProgress ) callback.onProgress( event );
+						var callback = callbacks[ i ];
+						if ( callback.onProgress ) { callback.onProgress( event ); }
 
 					}
 
@@ -36360,14 +36364,14 @@
 
 				request.addEventListener( 'error', function ( event ) {
 
-					const callbacks = loading[ url ];
+					var callbacks = loading[ url ];
 
 					delete loading[ url ];
 
-					for ( let i = 0, il = callbacks.length; i < il; i ++ ) {
+					for ( var i = 0, il = callbacks.length; i < il; i ++ ) {
 
-						const callback = callbacks[ i ];
-						if ( callback.onError ) callback.onError( event );
+						var callback = callbacks[ i ];
+						if ( callback.onError ) { callback.onError( event ); }
 
 					}
 
@@ -36378,14 +36382,14 @@
 
 				request.addEventListener( 'abort', function ( event ) {
 
-					const callbacks = loading[ url ];
+					var callbacks = loading[ url ];
 
 					delete loading[ url ];
 
-					for ( let i = 0, il = callbacks.length; i < il; i ++ ) {
+					for ( var i = 0, il = callbacks.length; i < il; i ++ ) {
 
-						const callback = callbacks[ i ];
-						if ( callback.onError ) callback.onError( event );
+						var callback = callbacks[ i ];
+						if ( callback.onError ) { callback.onError( event ); }
 
 					}
 
@@ -36394,12 +36398,12 @@
 
 				}, false );
 
-				if ( this.responseType !== undefined ) request.responseType = this.responseType;
-				if ( this.withCredentials !== undefined ) request.withCredentials = this.withCredentials;
+				if ( this.responseType !== undefined ) { request.responseType = this.responseType; }
+				if ( this.withCredentials !== undefined ) { request.withCredentials = this.withCredentials; }
 
-				if ( request.overrideMimeType ) request.overrideMimeType( this.mimeType !== undefined ? this.mimeType : 'text/plain' );
+				if ( request.overrideMimeType ) { request.overrideMimeType( this.mimeType !== undefined ? this.mimeType : 'text/plain' ); }
 
-				for ( const header in this.requestHeader ) {
+				for ( var header in this.requestHeader ) {
 
 					request.setRequestHeader( header, this.requestHeader[ header ] );
 
@@ -36450,9 +36454,9 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const loader = new FileLoader( scope.manager );
+			var loader = new FileLoader( scope.manager );
 			loader.setPath( scope.path );
 			loader.setRequestHeader( scope.requestHeader );
 			loader.load( url, function ( text ) {
@@ -36483,11 +36487,11 @@
 
 		parse: function ( json ) {
 
-			const animations = [];
+			var animations = [];
 
-			for ( let i = 0; i < json.length; i ++ ) {
+			for ( var i = 0; i < json.length; i ++ ) {
 
-				const clip = AnimationClip.parse( json[ i ] );
+				var clip = AnimationClip.parse( json[ i ] );
 
 				animations.push( clip );
 
@@ -36517,25 +36521,25 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const images = [];
+			var images = [];
 
-			const texture = new CompressedTexture();
+			var texture = new CompressedTexture();
 			texture.image = images;
 
-			const loader = new FileLoader( this.manager );
+			var loader = new FileLoader( this.manager );
 			loader.setPath( this.path );
 			loader.setResponseType( 'arraybuffer' );
 			loader.setRequestHeader( this.requestHeader );
 
-			let loaded = 0;
+			var loaded = 0;
 
 			function loadTexture( i ) {
 
 				loader.load( url[ i ], function ( buffer ) {
 
-					const texDatas = scope.parse( buffer, true );
+					var texDatas = scope.parse( buffer, true );
 
 					images[ i ] = {
 						width: texDatas.width,
@@ -36549,12 +36553,12 @@
 					if ( loaded === 6 ) {
 
 						if ( texDatas.mipmapCount === 1 )
-							texture.minFilter = LinearFilter;
+							{ texture.minFilter = LinearFilter; }
 
 						texture.format = texDatas.format;
 						texture.needsUpdate = true;
 
-						if ( onLoad ) onLoad( texture );
+						if ( onLoad ) { onLoad( texture ); }
 
 					}
 
@@ -36564,7 +36568,7 @@
 
 			if ( Array.isArray( url ) ) {
 
-				for ( let i = 0, il = url.length; i < il; ++ i ) {
+				for ( var i = 0, il = url.length; i < il; ++ i ) {
 
 					loadTexture( i );
 
@@ -36576,17 +36580,17 @@
 
 				loader.load( url, function ( buffer ) {
 
-					const texDatas = scope.parse( buffer, true );
+					var texDatas = scope.parse( buffer, true );
 
 					if ( texDatas.isCubemap ) {
 
-						const faces = texDatas.mipmaps.length / texDatas.mipmapCount;
+						var faces = texDatas.mipmaps.length / texDatas.mipmapCount;
 
-						for ( let f = 0; f < faces; f ++ ) {
+						for ( var f = 0; f < faces; f ++ ) {
 
 							images[ f ] = { mipmaps: [] };
 
-							for ( let i = 0; i < texDatas.mipmapCount; i ++ ) {
+							for ( var i = 0; i < texDatas.mipmapCount; i ++ ) {
 
 								images[ f ].mipmaps.push( texDatas.mipmaps[ f * texDatas.mipmapCount + i ] );
 								images[ f ].format = texDatas.format;
@@ -36614,7 +36618,7 @@
 					texture.format = texDatas.format;
 					texture.needsUpdate = true;
 
-					if ( onLoad ) onLoad( texture );
+					if ( onLoad ) { onLoad( texture ); }
 
 				}, onProgress, onError );
 
@@ -36644,19 +36648,19 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const texture = new DataTexture();
+			var texture = new DataTexture();
 
-			const loader = new FileLoader( this.manager );
+			var loader = new FileLoader( this.manager );
 			loader.setResponseType( 'arraybuffer' );
 			loader.setRequestHeader( this.requestHeader );
 			loader.setPath( this.path );
 			loader.load( url, function ( buffer ) {
 
-				const texData = scope.parse( buffer );
+				var texData = scope.parse( buffer );
 
-				if ( ! texData ) return;
+				if ( ! texData ) { return; }
 
 				if ( texData.image !== undefined ) {
 
@@ -36705,7 +36709,7 @@
 
 				texture.needsUpdate = true;
 
-				if ( onLoad ) onLoad( texture, texData );
+				if ( onLoad ) { onLoad( texture, texData ); }
 
 			}, onProgress, onError );
 
@@ -36728,13 +36732,13 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			if ( this.path !== undefined ) url = this.path + url;
+			if ( this.path !== undefined ) { url = this.path + url; }
 
 			url = this.manager.resolveURL( url );
 
-			const scope = this;
+			var scope = this;
 
-			const cached = Cache.get( url );
+			var cached = Cache.get( url );
 
 			if ( cached !== undefined ) {
 
@@ -36742,7 +36746,7 @@
 
 				setTimeout( function () {
 
-					if ( onLoad ) onLoad( cached );
+					if ( onLoad ) { onLoad( cached ); }
 
 					scope.manager.itemEnd( url );
 
@@ -36752,7 +36756,7 @@
 
 			}
 
-			const image = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'img' );
+			var image = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'img' );
 
 			function onImageLoad() {
 
@@ -36761,7 +36765,7 @@
 
 				Cache.add( url, this );
 
-				if ( onLoad ) onLoad( this );
+				if ( onLoad ) { onLoad( this ); }
 
 				scope.manager.itemEnd( url );
 
@@ -36772,7 +36776,7 @@
 				image.removeEventListener( 'load', onImageLoad, false );
 				image.removeEventListener( 'error', onImageError, false );
 
-				if ( onError ) onError( event );
+				if ( onError ) { onError( event ); }
 
 				scope.manager.itemError( url );
 				scope.manager.itemEnd( url );
@@ -36784,7 +36788,7 @@
 
 			if ( url.substr( 0, 5 ) !== 'data:' ) {
 
-				if ( this.crossOrigin !== undefined ) image.crossOrigin = this.crossOrigin;
+				if ( this.crossOrigin !== undefined ) { image.crossOrigin = this.crossOrigin; }
 
 			}
 
@@ -36810,13 +36814,13 @@
 
 		load: function ( urls, onLoad, onProgress, onError ) {
 
-			const texture = new CubeTexture();
+			var texture = new CubeTexture();
 
-			const loader = new ImageLoader( this.manager );
+			var loader = new ImageLoader( this.manager );
 			loader.setCrossOrigin( this.crossOrigin );
 			loader.setPath( this.path );
 
-			let loaded = 0;
+			var loaded = 0;
 
 			function loadTexture( i ) {
 
@@ -36830,7 +36834,7 @@
 
 						texture.needsUpdate = true;
 
-						if ( onLoad ) onLoad( texture );
+						if ( onLoad ) { onLoad( texture ); }
 
 					}
 
@@ -36838,7 +36842,7 @@
 
 			}
 
-			for ( let i = 0; i < urls.length; ++ i ) {
+			for ( var i = 0; i < urls.length; ++ i ) {
 
 				loadTexture( i );
 
@@ -36862,9 +36866,9 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const texture = new Texture();
+			var texture = new Texture();
 
-			const loader = new ImageLoader( this.manager );
+			var loader = new ImageLoader( this.manager );
 			loader.setCrossOrigin( this.crossOrigin );
 			loader.setPath( this.path );
 
@@ -36873,7 +36877,7 @@
 				texture.image = image;
 
 				// JPEGs can't have an alpha channel, so memory can be saved by storing them as RGB.
-				const isJPEG = url.search( /\.jpe?g($|\?)/i ) > 0 || url.search( /^data\:image\/jpeg/ ) === 0;
+				var isJPEG = url.search( /\.jpe?g($|\?)/i ) > 0 || url.search( /^data\:image\/jpeg/ ) === 0;
 
 				texture.format = isJPEG ? RGBFormat : RGBAFormat;
 				texture.needsUpdate = true;
@@ -36947,7 +36951,7 @@
 
 		getPointAt: function ( u, optionalTarget ) {
 
-			const t = this.getUtoTmapping( u );
+			var t = this.getUtoTmapping( u );
 			return this.getPoint( t, optionalTarget );
 
 		},
@@ -36956,11 +36960,11 @@
 
 		getPoints: function ( divisions ) {
 
-			if ( divisions === undefined ) divisions = 5;
+			if ( divisions === undefined ) { divisions = 5; }
 
-			const points = [];
+			var points = [];
 
-			for ( let d = 0; d <= divisions; d ++ ) {
+			for ( var d = 0; d <= divisions; d ++ ) {
 
 				points.push( this.getPoint( d / divisions ) );
 
@@ -36974,11 +36978,11 @@
 
 		getSpacedPoints: function ( divisions ) {
 
-			if ( divisions === undefined ) divisions = 5;
+			if ( divisions === undefined ) { divisions = 5; }
 
-			const points = [];
+			var points = [];
 
-			for ( let d = 0; d <= divisions; d ++ ) {
+			for ( var d = 0; d <= divisions; d ++ ) {
 
 				points.push( this.getPointAt( d / divisions ) );
 
@@ -36992,7 +36996,7 @@
 
 		getLength: function () {
 
-			const lengths = this.getLengths();
+			var lengths = this.getLengths();
 			return lengths[ lengths.length - 1 ];
 
 		},
@@ -37001,7 +37005,7 @@
 
 		getLengths: function ( divisions ) {
 
-			if ( divisions === undefined ) divisions = this.arcLengthDivisions;
+			if ( divisions === undefined ) { divisions = this.arcLengthDivisions; }
 
 			if ( this.cacheArcLengths &&
 				( this.cacheArcLengths.length === divisions + 1 ) &&
@@ -37013,13 +37017,13 @@
 
 			this.needsUpdate = false;
 
-			const cache = [];
-			let current, last = this.getPoint( 0 );
-			let sum = 0;
+			var cache = [];
+			var current, last = this.getPoint( 0 );
+			var sum = 0;
 
 			cache.push( 0 );
 
-			for ( let p = 1; p <= divisions; p ++ ) {
+			for ( var p = 1; p <= divisions; p ++ ) {
 
 				current = this.getPoint( p / divisions );
 				sum += current.distanceTo( last );
@@ -37045,11 +37049,11 @@
 
 		getUtoTmapping: function ( u, distance ) {
 
-			const arcLengths = this.getLengths();
+			var arcLengths = this.getLengths();
 
-			let i = 0, il = arcLengths.length;
+			var i = 0, il = arcLengths.length;
 
-			let targetArcLength; // The targeted u distance value to get
+			var targetArcLength; // The targeted u distance value to get
 
 			if ( distance ) {
 
@@ -37063,7 +37067,7 @@
 
 			// binary search for the index with largest value smaller than target u distance
 
-			let low = 0, high = il - 1, comparison;
+			var low = 0, high = il - 1, comparison;
 
 			while ( low <= high ) {
 
@@ -37100,18 +37104,18 @@
 
 			// we could get finer grain at lengths, or use simple interpolation between two points
 
-			const lengthBefore = arcLengths[ i ];
-			const lengthAfter = arcLengths[ i + 1 ];
+			var lengthBefore = arcLengths[ i ];
+			var lengthAfter = arcLengths[ i + 1 ];
 
-			const segmentLength = lengthAfter - lengthBefore;
+			var segmentLength = lengthAfter - lengthBefore;
 
 			// determine where we are between the 'before' and 'after' points
 
-			const segmentFraction = ( targetArcLength - lengthBefore ) / segmentLength;
+			var segmentFraction = ( targetArcLength - lengthBefore ) / segmentLength;
 
 			// add that fractional amount to t
 
-			const t = ( i + segmentFraction ) / ( il - 1 );
+			var t = ( i + segmentFraction ) / ( il - 1 );
 
 			return t;
 
@@ -37124,19 +37128,19 @@
 
 		getTangent: function ( t, optionalTarget ) {
 
-			const delta = 0.0001;
-			let t1 = t - delta;
-			let t2 = t + delta;
+			var delta = 0.0001;
+			var t1 = t - delta;
+			var t2 = t + delta;
 
 			// Capping in case of danger
 
-			if ( t1 < 0 ) t1 = 0;
-			if ( t2 > 1 ) t2 = 1;
+			if ( t1 < 0 ) { t1 = 0; }
+			if ( t2 > 1 ) { t2 = 1; }
 
-			const pt1 = this.getPoint( t1 );
-			const pt2 = this.getPoint( t2 );
+			var pt1 = this.getPoint( t1 );
+			var pt2 = this.getPoint( t2 );
 
-			const tangent = optionalTarget || ( ( pt1.isVector2 ) ? new Vector2() : new Vector3() );
+			var tangent = optionalTarget || ( ( pt1.isVector2 ) ? new Vector2() : new Vector3() );
 
 			tangent.copy( pt2 ).sub( pt1 ).normalize();
 
@@ -37146,7 +37150,7 @@
 
 		getTangentAt: function ( u, optionalTarget ) {
 
-			const t = this.getUtoTmapping( u );
+			var t = this.getUtoTmapping( u );
 			return this.getTangent( t, optionalTarget );
 
 		},
@@ -37155,20 +37159,20 @@
 
 			// see http://www.cs.indiana.edu/pub/techreports/TR425.pdf
 
-			const normal = new Vector3();
+			var normal = new Vector3();
 
-			const tangents = [];
-			const normals = [];
-			const binormals = [];
+			var tangents = [];
+			var normals = [];
+			var binormals = [];
 
-			const vec = new Vector3();
-			const mat = new Matrix4();
+			var vec = new Vector3();
+			var mat = new Matrix4();
 
 			// compute the tangent vectors for each segment on the curve
 
-			for ( let i = 0; i <= segments; i ++ ) {
+			for ( var i = 0; i <= segments; i ++ ) {
 
-				const u = i / segments;
+				var u = i / segments;
 
 				tangents[ i ] = this.getTangentAt( u, new Vector3() );
 				tangents[ i ].normalize();
@@ -37180,10 +37184,10 @@
 
 			normals[ 0 ] = new Vector3();
 			binormals[ 0 ] = new Vector3();
-			let min = Number.MAX_VALUE;
-			const tx = Math.abs( tangents[ 0 ].x );
-			const ty = Math.abs( tangents[ 0 ].y );
-			const tz = Math.abs( tangents[ 0 ].z );
+			var min = Number.MAX_VALUE;
+			var tx = Math.abs( tangents[ 0 ].x );
+			var ty = Math.abs( tangents[ 0 ].y );
+			var tz = Math.abs( tangents[ 0 ].z );
 
 			if ( tx <= min ) {
 
@@ -37213,25 +37217,25 @@
 
 			// compute the slowly-varying normal and binormal vectors for each segment on the curve
 
-			for ( let i = 1; i <= segments; i ++ ) {
+			for ( var i$1 = 1; i$1 <= segments; i$1 ++ ) {
 
-				normals[ i ] = normals[ i - 1 ].clone();
+				normals[ i$1 ] = normals[ i$1 - 1 ].clone();
 
-				binormals[ i ] = binormals[ i - 1 ].clone();
+				binormals[ i$1 ] = binormals[ i$1 - 1 ].clone();
 
-				vec.crossVectors( tangents[ i - 1 ], tangents[ i ] );
+				vec.crossVectors( tangents[ i$1 - 1 ], tangents[ i$1 ] );
 
 				if ( vec.length() > Number.EPSILON ) {
 
 					vec.normalize();
 
-					const theta = Math.acos( MathUtils.clamp( tangents[ i - 1 ].dot( tangents[ i ] ), - 1, 1 ) ); // clamp for floating pt errors
+					var theta = Math.acos( MathUtils.clamp( tangents[ i$1 - 1 ].dot( tangents[ i$1 ] ), - 1, 1 ) ); // clamp for floating pt errors
 
-					normals[ i ].applyMatrix4( mat.makeRotationAxis( vec, theta ) );
+					normals[ i$1 ].applyMatrix4( mat.makeRotationAxis( vec, theta ) );
 
 				}
 
-				binormals[ i ].crossVectors( tangents[ i ], normals[ i ] );
+				binormals[ i$1 ].crossVectors( tangents[ i$1 ], normals[ i$1 ] );
 
 			}
 
@@ -37239,20 +37243,20 @@
 
 			if ( closed === true ) {
 
-				let theta = Math.acos( MathUtils.clamp( normals[ 0 ].dot( normals[ segments ] ), - 1, 1 ) );
-				theta /= segments;
+				var theta$1 = Math.acos( MathUtils.clamp( normals[ 0 ].dot( normals[ segments ] ), - 1, 1 ) );
+				theta$1 /= segments;
 
 				if ( tangents[ 0 ].dot( vec.crossVectors( normals[ 0 ], normals[ segments ] ) ) > 0 ) {
 
-					theta = - theta;
+					theta$1 = - theta$1;
 
 				}
 
-				for ( let i = 1; i <= segments; i ++ ) {
+				for ( var i$2 = 1; i$2 <= segments; i$2 ++ ) {
 
 					// twist a little...
-					normals[ i ].applyMatrix4( mat.makeRotationAxis( tangents[ i ], theta * i ) );
-					binormals[ i ].crossVectors( tangents[ i ], normals[ i ] );
+					normals[ i$2 ].applyMatrix4( mat.makeRotationAxis( tangents[ i$2 ], theta$1 * i$2 ) );
+					binormals[ i$2 ].crossVectors( tangents[ i$2 ], normals[ i$2 ] );
 
 				}
 
@@ -37282,7 +37286,7 @@
 
 		toJSON: function () {
 
-			const data = {
+			var data = {
 				metadata: {
 					version: 4.5,
 					type: 'Curve',
@@ -37335,15 +37339,15 @@
 
 	EllipseCurve.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector2();
+		var point = optionalTarget || new Vector2();
 
-		const twoPi = Math.PI * 2;
-		let deltaAngle = this.aEndAngle - this.aStartAngle;
-		const samePoints = Math.abs( deltaAngle ) < Number.EPSILON;
+		var twoPi = Math.PI * 2;
+		var deltaAngle = this.aEndAngle - this.aStartAngle;
+		var samePoints = Math.abs( deltaAngle ) < Number.EPSILON;
 
 		// ensures that deltaAngle is 0 .. 2 PI
-		while ( deltaAngle < 0 ) deltaAngle += twoPi;
-		while ( deltaAngle > twoPi ) deltaAngle -= twoPi;
+		while ( deltaAngle < 0 ) { deltaAngle += twoPi; }
+		while ( deltaAngle > twoPi ) { deltaAngle -= twoPi; }
 
 		if ( deltaAngle < Number.EPSILON ) {
 
@@ -37373,17 +37377,17 @@
 
 		}
 
-		const angle = this.aStartAngle + t * deltaAngle;
-		let x = this.aX + this.xRadius * Math.cos( angle );
-		let y = this.aY + this.yRadius * Math.sin( angle );
+		var angle = this.aStartAngle + t * deltaAngle;
+		var x = this.aX + this.xRadius * Math.cos( angle );
+		var y = this.aY + this.yRadius * Math.sin( angle );
 
 		if ( this.aRotation !== 0 ) {
 
-			const cos = Math.cos( this.aRotation );
-			const sin = Math.sin( this.aRotation );
+			var cos = Math.cos( this.aRotation );
+			var sin = Math.sin( this.aRotation );
 
-			const tx = x - this.aX;
-			const ty = y - this.aY;
+			var tx = x - this.aX;
+			var ty = y - this.aY;
 
 			// Rotate the point about the center of the ellipse.
 			x = tx * cos - ty * sin + this.aX;
@@ -37419,7 +37423,7 @@
 
 	EllipseCurve.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.aX = this.aX;
 		data.aY = this.aY;
@@ -37494,7 +37498,7 @@
 
 	function CubicPoly() {
 
-		let c0 = 0, c1 = 0, c2 = 0, c3 = 0;
+		var c0 = 0, c1 = 0, c2 = 0, c3 = 0;
 
 		/*
 		 * Compute coefficients for a cubic polynomial
@@ -37524,8 +37528,8 @@
 			initNonuniformCatmullRom: function ( x0, x1, x2, x3, dt0, dt1, dt2 ) {
 
 				// compute tangents when parameterized in [t1,t2]
-				let t1 = ( x1 - x0 ) / dt0 - ( x2 - x0 ) / ( dt0 + dt1 ) + ( x2 - x1 ) / dt1;
-				let t2 = ( x2 - x1 ) / dt1 - ( x3 - x1 ) / ( dt1 + dt2 ) + ( x3 - x2 ) / dt2;
+				var t1 = ( x1 - x0 ) / dt0 - ( x2 - x0 ) / ( dt0 + dt1 ) + ( x2 - x1 ) / dt1;
+				var t2 = ( x2 - x1 ) / dt1 - ( x3 - x1 ) / ( dt1 + dt2 ) + ( x3 - x2 ) / dt2;
 
 				// rescale tangents for parametrization in [0,1]
 				t1 *= dt1;
@@ -37537,8 +37541,8 @@
 
 			calc: function ( t ) {
 
-				const t2 = t * t;
-				const t3 = t2 * t;
+				var t2 = t * t;
+				var t3 = t2 * t;
 				return c0 + c1 * t + c2 * t2 + c3 * t3;
 
 			}
@@ -37549,8 +37553,8 @@
 
 	//
 
-	const tmp = new Vector3();
-	const px = new CubicPoly(), py = new CubicPoly(), pz = new CubicPoly();
+	var tmp = new Vector3();
+	var px = new CubicPoly(), py = new CubicPoly(), pz = new CubicPoly();
 
 	function CatmullRomCurve3( points, closed, curveType, tension ) {
 
@@ -37572,14 +37576,14 @@
 
 	CatmullRomCurve3.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector3();
+		var point = optionalTarget || new Vector3();
 
-		const points = this.points;
-		const l = points.length;
+		var points = this.points;
+		var l = points.length;
 
-		const p = ( l - ( this.closed ? 0 : 1 ) ) * t;
-		let intPoint = Math.floor( p );
-		let weight = p - intPoint;
+		var p = ( l - ( this.closed ? 0 : 1 ) ) * t;
+		var intPoint = Math.floor( p );
+		var weight = p - intPoint;
 
 		if ( this.closed ) {
 
@@ -37592,7 +37596,7 @@
 
 		}
 
-		let p0, p1, p2, p3; // 4 points
+		var p0, p1, p2, p3; // 4 points
 
 		if ( this.closed || intPoint > 0 ) {
 
@@ -37624,15 +37628,15 @@
 		if ( this.curveType === 'centripetal' || this.curveType === 'chordal' ) {
 
 			// init Centripetal / Chordal Catmull-Rom
-			const pow = this.curveType === 'chordal' ? 0.5 : 0.25;
-			let dt0 = Math.pow( p0.distanceToSquared( p1 ), pow );
-			let dt1 = Math.pow( p1.distanceToSquared( p2 ), pow );
-			let dt2 = Math.pow( p2.distanceToSquared( p3 ), pow );
+			var pow = this.curveType === 'chordal' ? 0.5 : 0.25;
+			var dt0 = Math.pow( p0.distanceToSquared( p1 ), pow );
+			var dt1 = Math.pow( p1.distanceToSquared( p2 ), pow );
+			var dt2 = Math.pow( p2.distanceToSquared( p3 ), pow );
 
 			// safety check for repeated points
-			if ( dt1 < 1e-4 ) dt1 = 1.0;
-			if ( dt0 < 1e-4 ) dt0 = dt1;
-			if ( dt2 < 1e-4 ) dt2 = dt1;
+			if ( dt1 < 1e-4 ) { dt1 = 1.0; }
+			if ( dt0 < 1e-4 ) { dt0 = dt1; }
+			if ( dt2 < 1e-4 ) { dt2 = dt1; }
 
 			px.initNonuniformCatmullRom( p0.x, p1.x, p2.x, p3.x, dt0, dt1, dt2 );
 			py.initNonuniformCatmullRom( p0.y, p1.y, p2.y, p3.y, dt0, dt1, dt2 );
@@ -37662,9 +37666,9 @@
 
 		this.points = [];
 
-		for ( let i = 0, l = source.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = source.points.length; i < l; i ++ ) {
 
-			const point = source.points[ i ];
+			var point = source.points[ i ];
 
 			this.points.push( point.clone() );
 
@@ -37680,13 +37684,13 @@
 
 	CatmullRomCurve3.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.points = [];
 
-		for ( let i = 0, l = this.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = this.points.length; i < l; i ++ ) {
 
-			const point = this.points[ i ];
+			var point = this.points[ i ];
 			data.points.push( point.toArray() );
 
 		}
@@ -37705,9 +37709,9 @@
 
 		this.points = [];
 
-		for ( let i = 0, l = json.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = json.points.length; i < l; i ++ ) {
 
-			const point = json.points[ i ];
+			var point = json.points[ i ];
 			this.points.push( new Vector3().fromArray( point ) );
 
 		}
@@ -37727,10 +37731,10 @@
 
 	function CatmullRom( t, p0, p1, p2, p3 ) {
 
-		const v0 = ( p2 - p0 ) * 0.5;
-		const v1 = ( p3 - p1 ) * 0.5;
-		const t2 = t * t;
-		const t3 = t * t2;
+		var v0 = ( p2 - p0 ) * 0.5;
+		var v1 = ( p3 - p1 ) * 0.5;
+		var t2 = t * t;
+		var t3 = t * t2;
 		return ( 2 * p1 - 2 * p2 + v0 + v1 ) * t3 + ( - 3 * p1 + 3 * p2 - 2 * v0 - v1 ) * t2 + v0 * t + p1;
 
 	}
@@ -37739,7 +37743,7 @@
 
 	function QuadraticBezierP0( t, p ) {
 
-		const k = 1 - t;
+		var k = 1 - t;
 		return k * k * p;
 
 	}
@@ -37767,14 +37771,14 @@
 
 	function CubicBezierP0( t, p ) {
 
-		const k = 1 - t;
+		var k = 1 - t;
 		return k * k * k * p;
 
 	}
 
 	function CubicBezierP1( t, p ) {
 
-		const k = 1 - t;
+		var k = 1 - t;
 		return 3 * k * k * t * p;
 
 	}
@@ -37818,9 +37822,9 @@
 
 	CubicBezierCurve.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector2();
+		var point = optionalTarget || new Vector2();
 
-		const v0 = this.v0, v1 = this.v1, v2 = this.v2, v3 = this.v3;
+		var v0 = this.v0, v1 = this.v1, v2 = this.v2, v3 = this.v3;
 
 		point.set(
 			CubicBezier( t, v0.x, v1.x, v2.x, v3.x ),
@@ -37846,7 +37850,7 @@
 
 	CubicBezierCurve.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v0 = this.v0.toArray();
 		data.v1 = this.v1.toArray();
@@ -37890,9 +37894,9 @@
 
 	CubicBezierCurve3.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector3();
+		var point = optionalTarget || new Vector3();
 
-		const v0 = this.v0, v1 = this.v1, v2 = this.v2, v3 = this.v3;
+		var v0 = this.v0, v1 = this.v1, v2 = this.v2, v3 = this.v3;
 
 		point.set(
 			CubicBezier( t, v0.x, v1.x, v2.x, v3.x ),
@@ -37919,7 +37923,7 @@
 
 	CubicBezierCurve3.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v0 = this.v0.toArray();
 		data.v1 = this.v1.toArray();
@@ -37961,7 +37965,7 @@
 
 	LineCurve.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector2();
+		var point = optionalTarget || new Vector2();
 
 		if ( t === 1 ) {
 
@@ -37988,7 +37992,7 @@
 
 	LineCurve.prototype.getTangent = function ( t, optionalTarget ) {
 
-		const tangent = optionalTarget || new Vector2();
+		var tangent = optionalTarget || new Vector2();
 
 		tangent.copy( this.v2 ).sub( this.v1 ).normalize();
 
@@ -38009,7 +38013,7 @@
 
 	LineCurve.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v1 = this.v1.toArray();
 		data.v2 = this.v2.toArray();
@@ -38047,7 +38051,7 @@
 
 	LineCurve3.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector3();
+		var point = optionalTarget || new Vector3();
 
 		if ( t === 1 ) {
 
@@ -38085,7 +38089,7 @@
 
 	LineCurve3.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v1 = this.v1.toArray();
 		data.v2 = this.v2.toArray();
@@ -38124,9 +38128,9 @@
 
 	QuadraticBezierCurve.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector2();
+		var point = optionalTarget || new Vector2();
 
-		const v0 = this.v0, v1 = this.v1, v2 = this.v2;
+		var v0 = this.v0, v1 = this.v1, v2 = this.v2;
 
 		point.set(
 			QuadraticBezier( t, v0.x, v1.x, v2.x ),
@@ -38151,7 +38155,7 @@
 
 	QuadraticBezierCurve.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v0 = this.v0.toArray();
 		data.v1 = this.v1.toArray();
@@ -38192,9 +38196,9 @@
 
 	QuadraticBezierCurve3.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector3();
+		var point = optionalTarget || new Vector3();
 
-		const v0 = this.v0, v1 = this.v1, v2 = this.v2;
+		var v0 = this.v0, v1 = this.v1, v2 = this.v2;
 
 		point.set(
 			QuadraticBezier( t, v0.x, v1.x, v2.x ),
@@ -38220,7 +38224,7 @@
 
 	QuadraticBezierCurve3.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.v0 = this.v0.toArray();
 		data.v1 = this.v1.toArray();
@@ -38259,18 +38263,18 @@
 
 	SplineCurve.prototype.getPoint = function ( t, optionalTarget ) {
 
-		const point = optionalTarget || new Vector2();
+		var point = optionalTarget || new Vector2();
 
-		const points = this.points;
-		const p = ( points.length - 1 ) * t;
+		var points = this.points;
+		var p = ( points.length - 1 ) * t;
 
-		const intPoint = Math.floor( p );
-		const weight = p - intPoint;
+		var intPoint = Math.floor( p );
+		var weight = p - intPoint;
 
-		const p0 = points[ intPoint === 0 ? intPoint : intPoint - 1 ];
-		const p1 = points[ intPoint ];
-		const p2 = points[ intPoint > points.length - 2 ? points.length - 1 : intPoint + 1 ];
-		const p3 = points[ intPoint > points.length - 3 ? points.length - 1 : intPoint + 2 ];
+		var p0 = points[ intPoint === 0 ? intPoint : intPoint - 1 ];
+		var p1 = points[ intPoint ];
+		var p2 = points[ intPoint > points.length - 2 ? points.length - 1 : intPoint + 1 ];
+		var p3 = points[ intPoint > points.length - 3 ? points.length - 1 : intPoint + 2 ];
 
 		point.set(
 			CatmullRom( weight, p0.x, p1.x, p2.x, p3.x ),
@@ -38287,9 +38291,9 @@
 
 		this.points = [];
 
-		for ( let i = 0, l = source.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = source.points.length; i < l; i ++ ) {
 
-			const point = source.points[ i ];
+			var point = source.points[ i ];
 
 			this.points.push( point.clone() );
 
@@ -38301,13 +38305,13 @@
 
 	SplineCurve.prototype.toJSON = function () {
 
-		const data = Curve.prototype.toJSON.call( this );
+		var data = Curve.prototype.toJSON.call( this );
 
 		data.points = [];
 
-		for ( let i = 0, l = this.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = this.points.length; i < l; i ++ ) {
 
-			const point = this.points[ i ];
+			var point = this.points[ i ];
 			data.points.push( point.toArray() );
 
 		}
@@ -38322,9 +38326,9 @@
 
 		this.points = [];
 
-		for ( let i = 0, l = json.points.length; i < l; i ++ ) {
+		for ( var i = 0, l = json.points.length; i < l; i ++ ) {
 
-			const point = json.points[ i ];
+			var point = json.points[ i ];
 			this.points.push( new Vector2().fromArray( point ) );
 
 		}
@@ -38376,8 +38380,8 @@
 		closePath: function () {
 
 			// Add a line curve if start and end of lines are not connected
-			const startPoint = this.curves[ 0 ].getPoint( 0 );
-			const endPoint = this.curves[ this.curves.length - 1 ].getPoint( 1 );
+			var startPoint = this.curves[ 0 ].getPoint( 0 );
+			var endPoint = this.curves[ this.curves.length - 1 ].getPoint( 1 );
 
 			if ( ! startPoint.equals( endPoint ) ) {
 
@@ -38398,9 +38402,9 @@
 
 		getPoint: function ( t ) {
 
-			const d = t * this.getLength();
-			const curveLengths = this.getCurveLengths();
-			let i = 0;
+			var d = t * this.getLength();
+			var curveLengths = this.getCurveLengths();
+			var i = 0;
 
 			// To think about boundaries points.
 
@@ -38408,11 +38412,11 @@
 
 				if ( curveLengths[ i ] >= d ) {
 
-					const diff = curveLengths[ i ] - d;
-					const curve = this.curves[ i ];
+					var diff = curveLengths[ i ] - d;
+					var curve = this.curves[ i ];
 
-					const segmentLength = curve.getLength();
-					const u = segmentLength === 0 ? 0 : 1 - diff / segmentLength;
+					var segmentLength = curve.getLength();
+					var u = segmentLength === 0 ? 0 : 1 - diff / segmentLength;
 
 					return curve.getPointAt( u );
 
@@ -38434,7 +38438,7 @@
 
 		getLength: function () {
 
-			const lens = this.getCurveLengths();
+			var lens = this.getCurveLengths();
 			return lens[ lens.length - 1 ];
 
 		},
@@ -38464,10 +38468,10 @@
 			// Get length of sub-curve
 			// Push sums into cached array
 
-			const lengths = [];
-			let sums = 0;
+			var lengths = [];
+			var sums = 0;
 
-			for ( let i = 0, l = this.curves.length; i < l; i ++ ) {
+			for ( var i = 0, l = this.curves.length; i < l; i ++ ) {
 
 				sums += this.curves[ i ].getLength();
 				lengths.push( sums );
@@ -38482,11 +38486,11 @@
 
 		getSpacedPoints: function ( divisions ) {
 
-			if ( divisions === undefined ) divisions = 40;
+			if ( divisions === undefined ) { divisions = 40; }
 
-			const points = [];
+			var points = [];
 
-			for ( let i = 0; i <= divisions; i ++ ) {
+			for ( var i = 0; i <= divisions; i ++ ) {
 
 				points.push( this.getPoint( i / divisions ) );
 
@@ -38506,24 +38510,24 @@
 
 			divisions = divisions || 12;
 
-			const points = [];
-			let last;
+			var points = [];
+			var last;
 
-			for ( let i = 0, curves = this.curves; i < curves.length; i ++ ) {
+			for ( var i = 0, curves = this.curves; i < curves.length; i ++ ) {
 
-				const curve = curves[ i ];
-				const resolution = ( curve && curve.isEllipseCurve ) ? divisions * 2
+				var curve = curves[ i ];
+				var resolution = ( curve && curve.isEllipseCurve ) ? divisions * 2
 					: ( curve && ( curve.isLineCurve || curve.isLineCurve3 ) ) ? 1
 						: ( curve && curve.isSplineCurve ) ? divisions * curve.points.length
 							: divisions;
 
-				const pts = curve.getPoints( resolution );
+				var pts = curve.getPoints( resolution );
 
-				for ( let j = 0; j < pts.length; j ++ ) {
+				for ( var j = 0; j < pts.length; j ++ ) {
 
-					const point = pts[ j ];
+					var point = pts[ j ];
 
-					if ( last && last.equals( point ) ) continue; // ensures no consecutive points are duplicates
+					if ( last && last.equals( point ) ) { continue; } // ensures no consecutive points are duplicates
 
 					points.push( point );
 					last = point;
@@ -38548,9 +38552,9 @@
 
 			this.curves = [];
 
-			for ( let i = 0, l = source.curves.length; i < l; i ++ ) {
+			for ( var i = 0, l = source.curves.length; i < l; i ++ ) {
 
-				const curve = source.curves[ i ];
+				var curve = source.curves[ i ];
 
 				this.curves.push( curve.clone() );
 
@@ -38564,14 +38568,14 @@
 
 		toJSON: function () {
 
-			const data = Curve.prototype.toJSON.call( this );
+			var data = Curve.prototype.toJSON.call( this );
 
 			data.autoClose = this.autoClose;
 			data.curves = [];
 
-			for ( let i = 0, l = this.curves.length; i < l; i ++ ) {
+			for ( var i = 0, l = this.curves.length; i < l; i ++ ) {
 
-				const curve = this.curves[ i ];
+				var curve = this.curves[ i ];
 				data.curves.push( curve.toJSON() );
 
 			}
@@ -38587,9 +38591,9 @@
 			this.autoClose = json.autoClose;
 			this.curves = [];
 
-			for ( let i = 0, l = json.curves.length; i < l; i ++ ) {
+			for ( var i = 0, l = json.curves.length; i < l; i ++ ) {
 
-				const curve = json.curves[ i ];
+				var curve = json.curves[ i ];
 				this.curves.push( new Curves[ curve.type ]().fromJSON( curve ) );
 
 			}
@@ -38624,7 +38628,7 @@
 
 			this.moveTo( points[ 0 ].x, points[ 0 ].y );
 
-			for ( let i = 1, l = points.length; i < l; i ++ ) {
+			for ( var i = 1, l = points.length; i < l; i ++ ) {
 
 				this.lineTo( points[ i ].x, points[ i ].y );
 
@@ -38644,7 +38648,7 @@
 
 		lineTo: function ( x, y ) {
 
-			const curve = new LineCurve( this.currentPoint.clone(), new Vector2( x, y ) );
+			var curve = new LineCurve( this.currentPoint.clone(), new Vector2( x, y ) );
 			this.curves.push( curve );
 
 			this.currentPoint.set( x, y );
@@ -38655,7 +38659,7 @@
 
 		quadraticCurveTo: function ( aCPx, aCPy, aX, aY ) {
 
-			const curve = new QuadraticBezierCurve(
+			var curve = new QuadraticBezierCurve(
 				this.currentPoint.clone(),
 				new Vector2( aCPx, aCPy ),
 				new Vector2( aX, aY )
@@ -38671,7 +38675,7 @@
 
 		bezierCurveTo: function ( aCP1x, aCP1y, aCP2x, aCP2y, aX, aY ) {
 
-			const curve = new CubicBezierCurve(
+			var curve = new CubicBezierCurve(
 				this.currentPoint.clone(),
 				new Vector2( aCP1x, aCP1y ),
 				new Vector2( aCP2x, aCP2y ),
@@ -38688,9 +38692,9 @@
 
 		splineThru: function ( pts /*Array of Vector*/ ) {
 
-			const npts = [ this.currentPoint.clone() ].concat( pts );
+			var npts = [ this.currentPoint.clone() ].concat( pts );
 
-			const curve = new SplineCurve( npts );
+			var curve = new SplineCurve( npts );
 			this.curves.push( curve );
 
 			this.currentPoint.copy( pts[ pts.length - 1 ] );
@@ -38701,8 +38705,8 @@
 
 		arc: function ( aX, aY, aRadius, aStartAngle, aEndAngle, aClockwise ) {
 
-			const x0 = this.currentPoint.x;
-			const y0 = this.currentPoint.y;
+			var x0 = this.currentPoint.x;
+			var y0 = this.currentPoint.y;
 
 			this.absarc( aX + x0, aY + y0, aRadius,
 				aStartAngle, aEndAngle, aClockwise );
@@ -38721,8 +38725,8 @@
 
 		ellipse: function ( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation ) {
 
-			const x0 = this.currentPoint.x;
-			const y0 = this.currentPoint.y;
+			var x0 = this.currentPoint.x;
+			var y0 = this.currentPoint.y;
 
 			this.absellipse( aX + x0, aY + y0, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation );
 
@@ -38732,12 +38736,12 @@
 
 		absellipse: function ( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation ) {
 
-			const curve = new EllipseCurve( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation );
+			var curve = new EllipseCurve( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation );
 
 			if ( this.curves.length > 0 ) {
 
 				// if a previous curve is present, attempt to join
-				const firstPoint = curve.getPoint( 0 );
+				var firstPoint = curve.getPoint( 0 );
 
 				if ( ! firstPoint.equals( this.currentPoint ) ) {
 
@@ -38749,7 +38753,7 @@
 
 			this.curves.push( curve );
 
-			const lastPoint = curve.getPoint( 1 );
+			var lastPoint = curve.getPoint( 1 );
 			this.currentPoint.copy( lastPoint );
 
 			return this;
@@ -38768,7 +38772,7 @@
 
 		toJSON: function () {
 
-			const data = CurvePath.prototype.toJSON.call( this );
+			var data = CurvePath.prototype.toJSON.call( this );
 
 			data.currentPoint = this.currentPoint.toArray();
 
@@ -38806,9 +38810,9 @@
 
 		getPointsHoles: function ( divisions ) {
 
-			const holesPts = [];
+			var holesPts = [];
 
-			for ( let i = 0, l = this.holes.length; i < l; i ++ ) {
+			for ( var i = 0, l = this.holes.length; i < l; i ++ ) {
 
 				holesPts[ i ] = this.holes[ i ].getPoints( divisions );
 
@@ -38837,9 +38841,9 @@
 
 			this.holes = [];
 
-			for ( let i = 0, l = source.holes.length; i < l; i ++ ) {
+			for ( var i = 0, l = source.holes.length; i < l; i ++ ) {
 
-				const hole = source.holes[ i ];
+				var hole = source.holes[ i ];
 
 				this.holes.push( hole.clone() );
 
@@ -38851,14 +38855,14 @@
 
 		toJSON: function () {
 
-			const data = Path.prototype.toJSON.call( this );
+			var data = Path.prototype.toJSON.call( this );
 
 			data.uuid = this.uuid;
 			data.holes = [];
 
-			for ( let i = 0, l = this.holes.length; i < l; i ++ ) {
+			for ( var i = 0, l = this.holes.length; i < l; i ++ ) {
 
-				const hole = this.holes[ i ];
+				var hole = this.holes[ i ];
 				data.holes.push( hole.toJSON() );
 
 			}
@@ -38874,9 +38878,9 @@
 			this.uuid = json.uuid;
 			this.holes = [];
 
-			for ( let i = 0, l = json.holes.length; i < l; i ++ ) {
+			for ( var i = 0, l = json.holes.length; i < l; i ++ ) {
 
-				const hole = json.holes[ i ];
+				var hole = json.holes[ i ];
 				this.holes.push( new Path().fromJSON( hole ) );
 
 			}
@@ -38919,19 +38923,19 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Object3D.prototype.toJSON.call( this, meta );
+			var data = Object3D.prototype.toJSON.call( this, meta );
 
 			data.object.color = this.color.getHex();
 			data.object.intensity = this.intensity;
 
-			if ( this.groundColor !== undefined ) data.object.groundColor = this.groundColor.getHex();
+			if ( this.groundColor !== undefined ) { data.object.groundColor = this.groundColor.getHex(); }
 
-			if ( this.distance !== undefined ) data.object.distance = this.distance;
-			if ( this.angle !== undefined ) data.object.angle = this.angle;
-			if ( this.decay !== undefined ) data.object.decay = this.decay;
-			if ( this.penumbra !== undefined ) data.object.penumbra = this.penumbra;
+			if ( this.distance !== undefined ) { data.object.distance = this.distance; }
+			if ( this.angle !== undefined ) { data.object.angle = this.angle; }
+			if ( this.decay !== undefined ) { data.object.decay = this.decay; }
+			if ( this.penumbra !== undefined ) { data.object.penumbra = this.penumbra; }
 
-			if ( this.shadow !== undefined ) data.object.shadow = this.shadow.toJSON();
+			if ( this.shadow !== undefined ) { data.object.shadow = this.shadow.toJSON(); }
 
 			return data;
 
@@ -39024,7 +39028,7 @@
 
 		updateMatrices: function ( light ) {
 
-			const shadowCamera = this.camera,
+			var shadowCamera = this.camera,
 				shadowMatrix = this.matrix,
 				projScreenMatrix = this._projScreenMatrix,
 				lookTarget = this._lookTarget,
@@ -39085,12 +39089,12 @@
 
 		toJSON: function () {
 
-			const object = {};
+			var object = {};
 
-			if ( this.bias !== 0 ) object.bias = this.bias;
-			if ( this.normalBias !== 0 ) object.normalBias = this.normalBias;
-			if ( this.radius !== 1 ) object.radius = this.radius;
-			if ( this.mapSize.x !== 512 || this.mapSize.y !== 512 ) object.mapSize = this.mapSize.toArray();
+			if ( this.bias !== 0 ) { object.bias = this.bias; }
+			if ( this.normalBias !== 0 ) { object.normalBias = this.normalBias; }
+			if ( this.radius !== 1 ) { object.radius = this.radius; }
+			if ( this.mapSize.x !== 512 || this.mapSize.y !== 512 ) { object.mapSize = this.mapSize.toArray(); }
 
 			object.camera = this.camera.toJSON( false ).object;
 			delete object.camera.matrix;
@@ -39115,11 +39119,11 @@
 
 		updateMatrices: function ( light ) {
 
-			const camera = this.camera;
+			var camera = this.camera;
 
-			const fov = MathUtils.RAD2DEG * 2 * light.angle;
-			const aspect = this.mapSize.width / this.mapSize.height;
-			const far = light.distance || camera.far;
+			var fov = MathUtils.RAD2DEG * 2 * light.angle;
+			var aspect = this.mapSize.width / this.mapSize.height;
+			var far = light.distance || camera.far;
 
 			if ( fov !== camera.fov || aspect !== camera.aspect || far !== camera.far ) {
 
@@ -39254,9 +39258,9 @@
 
 		updateMatrices: function ( light, viewportIndex ) {
 
-			if ( viewportIndex === undefined ) viewportIndex = 0;
+			if ( viewportIndex === undefined ) { viewportIndex = 0; }
 
-			const camera = this.camera,
+			var camera = this.camera,
 				shadowMatrix = this.matrix,
 				lightPositionWorld = this._lightPositionWorld,
 				lookTarget = this._lookTarget,
@@ -39418,20 +39422,20 @@
 
 		updateProjectionMatrix: function () {
 
-			const dx = ( this.right - this.left ) / ( 2 * this.zoom );
-			const dy = ( this.top - this.bottom ) / ( 2 * this.zoom );
-			const cx = ( this.right + this.left ) / 2;
-			const cy = ( this.top + this.bottom ) / 2;
+			var dx = ( this.right - this.left ) / ( 2 * this.zoom );
+			var dy = ( this.top - this.bottom ) / ( 2 * this.zoom );
+			var cx = ( this.right + this.left ) / 2;
+			var cy = ( this.top + this.bottom ) / 2;
 
-			let left = cx - dx;
-			let right = cx + dx;
-			let top = cy + dy;
-			let bottom = cy - dy;
+			var left = cx - dx;
+			var right = cx + dx;
+			var top = cy + dy;
+			var bottom = cy - dy;
 
 			if ( this.view !== null && this.view.enabled ) {
 
-				const scaleW = ( this.right - this.left ) / this.view.fullWidth / this.zoom;
-				const scaleH = ( this.top - this.bottom ) / this.view.fullHeight / this.zoom;
+				var scaleW = ( this.right - this.left ) / this.view.fullWidth / this.zoom;
+				var scaleH = ( this.top - this.bottom ) / this.view.fullHeight / this.zoom;
 
 				left += scaleW * this.view.offsetX;
 				right = left + scaleW * this.view.width;
@@ -39448,7 +39452,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Object3D.prototype.toJSON.call( this, meta );
+			var data = Object3D.prototype.toJSON.call( this, meta );
 
 			data.object.zoom = this.zoom;
 			data.object.left = this.left;
@@ -39458,7 +39462,7 @@
 			data.object.near = this.near;
 			data.object.far = this.far;
 
-			if ( this.view !== null ) data.object.view = Object.assign( {}, this.view );
+			if ( this.view !== null ) { data.object.view = Object.assign( {}, this.view ); }
 
 			return data;
 
@@ -39569,7 +39573,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Light.prototype.toJSON.call( this, meta );
+			var data = Light.prototype.toJSON.call( this, meta );
 
 			data.object.width = this.width;
 			data.object.height = this.height;
@@ -39594,7 +39598,7 @@
 
 		this.coefficients = [];
 
-		for ( let i = 0; i < 9; i ++ ) {
+		for ( var i = 0; i < 9; i ++ ) {
 
 			this.coefficients.push( new Vector3() );
 
@@ -39608,7 +39612,7 @@
 
 		set: function ( coefficients ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].copy( coefficients[ i ] );
 
@@ -39620,7 +39624,7 @@
 
 		zero: function () {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].set( 0, 0, 0 );
 
@@ -39636,9 +39640,9 @@
 
 			// normal is assumed to be unit length
 
-			const x = normal.x, y = normal.y, z = normal.z;
+			var x = normal.x, y = normal.y, z = normal.z;
 
-			const coeff = this.coefficients;
+			var coeff = this.coefficients;
 
 			// band 0
 			target.copy( coeff[ 0 ] ).multiplyScalar( 0.282095 );
@@ -39666,9 +39670,9 @@
 
 			// normal is assumed to be unit length
 
-			const x = normal.x, y = normal.y, z = normal.z;
+			var x = normal.x, y = normal.y, z = normal.z;
 
-			const coeff = this.coefficients;
+			var coeff = this.coefficients;
 
 			// band 0
 			target.copy( coeff[ 0 ] ).multiplyScalar( 0.886227 ); // π * 0.282095
@@ -39691,7 +39695,7 @@
 
 		add: function ( sh ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].add( sh.coefficients[ i ] );
 
@@ -39703,7 +39707,7 @@
 
 		addScaledSH: function ( sh, s ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].addScaledVector( sh.coefficients[ i ], s );
 
@@ -39715,7 +39719,7 @@
 
 		scale: function ( s ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].multiplyScalar( s );
 
@@ -39727,7 +39731,7 @@
 
 		lerp: function ( sh, alpha ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				this.coefficients[ i ].lerp( sh.coefficients[ i ], alpha );
 
@@ -39739,7 +39743,7 @@
 
 		equals: function ( sh ) {
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				if ( ! this.coefficients[ i ].equals( sh.coefficients[ i ] ) ) {
 
@@ -39767,11 +39771,11 @@
 
 		fromArray: function ( array, offset ) {
 
-			if ( offset === undefined ) offset = 0;
+			if ( offset === undefined ) { offset = 0; }
 
-			const coefficients = this.coefficients;
+			var coefficients = this.coefficients;
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				coefficients[ i ].fromArray( array, offset + ( i * 3 ) );
 
@@ -39783,12 +39787,12 @@
 
 		toArray: function ( array, offset ) {
 
-			if ( array === undefined ) array = [];
-			if ( offset === undefined ) offset = 0;
+			if ( array === undefined ) { array = []; }
+			if ( offset === undefined ) { offset = 0; }
 
-			const coefficients = this.coefficients;
+			var coefficients = this.coefficients;
 
-			for ( let i = 0; i < 9; i ++ ) {
+			for ( var i = 0; i < 9; i ++ ) {
 
 				coefficients[ i ].toArray( array, offset + ( i * 3 ) );
 
@@ -39808,7 +39812,7 @@
 
 			// normal is assumed to be unit length
 
-			const x = normal.x, y = normal.y, z = normal.z;
+			var x = normal.x, y = normal.y, z = normal.z;
 
 			// band 0
 			shBasis[ 0 ] = 0.282095;
@@ -39866,7 +39870,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = Light.prototype.toJSON.call( this, meta );
+			var data = Light.prototype.toJSON.call( this, meta );
 
 			data.object.sh = this.sh.toArray();
 
@@ -39890,9 +39894,9 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const loader = new FileLoader( scope.manager );
+			var loader = new FileLoader( scope.manager );
 			loader.setPath( scope.path );
 			loader.setRequestHeader( scope.requestHeader );
 			loader.load( url, function ( text ) {
@@ -39923,7 +39927,7 @@
 
 		parse: function ( json ) {
 
-			const textures = this.textures;
+			var textures = this.textures;
 
 			function getTexture( name ) {
 
@@ -39937,68 +39941,68 @@
 
 			}
 
-			const material = new Materials[ json.type ]();
+			var material = new Materials[ json.type ]();
 
-			if ( json.uuid !== undefined ) material.uuid = json.uuid;
-			if ( json.name !== undefined ) material.name = json.name;
-			if ( json.color !== undefined ) material.color.setHex( json.color );
-			if ( json.roughness !== undefined ) material.roughness = json.roughness;
-			if ( json.metalness !== undefined ) material.metalness = json.metalness;
-			if ( json.sheen !== undefined ) material.sheen = new Color().setHex( json.sheen );
-			if ( json.emissive !== undefined ) material.emissive.setHex( json.emissive );
-			if ( json.specular !== undefined ) material.specular.setHex( json.specular );
-			if ( json.shininess !== undefined ) material.shininess = json.shininess;
-			if ( json.clearcoat !== undefined ) material.clearcoat = json.clearcoat;
-			if ( json.clearcoatRoughness !== undefined ) material.clearcoatRoughness = json.clearcoatRoughness;
-			if ( json.fog !== undefined ) material.fog = json.fog;
-			if ( json.flatShading !== undefined ) material.flatShading = json.flatShading;
-			if ( json.blending !== undefined ) material.blending = json.blending;
-			if ( json.combine !== undefined ) material.combine = json.combine;
-			if ( json.side !== undefined ) material.side = json.side;
-			if ( json.opacity !== undefined ) material.opacity = json.opacity;
-			if ( json.transparent !== undefined ) material.transparent = json.transparent;
-			if ( json.alphaTest !== undefined ) material.alphaTest = json.alphaTest;
-			if ( json.depthTest !== undefined ) material.depthTest = json.depthTest;
-			if ( json.depthWrite !== undefined ) material.depthWrite = json.depthWrite;
-			if ( json.colorWrite !== undefined ) material.colorWrite = json.colorWrite;
+			if ( json.uuid !== undefined ) { material.uuid = json.uuid; }
+			if ( json.name !== undefined ) { material.name = json.name; }
+			if ( json.color !== undefined ) { material.color.setHex( json.color ); }
+			if ( json.roughness !== undefined ) { material.roughness = json.roughness; }
+			if ( json.metalness !== undefined ) { material.metalness = json.metalness; }
+			if ( json.sheen !== undefined ) { material.sheen = new Color().setHex( json.sheen ); }
+			if ( json.emissive !== undefined ) { material.emissive.setHex( json.emissive ); }
+			if ( json.specular !== undefined ) { material.specular.setHex( json.specular ); }
+			if ( json.shininess !== undefined ) { material.shininess = json.shininess; }
+			if ( json.clearcoat !== undefined ) { material.clearcoat = json.clearcoat; }
+			if ( json.clearcoatRoughness !== undefined ) { material.clearcoatRoughness = json.clearcoatRoughness; }
+			if ( json.fog !== undefined ) { material.fog = json.fog; }
+			if ( json.flatShading !== undefined ) { material.flatShading = json.flatShading; }
+			if ( json.blending !== undefined ) { material.blending = json.blending; }
+			if ( json.combine !== undefined ) { material.combine = json.combine; }
+			if ( json.side !== undefined ) { material.side = json.side; }
+			if ( json.opacity !== undefined ) { material.opacity = json.opacity; }
+			if ( json.transparent !== undefined ) { material.transparent = json.transparent; }
+			if ( json.alphaTest !== undefined ) { material.alphaTest = json.alphaTest; }
+			if ( json.depthTest !== undefined ) { material.depthTest = json.depthTest; }
+			if ( json.depthWrite !== undefined ) { material.depthWrite = json.depthWrite; }
+			if ( json.colorWrite !== undefined ) { material.colorWrite = json.colorWrite; }
 
-			if ( json.stencilWrite !== undefined ) material.stencilWrite = json.stencilWrite;
-			if ( json.stencilWriteMask !== undefined ) material.stencilWriteMask = json.stencilWriteMask;
-			if ( json.stencilFunc !== undefined ) material.stencilFunc = json.stencilFunc;
-			if ( json.stencilRef !== undefined ) material.stencilRef = json.stencilRef;
-			if ( json.stencilFuncMask !== undefined ) material.stencilFuncMask = json.stencilFuncMask;
-			if ( json.stencilFail !== undefined ) material.stencilFail = json.stencilFail;
-			if ( json.stencilZFail !== undefined ) material.stencilZFail = json.stencilZFail;
-			if ( json.stencilZPass !== undefined ) material.stencilZPass = json.stencilZPass;
+			if ( json.stencilWrite !== undefined ) { material.stencilWrite = json.stencilWrite; }
+			if ( json.stencilWriteMask !== undefined ) { material.stencilWriteMask = json.stencilWriteMask; }
+			if ( json.stencilFunc !== undefined ) { material.stencilFunc = json.stencilFunc; }
+			if ( json.stencilRef !== undefined ) { material.stencilRef = json.stencilRef; }
+			if ( json.stencilFuncMask !== undefined ) { material.stencilFuncMask = json.stencilFuncMask; }
+			if ( json.stencilFail !== undefined ) { material.stencilFail = json.stencilFail; }
+			if ( json.stencilZFail !== undefined ) { material.stencilZFail = json.stencilZFail; }
+			if ( json.stencilZPass !== undefined ) { material.stencilZPass = json.stencilZPass; }
 
-			if ( json.wireframe !== undefined ) material.wireframe = json.wireframe;
-			if ( json.wireframeLinewidth !== undefined ) material.wireframeLinewidth = json.wireframeLinewidth;
-			if ( json.wireframeLinecap !== undefined ) material.wireframeLinecap = json.wireframeLinecap;
-			if ( json.wireframeLinejoin !== undefined ) material.wireframeLinejoin = json.wireframeLinejoin;
+			if ( json.wireframe !== undefined ) { material.wireframe = json.wireframe; }
+			if ( json.wireframeLinewidth !== undefined ) { material.wireframeLinewidth = json.wireframeLinewidth; }
+			if ( json.wireframeLinecap !== undefined ) { material.wireframeLinecap = json.wireframeLinecap; }
+			if ( json.wireframeLinejoin !== undefined ) { material.wireframeLinejoin = json.wireframeLinejoin; }
 
-			if ( json.rotation !== undefined ) material.rotation = json.rotation;
+			if ( json.rotation !== undefined ) { material.rotation = json.rotation; }
 
-			if ( json.linewidth !== 1 ) material.linewidth = json.linewidth;
-			if ( json.dashSize !== undefined ) material.dashSize = json.dashSize;
-			if ( json.gapSize !== undefined ) material.gapSize = json.gapSize;
-			if ( json.scale !== undefined ) material.scale = json.scale;
+			if ( json.linewidth !== 1 ) { material.linewidth = json.linewidth; }
+			if ( json.dashSize !== undefined ) { material.dashSize = json.dashSize; }
+			if ( json.gapSize !== undefined ) { material.gapSize = json.gapSize; }
+			if ( json.scale !== undefined ) { material.scale = json.scale; }
 
-			if ( json.polygonOffset !== undefined ) material.polygonOffset = json.polygonOffset;
-			if ( json.polygonOffsetFactor !== undefined ) material.polygonOffsetFactor = json.polygonOffsetFactor;
-			if ( json.polygonOffsetUnits !== undefined ) material.polygonOffsetUnits = json.polygonOffsetUnits;
+			if ( json.polygonOffset !== undefined ) { material.polygonOffset = json.polygonOffset; }
+			if ( json.polygonOffsetFactor !== undefined ) { material.polygonOffsetFactor = json.polygonOffsetFactor; }
+			if ( json.polygonOffsetUnits !== undefined ) { material.polygonOffsetUnits = json.polygonOffsetUnits; }
 
-			if ( json.skinning !== undefined ) material.skinning = json.skinning;
-			if ( json.morphTargets !== undefined ) material.morphTargets = json.morphTargets;
-			if ( json.morphNormals !== undefined ) material.morphNormals = json.morphNormals;
-			if ( json.dithering !== undefined ) material.dithering = json.dithering;
+			if ( json.skinning !== undefined ) { material.skinning = json.skinning; }
+			if ( json.morphTargets !== undefined ) { material.morphTargets = json.morphTargets; }
+			if ( json.morphNormals !== undefined ) { material.morphNormals = json.morphNormals; }
+			if ( json.dithering !== undefined ) { material.dithering = json.dithering; }
 
-			if ( json.vertexTangents !== undefined ) material.vertexTangents = json.vertexTangents;
+			if ( json.vertexTangents !== undefined ) { material.vertexTangents = json.vertexTangents; }
 
-			if ( json.visible !== undefined ) material.visible = json.visible;
+			if ( json.visible !== undefined ) { material.visible = json.visible; }
 
-			if ( json.toneMapped !== undefined ) material.toneMapped = json.toneMapped;
+			if ( json.toneMapped !== undefined ) { material.toneMapped = json.toneMapped; }
 
-			if ( json.userData !== undefined ) material.userData = json.userData;
+			if ( json.userData !== undefined ) { material.userData = json.userData; }
 
 			if ( json.vertexColors !== undefined ) {
 
@@ -40018,9 +40022,9 @@
 
 			if ( json.uniforms !== undefined ) {
 
-				for ( const name in json.uniforms ) {
+				for ( var name in json.uniforms ) {
 
-					const uniform = json.uniforms[ name ];
+					var uniform = json.uniforms[ name ];
 
 					material.uniforms[ name ] = {};
 
@@ -40062,13 +40066,13 @@
 
 			}
 
-			if ( json.defines !== undefined ) material.defines = json.defines;
-			if ( json.vertexShader !== undefined ) material.vertexShader = json.vertexShader;
-			if ( json.fragmentShader !== undefined ) material.fragmentShader = json.fragmentShader;
+			if ( json.defines !== undefined ) { material.defines = json.defines; }
+			if ( json.vertexShader !== undefined ) { material.vertexShader = json.vertexShader; }
+			if ( json.fragmentShader !== undefined ) { material.fragmentShader = json.fragmentShader; }
 
 			if ( json.extensions !== undefined ) {
 
-				for ( const key in json.extensions ) {
+				for ( var key in json.extensions ) {
 
 					material.extensions[ key ] = json.extensions[ key ];
 
@@ -40078,28 +40082,28 @@
 
 			// Deprecated
 
-			if ( json.shading !== undefined ) material.flatShading = json.shading === 1; // THREE.FlatShading
+			if ( json.shading !== undefined ) { material.flatShading = json.shading === 1; } // THREE.FlatShading
 
 			// for PointsMaterial
 
-			if ( json.size !== undefined ) material.size = json.size;
-			if ( json.sizeAttenuation !== undefined ) material.sizeAttenuation = json.sizeAttenuation;
+			if ( json.size !== undefined ) { material.size = json.size; }
+			if ( json.sizeAttenuation !== undefined ) { material.sizeAttenuation = json.sizeAttenuation; }
 
 			// maps
 
-			if ( json.map !== undefined ) material.map = getTexture( json.map );
-			if ( json.matcap !== undefined ) material.matcap = getTexture( json.matcap );
+			if ( json.map !== undefined ) { material.map = getTexture( json.map ); }
+			if ( json.matcap !== undefined ) { material.matcap = getTexture( json.matcap ); }
 
-			if ( json.alphaMap !== undefined ) material.alphaMap = getTexture( json.alphaMap );
+			if ( json.alphaMap !== undefined ) { material.alphaMap = getTexture( json.alphaMap ); }
 
-			if ( json.bumpMap !== undefined ) material.bumpMap = getTexture( json.bumpMap );
-			if ( json.bumpScale !== undefined ) material.bumpScale = json.bumpScale;
+			if ( json.bumpMap !== undefined ) { material.bumpMap = getTexture( json.bumpMap ); }
+			if ( json.bumpScale !== undefined ) { material.bumpScale = json.bumpScale; }
 
-			if ( json.normalMap !== undefined ) material.normalMap = getTexture( json.normalMap );
-			if ( json.normalMapType !== undefined ) material.normalMapType = json.normalMapType;
+			if ( json.normalMap !== undefined ) { material.normalMap = getTexture( json.normalMap ); }
+			if ( json.normalMapType !== undefined ) { material.normalMapType = json.normalMapType; }
 			if ( json.normalScale !== undefined ) {
 
-				let normalScale = json.normalScale;
+				var normalScale = json.normalScale;
 
 				if ( Array.isArray( normalScale ) === false ) {
 
@@ -40113,39 +40117,39 @@
 
 			}
 
-			if ( json.displacementMap !== undefined ) material.displacementMap = getTexture( json.displacementMap );
-			if ( json.displacementScale !== undefined ) material.displacementScale = json.displacementScale;
-			if ( json.displacementBias !== undefined ) material.displacementBias = json.displacementBias;
+			if ( json.displacementMap !== undefined ) { material.displacementMap = getTexture( json.displacementMap ); }
+			if ( json.displacementScale !== undefined ) { material.displacementScale = json.displacementScale; }
+			if ( json.displacementBias !== undefined ) { material.displacementBias = json.displacementBias; }
 
-			if ( json.roughnessMap !== undefined ) material.roughnessMap = getTexture( json.roughnessMap );
-			if ( json.metalnessMap !== undefined ) material.metalnessMap = getTexture( json.metalnessMap );
+			if ( json.roughnessMap !== undefined ) { material.roughnessMap = getTexture( json.roughnessMap ); }
+			if ( json.metalnessMap !== undefined ) { material.metalnessMap = getTexture( json.metalnessMap ); }
 
-			if ( json.emissiveMap !== undefined ) material.emissiveMap = getTexture( json.emissiveMap );
-			if ( json.emissiveIntensity !== undefined ) material.emissiveIntensity = json.emissiveIntensity;
+			if ( json.emissiveMap !== undefined ) { material.emissiveMap = getTexture( json.emissiveMap ); }
+			if ( json.emissiveIntensity !== undefined ) { material.emissiveIntensity = json.emissiveIntensity; }
 
-			if ( json.specularMap !== undefined ) material.specularMap = getTexture( json.specularMap );
+			if ( json.specularMap !== undefined ) { material.specularMap = getTexture( json.specularMap ); }
 
-			if ( json.envMap !== undefined ) material.envMap = getTexture( json.envMap );
-			if ( json.envMapIntensity !== undefined ) material.envMapIntensity = json.envMapIntensity;
+			if ( json.envMap !== undefined ) { material.envMap = getTexture( json.envMap ); }
+			if ( json.envMapIntensity !== undefined ) { material.envMapIntensity = json.envMapIntensity; }
 
-			if ( json.reflectivity !== undefined ) material.reflectivity = json.reflectivity;
-			if ( json.refractionRatio !== undefined ) material.refractionRatio = json.refractionRatio;
+			if ( json.reflectivity !== undefined ) { material.reflectivity = json.reflectivity; }
+			if ( json.refractionRatio !== undefined ) { material.refractionRatio = json.refractionRatio; }
 
-			if ( json.lightMap !== undefined ) material.lightMap = getTexture( json.lightMap );
-			if ( json.lightMapIntensity !== undefined ) material.lightMapIntensity = json.lightMapIntensity;
+			if ( json.lightMap !== undefined ) { material.lightMap = getTexture( json.lightMap ); }
+			if ( json.lightMapIntensity !== undefined ) { material.lightMapIntensity = json.lightMapIntensity; }
 
-			if ( json.aoMap !== undefined ) material.aoMap = getTexture( json.aoMap );
-			if ( json.aoMapIntensity !== undefined ) material.aoMapIntensity = json.aoMapIntensity;
+			if ( json.aoMap !== undefined ) { material.aoMap = getTexture( json.aoMap ); }
+			if ( json.aoMapIntensity !== undefined ) { material.aoMapIntensity = json.aoMapIntensity; }
 
-			if ( json.gradientMap !== undefined ) material.gradientMap = getTexture( json.gradientMap );
+			if ( json.gradientMap !== undefined ) { material.gradientMap = getTexture( json.gradientMap ); }
 
-			if ( json.clearcoatMap !== undefined ) material.clearcoatMap = getTexture( json.clearcoatMap );
-			if ( json.clearcoatRoughnessMap !== undefined ) material.clearcoatRoughnessMap = getTexture( json.clearcoatRoughnessMap );
-			if ( json.clearcoatNormalMap !== undefined ) material.clearcoatNormalMap = getTexture( json.clearcoatNormalMap );
-			if ( json.clearcoatNormalScale !== undefined ) material.clearcoatNormalScale = new Vector2().fromArray( json.clearcoatNormalScale );
+			if ( json.clearcoatMap !== undefined ) { material.clearcoatMap = getTexture( json.clearcoatMap ); }
+			if ( json.clearcoatRoughnessMap !== undefined ) { material.clearcoatRoughnessMap = getTexture( json.clearcoatRoughnessMap ); }
+			if ( json.clearcoatNormalMap !== undefined ) { material.clearcoatNormalMap = getTexture( json.clearcoatNormalMap ); }
+			if ( json.clearcoatNormalScale !== undefined ) { material.clearcoatNormalScale = new Vector2().fromArray( json.clearcoatNormalScale ); }
 
-			if ( json.transmission !== undefined ) material.transmission = json.transmission;
-			if ( json.transmissionMap !== undefined ) material.transmissionMap = getTexture( json.transmissionMap );
+			if ( json.transmission !== undefined ) { material.transmission = json.transmission; }
+			if ( json.transmissionMap !== undefined ) { material.transmissionMap = getTexture( json.transmissionMap ); }
 
 			return material;
 
@@ -40160,7 +40164,7 @@
 
 	} );
 
-	const LoaderUtils = {
+	var LoaderUtils = {
 
 		decodeText: function ( array ) {
 
@@ -40173,9 +40177,9 @@
 			// Avoid the String.fromCharCode.apply(null, array) shortcut, which
 			// throws a "maximum call stack size exceeded" error for large arrays.
 
-			let s = '';
+			var s = '';
 
-			for ( let i = 0, il = array.length; i < il; i ++ ) {
+			for ( var i = 0, il = array.length; i < il; i ++ ) {
 
 				// Implicitly assumes little-endian.
 				s += String.fromCharCode( array[ i ] );
@@ -40198,9 +40202,9 @@
 
 		extractUrlBase: function ( url ) {
 
-			const index = url.lastIndexOf( '/' );
+			var index = url.lastIndexOf( '/' );
 
-			if ( index === - 1 ) return './';
+			if ( index === - 1 ) { return './'; }
 
 			return url.substr( 0, index + 1 );
 
@@ -40241,7 +40245,7 @@
 
 		toJSON: function () {
 
-			const data = BufferGeometry.prototype.toJSON.call( this );
+			var data = BufferGeometry.prototype.toJSON.call( this );
 
 			data.instanceCount = this.instanceCount;
 
@@ -40289,7 +40293,7 @@
 
 		toJSON: function ()	{
 
-			const data = BufferAttribute.prototype.toJSON.call( this );
+			var data = BufferAttribute.prototype.toJSON.call( this );
 
 			data.meshPerAttribute = this.meshPerAttribute;
 
@@ -40313,9 +40317,9 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const loader = new FileLoader( scope.manager );
+			var loader = new FileLoader( scope.manager );
 			loader.setPath( scope.path );
 			loader.setRequestHeader( scope.requestHeader );
 			loader.load( url, function ( text ) {
@@ -40346,20 +40350,20 @@
 
 		parse: function ( json ) {
 
-			const interleavedBufferMap = {};
-			const arrayBufferMap = {};
+			var interleavedBufferMap = {};
+			var arrayBufferMap = {};
 
 			function getInterleavedBuffer( json, uuid ) {
 
-				if ( interleavedBufferMap[ uuid ] !== undefined ) return interleavedBufferMap[ uuid ];
+				if ( interleavedBufferMap[ uuid ] !== undefined ) { return interleavedBufferMap[ uuid ]; }
 
-				const interleavedBuffers = json.interleavedBuffers;
-				const interleavedBuffer = interleavedBuffers[ uuid ];
+				var interleavedBuffers = json.interleavedBuffers;
+				var interleavedBuffer = interleavedBuffers[ uuid ];
 
-				const buffer = getArrayBuffer( json, interleavedBuffer.buffer );
+				var buffer = getArrayBuffer( json, interleavedBuffer.buffer );
 
-				const array = new TYPED_ARRAYS[ interleavedBuffer.type ]( buffer );
-				const ib = new InterleavedBuffer( array, interleavedBuffer.stride );
+				var array = new TYPED_ARRAYS[ interleavedBuffer.type ]( buffer );
+				var ib = new InterleavedBuffer( array, interleavedBuffer.stride );
 				ib.uuid = interleavedBuffer.uuid;
 
 				interleavedBufferMap[ uuid ] = ib;
@@ -40370,12 +40374,12 @@
 
 			function getArrayBuffer( json, uuid ) {
 
-				if ( arrayBufferMap[ uuid ] !== undefined ) return arrayBufferMap[ uuid ];
+				if ( arrayBufferMap[ uuid ] !== undefined ) { return arrayBufferMap[ uuid ]; }
 
-				const arrayBuffers = json.arrayBuffers;
-				const arrayBuffer = arrayBuffers[ uuid ];
+				var arrayBuffers = json.arrayBuffers;
+				var arrayBuffer = arrayBuffers[ uuid ];
 
-				const ab = new Uint32Array( arrayBuffer ).buffer;
+				var ab = new Uint32Array( arrayBuffer ).buffer;
 
 				arrayBufferMap[ uuid ] = ab;
 
@@ -40383,81 +40387,81 @@
 
 			}
 
-			const geometry = json.isInstancedBufferGeometry ? new InstancedBufferGeometry() : new BufferGeometry();
+			var geometry = json.isInstancedBufferGeometry ? new InstancedBufferGeometry() : new BufferGeometry();
 
-			const index = json.data.index;
+			var index = json.data.index;
 
 			if ( index !== undefined ) {
 
-				const typedArray = new TYPED_ARRAYS[ index.type ]( index.array );
+				var typedArray = new TYPED_ARRAYS[ index.type ]( index.array );
 				geometry.setIndex( new BufferAttribute( typedArray, 1 ) );
 
 			}
 
-			const attributes = json.data.attributes;
+			var attributes = json.data.attributes;
 
-			for ( const key in attributes ) {
+			for ( var key in attributes ) {
 
-				const attribute = attributes[ key ];
-				let bufferAttribute;
+				var attribute = attributes[ key ];
+				var bufferAttribute = (void 0);
 
 				if ( attribute.isInterleavedBufferAttribute ) {
 
-					const interleavedBuffer = getInterleavedBuffer( json.data, attribute.data );
+					var interleavedBuffer = getInterleavedBuffer( json.data, attribute.data );
 					bufferAttribute = new InterleavedBufferAttribute( interleavedBuffer, attribute.itemSize, attribute.offset, attribute.normalized );
 
 				} else {
 
-					const typedArray = new TYPED_ARRAYS[ attribute.type ]( attribute.array );
-					const bufferAttributeConstr = attribute.isInstancedBufferAttribute ? InstancedBufferAttribute : BufferAttribute;
-					bufferAttribute = new bufferAttributeConstr( typedArray, attribute.itemSize, attribute.normalized );
+					var typedArray$1 = new TYPED_ARRAYS[ attribute.type ]( attribute.array );
+					var bufferAttributeConstr = attribute.isInstancedBufferAttribute ? InstancedBufferAttribute : BufferAttribute;
+					bufferAttribute = new bufferAttributeConstr( typedArray$1, attribute.itemSize, attribute.normalized );
 
 				}
 
-				if ( attribute.name !== undefined ) bufferAttribute.name = attribute.name;
+				if ( attribute.name !== undefined ) { bufferAttribute.name = attribute.name; }
 				geometry.setAttribute( key, bufferAttribute );
 
 			}
 
-			const morphAttributes = json.data.morphAttributes;
+			var morphAttributes = json.data.morphAttributes;
 
 			if ( morphAttributes ) {
 
-				for ( const key in morphAttributes ) {
+				for ( var key$1 in morphAttributes ) {
 
-					const attributeArray = morphAttributes[ key ];
+					var attributeArray = morphAttributes[ key$1 ];
 
-					const array = [];
+					var array = [];
 
-					for ( let i = 0, il = attributeArray.length; i < il; i ++ ) {
+					for ( var i = 0, il = attributeArray.length; i < il; i ++ ) {
 
-						const attribute = attributeArray[ i ];
-						let bufferAttribute;
+						var attribute$1 = attributeArray[ i ];
+						var bufferAttribute$1 = (void 0);
 
-						if ( attribute.isInterleavedBufferAttribute ) {
+						if ( attribute$1.isInterleavedBufferAttribute ) {
 
-							const interleavedBuffer = getInterleavedBuffer( json.data, attribute.data );
-							bufferAttribute = new InterleavedBufferAttribute( interleavedBuffer, attribute.itemSize, attribute.offset, attribute.normalized );
+							var interleavedBuffer$1 = getInterleavedBuffer( json.data, attribute$1.data );
+							bufferAttribute$1 = new InterleavedBufferAttribute( interleavedBuffer$1, attribute$1.itemSize, attribute$1.offset, attribute$1.normalized );
 
 						} else {
 
-							const typedArray = new TYPED_ARRAYS[ attribute.type ]( attribute.array );
-							bufferAttribute = new BufferAttribute( typedArray, attribute.itemSize, attribute.normalized );
+							var typedArray$2 = new TYPED_ARRAYS[ attribute$1.type ]( attribute$1.array );
+							bufferAttribute$1 = new BufferAttribute( typedArray$2, attribute$1.itemSize, attribute$1.normalized );
 
 						}
 
-						if ( attribute.name !== undefined ) bufferAttribute.name = attribute.name;
-						array.push( bufferAttribute );
+						if ( attribute$1.name !== undefined ) { bufferAttribute$1.name = attribute$1.name; }
+						array.push( bufferAttribute$1 );
 
 					}
 
-					geometry.morphAttributes[ key ] = array;
+					geometry.morphAttributes[ key$1 ] = array;
 
 				}
 
 			}
 
-			const morphTargetsRelative = json.data.morphTargetsRelative;
+			var morphTargetsRelative = json.data.morphTargetsRelative;
 
 			if ( morphTargetsRelative ) {
 
@@ -40465,13 +40469,13 @@
 
 			}
 
-			const groups = json.data.groups || json.data.drawcalls || json.data.offsets;
+			var groups = json.data.groups || json.data.drawcalls || json.data.offsets;
 
 			if ( groups !== undefined ) {
 
-				for ( let i = 0, n = groups.length; i !== n; ++ i ) {
+				for ( var i$1 = 0, n = groups.length; i$1 !== n; ++ i$1 ) {
 
-					const group = groups[ i ];
+					var group = groups[ i$1 ];
 
 					geometry.addGroup( group.start, group.count, group.materialIndex );
 
@@ -40479,11 +40483,11 @@
 
 			}
 
-			const boundingSphere = json.data.boundingSphere;
+			var boundingSphere = json.data.boundingSphere;
 
 			if ( boundingSphere !== undefined ) {
 
-				const center = new Vector3();
+				var center = new Vector3();
 
 				if ( boundingSphere.center !== undefined ) {
 
@@ -40495,8 +40499,8 @@
 
 			}
 
-			if ( json.name ) geometry.name = json.name;
-			if ( json.userData ) geometry.userData = json.userData;
+			if ( json.name ) { geometry.name = json.name; }
+			if ( json.userData ) { geometry.userData = json.userData; }
 
 			return geometry;
 
@@ -40504,7 +40508,7 @@
 
 	} );
 
-	const TYPED_ARRAYS = {
+	var TYPED_ARRAYS = {
 		Int8Array: Int8Array,
 		Uint8Array: Uint8Array,
 		// Workaround for IE11 pre KB2929437. See #11440
@@ -40529,17 +40533,17 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const path = ( this.path === '' ) ? LoaderUtils.extractUrlBase( url ) : this.path;
+			var path = ( this.path === '' ) ? LoaderUtils.extractUrlBase( url ) : this.path;
 			this.resourcePath = this.resourcePath || path;
 
-			const loader = new FileLoader( scope.manager );
+			var loader = new FileLoader( scope.manager );
 			loader.setPath( this.path );
 			loader.setRequestHeader( this.requestHeader );
 			loader.load( url, function ( text ) {
 
-				let json = null;
+				var json = null;
 
 				try {
 
@@ -40547,7 +40551,7 @@
 
 				} catch ( error ) {
 
-					if ( onError !== undefined ) onError( error );
+					if ( onError !== undefined ) { onError( error ); }
 
 					console.error( 'THREE:ObjectLoader: Can\'t parse ' + url + '.', error.message );
 
@@ -40555,7 +40559,7 @@
 
 				}
 
-				const metadata = json.metadata;
+				var metadata = json.metadata;
 
 				if ( metadata === undefined || metadata.type === undefined || metadata.type.toLowerCase() === 'geometry' ) {
 
@@ -40572,19 +40576,19 @@
 
 		parse: function ( json, onLoad ) {
 
-			const shapes = this.parseShape( json.shapes );
-			const geometries = this.parseGeometries( json.geometries, shapes );
+			var shapes = this.parseShape( json.shapes );
+			var geometries = this.parseGeometries( json.geometries, shapes );
 
-			const images = this.parseImages( json.images, function () {
+			var images = this.parseImages( json.images, function () {
 
-				if ( onLoad !== undefined ) onLoad( object );
+				if ( onLoad !== undefined ) { onLoad( object ); }
 
 			} );
 
-			const textures = this.parseTextures( json.textures, images );
-			const materials = this.parseMaterials( json.materials, textures );
+			var textures = this.parseTextures( json.textures, images );
+			var materials = this.parseMaterials( json.materials, textures );
 
-			const object = this.parseObject( json.object, geometries, materials );
+			var object = this.parseObject( json.object, geometries, materials );
 
 			if ( json.animations ) {
 
@@ -40594,7 +40598,7 @@
 
 			if ( json.images === undefined || json.images.length === 0 ) {
 
-				if ( onLoad !== undefined ) onLoad( object );
+				if ( onLoad !== undefined ) { onLoad( object ); }
 
 			}
 
@@ -40604,13 +40608,13 @@
 
 		parseShape: function ( json ) {
 
-			const shapes = {};
+			var shapes = {};
 
 			if ( json !== undefined ) {
 
-				for ( let i = 0, l = json.length; i < l; i ++ ) {
+				for ( var i = 0, l = json.length; i < l; i ++ ) {
 
-					const shape = new Shape().fromJSON( json[ i ] );
+					var shape = new Shape().fromJSON( json[ i ] );
 
 					shapes[ shape.uuid ] = shape;
 
@@ -40624,17 +40628,17 @@
 
 		parseGeometries: function ( json, shapes ) {
 
-			const geometries = {};
-			let geometryShapes;
+			var geometries = {};
+			var geometryShapes;
 
 			if ( json !== undefined ) {
 
-				const bufferGeometryLoader = new BufferGeometryLoader();
+				var bufferGeometryLoader = new BufferGeometryLoader();
 
-				for ( let i = 0, l = json.length; i < l; i ++ ) {
+				for ( var i = 0, l = json.length; i < l; i ++ ) {
 
-					let geometry;
-					const data = json[ i ];
+					var geometry = (void 0);
+					var data = json[ i ];
 
 					switch ( data.type ) {
 
@@ -40824,9 +40828,9 @@
 
 							geometryShapes = [];
 
-							for ( let j = 0, jl = data.shapes.length; j < jl; j ++ ) {
+							for ( var j = 0, jl = data.shapes.length; j < jl; j ++ ) {
 
-								const shape = shapes[ data.shapes[ j ] ];
+								var shape = shapes[ data.shapes[ j ] ];
 
 								geometryShapes.push( shape );
 
@@ -40845,15 +40849,15 @@
 
 							geometryShapes = [];
 
-							for ( let j = 0, jl = data.shapes.length; j < jl; j ++ ) {
+							for ( var j$1 = 0, jl$1 = data.shapes.length; j$1 < jl$1; j$1 ++ ) {
 
-								const shape = shapes[ data.shapes[ j ] ];
+								var shape$1 = shapes[ data.shapes[ j$1 ] ];
 
-								geometryShapes.push( shape );
+								geometryShapes.push( shape$1 );
 
 							}
 
-							const extrudePath = data.options.extrudePath;
+							var extrudePath = data.options.extrudePath;
 
 							if ( extrudePath !== undefined ) {
 
@@ -40891,8 +40895,8 @@
 
 					geometry.uuid = data.uuid;
 
-					if ( data.name !== undefined ) geometry.name = data.name;
-					if ( geometry.isBufferGeometry === true && data.userData !== undefined ) geometry.userData = data.userData;
+					if ( data.name !== undefined ) { geometry.name = data.name; }
+					if ( geometry.isBufferGeometry === true && data.userData !== undefined ) { geometry.userData = data.userData; }
 
 					geometries[ data.uuid ] = geometry;
 
@@ -40906,27 +40910,27 @@
 
 		parseMaterials: function ( json, textures ) {
 
-			const cache = {}; // MultiMaterial
-			const materials = {};
+			var cache = {}; // MultiMaterial
+			var materials = {};
 
 			if ( json !== undefined ) {
 
-				const loader = new MaterialLoader();
+				var loader = new MaterialLoader();
 				loader.setTextures( textures );
 
-				for ( let i = 0, l = json.length; i < l; i ++ ) {
+				for ( var i = 0, l = json.length; i < l; i ++ ) {
 
-					const data = json[ i ];
+					var data = json[ i ];
 
 					if ( data.type === 'MultiMaterial' ) {
 
 						// Deprecated
 
-						const array = [];
+						var array = [];
 
-						for ( let j = 0; j < data.materials.length; j ++ ) {
+						for ( var j = 0; j < data.materials.length; j ++ ) {
 
-							const material = data.materials[ j ];
+							var material = data.materials[ j ];
 
 							if ( cache[ material.uuid ] === undefined ) {
 
@@ -40962,15 +40966,15 @@
 
 		parseAnimations: function ( json ) {
 
-			const animations = [];
+			var animations = [];
 
-			for ( let i = 0; i < json.length; i ++ ) {
+			for ( var i = 0; i < json.length; i ++ ) {
 
-				const data = json[ i ];
+				var data = json[ i ];
 
-				const clip = AnimationClip.parse( data );
+				var clip = AnimationClip.parse( data );
 
-				if ( data.uuid !== undefined ) clip.uuid = data.uuid;
+				if ( data.uuid !== undefined ) { clip.uuid = data.uuid; }
 
 				animations.push( clip );
 
@@ -40982,10 +40986,10 @@
 
 		parseImages: function ( json, onLoad ) {
 
-			const scope = this;
-			const images = {};
+			var scope = this;
+			var images = {};
 
-			let loader;
+			var loader;
 
 			function loadImage( url ) {
 
@@ -41006,15 +41010,15 @@
 
 			if ( json !== undefined && json.length > 0 ) {
 
-				const manager = new LoadingManager( onLoad );
+				var manager = new LoadingManager( onLoad );
 
 				loader = new ImageLoader( manager );
 				loader.setCrossOrigin( this.crossOrigin );
 
-				for ( let i = 0, il = json.length; i < il; i ++ ) {
+				for ( var i = 0, il = json.length; i < il; i ++ ) {
 
-					const image = json[ i ];
-					const url = image.url;
+					var image = json[ i ];
+					var url = image.url;
 
 					if ( Array.isArray( url ) ) {
 
@@ -41022,11 +41026,11 @@
 
 						images[ image.uuid ] = [];
 
-						for ( let j = 0, jl = url.length; j < jl; j ++ ) {
+						for ( var j = 0, jl = url.length; j < jl; j ++ ) {
 
-							const currentUrl = url[ j ];
+							var currentUrl = url[ j ];
 
-							const path = /^(\/\/)|([a-z]+:(\/\/)?)/i.test( currentUrl ) ? currentUrl : scope.resourcePath + currentUrl;
+							var path = /^(\/\/)|([a-z]+:(\/\/)?)/i.test( currentUrl ) ? currentUrl : scope.resourcePath + currentUrl;
 
 							images[ image.uuid ].push( loadImage( path ) );
 
@@ -41036,9 +41040,9 @@
 
 						// load single image
 
-						const path = /^(\/\/)|([a-z]+:(\/\/)?)/i.test( image.url ) ? image.url : scope.resourcePath + image.url;
+						var path$1 = /^(\/\/)|([a-z]+:(\/\/)?)/i.test( image.url ) ? image.url : scope.resourcePath + image.url;
 
-						images[ image.uuid ] = loadImage( path );
+						images[ image.uuid ] = loadImage( path$1 );
 
 					}
 
@@ -41054,7 +41058,7 @@
 
 			function parseConstant( value, type ) {
 
-				if ( typeof value === 'number' ) return value;
+				if ( typeof value === 'number' ) { return value; }
 
 				console.warn( 'THREE.ObjectLoader.parseTexture: Constant should be in numeric form.', value );
 
@@ -41062,13 +41066,13 @@
 
 			}
 
-			const textures = {};
+			var textures = {};
 
 			if ( json !== undefined ) {
 
-				for ( let i = 0, l = json.length; i < l; i ++ ) {
+				for ( var i = 0, l = json.length; i < l; i ++ ) {
 
-					const data = json[ i ];
+					var data = json[ i ];
 
 					if ( data.image === undefined ) {
 
@@ -41082,7 +41086,7 @@
 
 					}
 
-					let texture;
+					var texture = (void 0);
 
 					if ( Array.isArray( images[ data.image ] ) ) {
 
@@ -41098,14 +41102,14 @@
 
 					texture.uuid = data.uuid;
 
-					if ( data.name !== undefined ) texture.name = data.name;
+					if ( data.name !== undefined ) { texture.name = data.name; }
 
-					if ( data.mapping !== undefined ) texture.mapping = parseConstant( data.mapping, TEXTURE_MAPPING );
+					if ( data.mapping !== undefined ) { texture.mapping = parseConstant( data.mapping, TEXTURE_MAPPING ); }
 
-					if ( data.offset !== undefined ) texture.offset.fromArray( data.offset );
-					if ( data.repeat !== undefined ) texture.repeat.fromArray( data.repeat );
-					if ( data.center !== undefined ) texture.center.fromArray( data.center );
-					if ( data.rotation !== undefined ) texture.rotation = data.rotation;
+					if ( data.offset !== undefined ) { texture.offset.fromArray( data.offset ); }
+					if ( data.repeat !== undefined ) { texture.repeat.fromArray( data.repeat ); }
+					if ( data.center !== undefined ) { texture.center.fromArray( data.center ); }
+					if ( data.rotation !== undefined ) { texture.rotation = data.rotation; }
 
 					if ( data.wrap !== undefined ) {
 
@@ -41114,18 +41118,18 @@
 
 					}
 
-					if ( data.format !== undefined ) texture.format = data.format;
-					if ( data.type !== undefined ) texture.type = data.type;
-					if ( data.encoding !== undefined ) texture.encoding = data.encoding;
+					if ( data.format !== undefined ) { texture.format = data.format; }
+					if ( data.type !== undefined ) { texture.type = data.type; }
+					if ( data.encoding !== undefined ) { texture.encoding = data.encoding; }
 
-					if ( data.minFilter !== undefined ) texture.minFilter = parseConstant( data.minFilter, TEXTURE_FILTER );
-					if ( data.magFilter !== undefined ) texture.magFilter = parseConstant( data.magFilter, TEXTURE_FILTER );
-					if ( data.anisotropy !== undefined ) texture.anisotropy = data.anisotropy;
+					if ( data.minFilter !== undefined ) { texture.minFilter = parseConstant( data.minFilter, TEXTURE_FILTER ); }
+					if ( data.magFilter !== undefined ) { texture.magFilter = parseConstant( data.magFilter, TEXTURE_FILTER ); }
+					if ( data.anisotropy !== undefined ) { texture.anisotropy = data.anisotropy; }
 
-					if ( data.flipY !== undefined ) texture.flipY = data.flipY;
+					if ( data.flipY !== undefined ) { texture.flipY = data.flipY; }
 
-					if ( data.premultiplyAlpha !== undefined ) texture.premultiplyAlpha = data.premultiplyAlpha;
-					if ( data.unpackAlignment !== undefined ) texture.unpackAlignment = data.unpackAlignment;
+					if ( data.premultiplyAlpha !== undefined ) { texture.premultiplyAlpha = data.premultiplyAlpha; }
+					if ( data.unpackAlignment !== undefined ) { texture.unpackAlignment = data.unpackAlignment; }
 
 					textures[ data.uuid ] = texture;
 
@@ -41139,7 +41143,7 @@
 
 		parseObject: function ( data, geometries, materials ) {
 
-			let object;
+			var object;
 
 			function getGeometry( name ) {
 
@@ -41155,15 +41159,15 @@
 
 			function getMaterial( name ) {
 
-				if ( name === undefined ) return undefined;
+				if ( name === undefined ) { return undefined; }
 
 				if ( Array.isArray( name ) ) {
 
-					const array = [];
+					var array = [];
 
-					for ( let i = 0, l = name.length; i < l; i ++ ) {
+					for ( var i = 0, l = name.length; i < l; i ++ ) {
 
-						const uuid = name[ i ];
+						var uuid = name[ i ];
 
 						if ( materials[ uuid ] === undefined ) {
 
@@ -41189,7 +41193,7 @@
 
 			}
 
-			let geometry, material;
+			var geometry, material;
 
 			switch ( data.type ) {
 
@@ -41227,11 +41231,11 @@
 
 					object = new PerspectiveCamera( data.fov, data.aspect, data.near, data.far );
 
-					if ( data.focus !== undefined ) object.focus = data.focus;
-					if ( data.zoom !== undefined ) object.zoom = data.zoom;
-					if ( data.filmGauge !== undefined ) object.filmGauge = data.filmGauge;
-					if ( data.filmOffset !== undefined ) object.filmOffset = data.filmOffset;
-					if ( data.view !== undefined ) object.view = Object.assign( {}, data.view );
+					if ( data.focus !== undefined ) { object.focus = data.focus; }
+					if ( data.zoom !== undefined ) { object.zoom = data.zoom; }
+					if ( data.filmGauge !== undefined ) { object.filmGauge = data.filmGauge; }
+					if ( data.filmOffset !== undefined ) { object.filmOffset = data.filmOffset; }
+					if ( data.view !== undefined ) { object.view = Object.assign( {}, data.view ); }
 
 					break;
 
@@ -41239,8 +41243,8 @@
 
 					object = new OrthographicCamera( data.left, data.right, data.top, data.bottom, data.near, data.far );
 
-					if ( data.zoom !== undefined ) object.zoom = data.zoom;
-					if ( data.view !== undefined ) object.view = Object.assign( {}, data.view );
+					if ( data.zoom !== undefined ) { object.zoom = data.zoom; }
+					if ( data.view !== undefined ) { object.view = Object.assign( {}, data.view ); }
 
 					break;
 
@@ -41303,8 +41307,8 @@
 
 					geometry = getGeometry( data.geometry );
 					material = getMaterial( data.material );
-					const count = data.count;
-					const instanceMatrix = data.instanceMatrix;
+					var count = data.count;
+					var instanceMatrix = data.instanceMatrix;
 
 					object = new InstancedMesh( geometry, material, count );
 					object.instanceMatrix = new BufferAttribute( new Float32Array( instanceMatrix.array ), 16 );
@@ -41362,48 +41366,48 @@
 
 			object.uuid = data.uuid;
 
-			if ( data.name !== undefined ) object.name = data.name;
+			if ( data.name !== undefined ) { object.name = data.name; }
 
 			if ( data.matrix !== undefined ) {
 
 				object.matrix.fromArray( data.matrix );
 
-				if ( data.matrixAutoUpdate !== undefined ) object.matrixAutoUpdate = data.matrixAutoUpdate;
-				if ( object.matrixAutoUpdate ) object.matrix.decompose( object.position, object.quaternion, object.scale );
+				if ( data.matrixAutoUpdate !== undefined ) { object.matrixAutoUpdate = data.matrixAutoUpdate; }
+				if ( object.matrixAutoUpdate ) { object.matrix.decompose( object.position, object.quaternion, object.scale ); }
 
 			} else {
 
-				if ( data.position !== undefined ) object.position.fromArray( data.position );
-				if ( data.rotation !== undefined ) object.rotation.fromArray( data.rotation );
-				if ( data.quaternion !== undefined ) object.quaternion.fromArray( data.quaternion );
-				if ( data.scale !== undefined ) object.scale.fromArray( data.scale );
+				if ( data.position !== undefined ) { object.position.fromArray( data.position ); }
+				if ( data.rotation !== undefined ) { object.rotation.fromArray( data.rotation ); }
+				if ( data.quaternion !== undefined ) { object.quaternion.fromArray( data.quaternion ); }
+				if ( data.scale !== undefined ) { object.scale.fromArray( data.scale ); }
 
 			}
 
-			if ( data.castShadow !== undefined ) object.castShadow = data.castShadow;
-			if ( data.receiveShadow !== undefined ) object.receiveShadow = data.receiveShadow;
+			if ( data.castShadow !== undefined ) { object.castShadow = data.castShadow; }
+			if ( data.receiveShadow !== undefined ) { object.receiveShadow = data.receiveShadow; }
 
 			if ( data.shadow ) {
 
-				if ( data.shadow.bias !== undefined ) object.shadow.bias = data.shadow.bias;
-				if ( data.shadow.normalBias !== undefined ) object.shadow.normalBias = data.shadow.normalBias;
-				if ( data.shadow.radius !== undefined ) object.shadow.radius = data.shadow.radius;
-				if ( data.shadow.mapSize !== undefined ) object.shadow.mapSize.fromArray( data.shadow.mapSize );
-				if ( data.shadow.camera !== undefined ) object.shadow.camera = this.parseObject( data.shadow.camera );
+				if ( data.shadow.bias !== undefined ) { object.shadow.bias = data.shadow.bias; }
+				if ( data.shadow.normalBias !== undefined ) { object.shadow.normalBias = data.shadow.normalBias; }
+				if ( data.shadow.radius !== undefined ) { object.shadow.radius = data.shadow.radius; }
+				if ( data.shadow.mapSize !== undefined ) { object.shadow.mapSize.fromArray( data.shadow.mapSize ); }
+				if ( data.shadow.camera !== undefined ) { object.shadow.camera = this.parseObject( data.shadow.camera ); }
 
 			}
 
-			if ( data.visible !== undefined ) object.visible = data.visible;
-			if ( data.frustumCulled !== undefined ) object.frustumCulled = data.frustumCulled;
-			if ( data.renderOrder !== undefined ) object.renderOrder = data.renderOrder;
-			if ( data.userData !== undefined ) object.userData = data.userData;
-			if ( data.layers !== undefined ) object.layers.mask = data.layers;
+			if ( data.visible !== undefined ) { object.visible = data.visible; }
+			if ( data.frustumCulled !== undefined ) { object.frustumCulled = data.frustumCulled; }
+			if ( data.renderOrder !== undefined ) { object.renderOrder = data.renderOrder; }
+			if ( data.userData !== undefined ) { object.userData = data.userData; }
+			if ( data.layers !== undefined ) { object.layers.mask = data.layers; }
 
 			if ( data.children !== undefined ) {
 
-				const children = data.children;
+				var children = data.children;
 
-				for ( let i = 0; i < children.length; i ++ ) {
+				for ( var i = 0; i < children.length; i ++ ) {
 
 					object.add( this.parseObject( children[ i ], geometries, materials ) );
 
@@ -41413,14 +41417,14 @@
 
 			if ( data.type === 'LOD' ) {
 
-				if ( data.autoUpdate !== undefined ) object.autoUpdate = data.autoUpdate;
+				if ( data.autoUpdate !== undefined ) { object.autoUpdate = data.autoUpdate; }
 
-				const levels = data.levels;
+				var levels = data.levels;
 
-				for ( let l = 0; l < levels.length; l ++ ) {
+				for ( var l = 0; l < levels.length; l ++ ) {
 
-					const level = levels[ l ];
-					const child = object.getObjectByProperty( 'uuid', level.object );
+					var level = levels[ l ];
+					var child = object.getObjectByProperty( 'uuid', level.object );
 
 					if ( child !== undefined ) {
 
@@ -41438,7 +41442,7 @@
 
 	} );
 
-	const TEXTURE_MAPPING = {
+	var TEXTURE_MAPPING = {
 		UVMapping: UVMapping,
 		CubeReflectionMapping: CubeReflectionMapping,
 		CubeRefractionMapping: CubeRefractionMapping,
@@ -41448,13 +41452,13 @@
 		CubeUVRefractionMapping: CubeUVRefractionMapping
 	};
 
-	const TEXTURE_WRAPPING = {
+	var TEXTURE_WRAPPING = {
 		RepeatWrapping: RepeatWrapping,
 		ClampToEdgeWrapping: ClampToEdgeWrapping,
 		MirroredRepeatWrapping: MirroredRepeatWrapping
 	};
 
-	const TEXTURE_FILTER = {
+	var TEXTURE_FILTER = {
 		NearestFilter: NearestFilter,
 		NearestMipmapNearestFilter: NearestMipmapNearestFilter,
 		NearestMipmapLinearFilter: NearestMipmapLinearFilter,
@@ -41499,15 +41503,15 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			if ( url === undefined ) url = '';
+			if ( url === undefined ) { url = ''; }
 
-			if ( this.path !== undefined ) url = this.path + url;
+			if ( this.path !== undefined ) { url = this.path + url; }
 
 			url = this.manager.resolveURL( url );
 
-			const scope = this;
+			var scope = this;
 
-			const cached = Cache.get( url );
+			var cached = Cache.get( url );
 
 			if ( cached !== undefined ) {
 
@@ -41515,7 +41519,7 @@
 
 				setTimeout( function () {
 
-					if ( onLoad ) onLoad( cached );
+					if ( onLoad ) { onLoad( cached ); }
 
 					scope.manager.itemEnd( url );
 
@@ -41537,13 +41541,13 @@
 
 				Cache.add( url, imageBitmap );
 
-				if ( onLoad ) onLoad( imageBitmap );
+				if ( onLoad ) { onLoad( imageBitmap ); }
 
 				scope.manager.itemEnd( url );
 
 			} ).catch( function ( e ) {
 
-				if ( onError ) onError( e );
+				if ( onError ) { onError( e ); }
 
 				scope.manager.itemError( url );
 				scope.manager.itemEnd( url );
@@ -41615,13 +41619,13 @@
 
 			function toShapesNoHoles( inSubpaths ) {
 
-				const shapes = [];
+				var shapes = [];
 
-				for ( let i = 0, l = inSubpaths.length; i < l; i ++ ) {
+				for ( var i = 0, l = inSubpaths.length; i < l; i ++ ) {
 
-					const tmpPath = inSubpaths[ i ];
+					var tmpPath = inSubpaths[ i ];
 
-					const tmpShape = new Shape();
+					var tmpShape = new Shape();
 					tmpShape.curves = tmpPath.curves;
 
 					shapes.push( tmpShape );
@@ -41634,20 +41638,20 @@
 
 			function isPointInsidePolygon( inPt, inPolygon ) {
 
-				const polyLen = inPolygon.length;
+				var polyLen = inPolygon.length;
 
 				// inPt on polygon contour => immediate success    or
 				// toggling of inside/outside at every single! intersection point of an edge
 				//  with the horizontal line through inPt, left of inPt
 				//  not counting lowerY endpoints of edges and whole edges on that line
-				let inside = false;
-				for ( let p = polyLen - 1, q = 0; q < polyLen; p = q ++ ) {
+				var inside = false;
+				for ( var p = polyLen - 1, q = 0; q < polyLen; p = q ++ ) {
 
-					let edgeLowPt = inPolygon[ p ];
-					let edgeHighPt = inPolygon[ q ];
+					var edgeLowPt = inPolygon[ p ];
+					var edgeHighPt = inPolygon[ q ];
 
-					let edgeDx = edgeHighPt.x - edgeLowPt.x;
-					let edgeDy = edgeHighPt.y - edgeLowPt.y;
+					var edgeDx = edgeHighPt.x - edgeLowPt.x;
+					var edgeDy = edgeHighPt.y - edgeLowPt.y;
 
 					if ( Math.abs( edgeDy ) > Number.EPSILON ) {
 
@@ -41659,18 +41663,18 @@
 
 						}
 
-						if ( ( inPt.y < edgeLowPt.y ) || ( inPt.y > edgeHighPt.y ) ) 		continue;
+						if ( ( inPt.y < edgeLowPt.y ) || ( inPt.y > edgeHighPt.y ) ) 		{ continue; }
 
 						if ( inPt.y === edgeLowPt.y ) {
 
-							if ( inPt.x === edgeLowPt.x )		return	true;		// inPt is on contour ?
+							if ( inPt.x === edgeLowPt.x )		{ return	true; }		// inPt is on contour ?
 							// continue;				// no intersection or edgeLowPt => doesn't count !!!
 
 						} else {
 
-							const perpEdge = edgeDy * ( inPt.x - edgeLowPt.x ) - edgeDx * ( inPt.y - edgeLowPt.y );
-							if ( perpEdge === 0 )				return	true;		// inPt is on contour ?
-							if ( perpEdge < 0 ) 				continue;
+							var perpEdge = edgeDy * ( inPt.x - edgeLowPt.x ) - edgeDx * ( inPt.y - edgeLowPt.y );
+							if ( perpEdge === 0 )				{ return	true; }		// inPt is on contour ?
+							if ( perpEdge < 0 ) 				{ continue; }
 							inside = ! inside;		// true intersection left of inPt
 
 						}
@@ -41678,10 +41682,10 @@
 					} else {
 
 						// parallel or collinear
-						if ( inPt.y !== edgeLowPt.y ) 		continue;			// parallel
+						if ( inPt.y !== edgeLowPt.y ) 		{ continue; }			// parallel
 						// edge lies on the same horizontal line as inPt
 						if ( ( ( edgeHighPt.x <= inPt.x ) && ( inPt.x <= edgeLowPt.x ) ) ||
-							 ( ( edgeLowPt.x <= inPt.x ) && ( inPt.x <= edgeHighPt.x ) ) )		return	true;	// inPt: Point on contour !
+							 ( ( edgeLowPt.x <= inPt.x ) && ( inPt.x <= edgeHighPt.x ) ) )		{ return	true; }	// inPt: Point on contour !
 						// continue;
 
 					}
@@ -41692,15 +41696,15 @@
 
 			}
 
-			const isClockWise = ShapeUtils.isClockWise;
+			var isClockWise = ShapeUtils.isClockWise;
 
-			const subPaths = this.subPaths;
-			if ( subPaths.length === 0 ) return [];
+			var subPaths = this.subPaths;
+			if ( subPaths.length === 0 ) { return []; }
 
-			if ( noHoles === true )	return	toShapesNoHoles( subPaths );
+			if ( noHoles === true )	{ return	toShapesNoHoles( subPaths ); }
 
 
-			let solid, tmpPath, tmpShape, shapes = [];
+			var solid, tmpPath, tmpShape, shapes = [];
 
 			if ( subPaths.length === 1 ) {
 
@@ -41712,21 +41716,21 @@
 
 			}
 
-			let holesFirst = ! isClockWise( subPaths[ 0 ].getPoints() );
+			var holesFirst = ! isClockWise( subPaths[ 0 ].getPoints() );
 			holesFirst = isCCW ? ! holesFirst : holesFirst;
 
 			// console.log("Holes first", holesFirst);
 
-			const betterShapeHoles = [];
-			const newShapes = [];
-			let newShapeHoles = [];
-			let mainIdx = 0;
-			let tmpPoints;
+			var betterShapeHoles = [];
+			var newShapes = [];
+			var newShapeHoles = [];
+			var mainIdx = 0;
+			var tmpPoints;
 
 			newShapes[ mainIdx ] = undefined;
 			newShapeHoles[ mainIdx ] = [];
 
-			for ( let i = 0, l = subPaths.length; i < l; i ++ ) {
+			for ( var i = 0, l = subPaths.length; i < l; i ++ ) {
 
 				tmpPath = subPaths[ i ];
 				tmpPoints = tmpPath.getPoints();
@@ -41735,12 +41739,12 @@
 
 				if ( solid ) {
 
-					if ( ( ! holesFirst ) && ( newShapes[ mainIdx ] ) )	mainIdx ++;
+					if ( ( ! holesFirst ) && ( newShapes[ mainIdx ] ) )	{ mainIdx ++; }
 
 					newShapes[ mainIdx ] = { s: new Shape(), p: tmpPoints };
 					newShapes[ mainIdx ].s.curves = tmpPath.curves;
 
-					if ( holesFirst )	mainIdx ++;
+					if ( holesFirst )	{ mainIdx ++; }
 					newShapeHoles[ mainIdx ] = [];
 
 					//console.log('cw', i);
@@ -41756,34 +41760,34 @@
 			}
 
 			// only Holes? -> probably all Shapes with wrong orientation
-			if ( ! newShapes[ 0 ] )	return	toShapesNoHoles( subPaths );
+			if ( ! newShapes[ 0 ] )	{ return	toShapesNoHoles( subPaths ); }
 
 
 			if ( newShapes.length > 1 ) {
 
-				let ambiguous = false;
-				const toChange = [];
+				var ambiguous = false;
+				var toChange = [];
 
-				for ( let sIdx = 0, sLen = newShapes.length; sIdx < sLen; sIdx ++ ) {
+				for ( var sIdx = 0, sLen = newShapes.length; sIdx < sLen; sIdx ++ ) {
 
 					betterShapeHoles[ sIdx ] = [];
 
 				}
 
-				for ( let sIdx = 0, sLen = newShapes.length; sIdx < sLen; sIdx ++ ) {
+				for ( var sIdx$1 = 0, sLen$1 = newShapes.length; sIdx$1 < sLen$1; sIdx$1 ++ ) {
 
-					const sho = newShapeHoles[ sIdx ];
+					var sho = newShapeHoles[ sIdx$1 ];
 
-					for ( let hIdx = 0; hIdx < sho.length; hIdx ++ ) {
+					for ( var hIdx = 0; hIdx < sho.length; hIdx ++ ) {
 
-						const ho = sho[ hIdx ];
-						let hole_unassigned = true;
+						var ho = sho[ hIdx ];
+						var hole_unassigned = true;
 
-						for ( let s2Idx = 0; s2Idx < newShapes.length; s2Idx ++ ) {
+						for ( var s2Idx = 0; s2Idx < newShapes.length; s2Idx ++ ) {
 
 							if ( isPointInsidePolygon( ho.p, newShapes[ s2Idx ].p ) ) {
 
-								if ( sIdx !== s2Idx )	toChange.push( { froms: sIdx, tos: s2Idx, hole: hIdx } );
+								if ( sIdx$1 !== s2Idx )	{ toChange.push( { froms: sIdx$1, tos: s2Idx, hole: hIdx } ); }
 								if ( hole_unassigned ) {
 
 									hole_unassigned = false;
@@ -41801,7 +41805,7 @@
 
 						if ( hole_unassigned ) {
 
-							betterShapeHoles[ sIdx ].push( ho );
+							betterShapeHoles[ sIdx$1 ].push( ho );
 
 						}
 
@@ -41813,21 +41817,21 @@
 				if ( toChange.length > 0 ) {
 
 					// console.log("to change: ", toChange);
-					if ( ! ambiguous )	newShapeHoles = betterShapeHoles;
+					if ( ! ambiguous )	{ newShapeHoles = betterShapeHoles; }
 
 				}
 
 			}
 
-			let tmpHoles;
+			var tmpHoles;
 
-			for ( let i = 0, il = newShapes.length; i < il; i ++ ) {
+			for ( var i$1 = 0, il = newShapes.length; i$1 < il; i$1 ++ ) {
 
-				tmpShape = newShapes[ i ].s;
+				tmpShape = newShapes[ i$1 ].s;
 				shapes.push( tmpShape );
-				tmpHoles = newShapeHoles[ i ];
+				tmpHoles = newShapeHoles[ i$1 ];
 
-				for ( let j = 0, jl = tmpHoles.length; j < jl; j ++ ) {
+				for ( var j = 0, jl = tmpHoles.length; j < jl; j ++ ) {
 
 					tmpShape.holes.push( tmpHoles[ j ].h );
 
@@ -41857,12 +41861,12 @@
 
 		generateShapes: function ( text, size ) {
 
-			if ( size === undefined ) size = 100;
+			if ( size === undefined ) { size = 100; }
 
-			const shapes = [];
-			const paths = createPaths( text, size, this.data );
+			var shapes = [];
+			var paths = createPaths( text, size, this.data );
 
-			for ( let p = 0, pl = paths.length; p < pl; p ++ ) {
+			for ( var p = 0, pl = paths.length; p < pl; p ++ ) {
 
 				Array.prototype.push.apply( shapes, paths[ p ].toShapes() );
 
@@ -41876,17 +41880,17 @@
 
 	function createPaths( text, size, data ) {
 
-		const chars = Array.from ? Array.from( text ) : String( text ).split( '' ); // workaround for IE11, see #13988
-		const scale = size / data.resolution;
-		const line_height = ( data.boundingBox.yMax - data.boundingBox.yMin + data.underlineThickness ) * scale;
+		var chars = Array.from ? Array.from( text ) : String( text ).split( '' ); // workaround for IE11, see #13988
+		var scale = size / data.resolution;
+		var line_height = ( data.boundingBox.yMax - data.boundingBox.yMin + data.underlineThickness ) * scale;
 
-		const paths = [];
+		var paths = [];
 
-		let offsetX = 0, offsetY = 0;
+		var offsetX = 0, offsetY = 0;
 
-		for ( let i = 0; i < chars.length; i ++ ) {
+		for ( var i = 0; i < chars.length; i ++ ) {
 
-			const char = chars[ i ];
+			var char = chars[ i ];
 
 			if ( char === '\n' ) {
 
@@ -41895,7 +41899,7 @@
 
 			} else {
 
-				const ret = createPath( char, scale, offsetX, offsetY, data );
+				var ret = createPath( char, scale, offsetX, offsetY, data );
 				offsetX += ret.offsetX;
 				paths.push( ret.path );
 
@@ -41909,7 +41913,7 @@
 
 	function createPath( char, scale, offsetX, offsetY, data ) {
 
-		const glyph = data.glyphs[ char ] || data.glyphs[ '?' ];
+		var glyph = data.glyphs[ char ] || data.glyphs[ '?' ];
 
 		if ( ! glyph ) {
 
@@ -41919,17 +41923,17 @@
 
 		}
 
-		const path = new ShapePath();
+		var path = new ShapePath();
 
-		let x, y, cpx, cpy, cpx1, cpy1, cpx2, cpy2;
+		var x, y, cpx, cpy, cpx1, cpy1, cpx2, cpy2;
 
 		if ( glyph.o ) {
 
-			const outline = glyph._cachedOutline || ( glyph._cachedOutline = glyph.o.split( ' ' ) );
+			var outline = glyph._cachedOutline || ( glyph._cachedOutline = glyph.o.split( ' ' ) );
 
-			for ( let i = 0, l = outline.length; i < l; ) {
+			for ( var i = 0, l = outline.length; i < l; ) {
 
-				const action = outline[ i ++ ];
+				var action = outline[ i ++ ];
 
 				switch ( action ) {
 
@@ -41997,14 +42001,14 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const loader = new FileLoader( this.manager );
+			var loader = new FileLoader( this.manager );
 			loader.setPath( this.path );
 			loader.setRequestHeader( this.requestHeader );
 			loader.load( url, function ( text ) {
 
-				let json;
+				var json;
 
 				try {
 
@@ -42017,9 +42021,9 @@
 
 				}
 
-				const font = scope.parse( json );
+				var font = scope.parse( json );
 
-				if ( onLoad ) onLoad( font );
+				if ( onLoad ) { onLoad( font ); }
 
 			}, onProgress, onError );
 
@@ -42033,9 +42037,9 @@
 
 	} );
 
-	let _context;
+	var _context;
 
-	const AudioContext = {
+	var AudioContext = {
 
 		getContext: function () {
 
@@ -42069,9 +42073,9 @@
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
-			const scope = this;
+			var scope = this;
 
-			const loader = new FileLoader( scope.manager );
+			var loader = new FileLoader( scope.manager );
 			loader.setResponseType( 'arraybuffer' );
 			loader.setPath( scope.path );
 			loader.setRequestHeader( scope.requestHeader );
@@ -42081,9 +42085,9 @@
 
 					// Create a copy of the buffer. The `decodeAudioData` method
 					// detaches the buffer when complete, preventing reuse.
-					const bufferCopy = buffer.slice( 0 );
+					var bufferCopy = buffer.slice( 0 );
 
-					const context = AudioContext.getContext();
+					var context = AudioContext.getContext();
 					context.decodeAudioData( bufferCopy, function ( audioBuffer ) {
 
 						onLoad( audioBuffer );
@@ -42116,15 +42120,15 @@
 
 		LightProbe.call( this, undefined, intensity );
 
-		const color1 = new Color().set( skyColor );
-		const color2 = new Color().set( groundColor );
+		var color1 = new Color().set( skyColor );
+		var color2 = new Color().set( groundColor );
 
-		const sky = new Vector3( color1.r, color1.g, color1.b );
-		const ground = new Vector3( color2.r, color2.g, color2.b );
+		var sky = new Vector3( color1.r, color1.g, color1.b );
+		var ground = new Vector3( color2.r, color2.g, color2.b );
 
 		// without extra factor of PI in the shader, should = 1 / Math.sqrt( Math.PI );
-		const c0 = Math.sqrt( Math.PI );
-		const c1 = c0 * Math.sqrt( 0.75 );
+		var c0 = Math.sqrt( Math.PI );
+		var c1 = c0 * Math.sqrt( 0.75 );
 
 		this.sh.coefficients[ 0 ].copy( sky ).add( ground ).multiplyScalar( c0 );
 		this.sh.coefficients[ 1 ].copy( sky ).sub( ground ).multiplyScalar( c1 );
@@ -42147,7 +42151,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = LightProbe.prototype.toJSON.call( this, meta );
+			var data = LightProbe.prototype.toJSON.call( this, meta );
 
 			// data.sh = this.sh.toArray(); // todo
 
@@ -42161,7 +42165,7 @@
 
 		LightProbe.call( this, undefined, intensity );
 
-		const color1 = new Color().set( color );
+		var color1 = new Color().set( color );
 
 		// without extra factor of PI in the shader, would be 2 / Math.sqrt( Math.PI );
 		this.sh.coefficients[ 0 ].set( color1.r, color1.g, color1.b ).multiplyScalar( 2 * Math.sqrt( Math.PI ) );
@@ -42184,7 +42188,7 @@
 
 		toJSON: function ( meta ) {
 
-			const data = LightProbe.prototype.toJSON.call( this, meta );
+			var data = LightProbe.prototype.toJSON.call( this, meta );
 
 			// data.sh = this.sh.toArray(); // todo
 
@@ -42194,8 +42198,8 @@
 
 	} );
 
-	const _eyeRight = new Matrix4();
-	const _eyeLeft = new Matrix4();
+	var _eyeRight = new Matrix4();
+	var _eyeLeft = new Matrix4();
 
 	function StereoCamera() {
 
@@ -42229,9 +42233,9 @@
 
 		update: function ( camera ) {
 
-			const cache = this._cache;
+			var cache = this._cache;
 
-			const needsUpdate = cache.focus !== camera.focus || cache.fov !== camera.fov ||
+			var needsUpdate = cache.focus !== camera.focus || cache.fov !== camera.fov ||
 				cache.aspect !== camera.aspect * this.aspect || cache.near !== camera.near ||
 				cache.far !== camera.far || cache.zoom !== camera.zoom || cache.eyeSep !== this.eyeSep;
 
@@ -42248,11 +42252,11 @@
 				// Off-axis stereoscopic effect based on
 				// http://paulbourke.net/stereographics/stereorender/
 
-				const projectionMatrix = camera.projectionMatrix.clone();
-				const eyeSepHalf = cache.eyeSep / 2;
-				const eyeSepOnProjection = eyeSepHalf * cache.near / cache.focus;
-				const ymax = ( cache.near * Math.tan( MathUtils.DEG2RAD * cache.fov * 0.5 ) ) / cache.zoom;
-				let xmin, xmax;
+				var projectionMatrix = camera.projectionMatrix.clone();
+				var eyeSepHalf = cache.eyeSep / 2;
+				var eyeSepOnProjection = eyeSepHalf * cache.near / cache.focus;
+				var ymax = ( cache.near * Math.tan( MathUtils.DEG2RAD * cache.fov * 0.5 ) ) / cache.zoom;
+				var xmin, xmax;
 
 				// translate xOffset
 
@@ -42329,7 +42333,7 @@
 
 		getDelta: function () {
 
-			let diff = 0;
+			var diff = 0;
 
 			if ( this.autoStart && ! this.running ) {
 
@@ -42340,7 +42344,7 @@
 
 			if ( this.running ) {
 
-				const newTime = ( typeof performance === 'undefined' ? Date : performance ).now();
+				var newTime = ( typeof performance === 'undefined' ? Date : performance ).now();
 
 				diff = ( newTime - this.oldTime ) / 1000;
 				this.oldTime = newTime;
@@ -42355,10 +42359,10 @@
 
 	} );
 
-	const _position$2 = new Vector3();
-	const _quaternion$3 = new Quaternion();
-	const _scale$1 = new Vector3();
-	const _orientation = new Vector3();
+	var _position$2 = new Vector3();
+	var _quaternion$3 = new Quaternion();
+	var _scale$1 = new Vector3();
+	var _orientation = new Vector3();
 
 	function AudioListener() {
 
@@ -42451,8 +42455,8 @@
 
 			Object3D.prototype.updateMatrixWorld.call( this, force );
 
-			const listener = this.context.listener;
-			const up = this.up;
+			var listener = this.context.listener;
+			var up = this.up;
 
 			this.timeDelta = this._clock.getDelta();
 
@@ -42464,7 +42468,7 @@
 
 				// code path for Chrome (see #14393)
 
-				const endTime = this.context.currentTime + this.timeDelta;
+				var endTime = this.context.currentTime + this.timeDelta;
 
 				listener.positionX.linearRampToValueAtTime( _position$2.x, endTime );
 				listener.positionY.linearRampToValueAtTime( _position$2.y, endTime );
@@ -42568,7 +42572,7 @@
 			this.buffer = audioBuffer;
 			this.sourceType = 'buffer';
 
-			if ( this.autoplay ) this.play();
+			if ( this.autoplay ) { this.play(); }
 
 			return this;
 
@@ -42576,7 +42580,7 @@
 
 		play: function ( delay ) {
 
-			if ( delay === undefined ) delay = 0;
+			if ( delay === undefined ) { delay = 0; }
 
 			if ( this.isPlaying === true ) {
 
@@ -42594,7 +42598,7 @@
 
 			this._startedAt = this.context.currentTime + delay;
 
-			const source = this.context.createBufferSource();
+			var source = this.context.createBufferSource();
 			source.buffer = this.buffer;
 			source.loop = this.loop;
 			source.loopStart = this.loopStart;
@@ -42672,7 +42676,7 @@
 
 				this.source.connect( this.filters[ 0 ] );
 
-				for ( let i = 1, l = this.filters.length; i < l; i ++ ) {
+				for ( var i = 1, l = this.filters.length; i < l; i ++ ) {
 
 					this.filters[ i - 1 ].connect( this.filters[ i ] );
 
@@ -42696,7 +42700,7 @@
 
 				this.source.disconnect( this.filters[ 0 ] );
 
-				for ( let i = 1, l = this.filters.length; i < l; i ++ ) {
+				for ( var i = 1, l = this.filters.length; i < l; i ++ ) {
 
 					this.filters[ i - 1 ].disconnect( this.filters[ i ] );
 
@@ -42722,7 +42726,7 @@
 
 		setFilters: function ( value ) {
 
-			if ( ! value ) value = [];
+			if ( ! value ) { value = []; }
 
 			if ( this.isPlaying === true ) {
 
@@ -42744,7 +42748,7 @@
 
 			this.detune = value;
 
-			if ( this.source.detune === undefined ) return; // only set detune when available
+			if ( this.source.detune === undefined ) { return; } // only set detune when available
 
 			if ( this.isPlaying === true ) {
 
@@ -42873,10 +42877,10 @@
 
 	} );
 
-	const _position$3 = new Vector3();
-	const _quaternion$4 = new Quaternion();
-	const _scale$2 = new Vector3();
-	const _orientation$1 = new Vector3();
+	var _position$3 = new Vector3();
+	var _quaternion$4 = new Quaternion();
+	var _scale$2 = new Vector3();
+	var _orientation$1 = new Vector3();
 
 	function PositionalAudio( listener ) {
 
@@ -42968,19 +42972,19 @@
 
 			Object3D.prototype.updateMatrixWorld.call( this, force );
 
-			if ( this.hasPlaybackControl === true && this.isPlaying === false ) return;
+			if ( this.hasPlaybackControl === true && this.isPlaying === false ) { return; }
 
 			this.matrixWorld.decompose( _position$3, _quaternion$4, _scale$2 );
 
 			_orientation$1.set( 0, 0, 1 ).applyQuaternion( _quaternion$4 );
 
-			const panner = this.panner;
+			var panner = this.panner;
 
 			if ( panner.positionX ) {
 
 				// code path for Chrome and Firefox (see #14393)
 
-				const endTime = this.context.currentTime + this.listener.timeDelta;
+				var endTime = this.context.currentTime + this.listener.timeDelta;
 
 				panner.positionX.linearRampToValueAtTime( _position$3.x, endTime );
 				panner.positionY.linearRampToValueAtTime( _position$3.y, endTime );
@@ -43023,10 +43027,10 @@
 
 		getAverageFrequency: function () {
 
-			let value = 0;
-			const data = this.getFrequencyData();
+			var value = 0;
+			var data = this.getFrequencyData();
 
-			for ( let i = 0; i < data.length; i ++ ) {
+			for ( var i = 0; i < data.length; i ++ ) {
 
 				value += data[ i ];
 
@@ -43043,7 +43047,7 @@
 		this.binding = binding;
 		this.valueSize = valueSize;
 
-		let mixFunction,
+		var mixFunction,
 			mixFunctionAdditive,
 			setIdentity;
 
@@ -43118,17 +43122,17 @@
 			// note: happily accumulating nothing when weight = 0, the caller knows
 			// the weight and shouldn't have made the call in the first place
 
-			const buffer = this.buffer,
+			var buffer = this.buffer,
 				stride = this.valueSize,
 				offset = accuIndex * stride + stride;
 
-			let currentWeight = this.cumulativeWeight;
+			var currentWeight = this.cumulativeWeight;
 
 			if ( currentWeight === 0 ) {
 
 				// accuN := incoming * weight
 
-				for ( let i = 0; i !== stride; ++ i ) {
+				for ( var i = 0; i !== stride; ++ i ) {
 
 					buffer[ offset + i ] = buffer[ i ];
 
@@ -43141,7 +43145,7 @@
 				// accuN := accuN + incoming * weight
 
 				currentWeight += weight;
-				const mix = weight / currentWeight;
+				var mix = weight / currentWeight;
 				this._mixBufferRegion( buffer, offset, 0, mix, stride );
 
 			}
@@ -43153,7 +43157,7 @@
 		// accumulate data in the 'incoming' region into 'add'
 		accumulateAdditive: function ( weight ) {
 
-			const buffer = this.buffer,
+			var buffer = this.buffer,
 				stride = this.valueSize,
 				offset = stride * this._addIndex;
 
@@ -43175,7 +43179,7 @@
 		// apply the state of 'accu<i>' to the binding when accus differ
 		apply: function ( accuIndex ) {
 
-			const stride = this.valueSize,
+			var stride = this.valueSize,
 				buffer = this.buffer,
 				offset = accuIndex * stride + stride,
 
@@ -43191,7 +43195,7 @@
 
 				// accuN := accuN + original * ( 1 - cumulativeWeight )
 
-				const originalValueOffset = stride * this._origIndex;
+				var originalValueOffset = stride * this._origIndex;
 
 				this._mixBufferRegion(
 					buffer, offset, originalValueOffset, 1 - weight, stride );
@@ -43206,7 +43210,7 @@
 
 			}
 
-			for ( let i = stride, e = stride + stride; i !== e; ++ i ) {
+			for ( var i = stride, e = stride + stride; i !== e; ++ i ) {
 
 				if ( buffer[ i ] !== buffer[ i + stride ] ) {
 
@@ -43224,9 +43228,9 @@
 		// remember the state of the bound property and copy it to both accus
 		saveOriginalState: function () {
 
-			const binding = this.binding;
+			var binding = this.binding;
 
-			const buffer = this.buffer,
+			var buffer = this.buffer,
 				stride = this.valueSize,
 
 				originalValueOffset = stride * this._origIndex;
@@ -43234,7 +43238,7 @@
 			binding.getValue( buffer, originalValueOffset );
 
 			// accu[0..1] := orig -- initially detect changes against the original
-			for ( let i = stride, e = originalValueOffset; i !== e; ++ i ) {
+			for ( var i = stride, e = originalValueOffset; i !== e; ++ i ) {
 
 				buffer[ i ] = buffer[ originalValueOffset + ( i % stride ) ];
 
@@ -43251,17 +43255,17 @@
 		// apply the state previously taken via 'saveOriginalState' to the binding
 		restoreOriginalState: function () {
 
-			const originalValueOffset = this.valueSize * 3;
+			var originalValueOffset = this.valueSize * 3;
 			this.binding.setValue( this.buffer, originalValueOffset );
 
 		},
 
 		_setAdditiveIdentityNumeric: function () {
 
-			const startIndex = this._addIndex * this.valueSize;
-			const endIndex = startIndex + this.valueSize;
+			var startIndex = this._addIndex * this.valueSize;
+			var endIndex = startIndex + this.valueSize;
 
-			for ( let i = startIndex; i < endIndex; i ++ ) {
+			for ( var i = startIndex; i < endIndex; i ++ ) {
 
 				this.buffer[ i ] = 0;
 
@@ -43278,10 +43282,10 @@
 
 		_setAdditiveIdentityOther: function () {
 
-			const startIndex = this._origIndex * this.valueSize;
-			const targetIndex = this._addIndex * this.valueSize;
+			var startIndex = this._origIndex * this.valueSize;
+			var targetIndex = this._addIndex * this.valueSize;
 
-			for ( let i = 0; i < this.valueSize; i ++ ) {
+			for ( var i = 0; i < this.valueSize; i ++ ) {
 
 				this.buffer[ targetIndex + i ] = this.buffer[ startIndex + i ];
 
@@ -43296,7 +43300,7 @@
 
 			if ( t >= 0.5 ) {
 
-				for ( let i = 0; i !== stride; ++ i ) {
+				for ( var i = 0; i !== stride; ++ i ) {
 
 					buffer[ dstOffset + i ] = buffer[ srcOffset + i ];
 
@@ -43314,7 +43318,7 @@
 
 		_slerpAdditive: function ( buffer, dstOffset, srcOffset, t, stride ) {
 
-			const workOffset = this._workIndex * stride;
+			var workOffset = this._workIndex * stride;
 
 			// Store result in intermediate buffer offset
 			Quaternion.multiplyQuaternionsFlat( buffer, workOffset, buffer, dstOffset, buffer, srcOffset );
@@ -43326,11 +43330,11 @@
 
 		_lerp: function ( buffer, dstOffset, srcOffset, t, stride ) {
 
-			const s = 1 - t;
+			var s = 1 - t;
 
-			for ( let i = 0; i !== stride; ++ i ) {
+			for ( var i = 0; i !== stride; ++ i ) {
 
-				const j = dstOffset + i;
+				var j = dstOffset + i;
 
 				buffer[ j ] = buffer[ j ] * s + buffer[ srcOffset + i ] * t;
 
@@ -43340,9 +43344,9 @@
 
 		_lerpAdditive: function ( buffer, dstOffset, srcOffset, t, stride ) {
 
-			for ( let i = 0; i !== stride; ++ i ) {
+			for ( var i = 0; i !== stride; ++ i ) {
 
-				const j = dstOffset + i;
+				var j = dstOffset + i;
 
 				buffer[ j ] = buffer[ j ] + buffer[ srcOffset + i ] * t;
 
@@ -43353,31 +43357,31 @@
 	} );
 
 	// Characters [].:/ are reserved for track binding syntax.
-	const _RESERVED_CHARS_RE = '\\[\\]\\.:\\/';
-	const _reservedRe = new RegExp( '[' + _RESERVED_CHARS_RE + ']', 'g' );
+	var _RESERVED_CHARS_RE = '\\[\\]\\.:\\/';
+	var _reservedRe = new RegExp( '[' + _RESERVED_CHARS_RE + ']', 'g' );
 
 	// Attempts to allow node names from any language. ES5's `\w` regexp matches
 	// only latin characters, and the unicode \p{L} is not yet supported. So
 	// instead, we exclude reserved characters and match everything else.
-	const _wordChar = '[^' + _RESERVED_CHARS_RE + ']';
-	const _wordCharOrDot = '[^' + _RESERVED_CHARS_RE.replace( '\\.', '' ) + ']';
+	var _wordChar = '[^' + _RESERVED_CHARS_RE + ']';
+	var _wordCharOrDot = '[^' + _RESERVED_CHARS_RE.replace( '\\.', '' ) + ']';
 
 	// Parent directories, delimited by '/' or ':'. Currently unused, but must
 	// be matched to parse the rest of the track name.
-	const _directoryRe = /((?:WC+[\/:])*)/.source.replace( 'WC', _wordChar );
+	var _directoryRe = /((?:WC+[\/:])*)/.source.replace( 'WC', _wordChar );
 
 	// Target node. May contain word characters (a-zA-Z0-9_) and '.' or '-'.
-	const _nodeRe = /(WCOD+)?/.source.replace( 'WCOD', _wordCharOrDot );
+	var _nodeRe = /(WCOD+)?/.source.replace( 'WCOD', _wordCharOrDot );
 
 	// Object on target node, and accessor. May not contain reserved
 	// characters. Accessor may contain any character except closing bracket.
-	const _objectRe = /(?:\.(WC+)(?:\[(.+)\])?)?/.source.replace( 'WC', _wordChar );
+	var _objectRe = /(?:\.(WC+)(?:\[(.+)\])?)?/.source.replace( 'WC', _wordChar );
 
 	// Property and accessor. May not contain reserved characters. Accessor may
 	// contain any non-bracket characters.
-	const _propertyRe = /\.(WC+)(?:\[(.+)\])?/.source.replace( 'WC', _wordChar );
+	var _propertyRe = /\.(WC+)(?:\[(.+)\])?/.source.replace( 'WC', _wordChar );
 
-	const _trackRe = new RegExp( ''
+	var _trackRe = new RegExp( ''
 		+ '^'
 		+ _directoryRe
 		+ _nodeRe
@@ -43386,11 +43390,11 @@
 		+ '$'
 	);
 
-	const _supportedObjectNames = [ 'material', 'materials', 'bones' ];
+	var _supportedObjectNames = [ 'material', 'materials', 'bones' ];
 
 	function Composite( targetGroup, path, optionalParsedPath ) {
 
-		const parsedPath = optionalParsedPath || PropertyBinding.parseTrackName( path );
+		var parsedPath = optionalParsedPath || PropertyBinding.parseTrackName( path );
 
 		this._targetGroup = targetGroup;
 		this._bindings = targetGroup.subscribe_( path, parsedPath );
@@ -43403,19 +43407,19 @@
 
 			this.bind(); // bind all binding
 
-			const firstValidIndex = this._targetGroup.nCachedObjects_,
+			var firstValidIndex = this._targetGroup.nCachedObjects_,
 				binding = this._bindings[ firstValidIndex ];
 
 			// and only call .getValue on the first
-			if ( binding !== undefined ) binding.getValue( array, offset );
+			if ( binding !== undefined ) { binding.getValue( array, offset ); }
 
 		},
 
 		setValue: function ( array, offset ) {
 
-			const bindings = this._bindings;
+			var bindings = this._bindings;
 
-			for ( let i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
+			for ( var i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
 
 				bindings[ i ].setValue( array, offset );
 
@@ -43425,9 +43429,9 @@
 
 		bind: function () {
 
-			const bindings = this._bindings;
+			var bindings = this._bindings;
 
-			for ( let i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
+			for ( var i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
 
 				bindings[ i ].bind();
 
@@ -43437,9 +43441,9 @@
 
 		unbind: function () {
 
-			const bindings = this._bindings;
+			var bindings = this._bindings;
 
-			for ( let i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
+			for ( var i = this._targetGroup.nCachedObjects_, n = bindings.length; i !== n; ++ i ) {
 
 				bindings[ i ].unbind();
 
@@ -43494,7 +43498,7 @@
 
 		parseTrackName: function ( trackName ) {
 
-			const matches = _trackRe.exec( trackName );
+			var matches = _trackRe.exec( trackName );
 
 			if ( ! matches ) {
 
@@ -43502,7 +43506,7 @@
 
 			}
 
-			const results = {
+			var results = {
 				// directoryName: matches[ 1 ], // (tschw) currently unused
 				nodeName: matches[ 2 ],
 				objectName: matches[ 3 ],
@@ -43511,11 +43515,11 @@
 				propertyIndex: matches[ 6 ]
 			};
 
-			const lastDot = results.nodeName && results.nodeName.lastIndexOf( '.' );
+			var lastDot = results.nodeName && results.nodeName.lastIndexOf( '.' );
 
 			if ( lastDot !== undefined && lastDot !== - 1 ) {
 
-				const objectName = results.nodeName.substring( lastDot + 1 );
+				var objectName = results.nodeName.substring( lastDot + 1 );
 
 				// Object names must be checked against an allowlist. Otherwise, there
 				// is no way to parse 'foo.bar.baz': 'baz' must be a property, but
@@ -43551,7 +43555,7 @@
 			// search into skeleton bones.
 			if ( root.skeleton ) {
 
-				const bone = root.skeleton.getBoneByName( nodeName );
+				var bone = root.skeleton.getBoneByName( nodeName );
 
 				if ( bone !== undefined ) {
 
@@ -43564,11 +43568,11 @@
 			// search into node subtree.
 			if ( root.children ) {
 
-				const searchNodeSubtree = function ( children ) {
+				var searchNodeSubtree = function ( children ) {
 
-					for ( let i = 0; i < children.length; i ++ ) {
+					for ( var i = 0; i < children.length; i ++ ) {
 
-						const childNode = children[ i ];
+						var childNode = children[ i ];
 
 						if ( childNode.name === nodeName || childNode.uuid === nodeName ) {
 
@@ -43576,9 +43580,9 @@
 
 						}
 
-						const result = searchNodeSubtree( childNode.children );
+						var result = searchNodeSubtree( childNode.children );
 
-						if ( result ) return result;
+						if ( result ) { return result; }
 
 					}
 
@@ -43586,7 +43590,7 @@
 
 				};
 
-				const subTreeNode = searchNodeSubtree( root.children );
+				var subTreeNode = searchNodeSubtree( root.children );
 
 				if ( subTreeNode ) {
 
@@ -43631,9 +43635,9 @@
 
 			function getValue_array( buffer, offset ) {
 
-				const source = this.resolvedProperty;
+				var source = this.resolvedProperty;
 
-				for ( let i = 0, n = source.length; i !== n; ++ i ) {
+				for ( var i = 0, n = source.length; i !== n; ++ i ) {
 
 					buffer[ offset ++ ] = source[ i ];
 
@@ -43686,9 +43690,9 @@
 
 				function setValue_array( buffer, offset ) {
 
-					const dest = this.resolvedProperty;
+					var dest = this.resolvedProperty;
 
-					for ( let i = 0, n = dest.length; i !== n; ++ i ) {
+					for ( var i = 0, n = dest.length; i !== n; ++ i ) {
 
 						dest[ i ] = buffer[ offset ++ ];
 
@@ -43698,9 +43702,9 @@
 
 				function setValue_array_setNeedsUpdate( buffer, offset ) {
 
-					const dest = this.resolvedProperty;
+					var dest = this.resolvedProperty;
 
-					for ( let i = 0, n = dest.length; i !== n; ++ i ) {
+					for ( var i = 0, n = dest.length; i !== n; ++ i ) {
 
 						dest[ i ] = buffer[ offset ++ ];
 
@@ -43712,9 +43716,9 @@
 
 				function setValue_array_setMatrixWorldNeedsUpdate( buffer, offset ) {
 
-					const dest = this.resolvedProperty;
+					var dest = this.resolvedProperty;
 
-					for ( let i = 0, n = dest.length; i !== n; ++ i ) {
+					for ( var i = 0, n = dest.length; i !== n; ++ i ) {
 
 						dest[ i ] = buffer[ offset ++ ];
 
@@ -43799,7 +43803,7 @@
 		// create getter / setter pair for a property in the scene graph
 		bind: function () {
 
-			let targetObject = this.node,
+			var targetObject = this.node,
 				parsedPath = this.parsedPath,
 
 				objectName = parsedPath.objectName,
@@ -43828,7 +43832,7 @@
 
 			if ( objectName ) {
 
-				let objectIndex = parsedPath.objectIndex;
+				var objectIndex = parsedPath.objectIndex;
 
 				// special cases were we need to reach deeper into the hierarchy to get the face materials....
 				switch ( objectName ) {
@@ -43868,7 +43872,7 @@
 						targetObject = targetObject.skeleton.bones;
 
 						// support resolving morphTarget names into indices.
-						for ( let i = 0; i < targetObject.length; i ++ ) {
+						for ( var i = 0; i < targetObject.length; i ++ ) {
 
 							if ( targetObject[ i ].name === objectIndex ) {
 
@@ -43911,11 +43915,11 @@
 			}
 
 			// resolve property
-			const nodeProperty = targetObject[ propertyName ];
+			var nodeProperty = targetObject[ propertyName ];
 
 			if ( nodeProperty === undefined ) {
 
-				const nodeName = parsedPath.nodeName;
+				var nodeName = parsedPath.nodeName;
 
 				console.error( 'THREE.PropertyBinding: Trying to update property for track: ' + nodeName +
 					'.' + propertyName + ' but it wasn\'t found.', targetObject );
@@ -43924,7 +43928,7 @@
 			}
 
 			// determine versioning scheme
-			let versioning = this.Versioning.None;
+			var versioning = this.Versioning.None;
 
 			this.targetObject = targetObject;
 
@@ -43939,7 +43943,7 @@
 			}
 
 			// determine how the property gets bound
-			let bindingType = this.BindingType.Direct;
+			var bindingType = this.BindingType.Direct;
 
 			if ( propertyIndex !== undefined ) {
 
@@ -44065,6 +44069,8 @@
 	 */
 
 	function AnimationObjectGroup() {
+		var arguments$1 = arguments;
+
 
 		this.uuid = MathUtils.generateUUID();
 
@@ -44074,12 +44080,12 @@
 		this.nCachedObjects_ = 0; // threshold
 		// note: read by PropertyBinding.Composite
 
-		const indices = {};
+		var indices = {};
 		this._indicesByUUID = indices; // for bookkeeping
 
-		for ( let i = 0, n = arguments.length; i !== n; ++ i ) {
+		for ( var i = 0, n = arguments.length; i !== n; ++ i ) {
 
-			indices[ arguments[ i ].uuid ] = i;
+			indices[ arguments$1[ i ].uuid ] = i;
 
 		}
 
@@ -44088,7 +44094,7 @@
 		this._bindings = []; // inside: Array< PropertyBinding >
 		this._bindingsIndicesByPath = {}; // inside: indices in these arrays
 
-		const scope = this;
+		var scope = this;
 
 		this.stats = {
 
@@ -44119,23 +44125,25 @@
 		isAnimationObjectGroup: true,
 
 		add: function () {
+			var arguments$1 = arguments;
 
-			const objects = this._objects,
+
+			var objects = this._objects,
 				indicesByUUID = this._indicesByUUID,
 				paths = this._paths,
 				parsedPaths = this._parsedPaths,
 				bindings = this._bindings,
 				nBindings = bindings.length;
 
-			let knownObject = undefined,
+			var knownObject = undefined,
 				nObjects = objects.length,
 				nCachedObjects = this.nCachedObjects_;
 
-			for ( let i = 0, n = arguments.length; i !== n; ++ i ) {
+			for ( var i = 0, n = arguments.length; i !== n; ++ i ) {
 
-				const object = arguments[ i ],
+				var object = arguments$1[ i ],
 					uuid = object.uuid;
-				let index = indicesByUUID[ uuid ];
+				var index = indicesByUUID[ uuid ];
 
 				if ( index === undefined ) {
 
@@ -44147,7 +44155,7 @@
 
 					// accounting is done, now do the same for all bindings
 
-					for ( let j = 0, m = nBindings; j !== m; ++ j ) {
+					for ( var j = 0, m = nBindings; j !== m; ++ j ) {
 
 						bindings[ j ].push( new PropertyBinding( object, paths[ j ], parsedPaths[ j ] ) );
 
@@ -44159,7 +44167,7 @@
 
 					// move existing object to the ACTIVE region
 
-					const firstActiveIndex = -- nCachedObjects,
+					var firstActiveIndex = -- nCachedObjects,
 						lastCachedObject = objects[ firstActiveIndex ];
 
 					indicesByUUID[ lastCachedObject.uuid ] = index;
@@ -44170,12 +44178,12 @@
 
 					// accounting is done, now do the same for all bindings
 
-					for ( let j = 0, m = nBindings; j !== m; ++ j ) {
+					for ( var j$1 = 0, m$1 = nBindings; j$1 !== m$1; ++ j$1 ) {
 
-						const bindingsForPath = bindings[ j ],
+						var bindingsForPath = bindings[ j$1 ],
 							lastCached = bindingsForPath[ firstActiveIndex ];
 
-						let binding = bindingsForPath[ index ];
+						var binding = bindingsForPath[ index ];
 
 						bindingsForPath[ index ] = lastCached;
 
@@ -44185,7 +44193,7 @@
 							// for objects that are cached, the binding may
 							// or may not exist
 
-							binding = new PropertyBinding( object, paths[ j ], parsedPaths[ j ] );
+							binding = new PropertyBinding( object, paths[ j$1 ], parsedPaths[ j$1 ] );
 
 						}
 
@@ -44207,17 +44215,19 @@
 		},
 
 		remove: function () {
+			var arguments$1 = arguments;
 
-			const objects = this._objects,
+
+			var objects = this._objects,
 				indicesByUUID = this._indicesByUUID,
 				bindings = this._bindings,
 				nBindings = bindings.length;
 
-			let nCachedObjects = this.nCachedObjects_;
+			var nCachedObjects = this.nCachedObjects_;
 
-			for ( let i = 0, n = arguments.length; i !== n; ++ i ) {
+			for ( var i = 0, n = arguments.length; i !== n; ++ i ) {
 
-				const object = arguments[ i ],
+				var object = arguments$1[ i ],
 					uuid = object.uuid,
 					index = indicesByUUID[ uuid ];
 
@@ -44225,7 +44235,7 @@
 
 					// move existing object into the CACHED region
 
-					const lastCachedIndex = nCachedObjects ++,
+					var lastCachedIndex = nCachedObjects ++,
 						firstActiveObject = objects[ lastCachedIndex ];
 
 					indicesByUUID[ firstActiveObject.uuid ] = index;
@@ -44236,9 +44246,9 @@
 
 					// accounting is done, now do the same for all bindings
 
-					for ( let j = 0, m = nBindings; j !== m; ++ j ) {
+					for ( var j = 0, m = nBindings; j !== m; ++ j ) {
 
-						const bindingsForPath = bindings[ j ],
+						var bindingsForPath = bindings[ j ],
 							firstActive = bindingsForPath[ lastCachedIndex ],
 							binding = bindingsForPath[ index ];
 
@@ -44257,18 +44267,20 @@
 
 		// remove & forget
 		uncache: function () {
+			var arguments$1 = arguments;
 
-			const objects = this._objects,
+
+			var objects = this._objects,
 				indicesByUUID = this._indicesByUUID,
 				bindings = this._bindings,
 				nBindings = bindings.length;
 
-			let nCachedObjects = this.nCachedObjects_,
+			var nCachedObjects = this.nCachedObjects_,
 				nObjects = objects.length;
 
-			for ( let i = 0, n = arguments.length; i !== n; ++ i ) {
+			for ( var i = 0, n = arguments.length; i !== n; ++ i ) {
 
-				const object = arguments[ i ],
+				var object = arguments$1[ i ],
 					uuid = object.uuid,
 					index = indicesByUUID[ uuid ];
 
@@ -44280,7 +44292,7 @@
 
 						// object is cached, shrink the CACHED region
 
-						const firstActiveIndex = -- nCachedObjects,
+						var firstActiveIndex = -- nCachedObjects,
 							lastCachedObject = objects[ firstActiveIndex ],
 							lastIndex = -- nObjects,
 							lastObject = objects[ lastIndex ];
@@ -44296,9 +44308,9 @@
 
 						// accounting is done, now do the same for all bindings
 
-						for ( let j = 0, m = nBindings; j !== m; ++ j ) {
+						for ( var j = 0, m = nBindings; j !== m; ++ j ) {
 
-							const bindingsForPath = bindings[ j ],
+							var bindingsForPath = bindings[ j ],
 								lastCached = bindingsForPath[ firstActiveIndex ],
 								last = bindingsForPath[ lastIndex ];
 
@@ -44312,21 +44324,21 @@
 
 						// object is active, just swap with the last and pop
 
-						const lastIndex = -- nObjects,
-							lastObject = objects[ lastIndex ];
+						var lastIndex$1 = -- nObjects,
+							lastObject$1 = objects[ lastIndex$1 ];
 
-						indicesByUUID[ lastObject.uuid ] = index;
-						objects[ index ] = lastObject;
+						indicesByUUID[ lastObject$1.uuid ] = index;
+						objects[ index ] = lastObject$1;
 						objects.pop();
 
 						// accounting is done, now do the same for all bindings
 
-						for ( let j = 0, m = nBindings; j !== m; ++ j ) {
+						for ( var j$1 = 0, m$1 = nBindings; j$1 !== m$1; ++ j$1 ) {
 
-							const bindingsForPath = bindings[ j ];
+							var bindingsForPath$1 = bindings[ j$1 ];
 
-							bindingsForPath[ index ] = bindingsForPath[ lastIndex ];
-							bindingsForPath.pop();
+							bindingsForPath$1[ index ] = bindingsForPath$1[ lastIndex$1 ];
+							bindingsForPath$1.pop();
 
 						}
 
@@ -44347,13 +44359,13 @@
 			// returns an array of bindings for the given path that is changed
 			// according to the contained objects in the group
 
-			let indicesByPath = this._bindingsIndicesByPath,
+			var indicesByPath = this._bindingsIndicesByPath,
 				index = indicesByPath[ path ],
 				bindings = this._bindings;
 
-			if ( index !== undefined ) return bindings[ index ];
+			if ( index !== undefined ) { return bindings[ index ]; }
 
-			const paths = this._paths,
+			var paths = this._paths,
 				parsedPaths = this._parsedPaths,
 				objects = this._objects,
 				nObjects = objects.length,
@@ -44368,9 +44380,9 @@
 			parsedPaths.push( parsedPath );
 			bindings.push( bindingsForPath );
 
-			for ( let i = nCachedObjects, n = objects.length; i !== n; ++ i ) {
+			for ( var i = nCachedObjects, n = objects.length; i !== n; ++ i ) {
 
-				const object = objects[ i ];
+				var object = objects[ i ];
 				bindingsForPath[ i ] = new PropertyBinding( object, path, parsedPath );
 
 			}
@@ -44384,12 +44396,12 @@
 			// tells the group to forget about a property path and no longer
 			// update the array previously obtained with 'subscribe_'
 
-			const indicesByPath = this._bindingsIndicesByPath,
+			var indicesByPath = this._bindingsIndicesByPath,
 				index = indicesByPath[ path ];
 
 			if ( index !== undefined ) {
 
-				const paths = this._paths,
+				var paths = this._paths,
 					parsedPaths = this._parsedPaths,
 					bindings = this._bindings,
 					lastBindingsIndex = bindings.length - 1,
@@ -44420,18 +44432,18 @@
 		this._localRoot = localRoot || null;
 		this.blendMode = blendMode || clip.blendMode;
 
-		const tracks = clip.tracks,
+		var tracks = clip.tracks,
 			nTracks = tracks.length,
 			interpolants = new Array( nTracks );
 
-		const interpolantSettings = {
+		var interpolantSettings = {
 			endingStart: ZeroCurvatureEnding,
 			endingEnd: ZeroCurvatureEnding
 		};
 
-		for ( let i = 0; i !== nTracks; ++ i ) {
+		for ( var i = 0; i !== nTracks; ++ i ) {
 
-			const interpolant = tracks[ i ].createInterpolant( null );
+			var interpolant = tracks[ i ].createInterpolant( null );
 			interpolants[ i ] = interpolant;
 			interpolant.settings = interpolantSettings;
 
@@ -44585,7 +44597,7 @@
 
 			if ( warp ) {
 
-				const fadeInDuration = this._clip.duration,
+				var fadeInDuration = this._clip.duration,
 					fadeOutDuration = fadeOutAction._clip.duration,
 
 					startEndRatio = fadeOutDuration / fadeInDuration,
@@ -44608,7 +44620,7 @@
 
 		stopFading: function () {
 
-			let weightInterpolant = this._weightInterpolant;
+			var weightInterpolant = this._weightInterpolant;
 
 			if ( weightInterpolant !== null ) {
 
@@ -44667,11 +44679,11 @@
 
 		warp: function ( startTimeScale, endTimeScale, duration ) {
 
-			const mixer = this._mixer,
+			var mixer = this._mixer,
 				now = mixer.time,
 				timeScale = this.timeScale;
 
-			let interpolant = this._timeScaleInterpolant;
+			var interpolant = this._timeScaleInterpolant;
 
 			if ( interpolant === null ) {
 
@@ -44680,7 +44692,7 @@
 
 			}
 
-			const times = interpolant.parameterPositions,
+			var times = interpolant.parameterPositions,
 				values = interpolant.sampleValues;
 
 			times[ 0 ] = now;
@@ -44695,7 +44707,7 @@
 
 		stopWarping: function () {
 
-			let timeScaleInterpolant = this._timeScaleInterpolant;
+			var timeScaleInterpolant = this._timeScaleInterpolant;
 
 			if ( timeScaleInterpolant !== null ) {
 
@@ -44743,13 +44755,13 @@
 
 			}
 
-			const startTime = this._startTime;
+			var startTime = this._startTime;
 
 			if ( startTime !== null ) {
 
 				// check for scheduled start of action
 
-				const timeRunning = ( time - startTime ) * timeDirection;
+				var timeRunning = ( time - startTime ) * timeDirection;
 				if ( timeRunning < 0 || timeDirection === 0 ) {
 
 					return; // yet to come / don't decide when delta = 0
@@ -44766,23 +44778,23 @@
 			// apply time scale and advance time
 
 			deltaTime *= this._updateTimeScale( time );
-			const clipTime = this._updateTime( deltaTime );
+			var clipTime = this._updateTime( deltaTime );
 
 			// note: _updateTime may disable the action resulting in
 			// an effective weight of 0
 
-			const weight = this._updateWeight( time );
+			var weight = this._updateWeight( time );
 
 			if ( weight > 0 ) {
 
-				const interpolants = this._interpolants;
-				const propertyMixers = this._propertyBindings;
+				var interpolants = this._interpolants;
+				var propertyMixers = this._propertyBindings;
 
 				switch ( this.blendMode ) {
 
 					case AdditiveAnimationBlendMode:
 
-						for ( let j = 0, m = interpolants.length; j !== m; ++ j ) {
+						for ( var j = 0, m = interpolants.length; j !== m; ++ j ) {
 
 							interpolants[ j ].evaluate( clipTime );
 							propertyMixers[ j ].accumulateAdditive( weight );
@@ -44794,10 +44806,10 @@
 					case NormalAnimationBlendMode:
 					default:
 
-						for ( let j = 0, m = interpolants.length; j !== m; ++ j ) {
+						for ( var j$1 = 0, m$1 = interpolants.length; j$1 !== m$1; ++ j$1 ) {
 
-							interpolants[ j ].evaluate( clipTime );
-							propertyMixers[ j ].accumulate( accuIndex, weight );
+							interpolants[ j$1 ].evaluate( clipTime );
+							propertyMixers[ j$1 ].accumulate( accuIndex, weight );
 
 						}
 
@@ -44809,16 +44821,16 @@
 
 		_updateWeight: function ( time ) {
 
-			let weight = 0;
+			var weight = 0;
 
 			if ( this.enabled ) {
 
 				weight = this.weight;
-				const interpolant = this._weightInterpolant;
+				var interpolant = this._weightInterpolant;
 
 				if ( interpolant !== null ) {
 
-					const interpolantValue = interpolant.evaluate( time )[ 0 ];
+					var interpolantValue = interpolant.evaluate( time )[ 0 ];
 
 					weight *= interpolantValue;
 
@@ -44846,17 +44858,17 @@
 
 		_updateTimeScale: function ( time ) {
 
-			let timeScale = 0;
+			var timeScale = 0;
 
 			if ( ! this.paused ) {
 
 				timeScale = this.timeScale;
 
-				const interpolant = this._timeScaleInterpolant;
+				var interpolant = this._timeScaleInterpolant;
 
 				if ( interpolant !== null ) {
 
-					const interpolantValue = interpolant.evaluate( time )[ 0 ];
+					var interpolantValue = interpolant.evaluate( time )[ 0 ];
 
 					timeScale *= interpolantValue;
 
@@ -44889,17 +44901,17 @@
 
 		_updateTime: function ( deltaTime ) {
 
-			const duration = this._clip.duration;
-			const loop = this.loop;
+			var duration = this._clip.duration;
+			var loop = this.loop;
 
-			let time = this.time + deltaTime;
-			let loopCount = this._loopCount;
+			var time = this.time + deltaTime;
+			var loopCount = this._loopCount;
 
-			const pingPong = ( loop === LoopPingPong );
+			var pingPong = ( loop === LoopPingPong );
 
 			if ( deltaTime === 0 ) {
 
-				if ( loopCount === - 1 ) return time;
+				if ( loopCount === - 1 ) { return time; }
 
 				return ( pingPong && ( loopCount & 1 ) === 1 ) ? duration - time : time;
 
@@ -44934,8 +44946,8 @@
 
 					}
 
-					if ( this.clampWhenFinished ) this.paused = true;
-					else this.enabled = false;
+					if ( this.clampWhenFinished ) { this.paused = true; }
+					else { this.enabled = false; }
 
 					this.time = time;
 
@@ -44974,19 +44986,19 @@
 
 					// wrap around
 
-					const loopDelta = Math.floor( time / duration ); // signed
+					var loopDelta = Math.floor( time / duration ); // signed
 					time -= duration * loopDelta;
 
 					loopCount += Math.abs( loopDelta );
 
-					const pending = this.repetitions - loopCount;
+					var pending = this.repetitions - loopCount;
 
 					if ( pending <= 0 ) {
 
 						// have to stop (switch state, clamp time, fire event)
 
-						if ( this.clampWhenFinished ) this.paused = true;
-						else this.enabled = false;
+						if ( this.clampWhenFinished ) { this.paused = true; }
+						else { this.enabled = false; }
 
 						time = deltaTime > 0 ? duration : 0;
 
@@ -45005,7 +45017,7 @@
 
 							// entering the last round
 
-							const atStart = deltaTime < 0;
+							var atStart = deltaTime < 0;
 							this._setEndings( atStart, ! atStart, pingPong );
 
 						} else {
@@ -45046,7 +45058,7 @@
 
 		_setEndings: function ( atStart, atEnd, pingPong ) {
 
-			const settings = this._interpolantSettings;
+			var settings = this._interpolantSettings;
 
 			if ( pingPong ) {
 
@@ -45083,8 +45095,8 @@
 
 		_scheduleFading: function ( duration, weightNow, weightThen ) {
 
-			const mixer = this._mixer, now = mixer.time;
-			let interpolant = this._weightInterpolant;
+			var mixer = this._mixer, now = mixer.time;
+			var interpolant = this._weightInterpolant;
 
 			if ( interpolant === null ) {
 
@@ -45093,7 +45105,7 @@
 
 			}
 
-			const times = interpolant.parameterPositions,
+			var times = interpolant.parameterPositions,
 				values = interpolant.sampleValues;
 
 			times[ 0 ] = now;
@@ -45125,7 +45137,7 @@
 
 		_bindAction: function ( action, prototypeAction ) {
 
-			const root = action._localRoot || this._root,
+			var root = action._localRoot || this._root,
 				tracks = action._clip.tracks,
 				nTracks = tracks.length,
 				bindings = action._propertyBindings,
@@ -45133,7 +45145,7 @@
 				rootUuid = root.uuid,
 				bindingsByRoot = this._bindingsByRootAndName;
 
-			let bindingsByName = bindingsByRoot[ rootUuid ];
+			var bindingsByName = bindingsByRoot[ rootUuid ];
 
 			if ( bindingsByName === undefined ) {
 
@@ -45142,12 +45154,12 @@
 
 			}
 
-			for ( let i = 0; i !== nTracks; ++ i ) {
+			for ( var i = 0; i !== nTracks; ++ i ) {
 
-				const track = tracks[ i ],
+				var track = tracks[ i ],
 					trackName = track.name;
 
-				let binding = bindingsByName[ trackName ];
+				var binding = bindingsByName[ trackName ];
 
 				if ( binding !== undefined ) {
 
@@ -45172,7 +45184,7 @@
 
 					}
 
-					const path = prototypeAction && prototypeAction.
+					var path = prototypeAction && prototypeAction.
 						_propertyBindings[ i ].binding.parsedPath;
 
 					binding = new PropertyMixer(
@@ -45201,7 +45213,7 @@
 					// this action has been forgotten by the cache, but the user
 					// appears to be still using it -> rebind
 
-					const rootUuid = ( action._localRoot || this._root ).uuid,
+					var rootUuid = ( action._localRoot || this._root ).uuid,
 						clipUuid = action._clip.uuid,
 						actionsForClip = this._actionsByClip[ clipUuid ];
 
@@ -45212,12 +45224,12 @@
 
 				}
 
-				const bindings = action._propertyBindings;
+				var bindings = action._propertyBindings;
 
 				// increment reference counts / sort out state
-				for ( let i = 0, n = bindings.length; i !== n; ++ i ) {
+				for ( var i = 0, n = bindings.length; i !== n; ++ i ) {
 
-					const binding = bindings[ i ];
+					var binding = bindings[ i ];
 
 					if ( binding.useCount ++ === 0 ) {
 
@@ -45238,12 +45250,12 @@
 
 			if ( this._isActiveAction( action ) ) {
 
-				const bindings = action._propertyBindings;
+				var bindings = action._propertyBindings;
 
 				// decrement reference counts / sort out state
-				for ( let i = 0, n = bindings.length; i !== n; ++ i ) {
+				for ( var i = 0, n = bindings.length; i !== n; ++ i ) {
 
-					const binding = bindings[ i ];
+					var binding = bindings[ i ];
 
 					if ( -- binding.useCount === 0 ) {
 
@@ -45284,7 +45296,7 @@
 			this._controlInterpolants = []; // same game as above
 			this._nActiveControlInterpolants = 0;
 
-			const scope = this;
+			var scope = this;
 
 			this.stats = {
 
@@ -45333,17 +45345,17 @@
 
 		_isActiveAction: function ( action ) {
 
-			const index = action._cacheIndex;
+			var index = action._cacheIndex;
 			return index !== null && index < this._nActiveActions;
 
 		},
 
 		_addInactiveAction: function ( action, clipUuid, rootUuid ) {
 
-			const actions = this._actions,
+			var actions = this._actions,
 				actionsByClip = this._actionsByClip;
 
-			let actionsForClip = actionsByClip[ clipUuid ];
+			var actionsForClip = actionsByClip[ clipUuid ];
 
 			if ( actionsForClip === undefined ) {
 
@@ -45360,7 +45372,7 @@
 
 			} else {
 
-				const knownActions = actionsForClip.knownActions;
+				var knownActions = actionsForClip.knownActions;
 
 				action._byClipCacheIndex = knownActions.length;
 				knownActions.push( action );
@@ -45376,7 +45388,7 @@
 
 		_removeInactiveAction: function ( action ) {
 
-			const actions = this._actions,
+			var actions = this._actions,
 				lastInactiveAction = actions[ actions.length - 1 ],
 				cacheIndex = action._cacheIndex;
 
@@ -45387,7 +45399,7 @@
 			action._cacheIndex = null;
 
 
-			const clipUuid = action._clip.uuid,
+			var clipUuid = action._clip.uuid,
 				actionsByClip = this._actionsByClip,
 				actionsForClip = actionsByClip[ clipUuid ],
 				knownActionsForClip = actionsForClip.knownActions,
@@ -45404,7 +45416,7 @@
 			action._byClipCacheIndex = null;
 
 
-			const actionByRoot = actionsForClip.actionByRoot,
+			var actionByRoot = actionsForClip.actionByRoot,
 				rootUuid = ( action._localRoot || this._root ).uuid;
 
 			delete actionByRoot[ rootUuid ];
@@ -45421,11 +45433,11 @@
 
 		_removeInactiveBindingsForAction: function ( action ) {
 
-			const bindings = action._propertyBindings;
+			var bindings = action._propertyBindings;
 
-			for ( let i = 0, n = bindings.length; i !== n; ++ i ) {
+			for ( var i = 0, n = bindings.length; i !== n; ++ i ) {
 
-				const binding = bindings[ i ];
+				var binding = bindings[ i ];
 
 				if ( -- binding.referenceCount === 0 ) {
 
@@ -45445,7 +45457,7 @@
 			//                  <-swap->
 			//                 a        s
 
-			const actions = this._actions,
+			var actions = this._actions,
 				prevIndex = action._cacheIndex,
 
 				lastActiveIndex = this._nActiveActions ++,
@@ -45468,7 +45480,7 @@
 			//         <-swap->
 			//        s        a
 
-			const actions = this._actions,
+			var actions = this._actions,
 				prevIndex = action._cacheIndex,
 
 				firstInactiveIndex = -- this._nActiveActions,
@@ -45487,10 +45499,10 @@
 
 		_addInactiveBinding: function ( binding, rootUuid, trackName ) {
 
-			const bindingsByRoot = this._bindingsByRootAndName,
+			var bindingsByRoot = this._bindingsByRootAndName,
 				bindings = this._bindings;
 
-			let bindingByName = bindingsByRoot[ rootUuid ];
+			var bindingByName = bindingsByRoot[ rootUuid ];
 
 			if ( bindingByName === undefined ) {
 
@@ -45508,7 +45520,7 @@
 
 		_removeInactiveBinding: function ( binding ) {
 
-			const bindings = this._bindings,
+			var bindings = this._bindings,
 				propBinding = binding.binding,
 				rootUuid = propBinding.rootNode.uuid,
 				trackName = propBinding.path,
@@ -45534,7 +45546,7 @@
 
 		_lendBinding: function ( binding ) {
 
-			const bindings = this._bindings,
+			var bindings = this._bindings,
 				prevIndex = binding._cacheIndex,
 
 				lastActiveIndex = this._nActiveBindings ++,
@@ -45551,7 +45563,7 @@
 
 		_takeBackBinding: function ( binding ) {
 
-			const bindings = this._bindings,
+			var bindings = this._bindings,
 				prevIndex = binding._cacheIndex,
 
 				firstInactiveIndex = -- this._nActiveBindings,
@@ -45571,10 +45583,10 @@
 
 		_lendControlInterpolant: function () {
 
-			const interpolants = this._controlInterpolants,
+			var interpolants = this._controlInterpolants,
 				lastActiveIndex = this._nActiveControlInterpolants ++;
 
-			let interpolant = interpolants[ lastActiveIndex ];
+			var interpolant = interpolants[ lastActiveIndex ];
 
 			if ( interpolant === undefined ) {
 
@@ -45593,7 +45605,7 @@
 
 		_takeBackControlInterpolant: function ( interpolant ) {
 
-			const interpolants = this._controlInterpolants,
+			var interpolants = this._controlInterpolants,
 				prevIndex = interpolant.__cacheIndex,
 
 				firstInactiveIndex = -- this._nActiveControlInterpolants,
@@ -45615,14 +45627,14 @@
 		// previously unknown clip/root combination is specified)
 		clipAction: function ( clip, optionalRoot, blendMode ) {
 
-			const root = optionalRoot || this._root,
+			var root = optionalRoot || this._root,
 				rootUuid = root.uuid;
 
-			let clipObject = typeof clip === 'string' ? AnimationClip.findByName( root, clip ) : clip;
+			var clipObject = typeof clip === 'string' ? AnimationClip.findByName( root, clip ) : clip;
 
-			const clipUuid = clipObject !== null ? clipObject.uuid : clip;
+			var clipUuid = clipObject !== null ? clipObject.uuid : clip;
 
-			let actionsForClip = this._actionsByClip[ clipUuid ],
+			var actionsForClip = this._actionsByClip[ clipUuid ],
 				prototypeAction = null;
 
 			if ( blendMode === undefined ) {
@@ -45641,7 +45653,7 @@
 
 			if ( actionsForClip !== undefined ) {
 
-				const existingAction = actionsForClip.actionByRoot[ rootUuid ];
+				var existingAction = actionsForClip.actionByRoot[ rootUuid ];
 
 				if ( existingAction !== undefined && existingAction.blendMode === blendMode ) {
 
@@ -45655,15 +45667,15 @@
 
 				// also, take the clip from the prototype action
 				if ( clipObject === null )
-					clipObject = prototypeAction._clip;
+					{ clipObject = prototypeAction._clip; }
 
 			}
 
 			// clip must be known when specified via string
-			if ( clipObject === null ) return null;
+			if ( clipObject === null ) { return null; }
 
 			// allocate all resources required to run it
-			const newAction = new AnimationAction( this, clipObject, optionalRoot, blendMode );
+			var newAction = new AnimationAction( this, clipObject, optionalRoot, blendMode );
 
 			this._bindAction( newAction, prototypeAction );
 
@@ -45677,7 +45689,7 @@
 		// get an existing action
 		existingAction: function ( clip, optionalRoot ) {
 
-			const root = optionalRoot || this._root,
+			var root = optionalRoot || this._root,
 				rootUuid = root.uuid,
 
 				clipObject = typeof clip === 'string' ?
@@ -45700,10 +45712,10 @@
 		// deactivates all previously scheduled actions
 		stopAllAction: function () {
 
-			const actions = this._actions,
+			var actions = this._actions,
 				nActions = this._nActiveActions;
 
-			for ( let i = nActions - 1; i >= 0; -- i ) {
+			for ( var i = nActions - 1; i >= 0; -- i ) {
 
 				actions[ i ].stop();
 
@@ -45718,7 +45730,7 @@
 
 			deltaTime *= this.timeScale;
 
-			const actions = this._actions,
+			var actions = this._actions,
 				nActions = this._nActiveActions,
 
 				time = this.time += deltaTime,
@@ -45728,9 +45740,9 @@
 
 			// run active actions
 
-			for ( let i = 0; i !== nActions; ++ i ) {
+			for ( var i = 0; i !== nActions; ++ i ) {
 
-				const action = actions[ i ];
+				var action = actions[ i ];
 
 				action._update( time, deltaTime, timeDirection, accuIndex );
 
@@ -45738,12 +45750,12 @@
 
 			// update scene graph
 
-			const bindings = this._bindings,
+			var bindings = this._bindings,
 				nBindings = this._nActiveBindings;
 
-			for ( let i = 0; i !== nBindings; ++ i ) {
+			for ( var i$1 = 0; i$1 !== nBindings; ++ i$1 ) {
 
-				bindings[ i ].apply( accuIndex );
+				bindings[ i$1 ].apply( accuIndex );
 
 			}
 
@@ -45755,7 +45767,7 @@
 		setTime: function ( timeInSeconds ) {
 
 			this.time = 0; // Zero out time attribute for AnimationMixer object;
-			for ( let i = 0; i < this._actions.length; i ++ ) {
+			for ( var i = 0; i < this._actions.length; i ++ ) {
 
 				this._actions[ i ].time = 0; // Zero out time attribute for all associated AnimationAction objects.
 
@@ -45775,7 +45787,7 @@
 		// free all resources specific to a particular clip
 		uncacheClip: function ( clip ) {
 
-			const actions = this._actions,
+			var actions = this._actions,
 				clipUuid = clip.uuid,
 				actionsByClip = this._actionsByClip,
 				actionsForClip = actionsByClip[ clipUuid ];
@@ -45786,15 +45798,15 @@
 				// iteration state and also require updating the state we can
 				// just throw away
 
-				const actionsToRemove = actionsForClip.knownActions;
+				var actionsToRemove = actionsForClip.knownActions;
 
-				for ( let i = 0, n = actionsToRemove.length; i !== n; ++ i ) {
+				for ( var i = 0, n = actionsToRemove.length; i !== n; ++ i ) {
 
-					const action = actionsToRemove[ i ];
+					var action = actionsToRemove[ i ];
 
 					this._deactivateAction( action );
 
-					const cacheIndex = action._cacheIndex,
+					var cacheIndex = action._cacheIndex,
 						lastInactiveAction = actions[ actions.length - 1 ];
 
 					action._cacheIndex = null;
@@ -45817,12 +45829,12 @@
 		// free all resources specific to a particular root target object
 		uncacheRoot: function ( root ) {
 
-			const rootUuid = root.uuid,
+			var rootUuid = root.uuid,
 				actionsByClip = this._actionsByClip;
 
-			for ( const clipUuid in actionsByClip ) {
+			for ( var clipUuid in actionsByClip ) {
 
-				const actionByRoot = actionsByClip[ clipUuid ].actionByRoot,
+				var actionByRoot = actionsByClip[ clipUuid ].actionByRoot,
 					action = actionByRoot[ rootUuid ];
 
 				if ( action !== undefined ) {
@@ -45834,14 +45846,14 @@
 
 			}
 
-			const bindingsByRoot = this._bindingsByRootAndName,
+			var bindingsByRoot = this._bindingsByRootAndName,
 				bindingByName = bindingsByRoot[ rootUuid ];
 
 			if ( bindingByName !== undefined ) {
 
-				for ( const trackName in bindingByName ) {
+				for ( var trackName in bindingByName ) {
 
-					const binding = bindingByName[ trackName ];
+					var binding = bindingByName[ trackName ];
 					binding.restoreOriginalState();
 					this._removeInactiveBinding( binding );
 
@@ -45854,7 +45866,7 @@
 		// remove a targeted clip from the cache
 		uncacheAction: function ( clip, optionalRoot ) {
 
-			const action = this.existingAction( clip, optionalRoot );
+			var action = this.existingAction( clip, optionalRoot );
 
 			if ( action !== null ) {
 
@@ -45912,7 +45924,7 @@
 
 		clone: function ( data ) {
 
-			const ib = InterleavedBuffer.prototype.clone.call( this, data );
+			var ib = InterleavedBuffer.prototype.clone.call( this, data );
 
 			ib.meshPerAttribute = this.meshPerAttribute;
 
@@ -45922,7 +45934,7 @@
 
 		toJSON: function ( data ) {
 
-			const json = InterleavedBuffer.prototype.toJSON.call( this, data );
+			var json = InterleavedBuffer.prototype.toJSON.call( this, data );
 
 			json.isInstancedInterleavedBuffer = true;
 			json.meshPerAttribute = this.meshPerAttribute;
@@ -45980,9 +45992,9 @@
 
 		if ( recursive === true ) {
 
-			const children = object.children;
+			var children = object.children;
 
-			for ( let i = 0, l = children.length; i < l; i ++ ) {
+			for ( var i = 0, l = children.length; i < l; i ++ ) {
 
 				intersectObject( children[ i ], raycaster, intersects, true );
 
@@ -46026,7 +46038,7 @@
 
 		intersectObject: function ( object, recursive, optionalTarget ) {
 
-			const intersects = optionalTarget || [];
+			var intersects = optionalTarget || [];
 
 			intersectObject( object, this, intersects, recursive );
 
@@ -46038,7 +46050,7 @@
 
 		intersectObjects: function ( objects, recursive, optionalTarget ) {
 
-			const intersects = optionalTarget || [];
+			var intersects = optionalTarget || [];
 
 			if ( Array.isArray( objects ) === false ) {
 
@@ -46047,7 +46059,7 @@
 
 			}
 
-			for ( let i = 0, l = objects.length; i < l; i ++ ) {
+			for ( var i = 0, l = objects.length; i < l; i ++ ) {
 
 				intersectObject( objects[ i ], this, intersects, recursive );
 
@@ -46121,7 +46133,7 @@
 
 	} );
 
-	const _vector$7 = new Vector2();
+	var _vector$7 = new Vector2();
 
 	function Box2( min, max ) {
 
@@ -46145,7 +46157,7 @@
 
 			this.makeEmpty();
 
-			for ( let i = 0, il = points.length; i < il; i ++ ) {
+			for ( var i = 0, il = points.length; i < il; i ++ ) {
 
 				this.expandByPoint( points[ i ] );
 
@@ -46157,7 +46169,7 @@
 
 		setFromCenterAndSize: function ( center, size ) {
 
-			const halfSize = _vector$7.copy( size ).multiplyScalar( 0.5 );
+			var halfSize = _vector$7.copy( size ).multiplyScalar( 0.5 );
 			this.min.copy( center ).sub( halfSize );
 			this.max.copy( center ).add( halfSize );
 
@@ -46307,7 +46319,7 @@
 
 		distanceToPoint: function ( point ) {
 
-			const clampedPoint = _vector$7.copy( point ).clamp( this.min, this.max );
+			var clampedPoint = _vector$7.copy( point ).clamp( this.min, this.max );
 			return clampedPoint.sub( point ).length();
 
 		},
@@ -46347,8 +46359,8 @@
 
 	} );
 
-	const _startP = new Vector3();
-	const _startEnd = new Vector3();
+	var _startP = new Vector3();
+	var _startEnd = new Vector3();
 
 	function Line3( start, end ) {
 
@@ -46439,10 +46451,10 @@
 			_startP.subVectors( point, this.start );
 			_startEnd.subVectors( this.end, this.start );
 
-			const startEnd2 = _startEnd.dot( _startEnd );
-			const startEnd_startP = _startEnd.dot( _startP );
+			var startEnd2 = _startEnd.dot( _startEnd );
+			var startEnd_startP = _startEnd.dot( _startP );
 
-			let t = startEnd_startP / startEnd2;
+			var t = startEnd_startP / startEnd2;
 
 			if ( clampToLine ) {
 
@@ -46456,7 +46468,7 @@
 
 		closestPointToPoint: function ( point, clampToLine, target ) {
 
-			const t = this.closestPointToPointParameter( point, clampToLine );
+			var t = this.closestPointToPointParameter( point, clampToLine );
 
 			if ( target === undefined ) {
 
@@ -46512,7 +46524,7 @@
 
 	ImmediateRenderObject.prototype.isImmediateRenderObject = true;
 
-	const _vector$8 = new Vector3();
+	var _vector$8 = new Vector3();
 
 	function SpotLightHelper( light, color ) {
 
@@ -46526,9 +46538,9 @@
 
 		this.color = color;
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 
-		const positions = [
+		var positions = [
 			0, 0, 0, 	0, 0, 1,
 			0, 0, 0, 	1, 0, 1,
 			0, 0, 0,	- 1, 0, 1,
@@ -46536,10 +46548,10 @@
 			0, 0, 0, 	0, - 1, 1
 		];
 
-		for ( let i = 0, j = 1, l = 32; i < l; i ++, j ++ ) {
+		for ( var i = 0, j = 1, l = 32; i < l; i ++, j ++ ) {
 
-			const p1 = ( i / l ) * Math.PI * 2;
-			const p2 = ( j / l ) * Math.PI * 2;
+			var p1 = ( i / l ) * Math.PI * 2;
+			var p2 = ( j / l ) * Math.PI * 2;
 
 			positions.push(
 				Math.cos( p1 ), Math.sin( p1 ), 1,
@@ -46550,7 +46562,7 @@
 
 		geometry.setAttribute( 'position', new Float32BufferAttribute( positions, 3 ) );
 
-		const material = new LineBasicMaterial( { fog: false, toneMapped: false } );
+		var material = new LineBasicMaterial( { fog: false, toneMapped: false } );
 
 		this.cone = new LineSegments( geometry, material );
 		this.add( this.cone );
@@ -46573,8 +46585,8 @@
 
 		this.light.updateMatrixWorld();
 
-		const coneLength = this.light.distance ? this.light.distance : 1000;
-		const coneWidth = coneLength * Math.tan( this.light.angle );
+		var coneLength = this.light.distance ? this.light.distance : 1000;
+		var coneWidth = coneLength * Math.tan( this.light.angle );
 
 		this.cone.scale.set( coneWidth, coneWidth, coneLength );
 
@@ -46594,13 +46606,13 @@
 
 	};
 
-	const _vector$9 = new Vector3();
-	const _boneMatrix = new Matrix4();
-	const _matrixWorldInv = new Matrix4();
+	var _vector$9 = new Vector3();
+	var _boneMatrix = new Matrix4();
+	var _matrixWorldInv = new Matrix4();
 
 	function getBoneList( object ) {
 
-		const boneList = [];
+		var boneList = [];
 
 		if ( object && object.isBone ) {
 
@@ -46608,7 +46620,7 @@
 
 		}
 
-		for ( let i = 0; i < object.children.length; i ++ ) {
+		for ( var i = 0; i < object.children.length; i ++ ) {
 
 			boneList.push.apply( boneList, getBoneList( object.children[ i ] ) );
 
@@ -46620,19 +46632,19 @@
 
 	function SkeletonHelper( object ) {
 
-		const bones = getBoneList( object );
+		var bones = getBoneList( object );
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 
-		const vertices = [];
-		const colors = [];
+		var vertices = [];
+		var colors = [];
 
-		const color1 = new Color( 0, 0, 1 );
-		const color2 = new Color( 0, 1, 0 );
+		var color1 = new Color( 0, 0, 1 );
+		var color2 = new Color( 0, 1, 0 );
 
-		for ( let i = 0; i < bones.length; i ++ ) {
+		for ( var i = 0; i < bones.length; i ++ ) {
 
-			const bone = bones[ i ];
+			var bone = bones[ i ];
 
 			if ( bone.parent && bone.parent.isBone ) {
 
@@ -46648,7 +46660,7 @@
 		geometry.setAttribute( 'position', new Float32BufferAttribute( vertices, 3 ) );
 		geometry.setAttribute( 'color', new Float32BufferAttribute( colors, 3 ) );
 
-		const material = new LineBasicMaterial( { vertexColors: true, depthTest: false, depthWrite: false, toneMapped: false, transparent: true } );
+		var material = new LineBasicMaterial( { vertexColors: true, depthTest: false, depthWrite: false, toneMapped: false, transparent: true } );
 
 		LineSegments.call( this, geometry, material );
 
@@ -46669,16 +46681,16 @@
 
 	SkeletonHelper.prototype.updateMatrixWorld = function ( force ) {
 
-		const bones = this.bones;
+		var bones = this.bones;
 
-		const geometry = this.geometry;
-		const position = geometry.getAttribute( 'position' );
+		var geometry = this.geometry;
+		var position = geometry.getAttribute( 'position' );
 
 		_matrixWorldInv.getInverse( this.root.matrixWorld );
 
-		for ( let i = 0, j = 0; i < bones.length; i ++ ) {
+		for ( var i = 0, j = 0; i < bones.length; i ++ ) {
 
-			const bone = bones[ i ];
+			var bone = bones[ i ];
 
 			if ( bone.parent && bone.parent.isBone ) {
 
@@ -46709,8 +46721,8 @@
 
 		this.color = color;
 
-		const geometry = new SphereBufferGeometry( sphereSize, 4, 2 );
-		const material = new MeshBasicMaterial( { wireframe: true, fog: false, toneMapped: false } );
+		var geometry = new SphereBufferGeometry( sphereSize, 4, 2 );
+		var material = new MeshBasicMaterial( { wireframe: true, fog: false, toneMapped: false } );
 
 		Mesh.call( this, geometry, material );
 
@@ -46785,9 +46797,9 @@
 
 	};
 
-	const _vector$a = new Vector3();
-	const _color1 = new Color();
-	const _color2 = new Color();
+	var _vector$a = new Vector3();
+	var _color1 = new Color();
+	var _color2 = new Color();
 
 	function HemisphereLightHelper( light, size, color ) {
 
@@ -46801,14 +46813,14 @@
 
 		this.color = color;
 
-		const geometry = new OctahedronBufferGeometry( size );
+		var geometry = new OctahedronBufferGeometry( size );
 		geometry.rotateY( Math.PI * 0.5 );
 
 		this.material = new MeshBasicMaterial( { wireframe: true, fog: false, toneMapped: false } );
-		if ( this.color === undefined ) this.material.vertexColors = true;
+		if ( this.color === undefined ) { this.material.vertexColors = true; }
 
-		const position = geometry.getAttribute( 'position' );
-		const colors = new Float32Array( position.count * 3 );
+		var position = geometry.getAttribute( 'position' );
+		var colors = new Float32Array( position.count * 3 );
 
 		geometry.setAttribute( 'color', new BufferAttribute( colors, 3 ) );
 
@@ -46830,7 +46842,7 @@
 
 	HemisphereLightHelper.prototype.update = function () {
 
-		const mesh = this.children[ 0 ];
+		var mesh = this.children[ 0 ];
 
 		if ( this.color !== undefined ) {
 
@@ -46838,14 +46850,14 @@
 
 		} else {
 
-			const colors = mesh.geometry.getAttribute( 'color' );
+			var colors = mesh.geometry.getAttribute( 'color' );
 
 			_color1.copy( this.light.color );
 			_color2.copy( this.light.groundColor );
 
-			for ( let i = 0, l = colors.count; i < l; i ++ ) {
+			for ( var i = 0, l = colors.count; i < l; i ++ ) {
 
-				const color = ( i < ( l / 2 ) ) ? _color1 : _color2;
+				var color = ( i < ( l / 2 ) ) ? _color1 : _color2;
 
 				colors.setXYZ( i, color.r, color.g, color.b );
 
@@ -46866,18 +46878,18 @@
 		color1 = new Color( color1 !== undefined ? color1 : 0x444444 );
 		color2 = new Color( color2 !== undefined ? color2 : 0x888888 );
 
-		const center = divisions / 2;
-		const step = size / divisions;
-		const halfSize = size / 2;
+		var center = divisions / 2;
+		var step = size / divisions;
+		var halfSize = size / 2;
 
-		const vertices = [], colors = [];
+		var vertices = [], colors = [];
 
-		for ( let i = 0, j = 0, k = - halfSize; i <= divisions; i ++, k += step ) {
+		for ( var i = 0, j = 0, k = - halfSize; i <= divisions; i ++, k += step ) {
 
 			vertices.push( - halfSize, 0, k, halfSize, 0, k );
 			vertices.push( k, 0, - halfSize, k, 0, halfSize );
 
-			const color = i === center ? color1 : color2;
+			var color = i === center ? color1 : color2;
 
 			color.toArray( colors, j ); j += 3;
 			color.toArray( colors, j ); j += 3;
@@ -46886,11 +46898,11 @@
 
 		}
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setAttribute( 'position', new Float32BufferAttribute( vertices, 3 ) );
 		geometry.setAttribute( 'color', new Float32BufferAttribute( colors, 3 ) );
 
-		const material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
+		var material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
 
 		LineSegments.call( this, geometry, material );
 
@@ -46910,22 +46922,22 @@
 		color1 = new Color( color1 !== undefined ? color1 : 0x444444 );
 		color2 = new Color( color2 !== undefined ? color2 : 0x888888 );
 
-		const vertices = [];
-		const colors = [];
+		var vertices = [];
+		var colors = [];
 
 		// create the radials
 
-		for ( let i = 0; i <= radials; i ++ ) {
+		for ( var i = 0; i <= radials; i ++ ) {
 
-			const v = ( i / radials ) * ( Math.PI * 2 );
+			var v = ( i / radials ) * ( Math.PI * 2 );
 
-			const x = Math.sin( v ) * radius;
-			const z = Math.cos( v ) * radius;
+			var x = Math.sin( v ) * radius;
+			var z = Math.cos( v ) * radius;
 
 			vertices.push( 0, 0, 0 );
 			vertices.push( x, 0, z );
 
-			const color = ( i & 1 ) ? color1 : color2;
+			var color = ( i & 1 ) ? color1 : color2;
 
 			colors.push( color.r, color.g, color.b );
 			colors.push( color.r, color.g, color.b );
@@ -46934,43 +46946,43 @@
 
 		// create the circles
 
-		for ( let i = 0; i <= circles; i ++ ) {
+		for ( var i$1 = 0; i$1 <= circles; i$1 ++ ) {
 
-			const color = ( i & 1 ) ? color1 : color2;
+			var color$1 = ( i$1 & 1 ) ? color1 : color2;
 
-			const r = radius - ( radius / circles * i );
+			var r = radius - ( radius / circles * i$1 );
 
-			for ( let j = 0; j < divisions; j ++ ) {
+			for ( var j = 0; j < divisions; j ++ ) {
 
 				// first vertex
 
-				let v = ( j / divisions ) * ( Math.PI * 2 );
+				var v$1 = ( j / divisions ) * ( Math.PI * 2 );
 
-				let x = Math.sin( v ) * r;
-				let z = Math.cos( v ) * r;
+				var x$1 = Math.sin( v$1 ) * r;
+				var z$1 = Math.cos( v$1 ) * r;
 
-				vertices.push( x, 0, z );
-				colors.push( color.r, color.g, color.b );
+				vertices.push( x$1, 0, z$1 );
+				colors.push( color$1.r, color$1.g, color$1.b );
 
 				// second vertex
 
-				v = ( ( j + 1 ) / divisions ) * ( Math.PI * 2 );
+				v$1 = ( ( j + 1 ) / divisions ) * ( Math.PI * 2 );
 
-				x = Math.sin( v ) * r;
-				z = Math.cos( v ) * r;
+				x$1 = Math.sin( v$1 ) * r;
+				z$1 = Math.cos( v$1 ) * r;
 
-				vertices.push( x, 0, z );
-				colors.push( color.r, color.g, color.b );
+				vertices.push( x$1, 0, z$1 );
+				colors.push( color$1.r, color$1.g, color$1.b );
 
 			}
 
 		}
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setAttribute( 'position', new Float32BufferAttribute( vertices, 3 ) );
 		geometry.setAttribute( 'color', new Float32BufferAttribute( colors, 3 ) );
 
-		const material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
+		var material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
 
 		LineSegments.call( this, geometry, material );
 
@@ -46981,9 +46993,9 @@
 	PolarGridHelper.prototype = Object.create( LineSegments.prototype );
 	PolarGridHelper.prototype.constructor = PolarGridHelper;
 
-	const _v1$5 = new Vector3();
-	const _v2$3 = new Vector3();
-	const _v3$1 = new Vector3();
+	var _v1$5 = new Vector3();
+	var _v2$3 = new Vector3();
+	var _v3$1 = new Vector3();
 
 	function DirectionalLightHelper( light, size, color ) {
 
@@ -46997,9 +47009,9 @@
 
 		this.color = color;
 
-		if ( size === undefined ) size = 1;
+		if ( size === undefined ) { size = 1; }
 
-		let geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setAttribute( 'position', new Float32BufferAttribute( [
 			- size, size, 0,
 			size, size, 0,
@@ -47008,7 +47020,7 @@
 			- size, size, 0
 		], 3 ) );
 
-		const material = new LineBasicMaterial( { fog: false, toneMapped: false } );
+		var material = new LineBasicMaterial( { fog: false, toneMapped: false } );
 
 		this.lightPlane = new Line( geometry, material );
 		this.add( this.lightPlane );
@@ -47060,8 +47072,8 @@
 
 	};
 
-	const _vector$b = new Vector3();
-	const _camera = new Camera();
+	var _vector$b = new Vector3();
+	var _camera = new Camera();
 
 	/**
 	 *	- shows frustum, line of sight and up of the camera
@@ -47072,21 +47084,21 @@
 
 	function CameraHelper( camera ) {
 
-		const geometry = new BufferGeometry();
-		const material = new LineBasicMaterial( { color: 0xffffff, vertexColors: true, toneMapped: false } );
+		var geometry = new BufferGeometry();
+		var material = new LineBasicMaterial( { color: 0xffffff, vertexColors: true, toneMapped: false } );
 
-		const vertices = [];
-		const colors = [];
+		var vertices = [];
+		var colors = [];
 
-		const pointMap = {};
+		var pointMap = {};
 
 		// colors
 
-		const colorFrustum = new Color( 0xffaa00 );
-		const colorCone = new Color( 0xff0000 );
-		const colorUp = new Color( 0x00aaff );
-		const colorTarget = new Color( 0xffffff );
-		const colorCross = new Color( 0x333333 );
+		var colorFrustum = new Color( 0xffaa00 );
+		var colorCone = new Color( 0xff0000 );
+		var colorUp = new Color( 0x00aaff );
+		var colorTarget = new Color( 0xffffff );
+		var colorCross = new Color( 0x333333 );
 
 		// near
 
@@ -47165,7 +47177,7 @@
 		this.type = 'CameraHelper';
 
 		this.camera = camera;
-		if ( this.camera.updateProjectionMatrix ) this.camera.updateProjectionMatrix();
+		if ( this.camera.updateProjectionMatrix ) { this.camera.updateProjectionMatrix(); }
 
 		this.matrix = camera.matrixWorld;
 		this.matrixAutoUpdate = false;
@@ -47181,10 +47193,10 @@
 
 	CameraHelper.prototype.update = function () {
 
-		const geometry = this.geometry;
-		const pointMap = this.pointMap;
+		var geometry = this.geometry;
+		var pointMap = this.pointMap;
 
-		const w = 1, h = 1;
+		var w = 1, h = 1;
 
 		// we need just camera projection matrix inverse
 		// world matrix must be identity
@@ -47236,13 +47248,13 @@
 
 		_vector$b.set( x, y, z ).unproject( camera );
 
-		const points = pointMap[ point ];
+		var points = pointMap[ point ];
 
 		if ( points !== undefined ) {
 
-			const position = geometry.getAttribute( 'position' );
+			var position = geometry.getAttribute( 'position' );
 
-			for ( let i = 0, l = points.length; i < l; i ++ ) {
+			for ( var i = 0, l = points.length; i < l; i ++ ) {
 
 				position.setXYZ( points[ i ], _vector$b.x, _vector$b.y, _vector$b.z );
 
@@ -47252,18 +47264,18 @@
 
 	}
 
-	const _box$3 = new Box3();
+	var _box$3 = new Box3();
 
 	function BoxHelper( object, color ) {
 
 		this.object = object;
 
-		if ( color === undefined ) color = 0xffff00;
+		if ( color === undefined ) { color = 0xffff00; }
 
-		const indices = new Uint16Array( [ 0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6, 6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7 ] );
-		const positions = new Float32Array( 8 * 3 );
+		var indices = new Uint16Array( [ 0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6, 6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7 ] );
+		var positions = new Float32Array( 8 * 3 );
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setIndex( new BufferAttribute( indices, 1 ) );
 		geometry.setAttribute( 'position', new BufferAttribute( positions, 3 ) );
 
@@ -47294,10 +47306,10 @@
 
 		}
 
-		if ( _box$3.isEmpty() ) return;
+		if ( _box$3.isEmpty() ) { return; }
 
-		const min = _box$3.min;
-		const max = _box$3.max;
+		var min = _box$3.min;
+		var max = _box$3.max;
 
 		/*
 		  5____4
@@ -47315,8 +47327,8 @@
 		7: max.x, min.y, min.z
 		*/
 
-		const position = this.geometry.attributes.position;
-		const array = position.array;
+		var position = this.geometry.attributes.position;
+		var array = position.array;
 
 		array[ 0 ] = max.x; array[ 1 ] = max.y; array[ 2 ] = max.z;
 		array[ 3 ] = min.x; array[ 4 ] = max.y; array[ 5 ] = max.z;
@@ -47359,13 +47371,13 @@
 
 		this.box = box;
 
-		if ( color === undefined ) color = 0xffff00;
+		if ( color === undefined ) { color = 0xffff00; }
 
-		const indices = new Uint16Array( [ 0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6, 6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7 ] );
+		var indices = new Uint16Array( [ 0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6, 6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7 ] );
 
-		const positions = [ 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, - 1, 1, 1, 1, - 1, - 1, 1, - 1, - 1, - 1, - 1, 1, - 1, - 1 ];
+		var positions = [ 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, - 1, 1, 1, 1, - 1, - 1, 1, - 1, - 1, - 1, - 1, 1, - 1, - 1 ];
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 
 		geometry.setIndex( new BufferAttribute( indices, 1 ) );
 
@@ -47384,9 +47396,9 @@
 
 	Box3Helper.prototype.updateMatrixWorld = function ( force ) {
 
-		const box = this.box;
+		var box = this.box;
 
-		if ( box.isEmpty() ) return;
+		if ( box.isEmpty() ) { return; }
 
 		box.getCenter( this.position );
 
@@ -47404,11 +47416,11 @@
 
 		this.size = ( size === undefined ) ? 1 : size;
 
-		const color = ( hex !== undefined ) ? hex : 0xffff00;
+		var color = ( hex !== undefined ) ? hex : 0xffff00;
 
-		const positions = [ 1, - 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, - 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0 ];
+		var positions = [ 1, - 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, - 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0 ];
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setAttribute( 'position', new Float32BufferAttribute( positions, 3 ) );
 		geometry.computeBoundingSphere();
 
@@ -47418,9 +47430,9 @@
 
 		//
 
-		const positions2 = [ 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, 1, 1, - 1, - 1, 1, 1, - 1, 1 ];
+		var positions2 = [ 1, 1, 1, - 1, 1, 1, - 1, - 1, 1, 1, 1, 1, - 1, - 1, 1, 1, - 1, 1 ];
 
-		const geometry2 = new BufferGeometry();
+		var geometry2 = new BufferGeometry();
 		geometry2.setAttribute( 'position', new Float32BufferAttribute( positions2, 3 ) );
 		geometry2.computeBoundingSphere();
 
@@ -47433,9 +47445,9 @@
 
 	PlaneHelper.prototype.updateMatrixWorld = function ( force ) {
 
-		let scale = - this.plane.constant;
+		var scale = - this.plane.constant;
 
-		if ( Math.abs( scale ) < 1e-8 ) scale = 1e-8; // sign does not matter
+		if ( Math.abs( scale ) < 1e-8 ) { scale = 1e-8; } // sign does not matter
 
 		this.scale.set( 0.5 * this.size, 0.5 * this.size, scale );
 
@@ -47447,8 +47459,8 @@
 
 	};
 
-	const _axis = new Vector3();
-	let _lineGeometry, _coneGeometry;
+	var _axis = new Vector3();
+	var _lineGeometry, _coneGeometry;
 
 	function ArrowHelper( dir, origin, length, color, headLength, headWidth ) {
 
@@ -47458,12 +47470,12 @@
 
 		this.type = 'ArrowHelper';
 
-		if ( dir === undefined ) dir = new Vector3( 0, 0, 1 );
-		if ( origin === undefined ) origin = new Vector3( 0, 0, 0 );
-		if ( length === undefined ) length = 1;
-		if ( color === undefined ) color = 0xffff00;
-		if ( headLength === undefined ) headLength = 0.2 * length;
-		if ( headWidth === undefined ) headWidth = 0.2 * headLength;
+		if ( dir === undefined ) { dir = new Vector3( 0, 0, 1 ); }
+		if ( origin === undefined ) { origin = new Vector3( 0, 0, 0 ); }
+		if ( length === undefined ) { length = 1; }
+		if ( color === undefined ) { color = 0xffff00; }
+		if ( headLength === undefined ) { headLength = 0.2 * length; }
+		if ( headWidth === undefined ) { headWidth = 0.2 * headLength; }
 
 		if ( _lineGeometry === undefined ) {
 
@@ -47509,7 +47521,7 @@
 
 			_axis.set( dir.z, 0, - dir.x ).normalize();
 
-			const radians = Math.acos( dir.y );
+			var radians = Math.acos( dir.y );
 
 			this.quaternion.setFromAxisAngle( _axis, radians );
 
@@ -47519,8 +47531,8 @@
 
 	ArrowHelper.prototype.setLength = function ( length, headLength, headWidth ) {
 
-		if ( headLength === undefined ) headLength = 0.2 * length;
-		if ( headWidth === undefined ) headWidth = 0.2 * headLength;
+		if ( headLength === undefined ) { headLength = 0.2 * length; }
+		if ( headWidth === undefined ) { headWidth = 0.2 * headLength; }
 
 		this.line.scale.set( 1, Math.max( 0.0001, length - headLength ), 1 ); // see #17458
 		this.line.updateMatrix();
@@ -47553,23 +47565,23 @@
 
 		size = size || 1;
 
-		const vertices = [
+		var vertices = [
 			0, 0, 0,	size, 0, 0,
 			0, 0, 0,	0, size, 0,
 			0, 0, 0,	0, 0, size
 		];
 
-		const colors = [
+		var colors = [
 			1, 0, 0,	1, 0.6, 0,
 			0, 1, 0,	0.6, 1, 0,
 			0, 0, 1,	0, 0.6, 1
 		];
 
-		const geometry = new BufferGeometry();
+		var geometry = new BufferGeometry();
 		geometry.setAttribute( 'position', new Float32BufferAttribute( vertices, 3 ) );
 		geometry.setAttribute( 'color', new Float32BufferAttribute( colors, 3 ) );
 
-		const material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
+		var material = new LineBasicMaterial( { vertexColors: true, toneMapped: false } );
 
 		LineSegments.call( this, geometry, material );
 
@@ -47580,33 +47592,51 @@
 	AxesHelper.prototype = Object.create( LineSegments.prototype );
 	AxesHelper.prototype.constructor = AxesHelper;
 
-	const LOD_MIN = 4;
-	const LOD_MAX = 8;
+	var LOD_MIN = 4;
+	var LOD_MAX = 8;
 
 	// The standard deviations (radians) associated with the extra mips. These are
 	// chosen to approximate a Trowbridge-Reitz distribution function times the
 	// geometric shadowing function. These sigma values squared must match the
 	// variance #defines in cube_uv_reflection_fragment.glsl.js.
-	const EXTRA_LOD_SIGMA = [ 0.125, 0.215, 0.35, 0.446, 0.526, 0.582 ];
+	var EXTRA_LOD_SIGMA = [ 0.125, 0.215, 0.35, 0.446, 0.526, 0.582 ];
 
-	const TOTAL_LODS = LOD_MAX - LOD_MIN + 1 + EXTRA_LOD_SIGMA.length;
+	var TOTAL_LODS = LOD_MAX - LOD_MIN + 1 + EXTRA_LOD_SIGMA.length;
 
-	const _flatCamera = new OrthographicCamera();
-	const { _lodPlanes, _sizeLods, _sigmas } = _createPlanes();
+	var _flatCamera = new OrthographicCamera();
+	var ref = _createPlanes();
+
+	// Golden Ratio
+	var PHI = ( 1 + Math.sqrt( 5 ) ) / 2;
+	var INV_PHI = 1 / PHI;
+
+	// Vertices of a dodecahedron (except the opposites, which represent the
+	// same axis), used as axis directions evenly spread on a sphere.
+	var _axisDirections = [
+		new Vector3( 1, 1, 1 ),
+		new Vector3( - 1, 1, 1 ),
+		new Vector3( 1, 1, - 1 ),
+		new Vector3( - 1, 1, - 1 ),
+		new Vector3( 0, PHI, INV_PHI ),
+		new Vector3( 0, PHI, - INV_PHI ),
+		new Vector3( INV_PHI, 0, PHI ),
+		new Vector3( - INV_PHI, 0, PHI ),
+		new Vector3( PHI, INV_PHI, 0 ),
+		new Vector3( - PHI, INV_PHI, 0 ) ];
 
 	function _createPlanes() {
 
-		const _lodPlanes = [];
-		const _sizeLods = [];
-		const _sigmas = [];
+		var _lodPlanes = [];
+		var _sizeLods = [];
+		var _sigmas = [];
 
-		let lod = LOD_MAX;
+		var lod = LOD_MAX;
 
-		for ( let i = 0; i < TOTAL_LODS; i ++ ) {
+		for ( var i = 0; i < TOTAL_LODS; i ++ ) {
 
-			const sizeLod = Math.pow( 2, lod );
+			var sizeLod = Math.pow( 2, lod );
 			_sizeLods.push( sizeLod );
-			let sigma = 1.0 / sizeLod;
+			var sigma = 1.0 / sizeLod;
 
 			if ( i > LOD_MAX - LOD_MIN ) {
 
@@ -47620,26 +47650,26 @@
 
 			_sigmas.push( sigma );
 
-			const texelSize = 1.0 / ( sizeLod - 1 );
-			const min = - texelSize / 2;
-			const max = 1 + texelSize / 2;
-			const uv1 = [ min, min, max, min, max, max, min, min, max, max, min, max ];
+			var texelSize = 1.0 / ( sizeLod - 1 );
+			var min = - texelSize / 2;
+			var max = 1 + texelSize / 2;
+			var uv1 = [ min, min, max, min, max, max, min, min, max, max, min, max ];
 
-			const cubeFaces = 6;
-			const vertices = 6;
-			const positionSize = 3;
-			const uvSize = 2;
-			const faceIndexSize = 1;
+			var cubeFaces = 6;
+			var vertices = 6;
+			var positionSize = 3;
+			var uvSize = 2;
+			var faceIndexSize = 1;
 
-			const position = new Float32Array( positionSize * vertices * cubeFaces );
-			const uv = new Float32Array( uvSize * vertices * cubeFaces );
-			const faceIndex = new Float32Array( faceIndexSize * vertices * cubeFaces );
+			var position = new Float32Array( positionSize * vertices * cubeFaces );
+			var uv = new Float32Array( uvSize * vertices * cubeFaces );
+			var faceIndex = new Float32Array( faceIndexSize * vertices * cubeFaces );
 
-			for ( let face = 0; face < cubeFaces; face ++ ) {
+			for ( var face = 0; face < cubeFaces; face ++ ) {
 
-				const x = ( face % 3 ) * 2 / 3 - 1;
-				const y = face > 2 ? 0 : - 1;
-				const coordinates = [
+				var x = ( face % 3 ) * 2 / 3 - 1;
+				var y = face > 2 ? 0 : - 1;
+				var coordinates = [
 					x, y, 0,
 					x + 2 / 3, y, 0,
 					x + 2 / 3, y + 1, 0,
@@ -47649,12 +47679,12 @@
 				];
 				position.set( coordinates, positionSize * vertices * face );
 				uv.set( uv1, uvSize * vertices * face );
-				const fill = [ face, face, face, face, face, face ];
+				var fill = [ face, face, face, face, face, face ];
 				faceIndex.set( fill, faceIndexSize * vertices * face );
 
 			}
 
-			const planes = new BufferGeometry();
+			var planes = new BufferGeometry();
 			planes.setAttribute( 'position', new BufferAttribute( position, positionSize ) );
 			planes.setAttribute( 'uv', new BufferAttribute( uv, uvSize ) );
 			planes.setAttribute( 'faceIndex', new BufferAttribute( faceIndex, faceIndexSize ) );
@@ -47668,7 +47698,7 @@
 
 		}
 
-		return { _lodPlanes, _sizeLods, _sigmas };
+		return { _lodPlanes: _lodPlanes, _sizeLods: _sizeLods, _sigmas: _sigmas };
 
 	}
 
@@ -47696,7 +47726,7 @@
 
 			// generate geometry from path points (for Line or Points objects)
 
-			const pts = this.getPoints( divisions );
+			var pts = this.getPoints( divisions );
 			return this.createGeometry( pts );
 
 		},
@@ -47707,7 +47737,7 @@
 
 			// generate geometry from equidistant sampling along the path
 
-			const pts = this.getSpacedPoints( divisions );
+			var pts = this.getSpacedPoints( divisions );
 			return this.createGeometry( pts );
 
 		},
@@ -47716,11 +47746,11 @@
 
 			console.warn( 'THREE.CurvePath: .createGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.' );
 
-			const geometry = new Geometry();
+			var geometry = new Geometry();
 
-			for ( let i = 0, l = points.length; i < l; i ++ ) {
+			for ( var i = 0, l = points.length; i < l; i ++ ) {
 
-				const point = points[ i ];
+				var point = points[ i ];
 				geometry.vertices.push( new Vector3( point.x, point.y, point.z || 0 ) );
 
 			}
@@ -48463,7 +48493,7 @@
 		console.warn( "THREE.PerspectiveCamera.setLens is deprecated. " +
 				"Use .setFocalLength and .filmGauge for a photographic setup." );
 
-		if ( filmGauge !== undefined ) this.filmGauge = filmGauge;
+		if ( filmGauge !== undefined ) { this.filmGauge = filmGauge; }
 		this.setFocalLength( focalLength );
 
 	};
@@ -49412,8 +49442,8 @@
 			value: function ( file ) {
 
 				console.warn( 'THREE.Audio: .load has been deprecated. Use THREE.AudioLoader instead.' );
-				const scope = this;
-				const audioLoader = new AudioLoader();
+				var scope = this;
+				var audioLoader = new AudioLoader();
 				audioLoader.load( file, function ( buffer ) {
 
 					scope.setBuffer( buffer );
@@ -49455,12 +49485,12 @@
 
 		console.warn( 'THREE.ImageUtils.loadTexture has been deprecated. Use THREE.TextureLoader() instead.' );
 
-		const loader = new TextureLoader();
+		var loader = new TextureLoader();
 		loader.setCrossOrigin( this.crossOrigin );
 
-		const texture = loader.load( url, onLoad, undefined, onError );
+		var texture = loader.load( url, onLoad, undefined, onError );
 
-		if ( mapping ) texture.mapping = mapping;
+		if ( mapping ) { texture.mapping = mapping; }
 
 		return texture;
 
@@ -49470,12 +49500,12 @@
 
 		console.warn( 'THREE.ImageUtils.loadTextureCube has been deprecated. Use THREE.CubeTextureLoader() instead.' );
 
-		const loader = new CubeTextureLoader();
+		var loader = new CubeTextureLoader();
 		loader.setCrossOrigin( this.crossOrigin );
 
-		const texture = loader.load( urls, onLoad, undefined, onError );
+		var texture = loader.load( urls, onLoad, undefined, onError );
 
-		if ( mapping ) texture.mapping = mapping;
+		if ( mapping ) { texture.mapping = mapping; }
 
 		return texture;
 
@@ -49503,70 +49533,39 @@
 
 	}
 
-	var Demo = (function () {
-	    function Demo(id) {
-	        if (id === void 0) { id = "demo"; }
-	        this.scene = new Scene();
-	        this.id = id;
-	        this.renderer = null;
-	        this.loadingManager = new LoadingManager();
-	        this.assets = new Map();
-	        this.scene = new Scene();
-	        this.camera = null;
-	        this.ready = false;
-	    }
-	    Demo.prototype.setRenderer = function (renderer) {
-	        this.renderer = renderer;
-	        return this;
-	    };
-	    Demo.prototype.getCamera = function () {
-	        return this.camera;
-	    };
-	    Demo.prototype.load = function () {
-	        return Promise.resolve();
-	    };
-	    Demo.prototype.initialize = function () { };
-	    Demo.prototype.render = function (deltaTime) {
-	        this.renderer.render(this.scene, this.camera);
-	    };
-	    Demo.prototype.registerOptions = function (menu) { };
-	    Demo.prototype.reset = function () {
-	        this.scene = new Scene();
-	        this.camera = null;
-	        this.ready = false;
-	        return this;
-	    };
-	    return Demo;
-	}());
+	var Demo = function Demo(id) {
+	    if ( id === void 0 ) id = "demo";
 
-	/*! *****************************************************************************
-	Copyright (c) Microsoft Corporation.
-
-	Permission to use, copy, modify, and/or distribute this software for any
-	purpose with or without fee is hereby granted.
-
-	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-	PERFORMANCE OF THIS SOFTWARE.
-	***************************************************************************** */
-	/* global Reflect, Promise */
-
-	var extendStatics = function(d, b) {
-	    extendStatics = Object.setPrototypeOf ||
-	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-	    return extendStatics(d, b);
+	    this.scene = new Scene();
+	    this.id = id;
+	    this.renderer = null;
+	    this.loadingManager = new LoadingManager();
+	    this.assets = new Map();
+	    this.scene = new Scene();
+	    this.camera = null;
+	    this.ready = false;
 	};
-
-	function __extends(d, b) {
-	    extendStatics(d, b);
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	}
+	Demo.prototype.setRenderer = function setRenderer (renderer) {
+	    this.renderer = renderer;
+	    return this;
+	};
+	Demo.prototype.getCamera = function getCamera () {
+	    return this.camera;
+	};
+	Demo.prototype.load = function load () {
+	    return Promise.resolve();
+	};
+	Demo.prototype.initialize = function initialize () { };
+	Demo.prototype.render = function render (deltaTime) {
+	    this.renderer.render(this.scene, this.camera);
+	};
+	Demo.prototype.registerOptions = function registerOptions (menu) { };
+	Demo.prototype.reset = function reset () {
+	    this.scene = new Scene();
+	    this.camera = null;
+	    this.ready = false;
+	    return this;
+	};
 
 	/**
 	 * dat-gui JavaScript Controller Library
@@ -49703,7 +49702,7 @@
 	      var args = arguments;
 	      function delayed() {
 	        timeout = null;
-	        if (!callImmediately) func.apply(obj, args);
+	        if (!callImmediately) { func.apply(obj, args); }
 	      }
 	      var callNow = callImmediately || !timeout;
 	      clearTimeout(timeout);
@@ -49714,7 +49713,7 @@
 	    };
 	  },
 	  toArray: function toArray(obj) {
-	    if (obj.toArray) return obj.toArray();
+	    if (obj.toArray) { return obj.toArray(); }
 	    return ARR_SLICE.call(obj);
 	  },
 	  isUndefined: function isUndefined(obj) {
@@ -49855,7 +49854,7 @@
 	    },
 	    RGBA_ARRAY: {
 	      read: function read(original) {
-	        if (original.length !== 4) return false;
+	        if (original.length !== 4) { return false; }
 	        return {
 	          space: 'RGB',
 	          r: original[0],
@@ -50070,14 +50069,14 @@
 	      var descriptor = props[i];
 	      descriptor.enumerable = descriptor.enumerable || false;
 	      descriptor.configurable = true;
-	      if ("value" in descriptor) descriptor.writable = true;
+	      if ("value" in descriptor) { descriptor.writable = true; }
 	      Object.defineProperty(target, descriptor.key, descriptor);
 	    }
 	  }
 
 	  return function (Constructor, protoProps, staticProps) {
-	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-	    if (staticProps) defineProperties(Constructor, staticProps);
+	    if (protoProps) { defineProperties(Constructor.prototype, protoProps); }
+	    if (staticProps) { defineProperties(Constructor, staticProps); }
 	    return Constructor;
 	  };
 	}();
@@ -50089,7 +50088,7 @@
 
 
 	var get = function get(object, property, receiver) {
-	  if (object === null) object = Function.prototype;
+	  if (object === null) { object = Function.prototype; }
 	  var desc = Object.getOwnPropertyDescriptor(object, property);
 
 	  if (desc === undefined) {
@@ -50126,7 +50125,7 @@
 	      configurable: true
 	    }
 	  });
-	  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	  if (superClass) { Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	};
 
 
@@ -50335,7 +50334,7 @@
 	}
 	var dom = {
 	  makeSelectable: function makeSelectable(elem, selectable) {
-	    if (elem === undefined || elem.style === undefined) return;
+	    if (elem === undefined || elem.style === undefined) { return; }
 	    elem.onselectstart = selectable ? function () {
 	      return false;
 	    } : function () {};
@@ -50565,7 +50564,7 @@
 	  }, {
 	    key: 'updateDisplay',
 	    value: function updateDisplay() {
-	      if (dom.isActive(this.__select)) return this;
+	      if (dom.isActive(this.__select)) { return this; }
 	      this.__select.value = this.getValue();
 	      return get(OptionController.prototype.__proto__ || Object.getPrototypeOf(OptionController.prototype), 'updateDisplay', this).call(this);
 	    }
@@ -51796,7 +51795,7 @@
 	          factoryArgs: [controller.__min, controller.__max, controller.__step]
 	        });
 	        newController.name(oldName);
-	        if (wasListening) newController.listen();
+	        if (wasListening) { newController.listen(); }
 	        return newController;
 	      }
 	      return returned;
@@ -52063,47 +52062,49 @@
 	}
 	var GUI$1 = GUI;
 
-	var DemoManagerEvent = (function () {
-	    function DemoManagerEvent(type) {
-	        this.type = type;
-	        this.previousDemo = null;
-	        this.demo = null;
-	    }
-	    return DemoManagerEvent;
-	}());
+	var DemoManagerEvent = function DemoManagerEvent(type) {
+	    this.type = type;
+	    this.previousDemo = null;
+	    this.demo = null;
+	};
 
 	var change = new DemoManagerEvent("change");
 	var load = new DemoManagerEvent("load");
 
 	var MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
-	var DemoManager = (function (_super) {
-	    __extends(DemoManager, _super);
-	    function DemoManager(viewport, _a) {
-	        var _b = _a.aside, aside = _b === void 0 ? viewport : _b, renderer = _a.renderer;
-	        var _this = _super.call(this) || this;
-	        _this.renderer = renderer;
-	        if (_this.renderer === undefined) {
-	            var renderer_1 = new WebGLRenderer();
-	            renderer_1.setSize(viewport.clientWidth, viewport.clientHeight);
-	            renderer_1.setPixelRatio(window.devicePixelRatio);
-	            _this.renderer = renderer_1;
+	var DemoManager = /*@__PURE__*/(function (EventDispatcher) {
+	    function DemoManager(viewport, ref) {
+	        var aside = ref.aside; if ( aside === void 0 ) aside = viewport;
+	        var renderer = ref.renderer;
+
+	        EventDispatcher.call(this);
+	        this.renderer = renderer;
+	        if (this.renderer === undefined) {
+	            var renderer$1 = new WebGLRenderer();
+	            renderer$1.setSize(viewport.clientWidth, viewport.clientHeight);
+	            renderer$1.setPixelRatio(window.devicePixelRatio);
+	            this.renderer = renderer$1;
 	        }
-	        _this.timestamp = 0.0;
-	        _this.menu = new GUI$1({ autoPlace: false });
-	        _this.demos = new Map();
-	        _this.demo = null;
-	        _this.currentDemo = null;
-	        viewport.appendChild(_this.renderer.domElement);
-	        aside.appendChild(_this.menu.domElement);
-	        return _this;
+	        this.timestamp = 0.0;
+	        this.menu = new GUI$1({ autoPlace: false });
+	        this.demos = new Map();
+	        this.demo = null;
+	        this.currentDemo = null;
+	        viewport.appendChild(this.renderer.domElement);
+	        aside.appendChild(this.menu.domElement);
 	    }
-	    DemoManager.prototype.resetMenu = function () {
-	        var _this = this;
+
+	    if ( EventDispatcher ) DemoManager.__proto__ = EventDispatcher;
+	    DemoManager.prototype = Object.create( EventDispatcher && EventDispatcher.prototype );
+	    DemoManager.prototype.constructor = DemoManager;
+	    DemoManager.prototype.resetMenu = function resetMenu () {
+	        var this$1 = this;
+
 	        var node = this.menu.domElement.parentNode;
 	        var menu = new GUI$1({ autoPlace: false });
 	        if (this.demos.size > 1) {
 	            var selection = menu.add(this, "demo", Array.from(this.demos.keys()));
-	            selection.onChange(function () { return _this.loadDemo(); });
+	            selection.onChange(function () { return this$1.loadDemo(); });
 	        }
 	        node.removeChild(this.menu.domElement);
 	        node.appendChild(menu.domElement);
@@ -52111,7 +52112,7 @@
 	        this.menu = menu;
 	        return menu;
 	    };
-	    DemoManager.prototype.startDemo = function (demo) {
+	    DemoManager.prototype.startDemo = function startDemo (demo) {
 	        if (demo.id === this.demo) {
 	            demo.initialize();
 	            demo.registerOptions(this.resetMenu());
@@ -52120,8 +52121,9 @@
 	            this.dispatchEvent(load);
 	        }
 	    };
-	    DemoManager.prototype.loadDemo = function () {
-	        var _this = this;
+	    DemoManager.prototype.loadDemo = function loadDemo () {
+	        var this$1 = this;
+
 	        var nextDemo = this.demos.get(this.demo);
 	        var currentDemo = this.currentDemo;
 	        var renderer = this.renderer;
@@ -52136,10 +52138,10 @@
 	        this.dispatchEvent(change);
 	        renderer.clear();
 	        nextDemo.load()
-	            .then(function () { return _this.startDemo(nextDemo); })
+	            .then(function () { return this$1.startDemo(nextDemo); })
 	            .catch(console.error);
 	    };
-	    DemoManager.prototype.addDemo = function (demo) {
+	    DemoManager.prototype.addDemo = function addDemo (demo) {
 	        var hash = window.location.hash.slice(1);
 	        var currentDemo = this.currentDemo;
 	        this.demos.set(demo.id, demo.setRenderer(this.renderer));
@@ -52153,7 +52155,7 @@
 	        }
 	        return this;
 	    };
-	    DemoManager.prototype.removeDemo = function (id) {
+	    DemoManager.prototype.removeDemo = function removeDemo (id) {
 	        var demos = this.demos;
 	        if (demos.has(id)) {
 	            demos.delete(id);
@@ -52172,8 +52174,9 @@
 	        }
 	        return this;
 	    };
-	    DemoManager.prototype.setSize = function (width, height, updateStyle) {
-	        if (updateStyle === void 0) { updateStyle = true; }
+	    DemoManager.prototype.setSize = function setSize (width, height, updateStyle) {
+	        if ( updateStyle === void 0 ) updateStyle = true;
+
 	        var demo = this.currentDemo;
 	        var camera = demo.getCamera();
 	        this.renderer.setSize(width, height, updateStyle);
@@ -52191,7 +52194,7 @@
 	            }
 	        }
 	    };
-	    DemoManager.prototype.render = function (timestamp) {
+	    DemoManager.prototype.render = function render (timestamp) {
 	        var elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
 	        this.timestamp = timestamp;
 	        var demo = this.currentDemo;
@@ -52199,17 +52202,20 @@
 	            demo.render(elapsed);
 	        }
 	    };
+
 	    return DemoManager;
 	}(EventDispatcher));
 
-	var ExampleDemo = (function (_super) {
-	    __extends(ExampleDemo, _super);
+	var ExampleDemo = /*@__PURE__*/(function (Demo) {
 	    function ExampleDemo() {
-	        var _this = _super.call(this, "example") || this;
-	        _this.speed = 0.01;
-	        return _this;
+	        Demo.call(this, "example");
+	        this.speed = 0.01;
 	    }
-	    ExampleDemo.prototype.load = function () {
+
+	    if ( Demo ) ExampleDemo.__proto__ = Demo;
+	    ExampleDemo.prototype = Object.create( Demo && Demo.prototype );
+	    ExampleDemo.prototype.constructor = ExampleDemo;
+	    ExampleDemo.prototype.load = function load () {
 	        var assets = this.assets;
 	        var loadingManager = this.loadingManager;
 	        var cubeTextureLoader = new CubeTextureLoader(loadingManager);
@@ -52233,7 +52239,7 @@
 	            }
 	        });
 	    };
-	    ExampleDemo.prototype.initialize = function () {
+	    ExampleDemo.prototype.initialize = function initialize () {
 	        var scene = this.scene;
 	        var assets = this.assets;
 	        var aspect = window.innerWidth / window.innerHeight;
@@ -52246,22 +52252,23 @@
 	        var mesh = new Mesh(new SphereBufferGeometry(1, 32, 32), new MeshBasicMaterial({ envMap: envMap }));
 	        scene.add(mesh);
 	    };
-	    ExampleDemo.prototype.render = function (deltaTime) {
+	    ExampleDemo.prototype.render = function render (deltaTime) {
 	        var TWO_PI = Math.PI * 2;
 	        var rotation = this.camera.rotation;
 	        rotation.z += deltaTime * this.speed;
 	        if (Math.abs(rotation.z) >= TWO_PI) {
 	            rotation.z -= Math.sign(rotation.z) * TWO_PI;
 	        }
-	        _super.prototype.render.call(this, deltaTime);
+	        Demo.prototype.render.call(this, deltaTime);
 	    };
-	    ExampleDemo.prototype.registerOptions = function (menu) {
+	    ExampleDemo.prototype.registerOptions = function registerOptions (menu) {
 	        menu.add(this, "speed").min(-0.5).max(0.5).step(0.01);
 	    };
-	    ExampleDemo.prototype.reset = function () {
+	    ExampleDemo.prototype.reset = function reset () {
 	        this.speed = 0.01;
-	        return _super.prototype.reset.call(this);
+	        return Demo.prototype.reset.call(this);
 	    };
+
 	    return ExampleDemo;
 	}(Demo));
 
