@@ -1,8 +1,8 @@
 # Three Demo
 
-[![Build status](https://travis-ci.org/vanruesc/three-demo.svg?branch=master)](https://travis-ci.org/vanruesc/three-demo)
-[![npm version](https://badgen.net/npm/v/three-demo?color=green)](https://www.npmjs.com/package/three-demo)
-[![Peer dependencies](https://david-dm.org/vanruesc/three-demo/peer-status.svg)](https://david-dm.org/vanruesc/three-demo?type=peer)
+[![CI](https://badgen.net/github/checks/vanruesc/three-demo)](https://github.com/vanruesc/three-demo/actions)
+[![Version](https://badgen.net/npm/v/three-demo?color=green)](https://www.npmjs.com/package/three-demo)
+[![Peer dependencies](https://badgen.net/david/peer/vanruesc/three-demo)](https://david-dm.org/vanruesc/three-demo?type=peer)
 
 A compact demo framework for [three.js](https://threejs.org/).
 
