@@ -41,7 +41,8 @@ const lib = {
 				tsconfig: "src/tsconfig.json"
 			}),
 			babel({
-				babelHelpers: "bundled"
+				babelHelpers: "bundled",
+				extensions: [".ts"]
 			})
 		],
 		external,
@@ -69,7 +70,8 @@ const demo = {
 	plugins: [resolve(), typescript({
 		tsconfig: "demo/src/tsconfig.json"
 	})].concat(!production ? [] : [babel({
-		babelHelpers: "bundled"
+		babelHelpers: "bundled",
+		extensions: [".ts"]
 	})]),
 	output: [{
 		dir: "public/demo",
