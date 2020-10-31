@@ -39,7 +39,7 @@
 		"dev": "concurrently -k -n server,rollup,eslint \"hs -s\" \"rollup -c -w\" \"esw -w --ext .ts src demo/src\"",
 		"doc": "rimraf public/docs && typedoc",
 		"lint": "eslint src demo/src",
-		"prepack": "npm test && npm run doc",
+		"prepublishOnly": "npm test && npm run doc",
 		"test": "npm run lint && rimraf build && npm run build:production"
 	},
 	"eslintConfig": {
