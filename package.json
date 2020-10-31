@@ -53,13 +53,13 @@
 	},
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.89.0 < 0.122.0"
+		"three": ">= 0.89.0 < 0.123.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.x.x",
 		"@babel/preset-env": "7.x.x",
 		"@rollup/plugin-babel": "5.x.x",
-		"@rollup/plugin-node-resolve": "9.x.x",
+		"@rollup/plugin-node-resolve": "10.x.x",
 		"@rollup/plugin-typescript": "6.x.x",
 		"@types/dat.gui": "0.x.x",
 		"@typescript-eslint/eslint-plugin": "4.x.x",
