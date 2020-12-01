@@ -1,5 +1,5 @@
 /**
- * three-demo v4.0.4 build Sat Oct 31 2020
+ * three-demo v4.0.5 build Tue Dec 01 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
@@ -178,7 +178,7 @@
   var change = new DemoManagerEvent("change");
   var load = new DemoManagerEvent("load");
 
-  var MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
+  var MILLISECONDS_TO_SECONDS = 1 / 1e3;
   var DemoManager = function (_EventDispatcher) {
     _inherits(DemoManager, _EventDispatcher);
 
@@ -196,17 +196,14 @@
       _this = _super.call(this);
       _this.renderer = renderer;
 
-      if (_this.renderer === undefined) {
-        var _renderer = new three.WebGLRenderer();
-
-        _renderer.setSize(viewport.clientWidth, viewport.clientHeight);
-
-        _renderer.setPixelRatio(window.devicePixelRatio);
-
-        _this.renderer = _renderer;
+      if (_this.renderer === void 0) {
+        var renderer2 = new three.WebGLRenderer();
+        renderer2.setSize(viewport.clientWidth, viewport.clientHeight);
+        renderer2.setPixelRatio(window.devicePixelRatio);
+        _this.renderer = renderer2;
       }
 
-      _this.timestamp = 0.0;
+      _this.timestamp = 0;
       _this.menu = new dat_gui.GUI({
         autoPlace: false
       });
@@ -329,10 +326,10 @@
 
         if (demo !== null && camera !== null) {
           if (camera instanceof three.OrthographicCamera) {
-            camera.left = width / -2.0;
-            camera.right = width / 2.0;
-            camera.top = height / 2.0;
-            camera.bottom = height / -2.0;
+            camera.left = width / -2;
+            camera.right = width / 2;
+            camera.top = height / 2;
+            camera.bottom = height / -2;
             camera.updateProjectionMatrix();
           } else if (camera instanceof three.PerspectiveCamera) {
             camera.aspect = width / height;
