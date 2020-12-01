@@ -5,11 +5,9 @@ import {
 	Mesh,
 	MeshBasicMaterial,
 	PerspectiveCamera,
+	SphereBufferGeometry,
 	Texture
 } from "three";
-
-// Workaround for missing BufferGeometry type exports in three@r121:
-import { SphereBufferGeometry } from "three/src/geometries/SphereBufferGeometry";
 
 import { Demo } from "../../../src";
 
