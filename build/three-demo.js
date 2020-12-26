@@ -1,5 +1,5 @@
 /**
- * three-demo v4.0.6 build Sat Dec 26 2020
+ * three-demo v4.0.7 build Sat Dec 26 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
