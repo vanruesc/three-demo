@@ -1,6 +1,6 @@
 # Three Demo
 
-[![CI](https://badgen.net/github/checks/vanruesc/three-demo)](https://github.com/vanruesc/three-demo/actions)
+[![CI](https://badgen.net/github/checks/vanruesc/three-demo/main)](https://github.com/vanruesc/three-demo/actions)
 [![Version](https://badgen.net/npm/v/three-demo?color=green)](https://www.npmjs.com/package/three-demo)
 [![Peer dependencies](https://badgen.net/david/peer/vanruesc/three-demo)](https://david-dm.org/vanruesc/three-demo?type=peer)
 
