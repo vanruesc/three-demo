@@ -1,13 +1,12 @@
 /**
- * three-demo v4.0.5 build Tue Dec 01 2020
+ * three-demo v4.0.6 build Sat Dec 26 2020
  * https://github.com/vanruesc/three-demo
  * Copyright 2020 Raoul van Rüschen
  * @license Zlib
  */
-import { Scene, LoadingManager, EventDispatcher, WebGLRenderer, OrthographicCamera, PerspectiveCamera } from 'three';
-import { GUI } from 'dat.gui';
-
-class Demo {
+// src/Demo.ts
+import {LoadingManager, Scene} from "three";
+var Demo = class {
   constructor(id = "demo") {
     this.scene = new Scene();
     this.id = id;
@@ -41,26 +40,38 @@ class Demo {
     this.ready = false;
     return this;
   }
-}
+};
 
-class DemoManagerEvent {
+// src/DemoManager.ts
+import {GUI} from "dat.gui";
+import {
+  EventDispatcher,
+  OrthographicCamera,
+  PerspectiveCamera,
+  WebGLRenderer as WebGLRenderer2
+} from "three";
+
+// src/DemoManagerEvent.ts
+var DemoManagerEvent = class {
   constructor(type) {
     this.type = type;
     this.previousDemo = null;
     this.demo = null;
   }
-}
+};
 
-const change = new DemoManagerEvent("change");
-const load = new DemoManagerEvent("load");
+// src/demo-manager-events.ts
+var change = new DemoManagerEvent("change");
+var load = new DemoManagerEvent("load");
 
-const MILLISECONDS_TO_SECONDS = 1 / 1e3;
-class DemoManager extends EventDispatcher {
+// src/DemoManager.ts
+var MILLISECONDS_TO_SECONDS = 1 / 1e3;
+var DemoManager = class extends EventDispatcher {
   constructor(viewport, {aside = viewport, renderer}) {
     super();
     this.renderer = renderer;
     if (this.renderer === void 0) {
-      const renderer2 = new WebGLRenderer();
+      const renderer2 = new WebGLRenderer2();
       renderer2.setSize(viewport.clientWidth, viewport.clientHeight);
       renderer2.setPixelRatio(window.devicePixelRatio);
       this.renderer = renderer2;
@@ -168,6 +179,9 @@ class DemoManager extends EventDispatcher {
       demo.render(elapsed);
     }
   }
-}
-
-export { Demo, DemoManager, DemoManagerEvent };
+};
+export {
+  Demo,
+  DemoManager,
+  DemoManagerEvent
+};
