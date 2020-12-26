@@ -4,12 +4,11 @@
 	"description": "A demo framework for three.js.",
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
-	"module": "build/three-demo.esm.js",
-  "types": "build/three-demo.d.ts",
 	"exports": {
-		".": "./build/three-demo.esm.js"
+		"import": "./build/three-demo.esm.js",
+		"require": "./build/three-demo.js"
 	},
-	"type": "module",
+	"types": "build/types/index.d.ts",
 	"sideEffects": false,
 	"license": "Zlib",
 	"keywords": [
@@ -33,16 +32,20 @@
 		"build"
 	],
 	"scripts": {
-		"build": "rollup -c",
-		"build:production": "cross-env NODE_ENV=production rollup -c",
+		"ava": "ava",
+		"build": "run-s build:*",
+		"build:js": "cross-env NODE_ENV=production ts-node-script esbuild",
+		"build:dts": "tsc -p tsconfig.d.json",
+		"clean": "del-cli public/docs build",
 		"dev": "run-p start watch:*",
-		"doc": "rimraf public/docs && typedoc",
+		"doc": "typedoc",
 		"lint": "eslint src demo/src --fix",
-		"prepublishOnly": "npm test && npm run doc",
-		"test": "rimraf build && npm run lint && npm run build:production",
+		"prepublishOnly": "run-s test doc",
+		"test": "run-s clean lint build ava",
 		"start": "hs -s",
-		"watch:eslint": "esw -w --ext .ts src demo/src",
-		"watch:js": "rollup -c -w"
+		"watch": "run-p watch:*",
+		"watch:eslint": "esw -w --ext .ts --color src demo/src",
+		"watch:js": "ts-node-script esbuild -w"
 	},
 	"eslintConfig": {
 		"root": true,
@@ -55,31 +58,32 @@
 	},
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.89.0 < 0.124.0"
+		"three": ">= 0.89.0 < 0.125.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.x.x",
-		"@babel/preset-env": "7.x.x",
-		"@rollup/plugin-babel": "5.x.x",
-		"@rollup/plugin-node-resolve": "11.x.x",
 		"@types/dat.gui": "0.x.x",
+		"@types/node": "14.x.x",
+		"@types/yargs": "15.x.x",
 		"@typescript-eslint/eslint-plugin": "4.x.x",
 		"@typescript-eslint/parser": "4.x.x",
+		"ava": "3.x.x",
+		"chokidar": "3.x.x",
 		"cross-env": "7.x.x",
 		"dat.gui": "0.x.x",
+		"del-cli": "3.x.x",
 		"esbuild": "0.x.x",
 		"eslint": "7.x.x",
 		"eslint-config-aether": "1.x.x",
 		"eslint-watch": "7.x.x",
+		"esm": "3.x.x",
 		"http-server": "0.x.x",
 		"npm-run-all": "4.x.x",
-		"rimraf": "3.x.x",
-		"rollup": "2.x.x",
-		"rollup-plugin-dts": "2.x.x",
-		"rollup-plugin-esbuild": "2.x.x",
 		"three": "0.x.x",
+		"three-demo": "4.x.x",
+		"ts-node": "9.x.x",
 		"tslib": "2.x.x",
 		"typedoc": "0.x.x",
-		"typescript": "4.x.x"
+		"typescript": "4.x.x",
+		"yargs": "16.x.x"
 	}
 }

@@ -1,10 +1,20 @@
 {
+	"ts-node": {
+		"transpileOnly": true,
+		"compilerOptions": {
+			"module": "CommonJS",
+			"resolveJsonModule": true
+		},
+		"include": ["./*.ts"]
+	},
 	"compilerOptions": {
 		"rootDir": ".",
 		"moduleResolution": "node",
 		"module": "ESNext",
+		"target": "ESNext",
 		"strict": true,
 		"sourceMap": false,
+		"importHelpers": true,
 		"removeComments": true,
 		"skipLibCheck": true,
 		"strictNullChecks": false
