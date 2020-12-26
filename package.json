@@ -4,6 +4,7 @@
 	"description": "A demo framework for three.js.",
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
+	"module": "build/three-demo.esm.js",
 	"exports": {
 		"import": "./build/three-demo.esm.js",
 		"require": "./build/three-demo.js"
