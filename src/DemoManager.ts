@@ -25,7 +25,7 @@ const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
  * @ignore
  */
 
-interface ConstructorParameters {
+export interface ConstructorParameters {
 
 	aside?: HTMLElement,
 	renderer?: WebGLRenderer
