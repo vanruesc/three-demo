@@ -5,11 +5,11 @@
 	"homepage": "https://github.com/vanruesc/three-demo",
 	"main": "build/three-demo.js",
 	"module": "build/three-demo.esm.js",
+	"types": "build/types/index.d.ts",
 	"exports": {
 		"import": "./build/three-demo.esm.js",
 		"require": "./build/three-demo.js"
 	},
-	"types": "build/types/index.d.ts",
 	"sideEffects": false,
 	"license": "Zlib",
 	"keywords": [
