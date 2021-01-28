@@ -161,7 +161,6 @@ export class Demo {
 
 		this.scene = new Scene();
 		this.camera = null;
-		this.ready = false;
 
 		return this;
 

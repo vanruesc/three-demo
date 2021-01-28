@@ -225,8 +225,7 @@ export class DemoManager extends EventDispatcher {
 		// If there is a hash value, wait for the corresponding demo to be added.
 		if((this.demoId === null && hash.length === 0) || demo.id === hash) {
 
-			this.demoId = demo.id;
-			this.loadDemo();
+			this.loadDemo(demo.id);
 
 		}
 
@@ -264,9 +263,8 @@ export class DemoManager extends EventDispatcher {
 				// Load the first of the remaining demos.
 				const entries: Array<[string, Demo]> = Array.from(demos.entries());
 				const firstEntry = entries[0];
-				this.demoId = firstEntry[0];
 				this.currentDemo = firstEntry[1];
-				this.loadDemo();
+				this.loadDemo(firstEntry[0]);
 
 			} else {
 
