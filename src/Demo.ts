@@ -8,7 +8,7 @@ import { Camera, LoadingManager, Scene, WebGLRenderer } from "three";
 export class Demo {
 
 	/**
-	 * The id of this demo.
+	 * The ID of this demo.
 	 */
 
 	id: string;
@@ -26,7 +26,7 @@ export class Demo {
 	protected loadingManager: LoadingManager;
 
 	/**
-	 * A collection of loaded assets.
+	 * A collection of assets.
 	 */
 
 	protected assets: Map<string, any>;
@@ -109,7 +109,8 @@ export class Demo {
 	/**
 	 * Updates this demo.
 	 *
-	 * Override this method to perform custom update operations.
+	 * Override this method to perform custom update operations for each frame.
+	 * This method will be called before {@link render}.
 	 *
 	 * @param deltaTime - The time since the last frame in seconds.
 	 */
@@ -144,7 +145,8 @@ export class Demo {
 	/**
 	 * Disposes this demo.
 	 *
-	 * Override this method to release custom resources and event handlers.
+	 * Override this method to release custom resources and event handlers. This
+	 * method will be called before {@link reset}.
 	 */
 
 	dispose(): void {}
