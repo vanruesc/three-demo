@@ -7,6 +7,15 @@
 		},
 		"include": ["./*.ts"]
 	},
+	"typedocOptions": {
+		"entryPoints": ["./src/index.ts"],
+		"out": "public/docs",
+		"theme": "default",
+		"readme": "none",
+		"excludePrivate": true,
+		"includeVersion": true,
+		"hideGenerator": true
+	},
 	"compilerOptions": {
 		"rootDir": ".",
 		"moduleResolution": "node",
@@ -18,5 +27,6 @@
 		"removeComments": true,
 		"skipLibCheck": true,
 		"strictNullChecks": false
-	}
+	},
+	"include": ["src", "demo/src"]
 }
