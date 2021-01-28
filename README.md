@@ -51,8 +51,7 @@ requestAnimationFrame(render);
 
 ## Custom Demos
 
-You can create custom demos by extending the `Demo` class. For details, take a look at the
-[ExampleDemo](https://github.com/vanruesc/three-demo/blob/main/demo/src/demos/ExampleDemo.js).
+You can create custom demos by extending the `Demo` class. For details, take a look at the [ExampleDemo](https://github.com/vanruesc/three-demo/blob/main/demo/src/demos/ExampleDemo.ts).
 
 
 ## Contributing
