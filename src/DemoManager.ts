@@ -23,7 +23,7 @@ const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
  * Demo manager contructor parameters.
  */
 
-export interface ConstructorParameters {
+export interface DemoManagerOptions {
 
 	aside?: HTMLElement,
 	renderer?: WebGLRenderer
@@ -87,7 +87,7 @@ export class DemoManager extends EventDispatcher {
 	 * @param options.renderer - A custom renderer.
 	 */
 
-	constructor(viewport: HTMLElement, { aside = viewport, renderer }: ConstructorParameters) {
+	constructor(viewport: HTMLElement, { aside = viewport, renderer }: DemoManagerOptions) {
 
 		super();
 
