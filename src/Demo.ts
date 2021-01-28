@@ -107,6 +107,16 @@ export class Demo {
 	initialize(): void {}
 
 	/**
+	 * Updates this demo.
+	 *
+	 * Override this method to perform custom update operations.
+	 *
+	 * @param deltaTime - The time since the last frame in seconds.
+	 */
+
+	update(deltaTime: number): void {}
+
+	/**
 	 * Renders this demo.
 	 *
 	 * Override this method to customize rendering.
