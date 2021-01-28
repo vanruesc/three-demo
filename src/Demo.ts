@@ -142,6 +142,14 @@ export class Demo {
 	registerOptions(menu: GUI): void {}
 
 	/**
+	 * Disposes this demo.
+	 *
+	 * Override this method to release custom resources and event handlers.
+	 */
+
+	dispose() {}
+
+	/**
 	 * Resets this demo.
 	 *
 	 * This method will be called when the manager switches to a different demo.
