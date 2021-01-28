@@ -15,31 +15,34 @@ const banner = `/**
 
 const footer = `if(typeof module==="object"&&module.exports)module.exports=${globalName};`;
 
-function config(entryPoint: string, outfile: string, format: string, minify = false): BuildOptions {
+function config(infile: string, outfile: string, format: string, minify = false): BuildOptions {
 
-	const lib = (entryPoint === "src/index.ts");
+	const lib = (infile === "src/index.js");
 	const iife = (format === "iife");
 
 	return {
-		entryPoints: [entryPoint],
-		outfile,
-		globalName: lib ? globalName : "",
+		entryPoints: [infile],
 		external: lib ? external : [],
+		globalName: lib ? globalName : "",
 		banner: lib ? banner : "",
 		footer: (lib && iife) ? footer : "",
 		bundle: true,
+		outfile,
 		minify,
 		format
 	} as BuildOptions;
 
 }
 
-export default production ? [
-	config("src/index.ts", `build/${pkg.name}.esm.js`, "esm"),
-	config("src/index.ts", `build/${pkg.name}.js`, "iife"),
-	config("src/index.ts", `build/${pkg.name}.min.js`, "iife", true),
-	config("demo/src/index.ts", "public/demo/index.js", "iife"),
-	config("demo/src/index.ts", "public/demo/index.min.js", "iife", true)
-] : [
-	config("demo/src/index.ts", "public/demo/index.js", "iife")
+const demoConfigs = [
+	config("demo/src/index.js", "public/demo/index.js", "iife", production)
 ];
+
+const libConfigs = production ? [
+	config("src/index.js", `build/${pkg.name}.esm.js`, "esm"),
+	config("src/index.js", `build/${pkg.name}.js`, "iife"),
+	config("src/index.js", `build/${pkg.name}.min.js`, "iife", true)
+] : [];
+
+export const sourceDirectories = ["src", "demo/src"];
+export const configLists = [demoConfigs, libConfigs];
