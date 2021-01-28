@@ -17,7 +17,7 @@ const footer = `if(typeof module==="object"&&module.exports)module.exports=${glo
 
 function config(infile: string, outfile: string, format: string, minify = false): BuildOptions {
 
-	const lib = (infile === "src/index.js");
+	const lib = (infile === "src/index.ts");
 	const iife = (format === "iife");
 
 	return {
@@ -35,13 +35,13 @@ function config(infile: string, outfile: string, format: string, minify = false)
 }
 
 const demoConfigs = [
-	config("demo/src/index.js", "public/demo/index.js", "iife", production)
+	config("demo/src/index.ts", "public/demo/index.js", "iife", production)
 ];
 
 const libConfigs = production ? [
-	config("src/index.js", `build/${pkg.name}.esm.js`, "esm"),
-	config("src/index.js", `build/${pkg.name}.js`, "iife"),
-	config("src/index.js", `build/${pkg.name}.min.js`, "iife", true)
+	config("src/index.ts", `build/${pkg.name}.esm.js`, "esm"),
+	config("src/index.ts", `build/${pkg.name}.js`, "iife"),
+	config("src/index.ts", `build/${pkg.name}.min.js`, "iife", true)
 ] : [];
 
 export const sourceDirectories = ["src", "demo/src"];
