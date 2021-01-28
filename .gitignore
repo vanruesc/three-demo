@@ -32,5 +32,6 @@ package-lock.json
 
 # Generated files
 build
+public
 *.log
 *.tmp
