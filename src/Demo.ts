@@ -44,14 +44,6 @@ export class Demo {
 	protected camera: Camera;
 
 	/**
-	 * Indicates whether this demo is ready for rendering.
-	 *
-	 * The {@link DemoManager} updates this flag automatically.
-	 */
-
-	ready: boolean;
-
-	/**
 	 * Constructs a new demo.
 	 *
 	 * @param id - A unique identifier.
@@ -65,7 +57,6 @@ export class Demo {
 		this.assets = new Map<string, any>();
 		this.scene = new Scene();
 		this.camera = null;
-		this.ready = false;
 
 	}
 
@@ -111,8 +102,6 @@ export class Demo {
 
 	/**
 	 * Initializes this demo.
-	 *
-	 * This method will be called after the demo has been reset.
 	 */
 
 	initialize(): void {}
@@ -120,7 +109,7 @@ export class Demo {
 	/**
 	 * Renders this demo.
 	 *
-	 * Override this method to update and render the demo manually.
+	 * Override this method to customize rendering.
 	 *
 	 * @param deltaTime - The time since the last frame in seconds.
 	 */
@@ -134,8 +123,8 @@ export class Demo {
 	/**
 	 * Registers configuration options.
 	 *
-	 * This method will be called once after initialize and then every time a new
-	 * demo is added.
+	 * This method will be called once after the demo has been initialized and
+	 * every time a new demo is added to the manager.
 	 *
 	 * @param menu - A menu.
 	 */
@@ -144,6 +133,8 @@ export class Demo {
 
 	/**
 	 * Resets this demo.
+	 *
+	 * This method will be called when the manager switches to a different demo.
 	 *
 	 * @return This demo.
 	 */
