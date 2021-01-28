@@ -147,7 +147,7 @@ export class Demo {
 	 * Override this method to release custom resources and event handlers.
 	 */
 
-	dispose() {}
+	dispose(): void {}
 
 	/**
 	 * Resets this demo.
