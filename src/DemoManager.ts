@@ -193,7 +193,7 @@ export class DemoManager extends EventDispatcher {
 
 		nextDemo.load()
 			.then(() => this.startDemo(nextDemo))
-			.catch(console.error);
+			.catch((e) => console.error(e));
 
 	}
 
