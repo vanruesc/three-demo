@@ -24,7 +24,6 @@
 		"strict": true,
 		"sourceMap": false,
 		"importHelpers": true,
-		"removeComments": true,
 		"skipLibCheck": true,
 		"strictNullChecks": false
 	},
