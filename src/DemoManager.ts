@@ -57,22 +57,28 @@ export class DemoManager extends EventDispatcher {
 	private menu: GUI;
 
 	/**
+	 * A set of loaded demos.
+	 */
+
+	private loadedDemos: Set<Demo>;
+
+	/**
 	 * A collection of demos.
 	 */
 
 	private demos: Map<string, Demo>;
 
 	/**
-	 * The id of the current demo.
-	 */
-
-	private demo: string;
-
-	/**
-	 * The current demo.
+	 * The demo that is currently active.
 	 */
 
 	private currentDemo: Demo;
+
+	/**
+	 * A demo ID.
+	 */
+
+	private demoId: string;
 
 	/**
 	 * Constructs a new demo manager.
@@ -100,9 +106,10 @@ export class DemoManager extends EventDispatcher {
 
 		this.timestamp = 0.0;
 		this.menu = new GUI({ autoPlace: false });
+		this.loadedDemos = new Set<Demo>();
 		this.demos = new Map<string, Demo>();
-		this.demo = null;
 		this.currentDemo = null;
+		this.demoId = null;
 
 		viewport.appendChild(this.renderer.domElement);
 		aside.appendChild(this.menu.domElement);
@@ -123,8 +130,8 @@ export class DemoManager extends EventDispatcher {
 		// Don't create a demo selection if there's only one demo.
 		if(this.demos.size > 1) {
 
-			const selection = menu.add(this, "demo", Array.from(this.demos.keys()));
-			selection.onChange(() => this.loadDemo());
+			const selection = menu.add({ demo: this.demoId }, "demo", [...this.demos.keys()]);
+			selection.onChange((value) => this.loadDemo(value));
 
 		}
 
@@ -147,11 +154,11 @@ export class DemoManager extends EventDispatcher {
 	private startDemo(demo: Demo): void {
 
 		// Make sure the given demo is still selected.
-		if(demo.id === this.demo) {
+		if(demo.id === this.demoId) {
 
 			demo.initialize();
 			demo.registerOptions(this.resetMenu());
-			demo.ready = true;
+			this.loadedDemos.add(demo);
 
 			events.load.demo = demo;
 			this.dispatchEvent(events.load);
@@ -162,11 +169,13 @@ export class DemoManager extends EventDispatcher {
 
 	/**
 	 * Loads the current demo.
+	 *
+	 * @param id - A demo ID.
 	 */
 
-	private loadDemo(): void {
+	private loadDemo(id: string): void {
 
-		const nextDemo = this.demos.get(this.demo);
+		const nextDemo = this.demos.get(id);
 		const currentDemo = this.currentDemo;
 		const renderer = this.renderer;
 
@@ -175,6 +184,7 @@ export class DemoManager extends EventDispatcher {
 
 		if(currentDemo !== null) {
 
+			currentDemo.dispose();
 			currentDemo.reset();
 
 		}
@@ -186,6 +196,7 @@ export class DemoManager extends EventDispatcher {
 		events.change.previousDemo = currentDemo;
 		events.change.demo = nextDemo;
 		this.currentDemo = nextDemo;
+		this.demoId = id;
 		this.dispatchEvent(events.change);
 
 		// Clear the screen.
@@ -212,9 +223,9 @@ export class DemoManager extends EventDispatcher {
 		this.demos.set(demo.id, demo.setRenderer(this.renderer));
 
 		// If there is a hash value, wait for the corresponding demo to be added.
-		if((this.demo === null && hash.length === 0) || demo.id === hash) {
+		if((this.demoId === null && hash.length === 0) || demo.id === hash) {
 
-			this.demo = demo.id;
+			this.demoId = demo.id;
 			this.loadDemo();
 
 		}
@@ -222,7 +233,7 @@ export class DemoManager extends EventDispatcher {
 		// Update the demo selection.
 		this.resetMenu();
 
-		if(currentDemo !== null && currentDemo.ready) {
+		if(currentDemo !== null && this.loadedDemos.has(currentDemo)) {
 
 			// Add the demo options again.
 			currentDemo.registerOptions(this.menu);
@@ -248,18 +259,18 @@ export class DemoManager extends EventDispatcher {
 
 			demos.delete(id);
 
-			if(this.demo === id && demos.size > 0) {
+			if(this.demoId === id && demos.size > 0) {
 
 				// Load the first of the remaining demos.
 				const entries: Array<[string, Demo]> = Array.from(demos.entries());
 				const firstEntry = entries[0];
-				this.demo = firstEntry[0];
+				this.demoId = firstEntry[0];
 				this.currentDemo = firstEntry[1];
 				this.loadDemo();
 
 			} else {
 
-				this.demo = null;
+				this.demoId = null;
 				this.currentDemo = null;
 				this.renderer.clear();
 
@@ -315,13 +326,13 @@ export class DemoManager extends EventDispatcher {
 
 	render(timestamp: number): void {
 
+		const demo = this.currentDemo;
 		const elapsed = (timestamp - this.timestamp) * MILLISECONDS_TO_SECONDS;
 		this.timestamp = timestamp;
 
-		const demo = this.currentDemo;
+		if(demo !== null && this.loadedDemos.has(demo)) {
 
-		if(demo !== null && demo.ready) {
-
+			demo.update(elapsed);
 			demo.render(elapsed);
 
 		}
