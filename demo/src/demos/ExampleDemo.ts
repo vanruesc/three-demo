@@ -77,7 +77,7 @@ export class ExampleDemo extends Demo {
 		const scene = this.scene;
 		const assets = this.assets;
 
-		// Camera.
+		// Camera
 
 		const aspect = window.innerWidth / window.innerHeight;
 		const camera = new PerspectiveCamera(50, aspect, 0.1, 1);
@@ -86,7 +86,7 @@ export class ExampleDemo extends Demo {
 		camera.rotation.z = Math.PI / 2;
 		this.camera = camera;
 
-		// Objects.
+		// Objects
 
 		const envMap = assets.get("envMap") as Texture;
 
@@ -99,7 +99,7 @@ export class ExampleDemo extends Demo {
 
 	}
 
-	render(deltaTime: number): void {
+	update(deltaTime: number): void {
 
 		const TWO_PI = Math.PI * 2;
 		const rotation = this.camera.rotation;
@@ -112,8 +112,6 @@ export class ExampleDemo extends Demo {
 
 		}
 
-		super.render(deltaTime);
-
 	}
 
 	registerOptions(menu: GUI): void {
@@ -122,11 +120,10 @@ export class ExampleDemo extends Demo {
 
 	}
 
-	reset(): Demo {
+	dispose(): void {
 
+		// The following could also be done in initialize().
 		this.speed = 0.01;
-
-		return super.reset();
 
 	}
 
