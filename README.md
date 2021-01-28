@@ -22,7 +22,7 @@ npm install dat.gui three three-demo
 
 ```javascript
 import { DemoManager } from "three-demo";
-import { MyDemo } from "./MyDemo.js";
+import { MyDemo } from "./MyDemo";
 
 // Initialize the demo manager.
 const manager = new DemoManager(document.getElementById("viewport"), {
@@ -37,22 +37,24 @@ manager.addEventListener("load", console.log);
 // Register demos.
 manager.addDemo(new MyDemo());
 
-// Start rendering.
-(function render(timestamp) {
+function render(timestamp) {
 
 	requestAnimationFrame(render);
 	manager.render(timestamp);
 
-}());
+}
+
+// Start rendering.
+requestAnimationFrame(render);
 ```
 
 
 ## Custom Demos
 
 You can create custom demos by extending the `Demo` class. For details, take a look at the
-[ExampleDemo](https://github.com/vanruesc/three-demo/blob/master/demo/src/demos/ExampleDemo.js).
+[ExampleDemo](https://github.com/vanruesc/three-demo/blob/main/demo/src/demos/ExampleDemo.js).
 
 
 ## Contributing
 
-Please refer to the [contribution guidelines](https://github.com/vanruesc/three-demo/blob/master/.github/CONTRIBUTING.md) for details.
+Please refer to the [contribution guidelines](https://github.com/vanruesc/three-demo/blob/main/.github/CONTRIBUTING.md) for details.
