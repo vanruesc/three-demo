@@ -13,8 +13,7 @@ import * as events from "./demo-manager-events";
 /**
  * Converts milliseconds to seconds.
  *
- * @type {Number}
- * @private
+ * @ignore
  */
 
 const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
@@ -328,8 +327,8 @@ export class DemoManager extends EventDispatcher {
 
 		if(demo !== null && this.loadedDemos.has(demo)) {
 
-			demo.update(elapsed);
-			demo.render(elapsed);
+			demo.update(elapsed, timestamp);
+			demo.render(elapsed, timestamp);
 
 		}
 

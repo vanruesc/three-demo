@@ -113,9 +113,10 @@ export class Demo {
 	 * This method will be called before {@link render}.
 	 *
 	 * @param deltaTime - The time since the last frame in seconds.
+	 * @param timestamp - The current time in milliseconds.
 	 */
 
-	update(deltaTime: number): void {}
+	update(deltaTime: number, timestamp?: number): void {}
 
 	/**
 	 * Renders this demo.
@@ -123,9 +124,10 @@ export class Demo {
 	 * Override this method to customize rendering.
 	 *
 	 * @param deltaTime - The time since the last frame in seconds.
+	 * @param timestamp - The current time in milliseconds.
 	 */
 
-	render(deltaTime: number): void {
+	render(deltaTime: number, timestamp?: number): void {
 
 		this.renderer.render(this.scene, this.camera);
 
