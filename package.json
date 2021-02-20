@@ -37,20 +37,20 @@
 	},
 	"scripts": {
 		"build": "run-s build:*",
-		"build:js": "cross-env NODE_ENV=production ts-node-script esbuild",
+		"build:js": "cross-env NODE_ENV=production node esbuild",
 		"build:dts": "tsc -p tsconfig.d.json",
 		"clean": "del-cli build public",
 		"copy": "cpy --cwd=demo/static --parents \"**/*\" \"../../public/demo\"",
 		"deploy": "run-s copy lint build doc",
 		"dev": "run-s clean copy && run-p start watch",
 		"doc": "typedoc",
-		"lint": "eslint --ext .ts --fix src demo/src",
+		"lint": "tsc --noemit && eslint --ext .ts --fix src demo/src",
 		"prepublishOnly": "run-s clean test doc",
 		"test": "run-s lint build",
 		"start": "hs -s",
 		"watch": "run-p watch:*",
 		"watch:eslint": "esw -w --ext .ts --color src demo/src",
-		"watch:js": "ts-node-script esbuild -w"
+		"watch:js": "node esbuild -w"
 	},
 	"eslintConfig": {
 		"root": true,
@@ -63,12 +63,10 @@
 	},
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.89.0 < 0.126.0"
+		"three": ">= 0.126.0 < 0.127.0"
 	},
 	"devDependencies": {
 		"@types/dat.gui": "0.x.x",
-		"@types/node": "14.x.x",
-		"@types/yargs": "16.x.x",
 		"@typescript-eslint/eslint-plugin": "4.x.x",
 		"@typescript-eslint/parser": "4.x.x",
 		"chokidar": "3.x.x",
@@ -83,7 +81,6 @@
 		"http-server": "0.x.x",
 		"npm-run-all": "4.x.x",
 		"three": "0.x.x",
-		"ts-node": "9.x.x",
 		"tslib": "2.x.x",
 		"typedoc": "0.x.x",
 		"typescript": "4.x.x",
