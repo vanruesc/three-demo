@@ -31,21 +31,18 @@ const manager = new DemoManager(document.getElementById("viewport"), {
 });
 
 // React to events.
-manager.addEventListener("change", console.log);
-manager.addEventListener("load", console.log);
+manager.addEventListener("change", (event) => console.log(event));
+manager.addEventListener("load", (event) => console.log(event));
 
 // Register demos.
 manager.addDemo(new MyDemo());
 
-function render(timestamp) {
+requestAnimationFramefunction render(timestamp) {
 
 	requestAnimationFrame(render);
 	manager.render(timestamp);
 
-}
-
-// Start rendering.
-requestAnimationFrame(render);
+});
 ```
 
 
