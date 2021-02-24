@@ -12,8 +12,6 @@ import * as events from "./demo-manager-events";
 
 /**
  * Converts milliseconds to seconds.
- *
- * @ignore
  */
 
 const MILLISECONDS_TO_SECONDS = 1.0 / 1e3;
