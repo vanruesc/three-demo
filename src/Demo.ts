@@ -109,8 +109,8 @@ export class Demo {
 	/**
 	 * Updates this demo.
 	 *
-	 * Override this method to perform custom update operations for each frame.
-	 * This method will be called before {@link render}.
+	 * Override this method to perform custom update operations. This method will
+	 * be called before {@link render}.
 	 *
 	 * @param deltaTime - The time since the last frame in seconds.
 	 * @param timestamp - The current time in milliseconds.
