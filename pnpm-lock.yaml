@@ -1,5 +1,6 @@
 devDependencies:
   '@types/dat.gui': 0.7.6
+  '@types/three': 0.125.3
   '@typescript-eslint/eslint-plugin': 4.15.2_f59adae6c23e25423ba8722b4851fe62
   '@typescript-eslint/parser': 4.15.2_eslint@7.20.0+typescript@4.2.2
   cpy-cli: 3.1.1
@@ -12,7 +13,7 @@ devDependencies:
   eslint-watch: 7.0.0_eslint@7.20.0
   http-server: 0.12.3
   npm-run-all: 4.1.5
-  three: 0.125.2
+  three: 0.126.0
   tslib: 2.1.0
   typedoc: 0.20.28_typescript@4.2.2
   typescript: 4.2.2
@@ -130,6 +131,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
+  /@types/three/0.125.3:
+    dev: true
+    resolution:
+      integrity: sha512-tUPMzKooKDvMOhqcNVUPwkt+JNnF8ASgWSsrLgleVd0SjLj4boJhteSsF9f6YDjye0mmUjO+BDMWW83F97ehXA==
   /@typescript-eslint/eslint-plugin/4.15.2_f59adae6c23e25423ba8722b4851fe62:
     dependencies:
       '@typescript-eslint/experimental-utils': 4.15.2_eslint@7.20.0+typescript@4.2.2
@@ -3006,10 +3011,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
-  /three/0.125.2:
+  /three/0.126.0:
     dev: true
     resolution:
-      integrity: sha512-7rIRO23jVKWcAPFdW/HREU2NZMGWPBZ4XwEMt0Ak0jwLUKVJhcKM55eCBWyGZq/KiQbeo1IeuAoo/9l2dzhTXA==
+      integrity: sha512-/MecvboUefStCkUfXLImoJxthN+FoLPcEP7pz1r1Dd9i8BPGGuj+S1sOPRvW4Z+ViZjP2oWWm1inNC/MT52ybA==
   /to-object-path/0.3.0:
     dependencies:
       kind-of: 3.2.2
@@ -3295,6 +3300,7 @@ packages:
       integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
 specifiers:
   '@types/dat.gui': 0.x.x
+  '@types/three': 0.x.x
   '@typescript-eslint/eslint-plugin': 4.x.x
   '@typescript-eslint/parser': 4.x.x
   cpy-cli: 3.x.x
