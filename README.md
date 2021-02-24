@@ -24,17 +24,14 @@ npm install dat.gui three three-demo
 import { DemoManager } from "three-demo";
 import { MyDemo } from "./MyDemo";
 
-// Initialize the demo manager.
 const manager = new DemoManager(document.getElementById("viewport"), {
 	aside: document.getElementById("aside"),
 	renderer
 });
 
-// React to events.
 manager.addEventListener("change", (event) => console.log(event));
 manager.addEventListener("load", (event) => console.log(event));
 
-// Register demos.
 manager.addDemo(new MyDemo());
 
 requestAnimationFramefunction render(timestamp) {
