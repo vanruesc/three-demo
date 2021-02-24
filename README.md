@@ -34,7 +34,7 @@ manager.addEventListener("load", (event) => console.log(event));
 
 manager.addDemo(new MyDemo());
 
-requestAnimationFramefunction render(timestamp) {
+requestAnimationFrame(function render(timestamp) {
 
 	requestAnimationFrame(render);
 	manager.render(timestamp);
