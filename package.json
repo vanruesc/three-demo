@@ -7,7 +7,7 @@
 	"module": "dist/three-demo.js",
 	"types": "dist/types/index.d.ts",
 	"exports": {
-		".": "./dist/spatial-controls.js"
+		".": "./dist/three-demo.js"
 	},
 	"type": "module",
 	"sideEffects": false,
