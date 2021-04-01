@@ -21,8 +21,7 @@ await esbuild.build({
 	logLevel: "info",
 	format: "esm",
 	bundle: true,
-	external,
-	minify
+	external
 }).catch(() => process.exit(1));
 
 await esbuild.build({
