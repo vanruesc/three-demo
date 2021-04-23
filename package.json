@@ -37,7 +37,7 @@
 	},
 	"scripts": {
 		"build": "run-s build:*",
-		"build:js": "cross-env NODE_ENV=production node esbuild",
+		"build:js": "node esbuild -m",
 		"build:dts": "tsc -p tsconfig.d.json",
 		"clean": "del-cli dist public",
 		"copy": "cpy --cwd=demo/static --parents \"**/*\" \"../../public/demo\"",
@@ -63,7 +63,7 @@
 	},
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
-		"three": ">= 0.126.0 < 0.128.0"
+		"three": ">= 0.126.0 < 0.129.0"
 	},
 	"devDependencies": {
 		"@types/dat.gui": "0.x.x",
@@ -71,7 +71,6 @@
 		"@typescript-eslint/eslint-plugin": "4.x.x",
 		"@typescript-eslint/parser": "4.x.x",
 		"cpy-cli": "3.x.x",
-		"cross-env": "7.x.x",
 		"dat.gui": "0.x.x",
 		"del-cli": "3.x.x",
 		"esbuild": "0.x.x",
