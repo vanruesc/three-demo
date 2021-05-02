@@ -53,13 +53,7 @@
 		"watch:js": "node esbuild -w"
 	},
 	"eslintConfig": {
-		"root": true,
-		"extends": "aether/typescript",
-		"parserOptions": {
-			"project": [
-				"tsconfig.json"
-			]
-		}
+		"extends": "aether/typescript"
 	},
 	"peerDependencies": {
 		"dat.gui": ">= 0.0.0 < 1.0.0",
