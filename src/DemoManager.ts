@@ -193,6 +193,7 @@ export class DemoManager extends EventDispatcher {
 		this.currentDemo = nextDemo;
 		this.demoId = id;
 		this.dispatchEvent(events.change);
+		this.loadedDemos.delete(nextDemo);
 
 		// Clear the screen.
 		renderer.clear();
