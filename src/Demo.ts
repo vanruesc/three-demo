@@ -29,7 +29,7 @@ export class Demo {
 	 * A collection of assets.
 	 */
 
-	protected assets: Map<string, any>;
+	protected assets: Map<string, unknown>;
 
 	/**
 	 * The scene.
@@ -54,7 +54,7 @@ export class Demo {
 		this.id = id;
 		this.renderer = null;
 		this.loadingManager = new LoadingManager();
-		this.assets = new Map<string, any>();
+		this.assets = new Map<string, unknown>();
 		this.scene = new Scene();
 		this.camera = null;
 
