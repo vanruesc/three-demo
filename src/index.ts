@@ -1,3 +1,2 @@
-export { Demo } from "./Demo";
-export { DemoManager, DemoManagerOptions } from "./DemoManager";
-export { DemoManagerEvent } from "./DemoManagerEvent";
+export * from "./core";
+export * from "./utils";

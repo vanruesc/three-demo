@@ -17,13 +17,13 @@ export class DemoManagerEvent implements Event {
 	 * The previous demo, if available.
 	 */
 
-	previousDemo: Demo;
+	previousDemo?: Demo;
 
 	/**
 	 * The current demo.
 	 */
 
-	demo: Demo;
+	demo?: Demo;
 
 	/**
 	 * Constructs a new demo manager event.

@@ -79,18 +79,21 @@ export class DemoManager extends EventDispatcher {
 	 * Constructs a new demo manager.
 	 *
 	 * @param viewport - The viewport.
-	 * @param options - Additional options.
-	 * @param options.aside - A secondary container.
-	 * @param options.renderer - A custom renderer.
+	 * @param params - Additional options.
 	 */
 
-	constructor(viewport: HTMLElement, { aside = viewport, renderer }: DemoManagerOptions) {
+	constructor(viewport: HTMLElement, params?: DemoManagerOptions) {
 
 		super();
 
-		this.renderer = renderer;
+		const options: DemoManagerOptions = Object.assign({
+			aside: viewport,
+			renderer: null
+		}, params);
 
-		if(this.renderer === undefined) {
+		this.renderer = options.renderer;
+
+		if(this.renderer === null) {
 
 			const renderer = new WebGLRenderer();
 			renderer.setSize(viewport.clientWidth, viewport.clientHeight);
@@ -107,7 +110,7 @@ export class DemoManager extends EventDispatcher {
 		this.demoId = null;
 
 		viewport.appendChild(this.renderer.domElement);
-		aside.appendChild(this.menu.domElement);
+		options.aside.appendChild(this.menu.domElement);
 
 	}
 
@@ -125,7 +128,12 @@ export class DemoManager extends EventDispatcher {
 		// Don't create a demo selection if there's only one demo.
 		if(this.demos.size > 1) {
 
-			const selection = menu.add({ demo: this.demoId }, "demo", [...this.demos.keys()]);
+			const selection = menu.add(
+				{ demo: this.demoId },
+				"demo",
+				[...this.demos.keys()]
+			);
+
 			selection.onChange((value) => this.loadDemo(value));
 
 		}
@@ -201,6 +209,18 @@ export class DemoManager extends EventDispatcher {
 		nextDemo.load()
 			.then(() => this.startDemo(nextDemo))
 			.catch((e) => console.error(e));
+
+	}
+
+	/**
+	 * Returns the current demo.
+	 *
+	 * @return The demo.
+	 */
+
+	getCurrentDemo(): Demo {
+
+		return this.currentDemo;
 
 	}
 
@@ -281,7 +301,7 @@ export class DemoManager extends EventDispatcher {
 	 *
 	 * @param width - The width.
 	 * @param height - The height.
-	 * @param updateStyle - Determines whether the style of the canvas should be updated.
+	 * @param updateStyle - Determines whether the canvas style should be updated.
 	 */
 
 	setSize(width: number, height: number, updateStyle = true): void {
