@@ -2,26 +2,37 @@ import { GUI } from "dat.gui";
 
 import {
 	CubeTextureLoader,
-	Mesh,
-	MeshBasicMaterial,
+	Matrix4,
 	PerspectiveCamera,
-	SphereBufferGeometry,
-	Texture
+	Spherical,
+	Texture,
+	Vector3
 } from "three";
 
-import { Demo } from "../../../src";
+import { calculateVerticalFoV, Demo } from "../../../src";
+
+const TWO_PI = 2 * Math.PI;
+const up = new Vector3(0, 1, 0);
+const v = new Vector3();
+const m = new Matrix4();
 
 /**
  * An example demo.
  */
 
-export class ExampleDemo extends Demo {
+export class ExampleDemo extends Demo implements EventListenerObject {
 
 	/**
 	 * The background rotation speed.
 	 */
 
 	private speed: number;
+
+	/**
+	 * Spherical coordinates.
+	 */
+
+	private spherical: Spherical;
 
 	/**
 	 * Constructs a new demo.
@@ -31,11 +42,42 @@ export class ExampleDemo extends Demo {
 
 		super("example");
 
-		this.speed = 0.01;
+		this.speed = 0.0;
+		this.spherical = new Spherical(1.0, Math.PI * 0.3, 0.0);
 
 	}
 
-	load(): Promise<void> {
+	/**
+	 * Handles keyboard events.
+	 *
+	 * @param event - The event.
+	 */
+
+	private handleKeyboardEvent(event: KeyboardEvent): void {
+
+		switch(event.key) {
+
+			case "i":
+				console.log(this.renderer.info);
+				break;
+
+		}
+
+	}
+
+	handleEvent(event: Event): void {
+
+		switch(event.type) {
+
+			case "keyup":
+				this.handleKeyboardEvent(event as KeyboardEvent);
+				break;
+
+		}
+
+	}
+
+	override load(): Promise<void> {
 
 		const assets = this.assets;
 		const loadingManager = this.loadingManager;
@@ -58,7 +100,7 @@ export class ExampleDemo extends Demo {
 
 				cubeTextureLoader.load(urls, (textureCube) => {
 
-					assets.set("envMap", textureCube);
+					assets.set("sky", textureCube);
 
 				});
 
@@ -72,58 +114,59 @@ export class ExampleDemo extends Demo {
 
 	}
 
-	initialize(): void {
+	override initialize(): void {
 
 		const scene = this.scene;
 		const assets = this.assets;
 
+		// Scene
+
+		const cubeMap = assets.get("sky") as Texture;
+		scene.background = cubeMap;
+
 		// Camera
 
 		const aspect = window.innerWidth / window.innerHeight;
-		const camera = new PerspectiveCamera(50, aspect, 0.1, 1);
-		camera.position.set(0, Math.max(1.15, 1.5 - camera.aspect * 0.1), 0);
-		camera.lookAt(scene.position);
-		camera.rotation.z = Math.PI / 2;
+		const vFoV = calculateVerticalFoV(90, Math.max(aspect, 16 / 9));
+		const camera = new PerspectiveCamera(vFoV, aspect, 0.1, 1);
 		this.camera = camera;
 
-		// Objects
+		this.speed = 0.02;
+		this.update(0.0);
 
-		const envMap = assets.get("envMap") as Texture;
+		// Custom Events
 
-		const mesh = new Mesh(
-			new SphereBufferGeometry(1, 32, 32),
-			new MeshBasicMaterial({ envMap })
-		);
-
-		scene.add(mesh);
+		document.addEventListener("keyup", this);
 
 	}
 
-	update(deltaTime: number): void {
+	override update(deltaTime: number): void {
 
-		const TWO_PI = Math.PI * 2;
-		const rotation = this.camera.rotation;
+		const camera = this.camera;
+		const spherical = this.spherical;
+		spherical.theta += deltaTime * this.speed;
 
-		rotation.z += deltaTime * this.speed;
+		if(Math.abs(spherical.theta) >= TWO_PI) {
 
-		if(Math.abs(rotation.z) >= TWO_PI) {
-
-			rotation.z -= Math.sign(rotation.z) * TWO_PI;
+			spherical.theta -= Math.sign(spherical.theta) * TWO_PI;
 
 		}
 
+		spherical.makeSafe();
+		m.lookAt(camera.position, v.setFromSpherical(spherical), up);
+		camera.quaternion.setFromRotationMatrix(m);
+
 	}
 
-	registerOptions(menu: GUI): void {
+	override registerOptions(menu: GUI): void {
 
 		menu.add(this, "speed").min(-0.5).max(0.5).step(0.01);
 
 	}
 
-	dispose(): void {
+	override dispose(): void {
 
-		// The following could also be done in initialize().
-		this.speed = 0.01;
+		document.removeEventListener("keyup", this);
 
 	}
 
