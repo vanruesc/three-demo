@@ -43,7 +43,7 @@ export class ExampleDemo extends Demo implements EventListenerObject {
 		super("example");
 
 		this.speed = 0.0;
-		this.spherical = new Spherical(1.0, Math.PI * 0.3, 0.0);
+		this.spherical = null;
 
 	}
 
@@ -119,6 +119,9 @@ export class ExampleDemo extends Demo implements EventListenerObject {
 		const scene = this.scene;
 		const assets = this.assets;
 
+		this.speed = 0.02;
+		this.spherical = new Spherical(1.0, Math.PI * 0.375, 0.0);
+
 		// Scene
 
 		const cubeMap = assets.get("sky") as Texture;
@@ -131,7 +134,6 @@ export class ExampleDemo extends Demo implements EventListenerObject {
 		const camera = new PerspectiveCamera(vFoV, aspect, 0.1, 1);
 		this.camera = camera;
 
-		this.speed = 0.02;
 		this.update(0.0);
 
 		// Custom Events
