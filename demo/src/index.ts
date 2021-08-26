@@ -1,5 +1,12 @@
-import { Event as Event3 } from "three";
-import { Demo, DemoManager } from "../../src";
+import { PerspectiveCamera } from "three";
+
+import {
+	calculateVerticalFoV,
+	Demo,
+	DemoManager,
+	DemoManagerEvent
+} from "../../src";
+
 import { ExampleDemo } from "./demos/ExampleDemo";
 
 /**
@@ -34,14 +41,16 @@ window.addEventListener("load", (event: Event) => {
 		aside: document.getElementById("aside")
 	});
 
-	manager.addEventListener("change", (event: Event3) => {
+	manager.addEventListener("change", (event: DemoManagerEvent) => {
 
+		console.log("switched demo:", event);
 		document.querySelector(".loading").classList.remove("hidden");
 
 	});
 
-	manager.addEventListener("load", (event: Event3) => {
+	manager.addEventListener("load", (event: DemoManagerEvent) => {
 
+		console.log("loaded demo:", event);
 		document.querySelector(".loading").classList.add("hidden");
 
 	});
@@ -74,6 +83,17 @@ window.addEventListener("resize", (event: Event) => {
 
 	const width = window.innerWidth;
 	const height = window.innerHeight;
+	const demo = manager.getCurrentDemo();
+
+	if(demo !== null) {
+
+		const camera = demo.getCamera() as PerspectiveCamera;
+		const aspect = Math.max(width / height, 16 / 9);
+		const vFoV = calculateVerticalFoV(90, aspect);
+		camera.fov = vFoV;
+
+	}
+
 	manager.setSize(width, height);
 
 });
