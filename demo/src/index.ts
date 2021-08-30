@@ -9,35 +9,9 @@ import {
 
 import { ExampleDemo } from "./demos/ExampleDemo";
 
-/**
- * A demo manager.
- */
-
-let manager: DemoManager;
-
-/**
- * Renders the demo.
- *
- * @param timestamp - The current time in milliseconds.
- */
-
-function render(timestamp: number): void {
-
-	requestAnimationFrame(render);
-	manager.render(timestamp);
-
-}
-
-/**
- * Starts the program.
- *
- * @param event - An event.
- */
-
 window.addEventListener("load", (event: Event) => {
 
-	// Initialize the demo manager.
-	manager = new DemoManager(document.getElementById("viewport"), {
+	const manager = new DemoManager(document.getElementById("viewport"), {
 		aside: document.getElementById("aside")
 	});
 
@@ -69,40 +43,33 @@ window.addEventListener("load", (event: Event) => {
 
 	}, 1000);
 
-	requestAnimationFrame(render);
+	window.addEventListener("resize", (event: Event) => {
+
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+		const demo = manager.getCurrentDemo();
+
+		if(demo !== null) {
+
+			const camera = demo.getCamera() as PerspectiveCamera;
+			const aspect = Math.max(width / height, 16 / 9);
+			const vFoV = calculateVerticalFoV(90, aspect);
+			camera.fov = vFoV;
+
+		}
+
+		manager.setSize(width, height);
+
+	});
+
+	requestAnimationFrame(function render(timestamp: number): void {
+
+		requestAnimationFrame(render);
+		manager.render(timestamp);
+
+	});
 
 });
-
-/**
- * Handles browser resizing.
- *
- * @param event - An event.
- */
-
-window.addEventListener("resize", (event: Event) => {
-
-	const width = window.innerWidth;
-	const height = window.innerHeight;
-	const demo = manager.getCurrentDemo();
-
-	if(demo !== null) {
-
-		const camera = demo.getCamera() as PerspectiveCamera;
-		const aspect = Math.max(width / height, 16 / 9);
-		const vFoV = calculateVerticalFoV(90, aspect);
-		camera.fov = vFoV;
-
-	}
-
-	manager.setSize(width, height);
-
-});
-
-/**
- * Performs initialization tasks when the document is ready.
- *
- * @param event - An event.
- */
 
 document.addEventListener("DOMContentLoaded", (event: Event) => {
 
@@ -120,12 +87,6 @@ document.addEventListener("DOMContentLoaded", (event: Event) => {
 	}
 
 });
-
-/**
- * Toggles the visibility of the interface on H key press.
- *
- * @param event - An event.
- */
 
 document.addEventListener("keyup", (event: KeyboardEvent) => {
 
