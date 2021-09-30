@@ -6,7 +6,7 @@
 
 A compact demo framework for [three.js](https://threejs.org/).
 
-*[Demo](https://vanruesc.github.io/three-demo/public/demo)&ensp;&middot;&ensp;[Documentation](https://vanruesc.github.io/three-demo/public/docs)*
+*[Demo](https://vanruesc.github.io/three-demo/demo)&ensp;&middot;&ensp;[Documentation](https://vanruesc.github.io/three-demo/docs)*
 
 
 ## Installation
