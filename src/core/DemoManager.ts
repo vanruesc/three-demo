@@ -134,7 +134,7 @@ export class DemoManager extends EventDispatcher {
 				[...this.demos.keys()]
 			);
 
-			selection.onChange((value) => this.loadDemo(value));
+			selection.onChange((value: string) => this.loadDemo(value));
 
 		}
 
