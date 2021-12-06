@@ -52,9 +52,14 @@ window.addEventListener("load", (event: Event) => {
 		if(demo !== null) {
 
 			const camera = demo.getCamera() as PerspectiveCamera;
-			const aspect = Math.max(width / height, 16 / 9);
-			const vFoV = calculateVerticalFoV(90, aspect);
-			camera.fov = vFoV;
+
+			if(camera !== null) {
+
+				const aspect = Math.max(width / height, 16 / 9);
+				const vFoV = calculateVerticalFoV(90, aspect);
+				camera.fov = vFoV;
+
+			}
 
 		}
 
