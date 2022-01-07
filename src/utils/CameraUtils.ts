@@ -9,12 +9,9 @@ const RAD2DEG = 180.0 / Math.PI;
  * @return The vertical field of view.
  */
 
-export function calculateVerticalFoV(horizontalFoV: number,
-	aspect = 16 / 9): number {
+export function calculateVerticalFoV(horizontalFoV: number, aspect = 16 / 9): number {
 
-	return Math.atan(
-		Math.tan(horizontalFoV * DEG2RAD * 0.5) / aspect
-	) * RAD2DEG * 2.0;
+	return Math.atan(Math.tan(horizontalFoV * DEG2RAD * 0.5) / aspect) * RAD2DEG * 2.0;
 
 }
 
@@ -26,11 +23,8 @@ export function calculateVerticalFoV(horizontalFoV: number,
  * @return The horizontal field of view.
  */
 
-export function calculateHorizontalFoV(verticalFoV: number,
-	aspect = 16 / 9): number {
+export function calculateHorizontalFoV(verticalFoV: number, aspect = 16 / 9): number {
 
-	return Math.atan(
-		Math.tan(verticalFoV * DEG2RAD * 0.5) * aspect
-	) * RAD2DEG * 2.0;
+	return Math.atan(Math.tan(verticalFoV * DEG2RAD * 0.5) * aspect) * RAD2DEG * 2.0;
 
 }
