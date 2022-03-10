@@ -3,6 +3,8 @@
 [![CI](https://github.com/vanruesc/three-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/vanruesc/three-demo/actions/workflows/ci.yml)
 [![Version](https://badgen.net/npm/v/three-demo?color=green)](https://www.npmjs.com/package/three-demo)
 
+⚠️ This repository is no longer maintained ⚠️
+
 A compact demo framework for [three.js](https://threejs.org/).
 
 *[Demo](https://vanruesc.github.io/three-demo/demo)&ensp;&middot;&ensp;[Documentation](https://vanruesc.github.io/three-demo/docs)*
